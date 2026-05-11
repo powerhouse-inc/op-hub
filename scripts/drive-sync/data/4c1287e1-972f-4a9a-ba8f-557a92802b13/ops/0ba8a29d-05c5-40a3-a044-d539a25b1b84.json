@@ -1,0 +1,159 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "0ba8a29d-05c5-40a3-a044-d539a25b1b84",
+        "meta": {},
+        "model": "powerhouse/invoice",
+        "name": "Invoice DEC 2025",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-26T15:39:09.105Z",
+          "documentType": "powerhouse/invoice",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "0ba8a29d-05c5-40a3-a044-d539a25b1b84"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "5335b57198fd3117d9563d50100489ea",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:39:09.105Z"
+  },
+  {
+    "action": {
+      "input": {
+        "invoiceNo": "121"
+      },
+      "scope": "global",
+      "type": "EDIT_INVOICE"
+    },
+    "error": null,
+    "hash": "AvowYxdbsLVzUiJGzJ2HCH2jR4g=",
+    "id": "adc5617d0abff6d9f1f65c722d472860",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:39:15.768Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "0ba8a29d-05c5-40a3-a044-d539a25b1b84",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "closureReason": null,
+            "currency": "",
+            "dateDelivered": null,
+            "dateDue": null,
+            "dateIssued": null,
+            "exported": {
+              "exportedLineItems": [],
+              "timestamp": null
+            },
+            "invoiceNo": "",
+            "invoiceTags": [],
+            "issuer": {
+              "address": null,
+              "contactInfo": null,
+              "country": null,
+              "id": null,
+              "name": null,
+              "paymentRouting": null
+            },
+            "lineItems": [],
+            "notes": null,
+            "payAfter": null,
+            "payer": {
+              "address": null,
+              "contactInfo": null,
+              "country": null,
+              "id": null,
+              "name": null,
+              "paymentRouting": null
+            },
+            "payments": [],
+            "rejections": [],
+            "status": "DRAFT",
+            "totalPriceTaxExcl": 0,
+            "totalPriceTaxIncl": 0
+          },
+          "local": {}
+        },
+        "model": "powerhouse/invoice",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "c2d60fba9fce580afed5cf9dcc266c4c",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:39:09.106Z"
+  },
+  {
+    "action": {
+      "input": {
+        "invoiceNo": "121"
+      },
+      "scope": "global",
+      "type": "EDIT_INVOICE"
+    },
+    "error": null,
+    "hash": "AvowYxdbsLVzUiJGzJ2HCH2jR4g=",
+    "id": "adc5617d0abff6d9f1f65c722d472860",
+    "index": 1,
+    "skip": 1,
+    "timestampUtcMs": "2026-03-26T15:39:15.768Z"
+  },
+  {
+    "action": {
+      "input": {
+        "dateIssued": "2025-12-31T00:00:00.000Z"
+      },
+      "scope": "global",
+      "type": "EDIT_INVOICE"
+    },
+    "error": null,
+    "hash": "07f4jyCTnKsCcMpl21+KzxZUA1c=",
+    "id": "1876e51eb1542a614dd40637e34029aa",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:39:19.002Z"
+  },
+  {
+    "action": {
+      "input": {
+        "dateDue": "2026-01-10T00:00:00.000Z"
+      },
+      "scope": "global",
+      "type": "EDIT_INVOICE"
+    },
+    "error": null,
+    "hash": "ALBU5+15tM52inD8A4CKPWa9a4E=",
+    "id": "9b991f1b598c2f7fafd5cf10df827cd7",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:39:22.922Z"
+  }
+]

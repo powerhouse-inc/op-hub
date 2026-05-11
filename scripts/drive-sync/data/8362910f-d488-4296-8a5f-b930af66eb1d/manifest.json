@@ -1,0 +1,33 @@
+{
+  "source": {
+    "slug": "8362910f-d488-4296-8a5f-b930af66eb1d",
+    "name": "BAI Team Admin",
+    "downloadedAt": "2026-04-29T16:14:16.000Z"
+  },
+  "excluded": [],
+  "folders": [
+    {
+      "id": "037a2664-5341-4381-a331-df19e5e8b7b5",
+      "name": "Expense Reports",
+      "parentFolder": null
+    },
+    {
+      "id": "0f70d549-d018-4bc0-947c-965b26871a69",
+      "name": "Service Subscriptions",
+      "parentFolder": null
+    },
+    {
+      "id": "650572b8-c3c5-4b32-a903-f92bcaa9a25c",
+      "name": "Snapshot Reports",
+      "parentFolder": null
+    }
+  ],
+  "documents": [
+    {
+      "id": "ff4cf2ff-447b-4f75-85da-80112253de78",
+      "name": "Business Analysis and Integrations",
+      "type": "powerhouse/builder-profile",
+      "parentFolder": null
+    }
+  ]
+}

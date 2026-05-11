@@ -1,0 +1,147 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "44bfba52-4163-4f8e-b46f-ec7c5c623e0d",
+        "meta": {},
+        "model": "powerhouse/snapshot-report",
+        "name": "November 2025 - Snapshot Report",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-31T16:58:35.702Z",
+          "documentType": "powerhouse/snapshot-report",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "44bfba52-4163-4f8e-b46f-ec7c5c623e0d"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "b9ce2f216edf7d9717d17d1ae7b14e77",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T16:58:35.710Z"
+  },
+  {
+    "action": {
+      "input": {
+        "ownerId": "ff4cf2ff-447b-4f75-85da-80112253de78"
+      },
+      "scope": "global",
+      "type": "ADD_OWNER_ID"
+    },
+    "error": null,
+    "hash": "yzSwdBoVs+wSRznHmrvT0NtXVDQ=",
+    "id": "abcccc8ccb399abf73cfd958fd970665",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T17:00:14.957Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "44bfba52-4163-4f8e-b46f-ec7c5c623e0d",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "accountsDocumentId": null,
+            "endDate": null,
+            "ownerIds": [],
+            "reportName": null,
+            "reportPeriodEnd": "2025-11-30T23:59:59.999Z",
+            "reportPeriodStart": "2025-11-01T00:00:00.000Z",
+            "snapshotAccounts": [],
+            "startDate": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/snapshot-report",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "0cd77edf0530838d7c26c0734f8f3f68",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T16:58:35.710Z"
+  },
+  {
+    "action": {
+      "input": {
+        "ownerId": "7d0a153e-96d7-4f95-b025-df287021990b"
+      },
+      "scope": "global",
+      "type": "ADD_OWNER_ID"
+    },
+    "error": null,
+    "hash": "eAXqPB6NAuDt7TMn9u3QVANK0Oc=",
+    "id": "9fd236a85957b764475660c648c017da",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T17:00:15.617Z"
+  },
+  {
+    "action": {
+      "input": {
+        "ownerId": "2596a4fd-37e1-470d-8303-afb904ccf9dc"
+      },
+      "scope": "global",
+      "type": "ADD_OWNER_ID"
+    },
+    "error": null,
+    "hash": "tYj3KTgPBxoJfdUHmDrLACJrmJ8=",
+    "id": "d5d8f7a44d75f73c9d1e535c9a51a2d7",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T17:00:16.265Z"
+  },
+  {
+    "action": {
+      "input": {
+        "ownerId": "8a65a724-7529-4300-92b1-c39732b6100f"
+      },
+      "scope": "global",
+      "type": "ADD_OWNER_ID"
+    },
+    "error": null,
+    "hash": "oZI+0xOcC1lhZRf2IKg4FoXAcfc=",
+    "id": "996421e0c64591a8b7d97dd206a55273",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T17:00:16.953Z"
+  },
+  {
+    "action": {
+      "input": {
+        "ownerId": "831efda4-c052-42b1-8df3-dfae977b732b"
+      },
+      "scope": "global",
+      "type": "ADD_OWNER_ID"
+    },
+    "error": null,
+    "hash": "AHIJl4HeNrjphDoZTS4eQ9txsgQ=",
+    "id": "0ffc5224bc4c8b157af315766aa3c3e5",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T17:00:17.603Z"
+  }
+]

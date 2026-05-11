@@ -1,0 +1,102 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "9c258ffb-32aa-428b-9ee9-833a073b5906",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "willow",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-23T18:52:19.299Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "9c258ffb-32aa-428b-9ee9-833a073b5906"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "8c6a9d372dacf8e6aef09b81a2c7b8fd",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:19.299Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "willow",
+        "icon": "https://i.postimg.cc/wBzB9XnG/willow-Icon.png",
+        "id": "4a7b1c76-eb07-4d5f-98c1-db22371877d8",
+        "name": "willow",
+        "slug": "willow",
+        "status": "ACTIVE"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "9VlNWtvdtwl89FfU1ubBXTVQe+o=",
+    "id": "5ca97b9fd78463ddac127626d21058c3",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:33.219Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "9c258ffb-32aa-428b-9ee9-833a073b5906",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": null,
+            "contributors": [],
+            "description": null,
+            "icon": null,
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": null,
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": null,
+            "status": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "180753b06db3d14c6c8e205f5b559adb",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:19.299Z"
+  }
+]

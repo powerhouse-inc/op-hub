@@ -1,0 +1,81 @@
+{
+  "id": "powerhouse/operational-hub-profile",
+  "name": "OperationalHubProfile",
+  "author": {
+    "name": "Powerhouse",
+    "website": "https://www.powerhouse.inc/"
+  },
+  "extension": "",
+  "description": "Profile document for Operational Hubs that manages operator team assignment and subteam relationships",
+  "specifications": [
+    {
+      "state": {
+        "local": {
+          "schema": "",
+          "examples": [],
+          "initialValue": ""
+        },
+        "global": {
+          "schema": "type OperationalHubProfileState {\n  name: String!\n  operatorTeam: PHID\n  subteams: [PHID!]!\n}",
+          "examples": [],
+          "initialValue": "{\"name\": \"\", \"operatorTeam\": null, \"subteams\": []}"
+        }
+      },
+      "modules": [
+        {
+          "id": "configuration",
+          "name": "configuration",
+          "operations": [
+            {
+              "id": "set-operational-hub-name",
+              "name": "setOperationalHubName",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetOperationalHubNameInput {\n  name: String!\n}",
+              "reducer": "state.name = action.input.name;",
+              "examples": [],
+              "template": "Set the name of the operational hub",
+              "description": "Set the name of the operational hub"
+            },
+            {
+              "id": "set-operator-team",
+              "name": "setOperatorTeam",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetOperatorTeamInput {\n  operatorTeam: PHID\n}",
+              "reducer": "state.operatorTeam = action.input.operatorTeam || null;",
+              "examples": [],
+              "template": "Set the operator team PHID for this operational hub",
+              "description": "Set the operator team PHID for this operational hub"
+            },
+            {
+              "id": "add-subteam",
+              "name": "addSubteam",
+              "scope": "global",
+              "errors": [],
+              "schema": "input AddSubteamInput {\n  subteam: PHID!\n}",
+              "reducer": "if (!state.subteams.includes(action.input.subteam)) {\n  state.subteams.push(action.input.subteam);\n}",
+              "examples": [],
+              "template": "Add a subteam (builder profile) to the operational hub",
+              "description": "Add a subteam (builder profile) to the operational hub"
+            },
+            {
+              "id": "remove-subteam",
+              "name": "removeSubteam",
+              "scope": "global",
+              "errors": [],
+              "schema": "input RemoveSubteamInput {\n  subteam: PHID!\n}",
+              "reducer": "const index = state.subteams.indexOf(action.input.subteam);\nif (index !== -1) {\n  state.subteams.splice(index, 1);\n}",
+              "examples": [],
+              "template": "Remove a subteam from the operational hub",
+              "description": "Remove a subteam from the operational hub"
+            }
+          ],
+          "description": "Operations for configuring the operational hub profile"
+        }
+      ],
+      "version": 1,
+      "changeLog": []
+    }
+  ]
+}

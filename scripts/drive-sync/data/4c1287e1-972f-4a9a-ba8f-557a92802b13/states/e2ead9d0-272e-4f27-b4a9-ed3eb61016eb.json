@@ -1,0 +1,910 @@
+{
+  "accountsDocumentId": "26bb6763-0f21-41e2-addc-be3474fa101e",
+  "endDate": "2025-08-19T23:59:59.999Z",
+  "ownerIds": [
+    "ff4cf2ff-447b-4f75-85da-80112253de78",
+    "7d0a153e-96d7-4f95-b025-df287021990b",
+    "2596a4fd-37e1-470d-8303-afb904ccf9dc",
+    "8a65a724-7529-4300-92b1-c39732b6100f",
+    "831efda4-c052-42b1-8df3-dfae977b732b"
+  ],
+  "reportName": null,
+  "reportPeriodEnd": "2025-06-30T23:59:59.999Z",
+  "reportPeriodStart": "2025-06-01T00:00:00.000Z",
+  "snapshotAccounts": [
+    {
+      "accountAddress": "0xA06546b8e1f6c6ab6E1CA5249d0b9E448b2EAe41",
+      "accountId": "7f895d81-a1ae-477d-b14e-7f6b5ed439db",
+      "accountName": "Powerhouse Genesis Operational Hub Reserves",
+      "accountTransactionsId": "407e202b-23a2-45bc-bbcb-699467a85ddc",
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "13319040"
+          },
+          "id": "1d153dc7-fd48-43f0-a49f-a76e554e8357",
+          "token": "SKY"
+        },
+        {
+          "amount": {
+            "unit": "MKR",
+            "value": "134.3"
+          },
+          "id": "8f6691bf-8542-4e82-abac-91f23276c849",
+          "token": "MKR"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "0"
+          },
+          "id": "0a121dca-9580-42ab-8839-c3e0935e0d36",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "0"
+          },
+          "id": "a54f1f36-f4f7-457a-b6f7-d1ea557e66ea",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "174526.19206795035"
+          },
+          "id": "ee0526d1-9e1d-47ed-bca6-b0421e4c0476",
+          "token": "sUSDS"
+        }
+      ],
+      "id": "e93bb69a-5153-44cc-8d38-8c32c5353ce2",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "11416320"
+          },
+          "id": "8034ce73-be73-477b-933c-15196d811c79",
+          "token": "SKY"
+        },
+        {
+          "amount": {
+            "unit": "MKR",
+            "value": "134.3"
+          },
+          "id": "8db465a3-3917-4688-8d71-b29a4ee01f92",
+          "token": "MKR"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "0"
+          },
+          "id": "659455fa-c2f9-46f1-b2fa-d975fea8ad67",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "0"
+          },
+          "id": "16e0c9e2-b311-4664-a6a2-899655e5d6b6",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "174526.19206795035"
+          },
+          "id": "a8be7012-b6c0-442e-b93f-6e7743df8d86",
+          "token": "sUSDS"
+        }
+      ],
+      "transactions": [
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "1902720"
+          },
+          "blockNumber": 23055909,
+          "counterParty": "0x3c5142f28567e6a0f172fd0baaf1f2847f49d02f",
+          "counterPartyAccountId": null,
+          "datetime": "2025-08-02T20:58:23.000Z",
+          "direction": "INFLOW",
+          "flowType": "External",
+          "id": "b55f9f2e-3fdf-448d-9508-2127e079ec76",
+          "token": "SKY",
+          "transactionId": "dbcae003-db35-41a1-8709-d60e0199c0d4",
+          "txHash": "0x62be091743f5051fb2b358db8ce43afdeb016a559e0a2101979b1057f8181408"
+        }
+      ],
+      "type": "Internal"
+    },
+    {
+      "accountAddress": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+      "accountId": "cd3a7c49-c02b-4911-b2d0-353c9ca366d4",
+      "accountName": "Powerhouse Genesis Operational Hub",
+      "accountTransactionsId": "008c31a8-81e3-4c40-8b91-0eff3787ad43",
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "0.004984999831322057"
+          },
+          "id": "6fd8b3c6-c6aa-4094-835a-b293760c9de8",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "112310.72162699999"
+          },
+          "id": "c423d951-8a65-48aa-a500-28ca428fc69e",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "445445.9432675498"
+          },
+          "id": "45369816-dad0-436b-a66c-59e3c39e518d",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "23"
+          },
+          "id": "8d5d98e5-2fd3-4cca-94a5-b3581e936cbb",
+          "token": "EURe"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "378315.58186935226"
+          },
+          "id": "59384690-0746-4b12-b532-5f2db31717ae",
+          "token": "sUSDS"
+        }
+      ],
+      "id": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "4985.863667549682"
+          },
+          "id": "6389b0e5-e6a3-4901-9f8e-82b05bb342cc",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "146652.387153"
+          },
+          "id": "5fb1fbc2-8a1a-4ea1-8c8a-6565b4104be5",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "433425.77959999995"
+          },
+          "id": "447a3e0d-5016-4326-876a-cd75de32617a",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "23"
+          },
+          "id": "7394ee71-9cfe-4e1f-a876-5587c7dbbd09",
+          "token": "EURe"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "378315.58186935226"
+          },
+          "id": "47eb167e-d91a-4549-bbfd-058a0851759c",
+          "token": "sUSDS"
+        }
+      ],
+      "transactions": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "4985.86366754985"
+          },
+          "blockNumber": 22865437,
+          "counterParty": "0x3225737a9bbb6473cb4a45b7244aca2befdb276a",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-07T06:09:35.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "201a4a0a-ca9d-4eda-8c61-aa1259cbfb30",
+          "token": "DAI",
+          "transactionId": "72488d92-dbcb-42a5-ab76-98a50ae6ac96",
+          "txHash": "0x7923d880dd33f5a9a9af6059a3957f18eef20974375621c5db88971ee510046e"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "525"
+          },
+          "blockNumber": 22881150,
+          "counterParty": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-09T10:52:11.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "Swap",
+          "id": "c7e17d01-dc87-4aa9-b190-2f4b3297908d",
+          "token": "USDS",
+          "transactionId": "65acbef4-ed0a-4568-b0de-94803054467b",
+          "txHash": "0x5d0582b0b43bca0510164ee6b99f8aad877fa86b70d9e46b7a385f98ddd53dbb"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "15029.08"
+          },
+          "blockNumber": 22967166,
+          "counterParty": "0x0a758b09ffb57c703942755a00f5266832151c51",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:07:35.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "497594cb-97d9-4dbe-9a73-439d15604d10",
+          "token": "USDS",
+          "transactionId": "a23a177a-4bc0-48e5-853f-2d0f1fb52526",
+          "txHash": "0x7398cac594c5abc7e68abe411dab4ace8778627f78d23926e1bf0da9b69ce707"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "16630"
+          },
+          "blockNumber": 22967179,
+          "counterParty": "0x8f7b9d11c58903c482608476040a625fcbe519a4",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:10:11.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "b3badab4-81b9-4513-8b16-143bb4f7bb1d",
+          "token": "USDS",
+          "transactionId": "c08f8950-e695-46be-9b47-164b17a20ff2",
+          "txHash": "0x29eb37e564f899df3b10209de9f72920e0260492dfa3068d7c1cdd508bdd2509"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "25254.039999999997"
+          },
+          "blockNumber": 22967269,
+          "counterParty": "0xfb922befb44d89c5d424f59759d5af2ba2863de7",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:28:11.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "ff47e3a1-5ffb-4ec8-994d-4d9585c3fd80",
+          "token": "USDS",
+          "transactionId": "4a100f45-4836-4c69-89f8-99355fee1b95",
+          "txHash": "0xa090812f751a30ab532554324e84ff494e14a8e7d5d5e529ba63e29f2260939c"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "19650.66"
+          },
+          "blockNumber": 22967280,
+          "counterParty": "0x0b83a16918c41e9d7be0ff8faccc55658c7e8b4f",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:30:23.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "09b9b2a4-805f-4840-9060-720db296d457",
+          "token": "USDS",
+          "transactionId": "2d850d99-64ed-4cd9-908f-89af4e0dcbf0",
+          "txHash": "0x336ad9a82d3b4cf31ffdfffbf42b931fc8a8538439388a48dbb7fb1062f33b5a"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "12680"
+          },
+          "blockNumber": 22967292,
+          "counterParty": "0x4b07001646c520d8bb29f179561f8329346980da",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:32:47.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "71126789-6e49-480b-8e6a-fc5f652ae4bc",
+          "token": "USDS",
+          "transactionId": "0a0ad791-6ebf-406f-a98f-b030a0108f91",
+          "txHash": "0x5853938fe4b3d358c89d1c4c7bb276a55543031c1536193ca8f3974e8293d6a2"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "7240.049999999999"
+          },
+          "blockNumber": 22967303,
+          "counterParty": "0x0aa8c4f208d756709e4588ab192748708091dcb3",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:34:59.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "0f119f76-3d7e-4c29-9e55-075881db3d35",
+          "token": "USDS",
+          "transactionId": "c01fac96-dcfe-4119-aab3-db04c72ba849",
+          "txHash": "0x8fb05fefb13bb3247d83ef8c89db2b8f231aa3c388518cddb60d18d936fa03c1"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "8333"
+          },
+          "blockNumber": 22967321,
+          "counterParty": "0x24c2c51f69638bf2e79590380afdd0613a615d59",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:38:35.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "9fa536ef-c8f6-49c1-9ee6-ffeb835897f0",
+          "token": "USDS",
+          "transactionId": "9fe45cf8-1683-4c5e-b100-5ba32755e5d9",
+          "txHash": "0x62ffc4b0222f6bd347a44b2801096bf732ae167d41cea2d140a0173c1b733bbb"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "9300"
+          },
+          "blockNumber": 22967347,
+          "counterParty": "0xfa35b53b386eea0714ff4786389d356d1da207b8",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:43:59.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "4ca814fc-a55b-4704-8a2a-57a3c435a896",
+          "token": "USDS",
+          "transactionId": "e50f62ca-4289-4bcf-a4a7-dbd535ac521b",
+          "txHash": "0x6513627ace5653083da68e720a8f49ef8e9007a48cb0c05f152a08b8075e9415"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "134212.705"
+          },
+          "blockNumber": 22967373,
+          "counterParty": "0x3cf63891928b8ceebb81c95426600a18cd59c03f",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:49:11.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "2b627592-2b18-497d-b9c6-04c09d07ba00",
+          "token": "USDC",
+          "transactionId": "7f868c74-aa51-44be-818f-7ba11b2458cd",
+          "txHash": "0x37dd0b9002be06feebf9e6d9bedff0fc4abb231a8cc6ff359237b433a54eb5ed"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "19990.54"
+          },
+          "blockNumber": 22967395,
+          "counterParty": "0x62dad9169cd0d553fe876b6aa6566ebb6ccdb8b2",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T11:53:35.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "c9e5dee7-7dae-404d-9a40-6ae22b6841ac",
+          "token": "USDS",
+          "transactionId": "e849cc99-11cf-4dbd-93b0-de6a8f28f08a",
+          "txHash": "0xbc57e4d9e798735ff6fd73ba79a2099856555883ee99cab979f3105da9b95a46"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "150000"
+          },
+          "blockNumber": 22967455,
+          "counterParty": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T12:05:35.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "Swap",
+          "id": "a24a0073-a4b5-48ad-887f-68103efbe833",
+          "token": "USDS",
+          "transactionId": "d94c1cd2-af8a-4973-8911-85eb304328e4",
+          "txHash": "0x009211a3816718e512e284247ecd53f556ce4dbb1c5b5c186f87266ca0c44a90"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "50019.491"
+          },
+          "blockNumber": 22967555,
+          "counterParty": "0x3cf63891928b8ceebb81c95426600a18cd59c03f",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T12:25:47.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "751e639f-586a-44ce-b0a1-6a16a72d7124",
+          "token": "USDC",
+          "transactionId": "704cd89b-17d7-491c-bf43-9bef9da14b65",
+          "txHash": "0x337e7b47eb9c15bf4702c5d9ca3220fcc122cf57eaf57f460f74eba77ce10237"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "4985.86366754985"
+          },
+          "blockNumber": 22865437,
+          "counterParty": "0x0000000000000000000000000000000000000000",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-07T06:09:35.000Z",
+          "direction": "INFLOW",
+          "flowType": "External",
+          "id": "58db62ec-7a7b-4c28-832d-0a6f2c3b32e8",
+          "token": "USDS",
+          "transactionId": "21a30652-b5f7-44bc-8684-5dd719f33e15",
+          "txHash": "0x7923d880dd33f5a9a9af6059a3957f18eef20974375621c5db88971ee510046e"
+        },
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "0.004985"
+          },
+          "blockNumber": 22865452,
+          "counterParty": "0x32203cb76777d8068741b9898aede187ee40b76a",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-07T06:12:35.000Z",
+          "direction": "INFLOW",
+          "flowType": "External",
+          "id": "e4f80f91-c2fd-4394-819b-7887c237b047",
+          "token": "DAI",
+          "transactionId": "1bd43c4c-c168-48b8-bb97-0a59831d480a",
+          "txHash": "0x1117da6e15cf71770d1e80e9510ae962b6f602c1d1ad073486d4d25442893855"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "149890.530474"
+          },
+          "blockNumber": 22967455,
+          "counterParty": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+          "counterPartyAccountId": null,
+          "datetime": "2025-07-21T12:05:35.000Z",
+          "direction": "INFLOW",
+          "flowType": "Swap",
+          "id": "b4a9e29b-b2eb-4b77-8760-f773d88e900f",
+          "token": "USDC",
+          "transactionId": "7675c695-2652-4f39-aca5-cc89be2a0b63",
+          "txHash": "0x009211a3816718e512e284247ecd53f556ce4dbb1c5b5c186f87266ca0c44a90"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "291666.67"
+          },
+          "blockNumber": 23055909,
+          "counterParty": "0x3c5142f28567e6a0f172fd0baaf1f2847f49d02f",
+          "counterPartyAccountId": null,
+          "datetime": "2025-08-02T20:58:23.000Z",
+          "direction": "INFLOW",
+          "flowType": "External",
+          "id": "68678cde-a616-48a7-ae0e-6e0978359749",
+          "token": "USDS",
+          "transactionId": "9ff0f0ad-5d1f-4357-a751-13a49da8ad86",
+          "txHash": "0x62be091743f5051fb2b358db8ce43afdeb016a559e0a2101979b1057f8181408"
+        }
+      ],
+      "type": "Internal"
+    },
+    {
+      "accountAddress": "0xF0E22BA1368F90E54dFD68b1442AA5aecdf6CE6A",
+      "accountId": "1103bc22-fb34-465b-9c54-5a5b56a4046a",
+      "accountName": "SKY Launch Wallet",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "d573df73-b99a-440f-a7e1-e13440300fd6",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Source"
+    },
+    {
+      "accountAddress": "0x3cf63891928b8ceebb81c95426600a18cd59c03f",
+      "accountId": "4f707770-005c-4192-bd7c-f407e68af47d",
+      "accountName": "Request Finance 1",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "206657.93303065118"
+          },
+          "id": "fc9126f5-a7d7-4b62-bb88-82db9ae6c8e1",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "417653.60432399996"
+          },
+          "id": "dbcae08b-6177-4feb-8ffb-d83678211d4e",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "71559.92"
+          },
+          "id": "76748e88-14ab-40da-ac80-a8d506e0c5d8",
+          "token": "USDS"
+        }
+      ],
+      "id": "3c4f3284-1467-4deb-b9fb-94d9bd9c5a25",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "206657.93303065118"
+          },
+          "id": "f7de32d3-741b-4185-942b-393e49994bf8",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "233421.408324"
+          },
+          "id": "7c53f9cc-dfaf-4263-9108-f77244d136cb",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "71559.92"
+          },
+          "id": "3a7c39d7-c34f-435b-a9fc-f4043e4f3768",
+          "token": "USDS"
+        }
+      ],
+      "transactions": [
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "134212.705"
+          },
+          "blockNumber": 22967373,
+          "counterParty": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+          "counterPartyAccountId": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+          "datetime": "2025-07-21T11:49:11.000Z",
+          "direction": "INFLOW",
+          "flowType": "TopUp",
+          "id": "d91852e2-7d8c-4aa5-b6dc-7e5c6553d83f",
+          "token": "USDC",
+          "transactionId": "7f868c74-aa51-44be-818f-7ba11b2458cd",
+          "txHash": "0x37dd0b9002be06feebf9e6d9bedff0fc4abb231a8cc6ff359237b433a54eb5ed"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "50019.491"
+          },
+          "blockNumber": 22967555,
+          "counterParty": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+          "counterPartyAccountId": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+          "datetime": "2025-07-21T12:25:47.000Z",
+          "direction": "INFLOW",
+          "flowType": "TopUp",
+          "id": "9df8965d-9afb-42f0-8c2b-e2ce3e06819e",
+          "token": "USDC",
+          "transactionId": "704cd89b-17d7-491c-bf43-9bef9da14b65",
+          "txHash": "0x337e7b47eb9c15bf4702c5d9ca3220fcc122cf57eaf57f460f74eba77ce10237"
+        }
+      ],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x5f480f1baa1016b22054e928042ac7198eea55d4",
+      "accountId": "7f0cc7ae-75b9-4960-bf09-944eaca4b131",
+      "accountName": "Request Finance 2",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "6a877515-3915-4e93-a3ec-d45910a4a664",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x62d0521dffec43b4fba483fc42f5f98388c454e9",
+      "accountId": "8cbcb1b0-fc93-47a7-a35a-5c8f826a80e6",
+      "accountName": "Request Finance 3",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "c63caba9-ac17-484c-a605-2942eed1b54c",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0xda2a74a1d8c24c7136933834cb2c2d484a4c1f5b",
+      "accountId": "44a88dec-55ef-4da9-93b4-cdd25295d961",
+      "accountName": "Request Finance 4",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "2d42b356-6119-42bc-ae3f-41683acd2c70",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x62dad9169cd0d553fe876b6aa6566ebb6ccdb8b2",
+      "accountId": "f4093b2c-0565-4473-bb9d-a3ebe0709b86",
+      "accountName": "Accountable",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "338817.67000000004"
+          },
+          "id": "e149cbf5-7b46-4422-8b05-3cbe6f7c2b13",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "421535.99"
+          },
+          "id": "4c412ec3-800b-4bba-9fc6-a5666db46873",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "0"
+          },
+          "id": "a1ebc995-7972-4cc7-94fe-5390ee56deea",
+          "token": "USDC"
+        }
+      ],
+      "id": "1e0bf609-4a9c-470e-bb78-14625053f630",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "338817.67000000004"
+          },
+          "id": "c832ec2c-540c-4a30-9b9a-029364041f3d",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "401545.45"
+          },
+          "id": "08193a61-8cf6-4060-9247-90c5b8f060e3",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "0"
+          },
+          "id": "c07a8a72-8e1a-4c21-a308-267e609c4e24",
+          "token": "USDC"
+        }
+      ],
+      "transactions": [
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "19990.54"
+          },
+          "blockNumber": 22967395,
+          "counterParty": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+          "counterPartyAccountId": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+          "datetime": "2025-07-21T11:53:35.000Z",
+          "direction": "INFLOW",
+          "flowType": "TopUp",
+          "id": "dfcf1e67-331b-4ac4-9ee8-ac0574f5a72a",
+          "token": "USDS",
+          "transactionId": "e849cc99-11cf-4dbd-93b0-de6a8f28f08a",
+          "txHash": "0xbc57e4d9e798735ff6fd73ba79a2099856555883ee99cab979f3105da9b95a46"
+        }
+      ],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+      "accountId": "0eb7deba-5b07-4835-9b07-11f7e873b52a",
+      "accountName": "CoW Swap",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "231094.77592037892"
+          },
+          "id": "6699651b-f29d-46c0-8cb0-e08fd394dd12",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "-530756.499951"
+          },
+          "id": "89cdd311-033b-49b9-bde9-9f83016ffeab",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "-25"
+          },
+          "id": "731dd036-64cd-4dd7-9029-d1208ac6b853",
+          "token": "EURe"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "115995.57296223062"
+          },
+          "id": "b7851793-80fa-44ae-b38d-65bb83f33772",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "MKR",
+            "value": "103.54"
+          },
+          "id": "3ff7e0de-d70a-4380-9b84-867c14d6bae5",
+          "token": "MKR"
+        },
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "0"
+          },
+          "id": "3eaeab5f-6ccf-4704-8d8e-64cd666dd798",
+          "token": "SKY"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "0"
+          },
+          "id": "9504590b-cf94-4b0f-baf6-5081a285bcb8",
+          "token": "sUSDS"
+        }
+      ],
+      "id": "1db1cadc-5f53-4981-b367-94e0d7429489",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "231094.77592037892"
+          },
+          "id": "0f7c8f4f-ab5a-4547-ba49-7a70749860f2",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "-380865.969477"
+          },
+          "id": "5a3500eb-3b5a-4a04-b929-89e15cbe9475",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "-25"
+          },
+          "id": "2b06f032-37b5-47ce-825c-0194f531530d",
+          "token": "EURe"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "-34529.427037769376"
+          },
+          "id": "53f29a44-d127-40be-840d-ba15f9bd10dc",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "MKR",
+            "value": "103.54"
+          },
+          "id": "344dd7da-7ef7-4e8b-8389-6911a4f5f9df",
+          "token": "MKR"
+        },
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "0"
+          },
+          "id": "a0b2efcc-d7fd-4f2e-91d7-745b07d97c07",
+          "token": "SKY"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "0"
+          },
+          "id": "b8ea34a4-e029-4238-83f1-ee8730a1f213",
+          "token": "sUSDS"
+        }
+      ],
+      "transactions": [
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "525"
+          },
+          "blockNumber": 22881150,
+          "counterParty": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+          "counterPartyAccountId": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+          "datetime": "2025-07-09T10:52:11.000Z",
+          "direction": "INFLOW",
+          "flowType": "External",
+          "id": "62cd85ff-fcde-4b3f-ae84-07551e5dbcab",
+          "token": "USDS",
+          "transactionId": "65acbef4-ed0a-4568-b0de-94803054467b",
+          "txHash": "0x5d0582b0b43bca0510164ee6b99f8aad877fa86b70d9e46b7a385f98ddd53dbb"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "150000"
+          },
+          "blockNumber": 22967455,
+          "counterParty": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+          "counterPartyAccountId": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+          "datetime": "2025-07-21T12:05:35.000Z",
+          "direction": "INFLOW",
+          "flowType": "External",
+          "id": "a946fbd6-129f-4e8f-8e97-99da28258fd3",
+          "token": "USDS",
+          "transactionId": "d94c1cd2-af8a-4973-8911-85eb304328e4",
+          "txHash": "0x009211a3816718e512e284247ecd53f556ce4dbb1c5b5c186f87266ca0c44a90"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "149890.530474"
+          },
+          "blockNumber": 22967455,
+          "counterParty": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+          "counterPartyAccountId": "25f3e7d4-0190-486e-b95c-688aaddde59a",
+          "datetime": "2025-07-21T12:05:35.000Z",
+          "direction": "OUTFLOW",
+          "flowType": "External",
+          "id": "5ebfa7eb-15fb-4bdb-8601-1487e8983fc5",
+          "token": "USDC",
+          "transactionId": "7675c695-2652-4f39-aca5-cc89be2a0b63",
+          "txHash": "0x009211a3816718e512e284247ecd53f556ce4dbb1c5b5c186f87266ca0c44a90"
+        }
+      ],
+      "type": "External"
+    },
+    {
+      "accountAddress": "0x0D509a71188a280c933cD13bb616B435C07B7F06",
+      "accountId": "672f62f1-45fb-4c45-b317-5fc87dd6e5d7",
+      "accountName": "Venly.io",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "e2ff384c-d773-4e0d-a2a4-f4b922365849",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    }
+  ],
+  "startDate": "2025-07-07T00:00:00.000Z"
+}

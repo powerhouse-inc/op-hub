@@ -1,0 +1,117 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "50e60916-0605-4845-ad8c-e9f72a62bfcc",
+        "meta": {},
+        "model": "powerhouse/invoice",
+        "name": "PH-Genesis-April-2025-Invoice",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-26T15:07:21.136Z",
+          "documentType": "powerhouse/invoice",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "50e60916-0605-4845-ad8c-e9f72a62bfcc"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "152c108b7b156d9876278f55a6d83c9c",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:07:21.141Z"
+  },
+  {
+    "action": {
+      "input": {
+        "dateDue": "2025-04-30T00:00:00.000Z",
+        "dateIssued": "2025-04-01T00:00:00.000Z"
+      },
+      "scope": "global",
+      "type": "EDIT_INVOICE"
+    },
+    "error": null,
+    "hash": "fnaCybeBNHb+0r9YnnRoTCnVL+w=",
+    "id": "46be35a2f5acda2c8592ef07d832a3f4",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:43:27.913Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "50e60916-0605-4845-ad8c-e9f72a62bfcc",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "closureReason": null,
+            "currency": "USD",
+            "dateDelivered": null,
+            "dateDue": "2025-04-28",
+            "dateIssued": "2025-04-01",
+            "exported": {
+              "exportedLineItems": [],
+              "timestamp": null
+            },
+            "invoiceNo": "PH-GEN-2025-04",
+            "invoiceTags": [],
+            "issuer": {
+              "name": "Powerhouse Genesis"
+            },
+            "lineItems": [
+              {
+                "currency": "USD",
+                "description": "Operational services - April 2025",
+                "id": "li-04-001",
+                "quantity": 1,
+                "taxPercent": 0,
+                "totalPriceTaxExcl": 2500,
+                "totalPriceTaxIncl": 2500,
+                "unitPriceTaxExcl": 2500,
+                "unitPriceTaxIncl": 2500
+              }
+            ],
+            "notes": "Monthly invoice for April 2025 - Powerhouse Genesis operations",
+            "payAfter": null,
+            "payer": {
+              "name": "Sky Ecosystem"
+            },
+            "payments": [],
+            "rejections": [],
+            "status": "DRAFT",
+            "totalPriceTaxExcl": 2500,
+            "totalPriceTaxIncl": 2500
+          },
+          "local": {}
+        },
+        "model": "powerhouse/invoice",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "d2146fca519bc435ff9f3d853928374b",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-26T15:07:21.141Z"
+  }
+]

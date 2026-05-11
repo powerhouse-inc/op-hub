@@ -1,0 +1,101 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "6b31af3e-8135-45bd-a45a-afaee21cfd5f",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "Lumen",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-23T18:52:23.231Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "6b31af3e-8135-45bd-a45a-afaee21cfd5f"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "9673bd3d9ac7bd89c58237d6a296a25b",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:23.231Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "lmn",
+        "icon": "https://i.postimg.cc/MGmwJM0p/lumen-Icon.png",
+        "id": "e1ed6ad6-2658-433f-b9c8-5178fbcd2d02",
+        "name": "Lumen",
+        "slug": "lumen"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "7ReUdAvzRr7xUGJKPGDhdbZpaBM=",
+    "id": "0ba7df3be2257875f6a05fb012788176",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:48.637Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "6b31af3e-8135-45bd-a45a-afaee21cfd5f",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": null,
+            "contributors": [],
+            "description": null,
+            "icon": null,
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": null,
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": null,
+            "status": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "3c65d3d19b28d9b8873128740d5c7d37",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:23.231Z"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "about": null,
+  "code": "oz",
+  "contributors": [],
+  "description": null,
+  "icon": "https://i.postimg.cc/k5vyNqCj/oz-Icon.png",
+  "id": "63fba46e-908e-4b57-aec5-450e1df2bdc5",
+  "isOperator": false,
+  "lastModified": "2026-03-23T18:52:54.682Z",
+  "links": [],
+  "name": "oz",
+  "operationalHubMember": {
+    "name": null,
+    "phid": null
+  },
+  "scopes": [],
+  "skills": [],
+  "slug": "oz",
+  "status": null
+}

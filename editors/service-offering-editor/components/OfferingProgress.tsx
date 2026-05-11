@@ -206,7 +206,7 @@ export function OfferingProgress({
     ).length;
     return [
       {
-        id: "scope-facets" as TabId,
+        id: "scope-facets",
         label: "Product",
         isComplete: !!state.resourceTemplateId,
         details: state.resourceTemplateId
@@ -217,7 +217,7 @@ export function OfferingProgress({
           : "Choose a product to define scope and available services",
       },
       {
-        id: "tier-definition" as TabId,
+        id: "tier-definition",
         label: "Tiers",
         isComplete: state.tiers.length >= 2,
         details:
@@ -230,7 +230,7 @@ export function OfferingProgress({
             : "Create at least 2 pricing tiers for your offering",
       },
       {
-        id: "service-catalog" as TabId,
+        id: "service-catalog",
         label: "Services",
         isComplete: groupedServiceCount >= 1,
         details:
@@ -243,7 +243,7 @@ export function OfferingProgress({
             : "Add services and organize them into option groups",
       },
       {
-        id: "the-matrix" as TabId,
+        id: "the-matrix",
         label: "Matrix",
         isComplete: hasCompleteMatrix(state),
         details: getMatrixCompletionText(state),
@@ -497,11 +497,11 @@ export function OfferingProgress({
                   boxShadow: "0 2px 6px rgba(16, 185, 129, 0.3)",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                  e.currentTarget.style.boxShadow =
                     "0 4px 10px rgba(16, 185, 129, 0.4)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                  e.currentTarget.style.boxShadow =
                     "0 2px 6px rgba(16, 185, 129, 0.3)";
                 }}
                 onClick={confirmStatusChange}

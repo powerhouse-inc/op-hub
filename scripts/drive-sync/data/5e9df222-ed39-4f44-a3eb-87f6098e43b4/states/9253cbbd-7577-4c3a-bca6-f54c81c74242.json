@@ -1,0 +1,2177 @@
+{
+  "contributors": [
+    {
+      "description": "law",
+      "icon": "https://i.postimg.cc/PrS8TJ4v/layer0Icon.png",
+      "id": "885b6917-fe03-4763-94e7-94570b993f3c",
+      "name": "layer0"
+    },
+    {
+      "description": "growth",
+      "icon": "https://pbs.twimg.com/profile_images/1742981743974498304/5Z8KeXyW_400x400.jpg",
+      "id": "10adc74e-30ce-4f75-8380-efda45197524",
+      "name": "kilgore"
+    },
+    {
+      "description": "bai integrations",
+      "icon": "https://pbs.twimg.com/profile_images/1578398330278871041/YfZgMhQW_400x400.jpg",
+      "id": "98d0b6cf-7d01-4d8f-ba40-f5fa842d5669",
+      "name": "liberuum"
+    },
+    {
+      "description": "bai team lead",
+      "icon": "https://pbs.twimg.com/profile_images/1543149307435618304/5K_7BdwO_400x400.jpg",
+      "id": "28681d88-88b4-4b9e-bc90-aa9325f30b04",
+      "name": "teep"
+    },
+    {
+      "description": "BAI Team",
+      "icon": "https://i.postimg.cc/Dy4QT8Y9/baiicon.png",
+      "id": "e20bafa0-956a-4c14-a54d-596ff26bb640",
+      "name": "BAI"
+    },
+    {
+      "description": "Powerhouse is a team bringing a decentralized operations toolkit for open organizations",
+      "icon": "https://pbs.twimg.com/profile_images/1663915112837652480/pUIOaWoC_400x400.jpg",
+      "id": "b0d857d6-2783-4022-998c-db97e318fd2c",
+      "name": "Powerhouse"
+    }
+  ],
+  "deliverables": [
+    {
+      "budgetAnchor": {
+        "deliverableId": "ba279199-a946-463d-b03e-b0b08042ffaa",
+        "margin": 0,
+        "project": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "DOP2",
+      "description": " Switchboard API endpoints for integration partners with document model update events and document state queries.",
+      "icon": null,
+      "id": "ba279199-a946-463d-b03e-b0b08042ffaa",
+      "keyResults": [
+        {
+          "id": "502aec9e-a199-41f8-8a71-cf92c12dc62b",
+          "link": "https://github.com/makerdao-ses",
+          "title": "Source code (Powerhouse repo)"
+        },
+        {
+          "id": "363e01a5-0d44-44f1-8226-6260ea39b6e5",
+          "link": "https://github.com/makerdao-ses/ecosystem-dashboard/releases/tag/v0.33.0",
+          "title": "Source code (SES repo)"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Integration (API endpoints and Queries)",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "59260f2b-a178-483a-85f0-c632cd4bfb17",
+        "margin": 0,
+        "project": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "DOP3",
+      "description": "Separate incremental release of the Sky Ecosystem expenses platform with on-chain transactional data and budget breakdown views.",
+      "icon": null,
+      "id": "59260f2b-a178-483a-85f0-c632cd4bfb17",
+      "keyResults": [
+        {
+          "id": "3f0e6276-7094-4079-a844-412c85e057f3",
+          "link": "https://github.com/makerdao-ses/ecosystem-dashboard/releases/tag/v0.33.0",
+          "title": "Expense Dashboard deployment v0.33.0"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Expense dashboard increments (on-chain data, budget breakdowns)",
+      "workProgress": {
+        "completed": 20,
+        "total": 20
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "542443cd-459e-47af-bc1c-04a8e5ae920c",
+        "margin": 0,
+        "project": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "DOP1",
+      "description": "Technical integration demo showcasing for the first time the RWA Portfolio Editor in Connect and the data synchronization with Switchboard.",
+      "icon": null,
+      "id": "542443cd-459e-47af-bc1c-04a8e5ae920c",
+      "keyResults": [],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "First technical integration of RWA Portfolio (Connect & Switchboard)",
+      "workProgress": {
+        "completed": 30,
+        "total": 50
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "MVP1",
+      "description": " \"MVP Release with Sky Ecosystem transparency reporting information that can be shared publicly. \n* RWA reporting flow (without e2e encryption & comparison views) \n* DAO finances (advanced stage) \n* DAO teams (at least core unit + ecosystem actor profiles) \n* DAO work (projects & roadmaps in early stage) \n* Endgame overview (latest updates & budget insights) \n* New homepage with at-glance insights on various DAO aspects - Finances, governance, Teams, and Work (reskin implemented).\"",
+      "icon": null,
+      "id": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+      "keyResults": [
+        {
+          "id": "0c21adaa-760b-4618-a344-4583e5bcfe9c",
+          "link": "https://drive.google.com/file/d/1Q1zYh1_qosF8JG1z3gbKszrp60HlnYyV/view?usp=drive_link",
+          "title": "Integration Demo of RWA portfolio - Apr 10"
+        },
+        {
+          "id": "406027b3-aad7-49b0-824f-3c0da4896b08",
+          "link": "https://makerdao-ses.notion.site/RWA-API-Query-Key-Result-889eab4be0144d799650620794694916",
+          "title": "Switchboard data / API endpoint "
+        },
+        {
+          "id": "d9cab474-94bf-4cb8-9336-62e186082229",
+          "link": "https://drive.google.com/file/d/1f-h8mPCUw4u5gCFn-TQcTw_XIDN7Ayvs/view",
+          "title": "Sky Ecosystem platform demo - Jul 3rd"
+        },
+        {
+          "id": "12421e44-2c79-4e12-aab3-ef16dc9cabe1",
+          "link": "https://forum.makerdao.com/t/ea-status-update-1-3-detailing-the-powerhouse-vision/24586",
+          "title": "PH EA update 1/3 - Powerhouse vision"
+        },
+        {
+          "id": "a857ca97-b367-4481-a4f3-72563dd8f299",
+          "link": "https://www.figma.com/proto/dX0ZItTTMaJ78Tsv8kZDlW/Expense-Dashboard-Update?page-id=2417%3A84822&node-id=2417-85288&viewport=465%2C761%2C0.28&t=wu9jjPYjDEC2tmDl-1&scaling=min-zoom&content-scaling=fixed",
+          "title": "Fusion Reskin example designs"
+        },
+        {
+          "id": "b8e851ff-85e1-4144-8493-d4eb13c0af80",
+          "link": "https://drive.google.com/file/d/1DGyS4sa1yGgM-pePcbuIYmkki-QlCLzq/view?usp=sharing",
+          "title": "Sky deployment of PH products WIP demo - Aug14"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "MVP release of the Sky Ecosystem transparency reporting information.",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "margin": 0,
+        "project": "",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "MVP2",
+      "description": " MVP Release with Sky Ecosystem transparency reporting information that can be shared publicly. \n* RWA reporting flow (without e2e encryption & comparison views) \n* DAO finances (advanced stage) \n* DAO teams (at least core unit + ecosystem actor profiles) \n* DAO work (projects & roadmaps in early stage) \n* Endgame overview (latest updates & budget insights) \n* New homepage with at-glance insights on various DAO aspects - Finances, governance, Teams, and Work (reskin implemented).",
+      "icon": null,
+      "id": "e026924c-19df-415d-a549-7d1849fa5fd1",
+      "keyResults": [
+        {
+          "id": "a2c06ec1-2912-4de1-8c2b-80e36da94719",
+          "link": "https://connect.sky.money/",
+          "title": "Sky Connect "
+        },
+        {
+          "id": "0b7e1c8b-833d-484f-b041-c57f305aa447",
+          "link": "https://staging.fusion.phd/",
+          "title": "Fusion deployment"
+        },
+        {
+          "id": "422a1743-0f54-4317-bc43-f6d56db44c10",
+          "link": "",
+          "title": "Switchboard deployment "
+        },
+        {
+          "id": "b9710c05-ae80-4e7a-8f0a-0df62d3a4198",
+          "link": "",
+          "title": "Renown deployment "
+        },
+        {
+          "id": "e76298f2-e11e-4b17-a8ea-b99e590b3a1f",
+          "link": "",
+          "title": "Fusion Github repo"
+        },
+        {
+          "id": "7514f5af-170e-43c3-9592-a7b331f9060d",
+          "link": "",
+          "title": "Switchboard Github repo"
+        },
+        {
+          "id": "3f72fd3b-7191-48f4-98a7-9efc5c88adc8",
+          "link": "",
+          "title": "Connect Github repo"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Integrated Powerhouse Platform delivery including Renown",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 1,
+        "unit": "Hours",
+        "unitCost": 250000
+      },
+      "code": "PEA1",
+      "description": "Account for all Sky Ecosystem on-chain data expenses.",
+      "icon": null,
+      "id": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+      "keyResults": [
+        {
+          "id": "a893c2b6-81bd-444c-beb1-97424d03f01a",
+          "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/on-chain-wallets-diagram.png",
+          "title": "On-Chain Wallets Diagram"
+        },
+        {
+          "id": "ea41a671-3c66-4471-a5b6-114ff896844a",
+          "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/CU-CU%20Landing%20page-Finances-Transparency%20Reports.png",
+          "title": "Account Snapshot Design"
+        },
+        {
+          "id": "b8cabbd1-e434-4f15-a229-a5d015475e96",
+          "link": "https://expenses.makerdao.network/core-unit/SES/finances/reports?viewMonth=Dec2023",
+          "title": "Frontend Deployment"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "On-chain Data Reconciliation",
+      "workProgress": {
+        "completed": 5,
+        "total": 12
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "8e668089-8c5c-43ca-ac6a-7b9ad2c9b24c",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA2",
+      "description": "",
+      "icon": null,
+      "id": "8e668089-8c5c-43ca-ac6a-7b9ad2c9b24c",
+      "keyResults": [
+        {
+          "id": "51e6ad50-51ce-48a0-8bf8-9dc88d02b16b",
+          "link": "https://drive.google.com/file/d/1jfbumQnyhB4N-CkO3hEjJ2su5iBTDXH8/view?usp=sharing",
+          "title": "Recognized Delegates Design"
+        },
+        {
+          "id": "96328f96-a99e-41e5-91d1-6b4e8b0edd84",
+          "link": "https://fusion.sky.money/contributors/recognized-delegates",
+          "title": "Recognized Delegates Deployment"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Delegates Transparency Reporting",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "43be05a3-9e54-489c-a0fd-9618a7cc9bd7",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA3",
+      "description": "Purely financial view of SPFs with generalized financial categories applicable across all budget categories.",
+      "icon": null,
+      "id": "43be05a3-9e54-489c-a0fd-9618a7cc9bd7",
+      "keyResults": [
+        {
+          "id": "35f657ce-8b46-4979-9888-296d2ba725bb",
+          "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/key-results/spf-design.png",
+          "title": "SPF Design"
+        },
+        {
+          "id": "693837fd-8a66-4c00-a527-623d9e6460d7",
+          "link": "https://drive.google.com/file/d/1e45t88iP42Ozz-1JxbUhyrJgedB9JB-u/view?usp=drive_link",
+          "title": "SPF Sparse View Wireframe"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "SPF Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "7bf3d270-583a-45a0-8213-593ef180cc76",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA4",
+      "description": "Provide access to aggregated expense data in the level of detail: DAO-level finances.",
+      "icon": null,
+      "id": "7bf3d270-583a-45a0-8213-593ef180cc76",
+      "keyResults": [
+        {
+          "id": "f919e19b-30bc-4ad7-a2ca-1f439113cebb",
+          "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/PEA/key-results/Finance-MakerDAO%20Finances%20Design.png",
+          "title": "Dense Aggregated View Design"
+        },
+        {
+          "id": "93a76cc5-bb5d-45ce-9423-bb4609a130a1",
+          "link": "https://drive.google.com/file/d/15yB0TA5ONtboB9CH5aIO5Ekgiu7CkOl9/view?usp=drive_link",
+          "title": "Dense Aggregated View Wireframes"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Aggregated view - DAO Level Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "865610e0-949a-499f-b31d-3290d722d414",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA5",
+      "description": "Transition expense reporting from the Budget Reporting tool to Connect Budget Editor (implementing Connect Document Model)",
+      "icon": null,
+      "id": "865610e0-949a-499f-b31d-3290d722d414",
+      "keyResults": [
+        {
+          "id": "db98e727-4390-4384-bcfc-11be948aa233",
+          "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/PEA/key-results/Connect%20Design.png",
+          "title": "UI Design For Connect Interface"
+        },
+        {
+          "id": "52837a1a-ef5c-4239-ba57-b749ee6badf8",
+          "link": "https://connect-ph.vercel.app/",
+          "title": "Connect Electron Vercel App"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Transition from Budget Tool to Connect",
+      "workProgress": {
+        "completed": 3,
+        "total": 5
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "f137160f-e405-4057-8ff0-618b49b917d4",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA6",
+      "description": "Provide access to aggregated expense data at the top level at a glance on the dashboard homepage.",
+      "icon": null,
+      "id": "f137160f-e405-4057-8ff0-618b49b917d4",
+      "keyResults": [
+        {
+          "id": "222edd99-59d9-4a7c-919d-e7c4d22fb00a",
+          "link": "https://drive.google.com/file/d/123yTPfNFi04Uu-0aPCWAhvEMCbEOrTth/view",
+          "title": "Homepage wireframe"
+        },
+        {
+          "id": "958024a8-9594-4e73-9c8a-6c6f163556c9",
+          "link": "https://drive.google.com/file/d/1REv0A7uKrfOFRwNJulxCEv7PzoZk_fNK/view?usp=drive_link",
+          "title": "Homepage design"
+        },
+        {
+          "id": "f4c7c4dd-7c84-4e47-9429-3232b9fcf03f",
+          "link": "http://fusion.sky.money/",
+          "title": "Homepage deployment"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Aggregated View - Fusion Homepage overview",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "b71fb90d-8c2f-4032-9cc2-1bc8aa8b1326",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA7",
+      "description": " Provide access to aggregated expense data in the lower levels of detail: budget-level overview.",
+      "icon": null,
+      "id": "b71fb90d-8c2f-4032-9cc2-1bc8aa8b1326",
+      "keyResults": [
+        {
+          "id": "7e538cdf-6dce-4639-baa5-a7a02e7ac7c6",
+          "link": "https://drive.google.com/file/d/1fNbvSFIzRiSqpuzTUHMUsqe0x6mKz7vd/view",
+          "title": "Sparse view (keepers) wireframe"
+        },
+        {
+          "id": "a7e9bbc3-34cb-429e-b647-3a28c46a2bdc",
+          "link": "https://fusion.sky.money/finances/legacy/keepers?year=2022",
+          "title": "Sparse view implementation"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Aggregated View - Budget Level Overview",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "e20efea4-497a-4f1f-936a-b4fa5333777c",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA8",
+      "description": "Small improvements to optimize the workflow of budget auditors.",
+      "icon": null,
+      "id": "e20efea4-497a-4f1f-936a-b4fa5333777c",
+      "keyResults": [],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Onboard All EAs to Expense Reporting Process ",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA9",
+      "description": "An overview of the major conceptual and budget changes to Sky Ecosystem as it relates to the Endgame plan.",
+      "icon": null,
+      "id": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+      "keyResults": [
+        {
+          "id": "3826982c-be8c-48ca-8230-ed6b1188e759",
+          "link": "https://drive.google.com/file/d/1I1ZhCn4NhxTtjFCkc7b-EzisZoaOlS1q/view",
+          "title": "Endgame budget design"
+        },
+        {
+          "id": "8a6694c8-f84a-49bf-9f13-55b54ba5ec00",
+          "link": "https://expenses.makerdao.network/endgame#budget-transition-status",
+          "title": "Endgame transition design"
+        },
+        {
+          "id": "9747924f-4879-4154-a3f8-2a3494118188",
+          "link": "https://expenses.makerdao.network/endgame#budget-transition-status",
+          "title": "Endgame finances implementation"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Sky Ecosystem Endgame Transition Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "33807bfc-d6f6-4665-acc3-c44072af0246",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PEA10",
+      "description": "An advanced replacement for MIP40, providing enhanced transparency and flexibility in budget management for Contributor Teams. ",
+      "icon": null,
+      "id": "33807bfc-d6f6-4665-acc3-c44072af0246",
+      "keyResults": [],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Generalized Budget Planning Model",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "03a43484-d9af-4023-a5f2-e7a31f46360e",
+        "margin": 0,
+        "project": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "ATLAS1",
+      "description": "Analysis of the Atlas Axis Notion database setup and identifying how we can pull the data from it, serving as input to creation of document model + viewer.",
+      "icon": null,
+      "id": "03a43484-d9af-4023-a5f2-e7a31f46360e",
+      "keyResults": [
+        {
+          "id": "ff22150c-4cb8-4eeb-bba9-5f6a548725fe",
+          "link": "https://drive.google.com/file/d/1HdJ9WGOVkUg9cn9qn7TBghLOTf0g3F1A/view?usp=sharing",
+          "title": "Mapping existing manual process in Notion"
+        },
+        {
+          "id": "bd67e6fa-7f36-4875-bd0d-0572e56a780e",
+          "link": "https://drive.google.com/file/d/1fgHtkfic8PbI71cLavgDz7XUoNg71ZtW/view?usp=drive_link",
+          "title": "Atlas editing process capture"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Notion Atlas integration analysis",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+        "margin": 0,
+        "project": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": " ATLAS2",
+      "description": "Creation of Notion export + viewer to replicate the structure of Notion DB.",
+      "icon": null,
+      "id": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+      "keyResults": [
+        {
+          "id": "15e992fd-7b4a-448e-870a-6d8482f98924",
+          "link": "https://drive.google.com/file/d/1j9SVd_cJ5K885WRmc0Zm8UBSqveIRruu/view",
+          "title": "Atlas document model"
+        },
+        {
+          "id": "28948a58-4d89-428d-b681-ffc4fe23a060",
+          "link": "https://sky-atlas.powerhouse.io/",
+          "title": "Atlas viewer prototype"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Atlas document model creation",
+      "workProgress": {
+        "completed": 8,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "c5289661-2497-4dff-b734-0f0fb518d693",
+        "margin": 0,
+        "project": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "ATLAS3",
+      "description": " Gap analysis & future roadmap plan covering 2024 year end + 2025. ",
+      "icon": null,
+      "id": "c5289661-2497-4dff-b734-0f0fb518d693",
+      "keyResults": [
+        {
+          "id": "e6197575-71bc-4d1b-a750-f98b973efbfc",
+          "link": "https://drive.google.com/file/d/1MErkuyCLXEXbvcRs7Sxma9BTPsTOo7-p/view?usp=drive_link",
+          "title": "Business analysis"
+        },
+        {
+          "id": "815f91b5-6675-436f-907b-b6376c3704dc",
+          "link": "https://drive.google.com/file/d/1aN-e04slhCDfd1O3SWENEfJhUd28mcEG/view",
+          "title": "Exploratory exercise for Atlas viewer"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Atlas - Powerhouse integrated roadmap planning",
+      "workProgress": {
+        "completed": 1,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "bc27e448-d4c6-4a92-8fd4-7e55cb4752ad",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PRC01",
+      "description": "Forum post to Sky Ecosystem community on evolution & spinoff of Powerhouse. It will feature three updates (PH vision & product updates, RWA+ Atlas+grants features)",
+      "icon": null,
+      "id": "bc27e448-d4c6-4a92-8fd4-7e55cb4752ad",
+      "keyResults": [
+        {
+          "id": "b2b29f14-5d9f-4855-9805-ebb1575c4af5",
+          "link": "https://forum.makerdao.com/t/ea-status-update-2-3-powerhouse-work-for-makerdao/24712",
+          "title": "PH EA update 2/3 - Work for Sky"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "MVP comms support",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "a535678b-a27d-4a86-8180-9561ecd0aeb0",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PRC02",
+      "description": " Deliver Powerhouse website content (incl. feedback and review)",
+      "icon": null,
+      "id": "a535678b-a27d-4a86-8180-9561ecd0aeb0",
+      "keyResults": [
+        {
+          "id": "eace5509-783f-44f3-ba6c-74666e1e6b75",
+          "link": "https://www.powerhouse.inc/",
+          "title": "New website content"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "New website content",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "7a3d3bb0-63b7-4aa5-9429-49f9e70e68bc",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": " PRC03",
+      "description": " Standalone Powerhouse website to coincide with Demo 3 and Powerhouse official announcement that it\u2019s spinning out of Sky Ecosystem, based on website content",
+      "icon": null,
+      "id": "7a3d3bb0-63b7-4aa5-9429-49f9e70e68bc",
+      "keyResults": [
+        {
+          "id": "9053c434-6b16-4c39-9129-9cbb428728c0",
+          "link": "https://www.powerhouse.inc/",
+          "title": "Updated Powerhouse website"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "New website delivery",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "828d60a4-ba62-47df-81ac-6a9215c65a9d",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PRC04",
+      "description": "Establish Powerhouse X presence with ~4 tweets a week",
+      "icon": null,
+      "id": "828d60a4-ba62-47df-81ac-6a9215c65a9d",
+      "keyResults": [
+        {
+          "id": "e35f6084-f87f-4e4b-9818-a3b6d69a2530",
+          "link": "https://x.com/PowerhouseDAO",
+          "title": "Reactivated Powerhouse X account"
+        }
+      ],
+      "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+      "status": "IN_PROGRESS",
+      "title": "Social Media activation",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "285879a2-5b3e-409f-bd43-74da0bd10e75",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PRC05",
+      "description": "Series of blog posts explaining Powerhouse and our view on the world",
+      "icon": null,
+      "id": "285879a2-5b3e-409f-bd43-74da0bd10e75",
+      "keyResults": [],
+      "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+      "status": "IN_PROGRESS",
+      "title": "Blog Posts",
+      "workProgress": {
+        "completed": 2,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "85479b52-191e-48e5-a671-f31a77ec4151",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PRC06",
+      "description": "personalized team swag for the Berlin offsite",
+      "icon": null,
+      "id": "85479b52-191e-48e5-a671-f31a77ec4151",
+      "keyResults": [
+        {
+          "id": "6205b5bf-7d72-49cc-aefb-bf0195c3242d",
+          "link": "https://x.com/PowerhouseDAO/status/1795562122593575190",
+          "title": "team swag"
+        }
+      ],
+      "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+      "status": "DELIVERED",
+      "title": "Team swag",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "5193f760-1e2b-4466-ac52-610a320caf00",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PRC07",
+      "description": "Podcast documenting the challenges and the rise of Powerhouse",
+      "icon": null,
+      "id": "5193f760-1e2b-4466-ac52-610a320caf00",
+      "keyResults": [],
+      "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+      "status": "IN_PROGRESS",
+      "title": "Podcast",
+      "workProgress": {
+        "completed": 5,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "31d012d4-e16a-4da4-b6f2-88b2581de785",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PLS01",
+      "description": "Requirements of a minimally viable legal infrastructure for Powerhouse documented ",
+      "icon": null,
+      "id": "31d012d4-e16a-4da4-b6f2-88b2581de785",
+      "keyResults": [
+        {
+          "id": "5a17a215-9255-4b38-b719-02ffbb0b3287",
+          "link": "https://drive.google.com/file/d/13bKuzd0Dxv79QhNkXjy3vgIU5Q1-pGEb/view?usp=sharing",
+          "title": "Minimal legal & ops setup documentation"
+        }
+      ],
+      "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+      "status": "DELIVERED",
+      "title": "Minimal legal & ops setup documentation",
+      "workProgress": {
+        "completed": 5,
+        "total": 5
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "119e5c91-1cd3-46a3-8fa3-071b73fc039b",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PLS02",
+      "description": "Contractual and Legal Entity Specs are defined for Powerhouse operational entity.",
+      "icon": null,
+      "id": "119e5c91-1cd3-46a3-8fa3-071b73fc039b",
+      "keyResults": [
+        {
+          "id": "f1d7cd0b-341a-445d-a733-15a04a7e21a7",
+          "link": "https://makerdao-ses.notion.site/EXT-Powerhouse-Legal-Documentation-Operational-Hub-OH-aa03c414fe00421680e1526c8f1a31a4",
+          "title": "Contractual and Legal Entity Specs"
+        }
+      ],
+      "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+      "status": "DELIVERED",
+      "title": "Contractual and Legal Entity Specs",
+      "workProgress": {
+        "completed": 10,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "9c75df75-1a66-4f0d-8a8d-6a59bddf6b56",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PLS03",
+      "description": "Consultancy on entity type and jurisdiction, documenting trade-offs. ",
+      "icon": null,
+      "id": "9c75df75-1a66-4f0d-8a8d-6a59bddf6b56",
+      "keyResults": [
+        {
+          "id": "d4d8ff56-7d8e-492f-b7df-48bc0840f092",
+          "link": "https://drive.google.com/file/d/13bKuzd0Dxv79QhNkXjy3vgIU5Q1-pGEb/view?usp=sharing",
+          "title": "Jurisdiction and Entity type defined"
+        }
+      ],
+      "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+      "status": "DELIVERED",
+      "title": "Jurisdiction and Entity type defined",
+      "workProgress": {
+        "completed": 7,
+        "total": 7
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "efd2b20f-2234-4f79-94b3-6b616f7ce025",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PLS04",
+      "description": "Design and Execute Multisig Operational Agreement. V1 of MPA for operational multisig wallet for Powerhouse.",
+      "icon": null,
+      "id": "efd2b20f-2234-4f79-94b3-6b616f7ce025",
+      "keyResults": [
+        {
+          "id": "c5dcae91-da71-4e99-9e03-b46a20541386",
+          "link": "https://drive.google.com/file/d/1GkOzswYpBj7b4h7IFdFLu4ZiST_ceK-D/view?usp=sharing",
+          "title": "Multisig Participation Agreement"
+        }
+      ],
+      "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+      "status": "DELIVERED",
+      "title": "Multisig Participation Agreement",
+      "workProgress": {
+        "completed": 11,
+        "total": 11
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "45aabac8-b9db-4498-a234-1939b65a7948",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "PLS05",
+      "description": "Incorporate operational vehicle",
+      "icon": null,
+      "id": "45aabac8-b9db-4498-a234-1939b65a7948",
+      "keyResults": [
+        {
+          "id": "3b9f478a-9720-43df-89a9-dda8f5e1c077",
+          "link": "https://makerdao-ses.notion.site/EXT-Powerhouse-Legal-Documentation-Operational-Hub-OH-aa03c414fe00421680e1526c8f1a31a4",
+          "title": "Operational Hub Entity incorporation"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "IN_PROGRESS",
+      "title": "Operational Hub Entity incorporation",
+      "workProgress": {
+        "completed": 7,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "c826b5bd-cbb7-451f-8396-8ce3b99a00e8",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC01",
+      "description": " Post demo 1 refactoring work on Connect, Switchboard & core architecture.",
+      "icon": null,
+      "id": "c826b5bd-cbb7-451f-8396-8ce3b99a00e8",
+      "keyResults": [],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Post demo 1 refactor",
+      "workProgress": {
+        "completed": 2,
+        "total": 2
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "c26b7149-f244-44ee-b56d-3c2824453197",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC02",
+      "description": "Integrate Renown prototype with basic authentication & authorisation flow",
+      "icon": null,
+      "id": "c26b7149-f244-44ee-b56d-3c2824453197",
+      "keyResults": [
+        {
+          "id": "0f7cae13-1d68-4300-baac-1fdb556c1ecd",
+          "link": "https://makerdao-ses.notion.site/DID-structure-Signage-fa07b5d37db04b1db0b26f707b1f758a",
+          "title": "Renown authentication flow"
+        }
+      ],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Renown Authentication Flow",
+      "workProgress": {
+        "completed": 5,
+        "total": 5
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "13265ab5-1e9c-4bbe-b902-45ec676f04f1",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC03",
+      "description": "Implement basic conflict resolution using autorebase mechanism",
+      "icon": null,
+      "id": "13265ab5-1e9c-4bbe-b902-45ec676f04f1",
+      "keyResults": [],
+      "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "status": "DELIVERED",
+      "title": "Basic conflict resolution",
+      "workProgress": {
+        "completed": 7,
+        "total": 7
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "dccbac77-d999-4e33-a4a1-020a73133019",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC04",
+      "description": "Tech work needed to build the necessary functionality for the finished extended RWA portfolio reporting prototype.",
+      "icon": null,
+      "id": "dccbac77-d999-4e33-a4a1-020a73133019",
+      "keyResults": [
+        {
+          "id": "f112cec7-89a6-4d52-af82-c0d6b7de0e68",
+          "link": "https://drive.google.com/file/d/1Q1zYh1_qosF8JG1z3gbKszrp60HlnYyV/view",
+          "title": "RWA demo 2 delivery"
+        }
+      ],
+      "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+      "status": "DELIVERED",
+      "title": "Demo 2 RWA Connect Delivery",
+      "workProgress": {
+        "completed": 9,
+        "total": 9
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "389b4e3a-4f45-450a-997b-a27882a25172",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC05",
+      "description": "Document model upgradability (and getting rid of initial state)",
+      "icon": null,
+      "id": "389b4e3a-4f45-450a-997b-a27882a25172",
+      "keyResults": [],
+      "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+      "status": "IN_PROGRESS",
+      "title": "Document model upgradability",
+      "workProgress": {
+        "completed": 4,
+        "total": 11
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "7202ee0f-418e-46a7-9ff6-989fd2d8a386",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC07",
+      "description": "Select and implement a template engine to create document model viewers",
+      "icon": null,
+      "id": "7202ee0f-418e-46a7-9ff6-989fd2d8a386",
+      "keyResults": [],
+      "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+      "status": "IN_PROGRESS",
+      "title": "Template Engine Implementation",
+      "workProgress": {
+        "completed": 2,
+        "total": 10
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "e3a655bd-7a45-444c-941e-0fa2479bb2d5",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC08",
+      "description": "Deeplinking Support for Connect Web (desktop nice to have)",
+      "icon": null,
+      "id": "e3a655bd-7a45-444c-941e-0fa2479bb2d5",
+      "keyResults": [
+        {
+          "id": "85f14ee5-a68c-42b9-83ba-2aaaa4fa30e5",
+          "link": "https://connect.sky.money/d/sky",
+          "title": "Deeplink support for Connect webapp"
+        }
+      ],
+      "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+      "status": "DELIVERED",
+      "title": "Deeplinking support",
+      "workProgress": {
+        "completed": 3,
+        "total": 3
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "82f1e813-9edb-432a-8b07-bc68b7e21512",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC09",
+      "description": "Switchboard MVP development (includes architecture, transmitter, caching work) ",
+      "icon": null,
+      "id": "82f1e813-9edb-432a-8b07-bc68b7e21512",
+      "keyResults": [
+        {
+          "id": "6b2211e5-019d-4ea6-aebe-cedb30fc0980",
+          "link": "https://apps.powerhouse.io/makerdao/switchboard",
+          "title": "Switchboard delivery "
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "DELIVERED",
+      "title": "Switchboard MVP development",
+      "workProgress": {
+        "completed": 6,
+        "total": 6
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "29965c36-cc9e-4023-886f-7c1a7b93e24f",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "POC10",
+      "description": "Reveal Fusion decentralized operations platform as a revamped expenses dashboard, where Fusion features use the new Switchboard instance as backend.",
+      "icon": null,
+      "id": "29965c36-cc9e-4023-886f-7c1a7b93e24f",
+      "keyResults": [
+        {
+          "id": "4fd5d7bc-a60d-4293-9a38-1aa10aa277a8",
+          "link": "https://fusion.sky.money/",
+          "title": "Fusion (with switchboard data) delivery"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "DELIVERED",
+      "title": "Fusion & Switchboard demo",
+      "workProgress": {
+        "completed": 6,
+        "total": 6
+      }
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": " DES-GLO",
+      "description": "All the global Achra pages are wireframed, designed, reviewed, and approved by the RGH team. \n\nThe global pages are the ones that are not displayed in the context of a specific network. For example: the global list of workstreams as opposed to the workstreams belonging to a particular network.\n\n* Achra landing page (achra.com)\n* Achra use cases overview (achra.com/use-cases)\n* Achra use cases details (achra.com/use-cases/{use-case-slug})\n* Workstreams overview (achra.com/workstreams)\n* Services overview (achra.com/services)\n* Services details (achra.com/services/{service-slug})",
+      "icon": null,
+      "id": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+      "keyResults": [
+        {
+          "id": "7ceaf6d9-5d41-462a-b00d-56defc3692e5",
+          "link": "https://spreadsheet.com",
+          "title": "Requirements WBD"
+        },
+        {
+          "id": "edbe78a3-09ab-4a16-b044-32b9ca800a9a",
+          "link": "",
+          "title": "Low fidelity wireframes"
+        },
+        {
+          "id": "8587dcb9-917a-4a32-89cd-12213c381206",
+          "link": "",
+          "title": "High fidelity designs"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "Design Global Pages",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "The Network Builders and Governance pages on Achra are wireframed, designed, reviewed, and approved by the RGH team. \n\nThe Network Builders page is the list of Builders specific to a given network. Similarly, the Governance page shows Governance information for a specific Network. \n\n* Achra Network Builders page (achra.com/network/{network-slug}/builders)\n* Achra Network Governance page (achra.com/network/{network-slug}/governance)",
+      "icon": null,
+      "id": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+      "keyResults": [
+        {
+          "id": "f77b846f-848a-4068-abe2-148ebf21e81c",
+          "link": "",
+          "title": "Requirements WBD"
+        },
+        {
+          "id": "921d9cad-286b-41cc-9b47-e720b4b2bbf7",
+          "link": "",
+          "title": "Low fidelity wireframes"
+        },
+        {
+          "id": "215844b0-1739-4869-bda9-dfd2e80f4924",
+          "link": "",
+          "title": "High fidelity designs"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "Design NW Buiders/Governance",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "DES-NW-WS",
+      "description": "The Network Workstream pages on Achra are wireframed, designed, reviewed, and approved by the RGH team. \n\nThe Network Workstream pages show an overview, as well as the specifics, for Workstreams within a given Network. This includes the roadmaps, milestones, deliverables and key results for a given Workstream.\n\n* Achra Network Workstreams page (achra.com/network/{network-slug}/contribute)\n* Achra Network Roadmaps page (achra.com/network/{network-slug}/roadmap\n* Achra Network Roadmap page (achra.com/network/{network-slug}/roadmap/{roadmap-slug}",
+      "icon": null,
+      "id": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+      "keyResults": [
+        {
+          "id": "6d8812be-f461-4318-8451-1e3a934dde03",
+          "link": "",
+          "title": "Requirements WBD"
+        },
+        {
+          "id": "172df6e4-6928-42d6-ad9c-37f3724f1300",
+          "link": "",
+          "title": "Low fidelity wireframes"
+        },
+        {
+          "id": "4fa5c1f7-a168-49d9-b369-c7bc09cf1196",
+          "link": "",
+          "title": "High fidelity designs"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "Design NW Workstreams",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "a29525bc-39c3-4216-ab6e-569019129cb4",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "DES-NW-FIN",
+      "description": "The Network Finances pages on Achra are wireframed, designed, reviewed, and approved by the RGH team. \n\nThese pages show an overview, as well as specific details, of finances within a given network. This includes the Network Finance Home page, the Builder's Finance page, the Builder's Account Snapshot, and the Expense Report.\n\n* Achra Network Finance page (achra.com/network/{network-slug}/finances)\n* Achra Network Builder Finances page (achra.com/network/{network-slug}/builders/{builder-slug}/finances)\n* Achra Network Builder Finances Expense Report page (achra.com/network/{network-slug}/builders/{builder-slug}/finances/expense-report\n* * Achra Network Builder Finances Account Snapshot page (achra.com/network/{network-slug}/builders/{builder-slug}/finances/account-snapshot",
+      "icon": null,
+      "id": "a29525bc-39c3-4216-ab6e-569019129cb4",
+      "keyResults": [
+        {
+          "id": "66f15aba-4898-4464-8a9f-43b279ffc9ea",
+          "link": "https://connect.staging.vetra.io/d/.......",
+          "title": "Requirements WBD"
+        },
+        {
+          "id": "b771b1ff-23af-434b-97f5-f39a55dd794c",
+          "link": "",
+          "title": "Low fidelity wireframes"
+        },
+        {
+          "id": "d16ff492-27f1-476c-937e-f2e1abe5d51f",
+          "link": "",
+          "title": "High fidelity designs"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "Design NW Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "FE-GLO",
+      "description": "All the global Achra pages are accessible in the development environment and approved by the RGH team. \n\nThe global pages are the ones that are not displayed in the context of a specific network. For example: the global list of workstreams as opposed to the workstreams belonging to a particular network.\n\n* Achra landing page (dev.achra.com)\n* Achra use cases overview (dev.achra.com/use-cases)\n* Achra use cases details (dev.achra.com/use-cases/{use-case-slug})\n* Workstreams overview (dev.achra.com/workstreams)\n* Services overview (dev.achra.com/services)\n* Services details (dev.achra.com/services/{service-slug})",
+      "icon": null,
+      "id": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+      "keyResults": [
+        {
+          "id": "161b35bb-c0a1-43bd-8997-37ff9eef98b0",
+          "link": "https://dev.achra.com",
+          "title": "Development environment Global pages are accessible and without error"
+        },
+        {
+          "id": "86bf8f34-f1cc-42d8-8b57-e53b04a51d67",
+          "link": "https://dev.achra.com",
+          "title": "All interactive elements (buttons, links, forms) are functional in the development environment"
+        },
+        {
+          "id": "c1bfd039-0ed3-424a-b32a-3a2d25510470",
+          "link": "https://dev.achra.com",
+          "title": "Approval on development environment from RGH group"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "FE Dev Global",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "429cdbc8-961c-47af-b602-0776804adf8c",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "FE-NW-BLD",
+      "description": "Frontend implementation of Builders & Governance modules.",
+      "icon": null,
+      "id": "429cdbc8-961c-47af-b602-0776804adf8c",
+      "keyResults": [],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "FE Dev NW Builders/Governance",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "fcf4830a-0641-4793-b350-5021e96e3170",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "FE-NW-WS",
+      "description": "Front-end interface for Network Workstream has been implemented.",
+      "icon": null,
+      "id": "fcf4830a-0641-4793-b350-5021e96e3170",
+      "keyResults": [
+        {
+          "id": "25e2b61b-936a-4eef-a3cb-7016e601d44d",
+          "link": "",
+          "title": "Connect supports the input of workstreams data"
+        },
+        {
+          "id": "ceadef80-5748-4fcf-bfc8-d3dddaad574d",
+          "link": "",
+          "title": "Achra reflects the state of workstreams data in real-time"
+        },
+        {
+          "id": "77533442-edf3-424e-8967-39ad03668c63",
+          "link": "",
+          "title": "Front-end is fully operational, components function as expected and design matches the high fidelity design files"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "FE Dev NW Workstreams",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "FE-NW-FIN",
+      "description": "Frontend for Network Finances page is functional.",
+      "icon": null,
+      "id": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+      "keyResults": [
+        {
+          "id": "9594fd82-f594-45b3-a7eb-3de59f08c837",
+          "link": "",
+          "title": "Connect supports the input of finances data"
+        },
+        {
+          "id": "5b90f9e7-d159-42ba-8122-89316175ce70",
+          "link": "",
+          "title": "Achra reflects the state of workstreams data in real-time"
+        },
+        {
+          "id": "996ca7c3-00ef-42ef-8338-130257861442",
+          "link": "",
+          "title": "Front-end is fully operational, components function as expected and design matches the high fidelity design files"
+        }
+      ],
+      "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+      "status": "IN_PROGRESS",
+      "title": "FE Dev NW Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "f94f23da-7647-474b-9517-26c76f6ab7e7",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "f94f23da-7647-474b-9517-26c76f6ab7e7",
+      "keyResults": [
+        {
+          "id": "14f6cc1b-3c7c-449c-8abb-6296a8b1e860",
+          "link": "https://connect.staging.vetra.io/d/.......",
+          "title": "Packages / Doc Models / Editors / Processors (Read Models)"
+        }
+      ],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "BE Dev Global",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "e3ef49df-a4b0-4cb3-91b6-d7f358a080ae",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "e3ef49df-a4b0-4cb3-91b6-d7f358a080ae",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "BE Dev NW Builders/Governance",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "fa0e9c93-844c-414d-bdf2-9b853977c7b7",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "fa0e9c93-844c-414d-bdf2-9b853977c7b7",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "BE Dev NW Workstreams",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "f5ce3c58-aa00-4075-bfbd-b21cd5ed604d",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "f5ce3c58-aa00-4075-bfbd-b21cd5ed604d",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "BE Dev NW Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "320ada67-5c96-41ca-8669-085e6ea110f2",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "320ada67-5c96-41ca-8669-085e6ea110f2",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "QA Global",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "aff047eb-e816-4b91-bbf3-ab6e5f94998e",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "aff047eb-e816-4b91-bbf3-ab6e5f94998e",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "QA NW Builders/Governance",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "cb258ba1-219d-4373-86e3-c324e1e98734",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "cb258ba1-219d-4373-86e3-c324e1e98734",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "QA NW Workstreams",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "2cf32bbb-9910-45b2-bade-6067a5c6faa8",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "2cf32bbb-9910-45b2-bade-6067a5c6faa8",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "QA NW Finances",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "5a6d4d83-8471-472c-9c73-717ad10edf43",
+        "margin": 0,
+        "project": "fbda60d3-58ed-4776-8ade-d505516c97c2",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "5a6d4d83-8471-472c-9c73-717ad10edf43",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "Staging UAT FE",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "149fca7c-29fa-4b28-aa02-99d2387df056",
+        "margin": 0,
+        "project": "fbda60d3-58ed-4776-8ade-d505516c97c2",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "149fca7c-29fa-4b28-aa02-99d2387df056",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "Staging UAT BE",
+      "workProgress": null
+    },
+    {
+      "budgetAnchor": {
+        "deliverableId": "4e9694c4-8d65-4c2d-b9dc-7f5f6af2ffe5",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "code": "",
+      "description": "",
+      "icon": null,
+      "id": "4e9694c4-8d65-4c2d-b9dc-7f5f6af2ffe5",
+      "keyResults": [],
+      "owner": null,
+      "status": "IN_PROGRESS",
+      "title": "Production Release",
+      "workProgress": null
+    }
+  ],
+  "description": "The Scope of Work model defines a structured plan for executing contributor work; on top of deliverables and roadmaps with milestones it now also includes projects as budget anchors for project based budgeting.",
+  "projects": [
+    {
+      "abstract": "Track Sky Protocol's operational financial data.",
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "PEA",
+      "currency": "DAI",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/5956/5956592.png",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Protocol Expense Accounting"
+    },
+    {
+      "abstract": "Connect Editor prototype for Sky Ecosystem RWA Portfolio Reporting.",
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "RWA",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "fb263253-65f3-42a7-9498-8535da0dcb46",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/9912/9912615.png",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "RWA Portfolio Reporting"
+    },
+    {
+      "abstract": "Core Powerhouse product and architecture development work.",
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "POC",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/662/662608.png",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Powerhouse Products POC"
+    },
+    {
+      "abstract": "Build a Atlas Rulebook Prototype for Sky Ecosystem - a single document editor designed to handle Atlas JSON data efficiently.",
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "ATLAS",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "38750a5a-8a7e-49d1-9276-167087935ff0",
+      "imageUrl": "https://thumbs.dreamstime.com/b/project-management-icon-to-do-list-symbol-white-background-checklist-cog-flat-style-simple-abstract-plan-black-vector-158948149.jpg",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Atlas Rulebook Prototype"
+    },
+    {
+      "abstract": "Communication efforts to support the Powerhouse alpha version release. Marketing, BD and Community outreach.",
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "PRC",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/1540/1540257.png",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Powerhouse Release Comms"
+    },
+    {
+      "abstract": "Model and implement a reproducible entity structure that\\ \nprovides legal/operational infrastructure and facilitates decentralized collaboration while minimizing risks.",
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "PLS",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+      "imageUrl": "https://static.vecteezy.com/system/resources/previews/014/769/487/non_2x/projects-line-icon-vector.jpg",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Powerhouse Legal Structuring"
+    },
+    {
+      "abstract": null,
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "94dcefec-6bb5-48bf-b977-710d10abf474",
+      "imageUrl": "https://i.pinimg.com/564x/6b/44/56/6b4456453c7cef0cc8be1dc34d5597f8.jpg",
+      "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Achra MVP BAI Work"
+    },
+    {
+      "abstract": null,
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "cce55412-9084-4130-91d0-f41072eb067b",
+      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/002/206/140/small_2x/project-implementation-icon-free-vector.jpg",
+      "projectOwner": "0bc59a22-f7d0-4747-9a37-25faaab4ae39",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Achra MVP dSpot Work"
+    },
+    {
+      "abstract": null,
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "fbda60d3-58ed-4776-8ade-d505516c97c2",
+      "imageUrl": "https://www.freeiconspng.com/uploads/project-icon-2.jpg",
+      "projectOwner": "0bc59a22-f7d0-4747-9a37-25faaab4ae39",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Achra MVP RGH Work"
+    },
+    {
+      "abstract": null,
+      "budget": 0,
+      "budgetType": "CAPEX",
+      "code": "",
+      "currency": "USD",
+      "expenditure": {
+        "actuals": 0,
+        "cap": 0,
+        "percentage": 0
+      },
+      "id": "3950e0df-c736-4464-a631-914c707cb1a4",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/4358/4358529.png",
+      "projectOwner": "0bc59a22-f7d0-4747-9a37-25faaab4ae39",
+      "scope": {
+        "deliverables": [],
+        "deliverablesCompleted": {
+          "completed": 0,
+          "total": 0
+        },
+        "progress": {
+          "value": 0
+        },
+        "status": "DRAFT"
+      },
+      "slug": "",
+      "title": "Achra MVP Sky Teams Work"
+    }
+  ],
+  "roadmaps": [
+    {
+      "description": "",
+      "id": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+      "milestones": [
+        {
+          "budget": 0,
+          "coordinators": [
+            "Prometheus",
+            "teep",
+            "meraki",
+            "callmeT"
+          ],
+          "deliveryTarget": "2026-01-01T00:00:00.000Z",
+          "description": "The initial phase of Powerhouse Decentralized Operations Platform.",
+          "id": "14a2578d-d1ca-49d8-9954-1b3ea721b847",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "DOP",
+          "title": "Decentralized Operations Platform "
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "Prometheus",
+            "teep",
+            "meraki",
+            "callmeT"
+          ],
+          "deliveryTarget": "2024-07-03",
+          "description": "The advanced phase of Powerhouse Decentralized Operations Platform.",
+          "id": "2282f2fa-b8f7-4182-a0b9-70938216d3bf",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "MVP",
+          "title": "Decentralized Operations Platform - MVP"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "Prometheus",
+            "teep",
+            "meraki",
+            "callmeT"
+          ],
+          "deliveryTarget": "2024-11-01",
+          "description": "Work on polished and production-grade version of Powerhouse Decentralized Operations Platform.",
+          "id": "98f5b137-d732-4ef6-b7e4-1ddf74841097",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "PROD",
+          "title": "Decentralized Operations Platform - Production"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "Prometheus",
+            "apeiron",
+            "meraki"
+          ],
+          "deliveryTarget": "2024-12-31",
+          "description": "The initial phase of Atlas Rulebook Editor work.",
+          "id": "3d7e3411-1d76-4aad-9fd2-de838d9aeb8d",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "ATLAS",
+          "title": "Atlas Rulebook Editor"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "Prometheus",
+            "callmeT",
+            "meraki",
+            "Lumen",
+            "Kilgore",
+            "Layer0x"
+          ],
+          "deliveryTarget": "2024-12-31",
+          "description": "Research and implementation work of turning Powerhouse into a fully-fledged Ecosystem Actor.",
+          "id": "13252e7e-77df-4d1a-ab15-891237b79750",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "SPIN",
+          "title": "Powerhouse Spin-off"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "Prometheus",
+            "Lumen"
+          ],
+          "deliveryTarget": " 2024-12-31",
+          "description": "Project management consultancy and advisory work for Sky Ecosystem\n",
+          "id": "635c6358-a0e0-4d59-af44-3ef9e40540eb",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "PMC",
+          "title": "Sky Ecosystem PM Consultancy"
+        }
+      ],
+      "slug": "powerhouse-team-2024-roadmap-af7da134",
+      "title": "Powerhouse Team 2024 Roadmap"
+    },
+    {
+      "description": "Make Achra the official transparency reporting platform for Powerhouse, SKY, and its Prime Agents as required by the Atlas. The expectation is from launch day onwards, all the network administration teams, the project/product managers, the builders and the finance operators are using Achra and the associated Connect apps on a daily basis to keep track of work and finances. ",
+      "id": "bba656ca-ae26-4e81-a389-269cbf0a9871",
+      "milestones": [
+        {
+          "budget": 0,
+          "coordinators": [
+            "teep"
+          ],
+          "deliveryTarget": "2025-12-01T00:00:00.000Z",
+          "description": "All Achra MVP features are released to production. Functionality covers end-to-end RFPs, workstreams, governance, and financial operations for Networks.",
+          "id": "30c88044-bbd9-4a2f-a419-135bddd484c3",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "AMVP-1",
+          "title": "Feature Completeness"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "teep"
+          ],
+          "deliveryTarget": "2026-01-31T00:00:00.000Z",
+          "description": "",
+          "id": "fad39465-590f-4dd8-aa5d-0114a30a25b3",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "AMVP-2",
+          "title": "Internal Powerhouse Adoption"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "teep"
+          ],
+          "deliveryTarget": "2026-03-31T00:00:00.000Z",
+          "description": "",
+          "id": "ce2478f2-06f8-4267-86d8-9ad539dcb4ec",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "AMVP-3",
+          "title": "Sky Core Operations Adoption"
+        },
+        {
+          "budget": 0,
+          "coordinators": [
+            "teep"
+          ],
+          "deliveryTarget": "2026-06-30T00:00:00.000Z",
+          "description": "",
+          "id": "c9a98e55-6a9b-4077-ab3d-efe57d256e46",
+          "scope": {
+            "deliverables": [],
+            "deliverablesCompleted": {
+              "completed": 0,
+              "total": 0
+            },
+            "progress": {
+              "value": 0
+            },
+            "status": "DRAFT"
+          },
+          "sequenceCode": "AMVP-4",
+          "title": "Achra MVP Launch"
+        }
+      ],
+      "slug": "achra-mvp-roadmap-bf0a9871",
+      "title": "Achra MVP Roadmap"
+    }
+  ],
+  "status": "DRAFT",
+  "title": "Scope of Work Powerhouse 2024"
+}

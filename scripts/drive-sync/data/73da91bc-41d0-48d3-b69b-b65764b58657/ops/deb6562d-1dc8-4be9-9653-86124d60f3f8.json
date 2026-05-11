@@ -1,0 +1,517 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "deb6562d-1dc8-4be9-9653-86124d60f3f8",
+        "meta": {},
+        "model": "powerhouse/resource-template",
+        "name": "REVENUE GENERATING HUB (RGH)",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-03T10:59:44.636Z",
+          "documentType": "powerhouse/resource-template",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "deb6562d-1dc8-4be9-9653-86124d60f3f8"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "9c2d7ddad88f018cb6ecf1559535c1b3",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:44.636Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": " A standalone operating company designed to contract with customers, issue invoices, collect payments, and host production frontends. By separating commercial activity from development entities, the RGH reduces regulatory spillover and protects core contributors and IP.\n\n**Typical use cases:**\n\n1. SaaS or protocol interfaces with paying customers\n2. Regulatory or jurisdiction\u2011specific exposure for frontends\n3. Separation of DevCo and OpCo roles\n\nSuitable for Teams that already operate a DevCo and want clearer risk, tax, or regulatory boundaries.",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "summary": "A dedicated, customer-facing operating company to isolate commercial and regulatory risk from development activities.\n",
+        "thumbnailUrl": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffskvmdcowx3ur8ql6utk.png",
+        "title": "REVENUE GENERATING HUB (RGH)"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "4St7mf7kPTPBdhTw+M8b0a92WU4=",
+    "id": "3f5a1f0d54f3845a665deffff0fb8bba",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:25.697Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "deb6562d-1dc8-4be9-9653-86124d60f3f8",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "contentSections": [],
+            "description": null,
+            "facetTargets": [],
+            "faqFields": [],
+            "id": null,
+            "infoLink": null,
+            "lastModified": null,
+            "operatorId": null,
+            "optionGroups": [],
+            "recurringServices": [],
+            "services": [],
+            "setupServices": [],
+            "status": "DRAFT",
+            "subtitle": null,
+            "summary": "",
+            "targetAudiences": [],
+            "thumbnailUrl": null,
+            "title": "",
+            "weight": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-template",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "4f0bdea2115c75acf5cc9cef1e33dfef",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:44.636Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "status": "COMING_SOON"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_STATUS"
+    },
+    "error": null,
+    "hash": "yq93PPvYmGP5lWkdQRrRlle29yM=",
+    "id": "4924d0007c2684382ca676693207c9d4",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:26.050Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "operatorId": "8a65a724-7529-4300-92b1-c39732b6100f"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR"
+    },
+    "error": null,
+    "hash": "LQWakAoFTg1stntovgsbQINOFf0=",
+    "id": "15a662fd2b5ffd75bdbb014b30fd42eb",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:26.414Z"
+  },
+  {
+    "action": {
+      "input": {
+        "color": "#10b981",
+        "id": "d77f663f-b1f4-46e1-832d-3bef90231bdd",
+        "label": "Networks",
+        "lastModified": "2026-04-03T10:59:39.000Z"
+      },
+      "scope": "global",
+      "type": "ADD_TARGET_AUDIENCE"
+    },
+    "error": null,
+    "hash": "qmmdO3gkJMgopDAslQr5BRVr3g0=",
+    "id": "eae65d7ddb6f2f7ab980e2f25b41fbc3",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:26.773Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "team",
+        "categoryLabel": "Team",
+        "id": "c6d5e134-7250-4b99-b1e3-f499b4d03ac6",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Remote",
+          "Hybrid"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "AVWucXv0YrnW7QMUvjz7mSb9cJs=",
+    "id": "83dbd90fa4aa56201640cba2e64fc967",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:27.129Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "anonymity",
+        "categoryLabel": "Anonymity",
+        "id": "79874c6a-35b2-40b6-b961-016209ec66e5",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "High",
+          "Highest"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "qqjH+iK9Fynh3vSgrwRGDxGbev8=",
+    "id": "84005fa026aed4e852277f2fce8a0269",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:27.464Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "legal-entity",
+        "categoryLabel": "Legal Entity",
+        "id": "054a0208-0a46-47d2-be73-097b77697676",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Swiss Association",
+          "BVI Entity"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "Vw9eqEzw+ibSsZrtFktg4F5oLSY=",
+    "id": "0bde2195f3f4323f689a656c19421b9e",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:27.826Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "sno-function",
+        "categoryLabel": "SNO Function",
+        "id": "3cef1630-cbd0-4c05-9b7c-4ea5783f2255",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Revenue Generating Hub"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "onTRSMxWfsf6iEna31+47bR+hj4=",
+    "id": "25c38c42f95a6f32ede2af6c0ff72089",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:28.164Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T12:05:10.336Z",
+        "title": "RREVENUE GENERATING HUB (RGH)"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "uQsYDXWMwwn6PGKYNy/LSVSbVUo=",
+    "id": "078b66c287093c4eb0b6cc23b90209de",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T12:05:10.336Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-06T10:43:32.967Z",
+        "title": "Revenue Generating Hub"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "QqH4AWKj8wVySOE2IKNtp3GMjww=",
+    "id": "c478b89964d6a44f5df622fc44d79a6f",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-06T10:43:32.967Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:11:58.040Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "OdWt0TBcOrGSv2GFhdB6CDQqVnE=",
+    "id": "fae983101f822379bb5470645a8df5c6",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:11:58.040Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:12:16.999Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)",
+          "Legal document assembler for setting up a commercial entity and Contributor Agreements *(entity wind-down document assembler included) Kick off meeting with Powerhouse and workshop with local Counsel"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "5DUT21KICr+S5oGJfoqcK0V8EpI=",
+    "id": "ba33d75b3bb44bb7ca68ce58e707c04b",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:12:16.999Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:12:26.089Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)",
+          "Legal document assembler for setting up a commercial entity and Contributor Agreements *(entity wind-down document assembler included) Kick off meeting with Powerhouse and workshop with local Counsel",
+          "Legal entity founding meeting and legal document review with local counsel *(Tier 1: access to x hours of counsel)"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "oiwsexcl1JDwimy6+9bKL7qeZl0=",
+    "id": "f13f5c46c704fc67e010f605f1972cf3",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:12:26.089Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:12:33.273Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)",
+          "Legal document assembler for setting up a commercial entity and Contributor Agreements *(entity wind-down document assembler included) Kick off meeting with Powerhouse and workshop with local Counsel",
+          "Legal entity founding meeting and legal document review with local counsel *(Tier 1: access to x hours of counsel)",
+          "Onboarding assistance with payment processor, accounting software and billing setup"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "1EibaveKZ7iER0NL7fY0DIWkzOA=",
+    "id": "70b06794ce9c7cabdcf2a34b6542dc77",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:12:33.273Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:12:36.546Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)",
+          "Legal document assembler for setting up a commercial entity and Contributor Agreements *(entity wind-down document assembler included) Kick off meeting with Powerhouse and workshop with local Counsel",
+          "Legal entity founding meeting and legal document review with local counsel *(Tier 1: access to x hours of counsel)",
+          "Onboarding assistance with payment processor, accounting software and billing setup",
+          "Commercial Registry filing, if required"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "iNxHNDgoU/YtuuvSph++GmF2STI=",
+    "id": "ad3c4f53d2c700a74f84a57a2a921e13",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:12:36.546Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:12:39.820Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)",
+          "Legal document assembler for setting up a commercial entity and Contributor Agreements *(entity wind-down document assembler included) Kick off meeting with Powerhouse and workshop with local Counsel",
+          "Legal entity founding meeting and legal document review with local counsel *(Tier 1: access to x hours of counsel)",
+          "Onboarding assistance with payment processor, accounting software and billing setup",
+          "Commercial Registry filing, if required",
+          "Legal entity domicile and Tax ID"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "CeQqR33iC2c6j5L3PTudBqNA0nk=",
+    "id": "322a9e1e6c4dcc7fa9c69fd152547d8e",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:12:39.820Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:13:02.148Z",
+        "services": [
+          "Payment preparation and processing"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "nXGYTY9z0potIFy6zUETnSPMSFA=",
+    "id": "0edf2b92b71115ad7fdf78567021b164",
+    "index": 16,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:13:02.148Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:13:05.158Z",
+        "services": [
+          "Payment preparation and processing",
+          "Accounting and bookkeeping services"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "g2e3RJ57GFchnoRf+OC1SCSP638=",
+    "id": "da10b27e26827b327e69979d8305203f",
+    "index": 17,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:13:05.158Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:13:08.050Z",
+        "services": [
+          "Payment preparation and processing",
+          "Accounting and bookkeeping services",
+          "Transparency reporting"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "Pp2Mvcrhuo4RkztHpeK5IimUvw0=",
+    "id": "34b3f995d077d2bb48c239e7b89acecf",
+    "index": 18,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:13:08.050Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:13:10.937Z",
+        "services": [
+          "Payment preparation and processing",
+          "Accounting and bookkeeping services",
+          "Transparency reporting",
+          "Prepare financial statements"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "/0gNyJceHdCTsHrFZZybbojCWXU=",
+    "id": "a6679d16b9964474ff6eeedae74a0782",
+    "index": 19,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:13:10.937Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:13:13.663Z",
+        "services": [
+          "Payment preparation and processing",
+          "Accounting and bookkeeping services",
+          "Transparency reporting",
+          "Prepare financial statements",
+          "Contract administration"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "a/aSG3WiJjZPhdaVq9wckUryJ0g=",
+    "id": "a0b206b0016cfb2d837e076c598039a2",
+    "index": 20,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:13:13.663Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:13:16.472Z",
+        "services": [
+          "Payment preparation and processing",
+          "Accounting and bookkeeping services",
+          "Transparency reporting",
+          "Prepare financial statements",
+          "Contract administration",
+          "Tax filing and reporting"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "WQjJnZFXlrHQR6M/B1DpImTLO3Q=",
+    "id": "3fd5b2a8a713e7055ec66a2669dc38af",
+    "index": 21,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:13:16.472Z"
+  }
+]

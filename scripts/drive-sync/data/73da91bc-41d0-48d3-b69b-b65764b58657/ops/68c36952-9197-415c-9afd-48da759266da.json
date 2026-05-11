@@ -1,0 +1,4167 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "68c36952-9197-415c-9afd-48da759266da",
+        "meta": {},
+        "model": "powerhouse/service-offering",
+        "name": "OperationalHubOffering (active 2)",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-03T10:59:47.598Z",
+          "documentType": "powerhouse/service-offering",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "68c36952-9197-415c-9afd-48da759266da"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "bc0f764f658685b14ca35762f05e1260",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:47.598Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A ready-to-use operational setup that gives open-source and public-goods builder teams the legal and financial infrastructure to receive funding, pay contributors, and operate compliantly from day one.\n\nStructured as a Swiss Association \u2014 a cost-efficient, privacy-preserving legal form with strong international recognition \u2014 the Operational Hub reduces personal liability for contributors, simplifies compliance, and provides a professional foundation for teams that are already doing the work.",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "summary": "A turnkey legal and operational setup for open-source builder teams \u2014 entity formation, invoicing, payouts, and compliance bundled under one roof.",
+        "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na",
+        "title": "Operational Hub"
+      },
+      "scope": "global",
+      "type": "UPDATE_OFFERING_INFO"
+    },
+    "error": null,
+    "hash": "D1ozElKaHpj82lWhDCo+GYVGAbs=",
+    "id": "17d5a2d71a565cccf4c3030b9945a529",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:01.375Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "68c36952-9197-415c-9afd-48da759266da",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "availableBillingCycles": [],
+            "description": null,
+            "facetTargets": [],
+            "id": null,
+            "infoLink": null,
+            "lastModified": null,
+            "operatorId": null,
+            "optionGroups": [],
+            "resourceTemplateId": null,
+            "services": [],
+            "status": "DRAFT",
+            "summary": "",
+            "thumbnailUrl": null,
+            "tiers": [],
+            "title": ""
+          },
+          "local": {}
+        },
+        "model": "powerhouse/service-offering",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "ddba64ab24f17814dd197661d3c036d5",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:47.598Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "status": "ACTIVE"
+      },
+      "scope": "global",
+      "type": "UPDATE_OFFERING_STATUS"
+    },
+    "error": null,
+    "hash": "7oBCEMrGEkBW+fBdRJh5hbRhXB4=",
+    "id": "a6e90b172f2318655582bf8982c243e4",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:01.738Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "operatorId": "831efda4-c052-42b1-8df3-dfae977b732b"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR"
+    },
+    "error": null,
+    "hash": "FnuAsbAk0uw/yOrQ+Hek6WbDzEY=",
+    "id": "735354fa34aee6a6581667f7d8a05f93",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:02.076Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "resourceTemplateId": "098a7cad-b66b-404a-b2c8-933d69b808cd"
+      },
+      "scope": "global",
+      "type": "SELECT_RESOURCE_TEMPLATE"
+    },
+    "error": null,
+    "hash": "Yc5wDhH2t/QVetL2iyJqcwc8N3s=",
+    "id": "c1df66bd83de925226abe7d9926657a8",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:02.409Z"
+  },
+  {
+    "action": {
+      "input": {
+        "billingCycles": [
+          "ANNUAL",
+          "QUARTERLY"
+        ],
+        "lastModified": "2026-04-03T10:59:39.000Z"
+      },
+      "scope": "global",
+      "type": "SET_AVAILABLE_BILLING_CYCLES"
+    },
+    "error": null,
+    "hash": "LyjSlz1WnOPn5rL5AyJDQJh9wBE=",
+    "id": "9278c401c3b11e64b3d31740833a83e3",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:02.763Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "sno-function",
+        "categoryLabel": "SNO Function",
+        "id": "1c4c7002-e263-4f2b-8e7f-193975a25d7c",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Operational Hub"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "M+eNAXxQJ2ih2uq7/LXGpH/AYUE=",
+    "id": "c0fc5b0a5c019d036e064365eb04abfc",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:03.120Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "legal-entity",
+        "categoryLabel": "Legal Entity",
+        "id": "be9d299b-be2f-4d71-8d24-559d77a0c7ca",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Swiss Association"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "0pSzqze/Q1bcpM9qJvflk9z1r0w=",
+    "id": "b346e9ec9663db9daa9a90a605351cb0",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:03.456Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "team",
+        "categoryLabel": "Team",
+        "id": "4e112a9c-64a9-44ca-8c59-c2e3c21e20eb",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Remote"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "UCp3ZHmI1XybdfcDdLBLWR/ff10=",
+    "id": "1584455fbc6f1b0af8f8897ee1c5099a",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:03.805Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "anonymity",
+        "categoryLabel": "Anonymity",
+        "id": "99cd71c3-23ae-4714-994b-8e4f64e6d1fd",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "High"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "j2S7zb7zwaKQb+BaNDx6FcWMHYE=",
+    "id": "fda069bd9b85f5f24408153855c88b50",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:04.146Z"
+  },
+  {
+    "action": {
+      "input": {
+        "availableBillingCycles": [
+          "ONE_TIME"
+        ],
+        "costType": "SETUP",
+        "currency": "USD",
+        "defaultSelected": true,
+        "id": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "isAddOn": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Entity & Compliance Foundation",
+        "price": 3000
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP"
+    },
+    "error": null,
+    "hash": "YY2F3yrmfl/+mGBJYdW0nVrVGtM=",
+    "id": "67dd77ee9f4436044156eddb29a93b65",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:04.498Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "recurringPricing": [],
+        "setupCost": {
+          "amount": 3000,
+          "currency": "USD",
+          "discount": null
+        }
+      },
+      "scope": "global",
+      "type": "SET_OPTION_GROUP_STANDALONE_PRICING"
+    },
+    "error": null,
+    "hash": "lX1k5XFUjCNSmKxguA3fSEMHyZc=",
+    "id": "2118b46912f1d14f93d6a11cb0e97a4d",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:04.852Z"
+  },
+  {
+    "action": {
+      "input": {
+        "availableBillingCycles": [
+          "MONTHLY",
+          "QUARTERLY",
+          "SEMI_ANNUAL",
+          "ANNUAL"
+        ],
+        "costType": "RECURRING",
+        "defaultSelected": false,
+        "id": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "isAddOn": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Financial Operations & Reporting"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP"
+    },
+    "error": null,
+    "hash": "A+RcGQ9L8gIYEYYh7TC3DdSOkKQ=",
+    "id": "f3b35b6c7a799ccbabaa512d65a8bd7a",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:05.195Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "recurringPricing": [
+          {
+            "amount": 1810,
+            "billingCycle": "MONTHLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "8789c155-6c60-46b0-aa87-178c070271ff"
+          },
+          {
+            "amount": 1810,
+            "billingCycle": "QUARTERLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "f54af8e5-3912-43d2-8786-e21e8649a9a1"
+          },
+          {
+            "amount": 1810,
+            "billingCycle": "SEMI_ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "179ac467-2f47-402e-a738-da90d52a7adb"
+          },
+          {
+            "amount": 1810,
+            "billingCycle": "ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "e7bbd5a9-ce44-4c84-9111-beefdb1e4560"
+          }
+        ],
+        "setupCost": {
+          "amount": 3600,
+          "currency": "USD",
+          "discount": null
+        }
+      },
+      "scope": "global",
+      "type": "SET_OPTION_GROUP_STANDALONE_PRICING"
+    },
+    "error": null,
+    "hash": "lntrkXmw4KBwhHdVRHf8nWPe3q4=",
+    "id": "ddb924ea38349e8d1b2dc95881746ed7",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:05.544Z"
+  },
+  {
+    "action": {
+      "input": {
+        "availableBillingCycles": [
+          "MONTHLY",
+          "QUARTERLY",
+          "SEMI_ANNUAL",
+          "ANNUAL"
+        ],
+        "costType": "RECURRING",
+        "defaultSelected": false,
+        "id": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "isAddOn": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Advanced & Scale Add-On"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP"
+    },
+    "error": null,
+    "hash": "45M1kmrOh7SnVmqRVyuuSEya7ms=",
+    "id": "15f0e331b50755a8e515dcaa4665ace9",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:05.886Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "recurringPricing": [
+          {
+            "amount": 1860,
+            "billingCycle": "MONTHLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "1d59c346-e0a3-4b9a-a074-cb8db7233e55"
+          },
+          {
+            "amount": 1860,
+            "billingCycle": "QUARTERLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "4f9a71b1-0b7e-4dcf-884b-d9c2012bfd5d"
+          },
+          {
+            "amount": 1860,
+            "billingCycle": "SEMI_ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "0fce5192-aa5d-4341-89b3-45ffe6619d26"
+          },
+          {
+            "amount": 1860,
+            "billingCycle": "ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "b941059c-2103-4a0b-a56e-86bc7c8878ad"
+          }
+        ]
+      },
+      "scope": "global",
+      "type": "SET_OPTION_GROUP_STANDALONE_PRICING"
+    },
+    "error": null,
+    "hash": "4GSdIl7Q61wMMKkr+Jj5Ns2ZTV8=",
+    "id": "b1bad0c182de2cc0d085598174a27cb7",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:06.226Z"
+  },
+  {
+    "action": {
+      "input": {
+        "availableBillingCycles": [
+          "MONTHLY",
+          "QUARTERLY",
+          "SEMI_ANNUAL",
+          "ANNUAL"
+        ],
+        "costType": "RECURRING",
+        "defaultSelected": false,
+        "id": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "isAddOn": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Virtual Assistant Services"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP"
+    },
+    "error": null,
+    "hash": "7KTfX+Zd2CwNKv490XltTAYuJmU=",
+    "id": "87d701a5d964392cc6fd779af5b778d8",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:06.567Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "recurringPricing": [
+          {
+            "amount": 3010,
+            "billingCycle": "MONTHLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "d62a4db1-fded-41cd-9c28-34bcf2f536db"
+          },
+          {
+            "amount": 3010,
+            "billingCycle": "QUARTERLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "e0e4fc82-9432-4945-b67a-25d30b2848bd"
+          },
+          {
+            "amount": 3010,
+            "billingCycle": "SEMI_ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "abc76701-b352-4782-b3b6-6d0739930d78"
+          },
+          {
+            "amount": 3010,
+            "billingCycle": "ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "7d2a3185-fa11-4f10-83cb-e51c2d91816e"
+          }
+        ]
+      },
+      "scope": "global",
+      "type": "SET_OPTION_GROUP_STANDALONE_PRICING"
+    },
+    "error": null,
+    "hash": "783vXfELT0AX0G7r5WxgtRUnQMw=",
+    "id": "c7b40f10d3a3c044f6b45d3e86bfad19",
+    "index": 16,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:06.913Z"
+  },
+  {
+    "action": {
+      "input": {
+        "availableBillingCycles": [
+          "MONTHLY",
+          "QUARTERLY",
+          "SEMI_ANNUAL",
+          "ANNUAL"
+        ],
+        "costType": "RECURRING",
+        "defaultSelected": true,
+        "id": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "isAddOn": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Recurring Services"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP"
+    },
+    "error": null,
+    "hash": "3c28hHeOUNEyuU3pUC6+G/MZstE=",
+    "id": "234d6a0dbf9c9d5d20f9cf539bf09165",
+    "index": 17,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:07.254Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+        "id": "0c4a026a-07ea-48c5-ae1a-a3bfda696881",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Legal document templates"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "5LrFdznhZeJefjgEqic8CoLJpX8=",
+    "id": "6b3cd4bb0edad37b7aa01cab3cd50460",
+    "index": 18,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:07.617Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A global invoice generation tool that creates professionally structured invoices following international best practices, while remaining independent from any specific legal or tax jurisdiction.",
+        "id": "c7d5fd36-6294-43a0-a48b-b30db8befaf4",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Global invoice generator"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "cNN/F1VfOEHEdDJ9z4F3G+wXFMc=",
+    "id": "45384c2aac1a05b4b493daa89009323b",
+    "index": 19,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:07.956Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A budget planning tool that helps organizations allocate resources across teams, projects, and categories following financial best practices, with defined budget categories and time horizons.",
+        "id": "960a5814-a1f7-41a2-96e8-6ee39ace7c5f",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Budget generator"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "y4oeXfueXC732WGcVRRPoBhVzwM=",
+    "id": "59aa8ba8c05f2cef26ba4c31d3fac1d6",
+    "index": 20,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:08.308Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+        "id": "70cc2100-3843-4449-b422-174f5f3cbabd",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Needs analysis"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "UAMBiP7L1pm9EdAZJN9ddLjAI/A=",
+    "id": "ed960de09945803a054e41ec7bede437",
+    "index": 21,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:08.646Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Formation of a Swiss Association with the support of a Swiss licensed counsel. Includes onboarding checklist,  use of templates for founding documents and articles of association, a workshop, and a founding meeting with counsel.",
+        "id": "583c4d12-6b9b-422e-97ed-8ba2895e6950",
+        "isSetupFormation": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "title": "Swiss association setup"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "0I2w2RPmwDs9++tE2rUbhJmeRZ4=",
+    "id": "d2ba7649a9cd6bcc8347a2c7953f4f7d",
+    "index": 22,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:09.001Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A registered legal address in Zug, Switzerland for the entity.",
+        "id": "f67111bc-a0af-45be-9220-8ff1d1c8e05d",
+        "isSetupFormation": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "title": "Registered address (Zug)"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "bkOm2KMxDFBxaViPHb86qMN4zkk=",
+    "id": "08329d9f4b34ed2c41f3b94bc1d3a1f2",
+    "index": 23,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:09.341Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "VAT registration and issuance of a VAT number. If the entity is not registered in the Commercial registry, the VAT ID may serve as the company identification number with customers and suppliers.",
+        "id": "41ecaf72-b84e-449b-a561-916424740a4c",
+        "isSetupFormation": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "title": "VAT registration"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "njZNNIoqcJ8NZ+TrPfz3o8sX4ss=",
+    "id": "400e218e971d8d8fdc415b9bd5e72dc0",
+    "index": 24,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:09.706Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Structured support for Swiss annual tax compliance and VAT reporting (by default, quarterly), handled by licensed tax professionals, coordinated through our operational framework. Documentation for Swiss VAT reporting, ensuring that all relevant invoices, payment records, and transaction classifications are properly maintained to support accurate VAT filings and potential audits by the Swiss Federal Tax Administration (FTA).",
+        "id": "db3d3cd6-591e-4bc7-83eb-2b2ed26ab55a",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Annual tax filing and VAT reporting"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "kP8dphtiB+SAQw6fDP87fAVhm/k=",
+    "id": "70621e8b6b763020bf1fa084b600a70a",
+    "index": 25,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:10.049Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Expense tracking and reimbursement workflows.",
+        "id": "f0a3fb67-dd66-4303-b749-217d69f3aa5f",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Reimbursement management"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "tm6H2EhuAqYjeRbnLxsGNVe/YRc=",
+    "id": "3911bea7181fdf5c68aa835c79914870",
+    "index": 26,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:10.383Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "End-to-end handling of invoices from submission and approval to accounting and payment.",
+        "id": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Invoice management"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "H8dKLFzPoxoGDH6LI2HP+SFTGI8=",
+    "id": "352fe0b7b28b19b738f1f3e29bffde52",
+    "index": 27,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:10.739Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Reconciliation of transactions, validation of balances, and accurate financial records in the accounting system for reporting and decision-making.",
+        "id": "05894260-606a-491b-95b5-646a39fbb71a",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Monthly accounting & close"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "baLO1tBnEA/6UjAs8kDkM9sRK0c=",
+    "id": "67f24fad7dd38dbc32b760469f8a29e8",
+    "index": 28,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:11.112Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A report of all expenses incurred during the month, categorized and reviewed to provide visibility into spending and budget performance.",
+        "id": "7eaa226b-5156-4ceb-a5e8-9cb8850551f1",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Monthly expense report"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "j+sywbE0BfPZ5x7Wf0VfF8qDzfE=",
+    "id": "a35cc0d112b41725ce2bb52aa5b9eca9",
+    "index": 29,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:11.463Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Defined rules governing how expenses are submitted, approved, and reimbursed.",
+        "id": "dfe25adf-eb55-4eb1-9434-2c8a6d2d9a79",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Expense policies"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "gYDIY3jkCeMSnInyrAktopxSEqE=",
+    "id": "8879715823db20355979120e9139a670",
+    "index": 30,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:11.819Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Operational processes to onboard contributors, manage contracts, and payment details.",
+        "id": "060de4c6-003f-4db0-b0b3-73bc1eee3667",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Contributor onboarding and operations"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "K6s59cxR2ixoQ25bkNmDrLfuvxo=",
+    "id": "600f7a89fcce3cd7bcf9778f67b2503f",
+    "index": 31,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:12.168Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Crypto-to-fiat conversions with 48-hour transfers in USD, GBP, EUR, CHF, and DKK. Additional currencies available upon request.",
+        "id": "6527d83a-ac0b-4e01-9a43-448d444fd982",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Multi-currency payouts"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "Auxi7tqXJsj/jtmCSRASGaZroMo=",
+    "id": "4ff098a77d9cad458f88c1ed6772f85e",
+    "index": 32,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:12.519Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Dedicated operational support with an assigned point of contact for handling day-to-day financial and administrative requests.",
+        "id": "afe19ef7-ee82-492d-9814-e427bf19c72a",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Dedicated ops support"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "SDI0CrxWVKjMYcaSMcaPopfT+MA=",
+    "id": "0d00cfe4f6a6c809f1c5546c65a55bf8",
+    "index": 33,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:12.862Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Operational support across multiple legal entities, with consolidated oversight and coordinated financial workflows.",
+        "id": "309cbb23-e978-452f-bca2-dc4995993a48",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Multiple entities"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "VOvW2gDWNkNu5od3PubrQJBsao0=",
+    "id": "65d332d430e2e8b2b5b617721c1393a6",
+    "index": 34,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:13.217Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A dedicated account manager for overseeing the relationship and coordinating ongoing requests.",
+        "id": "2e7d934b-2324-4ab9-8e72-37bf64488841",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Dedicated account manager"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "bYi/urWQ2nJnu7SAlPbhWVm912s=",
+    "id": "fd6c243ae233394099aa6de6e184d2c8",
+    "index": 35,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:13.569Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "An informative admin portal providing visibility into billing, active services, and key operational documents.",
+        "id": "ceaf4759-63f3-488e-bb1d-6ba6ce7919fa",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Admin portal"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "U+EVBkmqpgK0NUMyJK/ZoTePCQc=",
+    "id": "c4245e9fd14167e477348a2655c35b4f",
+    "index": 36,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:13.945Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Tailored operational workflows and reporting structures.",
+        "id": "43a9473a-a217-4e67-9b26-31e1c6cbb2b5",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "title": "Custom workflows & reporting"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "yApYqPdapAtRZMC6m/rdUiBOLqI=",
+    "id": "fabec3014c1ae7d78f75484f476b9d88",
+    "index": 37,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:14.296Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Setup of centralized exchange accounts (Kraken, Coinbase, Binance, Bitfinex, Crypto.com, Nexo).",
+        "id": "7b892ca8-3781-43a5-8535-d19022dba5c2",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "title": "Exchange account setup"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "nwyO64Yqconh2/+KMzvk1yW6iiI=",
+    "id": "84ea22b55496c5addf6ff9d3e804b68e",
+    "index": 38,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:14.654Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Crypto-friendly banking services setup.",
+        "id": "9df512e6-d003-40bf-ba7d-642b3297dbab",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "title": "Crypto-friendly bank setup"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "H/d7Du4HuHv4AQ7ae9CKiB3zcVM=",
+    "id": "8c2e8790207b90b1a00dda4e28506383",
+    "index": 39,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:15.079Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Off-ramp setup for fiat conversion.",
+        "id": "df8a6ed0-f1d3-4b98-8916-0167d4f5a8f6",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "title": "Payment provider & off-ramp setup"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "V/j1vbO+GEroGvHWBqjMhM7epHU=",
+    "id": "cb91051e2b862616059a534301f0f667",
+    "index": 40,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:15.459Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Payroll setup with local Professional Employer Organization providers.",
+        "id": "89733dc9-b855-4250-bb2e-d0a25fab0266",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "title": "EOR/PEO setup"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "G6q1afJ/MFejeNVPtrV8hiby9RU=",
+    "id": "35de7f2e80e6df7cd1a026cade28a664",
+    "index": 41,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:15.814Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Setting up crypto payments for second-party approval based on invoices received.",
+        "id": "0819dd5e-2eab-45cd-87e0-2d3d73a838ba",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "title": "Payment controls & reconciliation"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "jGNVK+qZ5zmJ6dUHAOvtV2MO8yc=",
+    "id": "5b82c7d5e20fdf61abc4efbcc7c32307",
+    "index": 42,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:16.167Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Assistance in coordinating financial information to support external audits.",
+        "id": "5b7956e2-808e-414d-bd1d-5fa8c38881e7",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "title": "Audit support"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "qzspdMpL9RgFpVDzMM6ZhFd2K5w=",
+    "id": "1417cccd1329733b986136ca90ef580e",
+    "index": 43,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:16.523Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Maintaining accounts with EORs/PEOs and other suppliers to reduce the risk of being offboarded.",
+        "id": "f31e6ba6-4457-4d8b-8ba6-0ee1a56357ee",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "title": "Supplier & partner liaison"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "Ra2ubyLTMeOyudMKTroEcShQCOw=",
+    "id": "3fb2c98b96f7d6e96b3a38f3b6325f01",
+    "index": 44,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:16.883Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Regular checks on contractors and clients for sanctions, PEP status, and other compliance flags. Monitoring of connected wallets for risk assessment. Regular compliance reports.",
+        "id": "267f9fff-5d50-48cc-a29a-be7b60948f73",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "title": "AML monitoring & compliance reporting"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "JpFJ5vyJqtNTYIGivVvlfsa/Dnk=",
+    "id": "99cf852cfad3231da4683a7c061512d0",
+    "index": 45,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:17.242Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Assist in preparing documents needed by individuals showing income/affiliation for visas, loans, or other purposes.",
+        "id": "6a353e64-b8a7-451e-854f-4d22b1a7bf6c",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "title": "Contractor documentation support"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "McWBL2ptC9qp+qwyV1LKZokwFlg=",
+    "id": "a316840962b2382e7726ed5ca0138efb",
+    "index": 46,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:17.616Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Monitor incoming invoices for compliance to make sure invoices contain everything needed under local law prior to payment.",
+        "id": "397cc5c1-4c49-4ca0-9d83-b872a1adad6c",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "title": "Invoice compliance review"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "Dpot+AmHP+NvSojDnMignBXMTjk=",
+    "id": "054def4d3d3f94085e015795627f1302",
+    "index": 47,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:17.956Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Monitor connected accounts, assist with creating new cards/users, and monitor for dubious/restricted transactions.",
+        "id": "c6687ae3-3fc4-4a2e-b927-4beb8afba421",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "title": "Card & spend operations"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "uSaGFiFcfr6Phar0TcsPs3xbnhE=",
+    "id": "cfdcc7ab8eb15fb94878f240f97039c9",
+    "index": 48,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:18.314Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Five additional hours of legal advice provided by Swiss counsel.",
+        "id": "56d73f9a-6a51-4e20-993f-d44f6de53ce1",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "title": "Legal counsel advice"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "yz5r6L43YfZNH/Zzo/U/6FX8MG8=",
+    "id": "8a2fc2cd7c95fc8655e1e2ee1c8b2ccb",
+    "index": 49,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:18.677Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Finds, compiles, and summarizes information from connected sources on request\n",
+        "displayOrder": 1,
+        "id": "cb301072-23ff-47fe-bef7-8be3dc10b7b8",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "title": "Information Retrieval"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "j4b6C3X3fNhdOnJLm6xelEN9M3M=",
+    "id": "3e4d85fd9fc07a2afe7c1dcb6435538a",
+    "index": 50,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:19.030Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Produces structured documents from templates, data inputs, or natural language instructions",
+        "id": "8acde3a7-ef03-4698-aee4-35a1d4a891f7",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "title": "Document generation"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "E3Jl5x2EORZN37L1r8dVoH5iyms=",
+    "id": "7be74bc715d2d89393f3b872ed403cf9",
+    "index": 51,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:20.406Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Fills forms, updates records, and populates fields across connected systems",
+        "id": "05fd3d8d-e448-41ad-b25f-b56cea574f0e",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "title": "Data entry & form completion"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "QCzjVcOf1M1+Dcm8fB7WDfVzsqA=",
+    "id": "ae6971d90f3e6b91c2b6478a2b2cb459",
+    "index": 52,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:20.785Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Runs multi-step processes autonomously end-to-end based on triggers or instructions",
+        "id": "5ef19c2f-b42f-4e14-8c93-dad35d9db421",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "title": "Workflow execution"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "kHdSbuJQCiXCkfUIdSjq+oOLubk=",
+    "id": "089f9d31b7a7d23479840d53508d9ec0",
+    "index": 53,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:21.123Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Identifies tasks outside scope and hands off to the right human or system with context",
+        "id": "72bb76d7-7bcc-42fd-b652-3b79b4d51295",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "title": "Task routing & escalation"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "RQWqN8sAp62eVc0O3A6UPTYbUSA=",
+    "id": "523ffe82f4e835d7ef93ce8727bd3c69",
+    "index": 54,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:21.508Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Aggregates data and produces structured reports or digests on a schedule or on demand",
+        "id": "44873698-5756-4d3c-86b9-96fe8771b9a3",
+        "isSetupFormation": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "title": "Reporting & Summarization"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE"
+    },
+    "error": null,
+    "hash": "m6X+CqHNEJefsYsHfJB3Bp6nj4M=",
+    "id": "fe60eca5d9da1071571e1dc183145047",
+    "index": 55,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:21.868Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currency": "USD",
+        "id": "62530b23-f0b9-49f6-beee-0730d6ff2fb6",
+        "isCustomPricing": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Essentials"
+      },
+      "scope": "global",
+      "type": "ADD_TIER"
+    },
+    "error": null,
+    "hash": "QCgMxTR5nIqBXXxiKynEKsp7v9Q=",
+    "id": "4e5face5532f6f1a3fdb3417e2132975",
+    "index": 56,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:22.224Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "0c4a026a-07ea-48c5-ae1a-a3bfda696881",
+        "serviceLevelId": "ebca726e-1edf-4b79-a295-f6994c074a3f",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Qx3sX5Q1NXL8/p5rkkMA3EHnRDo=",
+    "id": "68b70e62c558224b67c0466409c48f13",
+    "index": 57,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:22.577Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "c7d5fd36-6294-43a0-a48b-b30db8befaf4",
+        "serviceLevelId": "bd6a797a-943d-4741-bb1f-fee79b6daba5",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ks4BRhicC09YbGClSgVef9C9be4=",
+    "id": "3df3029ac281e43c5d67b86efa8a1116",
+    "index": 58,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:22.950Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "960a5814-a1f7-41a2-96e8-6ee39ace7c5f",
+        "serviceLevelId": "8ed3fbf0-a5c6-4a32-a8e3-51fd77d5be6a",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ZKqHQQrSvsmQgbML91VTUX0FHxA=",
+    "id": "baeb415a32efadf7eb0a5cb5b2efa14d",
+    "index": 59,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:23.293Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "70cc2100-3843-4449-b422-174f5f3cbabd",
+        "serviceLevelId": "c98faf8b-aad6-46be-a78f-40bc9686cfcf",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "7Bp7bEDjeXKCW25ApLz+uqFdCx8=",
+    "id": "0a8250127816629e0cef56ed17af6d02",
+    "index": 60,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:23.654Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "7b892ca8-3781-43a5-8535-d19022dba5c2",
+        "serviceLevelId": "99998c59-7932-4f4d-81e3-dc6803a79732",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "MGi3ZV5dMoaAZq+SLx0aXQFbwQ0=",
+    "id": "40b31cac1cef1cdedde1139497760bfa",
+    "index": 61,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:24.021Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "9df512e6-d003-40bf-ba7d-642b3297dbab",
+        "serviceLevelId": "41e7eff1-59f6-4a64-87fd-c0c3d3265bf1",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "jfsF8Ag0s2FTIAhp0wHCLfNyESM=",
+    "id": "76315b7f375e464cab823025dbd41989",
+    "index": 62,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:24.379Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "df8a6ed0-f1d3-4b98-8916-0167d4f5a8f6",
+        "serviceLevelId": "66f67b64-8cbb-4ccb-9f40-59e1f3d71c52",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "8upym4fRRrE+LTM2p6AKgZTiNqw=",
+    "id": "f6e1a8934f6768f367ed2244ed8ecd97",
+    "index": 63,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:24.736Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "89733dc9-b855-4250-bb2e-d0a25fab0266",
+        "serviceLevelId": "6aa85e1e-ee94-4376-9bca-85c537b427cc",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "C1RaSXccMSsyMh3LHY4zs/Pj464=",
+    "id": "92059da7a625119b17bc70aaec100601",
+    "index": 64,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:25.113Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "0819dd5e-2eab-45cd-87e0-2d3d73a838ba",
+        "serviceLevelId": "a5155d24-fc68-4c52-a0b9-be60f77f8d49",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "bvyyA3Dijmi95OdGCx9mnWs4hBU=",
+    "id": "a5c11a0710a154839d1aa313a5a7f685",
+    "index": 65,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:25.457Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "5b7956e2-808e-414d-bd1d-5fa8c38881e7",
+        "serviceLevelId": "93b70daa-5f3a-4cff-a7cf-0c6cbe6b4a36",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "6f3qg4tldV9GE+EXXOO3VeVyfDU=",
+    "id": "b27e4f3322d7298ea4d0e0281559da0b",
+    "index": 66,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:25.834Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "f31e6ba6-4457-4d8b-8ba6-0ee1a56357ee",
+        "serviceLevelId": "8eac69fe-8674-4418-9c1a-762fe05ca935",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "dWBVy27FH/76QOyZHTe8imKds+A=",
+    "id": "11a0a680825d2c48ef5bd85584e4fe95",
+    "index": 67,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:26.181Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "267f9fff-5d50-48cc-a29a-be7b60948f73",
+        "serviceLevelId": "91bf4471-4648-4667-9863-cdc7003e43d3",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ATDgWkDR1xclHrdiW0HfV4j/t6k=",
+    "id": "a4865f7de5a18d7f7e70104e88e99bee",
+    "index": 68,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:26.548Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "6a353e64-b8a7-451e-854f-4d22b1a7bf6c",
+        "serviceLevelId": "ce961898-1c20-4e5d-921b-6fde72756066",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "t+3wR10byt+CtNYMbV1f8h+Y3pY=",
+    "id": "f6cf46f2ab4bbb23f6b53e557bcc8011",
+    "index": 69,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:26.904Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "397cc5c1-4c49-4ca0-9d83-b872a1adad6c",
+        "serviceLevelId": "4573b55a-272a-4394-8bc7-2b0eeb3255ce",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Rz0vO+kHvYJCtZvnavDsEqlWfqs=",
+    "id": "7269870b9d4dc230391375b0ff8d3279",
+    "index": 70,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:27.287Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "c6687ae3-3fc4-4a2e-b927-4beb8afba421",
+        "serviceLevelId": "4f3f3c36-740f-499a-936a-c42afdcff1fa",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ksOoppyu6A+wEUp6IZeSNWgrJwQ=",
+    "id": "5369983b08f072335a77be0aa3de14fb",
+    "index": 71,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:27.639Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "56d73f9a-6a51-4e20-993f-d44f6de53ce1",
+        "serviceLevelId": "6c435de2-b9e5-45fc-b08c-68b588471a18",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "afLQb+BLxZ920+8krnijwaIef/A=",
+    "id": "ba622d49aabf061b564445f7b079bd31",
+    "index": 72,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:27.985Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "cb301072-23ff-47fe-bef7-8be3dc10b7b8",
+        "serviceLevelId": "46710869-4ef6-41c3-8720-a13df1c43c10",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "DebN5gk7CYOo6qQhhgJB4+si8Yg=",
+    "id": "3bbb1a6c8840d3b2b541acbd365bbb4c",
+    "index": 73,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:28.345Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "8acde3a7-ef03-4698-aee4-35a1d4a891f7",
+        "serviceLevelId": "451d86b8-0193-4f89-b23a-3994ffe97ade",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "LfTy80lCxmBKXwSh5FnTEy2vkJA=",
+    "id": "5229318f135ff36907a3d5bc97ea729c",
+    "index": 74,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:28.716Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "05fd3d8d-e448-41ad-b25f-b56cea574f0e",
+        "serviceLevelId": "34a29fe3-a396-46ce-b939-6cc94650f0b3",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "TEmyBubWXYFaGv55O2FJpvoWQRw=",
+    "id": "63b4927b65363d98ab4aaa76e4acde4e",
+    "index": 75,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:29.074Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "5ef19c2f-b42f-4e14-8c93-dad35d9db421",
+        "serviceLevelId": "af4219d9-ed70-400a-9ce7-b4ff7b555112",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "gG4ou2O7YlZaSC3Cq0iXa/RMoS0=",
+    "id": "efbab56f90066ba25c421cd86f22d39a",
+    "index": 76,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:29.420Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "72bb76d7-7bcc-42fd-b652-3b79b4d51295",
+        "serviceLevelId": "cae8da22-a461-4114-874f-4342daba5d6c",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "TuW1aW55rDwTexeA/MVSHt+VUqI=",
+    "id": "94d616da2219cf15446a5b9b6b21dc95",
+    "index": 77,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:29.771Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "44873698-5756-4d3c-86b9-96fe8771b9a3",
+        "serviceLevelId": "9fe6a1e8-96fd-402d-ae28-d05a151f3a01",
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "+hAEiwmFvHE2QJK2lJcs9OWqH50=",
+    "id": "25ac63ff4331da9076c7e49aa2080651",
+    "index": 78,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:30.149Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currency": "USD",
+        "id": "7728d31a-3190-42fc-b76c-37bba1d25085",
+        "isCustomPricing": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Starter"
+      },
+      "scope": "global",
+      "type": "ADD_TIER"
+    },
+    "error": null,
+    "hash": "JVBsa9W+H0MJEFB6qQhnJnZXwik=",
+    "id": "68dbe655c1c52aefd38aac84229e5cd7",
+    "index": 79,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:30.499Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "0c4a026a-07ea-48c5-ae1a-a3bfda696881",
+        "serviceLevelId": "6be42a6b-0fd3-4b1c-af69-997607e9d15d",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "AwsYvLDH3PaU34DT8F6CPC3EUlQ=",
+    "id": "fd2d510f396e345c3f992a9894fc0274",
+    "index": 80,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:30.867Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "c7d5fd36-6294-43a0-a48b-b30db8befaf4",
+        "serviceLevelId": "a7cdf3bb-d1bb-4e70-aafa-66918bcf9a4d",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ace39611kaM4VAoZ7HtI4m15fxs=",
+    "id": "1195b67e0aeee6bb129d5a156726ce48",
+    "index": 81,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:31.224Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "960a5814-a1f7-41a2-96e8-6ee39ace7c5f",
+        "serviceLevelId": "307421fb-48f8-4875-888a-d6e74108b796",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "F3TYa6u+/80JQYNm0XFXkMcXIc4=",
+    "id": "429b474283bf9522294b66e3549182d5",
+    "index": 82,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:31.585Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "70cc2100-3843-4449-b422-174f5f3cbabd",
+        "serviceLevelId": "7b8f6769-422d-40a2-80e8-defb63ddda9d",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "8IPcS+4ueeKxGgWAY0e+lCvwTjw=",
+    "id": "c2d77e94a4c604ace7e95d8be455e92c",
+    "index": 83,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:31.945Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "583c4d12-6b9b-422e-97ed-8ba2895e6950",
+        "serviceLevelId": "d425b8dc-5883-4c9f-9c36-ad3f2868a604",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "nQewE0RCa2xJIVlTOZZ/UTXADz4=",
+    "id": "05ed7ff4259ec12a67fef3015d779c41",
+    "index": 84,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:32.310Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "f67111bc-a0af-45be-9220-8ff1d1c8e05d",
+        "serviceLevelId": "ee50d7db-9935-4b8d-95ef-0ba6f7f7c8da",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "uVykHAtBFc+E+FldejQ7BYg7BGQ=",
+    "id": "ec9def2b250b96cd5e2b6b467a8b096b",
+    "index": 85,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:32.721Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "41ecaf72-b84e-449b-a561-916424740a4c",
+        "serviceLevelId": "647e709f-d241-43aa-988f-99a8f9a00bef",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "jX18ZHLoFIdBI0orOt5P81i4C+4=",
+    "id": "02c21c02a3b5b850f1787269c21c56e3",
+    "index": 86,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:33.120Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "db3d3cd6-591e-4bc7-83eb-2b2ed26ab55a",
+        "serviceLevelId": "ee629b74-aecc-4cb7-8a1b-1fe2be80980f",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Z1ERuac3ZID/vE7+aAX9H8+2KAQ=",
+    "id": "f0136e8e4298cf939bea86f45a5acb87",
+    "index": 87,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:33.503Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "f0a3fb67-dd66-4303-b749-217d69f3aa5f",
+        "serviceLevelId": "66c03dd1-5eb9-4b69-b469-9180f165396f",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "J0wxecJfB82hoSueJHWufyJ9s6U=",
+    "id": "a94b00ee91a0a52717099db9927f82f5",
+    "index": 88,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:33.924Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "serviceLevelId": "b01607f1-3f3d-496a-8b82-31069e9cece5",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "+XTP1v0ucgl73QvDQ80g+dvqq/k=",
+    "id": "7a7f8a9ac43326dc44c9482c7442349b",
+    "index": 89,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:34.358Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "05894260-606a-491b-95b5-646a39fbb71a",
+        "serviceLevelId": "94ad5473-25c4-4a2c-95e6-9df3c1eea911",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "TJ0O8mpkVF/D0EBFkYNApsbY2Xs=",
+    "id": "38966b5ee7deef311495ec496f1df09b",
+    "index": 90,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:34.763Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "7eaa226b-5156-4ceb-a5e8-9cb8850551f1",
+        "serviceLevelId": "023724bf-b1f1-4f84-956c-8ea7fdd5ae93",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "rNxbP6DmKyrhecGy5vKIgu7A1CY=",
+    "id": "40384de3d2dcaad9ca576df1ce52aa63",
+    "index": 91,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:35.178Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "7b892ca8-3781-43a5-8535-d19022dba5c2",
+        "serviceLevelId": "a7beab16-0221-4d3a-9905-51213bcdf8ad",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "QRbcn9AQok48TBDaJ0IwFtMyYVA=",
+    "id": "8f0bb8e78848834045350c75cf77fe99",
+    "index": 92,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:35.578Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "9df512e6-d003-40bf-ba7d-642b3297dbab",
+        "serviceLevelId": "c846fdaf-f2b9-4924-8162-a866190681c4",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "IxFk2EBFd6hiTqsQagUOC28n1Lo=",
+    "id": "39fe9ae3c1599a62dcab7c07fbde277e",
+    "index": 93,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:35.937Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "df8a6ed0-f1d3-4b98-8916-0167d4f5a8f6",
+        "serviceLevelId": "635357a2-852c-4487-97e3-72a5ce54fab3",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "I/pn+gyZpgSxFnlgnTWWXJeBv7U=",
+    "id": "caddaec87ca5d703f16bc02d1e912d9a",
+    "index": 94,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:36.322Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "89733dc9-b855-4250-bb2e-d0a25fab0266",
+        "serviceLevelId": "61830989-f5c0-4bb6-bf88-d1b5cafa402e",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "CbYzOjlMlJtuF6xvKGi+H1AnkZg=",
+    "id": "e854e40a3f6b733def6237bcd7180db6",
+    "index": 95,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:36.676Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "0819dd5e-2eab-45cd-87e0-2d3d73a838ba",
+        "serviceLevelId": "a9c2a726-7b54-439a-b6c8-68989d8fd5a4",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "EMcUUKNeh92E50TZK6RXYD7zNm4=",
+    "id": "2f84f7812501051be476a566f6d46ab0",
+    "index": 96,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:37.021Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "5b7956e2-808e-414d-bd1d-5fa8c38881e7",
+        "serviceLevelId": "59df8e25-7dd7-4918-a3a3-15852e97a8b1",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "XvUCpxr6jEWhSnV7W/FhVfZEKps=",
+    "id": "61857128519d49c2a5defc92d004071f",
+    "index": 97,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:37.381Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "f31e6ba6-4457-4d8b-8ba6-0ee1a56357ee",
+        "serviceLevelId": "83c55eec-49a5-46fd-af8e-8123ba9ca5e6",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "RFdUYYptYVRs6gVySkRFwX3tYNU=",
+    "id": "b7575559fcc8f190dda276df84b39668",
+    "index": 98,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:37.756Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "267f9fff-5d50-48cc-a29a-be7b60948f73",
+        "serviceLevelId": "6b19465d-ee40-44a3-b366-ca59cfafc690",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "3bsScb7zAmIJMr+Vyb33IgR9J5I=",
+    "id": "a78644354f18682beb32e85379f5a64a",
+    "index": 99,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:38.114Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "6a353e64-b8a7-451e-854f-4d22b1a7bf6c",
+        "serviceLevelId": "661f42cc-6ed1-4281-bd5c-6f8ffee7f4fc",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "KuDZ4JcRYtQl7A7rcHm6stAqLqU=",
+    "id": "52545d3010aa4fb48d197021178d3164",
+    "index": 100,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:38.469Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "397cc5c1-4c49-4ca0-9d83-b872a1adad6c",
+        "serviceLevelId": "450840c8-15c8-4b40-9ce7-179aaadca1eb",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "zWAzzv0oXr8iQol5mis+qxJMd9w=",
+    "id": "d32e8349e0a4b11527a4da150ddbadb5",
+    "index": 101,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:38.828Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "c6687ae3-3fc4-4a2e-b927-4beb8afba421",
+        "serviceLevelId": "28ecc679-1ebd-4eb0-ae06-ec885dca39f5",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "kEvjJ/ip3XiqHUn9e8V1L61N+Fk=",
+    "id": "399f34cf4082364fba8b81ae056a2ab7",
+    "index": 102,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:39.186Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "56d73f9a-6a51-4e20-993f-d44f6de53ce1",
+        "serviceLevelId": "55049473-ec0f-4a0d-b202-eaf0df6922d6",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "uEKuNw6a+NEDAm6fGUMHJ/PO5Rk=",
+    "id": "bbefa7d00c9d64922259695daabae925",
+    "index": 103,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:39.538Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "cb301072-23ff-47fe-bef7-8be3dc10b7b8",
+        "serviceLevelId": "15a79254-1848-46f5-9a79-3ffeb92f772a",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "v/ceHEpTDUgnTQU7kAo97I2u/Hc=",
+    "id": "f35efbd8413ea29790e345052bf806ee",
+    "index": 104,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:39.883Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "8acde3a7-ef03-4698-aee4-35a1d4a891f7",
+        "serviceLevelId": "c69f4d94-161c-47ad-adec-d964fdf4be79",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "i7aQPlqOWDSywp+RGnxAMKb9jG0=",
+    "id": "011aeb4306273d44b6c9d2714458e41c",
+    "index": 105,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:40.237Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "05fd3d8d-e448-41ad-b25f-b56cea574f0e",
+        "serviceLevelId": "0f9ad1b0-aeda-43d3-b329-1fe94abd2e24",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "UkOaKdzK4l6ATcUYsAjcqd3CDD8=",
+    "id": "f891f1f0aa597039ee55012704cb14a4",
+    "index": 106,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:40.602Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "5ef19c2f-b42f-4e14-8c93-dad35d9db421",
+        "serviceLevelId": "8df45a89-393a-4bb9-b2c0-8a88156ead6b",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "mj1hnYTvFJMBTMfrugh8v2f1Vgc=",
+    "id": "8ca3b2bcba326d0bf9341cda86db8eae",
+    "index": 107,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:40.950Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "72bb76d7-7bcc-42fd-b652-3b79b4d51295",
+        "serviceLevelId": "db00dcb4-b66e-4765-b4da-b84116d1790a",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Fkr0Kno8/jLD+WfZ2nbbNivN7tc=",
+    "id": "9643e5ec0faa14e1d7e6ab2eaec72acf",
+    "index": 108,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:41.309Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "44873698-5756-4d3c-86b9-96fe8771b9a3",
+        "serviceLevelId": "9588ff32-f2bb-4ae3-8a17-4fef856abea0",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "PSNnc6VrLf2MMknzRgIMassVAXw=",
+    "id": "bb4531911246a7c7a81192aafbd83f31",
+    "index": 109,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:41.662Z"
+  },
+  {
+    "action": {
+      "input": {
+        "freeLimit": 5,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "limitId": "aa10928c-7e1d-4917-9528-87249e00910d",
+        "metric": "Invoice(s)",
+        "paidLimit": 10,
+        "resetCycle": "MONTHLY",
+        "serviceId": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085",
+        "unitName": "Invoice(s)",
+        "unitPrice": 21,
+        "unitPriceCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "ADD_USAGE_LIMIT"
+    },
+    "error": null,
+    "hash": "DXMZge2N0+blrpXfmfJ4oWHKpY4=",
+    "id": "f95e8bce0748be6557c77a99dd7ae5df",
+    "index": 110,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:42.034Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currency": "USD",
+        "id": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+        "isCustomPricing": false,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Standard"
+      },
+      "scope": "global",
+      "type": "ADD_TIER"
+    },
+    "error": null,
+    "hash": "dl/SscViT+DElKu00dOsa2m1MJE=",
+    "id": "edfb6822581dd02ff33a873c464302ef",
+    "index": 111,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:42.404Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "0c4a026a-07ea-48c5-ae1a-a3bfda696881",
+        "serviceLevelId": "cff58708-dd37-4c10-9f7d-e3f0f00c197b",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "UHhG/xP+70ZYKBPCliwtwuvW1NE=",
+    "id": "2c5cba672f248676fcb13da36c1bca22",
+    "index": 112,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:42.758Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "c7d5fd36-6294-43a0-a48b-b30db8befaf4",
+        "serviceLevelId": "264f12a4-3568-40d3-816e-83d596545fd0",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "JpqRjpU1iClsGjNk1Q23t6hR5tA=",
+    "id": "ae0534726cee4ee101418aa82b7a6d92",
+    "index": 113,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:43.106Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "960a5814-a1f7-41a2-96e8-6ee39ace7c5f",
+        "serviceLevelId": "e521ec69-6b2e-42ca-9d7b-51fc4b34f59b",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "C4Zz2YEvs5/URRN9N4xv7IxRois=",
+    "id": "e1329cdcf7ca7b1818e51e08c16a6c7f",
+    "index": 114,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:43.484Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "70cc2100-3843-4449-b422-174f5f3cbabd",
+        "serviceLevelId": "f386318c-59a1-49bf-9145-fe2bb7f1eb29",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "p5keL435T2VADgisImwoImlBnIE=",
+    "id": "cd156f3cd85918a2126952c283612174",
+    "index": 115,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:43.850Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "583c4d12-6b9b-422e-97ed-8ba2895e6950",
+        "serviceLevelId": "7aaa069e-037d-45f8-a547-5385f2505ca6",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "j+5bxeikED7PHR0imL+a1d9ZpD4=",
+    "id": "c3527ae563b570cf96a4cd35b502253f",
+    "index": 116,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:44.197Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "f67111bc-a0af-45be-9220-8ff1d1c8e05d",
+        "serviceLevelId": "0399aed2-2192-44be-821f-6fe16e329e9a",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "/7HEZPd4QH/IMRxNPCSPjnc5XHg=",
+    "id": "35860397c11148b14523dacac27a08d1",
+    "index": 117,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:44.577Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "41ecaf72-b84e-449b-a561-916424740a4c",
+        "serviceLevelId": "13fd779f-9c45-4460-8c8e-90f3af973be6",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "m8aHPiwmZnb7rz37+Kyg1w1ajkw=",
+    "id": "4519145ea37e0eecc6182cefbc818d9a",
+    "index": 118,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:44.961Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "db3d3cd6-591e-4bc7-83eb-2b2ed26ab55a",
+        "serviceLevelId": "3d3d8e56-c41c-47ed-876f-735046fefcd3",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "eS3GFxlMV75y30DURJNOeSsPcXY=",
+    "id": "0eac21808accfd51f9d22e7a30622684",
+    "index": 119,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:45.314Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "f0a3fb67-dd66-4303-b749-217d69f3aa5f",
+        "serviceLevelId": "f363aec0-63e3-40e0-be0c-a063ae09d8ca",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "AY2DAzLpyBu6xLizKhETzD7jFc0=",
+    "id": "45305772385120c6afbfda731895cd6b",
+    "index": 120,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:45.664Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "serviceLevelId": "709586df-ac6b-4d20-ae03-fdabd41c4dbc",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "bC/3Kx6Qj08SSWkh56XgdgOs96g=",
+    "id": "2c17ec57eb3a20cfe46d213e9273c205",
+    "index": 121,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:46.029Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "05894260-606a-491b-95b5-646a39fbb71a",
+        "serviceLevelId": "a2a6fdaa-4c3c-45ce-8545-a10d95062afa",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "b7/IRGZFPkdU8Ad9yVrwXuoADew=",
+    "id": "274ca7431eccaf7c60c873d1317c3222",
+    "index": 122,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:46.391Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "7eaa226b-5156-4ceb-a5e8-9cb8850551f1",
+        "serviceLevelId": "212970b3-ecd4-46b8-ad8d-770a9fca2e81",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "qePx6mfucSHb7XsyfrWbzOdomuY=",
+    "id": "d6aa4e3500a4a834ef4797c0b86e88df",
+    "index": 123,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:46.735Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "dfe25adf-eb55-4eb1-9434-2c8a6d2d9a79",
+        "serviceLevelId": "c22d7e4d-320e-4a10-8536-e66a3731f507",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "lOujweu9jMqAAKw1Qwk3JQj6+hE=",
+    "id": "1def8fb62710ea790488c621636fdd1f",
+    "index": 124,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:47.102Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "060de4c6-003f-4db0-b0b3-73bc1eee3667",
+        "serviceLevelId": "b45dade5-7c15-493e-b876-39cfb234d609",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "kYo+M18K7Xdbtl5e2dEkIKN17c4=",
+    "id": "44042e892efa4c61e69c429f70a8ea9c",
+    "index": 125,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:47.486Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "6527d83a-ac0b-4e01-9a43-448d444fd982",
+        "serviceLevelId": "329ad638-494b-4877-ba3f-2116c6fa81f5",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "WLw5EPQJKZ4GZ4Gx5r0rrjVqLQQ=",
+    "id": "c4376cfa77d73a44978c88203f256f54",
+    "index": 126,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:47.853Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "afe19ef7-ee82-492d-9814-e427bf19c72a",
+        "serviceLevelId": "42ab8332-bed1-4ced-bdc6-61181e7beca1",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "LNYGxGRcEZvAVBO3xKdVavjgqPM=",
+    "id": "80fa20c80ed3a53bd8353ff3c3de4542",
+    "index": 127,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:48.206Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "7b892ca8-3781-43a5-8535-d19022dba5c2",
+        "serviceLevelId": "14784011-2ac9-4f02-a37e-568824b2bd49",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "d2C2y8K1GxP7/IHeQeu3RCacCJk=",
+    "id": "31d5bb96d217f4a32c5100bd691b7de2",
+    "index": 128,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:48.586Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "9df512e6-d003-40bf-ba7d-642b3297dbab",
+        "serviceLevelId": "86dd1390-d1d0-43e6-ac0a-eac1b212d456",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "AUOjcEAQRUU+Y2hrT49xGa7fKPA=",
+    "id": "201b754d0e4d64dc91cc447bc77301ff",
+    "index": 129,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:48.941Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "df8a6ed0-f1d3-4b98-8916-0167d4f5a8f6",
+        "serviceLevelId": "9e51f5dc-08cc-4fae-9ccc-79594ee3abcc",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "oys7fR6vq3S8nMDgBklFeQ92o+Q=",
+    "id": "3b51a352794392238665b99a6506a54a",
+    "index": 130,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:49.304Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "0819dd5e-2eab-45cd-87e0-2d3d73a838ba",
+        "serviceLevelId": "5b717f4d-ba1a-4826-88ca-16146b083717",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "DFMn9xriVTukkMlcJL9gOhH5TVM=",
+    "id": "9ab0a2066fbcaa94ffbca4d5e9596286",
+    "index": 131,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:49.662Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "5b7956e2-808e-414d-bd1d-5fa8c38881e7",
+        "serviceLevelId": "9c45726e-a363-461c-acd1-11631b3ed2e3",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "eFPPW3HkKE50Swn5eEaceaVIbPQ=",
+    "id": "a777a68c438daf045600f523be82c3e3",
+    "index": 132,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:50.026Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "f31e6ba6-4457-4d8b-8ba6-0ee1a56357ee",
+        "serviceLevelId": "d001f23f-aa63-475b-8b0d-2e39373069bc",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "bXzprcSrurib9tZLUsaskScS7PM=",
+    "id": "ac7b2c94edfc829b142aa541c92bde43",
+    "index": 133,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:50.397Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "6a353e64-b8a7-451e-854f-4d22b1a7bf6c",
+        "serviceLevelId": "b613d313-f01b-4470-addd-9093cda815a9",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "9DQ+7FEfYWsw/+zS7ZOvgkCpnCM=",
+    "id": "51c7ea3cf176662635ac1ce3d1280ee4",
+    "index": 134,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:50.762Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "397cc5c1-4c49-4ca0-9d83-b872a1adad6c",
+        "serviceLevelId": "73af2b75-d5f9-44e2-a8bd-a14c9004d682",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "/Y/q6S+ePKcuXnij3vtF8t4+7iQ=",
+    "id": "2e706ed1969b58b7246de50f877414ca",
+    "index": 135,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:51.135Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "c6687ae3-3fc4-4a2e-b927-4beb8afba421",
+        "serviceLevelId": "38d55ca2-5d3a-4b2a-b3a4-418342269b9f",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "qqL4m2g4L9Wf16nRnI+57dLX4Q8=",
+    "id": "94308fdd28d948d8d439fa74b28696b0",
+    "index": 136,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:51.508Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "cb301072-23ff-47fe-bef7-8be3dc10b7b8",
+        "serviceLevelId": "a00eb24a-3c7f-484f-8f83-b6379a286965",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "DpCGl97/6nAjl7P5kN0YEiH2PFE=",
+    "id": "615d16297d074e7ad1d1ed33718076c0",
+    "index": 137,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:51.881Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "267f9fff-5d50-48cc-a29a-be7b60948f73",
+        "serviceLevelId": "b08839db-3b97-42b5-8eb8-782842bab720",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "FGOp8BLtqlrgUhhBu5Z7IObfIUY=",
+    "id": "d97ca2903a4330e02bd5d0a6ea2a672c",
+    "index": 138,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:52.233Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "56d73f9a-6a51-4e20-993f-d44f6de53ce1",
+        "serviceLevelId": "1ee656f5-bb5b-4414-a564-79f1d31d65eb",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "LblB0Htx3UksIZzNBqdW2TIM2cY=",
+    "id": "fe44cfcb8af6912c0f5169fd89f8bdbd",
+    "index": 139,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:52.613Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "89733dc9-b855-4250-bb2e-d0a25fab0266",
+        "serviceLevelId": "37b01d40-0832-447b-9edd-b119d4cb80fd",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "YaqjORvSe1cEW6VnRa6kGKGkpf0=",
+    "id": "99dceb91433b72f660541ba5ea169553",
+    "index": 140,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:52.973Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "8acde3a7-ef03-4698-aee4-35a1d4a891f7",
+        "serviceLevelId": "782cafa6-9bb6-4f88-9247-d94c16a32d35",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Q43jJ3GXt9oei16dakaErea16VM=",
+    "id": "6728acc87930422c905df5e53d8d977b",
+    "index": 141,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:53.347Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "05fd3d8d-e448-41ad-b25f-b56cea574f0e",
+        "serviceLevelId": "c3730db4-f03c-4ec1-beba-6afec6b47909",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "L6SJxQMj6Dyrqx9J+sNJkzNaS5E=",
+    "id": "0dfd9cc9b5e45ac76c95053eab385b77",
+    "index": 142,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:53.732Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "5ef19c2f-b42f-4e14-8c93-dad35d9db421",
+        "serviceLevelId": "8b5754c4-83cd-4256-b4a6-2b5f8fef2ab9",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "RDY7aoPjEEqHBNsKe1qukki5RIA=",
+    "id": "7247c4062d3482bf467251eeaf56f594",
+    "index": 143,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:54.097Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "72bb76d7-7bcc-42fd-b652-3b79b4d51295",
+        "serviceLevelId": "d865741e-889b-409a-b0c3-99f4513427cc",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "8ps+VkN6sgAPyRTMO3xsx48CcUs=",
+    "id": "98be34c3b8975f0c9a9fdc0b92370c34",
+    "index": 144,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:54.465Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "44873698-5756-4d3c-86b9-96fe8771b9a3",
+        "serviceLevelId": "dd4f8d53-0d82-4a81-97e3-eb9008776d9f",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "lSM2efSBNgMjAlVOeFaLe+QnAG0=",
+    "id": "f49e0108212f1ea79e1aea8bf4c585c8",
+    "index": 145,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:54.817Z"
+  },
+  {
+    "action": {
+      "input": {
+        "freeLimit": 50,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "limitId": "06260a0a-3c4e-4165-8e2d-e456526d7e76",
+        "metric": "Invoice(s)",
+        "paidLimit": 100,
+        "resetCycle": "MONTHLY",
+        "serviceId": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+        "unitName": "Invoice(s)",
+        "unitPrice": 21,
+        "unitPriceCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "ADD_USAGE_LIMIT"
+    },
+    "error": null,
+    "hash": "AQKmJIX3abyvEj2gEfVi70qttqQ=",
+    "id": "d7784cdae7ed7d26ff9633f9ed510c29",
+    "index": 146,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:55.198Z"
+  },
+  {
+    "action": {
+      "input": {
+        "freeLimit": 1,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "limitId": "35367da0-9147-44aa-8cea-8bd592524c4c",
+        "metric": "Contributor(s)",
+        "paidLimit": 1,
+        "resetCycle": "MONTHLY",
+        "serviceId": "060de4c6-003f-4db0-b0b3-73bc1eee3667",
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+        "unitName": "Contributor(s)",
+        "unitPrice": 250,
+        "unitPriceCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "ADD_USAGE_LIMIT"
+    },
+    "error": null,
+    "hash": "CfQniMvtUEadyV1pGTCBU3zbFl0=",
+    "id": "9814ea47edb95e0f5c6ea4fdee4000f2",
+    "index": 147,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:55.567Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currency": "USD",
+        "id": "4a94171e-9abe-4cae-ad40-375ad18a5c7a",
+        "isCustomPricing": true,
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "name": "Custom"
+      },
+      "scope": "global",
+      "type": "ADD_TIER"
+    },
+    "error": null,
+    "hash": "A17Oh51sc4gUnbrNrqPZlSfavBQ=",
+    "id": "48a312d648133db5f7e819b652c37be1",
+    "index": 148,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:55.930Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "0c4a026a-07ea-48c5-ae1a-a3bfda696881",
+        "serviceLevelId": "d2b5f2ca-f583-4343-8fae-dabf47e131d3",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "gE4IE2v44DrwbKwJ/lNS2DFjvDE=",
+    "id": "a9113443f415f36929f4f309a0ad4a59",
+    "index": 149,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:56.298Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "c7d5fd36-6294-43a0-a48b-b30db8befaf4",
+        "serviceLevelId": "886558e4-8f19-47c6-aa00-0ccb7b3275be",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "tjDOaSoZE4ch8mMX5SbaGzjcTbU=",
+    "id": "6736982fa41e743eca45e248188d79ff",
+    "index": 150,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:56.680Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "960a5814-a1f7-41a2-96e8-6ee39ace7c5f",
+        "serviceLevelId": "34eca76b-277f-4012-ae8a-76be040cada1",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "aA3PBj3lq7lbghlQupFY8PX+c6w=",
+    "id": "a6c7d0ac294962ce2cc125cd3c357ecb",
+    "index": 151,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:57.049Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "70cc2100-3843-4449-b422-174f5f3cbabd",
+        "serviceLevelId": "26d1ef45-a650-44ca-925d-b78c0960ddc5",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "3YqoQ8rco279w6g39FCndBY0UPw=",
+    "id": "8cd57958bf6b2d8ac2425bd976bc12a2",
+    "index": 152,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:57.432Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "583c4d12-6b9b-422e-97ed-8ba2895e6950",
+        "serviceLevelId": "5cc6a4dd-cdee-4926-acdb-54c7c6876771",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "mCd0/4RPPLYtPaJHWYhbTJmFHkc=",
+    "id": "c44fc13dde9471d92c67255c7bff561d",
+    "index": 153,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:57.793Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "f67111bc-a0af-45be-9220-8ff1d1c8e05d",
+        "serviceLevelId": "cbf15b40-b2ae-46fc-abf4-1ed7bed13c27",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "a4vxIE4v05lWVVJEZ2s58emrbUQ=",
+    "id": "2d1ce27de956bd0a4b933287970812e4",
+    "index": 154,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:58.155Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "serviceId": "41ecaf72-b84e-449b-a561-916424740a4c",
+        "serviceLevelId": "ef2cd6ab-cc64-47d8-ac05-0501611fffbe",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Vb1napAw6tG/KRthvDBse9RY2RA=",
+    "id": "d613b280db888e074674261c9058404e",
+    "index": 155,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:58.520Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "db3d3cd6-591e-4bc7-83eb-2b2ed26ab55a",
+        "serviceLevelId": "6777a6c0-afe1-4d89-8235-8cab7f7dec0b",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "8uz1pDz0we/393L9idkgqAQj1h4=",
+    "id": "4317d8a55ebdf1dc19b06be6efbd2454",
+    "index": 156,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:58.888Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "f0a3fb67-dd66-4303-b749-217d69f3aa5f",
+        "serviceLevelId": "5c52356f-167d-42a0-9406-ebb85418f33d",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "wheVf5Fod/V1V4xIQ+KK5IrvpCI=",
+    "id": "1af611814498d9880c9ec84030051f47",
+    "index": 157,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:59.247Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "serviceLevelId": "0b83f29d-656d-48fc-b817-f2336ff1a0de",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "nuaelLUEIcfyFkE4fDphJZfhGTI=",
+    "id": "35af4cc714b20e7815e54f63a841980a",
+    "index": 158,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:59.617Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "05894260-606a-491b-95b5-646a39fbb71a",
+        "serviceLevelId": "9ec24c14-f211-4669-a82e-775dd62b5ea1",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "okFsRwh58QcgWhnPt7S0xR9u9jE=",
+    "id": "709b18a455b1c6f7f5829361d593d173",
+    "index": 159,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:59.973Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "7eaa226b-5156-4ceb-a5e8-9cb8850551f1",
+        "serviceLevelId": "c0a3a48d-77cb-4e2f-aa3d-6fdc1c6dd451",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "10sLUA9ZzkXwerVmGRKDUj31H1w=",
+    "id": "48deabb50f7e8e5a9a25cb8d97600b07",
+    "index": 160,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:00.450Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "dfe25adf-eb55-4eb1-9434-2c8a6d2d9a79",
+        "serviceLevelId": "6a5309ae-142d-4bc0-bd83-c8625dbaab66",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "qiAb4yXXNTmEjx3+JpCV2R11MJM=",
+    "id": "2c94ae1c31dd4a7af83a6c9c00c03f1e",
+    "index": 161,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:01.465Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "060de4c6-003f-4db0-b0b3-73bc1eee3667",
+        "serviceLevelId": "868d6b9a-3051-4925-80fa-bd90b6786eb0",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "HjrdzydXlvg5qNdLTUKoV7W63OA=",
+    "id": "1b282b15cb0827e394009501cae0ce88",
+    "index": 162,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:01.870Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "6527d83a-ac0b-4e01-9a43-448d444fd982",
+        "serviceLevelId": "86c2d714-25e7-4cad-a949-670c17262d34",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "fa0meqY2dx8WPWFnoCUTEi6hDq0=",
+    "id": "e658d87cf592c136985c2c4005d49c79",
+    "index": 163,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:02.253Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "afe19ef7-ee82-492d-9814-e427bf19c72a",
+        "serviceLevelId": "29004276-3993-46d0-9b37-6c64af1b69c1",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "sM4M4wlxAcOMFwLPOh2gmkb2WSY=",
+    "id": "b6583ea3dd79ae025e00e04057c30ec0",
+    "index": 164,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:02.644Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "309cbb23-e978-452f-bca2-dc4995993a48",
+        "serviceLevelId": "d8ca5f11-11d0-43f4-8bb0-3f198c7405d3",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "gFCi2sQB1YAMjd3zIAoDVmfpOSs=",
+    "id": "73726c59a2a9626c84d168b26a1d9e4e",
+    "index": 165,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:03.014Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "2e7d934b-2324-4ab9-8e72-37bf64488841",
+        "serviceLevelId": "83ae445d-50c8-453e-939b-7c6135fee6cb",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "jDSJQFcZMcow2UOATbvFza8j4ho=",
+    "id": "8f4357606f0624df0e2f6f938190f51e",
+    "index": 166,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:03.386Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "ceaf4759-63f3-488e-bb1d-6ba6ce7919fa",
+        "serviceLevelId": "f760d501-ae3b-4c7d-8530-3c1905283a27",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "xhIKw+e34aer9jVv6LGucEZNGSw=",
+    "id": "2a835607b8ca5913253faf2be6837465",
+    "index": 167,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:03.758Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "serviceId": "43a9473a-a217-4e67-9b26-31e1c6cbb2b5",
+        "serviceLevelId": "369def15-ee5b-426c-8218-256bbe477c1c",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "F43mTWA71BC02HNYSNfQBmOd784=",
+    "id": "976c5d527f7eef634dc095e24d03eb42",
+    "index": 168,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:04.146Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "7b892ca8-3781-43a5-8535-d19022dba5c2",
+        "serviceLevelId": "66928d63-8ae3-4c66-90d7-1fca237d33c8",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "Qe9q0JsAB/vbRdocGHlWKCKmqNY=",
+    "id": "62a2dc2d482acc0148a9f73e90e8c2ee",
+    "index": 169,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:04.527Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "9df512e6-d003-40bf-ba7d-642b3297dbab",
+        "serviceLevelId": "0a6bad5c-c648-4eb4-8974-8a4f0b0bf731",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "KhBWMYDPkot96wwO3BWloraheyM=",
+    "id": "b3fcc6c41296af2b67044462f2c6d3d9",
+    "index": 170,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:04.919Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "df8a6ed0-f1d3-4b98-8916-0167d4f5a8f6",
+        "serviceLevelId": "76c6784c-d5d4-4c63-80f6-536b28cc10a2",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ogP9fTHkknwa7HNdAgUM8CioZTY=",
+    "id": "7eb7c64562e5147301fb42679a459251",
+    "index": 171,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:05.312Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "89733dc9-b855-4250-bb2e-d0a25fab0266",
+        "serviceLevelId": "274bf912-3ff6-43a5-b7f1-057e7a4e6190",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "M6T8n6vbP2+uii2SNyqc4vMzXdQ=",
+    "id": "acdeffeca6ec18c5103d4e65241b7ce2",
+    "index": 172,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:05.706Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "0819dd5e-2eab-45cd-87e0-2d3d73a838ba",
+        "serviceLevelId": "cee3c0da-8e7c-41b7-9047-073df41e6f4f",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "xmIbnzz8uCFG+gEfU+PuueWOTiQ=",
+    "id": "a716c068b870bf94aed8dfef7cc29d07",
+    "index": 173,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:06.088Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "d9a9ca46-a603-487c-ad00-a6b2fb25b81c",
+        "serviceId": "5b7956e2-808e-414d-bd1d-5fa8c38881e7",
+        "serviceLevelId": "db4bc6eb-a53d-4b5c-81db-cd56a9fb37ef",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "0XYsYcEaphbAQ+yHIHL6eY2Zy6c=",
+    "id": "ba571112ef8735f131b4cc88137ae5d3",
+    "index": 174,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:06.460Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "f31e6ba6-4457-4d8b-8ba6-0ee1a56357ee",
+        "serviceLevelId": "fe8b2198-5fef-4622-a04e-b5b3b0aa8abc",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "wQQ9C5nqhItB9hTZRAIsCaxYUv0=",
+    "id": "0e4a480ef9d126192cbe5ce129adbe3d",
+    "index": 175,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:06.832Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "267f9fff-5d50-48cc-a29a-be7b60948f73",
+        "serviceLevelId": "d67ca669-6f7a-413f-bf92-741712812ae9",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "pimqWDlY13Hvoro0Yrfo+TYPVT8=",
+    "id": "fc7c4c6dc08f2f92d9068f9ef46e2cb2",
+    "index": 176,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:07.200Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "6a353e64-b8a7-451e-854f-4d22b1a7bf6c",
+        "serviceLevelId": "8fcf01ad-113b-4d32-a326-aceab4aa7955",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "g638Lk4r/ul0RKlo3PD9lrwt9i8=",
+    "id": "91404310787f7a875618fb9542ce54fe",
+    "index": 177,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:07.577Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "397cc5c1-4c49-4ca0-9d83-b872a1adad6c",
+        "serviceLevelId": "93f7262b-c303-4dac-926a-8833b8310252",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "mQnuJeZF4DeHhMINFOCHvNOl3sM=",
+    "id": "71f5fadc3974d16d1f1294aa1b7514bc",
+    "index": 178,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:07.961Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "c6687ae3-3fc4-4a2e-b927-4beb8afba421",
+        "serviceLevelId": "066700bd-148a-41e1-86d0-f6a0c63ce99e",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "eYdSfVS+Mfg/3HdkMrJD64FkFs8=",
+    "id": "12f0c1e25dd9a2b224604e28cc2d1e7e",
+    "index": 179,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:08.343Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "830bca2e-e230-48d5-b9ff-f93779ebf5be",
+        "serviceId": "56d73f9a-6a51-4e20-993f-d44f6de53ce1",
+        "serviceLevelId": "2d088b1d-7915-4b8c-9111-ffe3ae47e277",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "p2Ns0MwbHN7H2OOf6wcSqT5D8DQ=",
+    "id": "824e95c0e9f0bf38e6763398ce9c6404",
+    "index": 180,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:08.730Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "cb301072-23ff-47fe-bef7-8be3dc10b7b8",
+        "serviceLevelId": "97143713-d744-4486-bc36-a2391d64c4ba",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "eEEjTBHAeViAiC74GF79Fgg09pk=",
+    "id": "43d379a698eb8828dc0063949b5862c7",
+    "index": 181,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:09.115Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "8acde3a7-ef03-4698-aee4-35a1d4a891f7",
+        "serviceLevelId": "3770fd4d-3925-4651-8ec6-4f1af1479b69",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "ijVJ+v69Tp0Wm0jSNBbwtEquEH0=",
+    "id": "36cb26142bda5a63dd9c6d7ca5704dcc",
+    "index": 182,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:09.499Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "05fd3d8d-e448-41ad-b25f-b56cea574f0e",
+        "serviceLevelId": "918a46d8-6a32-4a75-bdfa-966d31e15c06",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "o89NNDiGPiV3DHuhueBtHh0t4fc=",
+    "id": "a0d380f1449ce16cc014a54de556730c",
+    "index": 183,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:09.888Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "5ef19c2f-b42f-4e14-8c93-dad35d9db421",
+        "serviceLevelId": "0c5eeeaf-d3f4-44d5-809f-d3f94f9a64d4",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "U8xLZi0wNY0j+SkuM1irR/WMDqA=",
+    "id": "414e1dd01e3a208ee86cc5dd3ec82b21",
+    "index": 184,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:10.257Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "72bb76d7-7bcc-42fd-b652-3b79b4d51295",
+        "serviceLevelId": "9c71f5ca-9d48-47bc-9826-86986fa3d9ff",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "3p9hg1CNY8nTKDwnVjlWkWMwppo=",
+    "id": "874c11225e7da032ebde582bb21bcee8",
+    "index": 185,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:10.647Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "level": "INCLUDED",
+        "optionGroupId": "ea1d4d3a-3611-471e-9cf8-0b749e63ba81",
+        "serviceId": "44873698-5756-4d3c-86b9-96fe8771b9a3",
+        "serviceLevelId": "fa96c071-9431-4d2d-8045-9af110a5b5f6",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a"
+      },
+      "scope": "global",
+      "type": "ADD_SERVICE_LEVEL"
+    },
+    "error": null,
+    "hash": "/aly9ASALN+2USIW2t9LNRiAun4=",
+    "id": "45cca5ff4e1a4aadb1a9bf837318b59d",
+    "index": 186,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:11.011Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "limitId": "ac07c027-4394-4d4c-a141-868a277318dc",
+        "metric": "Invoice(s)",
+        "resetCycle": "MONTHLY",
+        "serviceId": "d60a7e1f-d9e5-40f3-9172-3b246646c7b7",
+        "tierId": "4a94171e-9abe-4cae-ad40-375ad18a5c7a",
+        "unitName": "Invoice(s)"
+      },
+      "scope": "global",
+      "type": "ADD_USAGE_LIMIT"
+    },
+    "error": null,
+    "hash": "OAISHlJlD27UilRTkrwSOr0iwjs=",
+    "id": "21606b523775672fb6ed60e5f35a0e6c",
+    "index": 187,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:11.390Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "recurringPricing": [],
+        "setupCost": {
+          "amount": 3000,
+          "currency": "USD",
+          "discount": null
+        },
+        "setupCostDiscounts": [
+          {
+            "billingCycle": "ANNUAL",
+            "discountRule": {
+              "discountType": "PERCENTAGE",
+              "discountValue": 90
+            }
+          }
+        ],
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6",
+        "tierPricingId": "d0636421-f52c-442f-86d2-c5c47c8f70c4"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP_TIER_PRICING"
+    },
+    "error": null,
+    "hash": "Nd9BntgnB4ySruqxsPe6w9Ph7XY=",
+    "id": "df56f33e7b7596b351f77a6875258986",
+    "index": 188,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:11.779Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "recurringPricing": [],
+        "setupCost": {
+          "amount": 3000,
+          "currency": "USD",
+          "discount": null
+        },
+        "setupCostDiscounts": [
+          {
+            "billingCycle": "ANNUAL",
+            "discountRule": {
+              "discountType": "PERCENTAGE",
+              "discountValue": 90
+            }
+          }
+        ],
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085",
+        "tierPricingId": "cbc3ed7c-65e3-4501-aff8-b3b4581a4610"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP_TIER_PRICING"
+    },
+    "error": null,
+    "hash": "/xH6v9zFVneMHzGblqcqQvOQsK0=",
+    "id": "88de6949912dc54a81f4993e0e36a95d",
+    "index": 189,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:12.159Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "4f215157-a75f-4cab-ab91-a6ea708ce474",
+        "recurringPricing": [],
+        "setupCost": {
+          "amount": 3000,
+          "currency": "USD",
+          "discount": null
+        },
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+        "tierPricingId": "d09d236e-a32f-43d9-9a8d-31d0253050e3"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP_TIER_PRICING"
+    },
+    "error": null,
+    "hash": "+d7Kzayx4KjwiMl3njz03RSJrB8=",
+    "id": "ce1aa544372633730d28eba412283234",
+    "index": 190,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:12.839Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "recurringPricing": [],
+        "tierId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6",
+        "tierPricingId": "d45e6c83-5c80-4203-a110-f07cd963c849"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP_TIER_PRICING"
+    },
+    "error": null,
+    "hash": "ttBaZwuTg9WA03nO4jPAnGsmpFw=",
+    "id": "1c591edc0bb49710e66274f0b4d455d8",
+    "index": 191,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:13.492Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "recurringPricing": [
+          {
+            "amount": 750,
+            "billingCycle": "MONTHLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "bfa4dd4a-af94-4939-b326-8a8788c3200f"
+          },
+          {
+            "amount": 750,
+            "billingCycle": "QUARTERLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "a87ef663-d4a8-48e7-8525-7f65cfc40a93"
+          },
+          {
+            "amount": 750,
+            "billingCycle": "SEMI_ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "5ac4faf2-77f5-489d-af36-ca9235340f6a"
+          },
+          {
+            "amount": 750,
+            "billingCycle": "ANNUAL",
+            "currency": "USD",
+            "discount": {
+              "discountType": "PERCENTAGE",
+              "discountValue": 5
+            },
+            "id": "0521dc88-b2db-49a9-bce8-d2a2bc000728"
+          }
+        ],
+        "tierId": "7728d31a-3190-42fc-b76c-37bba1d25085",
+        "tierPricingId": "a59522be-84a0-4145-8715-34d25db4800d"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP_TIER_PRICING"
+    },
+    "error": null,
+    "hash": "3Tymb2SSIzF8oL0tY3jtEH0uyog=",
+    "id": "2f98a82c1db63c76ee66d807456d9941",
+    "index": 192,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:13.882Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "optionGroupId": "f4ae303c-9156-4d29-a615-141c38541c95",
+        "recurringPricing": [
+          {
+            "amount": 1250,
+            "billingCycle": "MONTHLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "a63c5d10-fea4-4075-97f4-cd8d17552950"
+          },
+          {
+            "amount": 1250,
+            "billingCycle": "QUARTERLY",
+            "currency": "USD",
+            "discount": null,
+            "id": "f4d9b3c9-a6f3-4564-83fa-f6414fec4e46"
+          },
+          {
+            "amount": 1250,
+            "billingCycle": "SEMI_ANNUAL",
+            "currency": "USD",
+            "discount": null,
+            "id": "1774889c-1286-4166-94ce-61e9ee4bf51d"
+          },
+          {
+            "amount": 1250,
+            "billingCycle": "ANNUAL",
+            "currency": "USD",
+            "discount": {
+              "discountType": "PERCENTAGE",
+              "discountValue": 5
+            },
+            "id": "e706f399-3e24-4409-b45d-08eaec5c5525"
+          }
+        ],
+        "tierId": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+        "tierPricingId": "618a4ccf-1b09-4783-a1eb-9a0debcf042a"
+      },
+      "scope": "global",
+      "type": "ADD_OPTION_GROUP_TIER_PRICING"
+    },
+    "error": null,
+    "hash": "ZPJaQTRznh78ulrzUBD1Fpo7buE=",
+    "id": "100dde247a705ef1081f8618052f115b",
+    "index": 193,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:02:14.269Z"
+  }
+]

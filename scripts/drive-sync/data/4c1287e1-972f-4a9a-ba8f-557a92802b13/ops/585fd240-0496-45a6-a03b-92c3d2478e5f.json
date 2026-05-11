@@ -1,0 +1,72 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "585fd240-0496-45a6-a03b-92c3d2478e5f",
+        "meta": {},
+        "model": "powerhouse/snapshot-report",
+        "name": "December 2025 - Snapshot Report",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-31T16:58:37.820Z",
+          "documentType": "powerhouse/snapshot-report",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "585fd240-0496-45a6-a03b-92c3d2478e5f"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "8d82e74d56bc3bb68fcb4eb7148024ab",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T16:58:37.828Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "585fd240-0496-45a6-a03b-92c3d2478e5f",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "accountsDocumentId": null,
+            "endDate": null,
+            "ownerIds": [],
+            "reportName": null,
+            "reportPeriodEnd": "2025-12-31T23:59:59.999Z",
+            "reportPeriodStart": "2025-12-01T00:00:00.000Z",
+            "snapshotAccounts": [],
+            "startDate": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/snapshot-report",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "75798d1a264fa1aae13a729463ea745a",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T16:58:37.828Z"
+  }
+]

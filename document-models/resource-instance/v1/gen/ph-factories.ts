@@ -56,7 +56,7 @@ export function createGlobalState(
   return {
     ...defaultGlobalState(),
     ...(state || {}),
-  } as ResourceInstanceGlobalState;
+  };
 }
 
 export function createLocalState(

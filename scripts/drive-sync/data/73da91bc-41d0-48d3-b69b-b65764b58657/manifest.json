@@ -1,0 +1,288 @@
+{
+  "source": {
+    "slug": "73da91bc-41d0-48d3-b69b-b65764b58657",
+    "name": "Powerhouse RGH Operator Admin",
+    "downloadedAt": "2026-04-29T16:14:42.000Z"
+  },
+  "excluded": [],
+  "folders": [
+    {
+      "id": "0ccaa8c8-e04e-4ff3-9e62-8122dec3d424",
+      "name": "Services And Offerings",
+      "parentFolder": null
+    },
+    {
+      "id": "0ebbf880-d125-441a-827e-f247bee190a5",
+      "name": "yasiel-testing123",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e",
+      "name": "Products",
+      "parentFolder": "0ccaa8c8-e04e-4ff3-9e62-8122dec3d424"
+    },
+    {
+      "id": "5c99c5d2-7bf6-466c-9489-7f40f63025de",
+      "name": "yasiel-testing126",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "87432504-c92c-47d6-926e-68f2aabcd295",
+      "name": "Powerhouse",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5",
+      "name": "Service Offerings",
+      "parentFolder": "0ccaa8c8-e04e-4ff3-9e62-8122dec3d424"
+    },
+    {
+      "id": "b8c32512-1c0e-4878-9ccd-90fab35eabef",
+      "name": "yasiel-testing127",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8",
+      "name": "Service Subscriptions",
+      "parentFolder": null
+    },
+    {
+      "id": "c9ef99cd-7ece-4f74-813b-3cb6ba262c78",
+      "name": "Snapshot Reports",
+      "parentFolder": null
+    },
+    {
+      "id": "db5f3db8-2091-42b6-aa92-4bbc7868ab2c",
+      "name": "Expense Reports",
+      "parentFolder": null
+    },
+    {
+      "id": "e5521e47-cb76-434c-9c31-bfd12f678ce8",
+      "name": "yasiel-testing125",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "f82c9d82-7101-4bc1-a2f9-22ef2d84a5d9",
+      "name": "yasiel -testing 124 ",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    }
+  ],
+  "documents": [
+    {
+      "id": "018a765a-57ea-475f-9cf9-c7c4619279bb",
+      "name": "COMMERCIAL OPERATIONAL HUB (OH)",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "10d4f509-e05e-43d0-bab9-27d30e950c5f",
+      "name": "NETWORK OPERATIONAL HUB",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "124876fe-1627-4f11-b7de-59405c09a9d7",
+      "name": "rupert",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "207cfa22-7895-48e6-aa37-74672cbfbbbf",
+      "name": "NETWORK REVENUE GENERATING HUB",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "279fefab-e774-4804-a84a-137ec84ad61e",
+      "name": "Operational Hub",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "293ba483-034b-4fb0-8546-68e53b0092ed",
+      "name": "powerhouse Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "87432504-c92c-47d6-926e-68f2aabcd295"
+    },
+    {
+      "id": "2944dc02-1a7e-4af9-9f0e-a7f30b899b9e",
+      "name": "yasiel-testing123 Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "0ebbf880-d125-441a-827e-f247bee190a5"
+    },
+    {
+      "id": "30d2082f-2a73-4322-b5ee-979b906d6310",
+      "name": "yasiel--testing-124 Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "f82c9d82-7101-4bc1-a2f9-22ef2d84a5d9"
+    },
+    {
+      "id": "32d4a941-9e24-42b7-a8f2-e23680c95bed",
+      "name": "NETWORK IP SPV",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "3c580048-ad0f-434f-9cb8-b94ce095dc1d",
+      "name": "OperationalHubOffering (active 3)",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "4bd92ae8-e359-41f6-b913-810786c7879f",
+      "name": "powerhouse Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "87432504-c92c-47d6-926e-68f2aabcd295"
+    },
+    {
+      "id": "4e7df9ab-4590-4c7f-afe1-c2c7a4793565",
+      "name": "yasiel--testing-124 Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "f82c9d82-7101-4bc1-a2f9-22ef2d84a5d9"
+    },
+    {
+      "id": "5103445f-b73a-402a-bbd2-0124f89c8976",
+      "name": "AgenticOps",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "521bf580-fa8b-4f66-9ef4-7bd2381127a4",
+      "name": "yasiel-testing125 Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "e5521e47-cb76-434c-9c31-bfd12f678ce8"
+    },
+    {
+      "id": "56dce7ce-e65d-4fd6-b3d8-7a8506528aa9",
+      "name": "OperationalHub",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "5c76a110-81a6-4050-a651-6f4f3cfa8d7f",
+      "name": "Intellectual Property SPV (IP SPV)",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "5e99e460-0d32-4c52-8fc2-9c09f682ce9c",
+      "name": "yasiel-testing127 Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "b8c32512-1c0e-4878-9ccd-90fab35eabef"
+    },
+    {
+      "id": "61aa532a-56bd-42d7-84ed-fc43b035a560",
+      "name": "OperationalHubOffering (active)",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "68755b8c-4add-43f1-8429-c8572166918b",
+      "name": "OperationalHubOffering (copy) 1",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "68c36952-9197-415c-9afd-48da759266da",
+      "name": "OperationalHubOffering (active 2)",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "70b22ab7-fc27-4341-8b2c-173a1c7c72f0",
+      "name": "yasiel-testing126 Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "5c99c5d2-7bf6-466c-9489-7f40f63025de"
+    },
+    {
+      "id": "7640c4e1-dcbf-438c-b1c0-039e35ab337a",
+      "name": "AgentOps",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "99d183ba-9d4c-43b1-8c8d-ebb34af45563",
+      "name": "ALTERNATIVE RISK TRANSFER (ART)",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "9c0121be-0f3b-4a0d-8db0-f854c082fc43",
+      "name": "yasiel-testing127 Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "b8c32512-1c0e-4878-9ccd-90fab35eabef"
+    },
+    {
+      "id": "a6da1a09-ba26-407c-942c-7d326059dc4b",
+      "name": "OperationalHubOffering (draft)",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "bf7c059a-9320-44ab-a5b3-bc4b27399daf",
+      "name": "t-team Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "c96b5758-efdd-4c5d-901c-9768638405c7",
+      "name": "yasiel-testing126 Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "5c99c5d2-7bf6-466c-9489-7f40f63025de"
+    },
+    {
+      "id": "c9b82ca6-9132-4840-9237-abf81c62c469",
+      "name": "OH-Artic",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "c9fc80df-218f-44d6-833c-cc2f813cf12e",
+      "name": "yasiel-testing123 Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "0ebbf880-d125-441a-827e-f247bee190a5"
+    },
+    {
+      "id": "d17568d2-d8c1-4525-a800-d4bcfa1a42ea",
+      "name": "FUNDRAISING VEHICLE (OCF)",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "da598460-435f-42e5-bbe3-30a07a8bf33b",
+      "name": "OperationalHubOffering",
+      "type": "powerhouse/service-offering",
+      "parentFolder": "b6073d7e-3aff-40a7-a5a9-5a2bfab5e4e5"
+    },
+    {
+      "id": "dbb6b7ca-9c25-422e-8098-e08adb64feb9",
+      "name": "NETWORK EMBRYONIC HUB",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "deb6562d-1dc8-4be9-9653-86124d60f3f8",
+      "name": "REVENUE GENERATING HUB (RGH)",
+      "type": "powerhouse/resource-template",
+      "parentFolder": "24ab1f7c-53c1-4ac7-85c0-d77290d9954e"
+    },
+    {
+      "id": "e91c35bb-1f8e-467a-8b09-0d5dd466c97a",
+      "name": "t-team Resource Instance",
+      "type": "powerhouse/resource-instance",
+      "parentFolder": "c07a2edb-b9db-4a99-b7b5-9dd736215cd8"
+    },
+    {
+      "id": "ed5a114e-1494-45a9-8e0b-d4a43247aeff",
+      "name": "Powerhouse RGH",
+      "type": "powerhouse/builder-profile",
+      "parentFolder": null
+    },
+    {
+      "id": "fad8b5c6-f1d0-4de1-854c-74e8cd79843d",
+      "name": "yasiel-testing125 Subscription Instance",
+      "type": "powerhouse/subscription-instance",
+      "parentFolder": "e5521e47-cb76-434c-9c31-bfd12f678ce8"
+    }
+  ]
+}

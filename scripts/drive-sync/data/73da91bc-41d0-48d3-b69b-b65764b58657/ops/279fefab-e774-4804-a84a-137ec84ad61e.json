@@ -1,0 +1,130 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "279fefab-e774-4804-a84a-137ec84ad61e",
+        "meta": {},
+        "model": "powerhouse/service-offering",
+        "name": "Operational Hub",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-03T10:59:46.997Z",
+          "documentType": "powerhouse/service-offering",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "279fefab-e774-4804-a84a-137ec84ad61e"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "a02e5afc1a64dab1383077c347b1f2a8",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:46.997Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "A ready-to-use operational setup that gives open-source and public-goods builder teams the legal and financial infrastructure to receive funding, pay contributors, and operate compliantly from day one.\n\nStructured as a Swiss Association \u2014 a cost-efficient, privacy-preserving legal form with strong international recognition \u2014 the Operational Hub reduces personal liability for contributors, simplifies compliance, and provides a professional foundation for teams that are already doing the work.",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "summary": "A turnkey legal and operational setup for open-source builder teams \u2014 entity formation, invoicing, payouts, and compliance bundled under one roof.",
+        "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na",
+        "title": "Operational Hub"
+      },
+      "scope": "global",
+      "type": "UPDATE_OFFERING_INFO"
+    },
+    "error": null,
+    "hash": "D1ozElKaHpj82lWhDCo+GYVGAbs=",
+    "id": "2873db265ab4c86dda6a707483d2a91c",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:00.348Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "279fefab-e774-4804-a84a-137ec84ad61e",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "availableBillingCycles": [],
+            "description": null,
+            "facetTargets": [],
+            "id": null,
+            "infoLink": null,
+            "lastModified": null,
+            "operatorId": null,
+            "optionGroups": [],
+            "resourceTemplateId": null,
+            "services": [],
+            "status": "DRAFT",
+            "summary": "",
+            "thumbnailUrl": null,
+            "tiers": [],
+            "title": ""
+          },
+          "local": {}
+        },
+        "model": "powerhouse/service-offering",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "c2d3a293ab38fc19775fc1dd124a3d57",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:46.997Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "status": "DRAFT"
+      },
+      "scope": "global",
+      "type": "UPDATE_OFFERING_STATUS"
+    },
+    "error": null,
+    "hash": "D1ozElKaHpj82lWhDCo+GYVGAbs=",
+    "id": "b9899b821ea19be36a5a3eaf494306ae",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:00.688Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "resourceTemplateId": "a952735e-e195-40d3-8407-42a22210f4f7"
+      },
+      "scope": "global",
+      "type": "SELECT_RESOURCE_TEMPLATE"
+    },
+    "error": null,
+    "hash": "NxV2coFONuY66xt61Y0v1j2DfwE=",
+    "id": "a8035d7c5d37a226b77deff98564548b",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:01:01.026Z"
+  }
+]

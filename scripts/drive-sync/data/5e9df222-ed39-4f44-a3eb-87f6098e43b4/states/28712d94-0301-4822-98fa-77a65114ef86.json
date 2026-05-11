@@ -1,0 +1,29 @@
+{
+  "alternativeProposals": [],
+  "client": {
+    "icon": "https://fusion.sky.money/_next/image?url=https%3A%2F%2Fmakerdao-ses.github.io%2Fecosystem-dashboard%2Fecosystem-actors%2FPOWERHOUSE%2FPOWERHOUSE_logo.png&w=3840&q=85",
+    "id": "078401d0-b861-4fba-a385-5e0dec199813",
+    "name": "Powerhouse"
+  },
+  "code": "PW25",
+  "initialProposal": {
+    "author": {
+      "icon": null,
+      "id": "55b914d4-a738-46a5-bd10-e3627e617c0d",
+      "name": "BAI"
+    },
+    "id": "7f6e94e1-7418-453b-92f9-a93b49f07257",
+    "paymentTerms": "59020cb2-681c-4108-8827-e475de073eec",
+    "sow": "9253cbbd-7577-4c3a-bca6-f54c81c74242",
+    "status": "ACCEPTED"
+  },
+  "paymentRequests": [],
+  "paymentTerms": "59020cb2-681c-4108-8827-e475de073eec",
+  "rfp": {
+    "id": "922c6e79-25b2-414e-a494-25a3513692d9",
+    "title": "RFP-Powerhouse Workstream 2024"
+  },
+  "sow": "9253cbbd-7577-4c3a-bca6-f54c81c74242",
+  "status": "AWARDED",
+  "title": "Powerhouse Workstream 2024"
+}

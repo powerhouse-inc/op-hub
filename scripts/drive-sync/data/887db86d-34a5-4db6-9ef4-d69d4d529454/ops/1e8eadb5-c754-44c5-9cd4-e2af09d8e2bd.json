@@ -1,0 +1,102 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "1e8eadb5-c754-44c5-9cd4-e2af09d8e2bd",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "Kilgore",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-23T18:52:24.174Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "1e8eadb5-c754-44c5-9cd4-e2af09d8e2bd"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "b85193ccb55229b227f7835d69f74910",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:24.174Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "klg",
+        "icon": "https://pbs.twimg.com/profile_images/1742981743974498304/5Z8KeXyW_400x400.jpg",
+        "id": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+        "name": "Kilgore",
+        "slug": "kilgore",
+        "status": "ACTIVE"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "9g4ZZH/ECbSHqJikreYvLlJn0Uw=",
+    "id": "9d98c92dd28f5191d20037c6530a3d39",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:52.835Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "1e8eadb5-c754-44c5-9cd4-e2af09d8e2bd",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": null,
+            "contributors": [],
+            "description": null,
+            "icon": null,
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": null,
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": null,
+            "status": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "6bab66829effa45d93cecd26ca2df98f",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:24.174Z"
+  }
+]

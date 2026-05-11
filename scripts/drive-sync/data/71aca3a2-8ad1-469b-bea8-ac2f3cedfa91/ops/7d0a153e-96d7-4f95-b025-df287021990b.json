@@ -1,0 +1,453 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "7d0a153e-96d7-4f95-b025-df287021990b",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "Core Dev Team Profile",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-24T17:17:24.114Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "7d0a153e-96d7-4f95-b025-df287021990b"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "3d98df975850df1cb5cabae55fc496f6",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:24.114Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "982989fc-922b-4347-a463-0b4025d95ee9"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "3s4kiASJVSmJV8kBtirFMF8Hxd4=",
+    "id": "c58c0f08f182b852a4403266f6551192",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:24.404Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "7d0a153e-96d7-4f95-b025-df287021990b",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": null,
+            "contributors": [],
+            "description": null,
+            "icon": null,
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": null,
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": null,
+            "status": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "8e61fd6e67048dfeaeaaca2429ee4bda",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:24.114Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": "Core Development",
+        "slug": "core-development"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "HuuSPnL558tYqOqng4B6m9w1z58=",
+    "id": "073d5198a2d50cdf6ace58d18d408eb9",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:24.755Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "core-dev"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "gC0kR0QEnghZjt7hy0RnGLNnprE=",
+    "id": "fc3dc41bed86808edc62a55833407e60",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:25.093Z"
+  },
+  {
+    "action": {
+      "input": {
+        "slug": "core-deve"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "tBkQob4z60fKVgsMxpT+R5gOpQo=",
+    "id": "1b77be65bcc0b573dafe2dd448d402e7",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:25.435Z"
+  },
+  {
+    "action": {
+      "input": {
+        "slug": "core-dev"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "Qp7SIBmqwW/LuE5V90PfFUpBPO8=",
+    "id": "7d06ce3f05ea8b8f77bb7fc774f31d0a",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:25.778Z"
+  },
+  {
+    "action": {
+      "input": {
+        "status": "ACTIVE"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "kGeZbasA/b9nEh4q04NpDRuKMnY=",
+    "id": "b61d48c0b598bb3e746efe5f2160628b",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:26.116Z"
+  },
+  {
+    "action": {
+      "input": {
+        "about": "## About Us\nCore Dev is the engineering backbone of the Powerhouse ecosystem. We build and maintain the foundational infrastructure that powers decentralized operations \u2014 from document model runtimes and reactor engines to the developer SDK and CLI tooling.\n\n## What We Do\nOur team focuses on the deep technical work that makes the Powerhouse platform reliable, performant, and extensible. We own the core protocol layer, ensuring that document models, reducers, and operations work correctly and efficiently at scale.\n\n## Core Infrastructure\nWe design and implement the runtime systems that power Powerhouse document processing \u2014 including the reactor architecture, synchronization protocols, and the document-model framework that enables type-safe, deterministic state management.\n\n## Developer Experience\nWe build the tools that other teams rely on: the Powerhouse CLI, code generation pipelines, SDK libraries, and development environment integrations. Our goal is to make building on Powerhouse as productive and enjoyable as possible.\n\n## Platform Reliability\nWe ensure the platform is robust, well-tested, and secure. This includes continuous integration pipelines, automated testing infrastructure, performance monitoring, and security audits across the stack.",
+        "code": "CD",
+        "description": "Core Dev is a team focused on building and maintaining the core infrastructure, protocols, and developer tooling for the Powerhouse ecosystem",
+        "name": "Core Dev",
+        "slug": "core-dev",
+        "status": "ACTIVE"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "CD1IEl5sZBbLeEMycT59m3n5HVc=",
+    "id": "c0cff3caaa810ccb1f69b93958877a26",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:26.458Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "FRONTEND_DEVELOPMENT"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "ywzyRRymBrpJO4uzbB/xfepJe+U=",
+    "id": "2096cafa86cb7849835edea1e5fb68a5",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:26.806Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "BACKEND_DEVELOPMENT"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "uantW4B7Eq0mPVGHeVCkABlMIZ4=",
+    "id": "1c5bf0d5c4f810144c1e91c501906755",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:27.217Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "FULL_STACK_DEVELOPMENT"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "ueBASw8EagjKhnc6rVOyWmHvuF4=",
+    "id": "0a855dcdb7e075dcdf9f3c2b66e54864",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:27.553Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "DEVOPS_ENGINEERING"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "IKE5zkiNoUsBfruc4JIbNBIFKLQ=",
+    "id": "1908b6f357ed0216be03cbf700626bb4",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:27.893Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "SMART_CONTRACT_DEVELOPMENT"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "WRUZx0HO4C6YZeQraYMx6w75NvE=",
+    "id": "9c06427ee01e16836a90280a2a0997a4",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:28.245Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "QA_TESTING"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "d97uWapTFstFx9WI39Genq0+XLc=",
+    "id": "8512e67a3a6cf7f61e1c377e2983a60f",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:28.583Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "SECURITY_ENGINEERING"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "xvdJj6FZopklskxuDnG59fnz2gw=",
+    "id": "d5def98ec29d8c23da107500c4bd75b6",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:28.923Z"
+  },
+  {
+    "action": {
+      "input": {
+        "scope": "PROTOCOL_SCOPE"
+      },
+      "scope": "global",
+      "type": "ADD_SCOPE"
+    },
+    "error": null,
+    "hash": "+OwENQBCDsFLQburYSnDTysBTgY=",
+    "id": "7dcfabf9661a1509d6e14320956b8d86",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:29.378Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "link-github-01",
+        "label": "Github",
+        "url": "https://github.com/powerhouse-inc"
+      },
+      "scope": "global",
+      "type": "ADD_LINK"
+    },
+    "error": null,
+    "hash": "UIPS86SdfG+lAsyaCgOqkTC91js=",
+    "id": "cc502bffaf028c5aa7d7a59fdc48c4d1",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:29.724Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "link-discord-01",
+        "label": "Discord",
+        "url": "https://discord.com/invite/h7GKvqDyDP"
+      },
+      "scope": "global",
+      "type": "ADD_LINK"
+    },
+    "error": null,
+    "hash": "E5sRUzEleSMCM8jUTVOqebTe+Sg=",
+    "id": "cf7ba3bf891579d90bd1d14ac153e1c9",
+    "index": 16,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:30.050Z"
+  },
+  {
+    "action": {
+      "input": {
+        "icon": "https://i.postimg.cc/6WrHbcCY/powerhouse-admin.jpg"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "jxAlL3T7rd6Cw3WOTJYnbBFQd6s=",
+    "id": "f1828af5e03f96ba320deeed075b44f8",
+    "index": 17,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:30.389Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": null
+      },
+      "scope": "global",
+      "type": "SET_OP_HUB_MEMBER"
+    },
+    "error": null,
+    "hash": "1Ob6+KrUjlM0HnRwsWPERlNiPAk=",
+    "id": "88c3ae222e809fc9da3ee883470e9c98",
+    "index": 18,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:30.717Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": null
+      },
+      "scope": "global",
+      "type": "SET_OP_HUB_MEMBER"
+    },
+    "error": null,
+    "hash": "7QpskWSKpfPDx+NJFlif4B1O6ho=",
+    "id": "c11adcc669d272d5d519dcab4fdff91b",
+    "index": 19,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:31.051Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": null
+      },
+      "scope": "global",
+      "type": "SET_OP_HUB_MEMBER"
+    },
+    "error": null,
+    "hash": "btEM6FDXSl52fTfR/aJSFq9/hbo=",
+    "id": "7ec45706d16b72cdc52923785a1cd703",
+    "index": 20,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:31.387Z"
+  },
+  {
+    "action": {
+      "input": {
+        "icon": "https://framerusercontent.com/images/GZkbeeiIcPgM6wgEk8vIZlWi7o.png?scale-down-to=512&width=1024&height=1024"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "o8Wz6M0FHxxLPQ6iBSBXrKWQElM=",
+    "id": "7ed6f895d3a2ded980f06c4248c0abdd",
+    "index": 21,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:31.713Z"
+  },
+  {
+    "action": {
+      "input": {
+        "icon": "https://cdn-icons-png.flaticon.com/512/6062/6062646.png"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "Ys65ahZgf1ytShia0HbacIeV2NU=",
+    "id": "2ee6b91677da55811b6b98c10a61f5af",
+    "index": 22,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:17:32.042Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": "Powerhouse Genesis",
+        "phid": "ab700de9-90dd-4219-9fff-5aaf94ca2bc9"
+      },
+      "scope": "global",
+      "type": "SET_OP_HUB_MEMBER"
+    },
+    "error": null,
+    "hash": "jbomRjS2TK/faFQN4kC31gLWPhA=",
+    "id": "5f0c0cfe13bd38d4e7efd0e162277dae",
+    "index": 23,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:52:09.626Z"
+  }
+]

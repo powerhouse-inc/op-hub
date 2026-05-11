@@ -1,0 +1,299 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "018a765a-57ea-475f-9cf9-c7c4619279bb",
+        "meta": {},
+        "model": "powerhouse/resource-template",
+        "name": "COMMERCIAL OPERATIONAL HUB (OH)",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-03T10:59:40.511Z",
+          "documentType": "powerhouse/resource-template",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "018a765a-57ea-475f-9cf9-c7c4619279bb"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "6dc788fee3824740c11fbfd90f2a21a5",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:40.511Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": " A turnkey commercial entity for agents that enables builder teams to combine development and early commercial activity under a single legal structure. It serves as a coordination hub for contributors and customers, enabling teams to process revenues and expenses, contract with customers, and manage early sales without incurring in structural overhead.\n\nTypical Use Cases\n\n- Early products moving from grants to revenue\n- Teams testing initial commercial demand\n- One\u2011entity setups before fundraising or regulatory complexity\n\nSuitable for Early\u2011stage teams with no external funding and limited regulatory exposure, where simplicity outweighs structural separation.\n\n**Capabilities**\n\n\u2705 Receive income in crypto as grants or donations\n\n\u2705Pay and hire contributors\n\n\u2705Pay out dividends\n\n\u2705Issue shares, security tokens, and receive external investment\n\n\u2705Getting a bank account\n\n\u2705Public Registry requirement\n\n\ud83d\udfe8International Team (founding team may be abroad, but a local Director is  required)\n\n\ud83d\udfe8Tax optimization\n\n\ud83d\udfe8Shareholder anonymity (depends on final entity type)\n\n",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "summary": "A single legal entity to build, commercialize, and operate a product from day one.\n",
+        "title": "Commercial Operational Hub (OH)"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "hcqP2rjvKOIvbZIjePXUi3lQW/Y=",
+    "id": "cd02eb3dead814f2794f770158ddf67b",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:03.144Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "018a765a-57ea-475f-9cf9-c7c4619279bb",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "contentSections": [],
+            "description": null,
+            "facetTargets": [],
+            "faqFields": [],
+            "id": null,
+            "infoLink": null,
+            "lastModified": null,
+            "operatorId": null,
+            "optionGroups": [],
+            "recurringServices": [],
+            "services": [],
+            "setupServices": [],
+            "status": "DRAFT",
+            "subtitle": null,
+            "summary": "",
+            "targetAudiences": [],
+            "thumbnailUrl": null,
+            "title": "",
+            "weight": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-template",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "52cb0af38c1677856232f095b8a7d078",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:40.511Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "status": "COMING_SOON"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_STATUS"
+    },
+    "error": null,
+    "hash": "pCX5nq09Fjz6mx4IBB8+aWHf/0c=",
+    "id": "9af5db91fa1f416f046c520a60c6dc8a",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:03.499Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "operatorId": "831efda4-c052-42b1-8df3-dfae977b732b"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR"
+    },
+    "error": null,
+    "hash": "Oc8iuJppzE0vfc5UZO3UqJPWMaw=",
+    "id": "dd68c46abc95cf420c9672fb444f6799",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:03.846Z"
+  },
+  {
+    "action": {
+      "input": {
+        "color": "#0ea5e9",
+        "id": "1dae09f6-61d8-4804-a706-6292a954509f",
+        "label": "Builders",
+        "lastModified": "2026-04-03T10:59:39.000Z"
+      },
+      "scope": "global",
+      "type": "ADD_TARGET_AUDIENCE"
+    },
+    "error": null,
+    "hash": "DOeyoo3pemNwAXw6EyUkRW0vTL4=",
+    "id": "0466dd5e112c77c3d45d7d960824083e",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:04.208Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "sno-function",
+        "categoryLabel": "SNO Function",
+        "id": "a02508f2-8542-4fc1-820c-6b493cc0986e",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Operational Hub"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "VZ5ugSU0kzngEnMqqf5IaiqB3Hw=",
+    "id": "ea1609850de85f9b03a55394ad5188db",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:04.563Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "team",
+        "categoryLabel": "Team",
+        "id": "9572bd79-a982-4736-acbb-f4ff4677a8f8",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Remote"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "y7mNZRM2DPG6SYjlMrH0cuaomAk=",
+    "id": "015bff613d680c06c886acc6a6103d8e",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:04.993Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "legal-entity",
+        "categoryLabel": "Legal Entity",
+        "id": "2cfc4922-654c-4561-8855-56d9a6a4a16c",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Swiss Association"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "T/Aiuxynj+2+TTbvl57b3mJ1Vwk=",
+    "id": "f9f50c6e14cc809a3e2ffd8940ab49d9",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:05.352Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "anonymity",
+        "categoryLabel": "Anonymity",
+        "id": "24ee7b66-33d3-4232-954b-35359a37d82a",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "High",
+          "Highest"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "CrzMcVX4nFfwTPtUxG0dHfAELRw=",
+    "id": "5455969c0c363db79ff654c0ddd682e0",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:05.692Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "services": [
+          "Needs analysis tool (Self-assessment)",
+          "Legal document assembler for setting up a commercial entity and Contributor Agreements *(entity wind-down document assembler included)",
+          "Kick off meeting with Powerhouse and workshop with local Counsel",
+          "Legal entity founding meeting and legal document review with local counsel  *(Tier 1: access to x hours of counsel)",
+          "Onboarding assistance with payment processor, accounting software and billing setup",
+          "Commercial Registry filing, if required",
+          "Legal entity domicile and Tax ID"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "3akD9NsXAEjZI60z4XF/SJePseI=",
+    "id": "7c34063ace3e2d56e09159151667d344",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:07.042Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "services": [
+          "Payment preparation and processing",
+          "Accounting and bookkeeping services",
+          "Transparency reporting",
+          "Prepare financial statements",
+          "Contract administration",
+          "Tax filing and reporting"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "F/jx8pUVcl69xlfgUVoAYuyU7w4=",
+    "id": "1440141d55358e09ff1088da4339ee49",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:07.395Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-06T10:42:41.170Z",
+        "title": "Commercial Operational Hub"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "2Q5gsFqNoyViXkmVd9f9zr1AyVc=",
+    "id": "f578c904d1186eab5e7e677078795362",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-06T10:42:41.170Z"
+  }
+]

@@ -66,7 +66,7 @@ export function createGlobalState(
   return {
     ...defaultGlobalState(),
     ...(state || {}),
-  } as SubscriptionInstanceGlobalState;
+  };
 }
 
 export function createLocalState(

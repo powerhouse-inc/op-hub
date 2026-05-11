@@ -1,0 +1,20 @@
+{
+  "about": null,
+  "code": "DRC",
+  "contributors": [],
+  "description": "Operations Lead",
+  "icon": "https://i.postimg.cc/g2yqVmqD/dracaena-Icon.png",
+  "id": "82364087-2ea2-4bb1-9ad1-22a236eaca29",
+  "isOperator": false,
+  "lastModified": "2026-03-23T18:52:56.971Z",
+  "links": [],
+  "name": "Dracaena",
+  "operationalHubMember": {
+    "name": null,
+    "phid": null
+  },
+  "scopes": [],
+  "skills": [],
+  "slug": "dracaena",
+  "status": "ACTIVE"
+}

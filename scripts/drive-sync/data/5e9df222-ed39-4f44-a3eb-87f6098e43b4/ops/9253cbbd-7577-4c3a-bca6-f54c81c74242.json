@@ -1,0 +1,5254 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "9253cbbd-7577-4c3a-bca6-f54c81c74242",
+        "meta": {},
+        "model": "powerhouse/scopeofwork",
+        "name": "SOW-Powerhouse Workstream 2024",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-23T18:54:44.879Z",
+          "documentType": "powerhouse/scopeofwork",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "9253cbbd-7577-4c3a-bca6-f54c81c74242"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "3984fc4aefe3e0eab1011d4e21184384",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:44.879Z"
+  },
+  {
+    "action": {
+      "input": {
+        "status": "DRAFT",
+        "title": "Scope of Work Powerhouse 2024"
+      },
+      "scope": "global",
+      "type": "EDIT_SCOPE_OF_WORK"
+    },
+    "error": null,
+    "hash": "ViInnj1eCnXjZxFezbblxRWz/3c=",
+    "id": "e8a9ebb545ffe95e190c8f43cf4c56fe",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "9253cbbd-7577-4c3a-bca6-f54c81c74242",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "contributors": [],
+            "deliverables": [],
+            "description": "The Scope of Work model defines a structured plan for executing contributor work; on top of deliverables and roadmaps with milestones it now also includes projects as budget anchors for project based budgeting.",
+            "projects": [],
+            "roadmaps": [],
+            "status": "DRAFT",
+            "title": "Scope of Work"
+          },
+          "local": {}
+        },
+        "model": "powerhouse/scopeofwork",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "c7f82802e4392881c38cbe59a28fba52",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:44.879Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "law",
+        "icon": "https://i.postimg.cc/PrS8TJ4v/layer0Icon.png",
+        "id": "885b6917-fe03-4763-94e7-94570b993f3c",
+        "name": "layer0"
+      },
+      "scope": "global",
+      "type": "ADD_AGENT"
+    },
+    "error": null,
+    "hash": "OPO3J7COLABDknOXtj8r5Kti3Go=",
+    "id": "3583fa914c9a620e19d1da9b4a0a0634",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "growth",
+        "icon": "https://pbs.twimg.com/profile_images/1742981743974498304/5Z8KeXyW_400x400.jpg",
+        "id": "10adc74e-30ce-4f75-8380-efda45197524",
+        "name": "kilgore"
+      },
+      "scope": "global",
+      "type": "ADD_AGENT"
+    },
+    "error": null,
+    "hash": "JkWp0BEalzTVTmMCnXz+t/8b6lM=",
+    "id": "2c9d7ffaafb9613724f3e7d6074939c6",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "bai integrations",
+        "icon": "https://pbs.twimg.com/profile_images/1578398330278871041/YfZgMhQW_400x400.jpg",
+        "id": "98d0b6cf-7d01-4d8f-ba40-f5fa842d5669",
+        "name": "liberuum"
+      },
+      "scope": "global",
+      "type": "ADD_AGENT"
+    },
+    "error": null,
+    "hash": "dVbaGoxZg2aKwvEYJrBvlIpK1so=",
+    "id": "7e49d3b07301fc8d771215736b363864",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "bai team lead",
+        "icon": "https://pbs.twimg.com/profile_images/1543149307435618304/5K_7BdwO_400x400.jpg",
+        "id": "28681d88-88b4-4b9e-bc90-aa9325f30b04",
+        "name": "teep"
+      },
+      "scope": "global",
+      "type": "ADD_AGENT"
+    },
+    "error": null,
+    "hash": "PffNIGTEYpaf7NnwytfACYlugaU=",
+    "id": "c51fadd248f1681ad26f4ade0b923c91",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "BAI Team",
+        "icon": "https://i.postimg.cc/Dy4QT8Y9/baiicon.png",
+        "id": "e20bafa0-956a-4c14-a54d-596ff26bb640",
+        "name": "BAI"
+      },
+      "scope": "global",
+      "type": "ADD_AGENT"
+    },
+    "error": null,
+    "hash": "+iytLLvfzaLYG2xu8BzqeggOqQQ=",
+    "id": "b91425f71b8d17b2fea4e0ecf716fa24",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Powerhouse is a team bringing a decentralized operations toolkit for open organizations",
+        "icon": "https://pbs.twimg.com/profile_images/1663915112837652480/pUIOaWoC_400x400.jpg",
+        "id": "b0d857d6-2783-4022-998c-db97e318fd2c",
+        "name": "Powerhouse"
+      },
+      "scope": "global",
+      "type": "ADD_AGENT"
+    },
+    "error": null,
+    "hash": "9zS+e7vk2qgsjcAuvfyDqp9+bjQ=",
+    "id": "1d3b007c40ab6d4bb3b33ae9bb92a60e",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "abstract": "Track Sky Protocol's operational financial data.",
+        "budget": 252750,
+        "budgetType": "CAPEX",
+        "code": "PEA",
+        "currency": "DAI",
+        "id": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/5956/5956592.png",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "Protocol Expense Accounting"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "NOk/mSBq8+c5dXdFn/Q4+LNgDhs=",
+    "id": "9dcdc8f8d254c74ed20e273d2252b770",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "abstract": "Connect Editor prototype for Sky Ecosystem RWA Portfolio Reporting.",
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "RWA",
+        "currency": "USD",
+        "id": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/9912/9912615.png",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "RWA Portfolio Reporting"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "6B7CcJ7qJkk7kfElwAcn/gLZYtM=",
+    "id": "64613014b07d894fe2a8be5e937d42e4",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "abstract": "Core Powerhouse product and architecture development work.",
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "POC",
+        "currency": "USD",
+        "id": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/662/662608.png",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "Powerhouse Products POC"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "so8WP/d+06jg7MIbT0WLjmfkNb8=",
+    "id": "5c50aec0855732da566cedd10138bb46",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "abstract": "Build a Atlas Rulebook Prototype for Sky Ecosystem - a single document editor designed to handle Atlas JSON data efficiently.",
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "ATLAS",
+        "currency": "USD",
+        "id": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "imageUrl": "https://thumbs.dreamstime.com/b/project-management-icon-to-do-list-symbol-white-background-checklist-cog-flat-style-simple-abstract-plan-black-vector-158948149.jpg",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "Atlas Rulebook Prototype"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "HhpsrjpAxg5gbM2GqvnuA/xqN+Y=",
+    "id": "63998bbf714f366a211cdfc55a6cbaa4",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "abstract": "Communication efforts to support the Powerhouse alpha version release. Marketing, BD and Community outreach.",
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "PRC",
+        "currency": "USD",
+        "id": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/1540/1540257.png",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "Powerhouse Release Comms"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "y8OQliDyriT7vmEledRPlYUURgs=",
+    "id": "a9ef6a3f7701b8cecb79cae2e6bfd822",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "abstract": "Model and implement a reproducible entity structure that\\ \nprovides legal/operational infrastructure and facilitates decentralized collaboration while minimizing risks.",
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "PLS",
+        "currency": "USD",
+        "id": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "imageUrl": "https://static.vecteezy.com/system/resources/previews/014/769/487/non_2x/projects-line-icon-vector.jpg",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "Powerhouse Legal Structuring"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "AoQkY6zjT8sJFbHvQHOO5Uo9AvY=",
+    "id": "fb3b1b01c440cfe8c976d334db708d29",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "",
+        "currency": "USD",
+        "id": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "imageUrl": "https://i.pinimg.com/564x/6b/44/56/6b4456453c7cef0cc8be1dc34d5597f8.jpg",
+        "projectOwner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "slug": "",
+        "title": "Achra MVP BAI Work"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "TqKfVklyfL2xuDrYTHmJrqdykqs=",
+    "id": "3467035ce0ffcb16b80eea97fa473927",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "",
+        "currency": "USD",
+        "id": "cce55412-9084-4130-91d0-f41072eb067b",
+        "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/002/206/140/small_2x/project-implementation-icon-free-vector.jpg",
+        "projectOwner": "0bc59a22-f7d0-4747-9a37-25faaab4ae39",
+        "slug": "",
+        "title": "Achra MVP dSpot Work"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "7rXJ+q6HLZmutu4SFZBAmEV9tKo=",
+    "id": "05e2334ee189d4ddb4a39bb08d752433",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "",
+        "currency": "USD",
+        "id": "fbda60d3-58ed-4776-8ade-d505516c97c2",
+        "imageUrl": "https://www.freeiconspng.com/uploads/project-icon-2.jpg",
+        "projectOwner": "0bc59a22-f7d0-4747-9a37-25faaab4ae39",
+        "slug": "",
+        "title": "Achra MVP RGH Work"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "fSmpqja+RPNlm99eFOSPqs5C5sY=",
+    "id": "c3e915b8c9374ed862fb573116dcf33e",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "budget": 0,
+        "budgetType": "CAPEX",
+        "code": "",
+        "currency": "USD",
+        "id": "3950e0df-c736-4464-a631-914c707cb1a4",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/4358/4358529.png",
+        "projectOwner": "0bc59a22-f7d0-4747-9a37-25faaab4ae39",
+        "slug": "",
+        "title": "Achra MVP Sky Teams Work"
+      },
+      "scope": "global",
+      "type": "ADD_PROJECT"
+    },
+    "error": null,
+    "hash": "KnHVSMOHjMPhagd1566ZqbiQfKI=",
+    "id": "ce91748af77d2a3368f81b03d5fbe224",
+    "index": 16,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "",
+        "id": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "slug": "powerhouse-team-2024-roadmap-af7da134",
+        "title": "Powerhouse Team 2024 Roadmap"
+      },
+      "scope": "global",
+      "type": "ADD_ROADMAP"
+    },
+    "error": null,
+    "hash": "4TPfqnOCVhfkzy67a3l8o5GmcTw=",
+    "id": "7c345de0d8c96267793fb4540ebb853c",
+    "index": 17,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "Make Achra the official transparency reporting platform for Powerhouse, SKY, and its Prime Agents as required by the Atlas. The expectation is from launch day onwards, all the network administration teams, the project/product managers, the builders and the finance operators are using Achra and the associated Connect apps on a daily basis to keep track of work and finances. ",
+        "id": "bba656ca-ae26-4e81-a389-269cbf0a9871",
+        "slug": "achra-mvp-roadmap-bf0a9871",
+        "title": "Achra MVP Roadmap"
+      },
+      "scope": "global",
+      "type": "ADD_ROADMAP"
+    },
+    "error": null,
+    "hash": "swd2EzcvqlWG9S76+QrLBcZL4Js=",
+    "id": "821d15ba76fee9b3790bc3c5073827cc",
+    "index": 18,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "DOP2",
+        "description": " Switchboard API endpoints for integration partners with document model update events and document state queries.",
+        "id": "ba279199-a946-463d-b03e-b0b08042ffaa",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Integration (API endpoints and Queries)"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "nK2IRWUwllRTUMsS+hchnTNRNI4=",
+    "id": "0fc57a6501febe95406d4b891f56caa1",
+    "index": 19,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "DOP3",
+        "description": "Separate incremental release of the Sky Ecosystem expenses platform with on-chain transactional data and budget breakdown views.",
+        "id": "59260f2b-a178-483a-85f0-c632cd4bfb17",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Expense dashboard increments (on-chain data, budget breakdowns)"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "3bEVzzrJpKfXMtZI4W9yK1ZOPMM=",
+    "id": "f6d3970bb2c8b1a8177bba83bd231987",
+    "index": 20,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "DOP1",
+        "description": "Technical integration demo showcasing for the first time the RWA Portfolio Editor in Connect and the data synchronization with Switchboard.",
+        "id": "542443cd-459e-47af-bc1c-04a8e5ae920c",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "First technical integration of RWA Portfolio (Connect & Switchboard)"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "9vQM81AGZM++LIWt5hiAsIMHanQ=",
+    "id": "316754c0fb411b49c40ed40d1c64682e",
+    "index": 21,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "MVP1",
+        "description": " \"MVP Release with Sky Ecosystem transparency reporting information that can be shared publicly. \n* RWA reporting flow (without e2e encryption & comparison views) \n* DAO finances (advanced stage) \n* DAO teams (at least core unit + ecosystem actor profiles) \n* DAO work (projects & roadmaps in early stage) \n* Endgame overview (latest updates & budget insights) \n* New homepage with at-glance insights on various DAO aspects - Finances, governance, Teams, and Work (reskin implemented).\"",
+        "id": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "MVP release of the Sky Ecosystem transparency reporting information."
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "jh4sjIrZ/+tTik0NTATzDmZ7ImI=",
+    "id": "c4af3f01f0d99c22056ee9cceef54265",
+    "index": 22,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "MVP2",
+        "description": " MVP Release with Sky Ecosystem transparency reporting information that can be shared publicly. \n* RWA reporting flow (without e2e encryption & comparison views) \n* DAO finances (advanced stage) \n* DAO teams (at least core unit + ecosystem actor profiles) \n* DAO work (projects & roadmaps in early stage) \n* Endgame overview (latest updates & budget insights) \n* New homepage with at-glance insights on various DAO aspects - Finances, governance, Teams, and Work (reskin implemented).",
+        "id": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Integrated Powerhouse Platform delivery including Renown"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "YovbNFxE9AiU5mHrb+gJ66JA3+Q=",
+    "id": "06e0302ee60bab2a0d5e5c5e28d6ca07",
+    "index": 23,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA1",
+        "description": "Account for all Sky Ecosystem on-chain data expenses.",
+        "id": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "On-chain Data Reconciliation"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "Edd/1tPRcXXBltg+qEwcSCmPlRw=",
+    "id": "6132fab768b0d7cf61bd3e036b456430",
+    "index": 24,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA2",
+        "description": "",
+        "id": "8e668089-8c5c-43ca-ac6a-7b9ad2c9b24c",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Delegates Transparency Reporting"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "a4ejmzvqmJ1W6+4JfDLYIdMS4o4=",
+    "id": "bc0c2dda1fa1cecc79fe4393a2cb8f7b",
+    "index": 25,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA3",
+        "description": "Purely financial view of SPFs with generalized financial categories applicable across all budget categories.",
+        "id": "43be05a3-9e54-489c-a0fd-9618a7cc9bd7",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "SPF Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "JbbHFcNA1A78fZh87AD1gA7sBos=",
+    "id": "25f912a3f379fecdfffa3ee43659bf92",
+    "index": 26,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA4",
+        "description": "Provide access to aggregated expense data in the level of detail: DAO-level finances.",
+        "id": "7bf3d270-583a-45a0-8213-593ef180cc76",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Aggregated view - DAO Level Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "CuG83f/gEaX5Yvy28LCN5e8uryY=",
+    "id": "431364b6a0c5166b29aff7a60a59a91b",
+    "index": 27,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA5",
+        "description": "Transition expense reporting from the Budget Reporting tool to Connect Budget Editor (implementing Connect Document Model)",
+        "id": "865610e0-949a-499f-b31d-3290d722d414",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Transition from Budget Tool to Connect"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "S6yJqonuiFKG5jO5SDPu8KGJcug=",
+    "id": "7d6a76fa6b0ecf2a93837475200bda5b",
+    "index": 28,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA6",
+        "description": "Provide access to aggregated expense data at the top level at a glance on the dashboard homepage.",
+        "id": "f137160f-e405-4057-8ff0-618b49b917d4",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Aggregated View - Fusion Homepage overview"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "so4Aps9xh5fk9rP72WJgvOYa3Yk=",
+    "id": "e16e6ace5b93e70226f25fbd83efacc9",
+    "index": 29,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA7",
+        "description": " Provide access to aggregated expense data in the lower levels of detail: budget-level overview.",
+        "id": "b71fb90d-8c2f-4032-9cc2-1bc8aa8b1326",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Aggregated View - Budget Level Overview"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "c6h6UWEJFaW/gQ0mNfxujP49c4E=",
+    "id": "f056b70335f1a848837a21569a7b9089",
+    "index": 30,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA8",
+        "description": "Small improvements to optimize the workflow of budget auditors.",
+        "id": "e20efea4-497a-4f1f-936a-b4fa5333777c",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Onboard All EAs to Expense Reporting Process "
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "Den8/80DI5ThteGeCvP5zk28Mw0=",
+    "id": "ceeb0481f45119218d614e610ec58411",
+    "index": 31,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA9",
+        "description": "An overview of the major conceptual and budget changes to Sky Ecosystem as it relates to the Endgame plan.",
+        "id": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Sky Ecosystem Endgame Transition Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "ar2uiuAb5kmZEphNsQfEhglNcfc=",
+    "id": "68ec99c5e4589065c1401e72bf296d45",
+    "index": 32,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PEA10",
+        "description": "An advanced replacement for MIP40, providing enhanced transparency and flexibility in budget management for Contributor Teams. ",
+        "id": "33807bfc-d6f6-4665-acc3-c44072af0246",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Generalized Budget Planning Model"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "MvMnbZt5HTxV41ayHblNd6HMXog=",
+    "id": "f3a990bb8bbd984175222a94c3af3410",
+    "index": 33,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "ATLAS1",
+        "description": "Analysis of the Atlas Axis Notion database setup and identifying how we can pull the data from it, serving as input to creation of document model + viewer.",
+        "id": "03a43484-d9af-4023-a5f2-e7a31f46360e",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Notion Atlas integration analysis"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "zzZq93lBUXcgrKvIkm1iJqYGSg0=",
+    "id": "39f23772e6830163a1caf843ebeeaa15",
+    "index": 34,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": " ATLAS2",
+        "description": "Creation of Notion export + viewer to replicate the structure of Notion DB.",
+        "id": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Atlas document model creation"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "FTptDObL3L88d6R7nHm7fjj7YCc=",
+    "id": "e7c72630d879ac58367ff445570b22d1",
+    "index": 35,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "ATLAS3",
+        "description": " Gap analysis & future roadmap plan covering 2024 year end + 2025. ",
+        "id": "c5289661-2497-4dff-b734-0f0fb518d693",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Atlas - Powerhouse integrated roadmap planning"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "40Q6IdrGabTBPi/M0gagEIPhKAs=",
+    "id": "bd9e23e3c3dcb713367bede3c5b7ac52",
+    "index": 36,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PRC01",
+        "description": "Forum post to Sky Ecosystem community on evolution & spinoff of Powerhouse. It will feature three updates (PH vision & product updates, RWA+ Atlas+grants features)",
+        "id": "bc27e448-d4c6-4a92-8fd4-7e55cb4752ad",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "MVP comms support"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "8ZxgyLE43RKdq9E+XmVpqms171o=",
+    "id": "9d2d5b3f2d9acb9ca7a66169505768aa",
+    "index": 37,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PRC02",
+        "description": " Deliver Powerhouse website content (incl. feedback and review)",
+        "id": "a535678b-a27d-4a86-8180-9561ecd0aeb0",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "New website content"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "fUqaXE2471dmJrBtp7XltbiH9aI=",
+    "id": "283f68168b1e0e42db752f0ae53cacf3",
+    "index": 38,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": " PRC03",
+        "description": " Standalone Powerhouse website to coincide with Demo 3 and Powerhouse official announcement that it\u2019s spinning out of Sky Ecosystem, based on website content",
+        "id": "7a3d3bb0-63b7-4aa5-9429-49f9e70e68bc",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "New website delivery"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "+m5HuhE5DwYG+Fs5uDkhFdB97N4=",
+    "id": "57ae4def6514eae5cc2e6a9af0532a98",
+    "index": 39,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PRC04",
+        "description": "Establish Powerhouse X presence with ~4 tweets a week",
+        "id": "828d60a4-ba62-47df-81ac-6a9215c65a9d",
+        "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+        "status": "IN_PROGRESS",
+        "title": "Social Media activation"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "SapunU4xTcA+K/gU9m3a1Acauao=",
+    "id": "875ed7ab48e4e25a34d8da28162c1dbc",
+    "index": 40,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PRC05",
+        "description": "Series of blog posts explaining Powerhouse and our view on the world",
+        "id": "285879a2-5b3e-409f-bd43-74da0bd10e75",
+        "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+        "status": "IN_PROGRESS",
+        "title": "Blog Posts"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "Cc0z5bde6SC4p8qg0aG0q5MXxW0=",
+    "id": "bb2349aee7e931605da420c643e7d5c0",
+    "index": 41,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PRC06",
+        "description": "personalized team swag for the Berlin offsite",
+        "id": "85479b52-191e-48e5-a671-f31a77ec4151",
+        "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+        "status": "DELIVERED",
+        "title": "Team swag"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "wc2k0M8Dsno64LH1TrUcrGusYK8=",
+    "id": "92db3622d1edd1e191f598acf0d55784",
+    "index": 42,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PRC07",
+        "description": "Podcast documenting the challenges and the rise of Powerhouse",
+        "id": "5193f760-1e2b-4466-ac52-610a320caf00",
+        "owner": "68f67fe0-32d3-465e-873d-bfa2706ad369",
+        "status": "IN_PROGRESS",
+        "title": "Podcast"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "eMsLLznTY42Hc9mUY1tQrHhqyU4=",
+    "id": "a1d91e4767622a0a3f1a2a1a9820e67c",
+    "index": 43,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PLS01",
+        "description": "Requirements of a minimally viable legal infrastructure for Powerhouse documented ",
+        "id": "31d012d4-e16a-4da4-b6f2-88b2581de785",
+        "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+        "status": "DELIVERED",
+        "title": "Minimal legal & ops setup documentation"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "/+GupZvXIL0llb8LWcNz+3URwuc=",
+    "id": "0522b6c6a37d430e6d20fccb16c45f25",
+    "index": 44,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PLS02",
+        "description": "Contractual and Legal Entity Specs are defined for Powerhouse operational entity.",
+        "id": "119e5c91-1cd3-46a3-8fa3-071b73fc039b",
+        "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+        "status": "DELIVERED",
+        "title": "Contractual and Legal Entity Specs"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "638T5w8kBOfXO9PhoA/58Tje9sI=",
+    "id": "95501ecfe4daa1b84390738083009953",
+    "index": 45,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PLS03",
+        "description": "Consultancy on entity type and jurisdiction, documenting trade-offs. ",
+        "id": "9c75df75-1a66-4f0d-8a8d-6a59bddf6b56",
+        "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+        "status": "DELIVERED",
+        "title": "Jurisdiction and Entity type defined"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "KZM8yp4JvZZARhkCTh9ilSNZrpE=",
+    "id": "8a906697ac4b0e3b588eca81faf224c0",
+    "index": 46,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PLS04",
+        "description": "Design and Execute Multisig Operational Agreement. V1 of MPA for operational multisig wallet for Powerhouse.",
+        "id": "efd2b20f-2234-4f79-94b3-6b616f7ce025",
+        "owner": "9fa2c3c5-f720-4db8-b687-37c394a76fa1",
+        "status": "DELIVERED",
+        "title": "Multisig Participation Agreement"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "PRrSJRoUCP0gNk8BDOQNX3lKhoI=",
+    "id": "2cb6383ed99397c6d3afc89222160719",
+    "index": 47,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "PLS05",
+        "description": "Incorporate operational vehicle",
+        "id": "45aabac8-b9db-4498-a234-1939b65a7948",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "IN_PROGRESS",
+        "title": "Operational Hub Entity incorporation"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "DcC91oCMAOMR7d6pCCPyjyBVeZk=",
+    "id": "76f5800819cccf9f6879f4fd34a57925",
+    "index": 48,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC01",
+        "description": " Post demo 1 refactoring work on Connect, Switchboard & core architecture.",
+        "id": "c826b5bd-cbb7-451f-8396-8ce3b99a00e8",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Post demo 1 refactor"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "OQCbXMFxvyktzYVMLqumJabgvMg=",
+    "id": "872633985dec5e68baae9c63616c42ed",
+    "index": 49,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC02",
+        "description": "Integrate Renown prototype with basic authentication & authorisation flow",
+        "id": "c26b7149-f244-44ee-b56d-3c2824453197",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Renown Authentication Flow"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "byFKi41q6jwVbVYTTnqCxhpTWbk=",
+    "id": "f90fac9e16a53bd8a4f44e36c1c9b67f",
+    "index": 50,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC03",
+        "description": "Implement basic conflict resolution using autorebase mechanism",
+        "id": "13265ab5-1e9c-4bbe-b902-45ec676f04f1",
+        "owner": "a79381c3-9dc1-4edc-a552-ae5b577cdbde",
+        "status": "DELIVERED",
+        "title": "Basic conflict resolution"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "4/GgM9CgIkEwC95bdNhpOrMBMl4=",
+    "id": "b2ecea04619a80103ad6e69fa34ebd4d",
+    "index": 51,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC04",
+        "description": "Tech work needed to build the necessary functionality for the finished extended RWA portfolio reporting prototype.",
+        "id": "dccbac77-d999-4e33-a4a1-020a73133019",
+        "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+        "status": "DELIVERED",
+        "title": "Demo 2 RWA Connect Delivery"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "J5Cjf0BMtJM2ClJCFfJGDLPiBVU=",
+    "id": "2cd7187c7090e21fb9ce225ad16a2fec",
+    "index": 52,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC05",
+        "description": "Document model upgradability (and getting rid of initial state)",
+        "id": "389b4e3a-4f45-450a-997b-a27882a25172",
+        "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+        "status": "IN_PROGRESS",
+        "title": "Document model upgradability"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "kc3Hcin096srIkVbridZUa8USnU=",
+    "id": "b458731d2eb0b1b50f55064c6fce2839",
+    "index": 53,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC07",
+        "description": "Select and implement a template engine to create document model viewers",
+        "id": "7202ee0f-418e-46a7-9ff6-989fd2d8a386",
+        "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+        "status": "IN_PROGRESS",
+        "title": "Template Engine Implementation"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "/fRIks8xw7V2KkAu/LETuQgHPVs=",
+    "id": "7f3533b9135f7e3ab1c793e5d33ab90d",
+    "index": 54,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC08",
+        "description": "Deeplinking Support for Connect Web (desktop nice to have)",
+        "id": "e3a655bd-7a45-444c-941e-0fa2479bb2d5",
+        "owner": "8b2d60c1-0ef3-40f7-b8e4-d13d7d57b09d",
+        "status": "DELIVERED",
+        "title": "Deeplinking support"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "S4gEILGAAsCSdyI1886Wg8rqq70=",
+    "id": "f26a03331630619f742be8db8974e300",
+    "index": 55,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC09",
+        "description": "Switchboard MVP development (includes architecture, transmitter, caching work) ",
+        "id": "82f1e813-9edb-432a-8b07-bc68b7e21512",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "DELIVERED",
+        "title": "Switchboard MVP development"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "kHNxYZRIhbUX6rgcTwymTHmFVAI=",
+    "id": "b09237be9a969c3bc648a0584e9f207a",
+    "index": 56,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "POC10",
+        "description": "Reveal Fusion decentralized operations platform as a revamped expenses dashboard, where Fusion features use the new Switchboard instance as backend.",
+        "id": "29965c36-cc9e-4023-886f-7c1a7b93e24f",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "DELIVERED",
+        "title": "Fusion & Switchboard demo"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "bdnEdoY+7RFX7Tc/qTuxH7hUg3U=",
+    "id": "00cd8aa2de3a313dbd9db19e3d1b7b35",
+    "index": 57,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": " DES-GLO",
+        "description": "All the global Achra pages are wireframed, designed, reviewed, and approved by the RGH team. \n\nThe global pages are the ones that are not displayed in the context of a specific network. For example: the global list of workstreams as opposed to the workstreams belonging to a particular network.\n\n* Achra landing page (achra.com)\n* Achra use cases overview (achra.com/use-cases)\n* Achra use cases details (achra.com/use-cases/{use-case-slug})\n* Workstreams overview (achra.com/workstreams)\n* Services overview (achra.com/services)\n* Services details (achra.com/services/{service-slug})",
+        "id": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "Design Global Pages"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "Pk7UjTmko6rC7GPLu3vKeDWwAoc=",
+    "id": "f277005a087ab95a6551c19a5c9c68bc",
+    "index": 58,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "The Network Builders and Governance pages on Achra are wireframed, designed, reviewed, and approved by the RGH team. \n\nThe Network Builders page is the list of Builders specific to a given network. Similarly, the Governance page shows Governance information for a specific Network. \n\n* Achra Network Builders page (achra.com/network/{network-slug}/builders)\n* Achra Network Governance page (achra.com/network/{network-slug}/governance)",
+        "id": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "Design NW Buiders/Governance"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "QhJYQ5tNp81WBGZF/xMhN65GwF8=",
+    "id": "0cec68306dd24e3da898b47f81940f4b",
+    "index": 59,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "DES-NW-WS",
+        "description": "The Network Workstream pages on Achra are wireframed, designed, reviewed, and approved by the RGH team. \n\nThe Network Workstream pages show an overview, as well as the specifics, for Workstreams within a given Network. This includes the roadmaps, milestones, deliverables and key results for a given Workstream.\n\n* Achra Network Workstreams page (achra.com/network/{network-slug}/contribute)\n* Achra Network Roadmaps page (achra.com/network/{network-slug}/roadmap\n* Achra Network Roadmap page (achra.com/network/{network-slug}/roadmap/{roadmap-slug}",
+        "id": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "Design NW Workstreams"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "MmjLV1kFXhFSL2LhYOsjP9S+oVo=",
+    "id": "e59ff4c17af80fdb3aa5315855a9e53b",
+    "index": 60,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "DES-NW-FIN",
+        "description": "The Network Finances pages on Achra are wireframed, designed, reviewed, and approved by the RGH team. \n\nThese pages show an overview, as well as specific details, of finances within a given network. This includes the Network Finance Home page, the Builder's Finance page, the Builder's Account Snapshot, and the Expense Report.\n\n* Achra Network Finance page (achra.com/network/{network-slug}/finances)\n* Achra Network Builder Finances page (achra.com/network/{network-slug}/builders/{builder-slug}/finances)\n* Achra Network Builder Finances Expense Report page (achra.com/network/{network-slug}/builders/{builder-slug}/finances/expense-report\n* * Achra Network Builder Finances Account Snapshot page (achra.com/network/{network-slug}/builders/{builder-slug}/finances/account-snapshot",
+        "id": "a29525bc-39c3-4216-ab6e-569019129cb4",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "Design NW Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "8C9UvemLQ4yyBk51KSq8ijKs/RM=",
+    "id": "18f5adcab6f6cf867a450874c8282c23",
+    "index": 61,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "FE-GLO",
+        "description": "All the global Achra pages are accessible in the development environment and approved by the RGH team. \n\nThe global pages are the ones that are not displayed in the context of a specific network. For example: the global list of workstreams as opposed to the workstreams belonging to a particular network.\n\n* Achra landing page (dev.achra.com)\n* Achra use cases overview (dev.achra.com/use-cases)\n* Achra use cases details (dev.achra.com/use-cases/{use-case-slug})\n* Workstreams overview (dev.achra.com/workstreams)\n* Services overview (dev.achra.com/services)\n* Services details (dev.achra.com/services/{service-slug})",
+        "id": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "FE Dev Global"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "VbAR2vDmSfqfCf1IovVTnAwfSdM=",
+    "id": "094ac08a9054daf9c7c09920d192a566",
+    "index": 62,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "FE-NW-BLD",
+        "description": "Frontend implementation of Builders & Governance modules.",
+        "id": "429cdbc8-961c-47af-b602-0776804adf8c",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "FE Dev NW Builders/Governance"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "9sWM0u82mwDANTDaC1XXbk6mi2A=",
+    "id": "4b3b34701745730ea81d023205e27cb6",
+    "index": 63,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "FE-NW-WS",
+        "description": "Front-end interface for Network Workstream has been implemented.",
+        "id": "fcf4830a-0641-4793-b350-5021e96e3170",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "FE Dev NW Workstreams"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "fFPNsbDK/hq2/vPcGyAXSRw2of0=",
+    "id": "672df9a651f4fee0da702e130141dc2b",
+    "index": 64,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "FE-NW-FIN",
+        "description": "Frontend for Network Finances page is functional.",
+        "id": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+        "owner": "c49f86fa-7a65-4a8a-aeab-db77bd546f90",
+        "status": "IN_PROGRESS",
+        "title": "FE Dev NW Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "meKKPNi1rY3OohfV0Gr6RwSKL2U=",
+    "id": "33c03d8dd83f0ca6c7c13fd06763406e",
+    "index": 65,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "f94f23da-7647-474b-9517-26c76f6ab7e7",
+        "status": "IN_PROGRESS",
+        "title": "BE Dev Global"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "KD/idhvRyPdrIINctMAHFZp7LB4=",
+    "id": "b0fedf963153026a3ccd78b2da2015d9",
+    "index": 66,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "e3ef49df-a4b0-4cb3-91b6-d7f358a080ae",
+        "status": "IN_PROGRESS",
+        "title": "BE Dev NW Builders/Governance"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "6lnlOtISu5whbumhg0PR6RAiQEE=",
+    "id": "2358ed4fe9bce9d50e7b8815f35f5f4d",
+    "index": 67,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "fa0e9c93-844c-414d-bdf2-9b853977c7b7",
+        "status": "IN_PROGRESS",
+        "title": "BE Dev NW Workstreams"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "rZA3mZ/jdt7Bph7bTZtuA5OjFA8=",
+    "id": "3e5c8897a64bec146dcca1e74cef462a",
+    "index": 68,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "f5ce3c58-aa00-4075-bfbd-b21cd5ed604d",
+        "status": "IN_PROGRESS",
+        "title": "BE Dev NW Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "2F0hglCEdtUGy7f8uBlftciJ+wo=",
+    "id": "d180f4ae102571d30c43fd51c7c7b06d",
+    "index": 69,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "320ada67-5c96-41ca-8669-085e6ea110f2",
+        "status": "IN_PROGRESS",
+        "title": "QA Global"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "gOj0G6IYp6ZATFpfSwchKD5P6PU=",
+    "id": "c77a6294bbe6aacf7d5345f07c54ce84",
+    "index": 70,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "aff047eb-e816-4b91-bbf3-ab6e5f94998e",
+        "status": "IN_PROGRESS",
+        "title": "QA NW Builders/Governance"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "em5jeqSVLuH3vwZgIpyeAIXjWXc=",
+    "id": "0c40a1c9baae36a46753bf73964b3a42",
+    "index": 71,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "cb258ba1-219d-4373-86e3-c324e1e98734",
+        "status": "IN_PROGRESS",
+        "title": "QA NW Workstreams"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "GUtdZ+6uTJzGJke4PrebsKfVkUA=",
+    "id": "5a69427948505087e9202f013c38d5b5",
+    "index": 72,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "2cf32bbb-9910-45b2-bade-6067a5c6faa8",
+        "status": "IN_PROGRESS",
+        "title": "QA NW Finances"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "Jx5nxgHnB5atDRgkyAjmq8sZ7wg=",
+    "id": "54d77c4b45bb0a8fd210883f992427a1",
+    "index": 73,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "5a6d4d83-8471-472c-9c73-717ad10edf43",
+        "status": "IN_PROGRESS",
+        "title": "Staging UAT FE"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "B5jV+tZLnFl3k1pm331X+j7d1IY=",
+    "id": "03c4b4ef54a6d5dd22221ce0735e8858",
+    "index": 74,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "149fca7c-29fa-4b28-aa02-99d2387df056",
+        "status": "IN_PROGRESS",
+        "title": "Staging UAT BE"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "ncSr2lcHffWGDCVXj0Mf0x8p07s=",
+    "id": "9c903d1b311e9ec50f51cc0f42fc8201",
+    "index": 75,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "",
+        "description": "",
+        "id": "4e9694c4-8d65-4c2d-b9dc-7f5f6af2ffe5",
+        "status": "IN_PROGRESS",
+        "title": "Production Release"
+      },
+      "scope": "global",
+      "type": "ADD_DELIVERABLE"
+    },
+    "error": null,
+    "hash": "L4ZFLL9+HR64p8I2eO0YqOmTNZM=",
+    "id": "589d526fe8e33d89eafac176a315a629",
+    "index": 76,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "59260f2b-a178-483a-85f0-c632cd4bfb17",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 20,
+            "total": 20
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "1+UFM3Im2lEzF2lvUDqaWYAt3eI=",
+    "id": "1025a96f49dad34536fc554b3c885367",
+    "index": 77,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "542443cd-459e-47af-bc1c-04a8e5ae920c",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 30,
+            "total": 50
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "TMrD75e4Y27/5vO+yGXh/g1yrq4=",
+    "id": "6d4cbbe108d7bf0247f6e7e1d3a112d8",
+    "index": 78,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 5,
+            "total": 12
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "yuza0NVMzMZVxcvV+LwgDOMM/sE=",
+    "id": "29151f0326137a29d93d9c88239f870a",
+    "index": 79,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "865610e0-949a-499f-b31d-3290d722d414",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 3,
+            "total": 5
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "YTIBz0B3glqXvRVTHskAX3KJkac=",
+    "id": "7111c1ad86eb9356ddc9066395c57827",
+    "index": 80,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 8,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "1c14bv3sEv4UV+BiMs9jutK7j6U=",
+    "id": "6f7c2b33bc67db5ae682148b408be855",
+    "index": 81,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "c5289661-2497-4dff-b734-0f0fb518d693",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 1,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "V9/uGy3bhFqBc0w6reP9RBu63sM=",
+    "id": "a3eded37d2c82d82c294cf6cefec88c0",
+    "index": 82,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "285879a2-5b3e-409f-bd43-74da0bd10e75",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 2,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "+sJnHNpClVMeO5ifijneRFORZY4=",
+    "id": "fc0e430ee578de7a2ab26aa70af6f4b1",
+    "index": 83,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "5193f760-1e2b-4466-ac52-610a320caf00",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 5,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "LBG3B7nkWd6ZDswYvNErekGkJ5o=",
+    "id": "9f0fd071c47affcd95c5aca59b730b7d",
+    "index": 84,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "31d012d4-e16a-4da4-b6f2-88b2581de785",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 5,
+            "total": 5
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "bgnTwfLAb3lYFX+U7MTbrYsM1gk=",
+    "id": "6e5342d8768aa755ae9b1af8bf681f2d",
+    "index": 85,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "119e5c91-1cd3-46a3-8fa3-071b73fc039b",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 10,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "/y8HAokbxFJ0pIPpqAvGaNooU/0=",
+    "id": "a054ed05973354345dc44fc11a6bfd9d",
+    "index": 86,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "9c75df75-1a66-4f0d-8a8d-6a59bddf6b56",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 7,
+            "total": 7
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "M+JrfyOMDYq+40OFD7rQb0mqB9A=",
+    "id": "1af34861ad113ec37b9da50eb6cd0a73",
+    "index": 87,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "efd2b20f-2234-4f79-94b3-6b616f7ce025",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 11,
+            "total": 11
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "j47FGA7Tc8lNJxshFaAAAMvJ9k0=",
+    "id": "227d7c230eef6089fba8916d35124175",
+    "index": 88,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "45aabac8-b9db-4498-a234-1939b65a7948",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 7,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "L5JMtl30bXjcop2h2A/Ue/xy5U0=",
+    "id": "7bb0170602d7bc54dfef0fafe0da1822",
+    "index": 89,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "c826b5bd-cbb7-451f-8396-8ce3b99a00e8",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 2,
+            "total": 2
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "L8KmFcXKTUEtobSHqUD2IHuPVRI=",
+    "id": "7d06a11457f584e60cf70776f685d307",
+    "index": 90,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "c26b7149-f244-44ee-b56d-3c2824453197",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 5,
+            "total": 5
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "R9lDcP42l/pa6siurItmHHvdeWo=",
+    "id": "6806e02ade0153a0c7141246ac058a44",
+    "index": 91,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "13265ab5-1e9c-4bbe-b902-45ec676f04f1",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 7,
+            "total": 7
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "ocBh/+CFvJwpIfEloV+fRZ7+eLM=",
+    "id": "322d7e953c73d4e250191d79103f1afd",
+    "index": 92,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "dccbac77-d999-4e33-a4a1-020a73133019",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 9,
+            "total": 9
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "zt1iYaqmBAKiQeZq4aNAmhMR1vk=",
+    "id": "8577169fb4d4f97c16172b886614c51c",
+    "index": 93,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "389b4e3a-4f45-450a-997b-a27882a25172",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 4,
+            "total": 11
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "Ad1NO+XRLLkidrciZ7Qy9dlUoeg=",
+    "id": "587e8b6e924d1df03f294caa8e87bafd",
+    "index": 94,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "7202ee0f-418e-46a7-9ff6-989fd2d8a386",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 2,
+            "total": 10
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "lgDzxvgAuGik2OH3sXwMV/g4ZAg=",
+    "id": "c2e6bf6d93c742d05b9e09644dc4076f",
+    "index": 95,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "e3a655bd-7a45-444c-941e-0fa2479bb2d5",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 3,
+            "total": 3
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "AuGgEtJb77Bph9zxPuJYpBb6vzc=",
+    "id": "fc4f76afec10fac6a2ab98623440e9a4",
+    "index": 96,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "82f1e813-9edb-432a-8b07-bc68b7e21512",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 6,
+            "total": 6
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "Yu9n5Kwlw8tZVE94KaZP2Cn/pOk=",
+    "id": "dfbce7e9f4c7925ffabf06587caabe67",
+    "index": 97,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "29965c36-cc9e-4023-886f-7c1a7b93e24f",
+        "workProgress": {
+          "storyPoints": {
+            "completed": 6,
+            "total": 6
+          }
+        }
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_PROGRESS"
+    },
+    "error": null,
+    "hash": "Gebp0gdSVBj0i7+QGYV89Q9ozzI=",
+    "id": "080c02d79370ea2fccd043144963a927",
+    "index": 98,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ba279199-a946-463d-b03e-b0b08042ffaa",
+        "id": "502aec9e-a199-41f8-8a71-cf92c12dc62b",
+        "link": "https://github.com/makerdao-ses",
+        "title": "Source code (Powerhouse repo)"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "iwOKOJX07h7xsvcud04RMZxa7Lg=",
+    "id": "dffbcbb8dde5b8c44eab877a6261fb7f",
+    "index": 99,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ba279199-a946-463d-b03e-b0b08042ffaa",
+        "id": "363e01a5-0d44-44f1-8226-6260ea39b6e5",
+        "link": "https://github.com/makerdao-ses/ecosystem-dashboard/releases/tag/v0.33.0",
+        "title": "Source code (SES repo)"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "YiS7jWP1qXmffkOvpKV7dPYbAgw=",
+    "id": "79a03c2f885c58927121fadef55045c9",
+    "index": 100,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "59260f2b-a178-483a-85f0-c632cd4bfb17",
+        "id": "3f0e6276-7094-4079-a844-412c85e057f3",
+        "link": "https://github.com/makerdao-ses/ecosystem-dashboard/releases/tag/v0.33.0",
+        "title": "Expense Dashboard deployment v0.33.0"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "WruNQ2/o4bCQmkj1OxBFgOSjOs8=",
+    "id": "113f8ddc2e980453736e244d62a7b340",
+    "index": 101,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "id": "0c21adaa-760b-4618-a344-4583e5bcfe9c",
+        "link": "https://drive.google.com/file/d/1Q1zYh1_qosF8JG1z3gbKszrp60HlnYyV/view?usp=drive_link",
+        "title": "Integration Demo of RWA portfolio - Apr 10"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "wXrszGryz/LwHTa/70WjmyBupsk=",
+    "id": "4ca6e406f7bbf2daf4d8ad02bb0a5503",
+    "index": 102,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "id": "406027b3-aad7-49b0-824f-3c0da4896b08",
+        "link": "https://makerdao-ses.notion.site/RWA-API-Query-Key-Result-889eab4be0144d799650620794694916",
+        "title": "Switchboard data / API endpoint "
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "j9n6cys+Exj3f/7k2xoVxqtTbtk=",
+    "id": "14be9e5f75a2201e3ba26f9df7bda408",
+    "index": 103,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "id": "d9cab474-94bf-4cb8-9336-62e186082229",
+        "link": "https://drive.google.com/file/d/1f-h8mPCUw4u5gCFn-TQcTw_XIDN7Ayvs/view",
+        "title": "Sky Ecosystem platform demo - Jul 3rd"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "3ncC5EQp3NNxJo9Ha1ssC7yBiZA=",
+    "id": "21b8053b3cd06937741f4b63edab9e2d",
+    "index": 104,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "id": "12421e44-2c79-4e12-aab3-ef16dc9cabe1",
+        "link": "https://forum.makerdao.com/t/ea-status-update-1-3-detailing-the-powerhouse-vision/24586",
+        "title": "PH EA update 1/3 - Powerhouse vision"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "JQhAiu82A+v3jsOzpgw16ve6FMU=",
+    "id": "0c12299251f09348309f40c88967a527",
+    "index": 105,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "id": "a857ca97-b367-4481-a4f3-72563dd8f299",
+        "link": "https://www.figma.com/proto/dX0ZItTTMaJ78Tsv8kZDlW/Expense-Dashboard-Update?page-id=2417%3A84822&node-id=2417-85288&viewport=465%2C761%2C0.28&t=wu9jjPYjDEC2tmDl-1&scaling=min-zoom&content-scaling=fixed",
+        "title": "Fusion Reskin example designs"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "YmLg/w78EJOOK9jJaKhN87PkAlw=",
+    "id": "32779a26af96ed73226ecd815c0b2770",
+    "index": 106,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "id": "b8e851ff-85e1-4144-8493-d4eb13c0af80",
+        "link": "https://drive.google.com/file/d/1DGyS4sa1yGgM-pePcbuIYmkki-QlCLzq/view?usp=sharing",
+        "title": "Sky deployment of PH products WIP demo - Aug14"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "MDpWKEBcafqM1IuvN0nCt7LpjGQ=",
+    "id": "32ff8514d34f6f8637d397d35e6efd4f",
+    "index": 107,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "a2c06ec1-2912-4de1-8c2b-80e36da94719",
+        "link": "https://connect.sky.money/",
+        "title": "Sky Connect "
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "PekvAAhmjJ/orffCuGanDffVfgc=",
+    "id": "5d4d55b76b5f1820c29395dc32698019",
+    "index": 108,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "0b7e1c8b-833d-484f-b041-c57f305aa447",
+        "link": "https://staging.fusion.phd/",
+        "title": "Fusion deployment"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "hY6tdMrcM68Caujq8DWg4pC3CTs=",
+    "id": "6fee8e15086b9267584f6aa6a97ea26a",
+    "index": 109,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "422a1743-0f54-4317-bc43-f6d56db44c10",
+        "link": "",
+        "title": "Switchboard deployment "
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "W4kF9JC6HVFJnStp6mZ5ENR7Xg0=",
+    "id": "f376895ddf657774e863fde32334045f",
+    "index": 110,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "b9710c05-ae80-4e7a-8f0a-0df62d3a4198",
+        "link": "",
+        "title": "Renown deployment "
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "V2BAwW2EgaU/C5DPHEmqlarKRF4=",
+    "id": "97df4b441eadf6250bb94be5fe099a11",
+    "index": 111,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "e76298f2-e11e-4b17-a8ea-b99e590b3a1f",
+        "link": "",
+        "title": "Fusion Github repo"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "CwqnDiDVAy5Akj/MtmVJHlkG7Mw=",
+    "id": "1ba75f4bc3201162c5961a1d40957545",
+    "index": 112,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "7514f5af-170e-43c3-9592-a7b331f9060d",
+        "link": "",
+        "title": "Switchboard Github repo"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "m5MOYWlpUMhvptfH1qEYxdNj7WU=",
+    "id": "25afe72c2216341e174f6a639ae0de87",
+    "index": 113,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e026924c-19df-415d-a549-7d1849fa5fd1",
+        "id": "3f72fd3b-7191-48f4-98a7-9efc5c88adc8",
+        "link": "",
+        "title": "Connect Github repo"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "lW3iGjl84nEysBW5jvomm4vgVnI=",
+    "id": "1fb5cee47e8074afdde0546307c7f142",
+    "index": 114,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "id": "a893c2b6-81bd-444c-beb1-97424d03f01a",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/on-chain-wallets-diagram.png",
+        "title": "On-Chain Wallets Diagram"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "6yXxxlD5yt8TKiIboXxQKFNtig4=",
+    "id": "3362da40f1aa1c42c6b2c8223a3d3a31",
+    "index": 115,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "id": "ea41a671-3c66-4471-a5b6-114ff896844a",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/CU-CU%20Landing%20page-Finances-Transparency%20Reports.png",
+        "title": "Account Snapshot Design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "OoSGaO0o+1n9FHyVBg8DbUO6xBs=",
+    "id": "9f7c52ff538b8eb17ba91595e4dc9155",
+    "index": 116,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "id": "b8cabbd1-e434-4f15-a229-a5d015475e96",
+        "link": "https://expenses.makerdao.network/core-unit/SES/finances/reports?viewMonth=Dec2023",
+        "title": "Frontend Deployment"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "VJnoUaOJmgtQp2tJDCgVaJyw500=",
+    "id": "be659b155ff01f119904f29279d000d0",
+    "index": 117,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "8e668089-8c5c-43ca-ac6a-7b9ad2c9b24c",
+        "id": "51e6ad50-51ce-48a0-8bf8-9dc88d02b16b",
+        "link": "https://drive.google.com/file/d/1jfbumQnyhB4N-CkO3hEjJ2su5iBTDXH8/view?usp=sharing",
+        "title": "Recognized Delegates Design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "eAGhcag0P9otsVdVqHpb+bqGd9U=",
+    "id": "740a830adc8c3cd46941125ffebb2f2d",
+    "index": 118,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "8e668089-8c5c-43ca-ac6a-7b9ad2c9b24c",
+        "id": "96328f96-a99e-41e5-91d1-6b4e8b0edd84",
+        "link": "https://fusion.sky.money/contributors/recognized-delegates",
+        "title": "Recognized Delegates Deployment"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "TpM87XDY3l//q5SCFuhW4z0jlUI=",
+    "id": "c3ee20a771706e87dbc6f7c8ecfb743d",
+    "index": 119,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "43be05a3-9e54-489c-a0fd-9618a7cc9bd7",
+        "id": "35f657ce-8b46-4979-9888-296d2ba725bb",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/key-results/spf-design.png",
+        "title": "SPF Design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "iN0fmzMTvpHPWL4fCqA3JXq/Sfo=",
+    "id": "420ee985b0c68b59eaa2c68f187b03a9",
+    "index": 120,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "43be05a3-9e54-489c-a0fd-9618a7cc9bd7",
+        "id": "693837fd-8a66-4c00-a527-623d9e6460d7",
+        "link": "https://drive.google.com/file/d/1e45t88iP42Ozz-1JxbUhyrJgedB9JB-u/view?usp=drive_link",
+        "title": "SPF Sparse View Wireframe"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "nDbZGhRvDA2AYp3pX8J+/wR6s9o=",
+    "id": "19177ff0fd39eeb74e8c8a7a8c9c1b9d",
+    "index": 121,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7bf3d270-583a-45a0-8213-593ef180cc76",
+        "id": "f919e19b-30bc-4ad7-a2ca-1f439113cebb",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/PEA/key-results/Finance-MakerDAO%20Finances%20Design.png",
+        "title": "Dense Aggregated View Design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "KBB+dh3dok+hyK2rP4hex25//Ms=",
+    "id": "b0e1eccace0849e056e35b844e989041",
+    "index": 122,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7bf3d270-583a-45a0-8213-593ef180cc76",
+        "id": "93a76cc5-bb5d-45ce-9423-bb4609a130a1",
+        "link": "https://drive.google.com/file/d/15yB0TA5ONtboB9CH5aIO5Ekgiu7CkOl9/view?usp=drive_link",
+        "title": "Dense Aggregated View Wireframes"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "KVlHqIMBf3nlUHCe+SotnYuU1Ys=",
+    "id": "2c22a80952db84dde4d587d60689f655",
+    "index": 123,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "865610e0-949a-499f-b31d-3290d722d414",
+        "id": "db98e727-4390-4384-bcfc-11be948aa233",
+        "link": "https://raw.githubusercontent.com/makerdao-ses/makerdao-ses.github.io/main/ecosystem-dashboard/ecosystem-actors/POWERHOUSE/Projects/PEA/key-results/PEA/key-results/Connect%20Design.png",
+        "title": "UI Design For Connect Interface"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "N5rtTW2ghcgTpNlVb/zsK154SoM=",
+    "id": "66616d4a1eaf4b5c6b964d2700e6a217",
+    "index": 124,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "865610e0-949a-499f-b31d-3290d722d414",
+        "id": "52837a1a-ef5c-4239-ba57-b749ee6badf8",
+        "link": "https://connect-ph.vercel.app/",
+        "title": "Connect Electron Vercel App"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "hnRIs/7+o/YVbMH9pMq9MP9h18A=",
+    "id": "4e3fe9c8bb129e1fb13557b8ed95ac68",
+    "index": 125,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f137160f-e405-4057-8ff0-618b49b917d4",
+        "id": "222edd99-59d9-4a7c-919d-e7c4d22fb00a",
+        "link": "https://drive.google.com/file/d/123yTPfNFi04Uu-0aPCWAhvEMCbEOrTth/view",
+        "title": "Homepage wireframe"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "SYh4GQpN3zgI/0X0f9SvDWDwqZg=",
+    "id": "a74e305a9e3484b26562744d0f2d9695",
+    "index": 126,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f137160f-e405-4057-8ff0-618b49b917d4",
+        "id": "958024a8-9594-4e73-9c8a-6c6f163556c9",
+        "link": "https://drive.google.com/file/d/1REv0A7uKrfOFRwNJulxCEv7PzoZk_fNK/view?usp=drive_link",
+        "title": "Homepage design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "Awi2WXNrVYl2+4kKFES7yndju2M=",
+    "id": "db16c313623469b4277864c39daf5964",
+    "index": 127,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f137160f-e405-4057-8ff0-618b49b917d4",
+        "id": "f4c7c4dd-7c84-4e47-9429-3232b9fcf03f",
+        "link": "http://fusion.sky.money/",
+        "title": "Homepage deployment"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "RJdzI9QD/lnFM/eLdooNoq24n3U=",
+    "id": "d8cddd68cb9e25340dd68d1edb57764b",
+    "index": 128,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "b71fb90d-8c2f-4032-9cc2-1bc8aa8b1326",
+        "id": "7e538cdf-6dce-4639-baa5-a7a02e7ac7c6",
+        "link": "https://drive.google.com/file/d/1fNbvSFIzRiSqpuzTUHMUsqe0x6mKz7vd/view",
+        "title": "Sparse view (keepers) wireframe"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "MjkNp9hD4lN4tVFSQ67Fg7H+81I=",
+    "id": "6c8473afdaa8e8baa65a8daa74d4392b",
+    "index": 129,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "b71fb90d-8c2f-4032-9cc2-1bc8aa8b1326",
+        "id": "a7e9bbc3-34cb-429e-b647-3a28c46a2bdc",
+        "link": "https://fusion.sky.money/finances/legacy/keepers?year=2022",
+        "title": "Sparse view implementation"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "a7++ONxmgC4IOwW4LAc7HGlvZcA=",
+    "id": "ea934c0d76565d7c52ef7c3d0e6e3d89",
+    "index": 130,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+        "id": "3826982c-be8c-48ca-8230-ed6b1188e759",
+        "link": "https://drive.google.com/file/d/1I1ZhCn4NhxTtjFCkc7b-EzisZoaOlS1q/view",
+        "title": "Endgame budget design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "OB63I2HQ/Z8z3w83gIiEBianUKU=",
+    "id": "02416fed41e13f6143778e6c802e68f3",
+    "index": 131,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+        "id": "8a6694c8-f84a-49bf-9f13-55b54ba5ec00",
+        "link": "https://expenses.makerdao.network/endgame#budget-transition-status",
+        "title": "Endgame transition design"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "UByvkaFY6h9SWR0CPPx/j/FpM/8=",
+    "id": "a3891d90e1bc4c4162b7eb0fd1bb1279",
+    "index": 132,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+        "id": "9747924f-4879-4154-a3f8-2a3494118188",
+        "link": "https://expenses.makerdao.network/endgame#budget-transition-status",
+        "title": "Endgame finances implementation"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "NdLj2FR9ug0HFxQk465DaoZJTow=",
+    "id": "9fcc0a48b39d67a2449493385d65c4ab",
+    "index": 133,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "03a43484-d9af-4023-a5f2-e7a31f46360e",
+        "id": "ff22150c-4cb8-4eeb-bba9-5f6a548725fe",
+        "link": "https://drive.google.com/file/d/1HdJ9WGOVkUg9cn9qn7TBghLOTf0g3F1A/view?usp=sharing",
+        "title": "Mapping existing manual process in Notion"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "L9LwYzKW8KqdUNwt7T675Yc8AFA=",
+    "id": "d3f5db49df13230adcd32a9e8a2dfb90",
+    "index": 134,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "03a43484-d9af-4023-a5f2-e7a31f46360e",
+        "id": "bd67e6fa-7f36-4875-bd0d-0572e56a780e",
+        "link": "https://drive.google.com/file/d/1fgHtkfic8PbI71cLavgDz7XUoNg71ZtW/view?usp=drive_link",
+        "title": "Atlas editing process capture"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "NQLb53HXcWB48YRt8hupj+NjtDw=",
+    "id": "8dd53fea5e477e4814a09c43113f0918",
+    "index": 135,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+        "id": "15e992fd-7b4a-448e-870a-6d8482f98924",
+        "link": "https://drive.google.com/file/d/1j9SVd_cJ5K885WRmc0Zm8UBSqveIRruu/view",
+        "title": "Atlas document model"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "AA5Rkl+VdOyfwrDe6lhOv23mKrU=",
+    "id": "9229e0821e625a142a6a36d571d97e9c",
+    "index": 136,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+        "id": "28948a58-4d89-428d-b681-ffc4fe23a060",
+        "link": "https://sky-atlas.powerhouse.io/",
+        "title": "Atlas viewer prototype"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "CpS2E2Om8zHW7iQnC1Lx0K8OnP8=",
+    "id": "b3bd02bff1ed9ef6ec6e8638c163f600",
+    "index": 137,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "c5289661-2497-4dff-b734-0f0fb518d693",
+        "id": "e6197575-71bc-4d1b-a750-f98b973efbfc",
+        "link": "https://drive.google.com/file/d/1MErkuyCLXEXbvcRs7Sxma9BTPsTOo7-p/view?usp=drive_link",
+        "title": "Business analysis"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "hQw0J3t/35QDLBL7tGLQXpaSJhU=",
+    "id": "4da8c05183806b031040ccba39fd6a9b",
+    "index": 138,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "c5289661-2497-4dff-b734-0f0fb518d693",
+        "id": "815f91b5-6675-436f-907b-b6376c3704dc",
+        "link": "https://drive.google.com/file/d/1aN-e04slhCDfd1O3SWENEfJhUd28mcEG/view",
+        "title": "Exploratory exercise for Atlas viewer"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "MmRzJRRhOEAHRATjFWKcBTCOQ4U=",
+    "id": "1124db3011e163ee6ad43e4db4844337",
+    "index": 139,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "bc27e448-d4c6-4a92-8fd4-7e55cb4752ad",
+        "id": "b2b29f14-5d9f-4855-9805-ebb1575c4af5",
+        "link": "https://forum.makerdao.com/t/ea-status-update-2-3-powerhouse-work-for-makerdao/24712",
+        "title": "PH EA update 2/3 - Work for Sky"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "2f6OKuJmSYjUF6CUVt+PWOCt8F4=",
+    "id": "9fa5143b6192470a069240c27e06690a",
+    "index": 140,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "a535678b-a27d-4a86-8180-9561ecd0aeb0",
+        "id": "eace5509-783f-44f3-ba6c-74666e1e6b75",
+        "link": "https://www.powerhouse.inc/",
+        "title": "New website content"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "YDnswuYZhUN17TQ3vSP5dVhUa1Y=",
+    "id": "4ffbe60f9cdd0ffa09f61b3ef28ef0f1",
+    "index": 141,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a3d3bb0-63b7-4aa5-9429-49f9e70e68bc",
+        "id": "9053c434-6b16-4c39-9129-9cbb428728c0",
+        "link": "https://www.powerhouse.inc/",
+        "title": "Updated Powerhouse website"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "2lKUEf1x88hwEvGyIsmP/gFIZxk=",
+    "id": "5102bedb26f3730de07115c1f5d5c4ec",
+    "index": 142,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "828d60a4-ba62-47df-81ac-6a9215c65a9d",
+        "id": "e35f6084-f87f-4e4b-9818-a3b6d69a2530",
+        "link": "https://x.com/PowerhouseDAO",
+        "title": "Reactivated Powerhouse X account"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "8qZPvncwBElWfVZ0PsfVVCWry10=",
+    "id": "bc7c524ed1959e4d2c91077321876120",
+    "index": 143,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "85479b52-191e-48e5-a671-f31a77ec4151",
+        "id": "6205b5bf-7d72-49cc-aefb-bf0195c3242d",
+        "link": "https://x.com/PowerhouseDAO/status/1795562122593575190",
+        "title": "team swag"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "8R/qtCOkikYF1bwx51ImyF5qZd4=",
+    "id": "1d34aff5184e57a9a577494f1664496c",
+    "index": 144,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "31d012d4-e16a-4da4-b6f2-88b2581de785",
+        "id": "5a17a215-9255-4b38-b719-02ffbb0b3287",
+        "link": "https://drive.google.com/file/d/13bKuzd0Dxv79QhNkXjy3vgIU5Q1-pGEb/view?usp=sharing",
+        "title": "Minimal legal & ops setup documentation"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "IgojhVSoKXW8E93/1OaiXnMWpmk=",
+    "id": "1de582ac85f0f66bb39086a91a7c129a",
+    "index": 145,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "119e5c91-1cd3-46a3-8fa3-071b73fc039b",
+        "id": "f1d7cd0b-341a-445d-a733-15a04a7e21a7",
+        "link": "https://makerdao-ses.notion.site/EXT-Powerhouse-Legal-Documentation-Operational-Hub-OH-aa03c414fe00421680e1526c8f1a31a4",
+        "title": "Contractual and Legal Entity Specs"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "XnOACtQ9YgadCir1LrXHChHLLfE=",
+    "id": "a553621cea94ce6db50e8ac052765071",
+    "index": 146,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "9c75df75-1a66-4f0d-8a8d-6a59bddf6b56",
+        "id": "d4d8ff56-7d8e-492f-b7df-48bc0840f092",
+        "link": "https://drive.google.com/file/d/13bKuzd0Dxv79QhNkXjy3vgIU5Q1-pGEb/view?usp=sharing",
+        "title": "Jurisdiction and Entity type defined"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "5CZROcQlmPjAXmqQbGHKGb76fl8=",
+    "id": "dad406c2986eb7f12a3a397e9b3f0336",
+    "index": 147,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "efd2b20f-2234-4f79-94b3-6b616f7ce025",
+        "id": "c5dcae91-da71-4e99-9e03-b46a20541386",
+        "link": "https://drive.google.com/file/d/1GkOzswYpBj7b4h7IFdFLu4ZiST_ceK-D/view?usp=sharing",
+        "title": "Multisig Participation Agreement"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "zZ2JsuAqFcnUupny0xDwzo4JTMo=",
+    "id": "b0349de40d816799e45f445b230b6883",
+    "index": 148,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "45aabac8-b9db-4498-a234-1939b65a7948",
+        "id": "3b9f478a-9720-43df-89a9-dda8f5e1c077",
+        "link": "https://makerdao-ses.notion.site/EXT-Powerhouse-Legal-Documentation-Operational-Hub-OH-aa03c414fe00421680e1526c8f1a31a4",
+        "title": "Operational Hub Entity incorporation"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "tPYzH1EHF81mu+JYPKmZ44hvfRw=",
+    "id": "4e39848aba808497bd000f936442904b",
+    "index": 149,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "c26b7149-f244-44ee-b56d-3c2824453197",
+        "id": "0f7cae13-1d68-4300-baac-1fdb556c1ecd",
+        "link": "https://makerdao-ses.notion.site/DID-structure-Signage-fa07b5d37db04b1db0b26f707b1f758a",
+        "title": "Renown authentication flow"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "ljNlKV93EGH4zcblw4dpWKYwWOQ=",
+    "id": "c02b5beca55714ced78ee5ecf348ee35",
+    "index": 150,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "dccbac77-d999-4e33-a4a1-020a73133019",
+        "id": "f112cec7-89a6-4d52-af82-c0d6b7de0e68",
+        "link": "https://drive.google.com/file/d/1Q1zYh1_qosF8JG1z3gbKszrp60HlnYyV/view",
+        "title": "RWA demo 2 delivery"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "n3RqLn50ootm8CSSKzLO8jD8uEk=",
+    "id": "4ac201ed11d2e49cb7876b47984bf7ee",
+    "index": 151,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e3a655bd-7a45-444c-941e-0fa2479bb2d5",
+        "id": "85f14ee5-a68c-42b9-83ba-2aaaa4fa30e5",
+        "link": "https://connect.sky.money/d/sky",
+        "title": "Deeplink support for Connect webapp"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "RIYeOes4RxBTWmujUHw3OiYbe1A=",
+    "id": "7e72ba4d3218de0e7d93e6f2028198a1",
+    "index": 152,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "82f1e813-9edb-432a-8b07-bc68b7e21512",
+        "id": "6b2211e5-019d-4ea6-aebe-cedb30fc0980",
+        "link": "https://apps.powerhouse.io/makerdao/switchboard",
+        "title": "Switchboard delivery "
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "wIsAmVdtscPgrgWo1VHFpqFzh/k=",
+    "id": "67bb80a5adb51736bd4532654b5c1e3d",
+    "index": 153,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "29965c36-cc9e-4023-886f-7c1a7b93e24f",
+        "id": "4fd5d7bc-a60d-4293-9a38-1aa10aa277a8",
+        "link": "https://fusion.sky.money/",
+        "title": "Fusion (with switchboard data) delivery"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "l5cOjV+ngO/NXDvkIORxG09gQ28=",
+    "id": "8128f8a90447c88ca21feb7b1f62c79d",
+    "index": 154,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+        "id": "7ceaf6d9-5d41-462a-b00d-56defc3692e5",
+        "link": "https://spreadsheet.com",
+        "title": "Requirements WBD"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "YmYEMnSy+b9nJYayG063ZyVrIR8=",
+    "id": "f5275d0a091d0890dc4b1289ef1d209d",
+    "index": 155,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+        "id": "edbe78a3-09ab-4a16-b044-32b9ca800a9a",
+        "link": "",
+        "title": "Low fidelity wireframes"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "vk7+KNpIgc65HTSVbJ7jlKL8vX8=",
+    "id": "fa32ba640c1f3ecfec1fe42aabcca501",
+    "index": 156,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+        "id": "8587dcb9-917a-4a32-89cd-12213c381206",
+        "link": "",
+        "title": "High fidelity designs"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "vXldcqUzinx5vR/LFb2HRsydzT8=",
+    "id": "9324b0c533d5b1b0bce804337080203e",
+    "index": 157,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+        "id": "f77b846f-848a-4068-abe2-148ebf21e81c",
+        "link": "",
+        "title": "Requirements WBD"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "MvdrQn4Is1ZWUCd8IBTMxQtR/Aw=",
+    "id": "50eb337385a7e9de062f0bdec1c8f761",
+    "index": 158,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+        "id": "921d9cad-286b-41cc-9b47-e720b4b2bbf7",
+        "link": "",
+        "title": "Low fidelity wireframes"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "molXJofyySMfNolFXG3wNhuhW70=",
+    "id": "8cbb432ad223c6ab4d6d478dfb653646",
+    "index": 159,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+        "id": "215844b0-1739-4869-bda9-dfd2e80f4924",
+        "link": "",
+        "title": "High fidelity designs"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "6Pej9xvtSWKSNSeyI4TR9kPtd8s=",
+    "id": "6f14b3f31a1b7a22c3b68cccacd28505",
+    "index": 160,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+        "id": "6d8812be-f461-4318-8451-1e3a934dde03",
+        "link": "",
+        "title": "Requirements WBD"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "1i0GbZPPH/R0gmkyEERYQvQg51s=",
+    "id": "6dcb049b8b87f5605e1afb8e98e19b18",
+    "index": 161,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+        "id": "172df6e4-6928-42d6-ad9c-37f3724f1300",
+        "link": "",
+        "title": "Low fidelity wireframes"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "ZJRE1udrY2lViJZ+HKz9uAp2o0E=",
+    "id": "d778e0b825dae591f55445b74df0d0c9",
+    "index": 162,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+        "id": "4fa5c1f7-a168-49d9-b369-c7bc09cf1196",
+        "link": "",
+        "title": "High fidelity designs"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "iILuANMgyMl630LGPBycgTBkZw4=",
+    "id": "0dab3b0173e8461d8cbba6c6ca808bd8",
+    "index": 163,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "a29525bc-39c3-4216-ab6e-569019129cb4",
+        "id": "66f15aba-4898-4464-8a9f-43b279ffc9ea",
+        "link": "https://connect.staging.vetra.io/d/.......",
+        "title": "Requirements WBD"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "fczCCMzqIt+Hrh40Sgw9lvYJZgs=",
+    "id": "c9585dd1f3b4b909e92597e9429313ca",
+    "index": 164,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "a29525bc-39c3-4216-ab6e-569019129cb4",
+        "id": "b771b1ff-23af-434b-97f5-f39a55dd794c",
+        "link": "",
+        "title": "Low fidelity wireframes"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "eZhU6ViwATehrW7HqWTxEjY9Ps0=",
+    "id": "4c350ff26be0ae3936d5b1888569b266",
+    "index": 165,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "a29525bc-39c3-4216-ab6e-569019129cb4",
+        "id": "d16ff492-27f1-476c-937e-f2e1abe5d51f",
+        "link": "",
+        "title": "High fidelity designs"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "OdY6kzX3nuJfZNm5XVjIv9AWr70=",
+    "id": "f68106cfee671a7a05bef91c178fe7ff",
+    "index": 166,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+        "id": "161b35bb-c0a1-43bd-8997-37ff9eef98b0",
+        "link": "https://dev.achra.com",
+        "title": "Development environment Global pages are accessible and without error"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "w5akzu9WzxBytVjcdKpkQbLrON8=",
+    "id": "e0c4dca9bd4303489ab37a9981819956",
+    "index": 167,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+        "id": "86bf8f34-f1cc-42d8-8b57-e53b04a51d67",
+        "link": "https://dev.achra.com",
+        "title": "All interactive elements (buttons, links, forms) are functional in the development environment"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "yGXWd+Z17tDyftA5gRRxt/p6QV8=",
+    "id": "c4bfde7f69d1cdd2228a43239e50ad68",
+    "index": 168,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+        "id": "c1bfd039-0ed3-424a-b32a-3a2d25510470",
+        "link": "https://dev.achra.com",
+        "title": "Approval on development environment from RGH group"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "PvhPBqsInj9sSyg/WjOiQo08G1U=",
+    "id": "b234aefb4d9d28da936d7a4c7308b7c5",
+    "index": 169,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "fcf4830a-0641-4793-b350-5021e96e3170",
+        "id": "25e2b61b-936a-4eef-a3cb-7016e601d44d",
+        "link": "",
+        "title": "Connect supports the input of workstreams data"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "LXtJK3wkyuzcui8nMc2mG4KQtVg=",
+    "id": "32b3bcfbb91877bcbc7031d81a77c1e1",
+    "index": 170,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "fcf4830a-0641-4793-b350-5021e96e3170",
+        "id": "ceadef80-5748-4fcf-bfc8-d3dddaad574d",
+        "link": "",
+        "title": "Achra reflects the state of workstreams data in real-time"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "T4uR1T+51YElWX3xrfn2/N+H+YY=",
+    "id": "d0b4fc2a9b1006c772ec8390a67a55ec",
+    "index": 171,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "fcf4830a-0641-4793-b350-5021e96e3170",
+        "id": "77533442-edf3-424e-8967-39ad03668c63",
+        "link": "",
+        "title": "Front-end is fully operational, components function as expected and design matches the high fidelity design files"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "+OxFbnWDq2VlWOW2bP2m+RpyD+4=",
+    "id": "3a6f679357841786858ff329f3ccccb6",
+    "index": 172,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+        "id": "9594fd82-f594-45b3-a7eb-3de59f08c837",
+        "link": "",
+        "title": "Connect supports the input of finances data"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "8f5M+8QtXkX1RPidQ8TxSGUO4Lw=",
+    "id": "eb95b7dff36777df45b91d956caa73cd",
+    "index": 173,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+        "id": "5b90f9e7-d159-42ba-8122-89316175ce70",
+        "link": "",
+        "title": "Achra reflects the state of workstreams data in real-time"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "Ablyn9Ik2XSs5rLpcHDTdq2nni0=",
+    "id": "01511adc0aa7bf11c9657780b2dc6ffc",
+    "index": 174,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+        "id": "996ca7c3-00ef-42ef-8338-130257861442",
+        "link": "",
+        "title": "Front-end is fully operational, components function as expected and design matches the high fidelity design files"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "5u3G+wmrJcub4Y11/5kK+PwRRbk=",
+    "id": "bcc71a11be3e12362820b6439a47060d",
+    "index": 175,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f94f23da-7647-474b-9517-26c76f6ab7e7",
+        "id": "14f6cc1b-3c7c-449c-8abb-6296a8b1e860",
+        "link": "https://connect.staging.vetra.io/d/.......",
+        "title": "Packages / Doc Models / Editors / Processors (Read Models)"
+      },
+      "scope": "global",
+      "type": "ADD_KEY_RESULT"
+    },
+    "error": null,
+    "hash": "M3jMxpJHqE0bya0t083hnfoijac=",
+    "id": "7257eef4b5de599fed5eed377c722ff1",
+    "index": 176,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ba279199-a946-463d-b03e-b0b08042ffaa",
+        "margin": 0,
+        "project": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "abC/gm9ya7AHGQeW76i/ZwGa/0E=",
+    "id": "032e52e08ef645a33a130019c3c911c9",
+    "index": 177,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "59260f2b-a178-483a-85f0-c632cd4bfb17",
+        "margin": 0,
+        "project": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "KmK6jfDbZRp5CKZNP2DENUdL7vk=",
+    "id": "7bff76ffc3451f228b19b0ccc72cdf30",
+    "index": 178,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "542443cd-459e-47af-bc1c-04a8e5ae920c",
+        "margin": 0,
+        "project": "fb263253-65f3-42a7-9498-8535da0dcb46",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "n7yKx7Oh3SV6s2SJp/EQU/Gvo5k=",
+    "id": "508bd6bd19253dba64b9b6667f9950fc",
+    "index": 179,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a0c4c47-a084-4cc1-9e0e-b6eb287cdc17",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "TkngrgMgj/c4cDzU+f4wdNz/z5c=",
+    "id": "27f999b92114e36063dcb5a3c14bacc7",
+    "index": 180,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "3d995400-80b1-44df-a6cb-16b5d6e19172",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 1,
+        "unit": "Hours",
+        "unitCost": 250000
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "4WwLZ7OLKbHO8mHVduco7bGfXVw=",
+    "id": "4bee7706769e272ed3996c7a4ef06009",
+    "index": 181,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "8e668089-8c5c-43ca-ac6a-7b9ad2c9b24c",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "gjEleoT+h8Gk69FthnplxOqZTs0=",
+    "id": "324b6efd85b9a3a728c647a01e01bfbd",
+    "index": 182,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "43be05a3-9e54-489c-a0fd-9618a7cc9bd7",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "NBbo21B6fJnHzTkxVckWDWf4hag=",
+    "id": "8cb700b2f5f625e698966b981220d5d3",
+    "index": 183,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7bf3d270-583a-45a0-8213-593ef180cc76",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "PMcGql1Fp8T336Iwzi1xVtvv6Vg=",
+    "id": "68bbef1841809552b44078f114ce3679",
+    "index": 184,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "865610e0-949a-499f-b31d-3290d722d414",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "pY87BjEpVxrFbfCpm6Mt17UXlo0=",
+    "id": "51678f15b83746e4c43c1600f3ac9702",
+    "index": 185,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f137160f-e405-4057-8ff0-618b49b917d4",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "/tnPeDMtXkX8pYVO8Gek5VJIFe4=",
+    "id": "f50f6bd31c27db501a74318878db6d4e",
+    "index": 186,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "b71fb90d-8c2f-4032-9cc2-1bc8aa8b1326",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "4Zmf3tasTilpnU7Fzm9HX/TKvXM=",
+    "id": "caf551e413bd10da94c9fa3533cb84fa",
+    "index": 187,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e20efea4-497a-4f1f-936a-b4fa5333777c",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "+uPDmgbS770Gs31muexHlj2O3lc=",
+    "id": "f5414276a826b0bff627b1db8449cb60",
+    "index": 188,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "ad4e5147-cdab-4d07-a502-7ef94e527f8b",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "qBtAU7CqcVB8KSErAYNldI22+dk=",
+    "id": "eb12188805757588c3db6e86244f810a",
+    "index": 189,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "33807bfc-d6f6-4665-acc3-c44072af0246",
+        "margin": 1.1,
+        "project": "6902a216-fbfd-4c73-8ab3-199a3a4870f6",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "XefWcsAFlSHsgVglsjrwaOvrbsk=",
+    "id": "cc1a1b4c3b0a2c4c1e6523edb2fe5c25",
+    "index": 190,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "03a43484-d9af-4023-a5f2-e7a31f46360e",
+        "margin": 0,
+        "project": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "bKoOakMrQj47i2PlGAo9kxUXfSg=",
+    "id": "ac61cb51939f64c3677e1dff627a6eac",
+    "index": 191,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "26a231b1-bd5e-45e8-ae3c-b721fa7bbb35",
+        "margin": 0,
+        "project": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "BjACmfWFJTtkFkQ4ZPyXXxluP18=",
+    "id": "cebbb4367e54536a136d509f2f6ff4ff",
+    "index": 192,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "c5289661-2497-4dff-b734-0f0fb518d693",
+        "margin": 0,
+        "project": "38750a5a-8a7e-49d1-9276-167087935ff0",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "gGJwEEWNR0rY+dvBuV+BVHJMb2Q=",
+    "id": "8aeff12d6344a8165e4c14465290179d",
+    "index": 193,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "bc27e448-d4c6-4a92-8fd4-7e55cb4752ad",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "WuJBgDnHAn6KPOpyXu3csvRPeCY=",
+    "id": "c93ba7339e4aac77ce69b67837c6f292",
+    "index": 194,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "a535678b-a27d-4a86-8180-9561ecd0aeb0",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "e4nfHbxeukocg9dQJoZUDnP24aw=",
+    "id": "6a6e63a637ee33b0e3d1910c1960652a",
+    "index": 195,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7a3d3bb0-63b7-4aa5-9429-49f9e70e68bc",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "tk7q4rJ5SY+ojaP3eS2tXgIqlyg=",
+    "id": "f61111e2e3dcc06e783e0707a4b4cddd",
+    "index": 196,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "828d60a4-ba62-47df-81ac-6a9215c65a9d",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "HhqNFznGqHxQvea2kVmyYc0vIes=",
+    "id": "57128fbb0a1317b95aa775208355be3c",
+    "index": 197,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "285879a2-5b3e-409f-bd43-74da0bd10e75",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "GHPWAF8BBfs3FUpKDr4aTnnL/6w=",
+    "id": "0090f2638984979c2bf38cc5a4651b92",
+    "index": 198,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "85479b52-191e-48e5-a671-f31a77ec4151",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "LvhJ/AxtxOMh/cNQHtGYzfFeofg=",
+    "id": "9b44e767798943fcfa5ba9e7ade872f0",
+    "index": 199,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "5193f760-1e2b-4466-ac52-610a320caf00",
+        "margin": 0,
+        "project": "b279bf37-1524-49b3-b365-21aa5f0e7584",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "FDCpEHnaMnItY3Gfa/LJldNLNyQ=",
+    "id": "736224fd7fae6a9147db33533e980f46",
+    "index": 200,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "31d012d4-e16a-4da4-b6f2-88b2581de785",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "Z+eqUKEAPX+i7AtZ4iyb+v/vUZA=",
+    "id": "3d44b845f261481b5a503af99a2fb09a",
+    "index": 201,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "119e5c91-1cd3-46a3-8fa3-071b73fc039b",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "gHa3x4e7cjlydlC9hUhfjuMuM+A=",
+    "id": "bea2d463b32b43957241c90e680b0c25",
+    "index": 202,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "9c75df75-1a66-4f0d-8a8d-6a59bddf6b56",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "7eyI+xogUyHtam6JQI2lzEDLvuM=",
+    "id": "c2e7b81d611e9485e4f60294454311e4",
+    "index": 203,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "efd2b20f-2234-4f79-94b3-6b616f7ce025",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "7Odp18pr0u1/VB0GSqCkhMqCl3g=",
+    "id": "0f3eb1483847f400a1e97d946c8440e8",
+    "index": 204,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "45aabac8-b9db-4498-a234-1939b65a7948",
+        "margin": 0,
+        "project": "a2233aeb-0d27-4357-82c3-9295e7f9247f",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "63KpKOCVOaTqlw4vOcPfUsSEBp0=",
+    "id": "85748d6d92f556f656dd4e92e4df2c48",
+    "index": 205,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "c826b5bd-cbb7-451f-8396-8ce3b99a00e8",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "nV3ejJQb6hwuIYZnNL8cIFqA+iw=",
+    "id": "dd7fdb25a562795734ef7276a22f1f46",
+    "index": 206,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "c26b7149-f244-44ee-b56d-3c2824453197",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "/3vio6jxvpMFbJu9azN5mdy5YLI=",
+    "id": "e938a9c56599d0ae30912cd493600377",
+    "index": 207,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "13265ab5-1e9c-4bbe-b902-45ec676f04f1",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "gPCBd09pIXWbr+1geT15boZmue0=",
+    "id": "0a8e6ae5541c71c4f3e7e356c1d7eda0",
+    "index": 208,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "dccbac77-d999-4e33-a4a1-020a73133019",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "pIFoJ4VMF84XMuEtIV5H3S6JW8c=",
+    "id": "934dcdbd5f14b2160d8940d160507e91",
+    "index": 209,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "389b4e3a-4f45-450a-997b-a27882a25172",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "hQCb4QdzykxH85hJ/VHI16rUbtc=",
+    "id": "3ac39fe9470118b77b6e4ca70e78b289",
+    "index": 210,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7202ee0f-418e-46a7-9ff6-989fd2d8a386",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "z8fo1OCcNMs/TJbTSCyu85MkPaQ=",
+    "id": "c9b7442f34ac65dfbbdc70496b988051",
+    "index": 211,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e3a655bd-7a45-444c-941e-0fa2479bb2d5",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "xpj/poIUW4Hf/fzzu/QpjVKdsvQ=",
+    "id": "95f6a9949d395ff0e4e2d373efec0afd",
+    "index": 212,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "82f1e813-9edb-432a-8b07-bc68b7e21512",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "GMOXIT2t0ZeLuA8w40B2jZs0Ozs=",
+    "id": "73b0bc7ba99c81d864b00b06252e5408",
+    "index": 213,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "29965c36-cc9e-4023-886f-7c1a7b93e24f",
+        "margin": 0,
+        "project": "e3cb3064-7294-42a0-aa83-85fc9023d4aa",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "W37c1PO46Hfr08NGklagfMN8/0U=",
+    "id": "3b6edf754a1ebc2ca274d51c6beac47f",
+    "index": 214,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "7500bed3-9d56-46b9-8045-d152cfa0b018",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "TYwpFiH4zgRYChF30wfgAF1h3ZA=",
+    "id": "e6b2a84240996bd2d6c93d2c2c03d92a",
+    "index": 215,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "68c3e332-c00d-4c2d-909b-1aa0c8e90a55",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "efYaVWSCuy0oAFdUc2bAeamao3U=",
+    "id": "3e9a9eb9e2b812566ec3fec72c97cf87",
+    "index": 216,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "992ddb00-cef5-46f6-abd9-7181ca021c26",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "o1ZsY9oXwshlWKLt+zc7FZ50wrk=",
+    "id": "a85065c14994e0e62287a43fe7658fae",
+    "index": 217,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "a29525bc-39c3-4216-ab6e-569019129cb4",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "qCSIILXVYehnQLE+J9RnBYv9gQc=",
+    "id": "ee0b3c5a5c5e616f9d79be727c4a78dd",
+    "index": 218,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "589dcafd-ddde-4166-a037-a09f7bb1b0f2",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "moQfcst9x18LKSdHwEkcGe0jIns=",
+    "id": "1b960606b9b982f837241f7993cc1fb8",
+    "index": 219,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "429cdbc8-961c-47af-b602-0776804adf8c",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "OjCKy/pnZKhoOXKD6ne9ZC1eLrA=",
+    "id": "3816daa33c2a7592d6919ef3cc1a48b8",
+    "index": 220,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "fcf4830a-0641-4793-b350-5021e96e3170",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "PCzc3vKmZLM0sfcD+5lVx8wkqMo=",
+    "id": "faa6162414f7a1eea400b7b21b67afe5",
+    "index": 221,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f8e14974-7cbd-441b-95fc-0e647f4d1364",
+        "margin": 0,
+        "project": "cce55412-9084-4130-91d0-f41072eb067b",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "bbaPAhbZ38Fn2Vr0gC6vDwCwmlw=",
+    "id": "23456fd65c0672c060f6d9e2da7baa66",
+    "index": 222,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f94f23da-7647-474b-9517-26c76f6ab7e7",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "7Oi3UaPOqRARnKkO4dRNfi/S8Ys=",
+    "id": "8384297afa9251faed260312d58c2c17",
+    "index": 223,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "e3ef49df-a4b0-4cb3-91b6-d7f358a080ae",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "S7ghwkn5jWONGrJVQAqI94ePkIQ=",
+    "id": "aed6c3a3fb4753007d635eb664f45a3a",
+    "index": 224,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "fa0e9c93-844c-414d-bdf2-9b853977c7b7",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "DNO76nQtJUbiJt9XdiD2NuEyoA0=",
+    "id": "2107e570e702ffc2e4f6a3699177a4c1",
+    "index": 225,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "f5ce3c58-aa00-4075-bfbd-b21cd5ed604d",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "2K130xZKaLDGoxGpL7zV3VeXbBk=",
+    "id": "afa890fb1f6a6bf9f83aa0fdf2e994e2",
+    "index": 226,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "320ada67-5c96-41ca-8669-085e6ea110f2",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "ua+w2jEWUjUf9T67fldp652LyNA=",
+    "id": "00cec871a53923217d7d8c1de382f55b",
+    "index": 227,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "aff047eb-e816-4b91-bbf3-ab6e5f94998e",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "P0Z7tfrOvfBWSJBcYmk52qbNzj0=",
+    "id": "6f91970c7df62bb7da73a20db83d0ee7",
+    "index": 228,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "cb258ba1-219d-4373-86e3-c324e1e98734",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "OvJiSoeBK0mv/lE4M7xopts764o=",
+    "id": "57d06bffbfb5b6218319a6c4ee45abc6",
+    "index": 229,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "2cf32bbb-9910-45b2-bade-6067a5c6faa8",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "5cNBFdjQg2o16+VqvIfm2Fhf4A4=",
+    "id": "5612a33f387bac9d2d5aba7fd081dc48",
+    "index": 230,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "5a6d4d83-8471-472c-9c73-717ad10edf43",
+        "margin": 0,
+        "project": "fbda60d3-58ed-4776-8ade-d505516c97c2",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "qBSjzPmrCJn4YbATcm0Lo7DJYkk=",
+    "id": "50a68e7ed26f54c90c934762ad4501de",
+    "index": 231,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "149fca7c-29fa-4b28-aa02-99d2387df056",
+        "margin": 0,
+        "project": "fbda60d3-58ed-4776-8ade-d505516c97c2",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "EWqzFD9IdUosDk3pnP/UDeoSYAI=",
+    "id": "75d251952b0be3094dd80494a4c2e371",
+    "index": 232,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliverableId": "4e9694c4-8d65-4c2d-b9dc-7f5f6af2ffe5",
+        "margin": 0,
+        "project": "94dcefec-6bb5-48bf-b977-710d10abf474",
+        "quantity": 0,
+        "unit": "Hours",
+        "unitCost": 0
+      },
+      "scope": "global",
+      "type": "SET_DELIVERABLE_BUDGET_ANCHOR_PROJECT"
+    },
+    "error": null,
+    "hash": "POFPvH1oUrrsEcdFw8CdsA+q1U0=",
+    "id": "2fbfaa2baaa183211ad23edd4838b15f",
+    "index": 233,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2026-01-01T00:00:00.000Z",
+        "description": "The initial phase of Powerhouse Decentralized Operations Platform.",
+        "id": "14a2578d-d1ca-49d8-9954-1b3ea721b847",
+        "roadmapId": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "sequenceCode": "DOP",
+        "title": "Decentralized Operations Platform "
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "1JnTeqRUTSAD5+tLuGDAEJ5y/9I=",
+    "id": "cbc9759c68e6837b48379e3955da5342",
+    "index": 234,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Prometheus",
+        "milestoneId": "14a2578d-d1ca-49d8-9954-1b3ea721b847"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "gndrT8cRl5S3wyfG9QuE83GZt08=",
+    "id": "c814409ad204377fce5ae8d85392df23",
+    "index": 235,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "14a2578d-d1ca-49d8-9954-1b3ea721b847"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "E2AzojjJEkXxaF4nbakD4GZhTSk=",
+    "id": "1430e3249320f82648e2ec3cd8343da3",
+    "index": 236,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "meraki",
+        "milestoneId": "14a2578d-d1ca-49d8-9954-1b3ea721b847"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "1DSj1CicBKq5WFJ+NJrKU7G5aTk=",
+    "id": "0d5686ec698a90e7ec8a9c3fe5a0ef31",
+    "index": 237,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "callmeT",
+        "milestoneId": "14a2578d-d1ca-49d8-9954-1b3ea721b847"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "IEjkqL0uDpzEKH/VTo21INlDj68=",
+    "id": "fbf5060bc01b6268d3d83d9bee9470e7",
+    "index": 238,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2024-07-03",
+        "description": "The advanced phase of Powerhouse Decentralized Operations Platform.",
+        "id": "2282f2fa-b8f7-4182-a0b9-70938216d3bf",
+        "roadmapId": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "sequenceCode": "MVP",
+        "title": "Decentralized Operations Platform - MVP"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "WASe3fliDNn+8Pko84ZY145dA/0=",
+    "id": "bf4495acc76de26c00f118b8e09030b2",
+    "index": 239,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Prometheus",
+        "milestoneId": "2282f2fa-b8f7-4182-a0b9-70938216d3bf"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "2usQHWSsHlt+w8uau5L481b0KoY=",
+    "id": "38faf7f22173d637ae7b1de17188eaa4",
+    "index": 240,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "2282f2fa-b8f7-4182-a0b9-70938216d3bf"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "h0C/MDPK2G7raqHg0rSfF+zE/4U=",
+    "id": "518cde493ebfc314f0fcb4d23666cbd5",
+    "index": 241,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "meraki",
+        "milestoneId": "2282f2fa-b8f7-4182-a0b9-70938216d3bf"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "DOyL4FO5AbhfWehf0LPPjj56884=",
+    "id": "73f0439c24a0f7431e34e1d6e38e7c5a",
+    "index": 242,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "callmeT",
+        "milestoneId": "2282f2fa-b8f7-4182-a0b9-70938216d3bf"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "3+tMB0pVKtI6E0H54ajC9vibsUY=",
+    "id": "5e74406b2eb70ffa38c9bf9f58e112ac",
+    "index": 243,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2024-11-01",
+        "description": "Work on polished and production-grade version of Powerhouse Decentralized Operations Platform.",
+        "id": "98f5b137-d732-4ef6-b7e4-1ddf74841097",
+        "roadmapId": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "sequenceCode": "PROD",
+        "title": "Decentralized Operations Platform - Production"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "S1tcFX0nOyJ+gQtQE3ezUyZFaJE=",
+    "id": "e3d826cb56fe3c4d2fe5cf559df7e6ca",
+    "index": 244,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Prometheus",
+        "milestoneId": "98f5b137-d732-4ef6-b7e4-1ddf74841097"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "e3itxm3PUrDIRlsmSm+s8cK9j6M=",
+    "id": "846eca807ebaa86c2b56342adbe06487",
+    "index": 245,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "98f5b137-d732-4ef6-b7e4-1ddf74841097"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "SMG/fO8AZV0Y8DLl1Z9M8qxpN4Q=",
+    "id": "9b73a9d2af6eab756dddfa111281f088",
+    "index": 246,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "meraki",
+        "milestoneId": "98f5b137-d732-4ef6-b7e4-1ddf74841097"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "2U8PA5l+CTU9fB0su0qe256YPQM=",
+    "id": "472744932105000753c0967e75264b4c",
+    "index": 247,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "callmeT",
+        "milestoneId": "98f5b137-d732-4ef6-b7e4-1ddf74841097"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "1zMw2at5DBvgpS+XU6u3PkIQScg=",
+    "id": "3f9cf66abbdd161ea9cbb58cbf6cc542",
+    "index": 248,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2024-12-31",
+        "description": "The initial phase of Atlas Rulebook Editor work.",
+        "id": "3d7e3411-1d76-4aad-9fd2-de838d9aeb8d",
+        "roadmapId": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "sequenceCode": "ATLAS",
+        "title": "Atlas Rulebook Editor"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "/kLykbVPJfKgpld0Q6nbrUM/op0=",
+    "id": "f3da6c9b08d6b93df979e35a53345ea8",
+    "index": 249,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Prometheus",
+        "milestoneId": "3d7e3411-1d76-4aad-9fd2-de838d9aeb8d"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "AL2vKojKpugoW5yUUobv39Pdf+8=",
+    "id": "e8db7637d259be7edffeed4e297887c8",
+    "index": 250,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "apeiron",
+        "milestoneId": "3d7e3411-1d76-4aad-9fd2-de838d9aeb8d"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "hVKz6lHZpi3XO+DumWyGYKlT0z4=",
+    "id": "94ed1208b884c3ed82f2932b2ba59834",
+    "index": 251,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "meraki",
+        "milestoneId": "3d7e3411-1d76-4aad-9fd2-de838d9aeb8d"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "qJ6eI1em+BVVCJX7BWNRLd1ZuqQ=",
+    "id": "efb7de0d31c4bd05d38a447542ed1cae",
+    "index": 252,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2024-12-31",
+        "description": "Research and implementation work of turning Powerhouse into a fully-fledged Ecosystem Actor.",
+        "id": "13252e7e-77df-4d1a-ab15-891237b79750",
+        "roadmapId": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "sequenceCode": "SPIN",
+        "title": "Powerhouse Spin-off"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "fKKk391sEKAlU66YibM5AXqqaQY=",
+    "id": "7e313f48f38bde94d92fa88b2aed9414",
+    "index": 253,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Prometheus",
+        "milestoneId": "13252e7e-77df-4d1a-ab15-891237b79750"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "aKf2CUrhf6GIzuod/cYVM4Yfn3g=",
+    "id": "12072051c61925a5c61666d93c39625b",
+    "index": 254,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "callmeT",
+        "milestoneId": "13252e7e-77df-4d1a-ab15-891237b79750"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "VniD6JRebzpW5yDNT1frXv4rcow=",
+    "id": "9de48ea495ceb608ee222abd0b2b3a56",
+    "index": 255,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "meraki",
+        "milestoneId": "13252e7e-77df-4d1a-ab15-891237b79750"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "lV9sFY6dqkqw8H/YEbTC77Rt/ko=",
+    "id": "b94f045a1eeca98b17416920eccf36a5",
+    "index": 256,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Lumen",
+        "milestoneId": "13252e7e-77df-4d1a-ab15-891237b79750"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "vpRyFHro0JObB19ZnNpzk1OaFN0=",
+    "id": "8f47465f4a4e5e3dc2ddebd1115dd095",
+    "index": 257,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Kilgore",
+        "milestoneId": "13252e7e-77df-4d1a-ab15-891237b79750"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "j3uDhL/F4n2PJt85d5gMbSrAaXc=",
+    "id": "4f63f994a50f7b21b2a342c5b775bae3",
+    "index": 258,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Layer0x",
+        "milestoneId": "13252e7e-77df-4d1a-ab15-891237b79750"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "/1xMAyZDMHYNOeXTxDWZguPW+XE=",
+    "id": "02ffdf3973d5b85324c8d3a537bbb1bd",
+    "index": 259,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": " 2024-12-31",
+        "description": "Project management consultancy and advisory work for Sky Ecosystem\n",
+        "id": "635c6358-a0e0-4d59-af44-3ef9e40540eb",
+        "roadmapId": "1ede83d7-ba5a-479f-8cf0-a004af7da134",
+        "sequenceCode": "PMC",
+        "title": "Sky Ecosystem PM Consultancy"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "K9dgVIjZlp/CoPYAyWb7IrsZuGw=",
+    "id": "73e19d5bc6991da298b66a1599aac6b8",
+    "index": 260,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Prometheus",
+        "milestoneId": "635c6358-a0e0-4d59-af44-3ef9e40540eb"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "E7FXF0+npdo19fbXnujNcixbQm0=",
+    "id": "a2658af5f98628e7fcb455fae4b67e31",
+    "index": 261,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "Lumen",
+        "milestoneId": "635c6358-a0e0-4d59-af44-3ef9e40540eb"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "GVeIOoyCeXVhotu0W8w7J3WXsyk=",
+    "id": "7534be64e59cc4d605a466c672f14a62",
+    "index": 262,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2025-12-01T00:00:00.000Z",
+        "description": "All Achra MVP features are released to production. Functionality covers end-to-end RFPs, workstreams, governance, and financial operations for Networks.",
+        "id": "30c88044-bbd9-4a2f-a419-135bddd484c3",
+        "roadmapId": "bba656ca-ae26-4e81-a389-269cbf0a9871",
+        "sequenceCode": "AMVP-1",
+        "title": "Feature Completeness"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "/inPBfZrj9Pw8n7ATPXtYU1nm+A=",
+    "id": "5a9f183a7efe72ddaf058252d44784d3",
+    "index": 263,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "30c88044-bbd9-4a2f-a419-135bddd484c3"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "9RpWgISaGTI0mIXgO0qHA9J+KeQ=",
+    "id": "b011290e9ead7e1539612dfbe90642b2",
+    "index": 264,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2026-01-31T00:00:00.000Z",
+        "description": "",
+        "id": "fad39465-590f-4dd8-aa5d-0114a30a25b3",
+        "roadmapId": "bba656ca-ae26-4e81-a389-269cbf0a9871",
+        "sequenceCode": "AMVP-2",
+        "title": "Internal Powerhouse Adoption"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "taqre6GJOj8BZjEGZ+HshhUrMEg=",
+    "id": "58bea566a0f882e3bd7f6b2bda0ee7e4",
+    "index": 265,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "fad39465-590f-4dd8-aa5d-0114a30a25b3"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "ymhGudDf4Y4//LNSvE4nr4CPmig=",
+    "id": "6cfcb8e2db25971f3bcc31b5b180da6d",
+    "index": 266,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2026-03-31T00:00:00.000Z",
+        "description": "",
+        "id": "ce2478f2-06f8-4267-86d8-9ad539dcb4ec",
+        "roadmapId": "bba656ca-ae26-4e81-a389-269cbf0a9871",
+        "sequenceCode": "AMVP-3",
+        "title": "Sky Core Operations Adoption"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "a8u8reidg8mszWlVbbMLLWeybeQ=",
+    "id": "5be6a2ac3027d5e0c4ef39cd3409647b",
+    "index": 267,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "ce2478f2-06f8-4267-86d8-9ad539dcb4ec"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "LMJ9IdqayuqOPLqwY+i2ZT4x5eQ=",
+    "id": "84ff5d7aa80fc629e24a5cb0a1939099",
+    "index": 268,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "deliveryTarget": "2026-06-30T00:00:00.000Z",
+        "description": "",
+        "id": "c9a98e55-6a9b-4077-ab3d-efe57d256e46",
+        "roadmapId": "bba656ca-ae26-4e81-a389-269cbf0a9871",
+        "sequenceCode": "AMVP-4",
+        "title": "Achra MVP Launch"
+      },
+      "scope": "global",
+      "type": "ADD_MILESTONE"
+    },
+    "error": null,
+    "hash": "6iAH1RVv3pO1SAfnjiWjp4sU+28=",
+    "id": "2e803dcfc8088590cb08d658530fe907",
+    "index": 269,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "teep",
+        "milestoneId": "c9a98e55-6a9b-4077-ab3d-efe57d256e46"
+      },
+      "scope": "global",
+      "type": "ADD_COORDINATOR"
+    },
+    "error": null,
+    "hash": "/aO35YK8D6JcgZsjZGAz1CKoQpI=",
+    "id": "be99853549acf156c7a994d879bb5199",
+    "index": 270,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:56.630Z"
+  }
+]

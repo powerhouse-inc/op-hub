@@ -1,0 +1,298 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "99d183ba-9d4c-43b1-8c8d-ebb34af45563",
+        "meta": {},
+        "model": "powerhouse/resource-template",
+        "name": "ALTERNATIVE RISK TRANSFER (ART)",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-03T10:59:39.316Z",
+          "documentType": "powerhouse/resource-template",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "99d183ba-9d4c-43b1-8c8d-ebb34af45563"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "f90311cda7497b6b9620c413a426e5c2",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:39.316Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": "\nA modular legal and financial toolkit for managing operational, technical, and liability risks faced by builder teams and individual contributors. ART solutions address scenarios such as protocol failures, data breaches, litigation, product liability, and professional liability through bespoke legal and financial instruments.\nRisk management instruments are typically based on a self-insurance layer and may include internal risk pools, captive insurance vehicles, performance bonds and guarantees, Directors & Officers (D&O) insurance frameworks, and financial reinsurance.  These instruments can be integrated into a comprehensive legal risk management framework for a project. \n\n**Typical use cases:**\n\n- High\u2011risk technical systems\n- Contributor liability protection\n- DAO\u2011adjacent risk exposure\n\nSuitable for teams seeking structured, proactive risk mitigation beyond standard insurance.\n\n\n\n",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "summary": " Programmable, modular risk infrastructure for contributor and builder teams where traditional insurance falls short. ",
+        "thumbnailUrl": "https://www.hertvik.com/wp-content/uploads/sites/136/2020/05/Alternative-Risk-Techniques-1118x350.jpg",
+        "title": "ALTERNATIVE RISK TRANSFER (ART)"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "hbaZdIztZk/7uMhG+6VMxsr/QxU=",
+    "id": "4737b3d0cda209d88c00159dafdf2ee9",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:53.288Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "99d183ba-9d4c-43b1-8c8d-ebb34af45563",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "contentSections": [],
+            "description": null,
+            "facetTargets": [],
+            "faqFields": [],
+            "id": null,
+            "infoLink": null,
+            "lastModified": null,
+            "operatorId": null,
+            "optionGroups": [],
+            "recurringServices": [],
+            "services": [],
+            "setupServices": [],
+            "status": "DRAFT",
+            "subtitle": null,
+            "summary": "",
+            "targetAudiences": [],
+            "thumbnailUrl": null,
+            "title": "",
+            "weight": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-template",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "78d035b3758c49432705269058800260",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:39.316Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "status": "COMING_SOON"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_STATUS"
+    },
+    "error": null,
+    "hash": "WQJFpDk3O45kS3cYr5vvpGTH30k=",
+    "id": "fa61a018238cc3c2b8d7de2632612e9f",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:53.650Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "operatorId": "831efda4-c052-42b1-8df3-dfae977b732b"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR"
+    },
+    "error": null,
+    "hash": "w3VuEwSZAGzDryKX76Y0nJI6FO0=",
+    "id": "3a0b0b2ea0b0feb2c52f62692d05d564",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:53.989Z"
+  },
+  {
+    "action": {
+      "input": {
+        "color": "#10b981",
+        "id": "e9cf7ad7-46a5-4d0d-a964-4daca5b0bd2a",
+        "label": "Networks",
+        "lastModified": "2026-04-03T10:59:39.000Z"
+      },
+      "scope": "global",
+      "type": "ADD_TARGET_AUDIENCE"
+    },
+    "error": null,
+    "hash": "dYgVTutp/JlS0QnrvuuZ7xcdErI=",
+    "id": "428c05db1f0d18666c28953db191cf19",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:54.338Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "anonymity",
+        "categoryLabel": "Anonymity",
+        "id": "de233161-f0d0-4d17-85aa-c9ecbbb0a649",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "High",
+          "Highest"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "ArnEeCC9LQHooA8rk2RHpUskeWU=",
+    "id": "8176b29950030e15beb6e9013c9e3bea",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:54.680Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "team",
+        "categoryLabel": "Team",
+        "id": "fb852570-32d3-4490-ae4f-91ddbf8b44e0",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Hybrid"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "Bn5o74PSSMMitq8B6/qYHbgvW10=",
+    "id": "e766e8b04595090c85f44b34548e6f11",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:55.039Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "legal-entity",
+        "categoryLabel": "Legal Entity",
+        "id": "72e1d5f4-8472-4f86-b683-36261ddca199",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Swiss Association",
+          "BVI Entity"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "jm8LRg4uZeHGMBSch02DwlS94BA=",
+    "id": "7a2025b4e94873fb14d1de5e1fd7f6db",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:55.375Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "sno-function",
+        "categoryLabel": "SNO Function",
+        "id": "8056de26-64fc-4875-9ee2-a6e81307b839",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Self-Insurance Risk Management Hub"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "TlDD77Ewu2G+UdZw7apuS3l9/r8=",
+    "id": "ed11c93172cea939f8d4ecf36159c114",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:55.718Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "services": [
+          "Risk identification, classification, assessment, and mapping",
+          "Evaluation of suitable risk management instruments",
+          "Design, structuring, and implementation of legal vehicles",
+          "Set up insurance and reinsurance mechanisms"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "AtvDThgDI4iS7/UlVNuqmxXMuPA=",
+    "id": "ed3c15d76ad62441f75f8fe5ebe80807",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:56.062Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "services": [
+          "Operation and maintenance of financial vehicles",
+          "Claim management",
+          "Control and audit",
+          "Oversight of structures through technical committees",
+          "Event prevention and risk mitigation",
+          "Contributor training"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "buFTplCaIa5a3icSvVhihhkxqqc=",
+    "id": "ae40e22d4c8510ee44e8ba9cfacb83b5",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:56.417Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-06T10:42:31.190Z",
+        "title": "Alternative Risk Transfer"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "ul1UX5fDtz2Ur+eCmE9gdhKo5Ts=",
+    "id": "f922e53e36e9e1b2ac17dab96db7e311",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-06T10:42:31.190Z"
+  }
+]

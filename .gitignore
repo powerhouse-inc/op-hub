@@ -5,6 +5,6 @@ node_modules
 .eslintcache
 .env.local
 *.tsbuildinfo
-
+.env
 .ph
 projects-import.js

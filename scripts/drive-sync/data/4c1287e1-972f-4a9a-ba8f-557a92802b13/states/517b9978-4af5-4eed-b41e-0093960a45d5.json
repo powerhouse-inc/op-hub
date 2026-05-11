@@ -1,0 +1,39 @@
+{
+  "closureReason": null,
+  "currency": "USD",
+  "dateDelivered": null,
+  "dateDue": "2025-05-31T00:00:00.000Z",
+  "dateIssued": "2025-05-01T00:00:00.000Z",
+  "exported": {
+    "exportedLineItems": [],
+    "timestamp": null
+  },
+  "invoiceNo": "PH-GEN-2025-05",
+  "invoiceTags": [],
+  "issuer": {
+    "name": "Powerhouse Genesis"
+  },
+  "lineItems": [
+    {
+      "currency": "USD",
+      "description": "Operational services - May 2025",
+      "id": "li-05-001",
+      "quantity": 1,
+      "taxPercent": 0,
+      "totalPriceTaxExcl": 3000,
+      "totalPriceTaxIncl": 3000,
+      "unitPriceTaxExcl": 3000,
+      "unitPriceTaxIncl": 3000
+    }
+  ],
+  "notes": "Monthly invoice for May 2025 - Powerhouse Genesis operations",
+  "payAfter": null,
+  "payer": {
+    "name": "Sky Ecosystem"
+  },
+  "payments": [],
+  "rejections": [],
+  "status": "DRAFT",
+  "totalPriceTaxExcl": 3000,
+  "totalPriceTaxIncl": 3000
+}

@@ -1,0 +1,186 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "70b22ab7-fc27-4341-8b2c-173a1c7c72f0",
+        "meta": {},
+        "model": "powerhouse/subscription-instance",
+        "name": "",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-09T13:15:31.866Z",
+          "documentType": "powerhouse/subscription-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "70b22ab7-fc27-4341-8b2c-173a1c7c72f0"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "06dc9236d962d000ab9aba0b6f3f7cdb",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T13:15:31.866Z"
+  },
+  {
+    "action": {
+      "input": {
+        "autoRenew": true,
+        "createdAt": "2026-04-09T13:15:32.848Z",
+        "customerEmail": "yasiel-testing126@gmail.com",
+        "customerId": "a2ace3fb-fa39-4d76-82a1-687dc7e95044",
+        "customerName": "yasiel-testing126",
+        "globalCurrency": "USD",
+        "resourceId": "c96b5758-efdd-4c5d-901c-9768638405c7",
+        "resourceLabel": "yasiel-testing126",
+        "resourceThumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na",
+        "selectedBillingCycle": "QUARTERLY",
+        "serviceGroups": [
+          {
+            "costType": "RECURRING",
+            "id": "683ce54a-8948-4077-bec7-0e3f98e0e625",
+            "name": "Recurring Services",
+            "optional": false,
+            "recurringBillingCycle": "QUARTERLY",
+            "recurringCurrency": "USD",
+            "services": [
+              {
+                "customValue": null,
+                "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+                "id": "93e0d61d-75ff-4229-b463-5c7bf27deed0",
+                "metrics": [],
+                "name": "Legal document templates",
+                "recurringBillingCycle": "QUARTERLY"
+              },
+              {
+                "customValue": null,
+                "description": "A global invoice generation tool that creates professionally structured invoices following international best practices, while remaining independent from any specific legal or tax jurisdiction.",
+                "id": "914f14df-b363-4e5f-9dad-10904c82387e",
+                "metrics": [],
+                "name": "Global invoice generator",
+                "recurringBillingCycle": "QUARTERLY"
+              },
+              {
+                "customValue": null,
+                "description": "A budget planning tool that helps organizations allocate resources across teams, projects, and categories following financial best practices, with defined budget categories and time horizons.",
+                "id": "89a417f2-75a2-4883-9e86-826e05568e6a",
+                "metrics": [],
+                "name": "Budget generator",
+                "recurringBillingCycle": "QUARTERLY"
+              },
+              {
+                "customValue": null,
+                "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+                "id": "e89ee2b9-3ddc-452f-85e7-02ea334a0ca7",
+                "metrics": [],
+                "name": "Needs analysis",
+                "recurringBillingCycle": "QUARTERLY"
+              }
+            ]
+          }
+        ],
+        "serviceOfferingId": null,
+        "services": [],
+        "tierCurrency": "USD",
+        "tierName": "Essentials",
+        "tierPrice": 0,
+        "tierPricingMode": "MANUAL_OVERRIDE",
+        "tierPricingOptionId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "INITIALIZE_SUBSCRIPTION"
+    },
+    "error": null,
+    "hash": "/AWjGRm/oV6YKqZqrwWV4xWhLMo=",
+    "id": "5f3d1410831792d3c55e4d6d52d6a1b7",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T13:15:32.849Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "70b22ab7-fc27-4341-8b2c-173a1c7c72f0",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 1
+          },
+          "global": {
+            "activatedSince": null,
+            "autoRenew": false,
+            "budget": null,
+            "cancellationReason": null,
+            "cancelledSince": null,
+            "createdAt": null,
+            "customerEmail": null,
+            "customerId": null,
+            "customerName": null,
+            "customerType": null,
+            "expiringSince": null,
+            "globalCurrency": null,
+            "nextBillingDate": null,
+            "operatorId": null,
+            "operatorNotes": null,
+            "pausedSince": null,
+            "projectedBillAmount": null,
+            "projectedBillCurrency": null,
+            "renewalDate": null,
+            "resource": null,
+            "selectedBillingCycle": null,
+            "serviceGroups": [],
+            "serviceOfferingId": null,
+            "services": [],
+            "status": "PENDING",
+            "teamMemberCount": null,
+            "tierCurrency": null,
+            "tierName": null,
+            "tierPrice": null,
+            "tierPricingMode": null,
+            "tierPricingOptionId": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/subscription-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "e802dfacfcfc21b3138ea484e5b1d228",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T13:15:31.866Z"
+  },
+  {
+    "action": {
+      "input": {
+        "projectedBillAmount": 0,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "3xkTc5Z7em8SuSfbV+jZZN/g98A=",
+    "id": "9a1b74b07a626e28a4325aab90128257",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T13:15:32.944Z"
+  }
+]

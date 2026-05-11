@@ -1,0 +1,101 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "695e6417-0540-4f80-8936-187209c9f0ee",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "TheGoldenMule",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-23T18:52:17.528Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "695e6417-0540-4f80-8936-187209c9f0ee"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "7a08e68de186bd079e717885a2ba4fe9",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:17.528Z"
+  },
+  {
+    "action": {
+      "input": {
+        "code": "gldm",
+        "icon": "https://i.postimg.cc/6Q89n5nS/golden-Mule-Icon.png",
+        "id": "3b84ea6c-6203-4a45-8278-cd9c357e3cf3",
+        "name": "TheGoldenMule",
+        "slug": "thegoldenmule"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "cqyZQua4P/HVwHhsgi/QR/hpFpo=",
+    "id": "42ba33f262652c6f07e150bffd51c3da",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:27.565Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "695e6417-0540-4f80-8936-187209c9f0ee",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": null,
+            "contributors": [],
+            "description": null,
+            "icon": null,
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": null,
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": null,
+            "status": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "72c2aee7e9f0c93c3877dfee409faccf",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:52:17.528Z"
+  }
+]

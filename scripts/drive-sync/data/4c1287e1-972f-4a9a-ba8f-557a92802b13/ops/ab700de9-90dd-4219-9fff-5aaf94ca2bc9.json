@@ -1,0 +1,217 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "ab700de9-90dd-4219-9fff-5aaf94ca2bc9",
+        "meta": {},
+        "model": "powerhouse/operational-hub-profile",
+        "name": "Powerhouse Genesis",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-25T10:00:07.237Z",
+          "documentType": "powerhouse/operational-hub-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "ab700de9-90dd-4219-9fff-5aaf94ca2bc9"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "e82149d581c9fda24c1a9fcb1d949521",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:00:07.237Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": "Powerhouse Genesis"
+      },
+      "scope": "global",
+      "type": "SET_OPERATIONAL_HUB_NAME"
+    },
+    "error": null,
+    "hash": "/VjwKSUDCyraasXkkacP7ZdjYOs=",
+    "id": "cfccb29838fe86b8bf02ab862a3cb034",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:00:07.534Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "ab700de9-90dd-4219-9fff-5aaf94ca2bc9",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "name": "",
+            "operatorTeam": null,
+            "subteams": []
+          },
+          "local": {}
+        },
+        "model": "powerhouse/operational-hub-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "f6c221051d2391ec88638d036d24aa67",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:00:07.237Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "a326c3a9-d29b-46d3-8ab0-14b361e11567"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "W7PX+6epJjOUVR1kihWnoG76XBs=",
+    "id": "ad4932fbfdcd04f6f55bfcdaa3e12366",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:00:07.880Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "a326c3a9-d29b-46d3-8ab0-14b361e11567"
+      },
+      "scope": "global",
+      "type": "REMOVE_SUBTEAM"
+    },
+    "error": null,
+    "hash": "/VjwKSUDCyraasXkkacP7ZdjYOs=",
+    "id": "ffa8a83b445bb93a454419a8a8f4017a",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:19.936Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "ea4170b7-1051-4f63-8c2b-9f9c11f7e934"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "kOZoBJoKU7JMhRhSlBeup2U1pQU=",
+    "id": "d6dbc94540abbaf1900a44e88113fbec",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:21.668Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "8a65a724-7529-4300-92b1-c39732b6100f"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "Pmw1cjGpYmFjBeRfKAzDYq47bdA=",
+    "id": "964c6b932252f67a6b992458cca98439",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:25.771Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "2596a4fd-37e1-470d-8303-afb904ccf9dc"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "1uXdFq75Ge/iO0VoVBXBbRYsOKE=",
+    "id": "31a536ed39778aeab213e74078e037c6",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:28.732Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "7d0a153e-96d7-4f95-b025-df287021990b"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "G9y8yKKqlWjX3uLRun8umhgmG+0=",
+    "id": "d0c363da6ba99cb17cd1d0a42af36fd8",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:31.261Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "ff4cf2ff-447b-4f75-85da-80112253de78"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "h7jOX4HyVQe860Zs38a9jo5iwjk=",
+    "id": "bd8a173c8013403b404c20a70907afc6",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:38.364Z"
+  },
+  {
+    "action": {
+      "input": {
+        "operatorTeam": "8a65a724-7529-4300-92b1-c39732b6100f"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR_TEAM"
+    },
+    "error": null,
+    "hash": "5ogaO1NhNvGa0TwpZc5y9w2MF7o=",
+    "id": "f50ed54185fbf50a0fefe7c42fffd23a",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:02:48.534Z"
+  },
+  {
+    "action": {
+      "input": {
+        "subteam": "831efda4-c052-42b1-8df3-dfae977b732b"
+      },
+      "scope": "global",
+      "type": "ADD_SUBTEAM"
+    },
+    "error": null,
+    "hash": "mFJQ/P5pUM9+YCBYaACJoDsJ/78=",
+    "id": "6a892b8db4f204e06de3d9222138575c",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-25T10:18:26.451Z"
+  }
+]

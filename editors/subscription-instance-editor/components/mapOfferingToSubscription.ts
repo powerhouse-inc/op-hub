@@ -187,8 +187,7 @@ function mapBreakdownGroups(
       costType: og.costType ?? undefined,
       recurringAmount: ogBreakdown.recurringAmount || undefined,
       recurringCurrency: ogBreakdown.currency || globalCurrency,
-      recurringBillingCycle:
-        ogBreakdown.effectiveBillingCycle as SIBillingCycle,
+      recurringBillingCycle: ogBreakdown.effectiveBillingCycle,
       recurringDiscount: mapBreakdownDiscount(
         ogBreakdown.discount,
         og.discountMode === "INHERIT_TIER"
@@ -202,7 +201,7 @@ function mapBreakdownGroups(
           svc,
           tier,
           globalCurrency,
-          ogBreakdown.effectiveBillingCycle as SIBillingCycle,
+          ogBreakdown.effectiveBillingCycle,
         ),
       ),
     });
@@ -235,7 +234,7 @@ function mapBreakdownGroups(
       costType: og.costType ?? undefined,
       recurringAmount: aoBreakdown.recurringAmount || undefined,
       recurringCurrency: aoBreakdown.currency || globalCurrency,
-      recurringBillingCycle: aoBreakdown.selectedBillingCycle as SIBillingCycle,
+      recurringBillingCycle: aoBreakdown.selectedBillingCycle,
       recurringDiscount: mapBreakdownDiscount(
         aoBreakdown.discount,
         og.discountMode === "INHERIT_TIER"
@@ -249,7 +248,7 @@ function mapBreakdownGroups(
           svc,
           tier,
           globalCurrency,
-          aoBreakdown.selectedBillingCycle as SIBillingCycle,
+          aoBreakdown.selectedBillingCycle,
         ),
       ),
     });
@@ -323,7 +322,7 @@ function mapUsageLimits(
       ul.accrualCycle ??
       (legacyReset && legacyReset !== "NONE"
         ? (legacyReset as AccrualCycle)
-        : ("MONTHLY" as AccrualCycle));
+        : "MONTHLY");
     const metricType: MetricType = ul.metricType ?? "NON_CUMULATIVE";
 
     return {

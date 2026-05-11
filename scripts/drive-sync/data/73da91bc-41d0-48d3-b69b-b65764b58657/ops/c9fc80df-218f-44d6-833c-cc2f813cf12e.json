@@ -1,0 +1,181 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "c9fc80df-218f-44d6-833c-cc2f813cf12e",
+        "meta": {},
+        "model": "powerhouse/resource-instance",
+        "name": "",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-09T12:30:51.139Z",
+          "documentType": "powerhouse/resource-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "c9fc80df-218f-44d6-833c-cc2f813cf12e"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "576f4443129efde60889d6d27924f189",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:51.139Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerId": "32573283-d6fd-48e8-a706-debfde58315c",
+        "customerName": "yasiel-testing123",
+        "description": "A ready-to-use operational setup that gives open-source and public-goods builder teams the legal and financial infrastructure to receive funding, pay contributors, and operate compliantly from day one.\n\nStructured as a Swiss Association \u2014 a cost-efficient, privacy-preserving legal form with strong international recognition \u2014 the Operational Hub reduces personal liability for contributors, simplifies compliance, and provides a professional foundation for teams that are already doing the work.",
+        "infoLink": null,
+        "operatorDocumentType": "powerhouse/builder-profile",
+        "operatorId": "ed5a114e-1494-45a9-8e0b-d4a43247aeff",
+        "resourceTemplateId": "56dce7ce-e65d-4fd6-b3d8-7a8506528aa9",
+        "templateName": "Operational Hub",
+        "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na"
+      },
+      "scope": "global",
+      "type": "INITIALIZE_INSTANCE"
+    },
+    "error": null,
+    "hash": "KJ3MblsnPtwqGr/UnD+cafhR7/k=",
+    "id": "5d2652ee55cd5de2aebfe85cf981d25c",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:51.738Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "c9fc80df-218f-44d6-833c-cc2f813cf12e",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 1
+          },
+          "global": {
+            "activatedAt": null,
+            "configuration": [],
+            "confirmedAt": null,
+            "customerId": null,
+            "customerName": null,
+            "description": null,
+            "infoLink": null,
+            "operatorProfile": null,
+            "provisioningCompletedAt": null,
+            "provisioningFailureReason": null,
+            "provisioningStartedAt": null,
+            "resourceTemplateId": null,
+            "resumedAt": null,
+            "status": "DRAFT",
+            "suspendedAt": null,
+            "suspensionDetails": null,
+            "suspensionReason": null,
+            "suspensionType": null,
+            "templateName": null,
+            "terminatedAt": null,
+            "terminationReason": null,
+            "thumbnailUrl": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "1c1e30ddf99163ac92c52120694d0f7b",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:51.139Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "sno-function",
+        "categoryLabel": "SNO Function",
+        "id": "df976250-6b17-4f0b-b60c-34cca38d9156",
+        "selectedOption": "Operational Hub for Open Source Builders"
+      },
+      "scope": "global",
+      "type": "SET_INSTANCE_FACET"
+    },
+    "error": null,
+    "hash": "DeUjMRzklCoMe55MDwAaHN/dv84=",
+    "id": "69b41c93a3d7001890b512a2a3758339",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:51.820Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "legal-entity",
+        "categoryLabel": "Legal Entity",
+        "id": "c9aa8cc9-40bf-4b52-9ac0-4434061583a2",
+        "selectedOption": "Swiss Association"
+      },
+      "scope": "global",
+      "type": "SET_INSTANCE_FACET"
+    },
+    "error": null,
+    "hash": "q0M6iCRV4RGyOpXUFHNnFeARxMo=",
+    "id": "a161509515da884c6e3eeaabaced62e7",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:51.889Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "anonymity",
+        "categoryLabel": "Anonymity",
+        "id": "a519bba5-09df-461e-9364-0dd2ea3c2fb5",
+        "selectedOption": "High"
+      },
+      "scope": "global",
+      "type": "SET_INSTANCE_FACET"
+    },
+    "error": null,
+    "hash": "DvPMihxARqz7bgsD82jEk/57V2k=",
+    "id": "9d51a53bb1ca8ecde49f8fd59f74949c",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:51.964Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "team",
+        "categoryLabel": "Team",
+        "id": "9a57462a-678c-4c21-b2f4-578851f95cbf",
+        "selectedOption": "Remote"
+      },
+      "scope": "global",
+      "type": "SET_INSTANCE_FACET"
+    },
+    "error": null,
+    "hash": "CBs/9zBRR2oIui2jZ2hP5mWb5ck=",
+    "id": "ea225ccc58858c1e88fb5808a5d3a43d",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:30:52.035Z"
+  }
+]

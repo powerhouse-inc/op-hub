@@ -1,0 +1,81 @@
+{
+  "documentType": "powerhouse/document-drive",
+  "id": "5e9df222-ed39-4f44-a3eb-87f6098e43b4",
+  "name": "Powerhouse Network Admin",
+  "preferredEditor": "network-admin",
+  "revisionsList": [
+    {
+      "revision": 10,
+      "scope": "document"
+    },
+    {
+      "revision": 10,
+      "scope": "global"
+    }
+  ],
+  "slug": "powerhouse-network-admin",
+  "state": {
+    "auth": {},
+    "document": {
+      "hash": {
+        "algorithm": "sha1",
+        "encoding": "base64"
+      },
+      "version": 0
+    },
+    "global": {
+      "icon": null,
+      "name": "Powerhouse Network Admin",
+      "nodes": [
+        {
+          "documentType": "powerhouse/network-profile",
+          "id": "078401d0-b861-4fba-a385-5e0dec199813",
+          "kind": "file",
+          "name": "Powerhouse",
+          "parentFolder": null
+        },
+        {
+          "documentType": "powerhouse/workstream",
+          "id": "28712d94-0301-4822-98fa-77a65114ef86",
+          "kind": "file",
+          "name": "Powerhouse Workstream 2024",
+          "parentFolder": null
+        },
+        {
+          "documentType": "payment-terms",
+          "id": "59020cb2-681c-4108-8827-e475de073eec",
+          "kind": "file",
+          "name": "Payment Terms-Powerhouse Workstream 2024",
+          "parentFolder": null
+        },
+        {
+          "documentType": "powerhouse/rfp",
+          "id": "922c6e79-25b2-414e-a494-25a3513692d9",
+          "kind": "file",
+          "name": "RFP-Powerhouse Workstream 2024",
+          "parentFolder": null
+        },
+        {
+          "documentType": "powerhouse/scopeofwork",
+          "id": "9253cbbd-7577-4c3a-bca6-f54c81c74242",
+          "kind": "file",
+          "name": "SOW-Powerhouse Workstream 2024",
+          "parentFolder": null
+        },
+        {
+          "documentType": "powerhouse/builders",
+          "id": "f8e243db-3d85-41e8-a27b-6a22103e2a87",
+          "kind": "file",
+          "name": "Builders",
+          "parentFolder": null
+        }
+      ]
+    },
+    "local": {
+      "availableOffline": false,
+      "listeners": [],
+      "sharingType": "private",
+      "triggers": []
+    }
+  }
+}

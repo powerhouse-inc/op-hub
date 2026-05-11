@@ -108,10 +108,7 @@ export class SettleMissingSliceIdError extends Error implements ReducerError {
   }
 }
 
-export class NoInvoiceableLineItemsError
-  extends Error
-  implements ReducerError
-{
+export class NoInvoiceableLineItemsError extends Error implements ReducerError {
   errorCode = "NoInvoiceableLineItemsError" as ErrorCode;
   constructor(message = "NoInvoiceableLineItemsError") {
     super(message);

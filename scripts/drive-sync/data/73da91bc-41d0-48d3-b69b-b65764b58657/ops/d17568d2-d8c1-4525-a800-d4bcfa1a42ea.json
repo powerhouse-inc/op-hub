@@ -1,0 +1,387 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "d17568d2-d8c1-4525-a800-d4bcfa1a42ea",
+        "meta": {},
+        "model": "powerhouse/resource-template",
+        "name": "FUNDRAISING VEHICLE (OCF)",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-03T10:59:41.101Z",
+          "documentType": "powerhouse/resource-template",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "d17568d2-d8c1-4525-a800-d4bcfa1a42ea"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "8edad5b7e691c49fdc9132d44749cce8",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:41.101Z"
+  },
+  {
+    "action": {
+      "input": {
+        "description": " A standalone vehicle for issuing equity, tokens, or revenue\u2011participation instruments to DAOs or traditional investors. Keeps fundraising, investor rights, and distributions separate from operations.\n\n\n**Typical use cases:**\n\n- DAO\u2011based fundraising\n- Token issuance\n- Hybrid Web2 / Web3 capital raises\n\nSuitable for teams needing regulatory clarity and clean cap\u2011table separation.\n",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "summary": "A purpose\u2011built entity for raising and distributing capital.\n",
+        "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNGcgm98TZZ6ESUv4wQuTg1VcC0xl2rpyzyA&s",
+        "title": "FUNDRAISING VEHICLE  (OCF)"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "r09gco9g2eT7/WWWspfmjsoH5Ak=",
+    "id": "5cc0e52503c242ecfd404e73beb908f5",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:07.753Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "d17568d2-d8c1-4525-a800-d4bcfa1a42ea",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "contentSections": [],
+            "description": null,
+            "facetTargets": [],
+            "faqFields": [],
+            "id": null,
+            "infoLink": null,
+            "lastModified": null,
+            "operatorId": null,
+            "optionGroups": [],
+            "recurringServices": [],
+            "services": [],
+            "setupServices": [],
+            "status": "DRAFT",
+            "subtitle": null,
+            "summary": "",
+            "targetAudiences": [],
+            "thumbnailUrl": null,
+            "title": "",
+            "weight": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-template",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "cc128d96b10669cb1b91b472cb22d954",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T10:59:41.101Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "status": "COMING_SOON"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_STATUS"
+    },
+    "error": null,
+    "hash": "dl0inKPHd/uQvywcg3b4sOKHwYE=",
+    "id": "5dd7e93ffb9bbbe5a495483a1fe3de4e",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:08.117Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "operatorId": "831efda4-c052-42b1-8df3-dfae977b732b"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR"
+    },
+    "error": null,
+    "hash": "Ru1uZU0snyycF1pDztVS3IMu7uw=",
+    "id": "8301fb2f88ad5d98b12304174d9835fa",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:08.471Z"
+  },
+  {
+    "action": {
+      "input": {
+        "color": "#10b981",
+        "id": "07bea701-a531-41f8-a3ef-a52e668a7d4e",
+        "label": "Networks",
+        "lastModified": "2026-04-03T10:59:39.000Z"
+      },
+      "scope": "global",
+      "type": "ADD_TARGET_AUDIENCE"
+    },
+    "error": null,
+    "hash": "rvciMNv4+IhNnelD0gzfVQT9QuY=",
+    "id": "a6aea7bd0663e5aa1d0a5d0abc738319",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:08.814Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "sno-function",
+        "categoryLabel": "SNO Function",
+        "id": "03392b63-b36b-4304-bfc4-021a864a040e",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Operational Hub"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "1OciHPrtjIpG490txkn7/u9wkSI=",
+    "id": "da0226315fdd35a84e8d2a787210db22",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:09.181Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "legal-entity",
+        "categoryLabel": "Legal Entity",
+        "id": "70dd899e-0b78-4129-9de4-01b99d67aa34",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "BVI Entity"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "YOs7GHTsZ8FcAZlIWPOV3xC1+Bc=",
+    "id": "d5b133b1083a326cfa32221381d58e8b",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:09.524Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "team",
+        "categoryLabel": "Team",
+        "id": "756e5616-38d4-401a-9b99-0cf9f7fddbfd",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Local"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "SZCk3NxiaOexn94SfbzXg3fK2ng=",
+    "id": "6449bad8f92d307bd5b6468b99591f4b",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:09.860Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "anonymity",
+        "categoryLabel": "Anonymity",
+        "id": "3c7918ea-fdff-4c14-a519-b5580fece37c",
+        "lastModified": "2026-04-03T10:59:39.000Z",
+        "selectedOptions": [
+          "Highest"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_FACET_TARGET"
+    },
+    "error": null,
+    "hash": "52nijPh/7sJt4inDZTh2N0/5Zuw=",
+    "id": "d70742a48a4986e14d29c18acecc8e04",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-03T11:00:10.234Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-06T10:43:09.271Z",
+        "title": "Fundraising Vehicle (OCF)"
+      },
+      "scope": "global",
+      "type": "UPDATE_TEMPLATE_INFO"
+    },
+    "error": null,
+    "hash": "zkcwxTPmf0kgIn1S1SHSpnKM2bA=",
+    "id": "c9024b245e790381a1978429ae00b604",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-06T10:43:09.271Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:01.714Z",
+        "services": [
+          "Needs analysis"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "iTkcoX7NsxPWtTh84ln2yJ3VBwQ=",
+    "id": "89fff83b0fc7a713ff3b508f366f343a",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:01.714Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:04.505Z",
+        "services": [
+          "Needs analysis",
+          "Legal vehicle design and implementation"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "vEloHu+K1XR3IFYVKifQvQa3gDQ=",
+    "id": "5a74ff9231fc2a3c016789468a3d75a8",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:04.505Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:08.063Z",
+        "services": [
+          "Needs analysis",
+          "Legal vehicle design and implementation",
+          "Governance integration and code-deference mechanisms"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_SETUP_SERVICES"
+    },
+    "error": null,
+    "hash": "9Xn1z3M1OlQO77hviKftPM/b+vM=",
+    "id": "07c957f017940b9c2b35c0631a528b5a",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:08.063Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:10.744Z",
+        "services": [
+          "Treasury operations"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "VFg1nv1hTYZlKRsLcAiogxXmZv8=",
+    "id": "3446d02b36d023cab2923c0e7fe1bb4d",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:10.744Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:13.195Z",
+        "services": [
+          "Treasury operations",
+          "Distribution processing"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "vTy2LJwrfSadqrC4SwvbhwWCvEk=",
+    "id": "cad8df9e5413bc0b7047ad3cb1dc483a",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:13.195Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:15.816Z",
+        "services": [
+          "Treasury operations",
+          "Distribution processing",
+          "Reporting to governance"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "fXuZWJS4EIbmON8lQxakiXRM4JE=",
+    "id": "37dec121b0c193e5cf425ed7e2317f14",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:15.816Z"
+  },
+  {
+    "action": {
+      "input": {
+        "lastModified": "2026-04-16T11:14:19.309Z",
+        "services": [
+          "Treasury operations",
+          "Distribution processing",
+          "Reporting to governance",
+          "Compliance and filing"
+        ]
+      },
+      "scope": "global",
+      "type": "SET_RECURRING_SERVICES"
+    },
+    "error": null,
+    "hash": "iESlS37p+hUHM543qOya0tZjXxk=",
+    "id": "f4afa447ce2f86a8ef3a8ed6e0ec6eb4",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-16T11:14:19.309Z"
+  }
+]

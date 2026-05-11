@@ -310,7 +310,7 @@ export function ContributorsSection({
         field: "phid",
         title: "PHID",
         editable: true,
-        align: "center" as ColumnAlignment,
+        align: "center",
         width: 200,
         onSave: (newValue, context) => {
           const currentId = context.row.phid || "";
@@ -388,7 +388,7 @@ export function ContributorsSection({
         field: "name",
         title: "Name",
         editable: false,
-        align: "center" as ColumnAlignment,
+        align: "center",
         width: 200,
         renderCell: (value) => {
           return <div className="text-center">{value}</div>;
@@ -398,7 +398,7 @@ export function ContributorsSection({
         field: "slug",
         title: "Slug",
         editable: false,
-        align: "center" as ColumnAlignment,
+        align: "center",
         width: 200,
         renderCell: (value) => {
           return <div className="text-center">{value}</div>;
@@ -408,7 +408,7 @@ export function ContributorsSection({
         field: "icon",
         title: "Icon",
         editable: false,
-        align: "center" as ColumnAlignment,
+        align: "center",
         width: 150,
         renderCell: (_value, context) => {
           if (!context.row.icon) {

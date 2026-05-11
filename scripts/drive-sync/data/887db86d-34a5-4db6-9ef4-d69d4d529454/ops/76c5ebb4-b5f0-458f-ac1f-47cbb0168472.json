@@ -1,0 +1,86 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "76c5ebb4-b5f0-458f-ac1f-47cbb0168472",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "Teeps Team of Builders",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-31T20:50:44.603Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "76c5ebb4-b5f0-458f-ac1f-47cbb0168472"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "0ae171abb89f60e5954f65c2bda8c30c",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:50:44.608Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "76c5ebb4-b5f0-458f-ac1f-47cbb0168472",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": "TTOB",
+            "contributors": [
+              "e971b366-0fc1-4457-98df-1fc5738e0628",
+              "831c8c57-432c-4650-b0fc-1011b6894a91",
+              "a8ad8819-9eee-483c-924d-a70dd28dce4d"
+            ],
+            "description": "Teeps Team of Builders helps scale BAI operations to LATAM",
+            "icon": "https://pbs.twimg.com/profile_images/1543149307435618304/5K_7BdwO_400x400.jpg",
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": "Teeps Team of Builders",
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": "teeps-team-of-builders",
+            "status": "ACTIVE"
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "6432d71c7321897b7878467243cbc4fd",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:50:44.608Z"
+  }
+]

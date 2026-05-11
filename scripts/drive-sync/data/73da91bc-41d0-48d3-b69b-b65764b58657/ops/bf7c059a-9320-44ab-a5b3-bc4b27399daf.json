@@ -1,0 +1,867 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "bf7c059a-9320-44ab-a5b3-bc4b27399daf",
+        "meta": {},
+        "model": "powerhouse/subscription-instance",
+        "name": "t-team Subscription Instance",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-24T17:18:49.795Z",
+          "documentType": "powerhouse/subscription-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "bf7c059a-9320-44ab-a5b3-bc4b27399daf"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "3c75b66a5b4947287699aa409d3be001",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:49.795Z"
+  },
+  {
+    "action": {
+      "input": {
+        "autoRenew": true,
+        "createdAt": "2026-03-05T13:37:41.593Z",
+        "customerEmail": "apeiron@powerhouse.inc",
+        "customerId": "25b119a2-4b8e-4775-af8e-102ae62121d5",
+        "customerName": "T",
+        "globalCurrency": "USD",
+        "resourceId": "b295cdca-4a91-4f83-bee8-1787a354939b",
+        "resourceLabel": "t-team",
+        "resourceThumbnailUrl": null,
+        "selectedBillingCycle": "ANNUAL",
+        "serviceGroups": [
+          {
+            "costType": "RECURRING",
+            "id": "fc4150b3-ef01-45a5-8b53-fa25f4d5f760",
+            "name": "Operator Agent Model v1",
+            "optional": false,
+            "recurringAmount": 54,
+            "recurringBillingCycle": "ANNUAL",
+            "recurringCurrency": "USD",
+            "recurringDiscount": {
+              "discountType": "PERCENTAGE",
+              "discountValue": 10,
+              "originalAmount": 60,
+              "source": "GROUP_INDEPENDENT"
+            },
+            "services": [
+              {
+                "customValue": null,
+                "description": null,
+                "id": "6bb607ff-cc23-47b4-8598-645f269b8aee",
+                "metrics": [
+                  {
+                    "currentUsage": 0,
+                    "freeLimit": 5,
+                    "id": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+                    "limit": 5,
+                    "name": "Team size below 5 people",
+                    "paidLimit": 50,
+                    "unitCostAmount": 0.5,
+                    "unitCostCurrency": "USD",
+                    "unitName": "Team member"
+                  }
+                ],
+                "name": "Operator Agent Model V1",
+                "recurringBillingCycle": "ANNUAL"
+              },
+              {
+                "customValue": null,
+                "description": null,
+                "id": "27761734-26a4-49cc-a7d6-24206c24ee49",
+                "metrics": [],
+                "name": "Operator Agent Model Ultra",
+                "recurringBillingCycle": "ANNUAL"
+              }
+            ]
+          }
+        ],
+        "serviceOfferingId": "",
+        "services": [],
+        "tierCurrency": "USD",
+        "tierName": "Small team <5p",
+        "tierPrice": 60,
+        "tierPricingMode": "MANUAL_OVERRIDE",
+        "tierPricingOptionId": "ed2b16a5-0560-400f-98b8-1ab47f2b00c5"
+      },
+      "scope": "global",
+      "type": "INITIALIZE_SUBSCRIPTION"
+    },
+    "error": null,
+    "hash": "PNGsASrw5XURc3r4IJIF+XCYX9c=",
+    "id": "a3b3863858b474fdb760bef914707fe5",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:50.090Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "bf7c059a-9320-44ab-a5b3-bc4b27399daf",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "activatedSince": null,
+            "autoRenew": false,
+            "budget": null,
+            "cancellationReason": null,
+            "cancelledSince": null,
+            "createdAt": null,
+            "customerEmail": null,
+            "customerId": null,
+            "customerName": null,
+            "customerType": null,
+            "expiringSince": null,
+            "globalCurrency": null,
+            "nextBillingDate": null,
+            "operatorId": null,
+            "operatorNotes": null,
+            "pausedSince": null,
+            "projectedBillAmount": null,
+            "projectedBillCurrency": null,
+            "renewalDate": null,
+            "resource": null,
+            "selectedBillingCycle": null,
+            "serviceGroups": [],
+            "serviceOfferingId": null,
+            "services": [],
+            "status": "PENDING",
+            "teamMemberCount": null,
+            "tierCurrency": null,
+            "tierName": null,
+            "tierPrice": null,
+            "tierPricingMode": null,
+            "tierPricingOptionId": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/subscription-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "df0a029109ea9bfd6b4327a72461d255",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:49.795Z"
+  },
+  {
+    "action": {
+      "input": {
+        "projectedBillAmount": 60,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "rxVg7iSs+u56ivDmzqCCF0xI558=",
+    "id": "14eb98a90a63169c1373df8087702195",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:50.455Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-03-05T13:43:01.610Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": null,
+    "hash": "GyBkKQPgdmgh80GyHaFRd9W0HNE=",
+    "id": "8e172801678ffcb0155bf1653d46bc9e",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:50.812Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-05T13:43:43.876Z",
+        "incrementBy": 1,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "WZrsyM+PrxHDwMO/1/9zb9brG4k=",
+    "id": "92eb03734d18cdc478f3384eef645d5e",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:51.154Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-05T13:43:44.696Z",
+        "incrementBy": 8,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "k/KkGOuPhotPIl5f+kzEdeU5QQc=",
+    "id": "0969a162a1c2c10981172e8fe59d0fcd",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:51.491Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-05T13:43:53.858Z",
+        "incrementBy": 2,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "CoWpUoQ/kSc7ZnORqUQ6jcB5+z8=",
+    "id": "dda125c570a8e86558765cb81874d4a3",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:51.825Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-05T13:44:01.125Z",
+        "incrementBy": 2,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "FrRg+UrUq1QPRgWiOMCbv2otfiM=",
+    "id": "8451ddd146efb70cb718778ad11b5f8f",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:52.173Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-05T13:44:12.361Z",
+        "incrementBy": 8,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "cqkfafuZbgi6/znR8+EGMB7v1LM=",
+    "id": "41e5b59e0aecd332a84caaf0693e4abe",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:52.505Z"
+  },
+  {
+    "action": {
+      "input": {
+        "operatorNotes": "can't charge 8\n"
+      },
+      "scope": "global",
+      "type": "SET_OPERATOR_NOTES"
+    },
+    "error": null,
+    "hash": "w6FNnHRQzsjzetMVIpD4LrTieKc=",
+    "id": "d85cc36c825a01c57afce15bd74b23a1",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:52.859Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:17.898Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "w6FNnHRQzsjzetMVIpD4LrTieKc=",
+    "id": "62f43669c82bde0766a27ca223e3567b",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:53.193Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:17.898Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "U/U+1pdDSDC12TSjA+Dixhk8vs8=",
+    "id": "3c64a1dfaa987962a66957701bdf84be",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:53.534Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "I+KrOM+gxQRbYMED5lZaLgzInfM=",
+    "id": "dffb017ce77abc05fc34b3d2f831a0b6",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:53.876Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:17.898Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "Jl9w1xBUJZsrvjoe4MbC9jOADLo=",
+    "id": "3d763b0bae89fa1f871de108bef7c718",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:54.210Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:25.519Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "Jl9w1xBUJZsrvjoe4MbC9jOADLo=",
+    "id": "e0dee8fbfff4b07c6179af46becff366",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:54.545Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:25.519Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "wwWCRUm1wlAfKfGlvW/n60Rlvsc=",
+    "id": "cff89554cf9fc6595284ee9dd5399e6c",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:54.881Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "wwWCRUm1wlAfKfGlvW/n60Rlvsc=",
+    "id": "f5707675ced19965ccf178aeb347344d",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:55.232Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:25.519Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "3j4F7OdgtXnPOqa+RnVzbsVjsXo=",
+    "id": "28352f15f3ff0fb4d1044a5c63bc09bb",
+    "index": 16,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:55.569Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:27.388Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "3j4F7OdgtXnPOqa+RnVzbsVjsXo=",
+    "id": "a01b424ff5458c91302fc67a8c42da88",
+    "index": 17,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:55.907Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:27.388Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "Co33zFdjEURtDePJ/P8MVmMyz7A=",
+    "id": "5dc4656f0bf1f734b9ff8e25bd8e8a37",
+    "index": 18,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:56.241Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "Co33zFdjEURtDePJ/P8MVmMyz7A=",
+    "id": "dac3a4ec02600a4b9602c66abb8e23b4",
+    "index": 19,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:56.601Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:27.388Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "n8xJ0OTYBOtz7c+/ImRsk845o2U=",
+    "id": "32a3c694d9bce3be895e6e275da79170",
+    "index": 20,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:56.976Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:28.898Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "n8xJ0OTYBOtz7c+/ImRsk845o2U=",
+    "id": "10d9faba54d30ccf721de53997f8a158",
+    "index": 21,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:57.328Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:28.898Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "O/5XR1Op/pmiUsIRICzwseEWvPw=",
+    "id": "f4183943bd7df17dd64b2835b2dc720e",
+    "index": 22,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:57.689Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "O/5XR1Op/pmiUsIRICzwseEWvPw=",
+    "id": "a2b2280ef92e2b62210049b1101e59ca",
+    "index": 23,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:58.022Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:28.898Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "xeWUHkgmASP1bwLYAJdH1jC6BLg=",
+    "id": "c921ebb74a151677885eb55200d5c6b0",
+    "index": 24,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:58.357Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:29.300Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "xeWUHkgmASP1bwLYAJdH1jC6BLg=",
+    "id": "d8f616d802365c315818f15f3bab64c0",
+    "index": 25,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:58.694Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:29.300Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "2ILbOF3ywJuVmCP0m1ZLj7SBAJA=",
+    "id": "ef9b83a28f6d0798a327204e7b23e666",
+    "index": 26,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:59.030Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "2ILbOF3ywJuVmCP0m1ZLj7SBAJA=",
+    "id": "4c687515143a8efd05fd6eec4b21bdb1",
+    "index": 27,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:59.492Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:29.300Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "Eohb+1gkNofUUKgyNQmgHfZHBNE=",
+    "id": "2a2bfe40554aa88d8bf35eb0daa948e1",
+    "index": 28,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:59.828Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:29.486Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "Eohb+1gkNofUUKgyNQmgHfZHBNE=",
+    "id": "767362a50635dffa9e5b9ba2de4cdbcf",
+    "index": 29,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:00.208Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:29.486Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "bfa7mgaa46baYzPW4DxCf4xnrjE=",
+    "id": "7462e618d82b1767de5770ab4217009d",
+    "index": 30,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:00.618Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "bfa7mgaa46baYzPW4DxCf4xnrjE=",
+    "id": "b2c764a16aa4b947a304d2596a9d4ff1",
+    "index": 31,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:00.957Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:29.486Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "m4qXWEHvmB6CogqmuLg9Y6GD/Vs=",
+    "id": "2a09ac21abb2523fe8ef833df7d478a9",
+    "index": 32,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:01.334Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:45:29.642Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "m4qXWEHvmB6CogqmuLg9Y6GD/Vs=",
+    "id": "20baa9d5d77e0a40da119de7bdfc29be",
+    "index": 33,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:01.679Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:45:29.642Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "6/wKzY6G1wLogU345POd/Kze0W8=",
+    "id": "75fdc740aa2206447499db82ec54ee9d",
+    "index": 34,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:02.014Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "6/wKzY6G1wLogU345POd/Kze0W8=",
+    "id": "f16afb5ea7d15627eeaa14e9c19959d2",
+    "index": 35,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:02.370Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:45:29.642Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "Wb+IJMI+TMCpp4WNlOE24v1ictg=",
+    "id": "fbe8df6a63923496a839874d85332f19",
+    "index": 36,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:02.711Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-02-03T13:47:25.547Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": "Cannot activate subscription with status ACTIVE",
+    "hash": "Wb+IJMI+TMCpp4WNlOE24v1ictg=",
+    "id": "390c67c7a31565f2588acca041eac510",
+    "index": 37,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:03.581Z"
+  },
+  {
+    "action": {
+      "input": {
+        "renewalDate": "2026-05-04T13:47:25.547Z"
+      },
+      "scope": "global",
+      "type": "SET_RENEWAL_DATE"
+    },
+    "error": null,
+    "hash": "iAgyl2J6lkH+mSMMlR8cGaQ5Ac4=",
+    "id": "1bde45d3ffb69cde207def7f21144569",
+    "index": 38,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:03.916Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 12
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "iAgyl2J6lkH+mSMMlR8cGaQ5Ac4=",
+    "id": "73006008cf18e2a1ca95be6f22bb67dd",
+    "index": 39,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:04.255Z"
+  },
+  {
+    "action": {
+      "input": {
+        "nextBillingDate": "2026-04-04T13:47:25.547Z",
+        "projectedBillAmount": 1467,
+        "projectedBillCurrency": "USD"
+      },
+      "scope": "global",
+      "type": "UPDATE_BILLING_PROJECTION"
+    },
+    "error": null,
+    "hash": "4GKINRi1TRtUeaO92UGOQT1Ak+k=",
+    "id": "6b87c726c2ee8efe35cf4a90de019367",
+    "index": 40,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:05.127Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-12T19:30:58.490Z",
+        "incrementBy": 8,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "jdRR3OS5CEWc/92vTVkINVZuUMk=",
+    "id": "0b02ebc03876358321ccafef1e9b9596",
+    "index": 41,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:05.485Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-03-12T19:31:37.381Z",
+        "incrementBy": 8,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "yi//PO2b98UbCoNNdsIJSatMKW8=",
+    "id": "b377e4664d22a3f274325ce3ae27f96f",
+    "index": 42,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:19:05.836Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-04-09T13:35:40.153Z",
+        "incrementBy": 10,
+        "metricId": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+        "serviceId": "6bb607ff-cc23-47b4-8598-645f269b8aee"
+      },
+      "scope": "global",
+      "type": "INCREMENT_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "sffWHIL9nSK6pGT3iGjRslGjMoc=",
+    "id": "284a7e1b3feca2a13ccbf69ed2ee124b",
+    "index": 43,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T13:35:40.153Z"
+  }
+]

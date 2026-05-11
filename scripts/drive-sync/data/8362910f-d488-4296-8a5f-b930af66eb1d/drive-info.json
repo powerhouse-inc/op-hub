@@ -1,0 +1,64 @@
+{
+  "documentType": "powerhouse/document-drive",
+  "id": "8362910f-d488-4296-8a5f-b930af66eb1d",
+  "name": "BAI Team Admin",
+  "preferredEditor": "builder-team-admin",
+  "revisionsList": [
+    {
+      "revision": 3,
+      "scope": "document"
+    },
+    {
+      "revision": 6,
+      "scope": "global"
+    }
+  ],
+  "slug": "bai-team-admin",
+  "state": {
+    "auth": {},
+    "document": {
+      "hash": {
+        "algorithm": "sha1",
+        "encoding": "base64"
+      },
+      "version": 0
+    },
+    "global": {
+      "icon": null,
+      "name": "BAI Team Admin",
+      "nodes": [
+        {
+          "id": "037a2664-5341-4381-a331-df19e5e8b7b5",
+          "kind": "folder",
+          "name": "Expense Reports",
+          "parentFolder": null
+        },
+        {
+          "id": "0f70d549-d018-4bc0-947c-965b26871a69",
+          "kind": "folder",
+          "name": "Service Subscriptions",
+          "parentFolder": null
+        },
+        {
+          "id": "650572b8-c3c5-4b32-a903-f92bcaa9a25c",
+          "kind": "folder",
+          "name": "Snapshot Reports",
+          "parentFolder": null
+        },
+        {
+          "documentType": "powerhouse/builder-profile",
+          "id": "ff4cf2ff-447b-4f75-85da-80112253de78",
+          "kind": "file",
+          "name": "Business Analysis and Integrations",
+          "parentFolder": null
+        }
+      ]
+    },
+    "local": {
+      "availableOffline": false,
+      "listeners": [],
+      "sharingType": "private",
+      "triggers": []
+    }
+  }
+}

@@ -1,0 +1,305 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "1fb041f5-cee7-4877-a91b-4e59c82279f1",
+        "meta": {},
+        "model": "powerhouse/builder-profile",
+        "name": "Teeps Team of Builders",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-31T20:54:29.791Z",
+          "documentType": "powerhouse/builder-profile",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "1fb041f5-cee7-4877-a91b-4e59c82279f1"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "758734374eaad04d8ebf713fb576ca5d",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:54:29.796Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "1fb041f5-cee7-4877-a91b-4e59c82279f1"
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "0eiflQ4OmuwsKFToFsmvSt2bFAU=",
+    "id": "841d08c78466cb43db2908472823ccee",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:55:31.185Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "1fb041f5-cee7-4877-a91b-4e59c82279f1",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "about": null,
+            "code": "TTOB",
+            "contributors": [
+              "e971b366-0fc1-4457-98df-1fc5738e0628",
+              "831c8c57-432c-4650-b0fc-1011b6894a91",
+              "a8ad8819-9eee-483c-924d-a70dd28dce4d"
+            ],
+            "description": "Teeps Team of Builders helps scale BAI operations to LATAM",
+            "icon": "https://pbs.twimg.com/profile_images/1543149307435618304/5K_7BdwO_400x400.jpg",
+            "id": null,
+            "isOperator": false,
+            "lastModified": null,
+            "links": [],
+            "name": "Teeps Team of Builders",
+            "operationalHubMember": {
+              "name": null,
+              "phid": null
+            },
+            "scopes": [],
+            "skills": [],
+            "slug": "teeps-team-of-builders",
+            "status": "ACTIVE"
+          },
+          "local": {}
+        },
+        "model": "powerhouse/builder-profile",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "67a8ced3d977ba8833123206e04aae68",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:54:29.796Z"
+  },
+  {
+    "action": {
+      "input": {
+        "about": "<br/>\n\n**Teeps Team of Builders (TTOB)** is a dynamic team focused on expanding Powerhouse operations across Latin America. We bridge the gap between the global Powerhouse ecosystem and regional opportunities, bringing deep local expertise and operational excellence.\n\n#### What We Do\n\nTTOB specializes in scaling BAI operations into LATAM markets, combining business analysis, community building, and technical integration to drive adoption and operational efficiency.\n\n#### Key Areas of Responsibility\n\n##### Regional Operations & Expansion\n\nWe identify, evaluate, and execute expansion opportunities across Latin American markets, ensuring alignment with Powerhouse's global strategy and local regulatory requirements.\n\n##### Community Building & Engagement\n\nWe cultivate and maintain strong relationships with regional partners, contributors, and stakeholders, fostering a vibrant local ecosystem around Powerhouse tools and services.\n\n##### Localization & Integration\n\nWe adapt Powerhouse products and processes for LATAM markets, handling translations, cultural adaptations, and integrations with regional platforms and payment systems.\n\n##### Cross-Team Coordination\n\nActing as the LATAM liaison for the broader Powerhouse ecosystem, we ensure smooth communication and alignment between global and regional initiatives.\n\n#### How We Work\n\nTTOB operates with agility and cultural awareness. We combine structured project management with the flexibility needed to navigate diverse Latin American markets. Our approach emphasizes building trust, delivering value incrementally, and maintaining clear communication across time zones and languages.\n\n#### Our Goal\n\nOur goal is to make Powerhouse the leading transparency and operational platform in Latin America, driving adoption through localized solutions, strong partnerships, and exceptional operational support."
+      },
+      "scope": "global",
+      "type": "UPDATE_PROFILE"
+    },
+    "error": null,
+    "hash": "T7H/6LIIYyHimezqNelyb3aJen4=",
+    "id": "b60099f5109cb89047685174bf20be52",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:03.647Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "FULL_STACK_DEVELOPMENT"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "vAQBRQK66hGxGRk//N13VI6Xr00=",
+    "id": "9aec2328ec473c35b4fadbc6a81c6a2d",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:49.214Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "FRONTEND_DEVELOPMENT"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "BauxcXM7HOnRnBNAX+nisuPwXtg=",
+    "id": "8a097be730fae772242d123b9a5ac310",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:49.872Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "DATA_ENGINEERING"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "qen6uUA2a2HXGrxHr1WMrWtQuys=",
+    "id": "620a9e3df5cf0e552ebb682fdb5c33df",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:50.514Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "TECHNICAL_WRITING"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "3Cumx0klPZMx7/Nw5kVHNr6OlVU=",
+    "id": "a5393a9c0520ff67793b6233d491f009",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:51.173Z"
+  },
+  {
+    "action": {
+      "input": {
+        "skill": "UI_UX_DESIGN"
+      },
+      "scope": "global",
+      "type": "ADD_SKILL"
+    },
+    "error": null,
+    "hash": "hSoC1vwQaM9nQHT3VudcwgjqYWc=",
+    "id": "bd7fdac8f6bf988f5df29671966c19c2",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:51.833Z"
+  },
+  {
+    "action": {
+      "input": {
+        "scope": "SUP"
+      },
+      "scope": "global",
+      "type": "ADD_SCOPE"
+    },
+    "error": null,
+    "hash": "4/Nw+TuAszU73Ndni1rMHP4rZo0=",
+    "id": "a48c56e4551d1013c7803e510e5195c7",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:52.492Z"
+  },
+  {
+    "action": {
+      "input": {
+        "scope": "ACC"
+      },
+      "scope": "global",
+      "type": "ADD_SCOPE"
+    },
+    "error": null,
+    "hash": "6Wm30gqHIdfQKK0TuUV5ZQR31YY=",
+    "id": "4c08d1edb452cd11a42bc5afe0464d5e",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:53.144Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "ttob-link-github",
+        "label": "Github",
+        "url": "https://github.com/powerhouse-inc"
+      },
+      "scope": "global",
+      "type": "ADD_LINK"
+    },
+    "error": null,
+    "hash": "P7zUuazHG/u3wOhWBr3sP6lGa80=",
+    "id": "6cc5a02072b8cae7076348d6ff029be5",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:53.868Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "ttob-link-discord",
+        "label": "Discord",
+        "url": "https://discord.com/invite/h7GKvqDyDP"
+      },
+      "scope": "global",
+      "type": "ADD_LINK"
+    },
+    "error": null,
+    "hash": "EADDTue0+Xk98yvOCJRv49U4CFY=",
+    "id": "c5f306d7008092a560722aa75bb89194",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:54.523Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "ttob-link-twitter",
+        "label": "Twitter",
+        "url": "https://x.com/powerhousedao"
+      },
+      "scope": "global",
+      "type": "ADD_LINK"
+    },
+    "error": null,
+    "hash": "gZ4yB41p/M00MYubOFyiVufp3qY=",
+    "id": "5d1c2d2a684d671ac5a2586ebf09737a",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:55.203Z"
+  },
+  {
+    "action": {
+      "input": {
+        "id": "ttob-link-website",
+        "label": "Website",
+        "url": "https://powerhouse.io"
+      },
+      "scope": "global",
+      "type": "ADD_LINK"
+    },
+    "error": null,
+    "hash": "mIvrD1P8ysDF+jsAomvfGpboIW8=",
+    "id": "a357271d705a4e579ddb4e7e3e95c5d4",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:55.852Z"
+  },
+  {
+    "action": {
+      "input": {
+        "name": "Powerhouse Genesis",
+        "phid": "ab700de9-90dd-4219-9fff-5aaf94ca2bc9"
+      },
+      "scope": "global",
+      "type": "SET_OP_HUB_MEMBER"
+    },
+    "error": null,
+    "hash": "cDVhgXLjyour2eA1JRIzhN5uJJU=",
+    "id": "9e89945f13210f5b1b10948b05e4b6f8",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-31T20:59:56.558Z"
+  }
+]

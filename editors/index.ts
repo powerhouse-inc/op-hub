@@ -1,6 +1,15 @@
+export { AccountTransactions } from "./account-transactions-editor/module.js";
+export { Accounts } from "./accounts-editor/module.js";
+export { BillingStatement } from "./billing-statement/module.js";
 export { BuilderProfile } from "./builder-profile/module.js";
+export { BuilderTeamAdmin } from "./builder-team-admin/module.js";
+export { ContributorBilling } from "./contributor-billing/module.js";
+export { ExpenseReport } from "./expense-report/module.js";
+export { Invoice } from "./invoice/module.js";
+export { OperationalHubProfileEditor } from "./operational-hub-profile-editor/module.js";
 export { ResourceInstanceEditor } from "./resource-instance-editor/module.js";
 export { ResourceTemplateEditor } from "./resource-template-editor/module.js";
 export { ServiceOfferingEditor } from "./service-offering-editor/module.js";
+export { SnapshotReport } from "./snapshot-report-editor/module.js";
 export { SubscriptionInstanceEditor } from "./subscription-instance-editor/module.js";
 export { SubscriptionInvoiceEditor } from "./subscription-invoice-editor/module.js";

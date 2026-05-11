@@ -1,0 +1,142 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "e91c35bb-1f8e-467a-8b09-0d5dd466c97a",
+        "meta": {},
+        "model": "powerhouse/resource-instance",
+        "name": "t-team Resource Instance",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-24T17:18:47.791Z",
+          "documentType": "powerhouse/resource-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "e91c35bb-1f8e-467a-8b09-0d5dd466c97a"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "82e645a9461d868d93a021464fe529cc",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:47.791Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerId": "25b119a2-4b8e-4775-af8e-102ae62121d5",
+        "customerName": "t-team",
+        "description": null,
+        "infoLink": null,
+        "operatorDocumentType": "powerhouse/builder-profile",
+        "operatorId": "a326c3a9-d29b-46d3-8ab0-14b361e11567",
+        "resourceTemplateId": "0fc0adc3-eb8a-490a-9f4d-b65f32fdb760",
+        "templateName": "Operator Agent",
+        "thumbnailUrl": null
+      },
+      "scope": "global",
+      "type": "INITIALIZE_INSTANCE"
+    },
+    "error": null,
+    "hash": "6MINZRzWb/Gmzejin1rXm9MmTP0=",
+    "id": "1400c4d687039cb3078ec58bca2f0305",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:48.063Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "e91c35bb-1f8e-467a-8b09-0d5dd466c97a",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "activatedAt": null,
+            "configuration": [],
+            "confirmedAt": null,
+            "customerId": null,
+            "customerName": null,
+            "description": null,
+            "infoLink": null,
+            "operatorProfile": null,
+            "provisioningCompletedAt": null,
+            "provisioningFailureReason": null,
+            "provisioningStartedAt": null,
+            "resourceTemplateId": null,
+            "resumedAt": null,
+            "status": "DRAFT",
+            "suspendedAt": null,
+            "suspensionDetails": null,
+            "suspensionReason": null,
+            "suspensionType": null,
+            "templateName": null,
+            "terminatedAt": null,
+            "terminationReason": null,
+            "thumbnailUrl": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "19fe88e84205fe1c0804e3286bc40b94",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:47.791Z"
+  },
+  {
+    "action": {
+      "input": {
+        "categoryKey": "product",
+        "categoryLabel": "Product",
+        "id": "21a4d21b-d3c6-46ef-9977-c5130f73f781",
+        "selectedOption": "Operator-agent"
+      },
+      "scope": "global",
+      "type": "SET_INSTANCE_FACET"
+    },
+    "error": null,
+    "hash": "EX5Fw/7NDZ+bGg/7PYlI18C6FzA=",
+    "id": "31378a2f249b4b31e94b7004856ad74e",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-24T17:18:48.401Z"
+  },
+  {
+    "action": {
+      "input": {
+        "confirmedAt": "2026-04-09T12:31:24.533Z"
+      },
+      "scope": "global",
+      "type": "CONFIRM_INSTANCE"
+    },
+    "error": null,
+    "hash": "uVDVfHwP3EJf/Ckugy1j1zUaqho=",
+    "id": "8100c0d71d73d6e2d3ecdeb5f90c016e",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-09T12:31:24.533Z"
+  }
+]

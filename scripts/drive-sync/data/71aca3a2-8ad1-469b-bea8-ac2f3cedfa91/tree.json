@@ -1,0 +1,13 @@
+{
+  "id": "71aca3a2-8ad1-469b-bea8-ac2f3cedfa91",
+  "name": "Core Dev Team Admin",
+  "nodes": [
+    {
+      "documentType": "powerhouse/builder-profile",
+      "id": "7d0a153e-96d7-4f95-b025-df287021990b",
+      "kind": "file",
+      "name": "Core Dev Team Profile",
+      "parentFolder": null
+    }
+  ]
+}

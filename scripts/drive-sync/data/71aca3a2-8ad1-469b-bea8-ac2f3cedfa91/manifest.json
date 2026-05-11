@@ -1,0 +1,17 @@
+{
+  "source": {
+    "slug": "71aca3a2-8ad1-469b-bea8-ac2f3cedfa91",
+    "name": "Core Dev Team Admin",
+    "downloadedAt": "2026-04-29T16:14:23.000Z"
+  },
+  "excluded": [],
+  "folders": [],
+  "documents": [
+    {
+      "id": "7d0a153e-96d7-4f95-b025-df287021990b",
+      "name": "Core Dev Team Profile",
+      "type": "powerhouse/builder-profile",
+      "parentFolder": null
+    }
+  ]
+}

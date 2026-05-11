@@ -1,0 +1,93 @@
+{
+  "activatedSince": "2026-03-05T13:43:01.610Z",
+  "autoRenew": true,
+  "budget": null,
+  "cancellationReason": null,
+  "cancelledSince": null,
+  "createdAt": "2026-03-05T13:37:41.593Z",
+  "customerEmail": "apeiron@powerhouse.inc",
+  "customerId": "25b119a2-4b8e-4775-af8e-102ae62121d5",
+  "customerName": "T",
+  "customerType": "TEAM",
+  "expiringSince": null,
+  "globalCurrency": "USD",
+  "nextBillingDate": "2026-04-04T13:47:25.547Z",
+  "operatorId": null,
+  "operatorNotes": "can't charge 8\n",
+  "pausedSince": null,
+  "projectedBillAmount": 1467,
+  "projectedBillCurrency": "USD",
+  "renewalDate": "2026-05-04T13:47:25.547Z",
+  "resource": {
+    "id": "b295cdca-4a91-4f83-bee8-1787a354939b",
+    "label": "t-team",
+    "thumbnailUrl": null
+  },
+  "selectedBillingCycle": "ANNUAL",
+  "serviceGroups": [
+    {
+      "costType": "RECURRING",
+      "id": "fc4150b3-ef01-45a5-8b53-fa25f4d5f760",
+      "name": "Operator Agent Model v1",
+      "optional": false,
+      "recurringCost": {
+        "amount": 54,
+        "billingCycle": "ANNUAL",
+        "currency": "USD",
+        "discount": {
+          "discountType": "PERCENTAGE",
+          "discountValue": 10,
+          "originalAmount": 60,
+          "source": "GROUP_INDEPENDENT"
+        },
+        "lastPaymentDate": null,
+        "nextBillingDate": null
+      },
+      "services": [
+        {
+          "customValue": null,
+          "description": null,
+          "facetSelections": [],
+          "id": "6bb607ff-cc23-47b4-8598-645f269b8aee",
+          "metrics": [
+            {
+              "currentUsage": 47,
+              "freeLimit": 5,
+              "id": "4641f41b-25f9-4bf7-96f2-4656dff2adcb",
+              "limit": 5,
+              "name": "Team size below 5 people",
+              "nextUsageReset": null,
+              "paidLimit": 50,
+              "unitCost": null,
+              "unitName": "Team member",
+              "usageResetPeriod": null
+            }
+          ],
+          "name": "Operator Agent Model V1",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": null,
+          "facetSelections": [],
+          "id": "27761734-26a4-49cc-a7d6-24206c24ee49",
+          "metrics": [],
+          "name": "Operator Agent Model Ultra",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": null
+    }
+  ],
+  "serviceOfferingId": null,
+  "services": [],
+  "status": "ACTIVE",
+  "teamMemberCount": 12,
+  "tierCurrency": "USD",
+  "tierName": "Small team <5p",
+  "tierPrice": 60,
+  "tierPricingMode": "MANUAL_OVERRIDE",
+  "tierPricingOptionId": "ed2b16a5-0560-400f-98b8-1ab47f2b00c5"
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "922c6e79-25b2-414e-a494-25a3513692d9",
+        "meta": {},
+        "model": "powerhouse/rfp",
+        "name": "RFP-Powerhouse Workstream 2024",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-03-23T18:54:44.360Z",
+          "documentType": "powerhouse/rfp",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "922c6e79-25b2-414e-a494-25a3513692d9"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "c7e893058494056fdf0034c554308461",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:44.360Z"
+  },
+  {
+    "action": {
+      "input": {
+        "briefing": "",
+        "budgetRange": {
+          "currency": null,
+          "max": null,
+          "min": null
+        },
+        "eligibilityCriteria": "",
+        "evaluationCriteria": "",
+        "status": "DRAFT",
+        "summary": "",
+        "title": "RFP-Powerhouse Workstream 2024"
+      },
+      "scope": "global",
+      "type": "EDIT_RFP"
+    },
+    "error": null,
+    "hash": "nC4oWpTJ0+/I2kuF6awLRE4gTz8=",
+    "id": "beec9d697887d6c06e690689e29e2694",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:54.752Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "922c6e79-25b2-414e-a494-25a3513692d9",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "briefing": "",
+            "budgetRange": {
+              "currency": null,
+              "max": null,
+              "min": null
+            },
+            "code": null,
+            "contextDocuments": [],
+            "deadline": null,
+            "eligibilityCriteria": "",
+            "evaluationCriteria": "",
+            "issuer": "placeholder-id",
+            "proposals": [],
+            "rfpCommenter": [],
+            "status": "DRAFT",
+            "summary": "",
+            "tags": null,
+            "title": ""
+          },
+          "local": {}
+        },
+        "model": "powerhouse/rfp",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "439debf5bd2646ed4b839db1a377e5a9",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-03-23T18:54:44.360Z"
+  }
+]

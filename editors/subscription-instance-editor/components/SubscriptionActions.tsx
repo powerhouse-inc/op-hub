@@ -686,14 +686,15 @@ export function SubscriptionActions({
 
     try {
       // Per-subscription invoice folder: find-or-create a folder named
-      // `<subscription-name> · Invoices` and place the invoice doc inside
+      // `<subscription-name> - Invoices` and place the invoice doc inside
       // it. This nests the invoices under the subscription in the drive
       // tree so they're discoverable from the subscription, not floating
       // at the drive root. Folder name is derived from subscription name
-      // (and falls back to id-prefix if name is empty).
+      // (and falls back to id-prefix if name is empty). The drive reducer
+      // restricts node names to `[a-zA-Z0-9-_.\s()]+`, so we stick to ASCII.
       const folderName = `${
         document.header.name || document.header.id.slice(0, 8)
-      } · Invoices`;
+      } - Invoices`;
       console.info("[GenerateInvoice] creating invoice doc", {
         invoiceNumber,
         folderName,

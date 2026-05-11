@@ -459,6 +459,27 @@ export const getResolvers = (
             { parentIdentifier: driveId },
           );
 
+          // Wire the relationship index so Connect's drive-sync pulls
+          // the new documents into the drive's view. ADD_FILE alone
+          // updates the drive's nodes array but without the explicit
+          // parent→child relationship the docs render as orphans and
+          // never appear in the drive UI.
+          await reactorClient.addRelationship(
+            driveId,
+            builderProfileDoc.header.id,
+            "child",
+          );
+          await reactorClient.addRelationship(
+            driveId,
+            resourceInstanceDoc.header.id,
+            "child",
+          );
+          await reactorClient.addRelationship(
+            driveId,
+            subscriptionInstanceDoc.header.id,
+            "child",
+          );
+
           // create "Service Subscriptions" folder and organize files in team drive
           const teamServiceSubsFolderId = generateId();
 

@@ -235,7 +235,7 @@ export function ServiceCatalog({ document, dispatch }: ServiceCatalogProps) {
         name: "New Group",
         isAddOn: false,
         defaultSelected: true,
-        costType: "RECURRING" as GroupCostType,
+        costType: "RECURRING",
         availableBillingCycles: inheritedCycles,
         lastModified: new Date().toISOString(),
       }),
@@ -310,7 +310,7 @@ export function ServiceCatalog({ document, dispatch }: ServiceCatalogProps) {
       const emptyDiscounts = Object.fromEntries(
         SUBSCRIPTION_CYCLES.map((c) => [
           c,
-          { discountType: "PERCENTAGE" as DiscountType, discountValue: "" },
+          { discountType: "PERCENTAGE", discountValue: "" },
         ]),
       ) as Record<
         BillingCycle,

@@ -1,0 +1,393 @@
+{
+  "accountsDocumentId": "26bb6763-0f21-41e2-addc-be3474fa101e",
+  "endDate": null,
+  "ownerIds": [
+    "ff4cf2ff-447b-4f75-85da-80112253de78",
+    "7d0a153e-96d7-4f95-b025-df287021990b",
+    "2596a4fd-37e1-470d-8303-afb904ccf9dc",
+    "8a65a724-7529-4300-92b1-c39732b6100f",
+    "831efda4-c052-42b1-8df3-dfae977b732b"
+  ],
+  "reportName": null,
+  "reportPeriodEnd": "2025-08-31T23:59:59.999Z",
+  "reportPeriodStart": "2025-08-01T00:00:00.000Z",
+  "snapshotAccounts": [
+    {
+      "accountAddress": "0xA06546b8e1f6c6ab6E1CA5249d0b9E448b2EAe41",
+      "accountId": "7f895d81-a1ae-477d-b14e-7f6b5ed439db",
+      "accountName": "Powerhouse Genesis Operational Hub Reserves",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "3607932.73"
+          },
+          "id": "b72abb5e-79ce-4675-af96-3e52b9dfa42a",
+          "token": "SKY"
+        },
+        {
+          "amount": {
+            "unit": "MKR",
+            "value": "253.18"
+          },
+          "id": "7821123b-b617-4f2e-a025-a3350f9e1bf1",
+          "token": "MKR"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "0"
+          },
+          "id": "1f9ea38a-2e3e-4032-9a9c-c344130334e3",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "0"
+          },
+          "id": "62cd0626-18cd-4166-bd8e-5489f8f1451e",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "0"
+          },
+          "id": "5737371d-e945-48d3-9749-9001763c6bf7",
+          "token": "sUSDS"
+        }
+      ],
+      "id": "12a665f6-7410-4247-a7aa-b6274b671912",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "SKY",
+            "value": "2016546.56"
+          },
+          "id": "1bbd9d7c-8e00-4efc-bf12-9784dff4b50b",
+          "token": "SKY"
+        },
+        {
+          "amount": {
+            "unit": "MKR",
+            "value": "229.56"
+          },
+          "id": "8aad4f9a-ddb0-4b62-ac98-859fb969259b",
+          "token": "MKR"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "0"
+          },
+          "id": "711475ad-638a-4117-b9a4-812789c45996",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "0"
+          },
+          "id": "801f7e46-72b7-4181-b41d-fc0bee4839d1",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "0"
+          },
+          "id": "a530b29a-8356-45ce-8703-734f157886b6",
+          "token": "sUSDS"
+        }
+      ],
+      "transactions": [],
+      "type": "Internal"
+    },
+    {
+      "accountAddress": "0xF130f741d4E3185b29412c65397363f8c23A0460",
+      "accountId": "cd3a7c49-c02b-4911-b2d0-353c9ca366d4",
+      "accountName": "Powerhouse Genesis Operational Hub",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "88045.9"
+          },
+          "id": "50921fc7-153f-407b-b252-047580af5eee",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "159858.63"
+          },
+          "id": "5cd4785f-d7b1-4bed-958b-0b6fab715337",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "401881.4"
+          },
+          "id": "cc967002-2716-4d6d-bfd8-676297936911",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "24.62"
+          },
+          "id": "1ef8ef4a-ea2b-4fea-9123-26a6461da58c",
+          "token": "EURe"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "0"
+          },
+          "id": "005fc887-6bc1-42ce-b534-eb12c1893d86",
+          "token": "sUSDS"
+        }
+      ],
+      "id": "b3f7c50e-0a52-4cee-9128-d96786d2f8ae",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "226472.44"
+          },
+          "id": "e6fb5d78-9861-4720-99be-6e368d0c68fe",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "62441.05"
+          },
+          "id": "a537dd3e-a11e-48ea-b7e7-9ac16a987bad",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "USDS",
+            "value": "295043.86"
+          },
+          "id": "69c6ecc7-a30a-491b-be31-6e93b43174ba",
+          "token": "USDS"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "23.51"
+          },
+          "id": "ee02f5cf-4e23-4d7b-add1-033b6d97515f",
+          "token": "EURe"
+        },
+        {
+          "amount": {
+            "unit": "sUSDS",
+            "value": "0"
+          },
+          "id": "4368b469-321d-46c9-aefb-3a8859d22d7b",
+          "token": "sUSDS"
+        }
+      ],
+      "transactions": [],
+      "type": "Internal"
+    },
+    {
+      "accountAddress": "0xF0E22BA1368F90E54dFD68b1442AA5aecdf6CE6A",
+      "accountId": "1103bc22-fb34-465b-9c54-5a5b56a4046a",
+      "accountName": "SKY Launch Wallet",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "8afaecfa-b796-4cc8-900e-8e1645cc83b5",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Source"
+    },
+    {
+      "accountAddress": "0x3cf63891928b8ceebb81c95426600a18cd59c03f",
+      "accountId": "4f707770-005c-4192-bd7c-f407e68af47d",
+      "accountName": "Request Finance 1",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "164158.18"
+          },
+          "id": "49244528-19d9-4145-8c0a-30fdd4d856d8",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "177933.5"
+          },
+          "id": "35b02471-ddbf-4cae-ace3-0e0ffd51c3b2",
+          "token": "USDC"
+        }
+      ],
+      "id": "7e15294c-89aa-404a-8d6b-a40677b20ac3",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "159087.7"
+          },
+          "id": "215e76b8-9e47-4a1d-93c0-2af74b2cdbcb",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "182749.77"
+          },
+          "id": "f8642edc-4aad-4963-8b6c-5b5d1ab2f99d",
+          "token": "USDC"
+        }
+      ],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x5f480f1baa1016b22054e928042ac7198eea55d4",
+      "accountId": "7f0cc7ae-75b9-4960-bf09-944eaca4b131",
+      "accountName": "Request Finance 2",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "77f11aec-88df-4b74-92a6-aa924e05bd7a",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x62d0521dffec43b4fba483fc42f5f98388c454e9",
+      "accountId": "8cbcb1b0-fc93-47a7-a35a-5c8f826a80e6",
+      "accountName": "Request Finance 3",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "0cbb59ea-dbdc-441e-86ae-75baf5033b49",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0xda2a74a1d8c24c7136933834cb2c2d484a4c1f5b",
+      "accountId": "44a88dec-55ef-4da9-93b4-cdd25295d961",
+      "accountName": "Request Finance 4",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "815645ad-106c-45bf-87a8-f9fe51af97d4",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x62dad9169cd0d553fe876b6aa6566ebb6ccdb8b2",
+      "accountId": "f4093b2c-0565-4473-bb9d-a3ebe0709b86",
+      "accountName": "Accountable",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "216688.09"
+          },
+          "id": "1c3427b6-58c4-46b3-a3a5-ef62e9feb425",
+          "token": "DAI"
+        }
+      ],
+      "id": "757d1543-2c08-40cf-b2c8-eb0c35a50d4b",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "203352.29"
+          },
+          "id": "995e317f-a741-49f2-9d0f-d6f341ef4933",
+          "token": "DAI"
+        }
+      ],
+      "transactions": [],
+      "type": "Destination"
+    },
+    {
+      "accountAddress": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+      "accountId": "0eb7deba-5b07-4835-9b07-11f7e873b52a",
+      "accountName": "CoW Swap",
+      "accountTransactionsId": null,
+      "endingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "243976.88"
+          },
+          "id": "2c9cd641-6fdb-4900-b226-e60c5305dd7d",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "-232540.41"
+          },
+          "id": "156db719-7fab-4cde-984b-a16e8758ae01",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "-23.52"
+          },
+          "id": "0f58cd40-aa1a-4c85-9dc9-b4daf377b6b1",
+          "token": "EURe"
+        }
+      ],
+      "id": "1c6586b6-4cf4-47df-be55-346063ec26c6",
+      "startingBalances": [
+        {
+          "amount": {
+            "unit": "DAI",
+            "value": "216437.54"
+          },
+          "id": "e61833b3-2dd8-451a-b9f0-8efd4615b24d",
+          "token": "DAI"
+        },
+        {
+          "amount": {
+            "unit": "USDC",
+            "value": "-222724.78"
+          },
+          "id": "1409be45-7ea7-4d31-836d-546448946ef8",
+          "token": "USDC"
+        },
+        {
+          "amount": {
+            "unit": "EURe",
+            "value": "-22.94"
+          },
+          "id": "6c4efa63-33a2-4840-bfe2-e3538dc30551",
+          "token": "EURe"
+        }
+      ],
+      "transactions": [],
+      "type": "External"
+    },
+    {
+      "accountAddress": "0x0D509a71188a280c933cD13bb616B435C07B7F06",
+      "accountId": "672f62f1-45fb-4c45-b317-5fc87dd6e5d7",
+      "accountName": "Venly.io",
+      "accountTransactionsId": null,
+      "endingBalances": [],
+      "id": "a9a2a8a7-d1f0-444f-ae3b-56dbc20235b7",
+      "startingBalances": [],
+      "transactions": [],
+      "type": "Destination"
+    }
+  ],
+  "startDate": null
+}

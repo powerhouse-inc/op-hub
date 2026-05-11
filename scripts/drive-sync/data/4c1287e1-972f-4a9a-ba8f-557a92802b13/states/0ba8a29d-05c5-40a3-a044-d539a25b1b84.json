@@ -1,0 +1,37 @@
+{
+  "closureReason": null,
+  "currency": "",
+  "dateDelivered": null,
+  "dateDue": "2026-01-10T00:00:00.000Z",
+  "dateIssued": "2025-12-31T00:00:00.000Z",
+  "exported": {
+    "exportedLineItems": [],
+    "timestamp": null
+  },
+  "invoiceNo": "121",
+  "invoiceTags": [],
+  "issuer": {
+    "address": null,
+    "contactInfo": null,
+    "country": null,
+    "id": null,
+    "name": null,
+    "paymentRouting": null
+  },
+  "lineItems": [],
+  "notes": null,
+  "payAfter": null,
+  "payer": {
+    "address": null,
+    "contactInfo": null,
+    "country": null,
+    "id": null,
+    "name": null,
+    "paymentRouting": null
+  },
+  "payments": [],
+  "rejections": [],
+  "status": "DRAFT",
+  "totalPriceTaxExcl": 0,
+  "totalPriceTaxIncl": 0
+}

@@ -64,8 +64,28 @@
 			"name": "SnapshotReport"
 		},
 		{
-			"name": "ScopeOfWork",
-			"id": "powerhouse/scopeofwork"
+			"id": "powerhouse/scopeofwork",
+			"name": "ScopeOfWork"
+		},
+		{
+			"id": "powerhouse/builders",
+			"name": "Builders"
+		},
+		{
+			"id": "powerhouse/network-profile",
+			"name": "Network Profile"
+		},
+		{
+			"id": "payment-terms",
+			"name": "Payment Terms"
+		},
+		{
+			"id": "powerhouse/rfp",
+			"name": "RequestForProposals"
+		},
+		{
+			"name": "Workstream",
+			"id": "powerhouse/workstream"
 		}
 	],
 	"apps": [
@@ -76,6 +96,13 @@
 		{
 			"id": "builder-team-admin",
 			"name": "Builder Team Admin",
+			"documentTypes": [
+				"powerhouse/document-drive"
+			]
+		},
+		{
+			"id": "network-admin",
+			"name": "Network Admin",
 			"documentTypes": [
 				"powerhouse/document-drive"
 			]
@@ -193,6 +220,34 @@
 			"documentTypes": [
 				"powerhouse/scope-of-work"
 			]
+		},
+		{
+			"id": "network-profile-editor",
+			"name": "Network Profile Editor",
+			"documentTypes": [
+				"powerhouse/network-profile"
+			]
+		},
+		{
+			"id": "rfp-editor",
+			"name": "RFP Editor",
+			"documentTypes": [
+				"powerhouse/rfp"
+			]
+		},
+		{
+			"id": "payment-terms-editor",
+			"name": "Payment Terms Editor",
+			"documentTypes": [
+				"payment-terms"
+			]
+		},
+		{
+			"id": "workstream-editor",
+			"name": "Workstream Editor",
+			"documentTypes": [
+				"powerhouse/workstream"
+			]
 		}
 	],
 	"processors": [],
@@ -200,6 +255,30 @@
 		{
 			"id": "resources-services",
 			"name": "resources-services"
+		},
+		{
+			"id": "workstreams",
+			"name": "workstreams"
+		},
+		{
+			"id": "networks",
+			"name": "networks"
+		},
+		{
+			"id": "builders-addon",
+			"name": "builders-addon"
+		},
+		{
+			"id": "acc-txs-addon",
+			"name": "acc-txs-addon"
+		},
+		{
+			"id": "budget-statements",
+			"name": "budget-statements"
+		},
+		{
+			"id": "invoice-addon",
+			"name": "invoice-addon"
 		}
 	],
 	"config": [

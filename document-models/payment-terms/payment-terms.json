@@ -1,0 +1,318 @@
+{
+  "id": "payment-terms",
+  "name": "Payment Terms",
+  "author": {
+    "name": "Powerhouse",
+    "website": "https://www.powerhouse.inc/"
+  },
+  "extension": "",
+  "description": "Document model for managing payment terms, milestones, and contract clauses.",
+  "specifications": [
+    {
+      "state": {
+        "local": {
+          "schema": "",
+          "examples": [],
+          "initialValue": ""
+        },
+        "global": {
+          "schema": "enum PaymentTermsStatus {\n  DRAFT\n  SUBMITTED\n  ACCEPTED\n  CANCELLED\n}\n\nenum PaymentCurrency {\n  USD\n  EUR\n  GBP\n}\n\nenum PaymentModel {\n  MILESTONE\n  COST_AND_MATERIALS\n  RETAINER\n}\n\nenum MilestonePayoutStatus {\n  PENDING\n  READY_FOR_REVIEW\n  APPROVED\n  PAID\n  REJECTED\n}\n\nenum BillingFrequency {\n  WEEKLY\n  BIWEEKLY\n  MONTHLY\n}\n\nenum EvaluationFrequency {\n  WEEKLY\n  MONTHLY\n  PER_MILESTONE\n}\n\ntype Milestone {\n  id: OID!\n  name: String!\n  amount: Amount!\n  expectedCompletionDate: Date\n  requiresApproval: Boolean!\n  payoutStatus: MilestonePayoutStatus!\n}\n\ntype CostAndMaterials {\n  hourlyRate: Amount\n  variableCap: Amount\n  billingFrequency: BillingFrequency!\n  timesheetRequired: Boolean!\n}\n\ntype Retainer {\n  retainerAmount: Amount!\n  billingFrequency: BillingFrequency!\n  startDate: Date!\n  endDate: Date\n  autoRenew: Boolean!\n  servicesIncluded: String!\n}\n\ntype Escrow {\n  amountHeld: Amount!\n  proofOfFundsDocumentId: String\n  releaseConditions: String!\n  escrowProvider: String\n}\n\ntype EvaluationTerms {\n  evaluationFrequency: EvaluationFrequency!\n  evaluatorTeam: String!\n  criteria: [String!]!\n  impactsPayout: Boolean!\n  impactsReputation: Boolean!\n  commentsVisibleToClient: Boolean!\n}\n\ntype BonusClause {\n  id: OID!\n  condition: String!\n  bonusAmount: Amount!\n  comment: String\n}\n\ntype PenaltyClause {\n  id: OID!\n  condition: String!\n  deductionAmount: Amount!\n  comment: String\n}\n\ntype PaymentTermsState {\n  status: PaymentTermsStatus!\n  proposer: String!\n  payer: String!\n  currency: PaymentCurrency!\n  paymentModel: PaymentModel!\n  totalAmount: Amount\n  milestoneSchedule: [Milestone!]!\n  costAndMaterials: CostAndMaterials\n  retainerDetails: Retainer\n  escrowDetails: Escrow\n  evaluation: EvaluationTerms\n  bonusClauses: [BonusClause!]!\n  penaltyClauses: [PenaltyClause!]!\n}",
+          "examples": [],
+          "initialValue": "{\n  \"status\": \"DRAFT\",\n  \"proposer\": \"\",\n  \"payer\": \"\",\n  \"currency\": \"USD\",\n  \"paymentModel\": \"MILESTONE\",\n  \"totalAmount\": null,\n  \"milestoneSchedule\": [],\n  \"costAndMaterials\": null,\n  \"retainerDetails\": null,\n  \"escrowDetails\": null,\n  \"evaluation\": null,\n  \"bonusClauses\": [],\n  \"penaltyClauses\": []\n}"
+        }
+      },
+      "modules": [
+        {
+          "id": "terms-module",
+          "name": "terms",
+          "operations": [
+            {
+              "id": "set-basic-terms-op",
+              "name": "SET_BASIC_TERMS",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetBasicTermsInput {\n  proposer: String!\n  payer: String!\n  currency: PaymentCurrency!\n  paymentModel: PaymentModel!\n  totalAmount: Amount\n}",
+              "reducer": "state.proposer = action.input.proposer;\nstate.payer = action.input.payer;\nstate.currency = action.input.currency;\nstate.paymentModel = action.input.paymentModel;\nstate.totalAmount = action.input.totalAmount || null;",
+              "examples": [],
+              "template": "Set the basic payment terms information",
+              "description": "Set the basic payment terms information"
+            },
+            {
+              "id": "update-status-op",
+              "name": "UPDATE_STATUS",
+              "scope": "global",
+              "errors": [],
+              "schema": "input UpdateStatusInput {\n  status: PaymentTermsStatus!\n}",
+              "reducer": "state.status = action.input.status;",
+              "examples": [],
+              "template": "Update the payment terms status",
+              "description": "Update the payment terms status"
+            },
+            {
+              "id": "set-cost-and-materials-op",
+              "name": "SET_COST_AND_MATERIALS",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetCostAndMaterialsInput {\n  hourlyRate: Amount\n  variableCap: Amount\n  billingFrequency: BillingFrequency!\n  timesheetRequired: Boolean!\n}",
+              "reducer": "state.costAndMaterials = {\n  hourlyRate: action.input.hourlyRate || null,\n  variableCap: action.input.variableCap || null,\n  billingFrequency: action.input.billingFrequency,\n  timesheetRequired: action.input.timesheetRequired\n};",
+              "examples": [],
+              "template": "Configure time and materials payment terms",
+              "description": "Configure cost and materials payment terms"
+            },
+            {
+              "id": "set-escrow-op",
+              "name": "SET_ESCROW_DETAILS",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetEscrowDetailsInput {\n  amountHeld: Amount!\n  proofOfFundsDocumentId: String\n  releaseConditions: String!\n  escrowProvider: String\n}",
+              "reducer": "state.escrowDetails = {\n  amountHeld: action.input.amountHeld,\n  proofOfFundsDocumentId: action.input.proofOfFundsDocumentId || null,\n  releaseConditions: action.input.releaseConditions,\n  escrowProvider: action.input.escrowProvider || null\n};",
+              "examples": [],
+              "template": "Configure escrow payment details",
+              "description": "Configure escrow payment details"
+            },
+            {
+              "id": "set-evaluation-op",
+              "name": "SET_EVALUATION_TERMS",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetEvaluationTermsInput {\n  evaluationFrequency: EvaluationFrequency!\n  evaluatorTeam: String!\n  criteria: [String!]!\n  impactsPayout: Boolean!\n  impactsReputation: Boolean!\n  commentsVisibleToClient: Boolean!\n}",
+              "reducer": "state.evaluation = {\n  evaluationFrequency: action.input.evaluationFrequency,\n  evaluatorTeam: action.input.evaluatorTeam,\n  criteria: action.input.criteria,\n  impactsPayout: action.input.impactsPayout,\n  impactsReputation: action.input.impactsReputation,\n  commentsVisibleToClient: action.input.commentsVisibleToClient\n};",
+              "examples": [],
+              "template": "Set evaluation terms for the payment",
+              "description": "Set evaluation terms for the payment"
+            },
+            {
+              "id": "set-retainer-op",
+              "name": "SET_RETAINER_DETAILS",
+              "scope": "global",
+              "errors": [],
+              "schema": "input SetRetainerDetailsInput {\n  retainerAmount: Amount!\n  billingFrequency: BillingFrequency!\n  startDate: Date!\n  endDate: Date\n  autoRenew: Boolean!\n  servicesIncluded: String!\n}",
+              "reducer": "state.retainerDetails = {\n  retainerAmount: action.input.retainerAmount,\n  billingFrequency: action.input.billingFrequency,\n  startDate: action.input.startDate,\n  endDate: action.input.endDate || null,\n  autoRenew: action.input.autoRenew,\n  servicesIncluded: action.input.servicesIncluded\n};",
+              "examples": [],
+              "template": "Configure retainer payment terms",
+              "description": "Configure retainer payment terms"
+            }
+          ],
+          "description": "Core payment terms operations"
+        },
+        {
+          "id": "milestones-module",
+          "name": "milestones",
+          "operations": [
+            {
+              "id": "add-milestone-op",
+              "name": "ADD_MILESTONE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "duplicate-milestone-id",
+                  "code": "DUPLICATE_MILESTONE_ID",
+                  "name": "DuplicateMilestoneIdError",
+                  "template": "",
+                  "description": "A milestone with this ID already exists"
+                }
+              ],
+              "schema": "input AddMilestoneInput {\n  id: OID!\n  name: String!\n  amount: Amount!\n  expectedCompletionDate: Date\n  requiresApproval: Boolean!\n}",
+              "reducer": "const existingIndex = state.milestoneSchedule.findIndex(m => m.id === action.input.id);\nif (existingIndex !== -1) {\n  throw new DuplicateMilestoneIdError(`Milestone with ID ${action.input.id} already exists`);\n}\n\nconst newMilestone = {\n  id: action.input.id,\n  name: action.input.name,\n  amount: action.input.amount,\n  expectedCompletionDate: action.input.expectedCompletionDate || null,\n  requiresApproval: action.input.requiresApproval,\n  payoutStatus: \"PENDING\" as \"PENDING\"\n};\n\nstate.milestoneSchedule.push(newMilestone);",
+              "examples": [],
+              "template": "Add a new milestone to the payment schedule",
+              "description": "Add a new milestone to the payment schedule"
+            },
+            {
+              "id": "update-milestone-op",
+              "name": "UPDATE_MILESTONE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "milestone-not-found-update",
+                  "code": "MILESTONE_NOT_FOUND",
+                  "name": "MilestoneNotFoundError",
+                  "template": "",
+                  "description": "Milestone with the specified ID was not found"
+                }
+              ],
+              "schema": "input UpdateMilestoneInput {\n  id: OID!\n  name: String\n  amount: Amount\n  expectedCompletionDate: Date\n  requiresApproval: Boolean\n}",
+              "reducer": "const milestoneIndex = state.milestoneSchedule.findIndex(m => m.id === action.input.id);\nif (milestoneIndex === -1) {\n  throw new MilestoneNotFoundError(`Milestone with ID ${action.input.id} not found`);\n}\n\nconst milestone = state.milestoneSchedule[milestoneIndex];\nif (action.input.name) milestone.name = action.input.name;\nif (action.input.amount) milestone.amount = action.input.amount;\nif (action.input.expectedCompletionDate !== undefined) milestone.expectedCompletionDate = action.input.expectedCompletionDate || null;\nif (action.input.requiresApproval !== undefined && action.input.requiresApproval !== null) milestone.requiresApproval = action.input.requiresApproval;",
+              "examples": [],
+              "template": "Update milestone details",
+              "description": "Update milestone details"
+            },
+            {
+              "id": "update-milestone-status-op",
+              "name": "UPDATE_MILESTONE_STATUS",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "milestone-not-found-status",
+                  "code": "MILESTONE_NOT_FOUND",
+                  "name": "MilestoneNotFoundError",
+                  "template": "",
+                  "description": "Milestone with the specified ID was not found"
+                }
+              ],
+              "schema": "input UpdateMilestoneStatusInput {\n  id: OID!\n  payoutStatus: MilestonePayoutStatus!\n}",
+              "reducer": "const milestoneIndex = state.milestoneSchedule.findIndex(m => m.id === action.input.id);\nif (milestoneIndex === -1) {\n  throw new MilestoneNotFoundError(`Milestone with ID ${action.input.id} not found`);\n}\n\nstate.milestoneSchedule[milestoneIndex].payoutStatus = action.input.payoutStatus;",
+              "examples": [],
+              "template": "Update milestone payout status",
+              "description": "Update milestone payout status"
+            },
+            {
+              "id": "delete-milestone-op",
+              "name": "DELETE_MILESTONE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "milestone-not-found-delete",
+                  "code": "MILESTONE_NOT_FOUND",
+                  "name": "MilestoneNotFoundError",
+                  "template": "",
+                  "description": "Milestone with the specified ID was not found"
+                }
+              ],
+              "schema": "input DeleteMilestoneInput {\n  id: OID!\n}",
+              "reducer": "const milestoneIndex = state.milestoneSchedule.findIndex(m => m.id === action.input.id);\nif (milestoneIndex === -1) {\n  throw new MilestoneNotFoundError(`Milestone with ID ${action.input.id} not found`);\n}\n\nstate.milestoneSchedule.splice(milestoneIndex, 1);",
+              "examples": [],
+              "template": "Remove a milestone from the schedule",
+              "description": "Remove a milestone from the schedule"
+            },
+            {
+              "id": "reorder-milestones-op",
+              "name": "REORDER_MILESTONES",
+              "scope": "global",
+              "errors": [],
+              "schema": "input ReorderMilestonesInput {\n  order: [OID!]!\n}",
+              "reducer": "const reorderedMilestones = [];\nfor (const id of action.input.order) {\n  const milestone = state.milestoneSchedule.find(m => m.id === id);\n  if (milestone) {\n    reorderedMilestones.push(milestone);\n  }\n}\nstate.milestoneSchedule = reorderedMilestones;",
+              "examples": [],
+              "template": "Reorder milestones in the schedule",
+              "description": "Reorder milestones in the schedule"
+            }
+          ],
+          "description": "Milestone management operations"
+        },
+        {
+          "id": "clauses-module",
+          "name": "clauses",
+          "operations": [
+            {
+              "id": "add-bonus-clause-op",
+              "name": "ADD_BONUS_CLAUSE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "duplicate-bonus-clause-id",
+                  "code": "DUPLICATE_BONUS_CLAUSE_ID",
+                  "name": "DuplicateBonusClauseIdError",
+                  "template": "",
+                  "description": "A bonus clause with this ID already exists"
+                }
+              ],
+              "schema": "input AddBonusClauseInput {\n  id: OID!\n  condition: String!\n  bonusAmount: Amount!\n  comment: String\n}",
+              "reducer": "const existingIndex = state.bonusClauses.findIndex(c => c.id === action.input.id);\nif (existingIndex !== -1) {\n  throw new DuplicateBonusClauseIdError(`Bonus clause with ID ${action.input.id} already exists`);\n}\n\nconst newClause = {\n  id: action.input.id,\n  condition: action.input.condition,\n  bonusAmount: action.input.bonusAmount,\n  comment: action.input.comment || null\n};\n\nstate.bonusClauses.push(newClause);",
+              "examples": [],
+              "template": "Add a new bonus clause",
+              "description": "Add a new bonus clause"
+            },
+            {
+              "id": "update-bonus-clause-op",
+              "name": "UPDATE_BONUS_CLAUSE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "bonus-clause-not-found",
+                  "code": "BONUS_CLAUSE_NOT_FOUND",
+                  "name": "BonusClauseNotFoundError",
+                  "template": "",
+                  "description": "Bonus clause with the specified ID was not found"
+                }
+              ],
+              "schema": "input UpdateBonusClauseInput {\n  id: OID!\n  condition: String\n  bonusAmount: Amount\n  comment: String\n}",
+              "reducer": "const clauseIndex = state.bonusClauses.findIndex(c => c.id === action.input.id);\nif (clauseIndex === -1) {\n  throw new BonusClauseNotFoundError(`Bonus clause with ID ${action.input.id} not found`);\n}\n\nconst clause = state.bonusClauses[clauseIndex];\nif (action.input.condition) clause.condition = action.input.condition;\nif (action.input.bonusAmount) clause.bonusAmount = action.input.bonusAmount;\nif (action.input.comment !== undefined) clause.comment = action.input.comment || null;",
+              "examples": [],
+              "template": "Update bonus clause details",
+              "description": "Update bonus clause details"
+            },
+            {
+              "id": "delete-bonus-clause-op",
+              "name": "DELETE_BONUS_CLAUSE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "bonus-clause-not-found-delete",
+                  "code": "BONUS_CLAUSE_NOT_FOUND",
+                  "name": "BonusClauseNotFoundError",
+                  "template": "",
+                  "description": "Bonus clause with the specified ID was not found"
+                }
+              ],
+              "schema": "input DeleteBonusClauseInput {\n  id: OID!\n}",
+              "reducer": "const clauseIndex = state.bonusClauses.findIndex(c => c.id === action.input.id);\nif (clauseIndex === -1) {\n  throw new BonusClauseNotFoundError(`Bonus clause with ID ${action.input.id} not found`);\n}\n\nstate.bonusClauses.splice(clauseIndex, 1);",
+              "examples": [],
+              "template": "Remove a bonus clause",
+              "description": "Remove a bonus clause"
+            },
+            {
+              "id": "add-penalty-clause-op",
+              "name": "ADD_PENALTY_CLAUSE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "duplicate-penalty-clause-id",
+                  "code": "DUPLICATE_PENALTY_CLAUSE_ID",
+                  "name": "DuplicatePenaltyClauseIdError",
+                  "template": "",
+                  "description": "A penalty clause with this ID already exists"
+                }
+              ],
+              "schema": "input AddPenaltyClauseInput {\n  id: OID!\n  condition: String!\n  deductionAmount: Amount!\n  comment: String\n}",
+              "reducer": "const existingIndex = state.penaltyClauses.findIndex(c => c.id === action.input.id);\nif (existingIndex !== -1) {\n  throw new DuplicatePenaltyClauseIdError(`Penalty clause with ID ${action.input.id} already exists`);\n}\n\nconst newClause = {\n  id: action.input.id,\n  condition: action.input.condition,\n  deductionAmount: action.input.deductionAmount,\n  comment: action.input.comment || null\n};\n\nstate.penaltyClauses.push(newClause);",
+              "examples": [],
+              "template": "Add a new penalty clause",
+              "description": "Add a new penalty clause"
+            },
+            {
+              "id": "update-penalty-clause-op",
+              "name": "UPDATE_PENALTY_CLAUSE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "penalty-clause-not-found",
+                  "code": "PENALTY_CLAUSE_NOT_FOUND",
+                  "name": "PenaltyClauseNotFoundError",
+                  "template": "",
+                  "description": "Penalty clause with the specified ID was not found"
+                }
+              ],
+              "schema": "input UpdatePenaltyClauseInput {\n  id: OID!\n  condition: String\n  deductionAmount: Amount\n  comment: String\n}",
+              "reducer": "const clauseIndex = state.penaltyClauses.findIndex(c => c.id === action.input.id);\nif (clauseIndex === -1) {\n  throw new PenaltyClauseNotFoundError(`Penalty clause with ID ${action.input.id} not found`);\n}\n\nconst clause = state.penaltyClauses[clauseIndex];\nif (action.input.condition) clause.condition = action.input.condition;\nif (action.input.deductionAmount) clause.deductionAmount = action.input.deductionAmount;\nif (action.input.comment !== undefined) clause.comment = action.input.comment || null;",
+              "examples": [],
+              "template": "Update penalty clause details",
+              "description": "Update penalty clause details"
+            },
+            {
+              "id": "delete-penalty-clause-op",
+              "name": "DELETE_PENALTY_CLAUSE",
+              "scope": "global",
+              "errors": [
+                {
+                  "id": "penalty-clause-not-found-delete",
+                  "code": "PENALTY_CLAUSE_NOT_FOUND",
+                  "name": "PenaltyClauseNotFoundError",
+                  "template": "",
+                  "description": "Penalty clause with the specified ID was not found"
+                }
+              ],
+              "schema": "input DeletePenaltyClauseInput {\n  id: OID!\n}",
+              "reducer": "const clauseIndex = state.penaltyClauses.findIndex(c => c.id === action.input.id);\nif (clauseIndex === -1) {\n  throw new PenaltyClauseNotFoundError(`Penalty clause with ID ${action.input.id} not found`);\n}\n\nstate.penaltyClauses.splice(clauseIndex, 1);",
+              "examples": [],
+              "template": "Remove a penalty clause",
+              "description": "Remove a penalty clause"
+            }
+          ],
+          "description": "Bonus and penalty clause operations"
+        }
+      ],
+      "version": 1,
+      "changeLog": []
+    }
+  ]
+}

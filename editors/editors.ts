@@ -19,6 +19,12 @@ import { SnapshotReport } from "./snapshot-report-editor/module.js";
 import { SubscriptionInstanceEditor } from "./subscription-instance-editor/module.js";
 import { SubscriptionInvoiceEditor } from "./subscription-invoice-editor/module.js";
 import { ScopeOfWork } from "./scope-of-work/module.js";
+import { NetworkProfileEditor } from "./network-profile-editor/module.js";
+import { RfpEditor } from "./rfp-editor/module.js";
+import { PaymentTermsEditor } from "./payment-terms-editor/module.js";
+import { WorkstreamEditor } from "./workstream-editor/module.js";
+import { NetworkAdmin } from "./network-admin/module.js";
+import { BuildersEditor } from "./builders-editor/module.js";
 
 export const editors: EditorModule[] = [
   AccountTransactions,
@@ -37,4 +43,10 @@ export const editors: EditorModule[] = [
   SubscriptionInstanceEditor,
   SubscriptionInvoiceEditor,
   ScopeOfWork,
+  NetworkProfileEditor,
+  RfpEditor,
+  PaymentTermsEditor,
+  WorkstreamEditor,
+  NetworkAdmin,
+  BuildersEditor,
 ];

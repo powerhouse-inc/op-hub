@@ -49,7 +49,13 @@
       "Bash(bun -e 'import\\(\"./subgraphs/index.js\"\\).then\\(m => console.log\\(\"module:\", Object.keys\\(m\\), \"Sub:\", Object.keys\\(m.ResourcesServicesSubgraph ?? {}\\)\\)\\)')",
       "Bash(sed -i 's|\"\\\\.\\\\./\\\\.\\\\./document-models/account-transactions/index\\\\.js\"|\"document-models/account-transactions\"|g' /home/p/Powerhouse/demos/op-hub/subgraphs/acc-txs-addon/resolvers.ts)",
       "Bash(sed -i 's|\"\\\\.\\\\./\\\\.\\\\./document-models/snapshot-report/index\\\\.js\"|\"document-models/snapshot-report\"|g; s|\"\\\\.\\\\./\\\\.\\\\./document-models/expense-report/index\\\\.js\"|\"document-models/expense-report\"|g' /home/p/Powerhouse/demos/op-hub/subgraphs/budget-statements/resolvers.ts)",
-      "Bash(sed -i 's|\"\\\\.\\\\./\\\\.\\\\./document-models/invoice/index\\\\.js\"|\"document-models/invoice\"|g' /home/p/Powerhouse/demos/op-hub/subgraphs/invoice-addon/customResolvers.ts)"
+      "Bash(sed -i 's|\"\\\\.\\\\./\\\\.\\\\./document-models/invoice/index\\\\.js\"|\"document-models/invoice\"|g' /home/p/Powerhouse/demos/op-hub/subgraphs/invoice-addon/customResolvers.ts)",
+      "Bash(xargs -r sed -i 's|\"document-drive\"|\"@powerhousedao/shared/document-drive\"|g')",
+      "Bash(xargs -r sed -i 's|\"@powerhousedao/builder-profile/document-models/builder-profile\"|\"document-models/builder-profile\"|g')",
+      "Bash(xargs -r sed -i 's|\"@powerhousedao/project-management/document-models/scope-of-work\"|\"document-models/scope-of-work\"|g')",
+      "Bash(xargs -r sed -i 's|\"@powerhousedao/network-admin/document-models/network-profile\"|\"document-models/network-profile\"|g; s|\"@powerhousedao/network-admin/document-models/builders\"|\"document-models/builders\"|g; s|\"@powerhousedao/network-admin/document-models/workstream\"|\"document-models/workstream\"|g; s|\"@powerhousedao/network-admin/document-models/request-for-proposals\"|\"document-models/request-for-proposals\"|g')",
+      "Bash(python3 -c \"import json; m=json.load\\(open\\('/home/p/Powerhouse/demos/op-hub/powerhouse.manifest.json'\\)\\); print\\('processors:', m.get\\('processors'\\)\\)\")",
+      "Bash(python3 -c \"import json; m=json.load\\(open\\('/home/p/Powerhouse/demos/network-admin/powerhouse.manifest.json'\\)\\); print\\('processors:', m.get\\('processors'\\)\\)\")"
     ]
   }
 }

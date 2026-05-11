@@ -46,6 +46,7 @@ export const subscriptionInvoiceInvoiceOperations: SubscriptionInvoiceInvoiceOpe
         currency: li.currency,
       }));
     },
+
     markSubscriptionInvoiceIssuedOperation(state, action) {
       if (state.status !== "DRAFT") {
         throw new SubscriptionInvoiceNotDraftError(
@@ -55,6 +56,7 @@ export const subscriptionInvoiceInvoiceOperations: SubscriptionInvoiceInvoiceOpe
       state.status = "ISSUED";
       state.issuedAt = action.input.issuedAt;
     },
+
     markSubscriptionInvoicePaidOperation(state, action) {
       if (state.status !== "ISSUED") {
         throw new SubscriptionInvoiceNotIssuedError(
@@ -69,6 +71,7 @@ export const subscriptionInvoiceInvoiceOperations: SubscriptionInvoiceInvoiceOpe
       state.status = "PAID";
       state.totalPaid = action.input.paidAmount;
     },
+
     voidSubscriptionInvoiceOperation(state, action) {
       if (state.status === "VOID") {
         throw new SubscriptionInvoiceAlreadyVoidError(
@@ -81,9 +84,11 @@ export const subscriptionInvoiceInvoiceOperations: SubscriptionInvoiceInvoiceOpe
         state.notes = `${prefix}[VOID at ${action.input.voidedAt}] ${action.input.reason}`;
       }
     },
+
     setSubscriptionInvoiceStripeIdOperation(state, action) {
       state.stripeInvoiceId = action.input.stripeInvoiceId;
     },
+
     setSubscriptionInvoiceNotesOperation(state, action) {
       state.notes = action.input.notes || null;
     },

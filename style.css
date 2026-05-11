@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+@import "@powerhousedao/design-system/style.css";
+@import "@powerhousedao/document-engineering/style.css";
+@import "@uiw/react-md-editor/markdown-editor.css";
+@import "@uiw/react-markdown-preview/markdown.css";
+
 @import "tailwindcss";
 @import "@powerhousedao/design-system/theme.css";
 @import "@powerhousedao/connect/style.css";
+
+@source "./editors";
+@source "./document-models";
+
 
 @theme {
   /* You can customize the theme by overriding the theme variables here */

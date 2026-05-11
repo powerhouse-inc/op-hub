@@ -1,0 +1,10 @@
+import type { DocumentModelUtils } from "document-model";
+import type { ResourceInstancePHState } from "./gen/types.js";
+import { utils as genUtils } from "./gen/utils.js";
+import * as customUtils from "./src/utils.js";
+
+/** Utils for the ResourceInstance document model */
+export const utils: DocumentModelUtils<ResourceInstancePHState> = {
+  ...genUtils,
+  ...customUtils,
+};

@@ -28,7 +28,14 @@
       "Bash(bun ./node_modules/@powerhousedao/ph-cli/dist/cli.mjs --help)",
       "Bash(bun ./node_modules/@powerhousedao/ph-cli/dist/cli.mjs connect --help)",
       "Bash(find / -name \"BuilderProfile.phd\" -o -name \"builder-profile.phd\" 2>/dev/null | grep -v \"node_modules\" | head -10 && echo \"---ls~/.local---\" && ls -la ~/.local/share/Trash/files 2>/dev/null | head && echo \"---var trash---\" && find /var/trash /tmp -name \"*.phd\" 2>/dev/null | head)",
-      "Read(//var/**)"
+      "Read(//var/**)",
+      "Bash(awk -F'/' '{print $1\"/\"$2\"/\"$3}')",
+      "Bash(awk -F'\\(' '{print $1}')",
+      "Bash(python3 -c \"import json; print\\(json.load\\(open\\('/home/p/Powerhouse/demos/service-offering/document-models/invoice/invoice.json'\\)\\)['id']\\)\")",
+      "Bash(cp -r /home/p/Powerhouse/demos/service-offering/document-models/subscription-instance .)",
+      "Bash(cp -r /home/p/Powerhouse/demos/service-offering/document-models/resource-instance .)",
+      "Bash(cp -r /home/p/Powerhouse/demos/service-offering/document-models/service-offering .)",
+      "Bash(cp -r /home/p/Powerhouse/demos/service-offering/document-models/invoice .)"
     ]
   }
 }

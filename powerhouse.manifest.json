@@ -13,7 +13,27 @@
 		},
 		{
 			"id": "powerhouse/subscription-invoice",
-			"name": "Invoice"
+			"name": "SubscriptionInvoice"
+		},
+		{
+			"id": "powerhouse/facet",
+			"name": "Facet"
+		},
+		{
+			"id": "powerhouse/resource-instance",
+			"name": "ResourceInstance"
+		},
+		{
+			"id": "powerhouse/resource-template",
+			"name": "ResourceTemplate"
+		},
+		{
+			"id": "powerhouse/service-offering",
+			"name": "ServiceOffering"
+		},
+		{
+			"id": "powerhouse/subscription-instance",
+			"name": "SubscriptionInstance"
 		}
 	],
 	"apps": [],
@@ -26,14 +46,47 @@
 			]
 		},
 		{
-			"name": "subscription-invoice-editor",
+			"id": "resource-instance-editor",
+			"name": "Resource Instance Editor",
+			"documentTypes": [
+				"powerhouse/resource-instance"
+			]
+		},
+		{
+			"id": "resource-template-editor",
+			"name": "Resource Template Editor",
+			"documentTypes": [
+				"powerhouse/resource-template"
+			]
+		},
+		{
+			"id": "service-offering-editor",
+			"name": "Service Offering Editor",
+			"documentTypes": [
+				"powerhouse/service-offering"
+			]
+		},
+		{
+			"id": "subscription-instance-editor",
+			"name": "Subscription Instance Editor",
+			"documentTypes": [
+				"powerhouse/subscription-instance"
+			]
+		},
+		{
 			"id": "subscription-invoice-editor",
+			"name": "subscription-invoice-editor",
 			"documentTypes": [
 				"powerhouse/subscription-invoice"
 			]
 		}
 	],
 	"processors": [],
-	"subgraphs": [],
+	"subgraphs": [
+		{
+			"id": "resources-services",
+			"name": "resources-services"
+		}
+	],
 	"config": []
 }

@@ -8,6 +8,7 @@ export { Invoice as InvoiceV1 } from "./invoice/v1/module.js";
 export { OperationalHubProfile as OperationalHubProfileV1 } from "./operational-hub-profile/v1/module.js";
 export { ResourceInstance as ResourceInstanceV1 } from "./resource-instance/v1/module.js";
 export { ResourceTemplate as ResourceTemplateV1 } from "./resource-template/v1/module.js";
+export { ScopeOfWork as ScopeOfWorkV1 } from "./scope-of-work/v1/module.js";
 export { ServiceOffering as ServiceOfferingV1 } from "./service-offering/v1/module.js";
 export { SnapshotReport as SnapshotReportV1 } from "./snapshot-report/v1/module.js";
 export { SubscriptionInstance as SubscriptionInstanceV1 } from "./subscription-instance/v1/module.js";

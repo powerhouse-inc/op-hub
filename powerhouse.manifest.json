@@ -60,8 +60,12 @@
 			"name": "OperationalHubProfile"
 		},
 		{
-			"name": "SnapshotReport",
-			"id": "powerhouse/snapshot-report"
+			"id": "powerhouse/snapshot-report",
+			"name": "SnapshotReport"
+		},
+		{
+			"name": "ScopeOfWork",
+			"id": "powerhouse/scopeofwork"
 		}
 	],
 	"apps": [
@@ -181,6 +185,13 @@
 			"name": "subscription-invoice-editor",
 			"documentTypes": [
 				"powerhouse/subscription-invoice"
+			]
+		},
+		{
+			"id": "scope-of-work-editor",
+			"name": "ScopeOfWorkEditor",
+			"documentTypes": [
+				"powerhouse/scope-of-work"
 			]
 		}
 	],

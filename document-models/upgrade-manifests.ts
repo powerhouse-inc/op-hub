@@ -13,6 +13,7 @@ import { invoiceUpgradeManifest } from "document-models/invoice/upgrades";
 import { operationalHubProfileUpgradeManifest } from "document-models/operational-hub-profile/upgrades";
 import { resourceInstanceUpgradeManifest } from "document-models/resource-instance/upgrades";
 import { resourceTemplateUpgradeManifest } from "document-models/resource-template/upgrades";
+import { scopeOfWorkUpgradeManifest } from "document-models/scope-of-work/upgrades";
 import { serviceOfferingUpgradeManifest } from "document-models/service-offering/upgrades";
 import { snapshotReportUpgradeManifest } from "document-models/snapshot-report/upgrades";
 import { subscriptionInstanceUpgradeManifest } from "document-models/subscription-instance/upgrades";
@@ -29,6 +30,7 @@ export const upgradeManifests: UpgradeManifest<readonly number[]>[] = [
   operationalHubProfileUpgradeManifest,
   resourceInstanceUpgradeManifest,
   resourceTemplateUpgradeManifest,
+  scopeOfWorkUpgradeManifest,
   serviceOfferingUpgradeManifest,
   snapshotReportUpgradeManifest,
   subscriptionInstanceUpgradeManifest,

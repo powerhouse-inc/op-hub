@@ -13,3 +13,4 @@ export { ServiceOfferingEditor } from "./service-offering-editor/module.js";
 export { SnapshotReport } from "./snapshot-report-editor/module.js";
 export { SubscriptionInstanceEditor } from "./subscription-instance-editor/module.js";
 export { SubscriptionInvoiceEditor } from "./subscription-invoice-editor/module.js";
+export { ScopeOfWork } from "./scope-of-work/module.js";

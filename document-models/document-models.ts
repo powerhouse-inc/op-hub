@@ -8,6 +8,7 @@ import { Invoice as InvoiceV1 } from "document-models/invoice/v1";
 import { OperationalHubProfile as OperationalHubProfileV1 } from "document-models/operational-hub-profile/v1";
 import { ResourceInstance as ResourceInstanceV1 } from "document-models/resource-instance/v1";
 import { ResourceTemplate as ResourceTemplateV1 } from "document-models/resource-template/v1";
+import { ScopeOfWork as ScopeOfWorkV1 } from "document-models/scope-of-work/v1";
 import { ServiceOffering as ServiceOfferingV1 } from "document-models/service-offering/v1";
 import { SnapshotReport as SnapshotReportV1 } from "document-models/snapshot-report/v1";
 import { SubscriptionInstance as SubscriptionInstanceV1 } from "document-models/subscription-instance/v1";
@@ -29,6 +30,7 @@ export const documentModels = [
   OperationalHubProfileV1,
   ResourceInstanceV1,
   ResourceTemplateV1,
+  ScopeOfWorkV1,
   ServiceOfferingV1,
   SnapshotReportV1,
   SubscriptionInstanceV1,

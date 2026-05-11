@@ -18,6 +18,7 @@ import { ServiceOfferingEditor } from "./service-offering-editor/module.js";
 import { SnapshotReport } from "./snapshot-report-editor/module.js";
 import { SubscriptionInstanceEditor } from "./subscription-instance-editor/module.js";
 import { SubscriptionInvoiceEditor } from "./subscription-invoice-editor/module.js";
+import { ScopeOfWork } from "./scope-of-work/module.js";
 
 export const editors: EditorModule[] = [
   AccountTransactions,
@@ -35,4 +36,5 @@ export const editors: EditorModule[] = [
   SnapshotReport,
   SubscriptionInstanceEditor,
   SubscriptionInvoiceEditor,
+  ScopeOfWork,
 ];

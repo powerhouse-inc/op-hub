@@ -6,9 +6,33 @@
 		"name": "Powerhouse",
 		"url": ""
 	},
-	"documentModels": [],
+	"documentModels": [
+		{
+			"id": "powerhouse/builder-profile",
+			"name": "BuilderProfile"
+		},
+		{
+			"id": "powerhouse/subscription-invoice",
+			"name": "Invoice"
+		}
+	],
 	"apps": [],
-	"editors": [],
+	"editors": [
+		{
+			"id": "builder-profile",
+			"name": "builder-profile",
+			"documentTypes": [
+				"powerhouse/builder-profile"
+			]
+		},
+		{
+			"name": "subscription-invoice-editor",
+			"id": "subscription-invoice-editor",
+			"documentTypes": [
+				"powerhouse/subscription-invoice"
+			]
+		}
+	],
 	"processors": [],
 	"subgraphs": [],
 	"config": []

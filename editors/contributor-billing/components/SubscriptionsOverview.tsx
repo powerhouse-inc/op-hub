@@ -12,7 +12,10 @@ import {
   showCreateDocumentModal,
 } from "@powerhousedao/reactor-browser";
 import { useEffect, useRef, useState, Fragment } from "react";
-import type { FileNode, FolderNode } from "@powerhousedao/shared/document-drive";
+import type {
+  FileNode,
+  FolderNode,
+} from "@powerhousedao/shared/document-drive";
 import { Plus } from "lucide-react";
 import { useSubscriptionsFolder } from "../hooks/useSubscriptionsFolder.js";
 
@@ -71,7 +74,9 @@ function FolderNameInput({
  * Includes folder creation functionality.
  */
 function SubscriptionsBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
-  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<
+    FileNode | FolderNode
+  >;
   const selectedDriveId = useSelectedDriveId();
   const { isAllowedToCreateDocuments } = useUserPermissions();
   const [isCreating, setIsCreating] = useState(false);
@@ -144,7 +149,9 @@ function SubscriptionsBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
 
 export function SubscriptionsOverview() {
   const hasNavigatedToFolder = useRef(false);
-  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<
+    FileNode | FolderNode
+  >;
   const nodesInCurrentFolder = useNodesInSelectedDriveOrFolder();
 
   // Use the shared subscriptions hook - this handles:

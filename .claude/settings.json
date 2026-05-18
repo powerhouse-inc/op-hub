@@ -75,7 +75,10 @@
       "Bash(switchboard -p local ping)",
       "Bash(switchboard -p bai-dev ping)",
       "Bash(switchboard -p bai-dev drives list --format json)",
-      "Bash(awk '{print $1}')"
+      "Bash(awk '{print $1}')",
+      "Bash(xargs '-I{}' -P 10 bash -c ' *)",
+      "Bash(switchboard -p bai-dev docs get 04b68cd2-7338-4459-b9b6-64a0206af7b2 --format json --quiet)",
+      "Bash(awk '{print $1}' /tmp/dead-letters/results/log.txt)"
     ]
   }
 }

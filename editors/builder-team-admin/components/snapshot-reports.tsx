@@ -11,7 +11,10 @@ import {
   useUserPermissions,
 } from "@powerhousedao/reactor-browser";
 import { useEffect, useRef, useState, Fragment } from "react";
-import type { FileNode, FolderNode } from "@powerhousedao/shared/document-drive";
+import type {
+  FileNode,
+  FolderNode,
+} from "@powerhousedao/shared/document-drive";
 import { Plus } from "lucide-react";
 import { useSnapshotReportAutoPlacement } from "../hooks/useSnapshotReportAutoPlacement.js";
 
@@ -74,7 +77,9 @@ function SnapshotReportsBreadcrumbs({
 }: {
   rootFolderId: string;
 }) {
-  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<
+    FileNode | FolderNode
+  >;
   const selectedDriveId = useSelectedDriveId();
   const { isAllowedToCreateDocuments } = useUserPermissions();
   const [isCreating, setIsCreating] = useState(false);
@@ -147,7 +152,9 @@ function SnapshotReportsBreadcrumbs({
 
 export function SnapshotReports() {
   const hasNavigatedToFolder = useRef(false);
-  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<
+    FileNode | FolderNode
+  >;
   const nodesInCurrentFolder = useNodesInSelectedDriveOrFolder();
 
   // Use the shared auto-placement hook - this handles:

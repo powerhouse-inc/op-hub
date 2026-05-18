@@ -250,7 +250,7 @@ export function useSubscriptionMetrics(
         status: res.status,
         customerName: res.customerName || "Unknown",
         activatedAt: res.activatedAt || null,
-        facetCount: res.configuration.length,
+        facetCount: (res.configuration ?? []).length,
         description: res.description || null,
       };
     });

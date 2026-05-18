@@ -1,5 +1,5 @@
 {
-	"name": "op-hub",
+	"name": "@powerhousedao/op-hub",
 	"description": "Operational Hub package containing all relevant document models and app drives",
 	"category": "Finance",
 	"publisher": {

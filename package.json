@@ -1,6 +1,6 @@
 {
-  "name": "op-hub",
-  "version": "0.0.1",
+  "name": "@powerhousedao/op-hub",
+  "version": "0.0.2",
   "license": "AGPL-3.0-only",
   "type": "module",
   "files": [
@@ -110,7 +110,5 @@
     "typescript-eslint": "^8.46.2",
     "vite-tsconfig-paths": "6.1.1",
     "vitest": "4.1.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "op-hub@1.0.0"
+  }
 }

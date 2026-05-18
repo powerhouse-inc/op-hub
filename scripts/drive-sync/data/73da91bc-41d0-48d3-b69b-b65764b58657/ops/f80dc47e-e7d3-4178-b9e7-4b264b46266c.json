@@ -1,0 +1,1287 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "f80dc47e-e7d3-4178-b9e7-4b264b46266c",
+        "meta": {},
+        "model": "powerhouse/subscription-instance",
+        "name": "Acme Builders - Accrual Test 2 (cycle overage)",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-30T07:29:11.213Z",
+          "documentType": "powerhouse/subscription-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "f80dc47e-e7d3-4178-b9e7-4b264b46266c"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "815f041969b5917e0fbe3d367ee3a71c",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:29:11.213Z"
+  },
+  {
+    "action": {
+      "input": {
+        "autoRenew": true,
+        "createdAt": "2026-04-28T08:00:00.000Z",
+        "customerEmail": "ops@acmebuilders.example",
+        "customerName": "Acme Builders",
+        "globalCurrency": "USD",
+        "resourceId": "56dce7ce-e65d-4fd6-b3d8-7a8506528aa9",
+        "resourceLabel": "Operational Hub",
+        "resourceThumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na",
+        "selectedBillingCycle": "ANNUAL",
+        "serviceGroups": [
+          {
+            "costType": "SETUP",
+            "id": "8e9384bd-d095-497b-ab76-8a67b54ae719",
+            "name": "Entity & Compliance Foundation",
+            "optional": false,
+            "services": [
+              {
+                "description": "Formation of a Swiss Association.",
+                "facetSelections": [],
+                "id": "f676cf54-ee61-4ac9-9af9-a05d4a99ec88",
+                "metrics": [],
+                "name": "Swiss association setup"
+              },
+              {
+                "description": "Registered legal address in Zug.",
+                "facetSelections": [],
+                "id": "91704e4c-3a49-4373-8ae3-43fb182a4425",
+                "metrics": [],
+                "name": "Registered address (Zug)"
+              },
+              {
+                "description": "VAT registration and issuance of a VAT number.",
+                "facetSelections": [],
+                "id": "19daa516-0b68-41b5-b5ca-426f1eaddcb3",
+                "metrics": [],
+                "name": "VAT registration"
+              }
+            ],
+            "setupAmount": 3000,
+            "setupCurrency": "USD"
+          },
+          {
+            "costType": "RECURRING",
+            "id": "ac46907a-0217-462e-99aa-e170c9d23bf0",
+            "name": "Recurring Services",
+            "optional": false,
+            "recurringAmount": 1250,
+            "recurringBillingCycle": "ANNUAL",
+            "recurringCurrency": "USD",
+            "recurringDiscount": {
+              "discountType": "PERCENTAGE",
+              "discountValue": 5,
+              "originalAmount": 1250,
+              "source": "TIER_INHERITED"
+            },
+            "services": [
+              {
+                "description": "End-to-end handling of invoices.",
+                "facetSelections": [],
+                "id": "19cc63c3-19b3-4836-8008-28debbfd62cf",
+                "metrics": [
+                  {
+                    "accrualCycle": "MONTHLY",
+                    "currentUsage": 80,
+                    "freeLimit": 50,
+                    "id": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+                    "metricType": "CUMULATIVE",
+                    "name": "Invoice(s)",
+                    "paidLimit": 100,
+                    "unitCostAmount": 21,
+                    "unitCostBillingCycle": "MONTHLY",
+                    "unitCostCurrency": "USD",
+                    "unitName": "Invoice(s)"
+                  }
+                ],
+                "name": "Invoice management"
+              },
+              {
+                "description": "Operational processes to onboard contributors.",
+                "facetSelections": [],
+                "id": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769",
+                "metrics": [
+                  {
+                    "accrualCycle": "MONTHLY",
+                    "currentUsage": 3,
+                    "freeLimit": 1,
+                    "id": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+                    "metricType": "NON_CUMULATIVE",
+                    "name": "Contributor(s)",
+                    "paidLimit": 5,
+                    "unitCostAmount": 250,
+                    "unitCostBillingCycle": "MONTHLY",
+                    "unitCostCurrency": "USD",
+                    "unitName": "Contributor(s)"
+                  }
+                ],
+                "name": "Contributor onboarding and operations"
+              }
+            ]
+          }
+        ],
+        "serviceOfferingId": "da598460-435f-42e5-bbe3-30a07a8bf33b",
+        "services": [],
+        "tierCurrency": "USD",
+        "tierName": "Standard",
+        "tierPrice": 1250,
+        "tierPricingMode": "CALCULATED",
+        "tierPricingOptionId": "2521782c-120b-49bd-be3e-14e86fd4eeb1"
+      },
+      "scope": "global",
+      "type": "INITIALIZE_SUBSCRIPTION"
+    },
+    "error": null,
+    "hash": "e16pCn4g4H5xwSlSfH9aIcZhvFY=",
+    "id": "a7b31d5d3dea12870f4ec9f52d75f6ba",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:37:21.145Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "f80dc47e-e7d3-4178-b9e7-4b264b46266c",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 1
+          },
+          "global": {
+            "activatedSince": "2026-04-28T08:00:00.000Z",
+            "autoRenew": true,
+            "budget": null,
+            "cancellationReason": null,
+            "cancelledSince": null,
+            "createdAt": "2026-04-28T08:00:00.000Z",
+            "currentBillingCycleStart": "2026-04-28T08:00:00.000Z",
+            "currentCycleOverage": 3033,
+            "customerEmail": "ops@acmebuilders.example",
+            "customerId": null,
+            "customerName": "Acme Builders",
+            "customerType": "TEAM",
+            "expiringSince": null,
+            "globalCurrency": "USD",
+            "nextBillingDate": "2027-04-28T08:00:00.000Z",
+            "operatorId": null,
+            "operatorNotes": null,
+            "pausedSince": null,
+            "renewalDate": null,
+            "resource": {
+              "id": "56dce7ce-e65d-4fd6-b3d8-7a8506528aa9",
+              "label": "Operational Hub",
+              "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na"
+            },
+            "selectedBillingCycle": "ANNUAL",
+            "serviceGroups": [
+              {
+                "costType": "SETUP",
+                "id": "8e9384bd-d095-497b-ab76-8a67b54ae719",
+                "name": "Entity & Compliance Foundation",
+                "optional": false,
+                "recurringCost": null,
+                "services": [
+                  {
+                    "customValue": null,
+                    "description": "Formation of a Swiss Association.",
+                    "facetSelections": [],
+                    "id": "f676cf54-ee61-4ac9-9af9-a05d4a99ec88",
+                    "metrics": [],
+                    "name": "Swiss association setup",
+                    "recurringCost": null,
+                    "setupCost": null
+                  },
+                  {
+                    "customValue": null,
+                    "description": "Registered legal address in Zug.",
+                    "facetSelections": [],
+                    "id": "91704e4c-3a49-4373-8ae3-43fb182a4425",
+                    "metrics": [],
+                    "name": "Registered address (Zug)",
+                    "recurringCost": null,
+                    "setupCost": null
+                  },
+                  {
+                    "customValue": null,
+                    "description": "VAT registration and issuance of a VAT number.",
+                    "facetSelections": [],
+                    "id": "19daa516-0b68-41b5-b5ca-426f1eaddcb3",
+                    "metrics": [],
+                    "name": "VAT registration",
+                    "recurringCost": null,
+                    "setupCost": null
+                  }
+                ],
+                "setupCost": {
+                  "amount": 3000,
+                  "currency": "USD",
+                  "paymentDate": null
+                }
+              },
+              {
+                "costType": "RECURRING",
+                "id": "ac46907a-0217-462e-99aa-e170c9d23bf0",
+                "name": "Recurring Services",
+                "optional": false,
+                "recurringCost": {
+                  "amount": 1250,
+                  "billingCycle": "ANNUAL",
+                  "currency": "USD",
+                  "discount": {
+                    "discountType": "PERCENTAGE",
+                    "discountValue": 5,
+                    "originalAmount": 1250,
+                    "source": "TIER_INHERITED"
+                  },
+                  "lastPaymentDate": "2026-07-27T11:38:14.867Z"
+                },
+                "services": [
+                  {
+                    "customValue": null,
+                    "description": "End-to-end handling of invoices.",
+                    "facetSelections": [],
+                    "id": "19cc63c3-19b3-4836-8008-28debbfd62cf",
+                    "metrics": [
+                      {
+                        "accrualCycle": "MONTHLY",
+                        "currentUsage": 0,
+                        "freeLimit": 50,
+                        "id": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+                        "lastAccrualDate": "2026-07-28T08:00:00.000Z",
+                        "metricType": "CUMULATIVE",
+                        "name": "Invoice(s)",
+                        "paidLimit": 100,
+                        "unitCost": {
+                          "amount": 21,
+                          "billingCycle": "MONTHLY",
+                          "currency": "USD",
+                          "discount": null,
+                          "lastPaymentDate": null
+                        },
+                        "unitName": "Invoice(s)"
+                      }
+                    ],
+                    "name": "Invoice management",
+                    "recurringCost": null,
+                    "setupCost": null
+                  },
+                  {
+                    "customValue": null,
+                    "description": "Operational processes to onboard contributors.",
+                    "facetSelections": [],
+                    "id": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769",
+                    "metrics": [
+                      {
+                        "accrualCycle": "MONTHLY",
+                        "currentUsage": 3,
+                        "freeLimit": 1,
+                        "id": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+                        "lastAccrualDate": "2026-07-28T08:00:00.000Z",
+                        "metricType": "NON_CUMULATIVE",
+                        "name": "Contributor(s)",
+                        "paidLimit": 5,
+                        "unitCost": {
+                          "amount": 250,
+                          "billingCycle": "MONTHLY",
+                          "currency": "USD",
+                          "discount": null,
+                          "lastPaymentDate": null
+                        },
+                        "unitName": "Contributor(s)"
+                      }
+                    ],
+                    "name": "Contributor onboarding and operations",
+                    "recurringCost": null,
+                    "setupCost": null
+                  }
+                ],
+                "setupCost": null
+              }
+            ],
+            "serviceOfferingId": "da598460-435f-42e5-bbe3-30a07a8bf33b",
+            "services": [],
+            "status": "ACTIVE",
+            "teamMemberCount": 3,
+            "tierCurrency": "USD",
+            "tierName": "Standard",
+            "tierPrice": 1250,
+            "tierPricingMode": "CALCULATED",
+            "tierPricingOptionId": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+            "totalCredit": 6630,
+            "totalDebt": 7283
+          },
+          "local": {}
+        },
+        "model": "powerhouse/subscription-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "42882e0ff596afda23723b67a91b3b05",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:29:11.213Z"
+  },
+  {
+    "action": {
+      "input": {
+        "activatedSince": "2026-04-28T08:00:00.000Z"
+      },
+      "scope": "global",
+      "type": "ACTIVATE_SUBSCRIPTION"
+    },
+    "error": null,
+    "hash": "1OOoz5due1egVWhDjB9x+/NnYN4=",
+    "id": "a50464699eebdcfce3b34f525ccdde8c",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:37:21.151Z"
+  },
+  {
+    "action": {
+      "input": {
+        "customerType": "TEAM",
+        "teamMemberCount": 3
+      },
+      "scope": "global",
+      "type": "SET_CUSTOMER_TYPE"
+    },
+    "error": null,
+    "hash": "1OOoz5due1egVWhDjB9x+/NnYN4=",
+    "id": "ad9aa5b2d47ef8f95017cac5f8ec3c7a",
+    "index": 2,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:37:21.152Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-05-28T11:38:14.867Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "6szpHVWF6ejx88SB3QQ4GF5PCtc=",
+    "id": "9208d0b1f10f040ad1303d8cf55de016",
+    "index": 3,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:14.879Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-05-28T11:38:14.867Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "BM1HL4Mng1BhfOyESHJGUGdVsbo=",
+    "id": "28f2c4318b3247293e881436b046b558",
+    "index": 4,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:14.879Z"
+  },
+  {
+    "action": {
+      "input": {
+        "amount": 5380,
+        "paymentDate": "2026-05-28T11:38:14.867Z"
+      },
+      "scope": "global",
+      "type": "REPORT_OVERAGE_PAYMENT"
+    },
+    "error": null,
+    "hash": "L+287bH2DnYuO1BiGWOi3s3J5F0=",
+    "id": "80e02af541e946bbf7cc85fe253cb142",
+    "index": 5,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:18.775Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-05-28T11:38:14.867Z",
+        "currentUsage": 66,
+        "isAdjustment": false,
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "fgX/2hXPs36dc28stRkxZRynjWs=",
+    "id": "f42e2332b32a542fcddec20096fb0d3a",
+    "index": 6,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:22.852Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-06-27T11:38:14.867Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "fgX/2hXPs36dc28stRkxZRynjWs=",
+    "id": "73826c48054642917f1fbf722e9af42c",
+    "index": 7,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:31.482Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-06-27T11:38:14.867Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "fgX/2hXPs36dc28stRkxZRynjWs=",
+    "id": "70987f7ccd5b92adf22b93b881d5cf97",
+    "index": 8,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:31.483Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-07-27T11:38:14.867Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "iR4eDfh8aCQZTtf+HvRBXKVVKP4=",
+    "id": "b2b5964b0adaf534f699280e96778258",
+    "index": 9,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:37.801Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-07-27T11:38:14.867Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "6iRjSbOZa8TfBwSRpCy6f4QnKlw=",
+    "id": "9251e452baa3b256353d37a8350c4136",
+    "index": 10,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:37.802Z"
+  },
+  {
+    "action": {
+      "input": {
+        "paymentDate": "2026-07-27T11:38:14.867Z",
+        "serviceId": "ac46907a-0217-462e-99aa-e170c9d23bf0"
+      },
+      "scope": "global",
+      "type": "REPORT_RECURRING_PAYMENT"
+    },
+    "error": null,
+    "hash": "Jv6NKo+yyOFcgrFtZMiPpuqk8fA=",
+    "id": "38a4827b84abe5abd6723c6412479d31",
+    "index": 11,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:41.402Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-07-27T11:38:14.867Z",
+        "currentUsage": 77,
+        "isAdjustment": false,
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "/hA6/7G6wHjTpOqUkNapzJ0IiZc=",
+    "id": "85c88ec8041e7f2f80542346e77ad793",
+    "index": 12,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:50.447Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-08-26T11:38:14.867Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "zEK0ttaFBD8NkqY//vOOhhgGwbs=",
+    "id": "4e709f8026894315ae0126cc29e1021b",
+    "index": 13,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:54.935Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-08-26T11:38:14.867Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "H19YL5f5whVHeHKenhVjwQS5Tyo=",
+    "id": "7057786a891d0107233041c93da4fadf",
+    "index": 14,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-28T11:38:54.936Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-04-30T07:29:51.508Z",
+        "currentUsage": 55,
+        "isAdjustment": false,
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "NZvklySFoWucp8jLACIFIq2pfuM=",
+    "id": "118f3dc954f5ba896f9de2a7e560f12b",
+    "index": 15,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:29:51.508Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-05-30T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "NZvklySFoWucp8jLACIFIq2pfuM=",
+    "id": "1ce1d11076f3b582de9ffbb20f2d04db",
+    "index": 16,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:29:57.498Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-05-30T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "NZvklySFoWucp8jLACIFIq2pfuM=",
+    "id": "8c3fb05688d7d7c3d8cc003882c8abae",
+    "index": 17,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:29:57.499Z"
+  },
+  {
+    "action": {
+      "input": {
+        "amount": 653,
+        "paymentDate": "2026-05-30T07:29:57.496Z"
+      },
+      "scope": "global",
+      "type": "REPORT_OVERAGE_PAYMENT"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "06b7e307de488e3e92d1e33777f1fe98",
+    "index": 18,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:01.599Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-06-29T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "77c14f0dcb1450ab82edb7628a3cdec3",
+    "index": 19,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:03.615Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-06-29T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "c15c5776957398e7dbc4466d9875a590",
+    "index": 20,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:03.616Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-07-29T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "a92b61f39fd6e5b3ee2884095ceec83a",
+    "index": 21,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:14.186Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-07-29T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "c2e6d29cd9e6a7ad91ad203842e3165e",
+    "index": 22,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:14.187Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-08-28T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "5aafa449d2228c0de1ea3d62b3187aad",
+    "index": 23,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:14.895Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-08-28T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "Gbn1SJIDG5XrG6TDSS42Sf5TELo=",
+    "id": "8964980a9a43463a85917a8817cb7688",
+    "index": 24,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:14.896Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-09-27T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "i4AcdRQyQ8vsVXf6tLB0z/Wj9Zw=",
+    "id": "c3c2d26484ae22d2348b07c22d5c12fe",
+    "index": 25,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:15.252Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-09-27T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "cqrt1+80KrS20Ih2OlvSP6naqJk=",
+    "id": "0ff39bde9572e0853c572be0bd1d7ff7",
+    "index": 26,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:15.252Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-09-27T07:29:57.496Z",
+        "currentUsage": 51,
+        "isAdjustment": false,
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "xrV4i7Q3hAfg0f7ziFnH+LhI4Wo=",
+    "id": "0e6260d71f1161f94f34e8117860f8e4",
+    "index": 27,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:32.390Z"
+  },
+  {
+    "action": {
+      "input": {
+        "paymentDate": "2026-09-27T07:29:57.496Z",
+        "serviceId": "8e9384bd-d095-497b-ab76-8a67b54ae719"
+      },
+      "scope": "global",
+      "type": "REPORT_SETUP_PAYMENT"
+    },
+    "error": null,
+    "hash": "OdToB6XjP0lb9fO+NxVB7PSKgT4=",
+    "id": "8e5419dad4bcca39357a1f52fdc1ced0",
+    "index": 28,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:34.412Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-10-27T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "HDazRThTeyw/HSuepT+eOu0J7g0=",
+    "id": "7a340a5dfdd007e076d1de611c8347d8",
+    "index": 29,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:41.042Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-10-27T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "qW9Qhut7wBnq1kaCPPtLvyp4B3k=",
+    "id": "ffdbb1f445999eff26ddf8602bbd7945",
+    "index": 30,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:30:41.042Z"
+  },
+  {
+    "action": {
+      "input": {
+        "settlementDate": "2027-04-28T00:00:00.000Z"
+      },
+      "scope": "global",
+      "type": "SETTLE_BILLING_CYCLE"
+    },
+    "error": null,
+    "hash": "5ySJE+heFx+I+g+1nCFcPs0hz/U=",
+    "id": "c6febce778a8ffd0fc20118f1975234b",
+    "index": 31,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:32:26.516Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2026-10-27T07:29:57.496Z",
+        "currentUsage": 51,
+        "isAdjustment": false,
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "d34efd8b54d88f5132dfd4ba19ee9086",
+    "index": 32,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:00.845Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-11-26T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "62cfeb36b998f2a16efc365c55c6e4e7",
+    "index": 33,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:13.769Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-11-26T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "9fc48608147ae4ba8b3f2773befb6642",
+    "index": 34,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:13.769Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-12-26T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "a8a0008dcbd2a375d12aca286bddb49b",
+    "index": 35,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:19.316Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2026-12-26T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "40ea2c7c45ce9f4b53b6cdc8f0356bf4",
+    "index": 36,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:19.316Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-01-25T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "396c300aac88a7ee4cb86652e9961c59",
+    "index": 37,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:22.082Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-01-25T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "2389195cd5cd12741fc166d5a5511e5e",
+    "index": 38,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:22.082Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-02-24T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "63299beaf13fb24ff41cab3d112058b0",
+    "index": 39,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:23.094Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-02-24T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "bcec56d3583043fecb742118ae32e1b2",
+    "index": 40,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:23.094Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-03-26T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "a435b7e14f4e1c8658f40c23a81f79c4",
+    "index": 41,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:23.586Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-03-26T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "5063fbc8815dade9335210c977328f50",
+    "index": 42,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:23.586Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-04-25T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "a6ae68581fe3ed0004a460dc973f3123",
+    "index": 43,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:24.083Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-04-25T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "f4add298e4f2c0520ab35080aa635c29",
+    "index": 44,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:24.083Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-05-25T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "905222ec69a5d2dcaa9d74602de8cba4",
+    "index": 45,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:29.384Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-05-25T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "rg/GNRvMgAso9NEBLQBpGF6lWns=",
+    "id": "bfcb83608765b84ccb68c3669ccbb4bc",
+    "index": 46,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:29.384Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-06-24T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "D3gvcsxNcx4peMysumzts8dKQJc=",
+    "id": "c87a208a911e52fc9a1848760f319aa8",
+    "index": 47,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:29.759Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-06-24T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "0uhSseO4OmxL6TsiZam9LLTPFlE=",
+    "id": "14a9b765eb431892b542eb1ae5a81478",
+    "index": 48,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:29.759Z"
+  },
+  {
+    "action": {
+      "input": {
+        "amount": 397,
+        "paymentDate": "2027-06-24T07:29:57.496Z"
+      },
+      "scope": "global",
+      "type": "REPORT_OVERAGE_PAYMENT"
+    },
+    "error": null,
+    "hash": "nEznbHntxn03IS8Un3JtqhlhyZ8=",
+    "id": "fcc1b276a3f0236a1d0a84ddf854224b",
+    "index": 49,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T07:33:42.357Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2027-06-24T07:29:57.496Z",
+        "currentUsage": 55,
+        "isAdjustment": false,
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "TD8PyPLfPImS3xVaJEmAtYXHAco=",
+    "id": "e0f62fd9ec39444fcbcd91546d3e8db5",
+    "index": 50,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T12:44:17.609Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2027-06-24T07:29:57.496Z",
+        "currentUsage": 2,
+        "isAdjustment": true,
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "2ejbEbeRCPdJMjMc/5qzlg/jhTE=",
+    "id": "014ea029a5a696f20322973992a622b1",
+    "index": 51,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T12:45:08.586Z"
+  },
+  {
+    "action": {
+      "input": {
+        "currentTime": "2027-06-24T07:29:57.496Z",
+        "currentUsage": 1,
+        "isAdjustment": true,
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "UPDATE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "9tENuBw4aJgjrN0UUanedhPqRyc=",
+    "id": "281a0cce66d5ae258dc1b6dff01aa7d0",
+    "index": 52,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T12:45:10.394Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-07-24T07:29:57.496Z",
+        "metricId": "c55f5d73-8ce2-493c-8cb5-495b2dbfe280",
+        "serviceId": "19cc63c3-19b3-4836-8008-28debbfd62cf"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "RM5J+R4wxwVKF/wveYvc2D9+Q2Y=",
+    "id": "24bc864c5ee0b3753a38fecd16240a0d",
+    "index": 53,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T12:48:31.406Z"
+  },
+  {
+    "action": {
+      "input": {
+        "accrualDate": "2027-07-24T07:29:57.496Z",
+        "metricId": "a2b47e87-3b9f-4070-8d45-f1711f99ce65",
+        "serviceId": "0c55c0bf-a1eb-4f92-9981-d6b8b9c73769"
+      },
+      "scope": "global",
+      "type": "ACCRUE_METRIC_USAGE"
+    },
+    "error": null,
+    "hash": "2dqedX8QR4C2Vsbk6dBSqZ12lR0=",
+    "id": "bbb15e8e00741a88f0417c0466dec70e",
+    "index": 54,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T12:48:31.406Z"
+  },
+  {
+    "action": {
+      "input": {
+        "amount": 105,
+        "paymentDate": "2027-07-24T07:29:57.496Z"
+      },
+      "scope": "global",
+      "type": "REPORT_OVERAGE_PAYMENT"
+    },
+    "error": null,
+    "hash": "iDFOFQr8t9Hi2j3HiRYNoF5Y8EY=",
+    "id": "f7105ec63a380f717d8905b6d0ef0508",
+    "index": 55,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-30T12:50:24.822Z"
+  }
+]

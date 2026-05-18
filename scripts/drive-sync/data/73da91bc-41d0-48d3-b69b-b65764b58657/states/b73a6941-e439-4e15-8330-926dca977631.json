@@ -1,0 +1,180 @@
+{
+  "activatedSince": null,
+  "autoRenew": true,
+  "budget": null,
+  "cancellationReason": null,
+  "cancelledSince": null,
+  "createdAt": "2026-05-11T20:22:44.078Z",
+  "currentBillingCycleStart": null,
+  "currentCycleOverage": null,
+  "customerEmail": "yasiel@gmail.com",
+  "customerId": "c2136e44-db7d-40bf-b715-ec5e43a69ddf",
+  "customerName": "yasiel-name",
+  "customerType": null,
+  "expiringSince": null,
+  "globalCurrency": "USD",
+  "nextBillingDate": null,
+  "operatorId": null,
+  "operatorNotes": null,
+  "pausedSince": null,
+  "renewalDate": null,
+  "resource": {
+    "id": "0df5f85c-4be2-4df8-b3c6-2f3af94c0a81",
+    "label": "yasiel-team",
+    "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na"
+  },
+  "selectedBillingCycle": "QUARTERLY",
+  "serviceGroups": [
+    {
+      "costType": "RECURRING",
+      "id": "e056f476-58de-43f3-98c4-1d78179da2f2",
+      "name": "Recurring Services",
+      "optional": false,
+      "recurringCost": {
+        "amount": 2250,
+        "billingCycle": "QUARTERLY",
+        "currency": "USD",
+        "discount": null,
+        "lastPaymentDate": null
+      },
+      "services": [
+        {
+          "customValue": null,
+          "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+          "facetSelections": [],
+          "id": "250c2459-e005-4ff2-84f3-7d85492e3399",
+          "metrics": [],
+          "name": "Legal document templates",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+          "facetSelections": [],
+          "id": "1fa299e7-727c-4d4e-86ce-3fde13f53f14",
+          "metrics": [],
+          "name": "Needs analysis",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Structured support for Swiss annual tax compliance and VAT reporting (by default, quarterly), handled by licensed tax professionals, coordinated through our operational framework. Documentation for Swiss VAT reporting, ensuring that all relevant invoices, payment records, and transaction classifications are properly maintained to support accurate VAT filings and potential audits by the Swiss Federal Tax Administration (FTA).",
+          "facetSelections": [],
+          "id": "ea2a5264-0237-4404-b05b-5f3595e449c8",
+          "metrics": [],
+          "name": "Annual tax filing and VAT reporting",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Expense tracking and reimbursement workflows.",
+          "facetSelections": [],
+          "id": "9934a1e1-1db2-41d8-9b8c-4e38ca1cc3fe",
+          "metrics": [],
+          "name": "Reimbursement management",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "End-to-end handling of invoices from submission and approval to accounting and payment.",
+          "facetSelections": [],
+          "id": "03c0a636-bbfa-4b96-b28a-2ca7390a0c0d",
+          "metrics": [],
+          "name": "Invoice management",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Reconciliation of transactions, validation of balances, and accurate financial records in the accounting system for reporting and decision-making.",
+          "facetSelections": [],
+          "id": "c6ce72bb-c0e4-44c7-aa97-ce9e3b751189",
+          "metrics": [],
+          "name": "Monthly accounting & close",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A report of all expenses incurred during the month, categorized and reviewed to provide visibility into spending and budget performance.",
+          "facetSelections": [],
+          "id": "16ae2e47-4e8a-4a43-8c48-7c6baa09e01c",
+          "metrics": [],
+          "name": "Monthly expense report",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "An informative admin portal providing visibility into billing, active services, and key operational documents; both global invoice and budget generator included.",
+          "facetSelections": [],
+          "id": "4941ac99-2b14-43e5-9187-84a38f78e79a",
+          "metrics": [],
+          "name": "Admin portal",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": null
+    },
+    {
+      "costType": "SETUP",
+      "id": "f7b913f3-66ab-46b5-906a-c21318ba724c",
+      "name": "Entity & Compliance Foundation",
+      "optional": false,
+      "recurringCost": null,
+      "services": [
+        {
+          "customValue": null,
+          "description": "Formation of a Swiss Association with the support of a Swiss licensed counsel. Includes onboarding checklist,  use of templates for founding documents and articles of association, a workshop, and a founding meeting with counsel.",
+          "facetSelections": [],
+          "id": "dd91733e-b2d8-4512-8907-ff8c1335f1b2",
+          "metrics": [],
+          "name": "Swiss association setup",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A registered legal address in Zug, Switzerland for the entity.",
+          "facetSelections": [],
+          "id": "622dd9fb-8b57-4eaf-9e01-ee0cb7d066ca",
+          "metrics": [],
+          "name": "Registered address (Zug)",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "VAT registration and issuance of a VAT number. If the entity is not registered in the Commercial registry, the VAT ID may serve as the company identification number with customers and suppliers.",
+          "facetSelections": [],
+          "id": "90c94f27-9965-40e4-afeb-bf19cac955dc",
+          "metrics": [],
+          "name": "VAT registration",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": {
+        "amount": 3000,
+        "currency": "USD",
+        "paymentDate": null
+      }
+    }
+  ],
+  "serviceOfferingId": null,
+  "services": [],
+  "status": "PENDING",
+  "teamMemberCount": null,
+  "tierCurrency": "USD",
+  "tierName": "Starter",
+  "tierPrice": null,
+  "tierPricingMode": "MANUAL_OVERRIDE",
+  "tierPricingOptionId": "7728d31a-3190-42fc-b76c-37bba1d25085",
+  "totalCredit": null,
+  "totalDebt": null
+}

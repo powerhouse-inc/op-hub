@@ -745,7 +745,7 @@ export function SubscriptionActions({
         driveId,
         invoiceNumber,
         "powerhouse/subscription-invoice",
-        invoiceFolderId,
+        invoiceFolderId ?? undefined,
         invoiceDoc,
       );
       console.info("[GenerateInvoice] created + populated invoice", node.id);

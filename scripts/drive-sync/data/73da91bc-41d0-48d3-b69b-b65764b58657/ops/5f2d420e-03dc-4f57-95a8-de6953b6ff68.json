@@ -1,0 +1,163 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "5f2d420e-03dc-4f57-95a8-de6953b6ff68",
+        "meta": {},
+        "model": "powerhouse/subscription-instance",
+        "name": "",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-05-11T20:29:14.496Z",
+          "documentType": "powerhouse/subscription-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "5f2d420e-03dc-4f57-95a8-de6953b6ff68"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "d17035177fe3a3fd17af6f7d0b45aa53",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-05-11T20:29:14.496Z"
+  },
+  {
+    "action": {
+      "input": {
+        "autoRenew": true,
+        "createdAt": "2026-05-11T20:29:15.198Z",
+        "customerEmail": "e2e+1778531352597@test.invalid",
+        "customerId": "c871e9de-e2ca-4fca-be6a-62e917494c44",
+        "customerName": "E2E Tester 1778531352597",
+        "globalCurrency": "USD",
+        "resourceId": "04b68cd2-7338-4459-b9b6-64a0206af7b2",
+        "resourceLabel": "e2e-drive-1778531352597",
+        "resourceThumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na",
+        "selectedBillingCycle": "QUARTERLY",
+        "serviceGroups": [
+          {
+            "costType": "RECURRING",
+            "id": "fc022d93-bf01-484a-a8cf-78bd2d63e41e",
+            "name": "Recurring Services",
+            "optional": false,
+            "recurringBillingCycle": "QUARTERLY",
+            "recurringCurrency": "USD",
+            "services": [
+              {
+                "customValue": null,
+                "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+                "id": "8e86c07b-738a-4808-990d-5acff17878f2",
+                "metrics": [],
+                "name": "Legal document templates",
+                "recurringBillingCycle": "QUARTERLY"
+              },
+              {
+                "customValue": null,
+                "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+                "id": "fd58ecfd-7cee-4497-acd6-03984bffc667",
+                "metrics": [],
+                "name": "Needs analysis",
+                "recurringBillingCycle": "QUARTERLY"
+              },
+              {
+                "customValue": null,
+                "description": "An informative admin portal providing visibility into billing, active services, and key operational documents; both global invoice and budget generator included.",
+                "id": "50494308-89a3-4229-bdca-b7a028c2a79f",
+                "metrics": [],
+                "name": "Admin portal",
+                "recurringBillingCycle": "QUARTERLY"
+              }
+            ]
+          }
+        ],
+        "services": [],
+        "tierCurrency": "USD",
+        "tierName": "Essentials",
+        "tierPrice": 0,
+        "tierPricingMode": "MANUAL_OVERRIDE",
+        "tierPricingOptionId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6"
+      },
+      "scope": "global",
+      "type": "INITIALIZE_SUBSCRIPTION"
+    },
+    "error": null,
+    "hash": "YqpI8Pd06qPHY9RHxR/PPeWq8F0=",
+    "id": "301bf34c4a26623cf7470cef75b4dc61",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-05-11T20:29:15.198Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "5f2d420e-03dc-4f57-95a8-de6953b6ff68",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 1
+          },
+          "global": {
+            "activatedSince": null,
+            "autoRenew": false,
+            "budget": null,
+            "cancellationReason": null,
+            "cancelledSince": null,
+            "createdAt": null,
+            "currentBillingCycleStart": null,
+            "currentCycleOverage": null,
+            "customerEmail": null,
+            "customerId": null,
+            "customerName": null,
+            "customerType": null,
+            "expiringSince": null,
+            "globalCurrency": null,
+            "nextBillingDate": null,
+            "operatorId": null,
+            "operatorNotes": null,
+            "pausedSince": null,
+            "renewalDate": null,
+            "resource": null,
+            "selectedBillingCycle": null,
+            "serviceGroups": [],
+            "serviceOfferingId": null,
+            "services": [],
+            "status": "PENDING",
+            "teamMemberCount": null,
+            "tierCurrency": null,
+            "tierName": null,
+            "tierPrice": null,
+            "tierPricingMode": null,
+            "tierPricingOptionId": null,
+            "totalCredit": null,
+            "totalDebt": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/subscription-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "e7d9efe8d0694d3e72a9e48a2e22ee4a",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-05-11T20:29:14.496Z"
+  }
+]

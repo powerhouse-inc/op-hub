@@ -22,7 +22,7 @@ export default function Editor() {
 
   return (
     <div>
-      <DocumentToolbar document={document} onClose={handleClose} />
+      <DocumentToolbar document={document} />
       <SidebarMenu />
     </div>
   );

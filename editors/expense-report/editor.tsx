@@ -383,7 +383,7 @@ export default function Editor() {
 
   return (
     <div className="flex flex-col h-full w-full overflow-hidden">
-      <DocumentToolbar document={document} onClose={handleClose} />
+      <DocumentToolbar document={document} />
       <div className="ph-default-styles flex flex-col flex-1 min-h-0 w-full bg-gray-50 dark:bg-gray-900">
         {/* Main Content */}
         <div className="flex-1 overflow-auto px-3 sm:px-4 lg:px-6 py-4">

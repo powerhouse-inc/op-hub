@@ -1,0 +1,80 @@
+{
+  "activatedSince": null,
+  "autoRenew": true,
+  "budget": null,
+  "cancellationReason": null,
+  "cancelledSince": null,
+  "createdAt": "2026-05-08T06:40:50.862Z",
+  "currentBillingCycleStart": null,
+  "currentCycleOverage": null,
+  "customerEmail": "e2e+1778222437256@test.invalid",
+  "customerId": "db4f57ef-6be3-4f2b-8cea-aa9d65f458c2",
+  "customerName": "E2E Tester 1778222437256",
+  "customerType": null,
+  "expiringSince": null,
+  "globalCurrency": "USD",
+  "nextBillingDate": null,
+  "operatorId": null,
+  "operatorNotes": null,
+  "pausedSince": null,
+  "renewalDate": null,
+  "resource": {
+    "id": "0f923a2c-9d3a-4717-acc0-a0668b95e730",
+    "label": "e2e-team-1778222437256",
+    "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na"
+  },
+  "selectedBillingCycle": "QUARTERLY",
+  "serviceGroups": [
+    {
+      "costType": "RECURRING",
+      "id": "5ac0a0a9-184c-43a0-8722-bf8595f443ef",
+      "name": "Recurring Services",
+      "optional": false,
+      "recurringCost": null,
+      "services": [
+        {
+          "customValue": null,
+          "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+          "facetSelections": [],
+          "id": "f77776a6-9ad1-4bf6-8e3a-beaa7a296973",
+          "metrics": [],
+          "name": "Legal document templates",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+          "facetSelections": [],
+          "id": "7bfab55c-463f-4775-82da-35bef717ca24",
+          "metrics": [],
+          "name": "Needs analysis",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "An informative admin portal providing visibility into billing, active services, and key operational documents; both global invoice and budget generator included.",
+          "facetSelections": [],
+          "id": "d65cddd8-a40f-42ba-a2c8-1841c76906c3",
+          "metrics": [],
+          "name": "Admin portal",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": null
+    }
+  ],
+  "serviceOfferingId": null,
+  "services": [],
+  "status": "PENDING",
+  "teamMemberCount": null,
+  "tierCurrency": "USD",
+  "tierName": "Essentials",
+  "tierPrice": null,
+  "tierPricingMode": "MANUAL_OVERRIDE",
+  "tierPricingOptionId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6",
+  "totalCredit": null,
+  "totalDebt": null
+}

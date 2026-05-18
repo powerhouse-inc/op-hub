@@ -59,7 +59,7 @@ export default function Editor(
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
-      <DocumentToolbar document={doc} onClose={handleClose} />
+      <DocumentToolbar document={doc} />
 
       <div className="w-full">
         <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">

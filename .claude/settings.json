@@ -55,7 +55,27 @@
       "Bash(xargs -r sed -i 's|\"@powerhousedao/project-management/document-models/scope-of-work\"|\"document-models/scope-of-work\"|g')",
       "Bash(xargs -r sed -i 's|\"@powerhousedao/network-admin/document-models/network-profile\"|\"document-models/network-profile\"|g; s|\"@powerhousedao/network-admin/document-models/builders\"|\"document-models/builders\"|g; s|\"@powerhousedao/network-admin/document-models/workstream\"|\"document-models/workstream\"|g; s|\"@powerhousedao/network-admin/document-models/request-for-proposals\"|\"document-models/request-for-proposals\"|g')",
       "Bash(python3 -c \"import json; m=json.load\\(open\\('/home/p/Powerhouse/demos/op-hub/powerhouse.manifest.json'\\)\\); print\\('processors:', m.get\\('processors'\\)\\)\")",
-      "Bash(python3 -c \"import json; m=json.load\\(open\\('/home/p/Powerhouse/demos/network-admin/powerhouse.manifest.json'\\)\\); print\\('processors:', m.get\\('processors'\\)\\)\")"
+      "Bash(python3 -c \"import json; m=json.load\\(open\\('/home/p/Powerhouse/demos/network-admin/powerhouse.manifest.json'\\)\\); print\\('processors:', m.get\\('processors'\\)\\)\")",
+      "Bash(xargs -r sed -i 's| onClose={handleClose}||g')",
+      "Bash(switchboard profile *)",
+      "Bash(switchboard profiles *)",
+      "Bash(python3 -c \"import json,sys; print\\('\\\\n'.join\\(p['name'] for p in json.load\\(sys.stdin\\)\\)\\)\")",
+      "Bash(bash scripts/drive-sync/sync.sh --source staging-remote --target local)",
+      "Bash(switchboard -p staging-remote ping)",
+      "Bash(switchboard -p staging-remote info)",
+      "Bash(python3 -c \"import json; m=json.load\\(open\\('/home/p/Powerhouse/demos/op-hub/scripts/drive-sync/data/c2224951-ce79-4c30-9fc1-3f3c678f23bf/manifest.json'\\)\\); print\\('drive:', m.get\\('drive', {}\\).get\\('slug'\\), 'docs:', len\\(m.get\\('documents', []\\)\\)\\)\")",
+      "Bash([ -f \"$d/manifest.json\" ])",
+      "Bash(python3 -c 'import json; m=json.load\\(open\\('\\\\''__TRACKED_VAR__/manifest.json'\\\\''\\)\\); print\\('\\\\''  '\\\\'', m.get\\('\\\\''drive'\\\\'',{}\\).get\\('\\\\''slug'\\\\'', '\\\\''?'\\\\''\\), '\\\\''→'\\\\'', '\\\\''__TRACKED_VAR__'\\\\''.split\\('\\\\''/'\\\\''\\)[-2], '\\\\''docs='\\\\'', len\\(m.get\\('\\\\''documents'\\\\'', []\\)\\)\\)')",
+      "Bash([ -f \"$d/drive-info.json\" ])",
+      "Bash(python3 -c ' *)",
+      "Bash(awk '{print $9, $10, $11}')",
+      "Bash(ln -s 887db86d-34a5-4db6-9ef4-d69d4d529454 builders)",
+      "Bash(ln -s 887db86d-34a5-4db6-9ef4-d69d4d529454 /home/p/Powerhouse/demos/op-hub/scripts/drive-sync/data/builders)",
+      "Bash(SB_PROFILE=local bash /home/p/Powerhouse/demos/op-hub/scripts/drive-sync/upload-all.sh --dry-run)",
+      "Bash(switchboard -p local ping)",
+      "Bash(switchboard -p bai-dev ping)",
+      "Bash(switchboard -p bai-dev drives list --format json)",
+      "Bash(awk '{print $1}')"
     ]
   }
 }

@@ -1,0 +1,54 @@
+{
+  "activatedAt": null,
+  "configuration": [
+    {
+      "categoryKey": "sno-function",
+      "categoryLabel": "SNO Function",
+      "id": "df976250-6b17-4f0b-b60c-34cca38d9156",
+      "selectedOption": "Operational Hub for Open Source Builders"
+    },
+    {
+      "categoryKey": "legal-entity",
+      "categoryLabel": "Legal Entity",
+      "id": "c9aa8cc9-40bf-4b52-9ac0-4434061583a2",
+      "selectedOption": "Swiss Association"
+    },
+    {
+      "categoryKey": "anonymity",
+      "categoryLabel": "Anonymity",
+      "id": "a519bba5-09df-461e-9364-0dd2ea3c2fb5",
+      "selectedOption": "High"
+    },
+    {
+      "categoryKey": "team",
+      "categoryLabel": "Team",
+      "id": "9a57462a-678c-4c21-b2f4-578851f95cbf",
+      "selectedOption": "Remote"
+    }
+  ],
+  "confirmedAt": null,
+  "customerId": "e053d02b-8902-484b-99c9-99d15ac75157",
+  "customerName": "e2e-team-1778828790410",
+  "description": "A ready-to-use operational setup that gives open-source and public-goods builder teams the legal and financial infrastructure to receive funding, pay contributors, and operate compliantly from day one.\n\nStructured as a Swiss Association \u2014 a cost-efficient, privacy-preserving legal form with strong international recognition \u2014 the Operational Hub reduces personal liability for contributors, simplifies compliance, and provides a professional foundation for teams that are already doing the work.",
+  "infoLink": null,
+  "name": null,
+  "operatorName": null,
+  "operatorProfile": {
+    "documentType": "powerhouse/builder-profile",
+    "id": "6a47c0ea-4fc3-4075-93ac-38bccefff854"
+  },
+  "provisioningCompletedAt": null,
+  "provisioningFailureReason": null,
+  "provisioningStartedAt": null,
+  "resourceTemplateId": "c5e444aa-0f16-4e7a-87f9-e860b1643eed",
+  "resumedAt": null,
+  "status": "DRAFT",
+  "suspendedAt": null,
+  "suspensionDetails": null,
+  "suspensionReason": null,
+  "suspensionType": null,
+  "templateName": "Operational Hub",
+  "terminatedAt": null,
+  "terminationReason": null,
+  "thumbnailUrl": "https://raw.githubusercontent.com/powerhouse-inc/service-offering/refs/heads/main/services-img/oh/operational_hub.png"
+}

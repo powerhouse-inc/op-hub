@@ -1,0 +1,80 @@
+{
+  "activatedSince": null,
+  "autoRenew": true,
+  "budget": null,
+  "cancellationReason": null,
+  "cancelledSince": null,
+  "createdAt": "2026-05-18T07:21:09.650Z",
+  "currentBillingCycleStart": null,
+  "currentCycleOverage": null,
+  "customerEmail": "e2e+1779088863286@test.invalid",
+  "customerId": "c21a711d-43f9-4c22-a2d3-ecffa069f220",
+  "customerName": "E2E Tester 1779088863286",
+  "customerType": null,
+  "expiringSince": null,
+  "globalCurrency": "USD",
+  "nextBillingDate": null,
+  "operatorId": null,
+  "operatorNotes": null,
+  "pausedSince": null,
+  "renewalDate": null,
+  "resource": {
+    "id": "88776472-3da3-4bce-8cc4-f9171ef323bf",
+    "label": "e2e-team-1779088863286",
+    "thumbnailUrl": "https://raw.githubusercontent.com/powerhouse-inc/service-offering/refs/heads/main/services-img/oh/operational_hub.png"
+  },
+  "selectedBillingCycle": "QUARTERLY",
+  "serviceGroups": [
+    {
+      "costType": "RECURRING",
+      "id": "e0f01de3-e28b-48a6-9d40-847e697ecf5d",
+      "name": "Recurring Services",
+      "optional": false,
+      "recurringCost": null,
+      "services": [
+        {
+          "customValue": null,
+          "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+          "facetSelections": [],
+          "id": "b5be6dfa-e22e-43af-84e3-7e4cd542a3b6",
+          "metrics": [],
+          "name": "Legal document templates",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+          "facetSelections": [],
+          "id": "6f36edbd-0de3-4a6a-b48f-75cf1030d09e",
+          "metrics": [],
+          "name": "Needs analysis",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "An informative admin portal providing visibility into billing, active services, and key operational documents; both global invoice and budget generator included.",
+          "facetSelections": [],
+          "id": "cbab6ac3-27b0-42fe-9348-418960ae0b2f",
+          "metrics": [],
+          "name": "Admin portal",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": null
+    }
+  ],
+  "serviceOfferingId": null,
+  "services": [],
+  "status": "PENDING",
+  "teamMemberCount": null,
+  "tierCurrency": "USD",
+  "tierName": "Essentials",
+  "tierPrice": null,
+  "tierPricingMode": "MANUAL_OVERRIDE",
+  "tierPricingOptionId": "62530b23-f0b9-49f6-beee-0730d6ff2fb6",
+  "totalCredit": null,
+  "totalDebt": null
+}

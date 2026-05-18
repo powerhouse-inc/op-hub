@@ -1,31 +1,38 @@
 {
-  "id": "8362910f-d488-4296-8a5f-b930af66eb1d",
+  "id": "2acea349-946d-4bb6-98c6-6d0f7410bb54",
   "name": "BAI Team Admin",
   "nodes": [
     {
+      "documentType": "powerhouse/expense-report",
+      "id": "24b2b93c-6714-4da9-8407-6867ccfe05ed",
+      "kind": "file",
+      "name": "12-2025 Business Analysis and Integrations",
+      "parentFolder": "57b7032a-fd9d-4213-9923-b72966095a1a"
+    },
+    {
       "documentType": null,
-      "id": "037a2664-5341-4381-a331-df19e5e8b7b5",
+      "id": "3a3f65a7-6cf8-4866-a8ff-29dabb3110ce",
+      "kind": "folder",
+      "name": "Snapshot Reports",
+      "parentFolder": null
+    },
+    {
+      "documentType": null,
+      "id": "57b7032a-fd9d-4213-9923-b72966095a1a",
       "kind": "folder",
       "name": "Expense Reports",
       "parentFolder": null
     },
     {
       "documentType": null,
-      "id": "0f70d549-d018-4bc0-947c-965b26871a69",
+      "id": "77f27514-68f8-466c-9c87-1503c29a8b54",
       "kind": "folder",
       "name": "Service Subscriptions",
       "parentFolder": null
     },
     {
-      "documentType": null,
-      "id": "650572b8-c3c5-4b32-a903-f92bcaa9a25c",
-      "kind": "folder",
-      "name": "Snapshot Reports",
-      "parentFolder": null
-    },
-    {
       "documentType": "powerhouse/builder-profile",
-      "id": "ff4cf2ff-447b-4f75-85da-80112253de78",
+      "id": "bed959a7-1240-429c-ad01-00bf1a038f1c",
       "kind": "file",
       "name": "Business Analysis and Integrations",
       "parentFolder": null

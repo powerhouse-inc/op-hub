@@ -12,7 +12,7 @@ import {
   showCreateDocumentModal,
 } from "@powerhousedao/reactor-browser";
 import { useEffect, useRef, useState, Fragment } from "react";
-import type { FolderNode } from "@powerhousedao/shared/document-drive";
+import type { FileNode, FolderNode } from "@powerhousedao/shared/document-drive";
 import { Plus } from "lucide-react";
 import { useServiceSubscriptionAutoPlacement } from "../hooks/useServiceSubscriptionAutoPlacement.js";
 import { SubscriptionsDashboard } from "./subscriptions-dashboard/index.js";
@@ -71,7 +71,7 @@ function ServiceSubscriptionsBreadcrumbs({
 }: {
   rootFolderId: string;
 }) {
-  const selectedNodePath = useSelectedNodePath();
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
   const selectedDriveId = useSelectedDriveId();
   const { isAllowedToCreateDocuments } = useUserPermissions();
   const [isCreating, setIsCreating] = useState(false);
@@ -149,7 +149,7 @@ function ServiceSubscriptionsFolderBrowser({
   onBackToDashboard: () => void;
 }) {
   const hasNavigatedToFolder = useRef(false);
-  const selectedNodePath = useSelectedNodePath();
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
   const nodesInCurrentFolder = useNodesInSelectedDriveOrFolder();
 
   useEffect(() => {

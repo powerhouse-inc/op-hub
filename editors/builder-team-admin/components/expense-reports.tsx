@@ -11,7 +11,7 @@ import {
   useUserPermissions,
 } from "@powerhousedao/reactor-browser";
 import { useEffect, useRef, useState, Fragment } from "react";
-import type { FolderNode } from "@powerhousedao/shared/document-drive";
+import type { FileNode, FolderNode } from "@powerhousedao/shared/document-drive";
 import { Plus } from "lucide-react";
 import { ExpenseReportsStats } from "./ExpenseReportsStats.js";
 import { useExpenseReportAutoPlacement } from "../hooks/useExpenseReportAutoPlacement.js";
@@ -71,7 +71,7 @@ function FolderNameInput({
  * Includes folder creation functionality.
  */
 function ExpenseReportsBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
-  const selectedNodePath = useSelectedNodePath();
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
   const selectedDriveId = useSelectedDriveId();
   const { isAllowedToCreateDocuments } = useUserPermissions();
   const [isCreating, setIsCreating] = useState(false);
@@ -144,7 +144,7 @@ function ExpenseReportsBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
 
 export function ExpenseReports() {
   const hasNavigatedToFolder = useRef(false);
-  const selectedNodePath = useSelectedNodePath();
+  const selectedNodePath = useSelectedNodePath() as unknown as Array<FileNode | FolderNode>;
   const nodesInCurrentFolder = useNodesInSelectedDriveOrFolder();
 
   // Use the shared auto-placement hook - this handles:

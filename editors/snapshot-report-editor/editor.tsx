@@ -759,7 +759,7 @@ export default function Editor() {
 
   return (
     <div>
-      <DocumentToolbar document={document} onClose={handleClose} />
+      <DocumentToolbar document={document} />
       <div className="p-6 max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Snapshot Report</h1>
 

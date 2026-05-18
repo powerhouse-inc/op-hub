@@ -1,0 +1,381 @@
+{
+  "activatedSince": null,
+  "autoRenew": true,
+  "budget": null,
+  "cancellationReason": null,
+  "cancelledSince": null,
+  "createdAt": "2026-05-11T20:05:43.805Z",
+  "currentBillingCycleStart": null,
+  "currentCycleOverage": null,
+  "customerEmail": "yasiel@powerhouse.inc",
+  "customerId": "f152a59c-e9ac-4307-a673-f20056b830f0",
+  "customerName": "Yasiel",
+  "customerType": null,
+  "expiringSince": null,
+  "globalCurrency": "USD",
+  "nextBillingDate": null,
+  "operatorId": null,
+  "operatorNotes": null,
+  "pausedSince": null,
+  "renewalDate": null,
+  "resource": {
+    "id": "9ea004cb-3693-4d3e-8ddf-55d673f17d46",
+    "label": "yasiel-testing",
+    "thumbnailUrl": "https://staging.achra.com/_next/image?url=%2Fservices%2Fcovers%2Fcover-02.jpg&w=3840&q=75&dpl=dpl_FjkVSKv1rrWGpfaa2yG8PPxLE1Na"
+  },
+  "selectedBillingCycle": "ANNUAL",
+  "serviceGroups": [
+    {
+      "costType": "RECURRING",
+      "id": "0fac6076-ee60-4580-818a-46aed771bf72",
+      "name": "Recurring Services",
+      "optional": false,
+      "recurringCost": {
+        "amount": 14250,
+        "billingCycle": "ANNUAL",
+        "currency": "USD",
+        "discount": {
+          "discountType": "PERCENTAGE",
+          "discountValue": 5,
+          "originalAmount": 15000,
+          "source": "GROUP_INDEPENDENT"
+        },
+        "lastPaymentDate": null
+      },
+      "services": [
+        {
+          "customValue": null,
+          "description": "Professionally drafted contract templates for contributor agreements, internal Multisig Agreements, and other operational needs.",
+          "facetSelections": [],
+          "id": "61298670-c513-49b0-b8cc-6b32a3444519",
+          "metrics": [],
+          "name": "Legal document templates",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A guided self-assessment to help teams evaluate their operational and legal needs before choosing a plan.",
+          "facetSelections": [],
+          "id": "6764c727-cc2d-46f2-bc4d-eda168edfc78",
+          "metrics": [],
+          "name": "Needs analysis",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Structured support for Swiss annual tax compliance and VAT reporting (by default, quarterly), handled by licensed tax professionals, coordinated through our operational framework. Documentation for Swiss VAT reporting, ensuring that all relevant invoices, payment records, and transaction classifications are properly maintained to support accurate VAT filings and potential audits by the Swiss Federal Tax Administration (FTA).",
+          "facetSelections": [],
+          "id": "ee62a369-f24e-49c2-9150-57f3de6a5138",
+          "metrics": [],
+          "name": "Annual tax filing and VAT reporting",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Expense tracking and reimbursement workflows.",
+          "facetSelections": [],
+          "id": "e923bf74-a871-4178-8bc9-e283d76abad9",
+          "metrics": [],
+          "name": "Reimbursement management",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "End-to-end handling of invoices from submission and approval to accounting and payment.",
+          "facetSelections": [],
+          "id": "b8a2220b-6d0a-410c-b69d-7a3d7f3dc9b7",
+          "metrics": [],
+          "name": "Invoice management",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Reconciliation of transactions, validation of balances, and accurate financial records in the accounting system for reporting and decision-making.",
+          "facetSelections": [],
+          "id": "f96ba502-2f52-4ad8-b02f-d42b5d971888",
+          "metrics": [],
+          "name": "Monthly accounting & close",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A report of all expenses incurred during the month, categorized and reviewed to provide visibility into spending and budget performance.",
+          "facetSelections": [],
+          "id": "26cc4a5f-bff3-41a7-9047-0254a08b7684",
+          "metrics": [],
+          "name": "Monthly expense report",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Defined rules governing how expenses are submitted, approved, and reimbursed.",
+          "facetSelections": [],
+          "id": "d48e72b2-ce2e-444d-9d00-ae27da9a7895",
+          "metrics": [],
+          "name": "Expense policies",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Operational processes to onboard contributors, manage contracts, and payment details.",
+          "facetSelections": [],
+          "id": "0b753241-190d-45b6-b85a-7ec99b77d249",
+          "metrics": [],
+          "name": "Contributor onboarding and operations",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Crypto-to-fiat conversions with 48-hour transfers in USD, GBP, EUR, CHF, and DKK. Additional currencies available upon request.",
+          "facetSelections": [],
+          "id": "ca598f79-6827-499e-a027-1a247ea7bfa6",
+          "metrics": [],
+          "name": "Multi-currency payouts",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Dedicated operational support with an assigned point of contact for handling day-to-day financial and administrative requests.",
+          "facetSelections": [],
+          "id": "e6d7b6bf-6d04-453e-b161-f3b50f4b0d77",
+          "metrics": [],
+          "name": "Dedicated ops support",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "An informative admin portal providing visibility into billing, active services, and key operational documents; both global invoice and budget generator included.",
+          "facetSelections": [],
+          "id": "ea048fd4-5dc6-4692-8a4c-922a3bd59f44",
+          "metrics": [],
+          "name": "Admin portal",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": null
+    },
+    {
+      "costType": "SETUP",
+      "id": "9f4cdcbc-4f34-456b-8db3-9c50d39c1200",
+      "name": "Entity & Compliance Foundation",
+      "optional": false,
+      "recurringCost": null,
+      "services": [
+        {
+          "customValue": null,
+          "description": "Formation of a Swiss Association with the support of a Swiss licensed counsel. Includes onboarding checklist,  use of templates for founding documents and articles of association, a workshop, and a founding meeting with counsel.",
+          "facetSelections": [],
+          "id": "6a91503c-f2ac-466d-bc1b-34aab1456700",
+          "metrics": [],
+          "name": "Swiss association setup",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "A registered legal address in Zug, Switzerland for the entity.",
+          "facetSelections": [],
+          "id": "15e1d1ec-e732-4695-a0a1-737d04efa668",
+          "metrics": [],
+          "name": "Registered address (Zug)",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "VAT registration and issuance of a VAT number. If the entity is not registered in the Commercial registry, the VAT ID may serve as the company identification number with customers and suppliers.",
+          "facetSelections": [],
+          "id": "6c8b573e-81ff-471e-b959-fccb3e83d666",
+          "metrics": [],
+          "name": "VAT registration",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": {
+        "amount": 3000,
+        "currency": "USD",
+        "paymentDate": null
+      }
+    },
+    {
+      "costType": "RECURRING",
+      "id": "b3564106-a4c8-4ff4-b8f5-9cd60762c317",
+      "name": "Financial Operations & Reporting",
+      "optional": true,
+      "recurringCost": {
+        "amount": 21720,
+        "billingCycle": "ANNUAL",
+        "currency": "USD",
+        "discount": null,
+        "lastPaymentDate": null
+      },
+      "services": [
+        {
+          "customValue": null,
+          "description": "Setup of centralized exchange accounts (Kraken, Coinbase, Binance, Bitfinex, Crypto.com, Nexo).",
+          "facetSelections": [],
+          "id": "c13e469b-4529-411f-a2c5-d55d3ac77249",
+          "metrics": [],
+          "name": "Exchange account setup",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Crypto-friendly banking services setup.",
+          "facetSelections": [],
+          "id": "a88064cb-6eb0-4f11-8bea-64d802d2764e",
+          "metrics": [],
+          "name": "Crypto-friendly bank setup",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Off-ramp setup for fiat conversion.",
+          "facetSelections": [],
+          "id": "0d3b267b-3b92-4cce-9197-085228713e49",
+          "metrics": [],
+          "name": "Payment provider & off-ramp setup",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Payroll setup with local Professional Employer Organization providers.",
+          "facetSelections": [],
+          "id": "958fb9ea-e507-4932-993e-1f0bbe91ca89",
+          "metrics": [],
+          "name": "EOR/PEO setup",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Setting up crypto payments for second-party approval based on invoices received.",
+          "facetSelections": [],
+          "id": "9bf0f7e9-017e-46c9-b494-b118328bff0e",
+          "metrics": [],
+          "name": "Payment controls & reconciliation",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Assistance in coordinating financial information to support external audits.",
+          "facetSelections": [],
+          "id": "0edd4031-a44e-4188-8f11-bb6726f9d059",
+          "metrics": [],
+          "name": "Audit support",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": {
+        "amount": 3600,
+        "currency": "USD",
+        "paymentDate": null
+      }
+    },
+    {
+      "costType": "RECURRING",
+      "id": "719ea0ad-7a61-4959-b701-cab9babc308b",
+      "name": "Advanced & Scale Add-On",
+      "optional": true,
+      "recurringCost": {
+        "amount": 22320,
+        "billingCycle": "ANNUAL",
+        "currency": "USD",
+        "discount": null,
+        "lastPaymentDate": null
+      },
+      "services": [
+        {
+          "customValue": null,
+          "description": "Maintaining accounts with EORs/PEOs and other suppliers to reduce the risk of being offboarded.",
+          "facetSelections": [],
+          "id": "61873c71-f544-41c1-ac21-a3beff483a0a",
+          "metrics": [],
+          "name": "Supplier & partner liaison",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Regular checks on contractors and clients for sanctions, PEP status, and other compliance flags. Monitoring of connected wallets for risk assessment. Regular compliance reports.",
+          "facetSelections": [],
+          "id": "6c7764bc-0a75-4e79-bc7d-06e12bdd91ac",
+          "metrics": [],
+          "name": "AML monitoring & compliance reporting",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Assist in preparing documents needed by individuals showing income/affiliation for visas, loans, or other purposes.",
+          "facetSelections": [],
+          "id": "a3803c0e-9e03-437b-940e-073d0da57f4c",
+          "metrics": [],
+          "name": "Contractor documentation support",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Monitor incoming invoices for compliance to make sure invoices contain everything needed under local law prior to payment.",
+          "facetSelections": [],
+          "id": "ba69f821-decd-4d37-9c52-bcd386921214",
+          "metrics": [],
+          "name": "Invoice compliance review",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Monitor connected accounts, assist with creating new cards/users, and monitor for dubious/restricted transactions.",
+          "facetSelections": [],
+          "id": "b655b6f2-7291-43ac-8a7f-292dd2ba76e2",
+          "metrics": [],
+          "name": "Card & spend operations",
+          "recurringCost": null,
+          "setupCost": null
+        },
+        {
+          "customValue": null,
+          "description": "Five additional hours of legal advice provided by Swiss counsel.",
+          "facetSelections": [],
+          "id": "35f20a82-59b6-447a-8624-8abf9937b663",
+          "metrics": [],
+          "name": "Legal counsel advice",
+          "recurringCost": null,
+          "setupCost": null
+        }
+      ],
+      "setupCost": null
+    }
+  ],
+  "serviceOfferingId": null,
+  "services": [],
+  "status": "PENDING",
+  "teamMemberCount": null,
+  "tierCurrency": "USD",
+  "tierName": "Standard",
+  "tierPrice": null,
+  "tierPricingMode": "MANUAL_OVERRIDE",
+  "tierPricingOptionId": "2521782c-120b-49bd-be3e-14e86fd4eeb1",
+  "totalCredit": null,
+  "totalDebt": null
+}

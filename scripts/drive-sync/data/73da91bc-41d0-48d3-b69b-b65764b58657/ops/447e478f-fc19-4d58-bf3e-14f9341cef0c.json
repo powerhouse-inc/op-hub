@@ -1,0 +1,101 @@
+[
+  {
+    "action": {
+      "input": {
+        "branch": "main",
+        "documentId": "447e478f-fc19-4d58-bf3e-14f9341cef0c",
+        "meta": {},
+        "model": "powerhouse/resource-instance",
+        "name": "t-team Resource Instance",
+        "protocolVersions": {
+          "base-reducer": 2
+        },
+        "signing": {
+          "createdAtUtcIso": "2026-04-29T16:16:54.062Z",
+          "documentType": "powerhouse/resource-instance",
+          "nonce": "",
+          "publicKey": {},
+          "signature": "447e478f-fc19-4d58-bf3e-14f9341cef0c"
+        },
+        "slug": "",
+        "version": 0
+      },
+      "scope": "document",
+      "type": "CREATE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "3d3e19364072883aec0e9fe90407005f",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-29T16:16:54.062Z"
+  },
+  {
+    "action": {
+      "input": {
+        "status": "PROVISIONING"
+      },
+      "scope": "global",
+      "type": "UPDATE_INSTANCE_STATUS"
+    },
+    "error": null,
+    "hash": "hsDipNcVTlIwylOmeBKfVjcz+MQ=",
+    "id": "1e8c9ea8d9b00712dce69940f5315f8b",
+    "index": 0,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-29T16:18:16.160Z"
+  },
+  {
+    "action": {
+      "input": {
+        "documentId": "447e478f-fc19-4d58-bf3e-14f9341cef0c",
+        "fromVersion": 0,
+        "initialState": {
+          "auth": {},
+          "document": {
+            "hash": {
+              "algorithm": "sha1",
+              "encoding": "base64"
+            },
+            "version": 0
+          },
+          "global": {
+            "activatedAt": null,
+            "configuration": [],
+            "confirmedAt": null,
+            "customerId": null,
+            "customerName": null,
+            "description": null,
+            "infoLink": null,
+            "operatorProfile": null,
+            "provisioningCompletedAt": null,
+            "provisioningFailureReason": null,
+            "provisioningStartedAt": null,
+            "resourceTemplateId": null,
+            "resumedAt": null,
+            "status": "DRAFT",
+            "suspendedAt": null,
+            "suspensionDetails": null,
+            "suspensionReason": null,
+            "suspensionType": null,
+            "templateName": null,
+            "terminatedAt": null,
+            "terminationReason": null,
+            "thumbnailUrl": null
+          },
+          "local": {}
+        },
+        "model": "powerhouse/resource-instance",
+        "toVersion": 1
+      },
+      "scope": "document",
+      "type": "UPGRADE_DOCUMENT"
+    },
+    "error": null,
+    "hash": "",
+    "id": "acbfda1a97f1e6ebb7cae8e52e768165",
+    "index": 1,
+    "skip": 0,
+    "timestampUtcMs": "2026-04-29T16:16:54.062Z"
+  }
+]

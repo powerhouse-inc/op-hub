@@ -15,7 +15,7 @@ import {
   type UserSelection,
   type PriceBreakdown,
 } from "document-models/service-offering";
-import { createAction, generateId } from "document-model/core";
+import { generateId } from "document-model/core";
 import {
   addFile,
   addFolder,
@@ -26,6 +26,7 @@ import type {
   FileNode,
   Node,
 } from "@powerhousedao/shared/document-drive";
+import { BuilderProfile } from "document-models/builder-profile";
 import { ResourceInstance } from "document-models/resource-instance";
 import { SubscriptionInstance } from "document-models/subscription-instance";
 import { mapOfferingToSubscription } from "../../editors/subscription-instance-editor/components/mapOfferingToSubscription.js";
@@ -430,6 +431,25 @@ export const getResolvers = (
           .replace(/\s+/g, "-")
           .replace(/_/g, "-");
 
+        // Pre-flight: bail out if a drive with this slug already exists.
+        // Without this the reactor would happily create a second drive with
+        // the same slug (the underlying ID is unique, the slug is not) and
+        // we'd silently produce a duplicate team workspace.
+        const existing = await findDriveBySlug(reactorClient, parsedTeamName);
+        if (existing) {
+          return {
+            success: false,
+            data: null,
+            errors: [
+              `A team workspace with slug "${parsedTeamName}" already exists. Pick a different team name.`,
+            ],
+          };
+        }
+
+        // Track resources created during this mutation so we can roll them
+        // back if a later step fails.
+        let createdDriveId: string | undefined;
+
         try {
           // create team-builder-admin drive
           const driveDoc = driveCreateDocument();
@@ -444,6 +464,7 @@ export const getResolvers = (
             await reactorClient.create<DocumentDriveDocument>(driveDoc);
 
           const driveId = teamBuilderAdminDrive.header.id;
+          createdDriveId = driveId;
 
           // create documents as children of the drive so Connect can sync them
           const builderProfileDoc = await reactorClient.createEmpty(
@@ -463,22 +484,25 @@ export const getResolvers = (
           // the new documents into the drive's view. ADD_FILE alone
           // updates the drive's nodes array but without the explicit
           // parent→child relationship the docs render as orphans and
-          // never appear in the drive UI.
-          await reactorClient.addRelationship(
-            driveId,
-            builderProfileDoc.header.id,
-            "child",
-          );
-          await reactorClient.addRelationship(
-            driveId,
-            resourceInstanceDoc.header.id,
-            "child",
-          );
-          await reactorClient.addRelationship(
-            driveId,
-            subscriptionInstanceDoc.header.id,
-            "child",
-          );
+          // never appear in the drive UI. The three calls are independent
+          // so we fan them out and await once.
+          await Promise.all([
+            reactorClient.addRelationship(
+              driveId,
+              builderProfileDoc.header.id,
+              "child",
+            ),
+            reactorClient.addRelationship(
+              driveId,
+              resourceInstanceDoc.header.id,
+              "child",
+            ),
+            reactorClient.addRelationship(
+              driveId,
+              subscriptionInstanceDoc.header.id,
+              "child",
+            ),
+          ]);
 
           // create "Service Subscriptions" folder and organize files in team drive
           const teamServiceSubsFolderId = generateId();
@@ -507,15 +531,10 @@ export const getResolvers = (
             }),
           ]);
 
-          // update builder profile
+          // update builder profile — use the typed action creator so
+          // input shape changes are caught at build time instead of runtime.
           await reactorClient.execute(builderProfileDoc.header.id, "main", [
-            createAction(
-              "UPDATE_PROFILE",
-              { name: parsedTeamName },
-              undefined,
-              undefined,
-              "global",
-            ),
+            BuilderProfile.actions.updateProfile({ name: parsedTeamName }),
           ]);
 
           // find operator drive and add references there too
@@ -563,18 +582,22 @@ export const getResolvers = (
           // create a team folder inside "Service Subscriptions" for this team's docs
           const teamFolderId = generateId();
 
-          // add reactor-level relationships so Connect syncs the child documents
-          // (createEmpty guarantees CREATE_DOCUMENT is persisted before this runs)
-          await reactorClient.addRelationship(
-            operatorDrive.header.id,
-            resourceInstanceDoc.header.id,
-            "child",
-          );
-          await reactorClient.addRelationship(
-            operatorDrive.header.id,
-            subscriptionInstanceDoc.header.id,
-            "child",
-          );
+          // Add reactor-level relationships so Connect syncs the child
+          // documents (createEmpty guarantees CREATE_DOCUMENT is persisted
+          // before this runs). Run both in parallel — they target different
+          // child IDs and don't depend on each other.
+          await Promise.all([
+            reactorClient.addRelationship(
+              operatorDrive.header.id,
+              resourceInstanceDoc.header.id,
+              "child",
+            ),
+            reactorClient.addRelationship(
+              operatorDrive.header.id,
+              subscriptionInstanceDoc.header.id,
+              "child",
+            ),
+          ]);
 
           // add team folder and file references to operator drive
           await reactorClient.execute(operatorDrive.header.id, "main", [
@@ -647,6 +670,26 @@ export const getResolvers = (
           };
         } catch (error) {
           console.error("Failed to create product instances:", error);
+
+          // Best-effort rollback: drop the team drive we created so we
+          // don't leave a half-wired workspace behind. The 3 child docs
+          // were created via `createEmpty(..., { parentIdentifier: driveId })`
+          // and are cleaned up by the drive deletion's cascade. Any
+          // references already added to the operator drive will dangle
+          // and need manual cleanup — that's a narrow edge case (failure
+          // strictly between operator-drive writes and the final
+          // initializeSubscription).
+          if (createdDriveId) {
+            try {
+              await reactorClient.deleteDocument(createdDriveId);
+            } catch (cleanupError) {
+              console.error(
+                `Rollback failed: could not delete team drive ${createdDriveId}`,
+                cleanupError,
+              );
+            }
+          }
+
           return {
             success: false,
             data: null,
@@ -1059,32 +1102,76 @@ async function getResourceTemplateStateMap(
   return map;
 }
 
+/**
+ * Look up a drive by its slug. Used by createProductInstances as a pre-flight
+ * idempotency guard before creating a new team workspace.
+ */
+async function findDriveBySlug(
+  reactorClient: IReactorClient,
+  slug: string,
+): Promise<DocumentDriveDocument | undefined> {
+  const { results: drives } = await reactorClient.find({
+    type: "powerhouse/document-drive",
+  });
+  for (const drive of drives) {
+    if (drive.state.document.isDeleted) continue;
+    if (drive.header.slug === slug) return drive as DocumentDriveDocument;
+  }
+  return undefined;
+}
+
+// Process-scoped cache: resourceTemplateId → operator drive id. Avoids
+// re-scanning every drive on each createProductInstances call. Invalidated
+// transparently when the cached drive no longer exists or no longer has
+// the template as a child.
+const operatorDriveCache = new Map<string, string>();
+
 async function getOperatorDrive(
   reactorClient: IReactorClient,
   resourceTemplateId: string,
 ): Promise<DocumentDriveDocument | undefined> {
-  // Find all drives
+  // Fast path: try the cached drive id first and validate it still owns
+  // the template. If validation fails, drop the cache entry and scan.
+  const cachedId = operatorDriveCache.get(resourceTemplateId);
+  if (cachedId) {
+    try {
+      const cached = await reactorClient.get<DocumentDriveDocument>(cachedId);
+      if (!cached.state.document.isDeleted) {
+        const { results: children } =
+          await reactorClient.getOutgoingRelationships(cachedId, "child");
+        if (
+          children.some(
+            (child: PHDocument) => child.header.id === resourceTemplateId,
+          )
+        ) {
+          return cached;
+        }
+      }
+    } catch {
+      // Fall through to scan; cached drive may have been deleted.
+    }
+    operatorDriveCache.delete(resourceTemplateId);
+  }
+
+  // Slow path: scan every drive looking for one that has the template.
   const { results: drives } = await reactorClient.find({
     type: "powerhouse/document-drive",
   });
-
   for (const drive of drives) {
-    // Skip soft-deleted drives
     if (drive.state.document.isDeleted) continue;
-
     const driveDoc = drive as DocumentDriveDocument;
-    // Check if this drive contains the resource template as a child
     const { results: children } = await reactorClient.getOutgoingRelationships(
       driveDoc.header.id,
       "child",
     );
-    const hasTemplate = children.some(
-      (child: PHDocument) => child.header.id === resourceTemplateId,
-    );
-    if (hasTemplate) {
+    if (
+      children.some(
+        (child: PHDocument) => child.header.id === resourceTemplateId,
+      )
+    ) {
+      operatorDriveCache.set(resourceTemplateId, driveDoc.header.id);
       return driveDoc;
     }
   }
-
   return undefined;
 }

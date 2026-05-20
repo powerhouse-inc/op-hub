@@ -144,7 +144,15 @@
       "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name: \\\\\"PackagesQueries\\\\\"\\) { fields { name type { name kind ofType { name } } } } }\"}')",
       "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name: \\\\\"SystemInfo\\\\\"\\) { fields { name type { name kind ofType { name } } } } }\"}')",
       "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name: \\\\\"InstalledPackage\\\\\"\\) { fields { name type { name kind } } } }\"}')",
-      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ system { version gitHash gitUrl } Packages { installedPackages { name version registryUrl installedAt } } }\"}')"
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ system { version gitHash gitUrl } Packages { installedPackages { name version registryUrl installedAt } } }\"}')",
+      "Bash(switchboard -p bai-dev docs get e5d8f80a-371e-45bc-aa3a-b2cfc73f690d --format json)",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ document\\(id:\\\\\"e5d8f80a-371e-45bc-aa3a-b2cfc73f690d\\\\\"\\){ id documentType name } }\"}')",
+      "Bash(switchboard -p bai-dev drives delete --yes powerhouse-rgh-operator-admin)",
+      "Bash(SB_PROFILE=bai-dev PREFERRED_EDITOR=builder-team-admin bash scripts/drive-sync/upload.sh scripts/drive-sync/data/powerhouse-rgh-operator-admin 'Powerhouse RGH Operator Admin')",
+      "Bash(CONFIRM_REMOTE=yes SB_PROFILE=bai-dev PREFERRED_EDITOR=builder-team-admin bash scripts/drive-sync/upload.sh scripts/drive-sync/data/powerhouse-rgh-operator-admin 'Powerhouse RGH Operator Admin')",
+      "Bash(switchboard -p local drives list --format json)",
+      "Bash(python3 -c \"import json,sys; m=json.load\\(sys.stdin\\); print\\('documents:', len\\(m['documents']\\)\\); types=set\\(d['type'] for d in m['documents']\\); print\\('types:'\\); [print\\(' ',t\\) for t in sorted\\(types\\)]\")",
+      "Bash(git -C /home/p/Powerhouse/demos/op-hub log -1 --format=\"%ai %s\" -- scripts/drive-sync/data/powerhouse-genesis-operational-hub/id-map.json)"
     ],
     "additionalDirectories": [
       "/home/p"

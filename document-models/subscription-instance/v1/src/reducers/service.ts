@@ -40,6 +40,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
             ? {
                 amount: action.input.setupAmount,
                 currency: action.input.setupCurrency,
+                paymentDate: null,
               }
             : null,
         recurringCost:
@@ -50,6 +51,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
                 amount: action.input.recurringAmount,
                 currency: action.input.recurringCurrency,
                 billingCycle: action.input.recurringBillingCycle,
+                lastPaymentDate: null,
                 discount: action.input.recurringDiscount
                   ? {
                       originalAmount:
@@ -100,6 +102,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
         svc.setupCost = {
           amount: action.input.amount,
           currency: action.input.currency,
+          paymentDate: svc.setupCost?.paymentDate ?? null,
         };
       } else if (svc.setupCost) {
         if (action.input.amount) svc.setupCost.amount = action.input.amount;
@@ -125,6 +128,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
           amount: action.input.amount,
           currency: action.input.currency,
           billingCycle: action.input.billingCycle,
+          lastPaymentDate: svc.recurringCost?.lastPaymentDate ?? null,
           discount: svc.recurringCost?.discount || null,
         };
       } else if (svc.recurringCost) {
@@ -182,7 +186,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
           "Cannot report payment when nothing is owed",
         );
       }
-      function findSvc(serviceId) {
+      function findSvc(serviceId: string) {
         const flat = state.services.find((s) => s.id === serviceId);
         if (flat) return flat;
         for (const group of state.serviceGroups) {
@@ -200,7 +204,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
           `Service or group with ID ${action.input.serviceId} not found`,
         );
       }
-      function findGroup(serviceId) {
+      function findGroup(serviceId: string) {
         for (const group of state.serviceGroups) {
           if (group.services.some((s) => s.id === serviceId)) return group;
         }
@@ -231,7 +235,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
           "Cannot report payment when nothing is owed",
         );
       }
-      function findSvc(serviceId) {
+      function findSvc(serviceId: string) {
         const flat = state.services.find((s) => s.id === serviceId);
         if (flat) return flat;
         for (const group of state.serviceGroups) {
@@ -249,7 +253,7 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
           `Service or group with ID ${action.input.serviceId} not found`,
         );
       }
-      function findGroup(serviceId) {
+      function findGroup(serviceId: string) {
         for (const group of state.serviceGroups) {
           if (group.services.some((s) => s.id === serviceId)) return group;
         }

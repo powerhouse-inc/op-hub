@@ -152,6 +152,7 @@ export function AccrueMetricUsageInputSchema(): z.ZodObject<
   return z.object({
     accrualDate: z.iso.datetime(),
     metricId: z.string(),
+    newSliceIds: z.array(z.string()),
     serviceId: z.string(),
   });
 }
@@ -202,8 +203,10 @@ export function AddServiceGroupInputSchema(): z.ZodObject<
     recurringBillingCycle: BillingCycleSchema.nullish(),
     recurringCurrency: z.string().nullish(),
     recurringDiscount: z.lazy(() => DiscountServiceInfoInputSchema().nullish()),
+    recurringSliceId: z.string(),
     setupAmount: z.number().nullish(),
     setupCurrency: z.string().nullish(),
+    setupSliceId: z.string(),
   });
 }
 
@@ -271,6 +274,7 @@ export function ApplyCreditInputSchema(): z.ZodObject<
   return z.object({
     amount: z.number(),
     creditDate: z.iso.datetime(),
+    lineItemId: z.string().nullish(),
     reason: z.string(),
   });
 }
@@ -343,6 +347,7 @@ export function DecrementMetricUsageInputSchema(): z.ZodObject<
     currentTime: z.iso.datetime(),
     decrementBy: z.number(),
     metricId: z.string(),
+    newSliceId: z.string(),
     serviceId: z.string(),
   });
 }
@@ -402,6 +407,7 @@ export function IncrementMetricUsageInputSchema(): z.ZodObject<
     currentTime: z.iso.datetime(),
     incrementBy: z.number(),
     metricId: z.string(),
+    newSliceId: z.string(),
     serviceId: z.string(),
   });
 }
@@ -552,6 +558,7 @@ export function RemoveServiceGroupInputSchema(): z.ZodObject<
   Properties<RemoveServiceGroupInput>
 > {
   return z.object({
+    creditSliceId: z.string(),
     effectiveDate: z.iso.datetime(),
     groupId: z.string(),
   });
@@ -839,6 +846,7 @@ export function UpdateMetricUsageInputSchema(): z.ZodObject<
     currentUsage: z.number(),
     isAdjustment: z.boolean().nullish(),
     metricId: z.string(),
+    newSliceId: z.string(),
     serviceId: z.string(),
   });
 }

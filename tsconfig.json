@@ -26,6 +26,7 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true
   },
   "include": ["**/*", "./powerhouse.manifest.json"],

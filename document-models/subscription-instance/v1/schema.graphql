@@ -481,11 +481,14 @@ input AddServiceGroupInput {
     recurringBillingCycle: BillingCycle
     recurringDiscount: DiscountServiceInfoInput
     effectiveDate: DateTime!
+    setupSliceId: OID!
+    recurringSliceId: OID!
 }
 
 input RemoveServiceGroupInput {
     groupId: OID!
     effectiveDate: DateTime!
+    creditSliceId: OID!
 }
 
 input AddServiceToGroupInput {
@@ -553,6 +556,7 @@ input UpdateMetricUsageInput {
     currentTime: DateTime!
     currentUsage: Int!
     isAdjustment: Boolean
+    newSliceId: OID!
 }
 
 input RemoveServiceMetricInput {
@@ -565,6 +569,7 @@ input IncrementMetricUsageInput {
     metricId: OID!
     currentTime: DateTime!
     incrementBy: Int!
+    newSliceId: OID!
 }
 
 input DecrementMetricUsageInput {
@@ -572,12 +577,14 @@ input DecrementMetricUsageInput {
     metricId: OID!
     currentTime: DateTime!
     decrementBy: Int!
+    newSliceId: OID!
 }
 
 input AccrueMetricUsageInput {
     serviceId: OID!
     metricId: OID!
     accrualDate: DateTime!
+    newSliceIds: [OID!]!
 }
 
 # customer
@@ -616,4 +623,6 @@ input ApplyCreditInput {
     amount: Amount_Money!
     creditDate: DateTime!
     reason: String!
+    "When provided, allocates credit against a single specific debt line item; otherwise FIFO+priority across all collectible outstanding slices."
+    lineItemId: OID
 }

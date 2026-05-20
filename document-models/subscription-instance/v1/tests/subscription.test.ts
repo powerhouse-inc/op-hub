@@ -14,26 +14,18 @@ import {
   pauseSubscription,
   PauseSubscriptionInputSchema,
   reducer,
-  removeBudgetCategory,
-  RemoveBudgetCategoryInputSchema,
   renewExpiringSubscription,
   RenewExpiringSubscriptionInputSchema,
   resumeSubscription,
   ResumeSubscriptionInputSchema,
   setAutoRenew,
   SetAutoRenewInputSchema,
-  setBudgetCategory,
-  SetBudgetCategoryInputSchema,
   setExpiring,
   SetExpiringInputSchema,
   setOperatorNotes,
   SetOperatorNotesInputSchema,
-  setRenewalDate,
-  SetRenewalDateInputSchema,
   setResourceDocument,
   SetResourceDocumentInputSchema,
-  settleBillingCycle,
-  SettleBillingCycleInputSchema,
   updateCustomerInfo,
   UpdateCustomerInfoInputSchema,
   updateTierInfo,
@@ -274,74 +266,6 @@ describe("SubscriptionOperations", () => {
     expect(updatedDocument.operations.global).toHaveLength(1);
     expect(updatedDocument.operations.global[0].action.type).toBe(
       "CHANGE_PLAN",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
-  it("should handle setBudgetCategory operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(SetBudgetCategoryInputSchema());
-
-    const updatedDocument = reducer(document, setBudgetCategory(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "SET_BUDGET_CATEGORY",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
-  it("should handle removeBudgetCategory operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(RemoveBudgetCategoryInputSchema());
-
-    const updatedDocument = reducer(document, removeBudgetCategory(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "REMOVE_BUDGET_CATEGORY",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
-  it("should handle setRenewalDate operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(SetRenewalDateInputSchema());
-
-    const updatedDocument = reducer(document, setRenewalDate(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "SET_RENEWAL_DATE",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
-  it("should handle settleBillingCycle operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(SettleBillingCycleInputSchema());
-
-    const updatedDocument = reducer(document, settleBillingCycle(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "SETTLE_BILLING_CYCLE",
     );
     expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
       input,

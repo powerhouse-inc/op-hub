@@ -123,7 +123,8 @@
       "Bash(awk 'NR<=594 && /handleGenerateInvoice|onGenerateInvoice|async function|=>\\\\s*\\\\{/{lastfn=$0; lastln=NR} END{print lastln\": \"lastfn}' editors/subscription-instance-editor/components/SubscriptionActions.tsx)",
       "Bash(awk 'NR>=400 && NR<=600 && /handleGenerateInvoice|async function|async \\\\\\(|\\\\\\) => \\\\{/{print NR\": \"$0}' editors/subscription-instance-editor/components/SubscriptionActions.tsx)",
       "Bash(python3 -c 'import json; di=json.load\\(open\\('\\\\''__TRACKED_VAR__/drive-info.json'\\\\''\\)\\); print\\('\\\\''__TRACKED_VAR__'\\\\''.rstrip\\('\\\\''/'\\\\''\\), '\\\\''->'\\\\'', di.get\\('\\\\''slug'\\\\'', '\\\\''?'\\\\''\\), '\\\\''|'\\\\'', di.get\\('\\\\''name'\\\\'', '\\\\''?'\\\\''\\)\\)')",
-      "Bash(awk '{print $1, $2}')"
+      "Bash(awk '{print $1, $2}')",
+      "Bash(tee /tmp/upload-all-local.log)"
     ],
     "additionalDirectories": [
       "/home/p"

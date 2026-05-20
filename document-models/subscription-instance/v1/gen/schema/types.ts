@@ -71,6 +71,7 @@ export type AccrualCycle =
 export type AccrueMetricUsageInput = {
   accrualDate: Scalars["DateTime"]["input"];
   metricId: Scalars["OID"]["input"];
+  newSliceIds: Array<Scalars["OID"]["input"]>;
   serviceId: Scalars["OID"]["input"];
 };
 
@@ -103,8 +104,10 @@ export type AddServiceGroupInput = {
   recurringBillingCycle?: InputMaybe<BillingCycle>;
   recurringCurrency?: InputMaybe<Scalars["Currency"]["input"]>;
   recurringDiscount?: InputMaybe<DiscountServiceInfoInput>;
+  recurringSliceId: Scalars["OID"]["input"];
   setupAmount?: InputMaybe<Scalars["Amount_Money"]["input"]>;
   setupCurrency?: InputMaybe<Scalars["Currency"]["input"]>;
+  setupSliceId: Scalars["OID"]["input"];
 };
 
 export type AddServiceInput = {
@@ -156,6 +159,8 @@ export type AddServiceToGroupInput = {
 export type ApplyCreditInput = {
   amount: Scalars["Amount_Money"]["input"];
   creditDate: Scalars["DateTime"]["input"];
+  /** When provided, allocates credit against a single specific debt line item; otherwise FIFO+priority across all collectible outstanding slices. */
+  lineItemId?: InputMaybe<Scalars["OID"]["input"]>;
   reason: Scalars["String"]["input"];
 };
 
@@ -231,6 +236,7 @@ export type DecrementMetricUsageInput = {
   currentTime: Scalars["DateTime"]["input"];
   decrementBy: Scalars["Int"]["input"];
   metricId: Scalars["OID"]["input"];
+  newSliceId: Scalars["OID"]["input"];
   serviceId: Scalars["OID"]["input"];
 };
 
@@ -273,6 +279,7 @@ export type IncrementMetricUsageInput = {
   currentTime: Scalars["DateTime"]["input"];
   incrementBy: Scalars["Int"]["input"];
   metricId: Scalars["OID"]["input"];
+  newSliceId: Scalars["OID"]["input"];
   serviceId: Scalars["OID"]["input"];
 };
 
@@ -378,6 +385,7 @@ export type RemoveServiceFromGroupInput = {
 };
 
 export type RemoveServiceGroupInput = {
+  creditSliceId: Scalars["OID"]["input"];
   effectiveDate: Scalars["DateTime"]["input"];
   groupId: Scalars["OID"]["input"];
 };
@@ -575,6 +583,7 @@ export type UpdateMetricUsageInput = {
   currentUsage: Scalars["Int"]["input"];
   isAdjustment?: InputMaybe<Scalars["Boolean"]["input"]>;
   metricId: Scalars["OID"]["input"];
+  newSliceId: Scalars["OID"]["input"];
   serviceId: Scalars["OID"]["input"];
 };
 

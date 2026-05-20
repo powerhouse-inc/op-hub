@@ -1,4 +1,11 @@
 import type { ScopeOfWorkProjectsOperations } from "document-models/scope-of-work/v1";
+import type {
+  Deliverable,
+  DeliverableStatus,
+  DeliverablesSet,
+  Progress,
+  ScopeOfWorkState,
+} from "../../gen/schema/types.js";
 
 // Progress is a flat tagged-union: { completed, done, total, value }, all
 // nullable. Use this factory to keep field counts consistent — any field

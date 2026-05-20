@@ -1,4 +1,9 @@
 import type { ScopeOfWorkDeliverablesOperations } from "document-models/scope-of-work/v1";
+import type {
+  Deliverable,
+  KeyResult,
+  Progress,
+} from "../../gen/schema/types.js";
 import { applyInvariants } from "./projects.js";
 
 // Progress is a flat tagged-union: { completed, done, total, value }, all

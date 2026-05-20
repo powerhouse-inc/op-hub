@@ -72,11 +72,11 @@ export const documentModel: DocumentModelGlobalState = {
                 },
                 {
                   id: "err-activate-missing-slice-id",
-                  name: "ActivateMissingSliceIdError",
                   code: "ACTIVATE_MISSING_SLICE_ID",
+                  name: "ActivateMissingSliceIdError",
+                  template: "",
                   description:
                     "Pre-generated slice ID was not provided for a chargeable source during activation",
-                  template: "",
                 },
               ],
               schema:
@@ -143,11 +143,11 @@ export const documentModel: DocumentModelGlobalState = {
                 },
                 {
                   id: "err-cancel-missing-slice-id",
-                  name: "CancelMissingSliceIdError",
                   code: "CANCEL_MISSING_SLICE_ID",
+                  name: "CancelMissingSliceIdError",
+                  template: "",
                   description:
                     "Pre-generated refund slice ID was not provided for a chargeable source during cancellation",
-                  template: "",
                 },
               ],
               schema:
@@ -193,11 +193,11 @@ export const documentModel: DocumentModelGlobalState = {
                 },
                 {
                   id: "err-renew-missing-slice-id",
-                  name: "RenewMissingSliceIdError",
                   code: "RENEW_MISSING_SLICE_ID",
+                  name: "RenewMissingSliceIdError",
+                  template: "",
                   description:
                     "Pre-generated recurring slice ID was not provided for a chargeable source during renewal",
-                  template: "",
                 },
               ],
               schema:
@@ -261,98 +261,98 @@ export const documentModel: DocumentModelGlobalState = {
             {
               id: "op-change-plan",
               name: "CHANGE_PLAN",
-              description:
-                "Mid-cycle tier change. Emits a prorated credit slice for the unused portion of the current tier and a prorated debit slice for the new tier. Updates tier-level state.",
-              schema:
-                "input ChangePlanInput {\n    newTierPricingOptionId: OID!\n    effectiveDate: DateTime!\n    newBillingCycle: BillingCycle\n    creditLineItemId: OID!\n    debitLineItemId: OID!\n    newTierName: String\n    newTierPrice: Amount_Money!\n    newTierCurrency: Currency!\n}",
-              template:
-                "Mid-cycle tier change. Emits a prorated credit slice for the unused portion of the current tier and a prorated debit slice for the new tier. Updates tier-level state.",
-              reducer:
-                'if (state.status !== "ACTIVE") {\n  throw new ChangePlanNotActiveError(\n    `Cannot change plan on subscription with status ${state.status}`,\n  );\n}\nif (\n  action.input.newBillingCycle &&\n  action.input.newBillingCycle !== state.selectedBillingCycle\n) {\n  throw new BillingCycleSwapNotYetSupportedError(\n    `Billing-cycle swap from ${state.selectedBillingCycle} to ${action.input.newBillingCycle} not supported in MVP`,\n  );\n}\nif (!state.currentBillingCycleStart || !state.nextBillingDate) {\n  throw new ChangePlanInvalidEffectiveDateError(\n    "Subscription has no current billing cycle window",\n  );\n}\nif (\n  action.input.effectiveDate < state.currentBillingCycleStart ||\n  action.input.effectiveDate > state.nextBillingDate\n) {\n  throw new ChangePlanInvalidEffectiveDateError(\n    `effectiveDate ${action.input.effectiveDate} must be within current cycle [${state.currentBillingCycleStart}, ${state.nextBillingDate}]`,\n  );\n}\nif (state.tierPrice == null || state.tierPrice <= 0) {\n  throw new ChangePlanMissingTierPricingError(\n    "Cannot compute proration: state.tierPrice is missing or zero",\n  );\n}\n\nconst totalDays =\n  (new Date(state.nextBillingDate).getTime() -\n    new Date(state.currentBillingCycleStart).getTime()) /\n  (1000 * 60 * 60 * 24);\nconst remainingDays =\n  (new Date(state.nextBillingDate).getTime() -\n    new Date(action.input.effectiveDate).getTime()) /\n  (1000 * 60 * 60 * 24);\nconst prorataFactor = totalDays > 0 ? remainingDays / totalDays : 0;\nconst oldTierAmount = state.tierPrice;\nconst newTierAmount = action.input.newTierPrice;\nconst creditAmount = -1 * prorataFactor * oldTierAmount;\nconst debitAmount = prorataFactor * newTierAmount;\nconst oldTierLabel = state.tierName || "previous tier";\nconst newTierLabel = action.input.newTierName || "new tier";\nconst defaultCurrency =\n  state.tierCurrency || state.globalCurrency || "USD";\n\nstate.debtLineItems.push({\n  id: action.input.creditLineItemId,\n  origin: "SUBSCRIPTION_FEE",\n  status: "FULLY_PAID",\n  invoiced: true,\n  debitAmount: creditAmount,\n  settledAmount: 0,\n  creditApplied: 0,\n  currency: defaultCurrency,\n  chargedAt: action.input.effectiveDate,\n  invoicedAt: action.input.effectiveDate,\n  fullyPaidAt: action.input.effectiveDate,\n  sourceServiceId: null,\n  sourceMetricId: null,\n  sourceGroupId: null,\n  frozen: true,\n  accrualPeriodStart: null,\n  invoiceRef: null,\n  lastPaymentRef: null,\n  description: `Plan change credit \u2014 unused portion of ${oldTierLabel}`,\n});\nstate.totalDebt = (state.totalDebt ?? 0) + creditAmount;\n\nstate.debtLineItems.push({\n  id: action.input.debitLineItemId,\n  origin: "SUBSCRIPTION_FEE",\n  status: "CHARGED",\n  invoiced: false,\n  debitAmount: debitAmount,\n  settledAmount: 0,\n  creditApplied: 0,\n  currency: action.input.newTierCurrency,\n  chargedAt: action.input.effectiveDate,\n  invoicedAt: null,\n  fullyPaidAt: null,\n  sourceServiceId: null,\n  sourceMetricId: null,\n  sourceGroupId: null,\n  frozen: true,\n  accrualPeriodStart: null,\n  invoiceRef: null,\n  lastPaymentRef: null,\n  description: `Plan change debit \u2014 prorated ${newTierLabel}`,\n});\nstate.totalDebt = state.totalDebt + debitAmount;\n\nfor (const slice of state.debtLineItems) {\n  if (slice.origin === "DYNAMIC" && !slice.frozen) {\n    slice.frozen = true;\n    if (\n      state.currentBillingCycleStart &&\n      slice.chargedAt >= state.currentBillingCycleStart\n    ) {\n      state.currentCycleOverage =\n        (state.currentCycleOverage ?? 0) - slice.debitAmount;\n    }\n  }\n}\n\nstate.tierPricingOptionId = action.input.newTierPricingOptionId;\nstate.tierPrice = action.input.newTierPrice;\nstate.tierCurrency = action.input.newTierCurrency;\nif (action.input.newTierName) {\n  state.tierName = action.input.newTierName;\n}',
+              scope: "global",
               errors: [
                 {
                   id: "err-change-plan-not-active",
-                  name: "ChangePlanNotActiveError",
                   code: "CHANGE_PLAN_NOT_ACTIVE",
+                  name: "ChangePlanNotActiveError",
+                  template: "",
                   description:
                     "CHANGE_PLAN can only be applied while the subscription is ACTIVE",
-                  template: "",
                 },
                 {
                   id: "err-billing-cycle-swap-not-supported",
-                  name: "BillingCycleSwapNotYetSupportedError",
                   code: "BILLING_CYCLE_SWAP_NOT_YET_SUPPORTED",
+                  name: "BillingCycleSwapNotYetSupportedError",
+                  template: "",
                   description:
                     "Changing the billing cycle as part of CHANGE_PLAN is not supported in MVP",
-                  template: "",
                 },
                 {
                   id: "err-change-plan-invalid-effective-date",
-                  name: "ChangePlanInvalidEffectiveDateError",
                   code: "CHANGE_PLAN_INVALID_EFFECTIVE_DATE",
+                  name: "ChangePlanInvalidEffectiveDateError",
+                  template: "",
                   description:
                     "effectiveDate must fall inside the current billing cycle window",
-                  template: "",
                 },
                 {
                   id: "err-change-plan-missing-tier-pricing",
-                  name: "ChangePlanMissingTierPricingError",
                   code: "CHANGE_PLAN_MISSING_TIER_PRICING",
+                  name: "ChangePlanMissingTierPricingError",
+                  template: "",
                   description:
                     "Cannot compute proration because the current tier has no positive price",
-                  template: "",
                 },
               ],
+              schema:
+                "input ChangePlanInput {\n    newTierPricingOptionId: OID!\n    effectiveDate: DateTime!\n    newBillingCycle: BillingCycle\n    creditLineItemId: OID!\n    debitLineItemId: OID!\n    newTierName: String\n    newTierPrice: Amount_Money!\n    newTierCurrency: Currency!\n}",
+              reducer:
+                'if (state.status !== "ACTIVE") {\n  throw new ChangePlanNotActiveError(\n    `Cannot change plan on subscription with status ${state.status}`,\n  );\n}\nif (\n  action.input.newBillingCycle &&\n  action.input.newBillingCycle !== state.selectedBillingCycle\n) {\n  throw new BillingCycleSwapNotYetSupportedError(\n    `Billing-cycle swap from ${state.selectedBillingCycle} to ${action.input.newBillingCycle} not supported in MVP`,\n  );\n}\nif (!state.currentBillingCycleStart || !state.nextBillingDate) {\n  throw new ChangePlanInvalidEffectiveDateError(\n    "Subscription has no current billing cycle window",\n  );\n}\nif (\n  action.input.effectiveDate < state.currentBillingCycleStart ||\n  action.input.effectiveDate > state.nextBillingDate\n) {\n  throw new ChangePlanInvalidEffectiveDateError(\n    `effectiveDate ${action.input.effectiveDate} must be within current cycle [${state.currentBillingCycleStart}, ${state.nextBillingDate}]`,\n  );\n}\nif (state.tierPrice == null || state.tierPrice <= 0) {\n  throw new ChangePlanMissingTierPricingError(\n    "Cannot compute proration: state.tierPrice is missing or zero",\n  );\n}\n\nconst totalDays =\n  (new Date(state.nextBillingDate).getTime() -\n    new Date(state.currentBillingCycleStart).getTime()) /\n  (1000 * 60 * 60 * 24);\nconst remainingDays =\n  (new Date(state.nextBillingDate).getTime() -\n    new Date(action.input.effectiveDate).getTime()) /\n  (1000 * 60 * 60 * 24);\nconst prorataFactor = totalDays > 0 ? remainingDays / totalDays : 0;\nconst oldTierAmount = state.tierPrice;\nconst newTierAmount = action.input.newTierPrice;\nconst creditAmount = -1 * prorataFactor * oldTierAmount;\nconst debitAmount = prorataFactor * newTierAmount;\nconst oldTierLabel = state.tierName || "previous tier";\nconst newTierLabel = action.input.newTierName || "new tier";\nconst defaultCurrency =\n  state.tierCurrency || state.globalCurrency || "USD";\n\nstate.debtLineItems.push({\n  id: action.input.creditLineItemId,\n  origin: "SUBSCRIPTION_FEE",\n  status: "FULLY_PAID",\n  invoiced: true,\n  debitAmount: creditAmount,\n  settledAmount: 0,\n  creditApplied: 0,\n  currency: defaultCurrency,\n  chargedAt: action.input.effectiveDate,\n  invoicedAt: action.input.effectiveDate,\n  fullyPaidAt: action.input.effectiveDate,\n  sourceServiceId: null,\n  sourceMetricId: null,\n  sourceGroupId: null,\n  frozen: true,\n  accrualPeriodStart: null,\n  invoiceRef: null,\n  lastPaymentRef: null,\n  description: `Plan change credit \u2014 unused portion of ${oldTierLabel}`,\n});\nstate.totalDebt = (state.totalDebt ?? 0) + creditAmount;\n\nstate.debtLineItems.push({\n  id: action.input.debitLineItemId,\n  origin: "SUBSCRIPTION_FEE",\n  status: "CHARGED",\n  invoiced: false,\n  debitAmount: debitAmount,\n  settledAmount: 0,\n  creditApplied: 0,\n  currency: action.input.newTierCurrency,\n  chargedAt: action.input.effectiveDate,\n  invoicedAt: null,\n  fullyPaidAt: null,\n  sourceServiceId: null,\n  sourceMetricId: null,\n  sourceGroupId: null,\n  frozen: true,\n  accrualPeriodStart: null,\n  invoiceRef: null,\n  lastPaymentRef: null,\n  description: `Plan change debit \u2014 prorated ${newTierLabel}`,\n});\nstate.totalDebt = state.totalDebt + debitAmount;\n\nfor (const slice of state.debtLineItems) {\n  if (slice.origin === "DYNAMIC" && !slice.frozen) {\n    slice.frozen = true;\n    if (\n      state.currentBillingCycleStart &&\n      slice.chargedAt >= state.currentBillingCycleStart\n    ) {\n      state.currentCycleOverage =\n        (state.currentCycleOverage ?? 0) - slice.debitAmount;\n    }\n  }\n}\n\nstate.tierPricingOptionId = action.input.newTierPricingOptionId;\nstate.tierPrice = action.input.newTierPrice;\nstate.tierCurrency = action.input.newTierCurrency;\nif (action.input.newTierName) {\n  state.tierName = action.input.newTierName;\n}',
               examples: [],
-              scope: "global",
+              template:
+                "Mid-cycle tier change. Emits a prorated credit slice for the unused portion of the current tier and a prorated debit slice for the new tier. Updates tier-level state.",
+              description:
+                "Mid-cycle tier change. Emits a prorated credit slice for the unused portion of the current tier and a prorated debit slice for the new tier. Updates tier-level state.",
             },
             {
               id: "op-generate-invoice",
               name: "GENERATE_INVOICE",
-              description:
-                "Operator-initiated invoice generation. Force-accrues every metric, sweeps every outstanding CHARGED slice to INVOICED stamping invoiceRef, and (when past nextBillingDate with advanceCycleIfDue=true) advances the billing cycle. Errors: NoBillingCycleActive, SettlementDateBeforeCycleStart, NoInvoiceableLineItems, SettleMissingSliceId.",
-              schema:
-                "input SettleSliceIdMappingInput {\n    sourceId: OID!\n    sliceId: OID!\n    sourceName: String\n}\n\ninput GenerateInvoiceInput {\n    invoiceId: PHID!\n    generatedAt: DateTime!\n    advanceCycleIfDue: Boolean\n    metricFreezeSliceIds: [SettleSliceIdMappingInput!]!\n    nextCycleRecurringSliceIds: [SettleSliceIdMappingInput!]!\n}",
-              template:
-                "Operator-initiated invoice generation. Force-accrues every metric, sweeps every outstanding CHARGED slice to INVOICED stamping invoiceRef, and (when past nextBillingDate with advanceCycleIfDue=true) advances the billing cycle.",
-              reducer:
-                'if (state.status !== "ACTIVE") {\n  throw new NoBillingCycleActiveError(\n    `Cannot generate invoice when status is ${state.status}`,\n  );\n}\nif (\n  state.currentBillingCycleStart &&\n  action.input.generatedAt < state.currentBillingCycleStart\n) {\n  throw new SettlementDateBeforeCycleStartError(\n    "Invoice generation date is before the current billing cycle start",\n  );\n}\n\nconst billingCycle = state.selectedBillingCycle || "MONTHLY";\nconst generatedAt = action.input.generatedAt;\nconst invoiceId = action.input.invoiceId;\nconst pastBillingBoundary =\n  state.nextBillingDate != null && generatedAt >= state.nextBillingDate;\nconst shouldAdvanceCycle =\n  action.input.advanceCycleIfDue === true &&\n  pastBillingBoundary &&\n  state.autoRenew;\nconst effectiveAccrualDate =\n  state.nextBillingDate && generatedAt > state.nextBillingDate\n    ? state.nextBillingDate\n    : generatedAt;\n\nconst metricFreezeIdMap = new Map();\nfor (const m of action.input.metricFreezeSliceIds) {\n  metricFreezeIdMap.set(m.sourceId, m.sliceId);\n}\nfunction takeMetricFreezeId(metricId) {\n  const id = metricFreezeIdMap.get(metricId);\n  if (!id) {\n    throw new SettleMissingSliceIdError(\n      `No metric-freeze slice ID provided for metric ${metricId}`,\n    );\n  }\n  return id;\n}\n\nfunction forceAccrue(metrics) {\n  for (const metric of metrics) {\n    const alreadyAccrued =\n      metric.lastAccrualDate != null &&\n      metric.lastAccrualDate >= effectiveAccrualDate;\n    if (!alreadyAccrued) {\n      const periodStart = metric.lastAccrualDate;\n      const sliceForPeriod = state.debtLineItems.find(\n        (s) =>\n          s.origin === "DYNAMIC" &&\n          s.sourceMetricId === metric.id &&\n          s.accrualPeriodStart === (periodStart ?? null),\n      );\n      if (sliceForPeriod) {\n        if (!sliceForPeriod.frozen) {\n          freezeDynamicSlice(state, sliceForPeriod);\n        }\n      } else {\n        const cost = calculateOverageCost(metric);\n        if (cost > 0) {\n          appendDebtSlice(state, {\n            id: takeMetricFreezeId(metric.id),\n            origin: "DYNAMIC",\n            status: "CHARGED",\n            invoiced: false,\n            debitAmount: cost,\n            settledAmount: 0,\n            currency:\n              metric.unitCost?.currency ?? state.globalCurrency ?? "USD",\n            chargedAt: effectiveAccrualDate,\n            invoicedAt: null,\n            fullyPaidAt: null,\n            sourceServiceId: null,\n            sourceMetricId: metric.id,\n            sourceGroupId: null,\n            frozen: true,\n            accrualPeriodStart: metric.lastAccrualDate ?? null,\n            invoiceRef: null,\n            lastPaymentRef: null,\n            description: `Overage \u2014 metric ${metric.name} (settlement)`,\n          });\n        }\n      }\n      if (metric.metricType === "CUMULATIVE") {\n        metric.currentUsage = 0;\n      }\n    }\n    metric.lastAccrualDate = effectiveAccrualDate;\n  }\n}\n\nfor (const svc of state.services) {\n  forceAccrue(svc.metrics);\n}\nfor (const group of state.serviceGroups) {\n  for (const svc of group.services) {\n    forceAccrue(svc.metrics);\n  }\n}\n\nlet invoicedCount = 0;\nfor (const slice of state.debtLineItems) {\n  if (slice.status === "FULLY_PAID") continue;\n  if (slice.chargedAt > effectiveAccrualDate) continue;\n  if (slice.invoiceRef) continue;\n  if (slice.status === "CHARGED") {\n    slice.status = "INVOICED";\n    slice.invoiced = true;\n    slice.invoicedAt = generatedAt;\n  }\n  slice.invoiceRef = invoiceId;\n  invoicedCount += 1;\n}\n\nif (invoicedCount === 0) {\n  throw new NoInvoiceableLineItemsError(\n    "No outstanding line items to invoice \u2014 every slice is either FULLY_PAID or already on a prior invoice",\n  );\n}\n\nif (shouldAdvanceCycle) {\n  const recurringIdMap = new Map();\n  for (const m of action.input.nextCycleRecurringSliceIds) {\n    recurringIdMap.set(m.sourceId, m.sliceId);\n  }\n  function takeRecurringId(sourceId) {\n    const id = recurringIdMap.get(sourceId);\n    if (!id) {\n      throw new SettleMissingSliceIdError(\n        `No next-cycle recurring slice ID for source ${sourceId}`,\n      );\n    }\n    return id;\n  }\n\n  const carryOverCreditBalance = getCustomerCreditBalance(state);\n\n  const newCycleStart = state.nextBillingDate ?? generatedAt;\n  for (const group of state.serviceGroups) {\n    if (group.recurringCost) {\n      appendDebtSlice(state, {\n        id: takeRecurringId(group.id),\n        origin: "SUBSCRIPTION_FEE",\n        status: "CHARGED",\n        invoiced: false,\n        debitAmount: group.recurringCost.amount,\n        settledAmount: 0,\n        currency: group.recurringCost.currency,\n        chargedAt: newCycleStart,\n        invoicedAt: null,\n        fullyPaidAt: null,\n        sourceServiceId: null,\n        sourceMetricId: null,\n        sourceGroupId: group.id,\n        frozen: true,\n        accrualPeriodStart: null,\n        invoiceRef: null,\n        lastPaymentRef: null,\n        description: `Recurring fee \u2014 group ${group.name} (cycle renewal)`,\n      });\n    }\n  }\n  for (const svc of state.services) {\n    if (svc.recurringCost) {\n      appendDebtSlice(state, {\n        id: takeRecurringId(svc.id),\n        origin: "SUBSCRIPTION_FEE",\n        status: "CHARGED",\n        invoiced: false,\n        debitAmount: svc.recurringCost.amount,\n        settledAmount: 0,\n        currency: svc.recurringCost.currency,\n        chargedAt: newCycleStart,\n        invoicedAt: null,\n        fullyPaidAt: null,\n        sourceServiceId: svc.id,\n        sourceMetricId: null,\n        sourceGroupId: null,\n        frozen: true,\n        accrualPeriodStart: null,\n        invoiceRef: null,\n        lastPaymentRef: null,\n        description: `Recurring fee \u2014 service ${svc.name ?? svc.id} (cycle renewal)`,\n      });\n    }\n  }\n  consumeCarryOverCredit(state, newCycleStart, carryOverCreditBalance);\n\n  state.currentBillingCycleStart = state.nextBillingDate;\n  if (state.nextBillingDate) {\n    state.nextBillingDate = calculateNextBillingDate(\n      state.nextBillingDate,\n      billingCycle,\n    );\n  }\n  state.currentCycleOverage = 0;\n} else if (\n  action.input.advanceCycleIfDue === true &&\n  pastBillingBoundary &&\n  !state.autoRenew\n) {\n  state.status = "EXPIRING";\n  state.expiringSince = generatedAt;\n}',
+              scope: "global",
               errors: [
                 {
                   id: "err-no-billing-cycle-active",
-                  name: "NoBillingCycleActiveError",
                   code: "NO_BILLING_CYCLE_ACTIVE",
+                  name: "NoBillingCycleActiveError",
+                  template: "",
                   description:
                     "Cannot generate an invoice unless the subscription is ACTIVE",
-                  template: "",
                 },
                 {
                   id: "err-settle-missing-slice-id",
-                  name: "SettleMissingSliceIdError",
                   code: "SETTLE_MISSING_SLICE_ID",
+                  name: "SettleMissingSliceIdError",
+                  template: "",
                   description:
                     "Pre-generated slice ID was not provided for a chargeable source during invoice settlement",
-                  template: "",
                 },
                 {
                   id: "err-no-invoiceable-line-items",
-                  name: "NoInvoiceableLineItemsError",
                   code: "NO_INVOICEABLE_LINE_ITEMS",
+                  name: "NoInvoiceableLineItemsError",
+                  template: "",
                   description:
                     "Every outstanding slice is either FULLY_PAID or already stamped on a prior invoice",
-                  template: "",
                 },
                 {
                   id: "err-settlement-before-cycle-start",
-                  name: "SettlementDateBeforeCycleStartError",
                   code: "SETTLEMENT_DATE_BEFORE_CYCLE_START",
+                  name: "SettlementDateBeforeCycleStartError",
+                  template: "",
                   description:
                     "Invoice generation date precedes the current billing cycle start",
-                  template: "",
                 },
               ],
+              schema:
+                "input SettleSliceIdMappingInput {\n    sourceId: OID!\n    sliceId: OID!\n    sourceName: String\n}\n\ninput GenerateInvoiceInput {\n    invoiceId: PHID!\n    generatedAt: DateTime!\n    advanceCycleIfDue: Boolean\n    metricFreezeSliceIds: [SettleSliceIdMappingInput!]!\n    nextCycleRecurringSliceIds: [SettleSliceIdMappingInput!]!\n}",
+              reducer:
+                'if (state.status !== "ACTIVE") {\n  throw new NoBillingCycleActiveError(\n    `Cannot generate invoice when status is ${state.status}`,\n  );\n}\nif (\n  state.currentBillingCycleStart &&\n  action.input.generatedAt < state.currentBillingCycleStart\n) {\n  throw new SettlementDateBeforeCycleStartError(\n    "Invoice generation date is before the current billing cycle start",\n  );\n}\n\nconst billingCycle = state.selectedBillingCycle || "MONTHLY";\nconst generatedAt = action.input.generatedAt;\nconst invoiceId = action.input.invoiceId;\nconst pastBillingBoundary =\n  state.nextBillingDate != null && generatedAt >= state.nextBillingDate;\nconst shouldAdvanceCycle =\n  action.input.advanceCycleIfDue === true &&\n  pastBillingBoundary &&\n  state.autoRenew;\nconst effectiveAccrualDate =\n  state.nextBillingDate && generatedAt > state.nextBillingDate\n    ? state.nextBillingDate\n    : generatedAt;\n\nconst metricFreezeIdMap = new Map();\nfor (const m of action.input.metricFreezeSliceIds) {\n  metricFreezeIdMap.set(m.sourceId, m.sliceId);\n}\nfunction takeMetricFreezeId(metricId) {\n  const id = metricFreezeIdMap.get(metricId);\n  if (!id) {\n    throw new SettleMissingSliceIdError(\n      `No metric-freeze slice ID provided for metric ${metricId}`,\n    );\n  }\n  return id;\n}\n\nfunction forceAccrue(metrics) {\n  for (const metric of metrics) {\n    const alreadyAccrued =\n      metric.lastAccrualDate != null &&\n      metric.lastAccrualDate >= effectiveAccrualDate;\n    if (!alreadyAccrued) {\n      const periodStart = metric.lastAccrualDate;\n      const sliceForPeriod = state.debtLineItems.find(\n        (s) =>\n          s.origin === "DYNAMIC" &&\n          s.sourceMetricId === metric.id &&\n          s.accrualPeriodStart === (periodStart ?? null),\n      );\n      if (sliceForPeriod) {\n        if (!sliceForPeriod.frozen) {\n          freezeDynamicSlice(state, sliceForPeriod);\n        }\n      } else {\n        const cost = calculateOverageCost(metric);\n        if (cost > 0) {\n          appendDebtSlice(state, {\n            id: takeMetricFreezeId(metric.id),\n            origin: "DYNAMIC",\n            status: "CHARGED",\n            invoiced: false,\n            debitAmount: cost,\n            settledAmount: 0,\n            currency:\n              metric.unitCost?.currency ?? state.globalCurrency ?? "USD",\n            chargedAt: effectiveAccrualDate,\n            invoicedAt: null,\n            fullyPaidAt: null,\n            sourceServiceId: null,\n            sourceMetricId: metric.id,\n            sourceGroupId: null,\n            frozen: true,\n            accrualPeriodStart: metric.lastAccrualDate ?? null,\n            invoiceRef: null,\n            lastPaymentRef: null,\n            description: `Overage \u2014 metric ${metric.name} (settlement)`,\n          });\n        }\n      }\n      if (metric.metricType === "CUMULATIVE") {\n        metric.currentUsage = 0;\n      }\n    }\n    metric.lastAccrualDate = effectiveAccrualDate;\n  }\n}\n\nfor (const svc of state.services) {\n  forceAccrue(svc.metrics);\n}\nfor (const group of state.serviceGroups) {\n  for (const svc of group.services) {\n    forceAccrue(svc.metrics);\n  }\n}\n\nlet invoicedCount = 0;\nfor (const slice of state.debtLineItems) {\n  if (slice.status === "FULLY_PAID") continue;\n  if (slice.chargedAt > effectiveAccrualDate) continue;\n  if (slice.invoiceRef) continue;\n  if (slice.status === "CHARGED") {\n    slice.status = "INVOICED";\n    slice.invoiced = true;\n    slice.invoicedAt = generatedAt;\n  }\n  slice.invoiceRef = invoiceId;\n  invoicedCount += 1;\n}\n\nif (invoicedCount === 0) {\n  throw new NoInvoiceableLineItemsError(\n    "No outstanding line items to invoice \u2014 every slice is either FULLY_PAID or already on a prior invoice",\n  );\n}\n\nif (shouldAdvanceCycle) {\n  const recurringIdMap = new Map();\n  for (const m of action.input.nextCycleRecurringSliceIds) {\n    recurringIdMap.set(m.sourceId, m.sliceId);\n  }\n  function takeRecurringId(sourceId) {\n    const id = recurringIdMap.get(sourceId);\n    if (!id) {\n      throw new SettleMissingSliceIdError(\n        `No next-cycle recurring slice ID for source ${sourceId}`,\n      );\n    }\n    return id;\n  }\n\n  const carryOverCreditBalance = getCustomerCreditBalance(state);\n\n  const newCycleStart = state.nextBillingDate ?? generatedAt;\n  for (const group of state.serviceGroups) {\n    if (group.recurringCost) {\n      appendDebtSlice(state, {\n        id: takeRecurringId(group.id),\n        origin: "SUBSCRIPTION_FEE",\n        status: "CHARGED",\n        invoiced: false,\n        debitAmount: group.recurringCost.amount,\n        settledAmount: 0,\n        currency: group.recurringCost.currency,\n        chargedAt: newCycleStart,\n        invoicedAt: null,\n        fullyPaidAt: null,\n        sourceServiceId: null,\n        sourceMetricId: null,\n        sourceGroupId: group.id,\n        frozen: true,\n        accrualPeriodStart: null,\n        invoiceRef: null,\n        lastPaymentRef: null,\n        description: `Recurring fee \u2014 group ${group.name} (cycle renewal)`,\n      });\n    }\n  }\n  for (const svc of state.services) {\n    if (svc.recurringCost) {\n      appendDebtSlice(state, {\n        id: takeRecurringId(svc.id),\n        origin: "SUBSCRIPTION_FEE",\n        status: "CHARGED",\n        invoiced: false,\n        debitAmount: svc.recurringCost.amount,\n        settledAmount: 0,\n        currency: svc.recurringCost.currency,\n        chargedAt: newCycleStart,\n        invoicedAt: null,\n        fullyPaidAt: null,\n        sourceServiceId: svc.id,\n        sourceMetricId: null,\n        sourceGroupId: null,\n        frozen: true,\n        accrualPeriodStart: null,\n        invoiceRef: null,\n        lastPaymentRef: null,\n        description: `Recurring fee \u2014 service ${svc.name ?? svc.id} (cycle renewal)`,\n      });\n    }\n  }\n  consumeCarryOverCredit(state, newCycleStart, carryOverCreditBalance);\n\n  state.currentBillingCycleStart = state.nextBillingDate;\n  if (state.nextBillingDate) {\n    state.nextBillingDate = calculateNextBillingDate(\n      state.nextBillingDate,\n      billingCycle,\n    );\n  }\n  state.currentCycleOverage = 0;\n} else if (\n  action.input.advanceCycleIfDue === true &&\n  pastBillingBoundary &&\n  !state.autoRenew\n) {\n  state.status = "EXPIRING";\n  state.expiringSince = generatedAt;\n}',
               examples: [],
-              scope: "global",
+              template:
+                "Operator-initiated invoice generation. Force-accrues every metric, sweeps every outstanding CHARGED slice to INVOICED stamping invoiceRef, and (when past nextBillingDate with advanceCycleIfDue=true) advances the billing cycle.",
+              description:
+                "Operator-initiated invoice generation. Force-accrues every metric, sweeps every outstanding CHARGED slice to INVOICED stamping invoiceRef, and (when past nextBillingDate with advanceCycleIfDue=true) advances the billing cycle. Errors: NoBillingCycleActive, SettlementDateBeforeCycleStart, NoInvoiceableLineItems, SettleMissingSliceId.",
             },
           ],
           description:
@@ -656,7 +656,7 @@ export const documentModel: DocumentModelGlobalState = {
                 },
               ],
               schema:
-                "input AddServiceGroupInput {\n    groupId: OID!\n    name: String!\n    optional: Boolean!\n    costType: GroupCostType\n    setupAmount: Amount_Money\n    setupCurrency: Currency\n    recurringAmount: Amount_Money\n    recurringCurrency: Currency\n    recurringBillingCycle: BillingCycle\n    recurringDiscount: DiscountServiceInfoInput\n    effectiveDate: DateTime!\n}",
+                "input AddServiceGroupInput {\n    groupId: OID!\n    name: String!\n    optional: Boolean!\n    costType: GroupCostType\n    setupAmount: Amount_Money\n    setupCurrency: Currency\n    recurringAmount: Amount_Money\n    recurringCurrency: Currency\n    recurringBillingCycle: BillingCycle\n    recurringDiscount: DiscountServiceInfoInput\n    effectiveDate: DateTime!\n    setupSliceId: OID!\n    recurringSliceId: OID!\n}",
               reducer:
                 'if (state.status !== "PENDING" && state.status !== "ACTIVE") {\n  throw new StructuralChangeNotAllowedAddGroupError(`Cannot add service group when status is ${state.status}`);\n}\nstate.serviceGroups.push({\n  id: action.input.groupId,\n  name: action.input.name,\n  optional: action.input.optional,\n  costType: action.input.costType || null,\n  setupCost: action.input.setupAmount && action.input.setupCurrency ? {\n    amount: action.input.setupAmount,\n    currency: action.input.setupCurrency,\n    paymentDate: null,\n  } : null,\n  recurringCost: action.input.recurringAmount && action.input.recurringCurrency && action.input.recurringBillingCycle ? {\n    amount: action.input.recurringAmount,\n    currency: action.input.recurringCurrency,\n    billingCycle: action.input.recurringBillingCycle,\n    lastPaymentDate: null,\n    discount: action.input.recurringDiscount ? {\n      originalAmount: action.input.recurringDiscount.originalAmount,\n      discountType: action.input.recurringDiscount.discountType,\n      discountValue: action.input.recurringDiscount.discountValue,\n      source: action.input.recurringDiscount.source,\n    } : null,\n  } : null,\n  services: [],\n});\nif (state.status === "ACTIVE" && action.input.recurringAmount && state.currentBillingCycleStart && state.nextBillingDate) {\n  const totalDays = (new Date(state.nextBillingDate).getTime() - new Date(state.currentBillingCycleStart).getTime()) / (1000 * 60 * 60 * 24);\n  const remainingDays = (new Date(state.nextBillingDate).getTime() - new Date(action.input.effectiveDate).getTime()) / (1000 * 60 * 60 * 24);\n  if (totalDays > 0 && remainingDays > 0) {\n    const proratedCost = (remainingDays / totalDays) * action.input.recurringAmount;\n    if (proratedCost > 0) {\n      state.totalDebt = (state.totalDebt ?? 0) + proratedCost;\n    }\n  }\n}\nif (state.status === "ACTIVE" && action.input.setupAmount) {\n  state.totalDebt = (state.totalDebt ?? 0) + action.input.setupAmount;\n}',
               examples: [],
@@ -685,7 +685,7 @@ export const documentModel: DocumentModelGlobalState = {
                 },
               ],
               schema:
-                "input RemoveServiceGroupInput {\n    groupId: OID!\n    effectiveDate: DateTime!\n}",
+                "input RemoveServiceGroupInput {\n    groupId: OID!\n    effectiveDate: DateTime!\n    creditSliceId: OID!\n}",
               reducer:
                 'if (state.status !== "PENDING" && state.status !== "ACTIVE") {\n  throw new StructuralChangeNotAllowedRemoveGroupError(`Cannot remove service group when status is ${state.status}`);\n}\nconst index = state.serviceGroups.findIndex((g) => g.id === action.input.groupId);\nif (index === -1) {\n  throw new RemoveServiceGroupNotFoundError(`Service group with ID ${action.input.groupId} not found`);\n}\nconst group = state.serviceGroups[index];\nif (state.status === "ACTIVE" && group.recurringCost && state.currentBillingCycleStart && state.nextBillingDate) {\n  const totalDays = (new Date(state.nextBillingDate).getTime() - new Date(state.currentBillingCycleStart).getTime()) / (1000 * 60 * 60 * 24);\n  const remainingDays = (new Date(state.nextBillingDate).getTime() - new Date(action.input.effectiveDate).getTime()) / (1000 * 60 * 60 * 24);\n  if (totalDays > 0 && remainingDays > 0) {\n    const proratedCredit = (remainingDays / totalDays) * group.recurringCost.amount;\n    if (proratedCredit > 0) {\n      state.totalCredit = (state.totalCredit ?? 0) + proratedCredit;\n    }\n  }\n}\nstate.serviceGroups.splice(index, 1);',
               examples: [],
@@ -863,7 +863,7 @@ export const documentModel: DocumentModelGlobalState = {
                 },
               ],
               schema:
-                "input UpdateMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    currentTime: DateTime!\n    currentUsage: Int!\n    isAdjustment: Boolean\n}",
+                "input UpdateMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    currentTime: DateTime!\n    currentUsage: Int!\n    isAdjustment: Boolean\n    newSliceId: OID!\n}",
               reducer:
                 'if (state.status !== "ACTIVE") {\n  throw new SubscriptionNotActiveUpdateUsageError(`Cannot update metric usage when status is ${state.status}`);\n}\nfunction findSvc(serviceId) {\n  const flat = state.services.find((s) => s.id === serviceId);\n  if (flat) return flat;\n  for (const group of state.serviceGroups) {\n    const grouped = group.services.find((s) => s.id === serviceId);\n    if (grouped) return grouped;\n  }\n  return undefined;\n}\nconst svc = findSvc(action.input.serviceId);\nif (!svc) {\n  throw new UpdateMetricUsageServiceNotFoundError(`Service with ID ${action.input.serviceId} not found`);\n}\nconst metric = svc.metrics.find((m) => m.id === action.input.metricId);\nif (!metric) {\n  throw new UpdateMetricUsageNotFoundError(`Metric with ID ${action.input.metricId} not found`);\n}\nif (action.input.isAdjustment === true) {\n  metric.currentUsage = action.input.currentUsage;\n} else {\n  metric.currentUsage = metric.paidLimit != null ? Math.min(action.input.currentUsage, metric.paidLimit) : action.input.currentUsage;\n}',
               examples: [],
@@ -927,7 +927,7 @@ export const documentModel: DocumentModelGlobalState = {
                 },
               ],
               schema:
-                "input IncrementMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    currentTime: DateTime!\n    incrementBy: Int!\n}",
+                "input IncrementMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    currentTime: DateTime!\n    incrementBy: Int!\n    newSliceId: OID!\n}",
               reducer:
                 'if (state.status !== "ACTIVE") {\n  throw new SubscriptionNotActiveIncrementUsageError(`Cannot increment metric usage when status is ${state.status}`);\n}\nfunction findSvc(serviceId) {\n  const flat = state.services.find((s) => s.id === serviceId);\n  if (flat) return flat;\n  for (const group of state.serviceGroups) {\n    const grouped = group.services.find((s) => s.id === serviceId);\n    if (grouped) return grouped;\n  }\n  return undefined;\n}\nconst svc = findSvc(action.input.serviceId);\nif (!svc) {\n  throw new IncrementMetricUsageServiceNotFoundError(`Service with ID ${action.input.serviceId} not found`);\n}\nconst metric = svc.metrics.find((m) => m.id === action.input.metricId);\nif (!metric) {\n  throw new IncrementMetricUsageNotFoundError(`Metric with ID ${action.input.metricId} not found`);\n}\nconst newUsage = metric.currentUsage + action.input.incrementBy;\nmetric.currentUsage = metric.paidLimit != null ? Math.min(newUsage, metric.paidLimit) : newUsage;',
               examples: [],
@@ -963,7 +963,7 @@ export const documentModel: DocumentModelGlobalState = {
                 },
               ],
               schema:
-                "input DecrementMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    currentTime: DateTime!\n    decrementBy: Int!\n}",
+                "input DecrementMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    currentTime: DateTime!\n    decrementBy: Int!\n    newSliceId: OID!\n}",
               reducer:
                 'if (state.status !== "ACTIVE") {\n  throw new SubscriptionNotActiveDecrementUsageError(`Cannot decrement metric usage when status is ${state.status}`);\n}\nfunction findSvc(serviceId) {\n  const flat = state.services.find((s) => s.id === serviceId);\n  if (flat) return flat;\n  for (const group of state.serviceGroups) {\n    const grouped = group.services.find((s) => s.id === serviceId);\n    if (grouped) return grouped;\n  }\n  return undefined;\n}\nconst svc = findSvc(action.input.serviceId);\nif (!svc) {\n  throw new DecrementMetricUsageServiceNotFoundError(`Service with ID ${action.input.serviceId} not found`);\n}\nconst metric = svc.metrics.find((m) => m.id === action.input.metricId);\nif (!metric) {\n  throw new DecrementMetricUsageNotFoundError(`Metric with ID ${action.input.metricId} not found`);\n}\nmetric.currentUsage -= action.input.decrementBy;',
               examples: [],
@@ -1001,15 +1001,15 @@ export const documentModel: DocumentModelGlobalState = {
                 },
                 {
                   id: "err-accrue-missing-slice-id",
-                  name: "AccrueMissingSliceIdError",
                   code: "ACCRUE_MISSING_SLICE_ID",
+                  name: "AccrueMissingSliceIdError",
+                  template: "",
                   description:
                     "Pre-generated slice IDs were exhausted while accruing metric usage across cycle boundaries",
-                  template: "",
                 },
               ],
               schema:
-                "input AccrueMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    accrualDate: DateTime!\n}",
+                "input AccrueMetricUsageInput {\n    serviceId: OID!\n    metricId: OID!\n    accrualDate: DateTime!\n    newSliceIds: [OID!]!\n}",
               reducer:
                 'if (state.status !== "ACTIVE") {\n  throw new SubscriptionNotActiveAccrueMetricUsageError(`Cannot accrue metric usage when status is ${state.status}`);\n}\nfunction findSvc(serviceId) {\n  const flat = state.services.find((s) => s.id === serviceId);\n  if (flat) return flat;\n  for (const group of state.serviceGroups) {\n    const grouped = group.services.find((s) => s.id === serviceId);\n    if (grouped) return grouped;\n  }\n  return undefined;\n}\nconst svc = findSvc(action.input.serviceId);\nif (!svc) {\n  throw new AccrueMetricUsageServiceNotFoundError(`Service with ID ${action.input.serviceId} not found`);\n}\nconst metric = svc.metrics.find((m) => m.id === action.input.metricId);\nif (!metric) {\n  throw new AccrueMetricUsageMetricNotFoundError(`Metric with ID ${action.input.metricId} not found`);\n}\n\nif (!metric.lastAccrualDate) {\n  metric.lastAccrualDate = action.input.accrualDate;\n  return;\n}\n\nfunction addAccrualPeriod(fromISO, cycle) {\n  const d = new Date(fromISO);\n  switch (cycle) {\n    case "HOURLY": d.setUTCHours(d.getUTCHours() + 1); return d.toISOString();\n    case "DAILY": d.setUTCDate(d.getUTCDate() + 1); return d.toISOString();\n    case "WEEKLY": d.setUTCDate(d.getUTCDate() + 7); return d.toISOString();\n    case "MONTHLY": d.setUTCMonth(d.getUTCMonth() + 1); return d.toISOString();\n    case "QUARTERLY": d.setUTCMonth(d.getUTCMonth() + 3); return d.toISOString();\n    case "SEMI_ANNUAL": d.setUTCMonth(d.getUTCMonth() + 6); return d.toISOString();\n    case "ANNUAL": d.setUTCFullYear(d.getUTCFullYear() + 1); return d.toISOString();\n    default: d.setUTCMonth(d.getUTCMonth() + 1); return d.toISOString();\n  }\n}\n\nlet nextBoundary = addAccrualPeriod(metric.lastAccrualDate, metric.accrualCycle);\nlet iterations = 0;\nwhile (action.input.accrualDate >= nextBoundary && iterations < 10000) {\n  if (metric.unitCost) {\n    const freeLimit = metric.freeLimit ?? 0;\n    let overage = Math.max(0, metric.currentUsage - freeLimit);\n    if (metric.paidLimit) {\n      overage = Math.min(overage, metric.paidLimit - freeLimit);\n    }\n    const cost = overage * metric.unitCost.amount;\n    if (cost > 0) {\n      state.totalDebt = (state.totalDebt ?? 0) + cost;\n    }\n  }\n  if (metric.metricType === "CUMULATIVE") {\n    metric.currentUsage = 0;\n  }\n  metric.lastAccrualDate = nextBoundary;\n  nextBoundary = addAccrualPeriod(nextBoundary, metric.accrualCycle);\n  iterations += 1;\n}',
               examples: [],
@@ -1055,174 +1055,174 @@ export const documentModel: DocumentModelGlobalState = {
         {
           id: "mod-debt-line-items",
           name: "debt-line-items",
-          description:
-            "Operator-driven lifecycle ops for individual debt slices: status flips (CHARGED \u2192 INVOICED) and payment confirmation (\u2192 PARTIALLY_PAID / FULLY_PAID). Engine never auto-flips status \u2014 these are explicit operator actions per Q3 (2026-05-01).",
           operations: [
             {
               id: "op-mark-line-item-invoiced",
               name: "MARK_LINE_ITEM_INVOICED",
-              description:
-                "Operator-driven flip of a debt line item from CHARGED to INVOICED. Dispatched when an external invoice document is generated. The optional invoiceRef PHID points to that future invoice doc.",
-              schema:
-                "input MarkLineItemInvoicedInput {\n    lineItemId: OID!\n    invoicedAt: DateTime!\n    invoiceRef: PHID\n}",
-              template:
-                "Operator-driven flip of a debt line item from CHARGED to INVOICED. Dispatched when an external invoice document is generated. The optional invoiceRef PHID points to that future invoice doc.",
-              reducer:
-                "const slice = state.debtLineItems.find(s => s.id === action.input.lineItemId);\nif (!slice) {\n  throw new MarkLineItemNotFoundError(`No debt line item with id ${action.input.lineItemId}`);\n}\nif (slice.status !== 'CHARGED') {\n  throw new MarkLineItemInvalidStatusTransitionError(`Cannot invoice slice in status ${slice.status}; expected CHARGED`);\n}\nslice.status = 'INVOICED';\nslice.invoiced = true;\nslice.invoicedAt = action.input.invoicedAt;\nif (action.input.invoiceRef) {\n  slice.invoiceRef = action.input.invoiceRef;\n}\n// No aggregate change \u2014 debitAmount/settledAmount unchanged.",
+              scope: "global",
               errors: [
                 {
                   id: "err-mark-line-item-invalid-status",
-                  name: "MarkLineItemInvalidStatusTransitionError",
                   code: "INVALID_STATUS_TRANSITION_MARK_INVOICED",
+                  name: "MarkLineItemInvalidStatusTransitionError",
+                  template: "",
                   description:
                     "Slice must be in CHARGED status to be marked INVOICED. Already-invoiced or paid slices cannot be re-flipped.",
-                  template: "",
                 },
                 {
                   id: "err-dynamic-slice-not-yet-chargeable",
-                  name: "DynamicSliceNotYetChargeableError",
                   code: "DYNAMIC_SLICE_NOT_YET_CHARGEABLE",
+                  name: "DynamicSliceNotYetChargeableError",
+                  template: "",
                   description:
                     "DYNAMIC overage slices are not chargeable until the accrual cycle closes (frozen=true)",
-                  template: "",
                 },
                 {
                   id: "err-mark-line-item-not-found",
-                  name: "MarkLineItemNotFoundError",
                   code: "LINE_ITEM_NOT_FOUND_MARK_INVOICED",
+                  name: "MarkLineItemNotFoundError",
+                  template: "",
                   description:
                     "No debt line item with the given lineItemId exists on this subscription.",
-                  template: "",
                 },
               ],
+              schema:
+                "input MarkLineItemInvoicedInput {\n    lineItemId: OID!\n    invoicedAt: DateTime!\n    invoiceRef: PHID\n}",
+              reducer:
+                "const slice = state.debtLineItems.find(s => s.id === action.input.lineItemId);\nif (!slice) {\n  throw new MarkLineItemNotFoundError(`No debt line item with id ${action.input.lineItemId}`);\n}\nif (slice.status !== 'CHARGED') {\n  throw new MarkLineItemInvalidStatusTransitionError(`Cannot invoice slice in status ${slice.status}; expected CHARGED`);\n}\nslice.status = 'INVOICED';\nslice.invoiced = true;\nslice.invoicedAt = action.input.invoicedAt;\nif (action.input.invoiceRef) {\n  slice.invoiceRef = action.input.invoiceRef;\n}\n// No aggregate change \u2014 debitAmount/settledAmount unchanged.",
               examples: [],
-              scope: "global",
+              template:
+                "Operator-driven flip of a debt line item from CHARGED to INVOICED. Dispatched when an external invoice document is generated. The optional invoiceRef PHID points to that future invoice doc.",
+              description:
+                "Operator-driven flip of a debt line item from CHARGED to INVOICED. Dispatched when an external invoice document is generated. The optional invoiceRef PHID points to that future invoice doc.",
             },
             {
               id: "op-confirm-line-item-payment",
               name: "CONFIRM_LINE_ITEM_PAYMENT",
-              description:
-                "Operator-driven payment confirmation against a specific debt line item. Increments settledAmount and advances status (INVOICED \u2192 PARTIALLY_PAID \u2192 FULLY_PAID). Pre-MVP requirement: slice must be INVOICED first (no payment-before-invoice in MVP per Q3).",
-              schema:
-                "input ConfirmLineItemPaymentInput {\n    lineItemId: OID!\n    amount: Amount_Money!\n    paymentDate: DateTime!\n    paymentRef: PHID\n}",
-              template:
-                "Operator-driven payment confirmation against a specific debt line item. Increments settledAmount and advances status (INVOICED \u2192 PARTIALLY_PAID \u2192 FULLY_PAID). Pre-MVP requirement: slice must be INVOICED first (no payment-before-invoice in MVP per Q3).",
-              reducer:
-                'const slice = state.debtLineItems.find(\n  (s) => s.id === action.input.lineItemId,\n);\nif (!slice) {\n  throw new ConfirmLineItemNotFoundError(\n    `No debt line item with id ${action.input.lineItemId}`,\n  );\n}\nif (action.input.amount <= 0) {\n  throw new InvalidPaymentAmountError(\n    "Payment amount must be greater than zero",\n  );\n}\nif (slice.status === "CHARGED") {\n  throw new ConfirmLineItemInvalidStatusTransitionError(\n    "Slice must be INVOICED before payment can be confirmed",\n  );\n}\nif (slice.status === "FULLY_PAID") {\n  throw new ConfirmLineItemInvalidStatusTransitionError(\n    "Slice is already fully paid",\n  );\n}\nif (slice.settledAmount + action.input.amount > slice.debitAmount + 0.005) {\n  throw new OverPaymentError(\n    `Payment of ${action.input.amount} would exceed remaining ${slice.debitAmount - slice.settledAmount}`,\n  );\n}\nslice.settledAmount = slice.settledAmount + action.input.amount;\nstate.totalCredit = (state.totalCredit ?? 0) + action.input.amount;\nconst EPS = 0.005;\nif (slice.settledAmount >= slice.debitAmount - EPS) {\n  slice.settledAmount = slice.debitAmount;\n  slice.status = "FULLY_PAID";\n  slice.fullyPaidAt = action.input.paymentDate;\n} else {\n  slice.status = "PARTIALLY_PAID";\n}\nif (action.input.paymentRef) {\n  slice.lastPaymentRef = action.input.paymentRef;\n}',
+              scope: "global",
               errors: [
                 {
                   id: "err-confirm-line-item-not-found",
-                  name: "ConfirmLineItemNotFoundError",
                   code: "LINE_ITEM_NOT_FOUND_CONFIRM_PAYMENT",
+                  name: "ConfirmLineItemNotFoundError",
+                  template: "",
                   description:
                     "No debt line item with the given lineItemId exists on this subscription.",
-                  template: "",
                 },
                 {
                   id: "err-confirm-line-item-invalid-status",
-                  name: "ConfirmLineItemInvalidStatusTransitionError",
                   code: "INVALID_STATUS_TRANSITION_CONFIRM_PAYMENT",
+                  name: "ConfirmLineItemInvalidStatusTransitionError",
+                  template: "",
                   description:
                     "Slice must be at least INVOICED before payment can be confirmed (and not already FULLY_PAID). Pre-MVP: payment-before-invoice not supported.",
-                  template: "",
                 },
                 {
                   id: "err-confirm-line-item-overpayment",
-                  name: "OverPaymentError",
                   code: "OVERPAYMENT",
+                  name: "OverPaymentError",
+                  template: "",
                   description:
                     "Payment amount would push settledAmount above debitAmount. Use a smaller amount, or a credit adjustment for explicit overpayment.",
-                  template: "",
                 },
                 {
                   id: "err-confirm-line-item-invalid-amount",
-                  name: "InvalidPaymentAmountError",
                   code: "INVALID_PAYMENT_AMOUNT",
-                  description: "Payment amount must be greater than zero.",
+                  name: "InvalidPaymentAmountError",
                   template: "",
+                  description: "Payment amount must be greater than zero.",
                 },
               ],
+              schema:
+                "input ConfirmLineItemPaymentInput {\n    lineItemId: OID!\n    amount: Amount_Money!\n    paymentDate: DateTime!\n    paymentRef: PHID\n}",
+              reducer:
+                'const slice = state.debtLineItems.find(\n  (s) => s.id === action.input.lineItemId,\n);\nif (!slice) {\n  throw new ConfirmLineItemNotFoundError(\n    `No debt line item with id ${action.input.lineItemId}`,\n  );\n}\nif (action.input.amount <= 0) {\n  throw new InvalidPaymentAmountError(\n    "Payment amount must be greater than zero",\n  );\n}\nif (slice.status === "CHARGED") {\n  throw new ConfirmLineItemInvalidStatusTransitionError(\n    "Slice must be INVOICED before payment can be confirmed",\n  );\n}\nif (slice.status === "FULLY_PAID") {\n  throw new ConfirmLineItemInvalidStatusTransitionError(\n    "Slice is already fully paid",\n  );\n}\nif (slice.settledAmount + action.input.amount > slice.debitAmount + 0.005) {\n  throw new OverPaymentError(\n    `Payment of ${action.input.amount} would exceed remaining ${slice.debitAmount - slice.settledAmount}`,\n  );\n}\nslice.settledAmount = slice.settledAmount + action.input.amount;\nstate.totalCredit = (state.totalCredit ?? 0) + action.input.amount;\nconst EPS = 0.005;\nif (slice.settledAmount >= slice.debitAmount - EPS) {\n  slice.settledAmount = slice.debitAmount;\n  slice.status = "FULLY_PAID";\n  slice.fullyPaidAt = action.input.paymentDate;\n} else {\n  slice.status = "PARTIALLY_PAID";\n}\nif (action.input.paymentRef) {\n  slice.lastPaymentRef = action.input.paymentRef;\n}',
               examples: [],
-              scope: "global",
+              template:
+                "Operator-driven payment confirmation against a specific debt line item. Increments settledAmount and advances status (INVOICED \u2192 PARTIALLY_PAID \u2192 FULLY_PAID). Pre-MVP requirement: slice must be INVOICED first (no payment-before-invoice in MVP per Q3).",
+              description:
+                "Operator-driven payment confirmation against a specific debt line item. Increments settledAmount and advances status (INVOICED \u2192 PARTIALLY_PAID \u2192 FULLY_PAID). Pre-MVP requirement: slice must be INVOICED first (no payment-before-invoice in MVP per Q3).",
             },
             {
               id: "op-report-payment",
               name: "REPORT_PAYMENT",
-              description:
-                "Bulk payment that allocates across outstanding debt slices via FIFO-within-priority (Setup \u2192 Subscription \u2192 Dynamic, oldest first).",
-              schema:
-                "input ReportPaymentInput {\n    amount: Amount_Money!\n    paymentDate: DateTime!\n    paymentRef: PHID\n}",
-              template:
-                "Bulk payment that allocates across outstanding debt slices via FIFO-within-priority (Setup \u2192 Subscription \u2192 Dynamic, oldest first).",
-              reducer:
-                'if (action.input.amount <= 0) {\n  throw new ReportPaymentInvalidAmountError(\n    "Payment amount must be greater than zero",\n  );\n}\nconst outstanding = state.debtLineItems.reduce((sum, s) => {\n  if (s.status === "FULLY_PAID") return sum;\n  return sum + Math.max(0, s.debitAmount - s.settledAmount);\n}, 0);\nif (outstanding <= 0) {\n  throw new ReportPaymentNoDebtError(\n    "No outstanding debt to allocate payment against",\n  );\n}\n\nconst ORIGIN_PRIORITY = {\n  SETUP: 0,\n  SUBSCRIPTION_FEE: 1,\n  DYNAMIC: 2,\n  ESTIMATED_USAGE: 3,\n  RECONCILIATION: 4,\n};\nconst queue = state.debtLineItems\n  .filter((s) => s.status !== "FULLY_PAID" && s.debitAmount - s.settledAmount > 0)\n  .slice()\n  .sort((a, b) => {\n    const ap = ORIGIN_PRIORITY[a.origin] ?? 99;\n    const bp = ORIGIN_PRIORITY[b.origin] ?? 99;\n    if (ap !== bp) return ap - bp;\n    return a.chargedAt < b.chargedAt ? -1 : 1;\n  });\n\nconst EPS = 0.005;\nlet remaining = action.input.amount;\nfor (const ref of queue) {\n  if (remaining <= 0) break;\n  const slice = state.debtLineItems.find((s) => s.id === ref.id);\n  if (!slice) continue;\n  const owed = slice.debitAmount - slice.settledAmount;\n  if (owed <= 0) continue;\n  const apply = Math.min(remaining, owed);\n  slice.settledAmount += apply;\n  remaining -= apply;\n  if (slice.status === "CHARGED") {\n    slice.status = "INVOICED";\n    slice.invoiced = true;\n    slice.invoicedAt = action.input.paymentDate;\n  }\n  if (slice.settledAmount >= slice.debitAmount - EPS) {\n    slice.settledAmount = slice.debitAmount;\n    slice.status = "FULLY_PAID";\n    slice.fullyPaidAt = action.input.paymentDate;\n  } else {\n    slice.status = "PARTIALLY_PAID";\n  }\n  if (action.input.paymentRef) {\n    slice.lastPaymentRef = action.input.paymentRef;\n  }\n}\nstate.totalCredit = (state.totalCredit ?? 0) + action.input.amount;',
+              scope: "global",
               errors: [
                 {
                   id: "err-report-payment-invalid-amount",
-                  name: "ReportPaymentInvalidAmountError",
                   code: "REPORT_PAYMENT_INVALID_AMOUNT",
-                  description: "Payment amount must be greater than zero",
+                  name: "ReportPaymentInvalidAmountError",
                   template: "",
+                  description: "Payment amount must be greater than zero",
                 },
                 {
                   id: "err-report-payment-no-debt",
-                  name: "ReportPaymentNoDebtError",
                   code: "REPORT_PAYMENT_NO_DEBT",
+                  name: "ReportPaymentNoDebtError",
+                  template: "",
                   description:
                     "No outstanding debt to allocate payment against",
-                  template: "",
                 },
               ],
+              schema:
+                "input ReportPaymentInput {\n    amount: Amount_Money!\n    paymentDate: DateTime!\n    paymentRef: PHID\n}",
+              reducer:
+                'if (action.input.amount <= 0) {\n  throw new ReportPaymentInvalidAmountError(\n    "Payment amount must be greater than zero",\n  );\n}\nconst outstanding = state.debtLineItems.reduce((sum, s) => {\n  if (s.status === "FULLY_PAID") return sum;\n  return sum + Math.max(0, s.debitAmount - s.settledAmount);\n}, 0);\nif (outstanding <= 0) {\n  throw new ReportPaymentNoDebtError(\n    "No outstanding debt to allocate payment against",\n  );\n}\n\nconst ORIGIN_PRIORITY = {\n  SETUP: 0,\n  SUBSCRIPTION_FEE: 1,\n  DYNAMIC: 2,\n  ESTIMATED_USAGE: 3,\n  RECONCILIATION: 4,\n};\nconst queue = state.debtLineItems\n  .filter((s) => s.status !== "FULLY_PAID" && s.debitAmount - s.settledAmount > 0)\n  .slice()\n  .sort((a, b) => {\n    const ap = ORIGIN_PRIORITY[a.origin] ?? 99;\n    const bp = ORIGIN_PRIORITY[b.origin] ?? 99;\n    if (ap !== bp) return ap - bp;\n    return a.chargedAt < b.chargedAt ? -1 : 1;\n  });\n\nconst EPS = 0.005;\nlet remaining = action.input.amount;\nfor (const ref of queue) {\n  if (remaining <= 0) break;\n  const slice = state.debtLineItems.find((s) => s.id === ref.id);\n  if (!slice) continue;\n  const owed = slice.debitAmount - slice.settledAmount;\n  if (owed <= 0) continue;\n  const apply = Math.min(remaining, owed);\n  slice.settledAmount += apply;\n  remaining -= apply;\n  if (slice.status === "CHARGED") {\n    slice.status = "INVOICED";\n    slice.invoiced = true;\n    slice.invoicedAt = action.input.paymentDate;\n  }\n  if (slice.settledAmount >= slice.debitAmount - EPS) {\n    slice.settledAmount = slice.debitAmount;\n    slice.status = "FULLY_PAID";\n    slice.fullyPaidAt = action.input.paymentDate;\n  } else {\n    slice.status = "PARTIALLY_PAID";\n  }\n  if (action.input.paymentRef) {\n    slice.lastPaymentRef = action.input.paymentRef;\n  }\n}\nstate.totalCredit = (state.totalCredit ?? 0) + action.input.amount;',
               examples: [],
-              scope: "global",
+              template:
+                "Bulk payment that allocates across outstanding debt slices via FIFO-within-priority (Setup \u2192 Subscription \u2192 Dynamic, oldest first).",
+              description:
+                "Bulk payment that allocates across outstanding debt slices via FIFO-within-priority (Setup \u2192 Subscription \u2192 Dynamic, oldest first).",
             },
             {
               id: "op-apply-credit",
               name: "APPLY_CREDIT",
-              description:
-                "Virtual payment that erases outstanding debt via the same FIFO-within-priority allocator. Used for refunds, goodwill credits, or operator adjustments.",
-              schema:
-                "input ApplyCreditInput {\n    amount: Amount_Money!\n    creditDate: DateTime!\n    reason: String!\n}",
-              template:
-                "Virtual payment that erases outstanding debt via the same FIFO-within-priority allocator. Used for refunds, goodwill credits, or operator adjustments.",
-              reducer:
-                'if (action.input.amount <= 0) {\n  throw new ApplyCreditInvalidAmountError(\n    "Credit amount must be greater than zero",\n  );\n}\nconst outstanding = state.debtLineItems.reduce((sum, s) => {\n  if (s.status === "FULLY_PAID") return sum;\n  return sum + Math.max(0, s.debitAmount - s.settledAmount);\n}, 0);\nif (outstanding <= 0) {\n  throw new ApplyCreditNoDebtError(\n    "No outstanding debt to allocate credit against",\n  );\n}\n\nconst ORIGIN_PRIORITY = {\n  SETUP: 0,\n  SUBSCRIPTION_FEE: 1,\n  DYNAMIC: 2,\n  ESTIMATED_USAGE: 3,\n  RECONCILIATION: 4,\n};\nconst queue = state.debtLineItems\n  .filter((s) => s.status !== "FULLY_PAID" && s.debitAmount - s.settledAmount > 0)\n  .slice()\n  .sort((a, b) => {\n    const ap = ORIGIN_PRIORITY[a.origin] ?? 99;\n    const bp = ORIGIN_PRIORITY[b.origin] ?? 99;\n    if (ap !== bp) return ap - bp;\n    return a.chargedAt < b.chargedAt ? -1 : 1;\n  });\n\nconst EPS = 0.005;\nlet remaining = action.input.amount;\nfor (const ref of queue) {\n  if (remaining <= 0) break;\n  const slice = state.debtLineItems.find((s) => s.id === ref.id);\n  if (!slice) continue;\n  const owed = slice.debitAmount - slice.settledAmount;\n  if (owed <= 0) continue;\n  const apply = Math.min(remaining, owed);\n  slice.settledAmount += apply;\n  remaining -= apply;\n  if (slice.status === "CHARGED") {\n    slice.status = "INVOICED";\n    slice.invoiced = true;\n    slice.invoicedAt = action.input.creditDate;\n  }\n  if (slice.settledAmount >= slice.debitAmount - EPS) {\n    slice.settledAmount = slice.debitAmount;\n    slice.status = "FULLY_PAID";\n    slice.fullyPaidAt = action.input.creditDate;\n  } else {\n    slice.status = "PARTIALLY_PAID";\n  }\n}\nstate.totalCredit = (state.totalCredit ?? 0) + action.input.amount;',
+              scope: "global",
               errors: [
                 {
                   id: "err-apply-credit-line-item-not-found",
-                  name: "ApplyCreditLineItemNotFoundError",
                   code: "APPLY_CREDIT_LINE_ITEM_NOT_FOUND",
+                  name: "ApplyCreditLineItemNotFoundError",
+                  template: "",
                   description:
                     "Target debt line item id was not found when applying credit",
-                  template: "",
                 },
                 {
                   id: "err-apply-credit-no-debt",
-                  name: "ApplyCreditNoDebtError",
                   code: "APPLY_CREDIT_NO_DEBT",
-                  description: "No outstanding debt to allocate credit against",
+                  name: "ApplyCreditNoDebtError",
                   template: "",
+                  description: "No outstanding debt to allocate credit against",
                 },
                 {
                   id: "err-apply-credit-invalid-amount",
-                  name: "ApplyCreditInvalidAmountError",
                   code: "APPLY_CREDIT_INVALID_AMOUNT",
-                  description: "Credit amount must be greater than zero",
+                  name: "ApplyCreditInvalidAmountError",
                   template: "",
+                  description: "Credit amount must be greater than zero",
                 },
                 {
                   id: "err-apply-credit-amount-exceeds-remaining",
-                  name: "ApplyCreditAmountExceedsRemainingError",
                   code: "APPLY_CREDIT_AMOUNT_EXCEEDS_REMAINING",
+                  name: "ApplyCreditAmountExceedsRemainingError",
+                  template: "",
                   description:
                     "Credit amount exceeds the remaining outstanding balance on the targeted slice(s)",
-                  template: "",
                 },
               ],
+              schema:
+                'input ApplyCreditInput {\n    amount: Amount_Money!\n    creditDate: DateTime!\n    reason: String!\n    "When provided, allocates credit against a single specific debt line item; otherwise FIFO+priority across all collectible outstanding slices."\n    lineItemId: OID\n}',
+              reducer:
+                'if (action.input.amount <= 0) {\n  throw new ApplyCreditInvalidAmountError(\n    "Credit amount must be greater than zero",\n  );\n}\nconst outstanding = state.debtLineItems.reduce((sum, s) => {\n  if (s.status === "FULLY_PAID") return sum;\n  return sum + Math.max(0, s.debitAmount - s.settledAmount);\n}, 0);\nif (outstanding <= 0) {\n  throw new ApplyCreditNoDebtError(\n    "No outstanding debt to allocate credit against",\n  );\n}\n\nconst ORIGIN_PRIORITY = {\n  SETUP: 0,\n  SUBSCRIPTION_FEE: 1,\n  DYNAMIC: 2,\n  ESTIMATED_USAGE: 3,\n  RECONCILIATION: 4,\n};\nconst queue = state.debtLineItems\n  .filter((s) => s.status !== "FULLY_PAID" && s.debitAmount - s.settledAmount > 0)\n  .slice()\n  .sort((a, b) => {\n    const ap = ORIGIN_PRIORITY[a.origin] ?? 99;\n    const bp = ORIGIN_PRIORITY[b.origin] ?? 99;\n    if (ap !== bp) return ap - bp;\n    return a.chargedAt < b.chargedAt ? -1 : 1;\n  });\n\nconst EPS = 0.005;\nlet remaining = action.input.amount;\nfor (const ref of queue) {\n  if (remaining <= 0) break;\n  const slice = state.debtLineItems.find((s) => s.id === ref.id);\n  if (!slice) continue;\n  const owed = slice.debitAmount - slice.settledAmount;\n  if (owed <= 0) continue;\n  const apply = Math.min(remaining, owed);\n  slice.settledAmount += apply;\n  remaining -= apply;\n  if (slice.status === "CHARGED") {\n    slice.status = "INVOICED";\n    slice.invoiced = true;\n    slice.invoicedAt = action.input.creditDate;\n  }\n  if (slice.settledAmount >= slice.debitAmount - EPS) {\n    slice.settledAmount = slice.debitAmount;\n    slice.status = "FULLY_PAID";\n    slice.fullyPaidAt = action.input.creditDate;\n  } else {\n    slice.status = "PARTIALLY_PAID";\n  }\n}\nstate.totalCredit = (state.totalCredit ?? 0) + action.input.amount;',
               examples: [],
-              scope: "global",
+              template:
+                "Virtual payment that erases outstanding debt via the same FIFO-within-priority allocator. Used for refunds, goodwill credits, or operator adjustments.",
+              description:
+                "Virtual payment that erases outstanding debt via the same FIFO-within-priority allocator. Used for refunds, goodwill credits, or operator adjustments.",
             },
           ],
+          description:
+            "Operator-driven lifecycle ops for individual debt slices: status flips (CHARGED \u2192 INVOICED) and payment confirmation (\u2192 PARTIALLY_PAID / FULLY_PAID). Engine never auto-flips status \u2014 these are explicit operator actions per Q3 (2026-05-01).",
         },
       ],
       version: 1,

@@ -31,6 +31,7 @@ export const subscriptionInstanceServiceGroupOperations: SubscriptionInstanceSer
             ? {
                 amount: action.input.setupAmount,
                 currency: action.input.setupCurrency,
+                paymentDate: null,
               }
             : null,
         recurringCost:
@@ -41,6 +42,7 @@ export const subscriptionInstanceServiceGroupOperations: SubscriptionInstanceSer
                 amount: action.input.recurringAmount,
                 currency: action.input.recurringCurrency,
                 billingCycle: action.input.recurringBillingCycle,
+                lastPaymentDate: null,
                 discount: action.input.recurringDiscount
                   ? {
                       originalAmount:
@@ -212,6 +214,7 @@ export const subscriptionInstanceServiceGroupOperations: SubscriptionInstanceSer
             ? {
                 amount: action.input.setupAmount,
                 currency: action.input.setupCurrency,
+                paymentDate: null,
               }
             : null,
         recurringCost:
@@ -222,6 +225,7 @@ export const subscriptionInstanceServiceGroupOperations: SubscriptionInstanceSer
                 amount: action.input.recurringAmount,
                 currency: action.input.recurringCurrency,
                 billingCycle: action.input.recurringBillingCycle,
+                lastPaymentDate: null,
                 discount: null,
               }
             : null,
@@ -270,6 +274,7 @@ export const subscriptionInstanceServiceGroupOperations: SubscriptionInstanceSer
         group.setupCost = {
           amount: action.input.setupAmount,
           currency: action.input.setupCurrency,
+          paymentDate: null,
         };
       } else if (group.setupCost) {
         if (action.input.setupAmount)
@@ -286,6 +291,7 @@ export const subscriptionInstanceServiceGroupOperations: SubscriptionInstanceSer
           amount: action.input.recurringAmount,
           currency: action.input.recurringCurrency,
           billingCycle: action.input.recurringBillingCycle,
+          lastPaymentDate: group.recurringCost?.lastPaymentDate ?? null,
           discount: group.recurringCost?.discount || null,
         };
       } else if (group.recurringCost) {

@@ -1,42 +1,46 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
+  AddFacetOptionInputSchema,
+  ChangeResourceTemplateInputSchema,
+  RemoveFacetOptionInputSchema,
+  RemoveFacetTargetInputSchema,
+  SelectResourceTemplateInputSchema,
+  SetAvailableBillingCyclesInputSchema,
+  SetFacetTargetInputSchema,
+  SetOfferingIdInputSchema,
+  SetOperatorInputSchema,
   UpdateOfferingInfoInputSchema,
   UpdateOfferingStatusInputSchema,
-  SetOperatorInputSchema,
-  SetOfferingIdInputSchema,
-  SetFacetTargetInputSchema,
-  RemoveFacetTargetInputSchema,
-  AddFacetOptionInputSchema,
-  RemoveFacetOptionInputSchema,
-  SelectResourceTemplateInputSchema,
-  ChangeResourceTemplateInputSchema,
-  SetAvailableBillingCyclesInputSchema,
 } from "../schema/zod.js";
 import type {
+  AddFacetOptionInput,
+  ChangeResourceTemplateInput,
+  RemoveFacetOptionInput,
+  RemoveFacetTargetInput,
+  SelectResourceTemplateInput,
+  SetAvailableBillingCyclesInput,
+  SetFacetTargetInput,
+  SetOfferingIdInput,
+  SetOperatorInput,
   UpdateOfferingInfoInput,
   UpdateOfferingStatusInput,
-  SetOperatorInput,
-  SetOfferingIdInput,
-  SetFacetTargetInput,
-  RemoveFacetTargetInput,
-  AddFacetOptionInput,
-  RemoveFacetOptionInput,
-  SelectResourceTemplateInput,
-  ChangeResourceTemplateInput,
-  SetAvailableBillingCyclesInput,
 } from "../types.js";
 import type {
+  AddFacetOptionAction,
+  ChangeResourceTemplateAction,
+  RemoveFacetOptionAction,
+  RemoveFacetTargetAction,
+  SelectResourceTemplateAction,
+  SetAvailableBillingCyclesAction,
+  SetFacetTargetAction,
+  SetOfferingIdAction,
+  SetOperatorAction,
   UpdateOfferingInfoAction,
   UpdateOfferingStatusAction,
-  SetOperatorAction,
-  SetOfferingIdAction,
-  SetFacetTargetAction,
-  RemoveFacetTargetAction,
-  AddFacetOptionAction,
-  RemoveFacetOptionAction,
-  SelectResourceTemplateAction,
-  ChangeResourceTemplateAction,
-  SetAvailableBillingCyclesAction,
 } from "./actions.js";
 
 export const updateOfferingInfo = (input: UpdateOfferingInfoInput) =>

@@ -37,7 +37,7 @@ export function OperatorDashboard({
       />
 
       {/* KPI Row */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 items-start">
         <KpiCard
           label="Active Subscriptions"
           value={String(metrics.activeSubscriptionCount)}
@@ -90,7 +90,7 @@ export function OperatorDashboard({
       </div>
 
       {/* Charts Row */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-5 gap-4 items-start">
         <div className="col-span-3 rounded-xl bg-stone-50 p-5 shadow-sm border border-stone-200/60">
           <h2 className="mb-4 text-base font-bold text-stone-700">
             Monthly Revenue by Resource
@@ -109,7 +109,7 @@ export function OperatorDashboard({
       </div>
 
       {/* Tables Row */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-5 gap-4 items-start">
         <div className="col-span-3 rounded-xl bg-stone-50 p-5 shadow-sm border border-stone-200/60">
           <h2 className="mb-4 text-base font-bold text-stone-700">
             Recent Subscriptions
@@ -130,7 +130,7 @@ export function OperatorDashboard({
       </div>
 
       {/* Metrics & Actions Row */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-5 gap-4 items-start">
         <div className="col-span-3 rounded-xl bg-stone-50 p-5 shadow-sm border border-stone-200/60">
           <h2 className="mb-1 text-base font-bold text-stone-700">
             Customer Usage Metrics

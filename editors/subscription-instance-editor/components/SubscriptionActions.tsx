@@ -5,6 +5,7 @@ import {
   addFolder,
   useSelectedDriveId,
   useFolderNodesInSelectedDrive,
+  usePHToast,
 } from "@powerhousedao/reactor-browser";
 import type { DocumentDispatch } from "@powerhousedao/reactor-browser";
 import type {
@@ -135,6 +136,7 @@ export function SubscriptionActions({
   // the subscription rather than landing at the drive root.
   const driveId = useSelectedDriveId();
   const folderNodes = useFolderNodesInSelectedDrive();
+  const toast = usePHToast();
 
   // Cancellation refund preview — mirror of the reducer's prorata math so
   // the operator sees what credit slices will be emitted before clicking
@@ -590,6 +592,19 @@ export function SubscriptionActions({
       return true;
     });
 
+    // Nothing to invoice: the reducer would throw NoInvoiceableLineItemsError
+    // and the operation would silently fail. Surface that to the operator
+    // and skip the dispatch + Invoice-document creation.
+    if (invoiceableSlices.length === 0) {
+      toast?.(
+        "Nothing to invoice — every slice is either fully paid or already on a prior invoice.",
+        { type: "warning" },
+      );
+      setConfirmAction(null);
+      setSettlementDate("");
+      return;
+    }
+
     // Dispatch the actual GENERATE_INVOICE op on the subscription doc.
     dispatch(
       generateInvoice({
@@ -606,13 +621,6 @@ export function SubscriptionActions({
     );
     setConfirmAction(null);
     setSettlementDate("");
-
-    // If the reducer rejects (e.g. NoInvoiceableLineItemsError because
-    // every slice was already invoiced) we don't want to spawn an empty
-    // invoice doc. Bail early.
-    if (invoiceableSlices.length === 0) {
-      return;
-    }
 
     // Spawn the sibling Invoice document on the same drive and populate
     // it with the snapshot. addDocument is async; we don't block the UI

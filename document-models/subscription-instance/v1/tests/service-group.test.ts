@@ -1,20 +1,20 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
-  isSubscriptionInstanceDocument,
   addServiceGroup,
-  removeServiceGroup,
-  addServiceToGroup,
-  removeServiceFromGroup,
-  updateServiceGroupCost,
   AddServiceGroupInputSchema,
-  RemoveServiceGroupInputSchema,
+  addServiceToGroup,
   AddServiceToGroupInputSchema,
+  isSubscriptionInstanceDocument,
+  reducer,
+  removeServiceFromGroup,
   RemoveServiceFromGroupInputSchema,
+  removeServiceGroup,
+  RemoveServiceGroupInputSchema,
+  updateServiceGroupCost,
   UpdateServiceGroupCostInputSchema,
+  utils,
 } from "document-models/subscription-instance/v1";
+import { describe, expect, it } from "vitest";
 
 describe("ServiceGroupOperations", () => {
   it("should handle addServiceGroup operation", () => {

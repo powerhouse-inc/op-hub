@@ -1,30 +1,34 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { type SignalDispatch } from "document-model";
+import type { ResourceInstanceGlobalState } from "../types.js";
 import type {
-  SetInstanceFacetAction,
-  RemoveInstanceFacetAction,
-  UpdateInstanceFacetAction,
   ApplyConfigurationChangesAction,
+  RemoveInstanceFacetAction,
+  SetInstanceFacetAction,
+  UpdateInstanceFacetAction,
 } from "./actions.js";
-import type { ResourceInstanceState } from "../types.js";
 
 export interface ResourceInstanceConfigurationManagementOperations {
   setInstanceFacetOperation: (
-    state: ResourceInstanceState,
+    state: ResourceInstanceGlobalState,
     action: SetInstanceFacetAction,
     dispatch?: SignalDispatch,
   ) => void;
   removeInstanceFacetOperation: (
-    state: ResourceInstanceState,
+    state: ResourceInstanceGlobalState,
     action: RemoveInstanceFacetAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateInstanceFacetOperation: (
-    state: ResourceInstanceState,
+    state: ResourceInstanceGlobalState,
     action: UpdateInstanceFacetAction,
     dispatch?: SignalDispatch,
   ) => void;
   applyConfigurationChangesOperation: (
-    state: ResourceInstanceState,
+    state: ResourceInstanceGlobalState,
     action: ApplyConfigurationChangesAction,
     dispatch?: SignalDispatch,
   ) => void;

@@ -1,16 +1,20 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
+  AddFacetOptionInput,
+  ChangeResourceTemplateInput,
+  RemoveFacetOptionInput,
+  RemoveFacetTargetInput,
+  SelectResourceTemplateInput,
+  SetAvailableBillingCyclesInput,
+  SetFacetTargetInput,
+  SetOfferingIdInput,
+  SetOperatorInput,
   UpdateOfferingInfoInput,
   UpdateOfferingStatusInput,
-  SetOperatorInput,
-  SetOfferingIdInput,
-  SetFacetTargetInput,
-  RemoveFacetTargetInput,
-  AddFacetOptionInput,
-  RemoveFacetOptionInput,
-  SelectResourceTemplateInput,
-  ChangeResourceTemplateInput,
-  SetAvailableBillingCyclesInput,
 } from "../types.js";
 
 export type UpdateOfferingInfoAction = Action & {

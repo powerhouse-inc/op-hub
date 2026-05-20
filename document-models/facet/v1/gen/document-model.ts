@@ -30,118 +30,118 @@ export const documentModel: DocumentModelGlobalState = {
         {
           id: "facet-management",
           name: "Facet Management",
+          description: "Operations for managing facet metadata",
           operations: [
             {
               id: "set-facet-name",
               name: "SET_FACET_NAME",
-              scope: "global",
-              errors: [],
+              description: "Sets the facet name",
               schema:
                 "input SetFacetNameInput {\n    name: String!\n    lastModified: DateTime!\n}",
+              template: "Sets the facet name",
               reducer:
                 "state.name = action.input.name;\nstate.lastModified = action.input.lastModified;",
+              errors: [],
               examples: [],
-              template: "Sets the facet name",
-              description: "Sets the facet name",
+              scope: "global",
             },
             {
               id: "set-facet-description",
               name: "SET_FACET_DESCRIPTION",
-              scope: "global",
-              errors: [],
+              description: "Sets the facet description",
               schema:
                 "input SetFacetDescriptionInput {\n    description: String\n    lastModified: DateTime!\n}",
+              template: "Sets the facet description",
               reducer:
                 "state.description = action.input.description || null;\nstate.lastModified = action.input.lastModified;",
+              errors: [],
               examples: [],
-              template: "Sets the facet description",
-              description: "Sets the facet description",
+              scope: "global",
             },
           ],
-          description: "Operations for managing facet metadata",
         },
         {
           id: "option-management",
           name: "Option Management",
+          description: "Operations for managing facet options",
           operations: [
             {
               id: "add-option",
               name: "ADD_OPTION",
-              scope: "global",
+              description: "Adds a new option to the facet",
+              schema:
+                "input AddOptionInput {\n    id: OID!\n    label: String!\n    description: String\n    displayOrder: Int\n    isDefault: Boolean\n    lastModified: DateTime!\n}",
+              template: "Adds a new option to the facet",
+              reducer:
+                "state.options.push({\n    id: action.input.id,\n    label: action.input.label,\n    description: action.input.description || null,\n    displayOrder: action.input.displayOrder || null,\n    isDefault: action.input.isDefault || false\n});\nstate.lastModified = action.input.lastModified;",
               errors: [
                 {
                   id: "duplicate-option-id",
-                  code: "DUPLICATE_OPTION_ID",
                   name: "DuplicateOptionIdError",
-                  template: "",
+                  code: "DUPLICATE_OPTION_ID",
                   description: "An option with this ID already exists",
+                  template: "",
                 },
               ],
-              schema:
-                "input AddOptionInput {\n    id: OID!\n    label: String!\n    description: String\n    displayOrder: Int\n    isDefault: Boolean\n    lastModified: DateTime!\n}",
-              reducer:
-                "state.options.push({\n    id: action.input.id,\n    label: action.input.label,\n    description: action.input.description || null,\n    displayOrder: action.input.displayOrder || null,\n    isDefault: action.input.isDefault || false\n});\nstate.lastModified = action.input.lastModified;",
               examples: [],
-              template: "Adds a new option to the facet",
-              description: "Adds a new option to the facet",
+              scope: "global",
             },
             {
               id: "update-option",
               name: "UPDATE_OPTION",
-              scope: "global",
+              description: "Updates an existing option",
+              schema:
+                "input UpdateOptionInput {\n    id: OID!\n    label: String\n    description: String\n    displayOrder: Int\n    isDefault: Boolean\n    lastModified: DateTime!\n}",
+              template: "Updates an existing option",
+              reducer:
+                "const option = state.options.find(o => o.id === action.input.id);\nif (option) {\n    if (action.input.label) {\n        option.label = action.input.label;\n    }\n    if (action.input.description !== undefined) {\n        option.description = action.input.description || null;\n    }\n    if (action.input.displayOrder !== undefined && action.input.displayOrder !== null) {\n        option.displayOrder = action.input.displayOrder;\n    }\n    if (action.input.isDefault !== undefined && action.input.isDefault !== null) {\n        option.isDefault = action.input.isDefault;\n    }\n}\nstate.lastModified = action.input.lastModified;",
               errors: [
                 {
                   id: "option-not-found",
-                  code: "OPTION_NOT_FOUND",
                   name: "OptionNotFoundError",
-                  template: "",
+                  code: "OPTION_NOT_FOUND",
                   description: "Option with the specified ID does not exist",
+                  template: "",
                 },
               ],
-              schema:
-                "input UpdateOptionInput {\n    id: OID!\n    label: String\n    description: String\n    displayOrder: Int\n    isDefault: Boolean\n    lastModified: DateTime!\n}",
-              reducer:
-                "const option = state.options.find(o => o.id === action.input.id);\nif (option) {\n    if (action.input.label) {\n        option.label = action.input.label;\n    }\n    if (action.input.description !== undefined) {\n        option.description = action.input.description || null;\n    }\n    if (action.input.displayOrder !== undefined && action.input.displayOrder !== null) {\n        option.displayOrder = action.input.displayOrder;\n    }\n    if (action.input.isDefault !== undefined && action.input.isDefault !== null) {\n        option.isDefault = action.input.isDefault;\n    }\n}\nstate.lastModified = action.input.lastModified;",
               examples: [],
-              template: "Updates an existing option",
-              description: "Updates an existing option",
+              scope: "global",
             },
             {
               id: "remove-option",
               name: "REMOVE_OPTION",
-              scope: "global",
+              description: "Removes an option from the facet",
+              schema:
+                "input RemoveOptionInput {\n    id: OID!\n    lastModified: DateTime!\n}",
+              template: "Removes an option from the facet",
+              reducer:
+                "const optionIndex = state.options.findIndex(o => o.id === action.input.id);\nif (optionIndex !== -1) {\n    state.options.splice(optionIndex, 1);\n}\nstate.lastModified = action.input.lastModified;",
               errors: [
                 {
                   id: "remove-option-not-found",
-                  code: "REMOVE_OPTION_NOT_FOUND",
                   name: "RemoveOptionNotFoundError",
-                  template: "",
+                  code: "REMOVE_OPTION_NOT_FOUND",
                   description: "Option with the specified ID does not exist",
+                  template: "",
                 },
               ],
-              schema:
-                "input RemoveOptionInput {\n    id: OID!\n    lastModified: DateTime!\n}",
-              reducer:
-                "const optionIndex = state.options.findIndex(o => o.id === action.input.id);\nif (optionIndex !== -1) {\n    state.options.splice(optionIndex, 1);\n}\nstate.lastModified = action.input.lastModified;",
               examples: [],
-              template: "Removes an option from the facet",
-              description: "Removes an option from the facet",
+              scope: "global",
             },
             {
               id: "reorder-options",
               name: "REORDER_OPTIONS",
-              scope: "global",
-              errors: [],
+              description: "Reorders options in the facet",
               schema:
                 "input ReorderOptionsInput {\n    optionIds: [OID!]!\n    lastModified: DateTime!\n}",
+              template: "Reorders options in the facet",
               reducer:
                 "const orderedOptions: typeof state.options = [];\naction.input.optionIds.forEach((id, index) => {\n    const option = state.options.find(o => o.id === id);\n    if (option) {\n        option.displayOrder = index;\n        orderedOptions.push(option);\n    }\n});\nstate.options.forEach(option => {\n    if (!action.input.optionIds.includes(option.id)) {\n        orderedOptions.push(option);\n    }\n});\nstate.options = orderedOptions;\nstate.lastModified = action.input.lastModified;",
+              errors: [],
               examples: [],
-              template: "Reorders options in the facet",
-              description: "Reorders options in the facet",
+              scope: "global",
             },
           ],
-          description: "Operations for managing facet options",
         },
       ],
       version: 1,

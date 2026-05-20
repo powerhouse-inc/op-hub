@@ -1,11 +1,11 @@
+import type { ServiceOfferingOfferingOperations } from "document-models/service-offering/v1";
 import {
-  RemoveFacetTargetNotFoundError,
   AddFacetOptionTargetNotFoundError,
-  RemoveFacetOptionTargetNotFoundError,
   ChangeResourceTemplateMismatchError,
   NoBillingCyclesSelectedError,
+  RemoveFacetOptionTargetNotFoundError,
+  RemoveFacetTargetNotFoundError,
 } from "../../gen/offering/error.js";
-import type { ServiceOfferingOfferingOperations } from "document-models/service-offering/v1";
 
 export const serviceOfferingOfferingOperations: ServiceOfferingOfferingOperations =
   {

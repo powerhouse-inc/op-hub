@@ -25,207 +25,207 @@
         {
           "id": "wallet",
           "name": "wallet",
+          "description": "",
           "operations": [
             {
               "id": "add-wallet",
               "name": "addWallet",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input AddWalletInput {\n  wallet: EthereumAddress!\n  name: String\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "remove-wallet",
               "name": "removeWallet",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input RemoveWalletInput {\n  wallet: EthereumAddress!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "add-billing-statement",
               "name": "addBillingStatement",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input AddBillingStatementInput {\n  wallet: EthereumAddress!\n  billingStatementId: OID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "remove-billing-statement",
               "name": "removeBillingStatement",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input RemoveBillingStatementInput {\n  wallet: EthereumAddress!\n  billingStatementId: OID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "add-line-item",
               "name": "addLineItem",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input AddLineItemInput {\n  wallet: EthereumAddress!\n  lineItem: LineItemInput!\n}\n\ninput LineItemInput {\n  id: ID!\n  label: String\n  group: ID\n  budget: Float\n  actuals: Float\n  forecast: Float\n  payments: Float\n  comments: String\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "update-line-item",
               "name": "updateLineItem",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input UpdateLineItemInput {\n  wallet: EthereumAddress!\n  lineItemId: ID!\n  label: String\n  group: ID\n  budget: Float\n  actuals: Float\n  forecast: Float\n  payments: Float\n  comments: String\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "remove-line-item",
               "name": "removeLineItem",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input RemoveLineItemInput {\n  wallet: EthereumAddress!\n  lineItemId: ID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "add-line-item-group",
               "name": "addLineItemGroup",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input AddLineItemGroupInput {\n  id: ID!\n  label: String\n  parentId: ID\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "update-line-item-group",
               "name": "updateLineItemGroup",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input UpdateLineItemGroupInput {\n  id: ID!\n  label: String\n  parentId: ID\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "remove-line-item-group",
               "name": "removeLineItemGroup",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input RemoveLineItemGroupInput {\n  id: ID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "set-group-totals",
               "name": "setGroupTotals",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input SetGroupTotalsInput {\n  wallet: EthereumAddress!\n  groupTotals: GroupTotalsInput!\n}\n\ninput GroupTotalsInput {\n  group: ID!\n  totalBudget: Float\n  totalForecast: Float\n  totalActuals: Float\n  totalPayments: Float\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "remove-group-totals",
               "name": "removeGroupTotals",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input RemoveGroupTotalsInput {\n  wallet: EthereumAddress!\n  groupId: ID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "set-period-start",
               "name": "setPeriodStart",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input SetPeriodStartInput {\n  periodStart: DateTime!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "set-period-end",
               "name": "setPeriodEnd",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input SetPeriodEndInput {\n  periodEnd: DateTime!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "update-wallet",
               "name": "updateWallet",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input UpdateWalletInput {\n  address: EthereumAddress!\n  name: String\n  accountDocumentId: PHID\n  accountTransactionsDocumentId: PHID\n}",
-              "reducer": "const wallet = state.wallets.find((w) => w.wallet === action.input.address);\nif (!wallet) {\n  throw new Error(`Wallet with address ${action.input.address} not found`);\n}\n\nif (action.input.name !== undefined && action.input.name !== null) {\n  wallet.name = action.input.name;\n}\n\nif (action.input.accountDocumentId !== undefined && action.input.accountDocumentId !== null) {\n  wallet.accountDocumentId = action.input.accountDocumentId;\n}\n\nif (action.input.accountTransactionsDocumentId !== undefined && action.input.accountTransactionsDocumentId !== null) {\n  wallet.accountTransactionsDocumentId = action.input.accountTransactionsDocumentId;\n}",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "const wallet = state.wallets.find((w) => w.wallet === action.input.address);\nif (!wallet) {\n  throw new Error(`Wallet with address ${action.input.address} not found`);\n}\n\nif (action.input.name !== undefined && action.input.name !== null) {\n  wallet.name = action.input.name;\n}\n\nif (action.input.accountDocumentId !== undefined && action.input.accountDocumentId !== null) {\n  wallet.accountDocumentId = action.input.accountDocumentId;\n}\n\nif (action.input.accountTransactionsDocumentId !== undefined && action.input.accountTransactionsDocumentId !== null) {\n  wallet.accountTransactionsDocumentId = action.input.accountTransactionsDocumentId;\n}",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "set-owner-id",
               "name": "setOwnerId",
-              "scope": "global",
-              "errors": [],
+              "description": "Set the owner ID (builder team) for the expense report",
               "schema": "input SetOwnerIdInput {\n  ownerId: PHID!\n}",
-              "reducer": "state.ownerId = action.input.ownerId;",
-              "examples": [],
               "template": "Set the owner ID (builder team) for the expense report",
-              "description": "Set the owner ID (builder team) for the expense report"
+              "reducer": "state.ownerId = action.input.ownerId;",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "set-status",
               "name": "setStatus",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input SetStatusInput {\n  status: ExpenseReportStatusInput!\n}\n\nenum ExpenseReportStatusInput {\n  DRAFT\n  REVIEW\n  FINAL\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "set-period",
               "name": "setPeriod",
-              "scope": "global",
-              "errors": [],
+              "description": "Set the snapshot period dates for transaction filtering",
               "schema": "input SetPeriodInput {\n  startDate: DateTime\n  endDate: DateTime\n}",
-              "reducer": "if (action.input.startDate !== undefined && action.input.startDate !== null) {\n  state.startDate = action.input.startDate;\n}\nif (action.input.endDate !== undefined && action.input.endDate !== null) {\n  state.endDate = action.input.endDate;\n}",
-              "examples": [],
               "template": "Set the snapshot period dates for transaction filtering",
-              "description": "Set the snapshot period dates for transaction filtering"
+              "reducer": "if (action.input.startDate !== undefined && action.input.startDate !== null) {\n  state.startDate = action.input.startDate;\n}\nif (action.input.endDate !== undefined && action.input.endDate !== null) {\n  state.endDate = action.input.endDate;\n}",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             }
-          ],
-          "description": ""
+          ]
         }
       ],
       "version": 1,

@@ -25,100 +25,100 @@
         {
           "id": "general",
           "name": "general",
+          "description": "",
           "operations": [
             {
               "id": "edit-billing-statement",
               "name": "editBillingStatement",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input EditBillingStatementInput {\n  dateIssued: DateTime\n  dateDue: DateTime\n  currency: String\n  notes: String\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "edit-contributor",
               "name": "editContributor",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input EditContributorInput {\n  contributor: PHID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "edit-status",
               "name": "editStatus",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input EditStatusInput {\n  status: BillingStatementStatusInput!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             }
-          ],
-          "description": ""
+          ]
         },
         {
           "id": "line-items",
           "name": "line_items",
+          "description": "",
           "operations": [
             {
               "id": "add-line-item",
               "name": "addLineItem",
-              "scope": "global",
-              "errors": [],
+              "description": "BillingStatementState.totalCash / .totalPowt will be a sum of the line item values.",
               "schema": "input AddLineItemInput {\n  id: OID!\n  description: String!\n  quantity: Float!\n  unit: BillingStatementUnitInput!\n  unitPricePwt: Float!\n  unitPriceCash: Float!\n  totalPricePwt: Float!\n  totalPriceCash: Float!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "BillingStatementState.totalCash / .totalPowt will be a sum of the line item values.",
-              "description": "BillingStatementState.totalCash / .totalPowt will be a sum of the line item values."
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "edit-line-item",
               "name": "editLineItem",
-              "scope": "global",
-              "errors": [],
+              "description": "BillingStatementState.totalCash / .totalPowt will be a sum of the line item values.",
               "schema": "input EditLineItemInput {\n  id: OID!\n  description: String\n  quantity: Float\n  unit: BillingStatementUnitInput\n  unitPricePwt: Float\n  unitPriceCash: Float\n  totalPricePwt: Float\n  totalPriceCash: Float\n}",
-              "reducer": "",
-              "examples": [],
               "template": "BillingStatementState.totalCash / .totalPowt will be a sum of the line item values.",
-              "description": "BillingStatementState.totalCash / .totalPowt will be a sum of the line item values."
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "delete-line-item",
               "name": "deleteLineItem",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input DeleteLineItemInput {\n  id: OID!\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             }
-          ],
-          "description": ""
+          ]
         },
         {
           "id": "tags",
           "name": "tags",
+          "description": "",
           "operations": [
             {
               "id": "edit-line-item-tag",
               "name": "editLineItemTag",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input EditLineItemTagInput {\n  lineItemId: OID!\n  dimension: String!\n  value: String!\n  label: String\n}",
-              "reducer": "",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             }
-          ],
-          "description": ""
+          ]
         }
       ],
       "version": 1,

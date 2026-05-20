@@ -304,10 +304,10 @@ export function useSubscriptionMetrics(
       .toSorted((a, b) => b[1] - a[1])
       .map(([tierName, count]) => ({ tierName, count }));
 
-    // Top customers
+    // Customers ranked by MRR — full list. The dashboard widget slices to
+    // a top-N preview itself so it can offer a "View all customers" toggle.
     const topCustomers: CustomerSummary[] = [...customerMap.entries()]
       .toSorted((a, b) => b[1].mrr - a[1].mrr)
-      .slice(0, 5)
       .map(([customerId, { name, mrr, count }]) => ({
         name,
         initials: getInitials(name),

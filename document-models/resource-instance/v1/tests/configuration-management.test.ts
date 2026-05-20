@@ -1,18 +1,18 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
-  isResourceInstanceDocument,
-  setInstanceFacet,
-  removeInstanceFacet,
-  updateInstanceFacet,
   applyConfigurationChanges,
-  SetInstanceFacetInputSchema,
-  RemoveInstanceFacetInputSchema,
-  UpdateInstanceFacetInputSchema,
   ApplyConfigurationChangesInputSchema,
+  isResourceInstanceDocument,
+  reducer,
+  removeInstanceFacet,
+  RemoveInstanceFacetInputSchema,
+  setInstanceFacet,
+  SetInstanceFacetInputSchema,
+  updateInstanceFacet,
+  UpdateInstanceFacetInputSchema,
+  utils,
 } from "document-models/resource-instance/v1";
+import { describe, expect, it } from "vitest";
 
 describe("ConfigurationManagementOperations", () => {
   it("should handle setInstanceFacet operation", () => {

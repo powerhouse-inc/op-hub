@@ -1,14 +1,14 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
   isSubscriptionInstanceDocument,
+  reducer,
   setCustomerType,
-  updateTeamMemberCount,
   SetCustomerTypeInputSchema,
+  updateTeamMemberCount,
   UpdateTeamMemberCountInputSchema,
+  utils,
 } from "document-models/subscription-instance/v1";
+import { describe, expect, it } from "vitest";
 
 describe("CustomerOperations", () => {
   it("should handle setCustomerType operation", () => {

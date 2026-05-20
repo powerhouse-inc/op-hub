@@ -1,9 +1,9 @@
+import type { InvoiceItemsOperations } from "document-models/invoice/v1";
 import type {
   InvoiceLineItem,
   InvoiceState,
   InvoiceTag,
 } from "../../gen/schema/types.js";
-import type { InvoiceItemsOperations } from "document-models/invoice/v1";
 
 export const invoiceItemsOperations: InvoiceItemsOperations = {
   addLineItemOperation(state, action) {

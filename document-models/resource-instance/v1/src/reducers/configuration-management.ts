@@ -1,10 +1,10 @@
+import type { ResourceInstanceConfigurationManagementOperations } from "document-models/resource-instance/v1";
 import {
+  ConfigurationLockedApplyConfigurationChangesError,
   ConfigurationLockedError,
   ConfigurationLockedRemoveInstanceFacetError,
   ConfigurationLockedUpdateInstanceFacetError,
-  ConfigurationLockedApplyConfigurationChangesError,
 } from "../../gen/configuration-management/error.js";
-import type { ResourceInstanceConfigurationManagementOperations } from "document-models/resource-instance/v1";
 
 export const resourceInstanceConfigurationManagementOperations: ResourceInstanceConfigurationManagementOperations =
   {

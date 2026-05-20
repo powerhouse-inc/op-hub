@@ -23,3 +23,27 @@
 
   /* --*: initial; */
 }
+
+/*
+ * Drive explorer shell: Connect's #content-view and DropZone both use
+ * overflow-auto, which duplicates the inner pane scrollbar. Lock the outer
+ * shells only. Sidebar keeps library h-svh; max-height caps it to the shell.
+ */
+#content-view:has(.ph-drive-explorer-shell) {
+  overflow: hidden;
+  min-height: 0;
+}
+
+#content-view:has(.ph-drive-explorer-shell) > .relative {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.relative.flex-1.overflow-auto:has(.ph-drive-explorer-shell) {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.ph-drive-explorer-shell .sidebar__container {
+  max-height: 100%;
+}

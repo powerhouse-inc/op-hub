@@ -1,56 +1,59 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { Reducer, StateReducer } from "document-model";
-import { isDocumentAction, createReducer } from "document-model";
+import { createReducer, isDocumentAction } from "document-model";
 import type { SubscriptionInstancePHState } from "document-models/subscription-instance/v1";
 
-import { subscriptionInstanceSubscriptionOperations } from "../src/reducers/subscription.js";
-import { subscriptionInstanceServiceOperations } from "../src/reducers/service.js";
-import { subscriptionInstanceServiceGroupOperations } from "../src/reducers/service-group.js";
-import { subscriptionInstanceMetricsOperations } from "../src/reducers/metrics.js";
 import { subscriptionInstanceCustomerOperations } from "../src/reducers/customer.js";
 import { subscriptionInstanceDebtLineItemsOperations } from "../src/reducers/debt-line-items.js";
+import { subscriptionInstanceMetricsOperations } from "../src/reducers/metrics.js";
+import { subscriptionInstanceServiceGroupOperations } from "../src/reducers/service-group.js";
+import { subscriptionInstanceServiceOperations } from "../src/reducers/service.js";
+import { subscriptionInstanceSubscriptionOperations } from "../src/reducers/subscription.js";
 
 import {
-  InitializeSubscriptionInputSchema,
-  SetResourceDocumentInputSchema,
+  AccrueMetricUsageInputSchema,
   ActivateSubscriptionInputSchema,
-  PauseSubscriptionInputSchema,
-  SetExpiringInputSchema,
-  CancelSubscriptionInputSchema,
-  ResumeSubscriptionInputSchema,
-  RenewExpiringSubscriptionInputSchema,
-  UpdateCustomerInfoInputSchema,
-  UpdateTierInfoInputSchema,
-  SetOperatorNotesInputSchema,
-  SetAutoRenewInputSchema,
-  GenerateInvoiceInputSchema,
-  ChangePlanInputSchema,
-  AddServiceInputSchema,
-  RemoveServiceInputSchema,
-  UpdateServiceSetupCostInputSchema,
-  UpdateServiceRecurringCostInputSchema,
-  UpdateServiceInfoInputSchema,
   AddServiceFacetSelectionInputSchema,
-  RemoveServiceFacetSelectionInputSchema,
   AddServiceGroupInputSchema,
-  RemoveServiceGroupInputSchema,
-  AddServiceToGroupInputSchema,
-  RemoveServiceFromGroupInputSchema,
-  UpdateServiceGroupCostInputSchema,
+  AddServiceInputSchema,
   AddServiceMetricInputSchema,
+  AddServiceToGroupInputSchema,
+  ApplyCreditInputSchema,
+  CancelSubscriptionInputSchema,
+  ChangePlanInputSchema,
+  ConfirmLineItemPaymentInputSchema,
+  DecrementMetricUsageInputSchema,
+  GenerateInvoiceInputSchema,
+  IncrementMetricUsageInputSchema,
+  InitializeSubscriptionInputSchema,
+  MarkLineItemInvoicedInputSchema,
+  PauseSubscriptionInputSchema,
+  RemoveServiceFacetSelectionInputSchema,
+  RemoveServiceFromGroupInputSchema,
+  RemoveServiceGroupInputSchema,
+  RemoveServiceInputSchema,
+  RemoveServiceMetricInputSchema,
+  RenewExpiringSubscriptionInputSchema,
+  ReportOveragePaymentInputSchema,
+  ReportPaymentInputSchema,
+  ReportRecurringPaymentInputSchema,
+  ReportSetupPaymentInputSchema,
+  ResumeSubscriptionInputSchema,
+  SetAutoRenewInputSchema,
+  SetCustomerTypeInputSchema,
+  SetExpiringInputSchema,
+  SetOperatorNotesInputSchema,
+  SetResourceDocumentInputSchema,
+  UpdateCustomerInfoInputSchema,
   UpdateMetricInputSchema,
   UpdateMetricUsageInputSchema,
-  RemoveServiceMetricInputSchema,
-  IncrementMetricUsageInputSchema,
-  DecrementMetricUsageInputSchema,
-  AccrueMetricUsageInputSchema,
-  SetCustomerTypeInputSchema,
+  UpdateServiceGroupCostInputSchema,
+  UpdateServiceInfoInputSchema,
+  UpdateServiceRecurringCostInputSchema,
+  UpdateServiceSetupCostInputSchema,
   UpdateTeamMemberCountInputSchema,
-  MarkLineItemInvoicedInputSchema,
-  ConfirmLineItemPaymentInputSchema,
-  ReportPaymentInputSchema,
-  ApplyCreditInputSchema,
+  UpdateTierInfoInputSchema,
 } from "./schema/zod.js";
 
 const stateReducer: StateReducer<SubscriptionInstancePHState> = (
@@ -206,10 +209,10 @@ const stateReducer: StateReducer<SubscriptionInstancePHState> = (
       break;
     }
 
-    case "GENERATE_INVOICE": {
-      GenerateInvoiceInputSchema().parse(action.input);
+    case "CHANGE_PLAN": {
+      ChangePlanInputSchema().parse(action.input);
 
-      subscriptionInstanceSubscriptionOperations.generateInvoiceOperation(
+      subscriptionInstanceSubscriptionOperations.changePlanOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
@@ -218,10 +221,10 @@ const stateReducer: StateReducer<SubscriptionInstancePHState> = (
       break;
     }
 
-    case "CHANGE_PLAN": {
-      ChangePlanInputSchema().parse(action.input);
+    case "GENERATE_INVOICE": {
+      GenerateInvoiceInputSchema().parse(action.input);
 
-      subscriptionInstanceSubscriptionOperations.changePlanOperation(
+      subscriptionInstanceSubscriptionOperations.generateInvoiceOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
@@ -278,6 +281,30 @@ const stateReducer: StateReducer<SubscriptionInstancePHState> = (
       break;
     }
 
+    case "REPORT_SETUP_PAYMENT": {
+      ReportSetupPaymentInputSchema().parse(action.input);
+
+      subscriptionInstanceServiceOperations.reportSetupPaymentOperation(
+        (state as any)[action.scope],
+        action as any,
+        dispatch,
+      );
+
+      break;
+    }
+
+    case "REPORT_RECURRING_PAYMENT": {
+      ReportRecurringPaymentInputSchema().parse(action.input);
+
+      subscriptionInstanceServiceOperations.reportRecurringPaymentOperation(
+        (state as any)[action.scope],
+        action as any,
+        dispatch,
+      );
+
+      break;
+    }
+
     case "UPDATE_SERVICE_INFO": {
       UpdateServiceInfoInputSchema().parse(action.input);
 
@@ -306,6 +333,18 @@ const stateReducer: StateReducer<SubscriptionInstancePHState> = (
       RemoveServiceFacetSelectionInputSchema().parse(action.input);
 
       subscriptionInstanceServiceOperations.removeServiceFacetSelectionOperation(
+        (state as any)[action.scope],
+        action as any,
+        dispatch,
+      );
+
+      break;
+    }
+
+    case "REPORT_OVERAGE_PAYMENT": {
+      ReportOveragePaymentInputSchema().parse(action.input);
+
+      subscriptionInstanceServiceOperations.reportOveragePaymentOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,

@@ -19,12 +19,19 @@ set -euo pipefail
 #   --exclude <ids>      Comma-separated doc IDs to exclude from download
 #   --clean              Delete existing data before downloading
 #
-# Default drives (contributor-billing):
-#   builders,powerhouse-operator-team-admin
+# Default drives (bai-dev demo set, 8 drives):
+#   powerhouse-network-admin
+#   933f946f-5fab-4dea-85ea-aeb85f1f2fd1   (builders — slug is its UUID)
+#   powerhouse-rgh-operator-admin
+#   bai-team-admin
+#   growth-team-admin
+#   core-dev-team-admin
+#   teeps-team-admin
+#   powerhouse-genesis-operational-hub
 #
 # Example:
 #   bash scripts/drive-sync/sync.sh \
-#     --source staging-remote \
+#     --source bai-dev \
 #     --target local
 ###############################################################################
 
@@ -35,7 +42,7 @@ source "$SCRIPT_DIR/lib/common.sh"
 
 SOURCE_PROFILE=""
 TARGET_PROFILE=""
-DRIVES="builders,powerhouse-operator-team-admin"
+DRIVES="powerhouse-network-admin,933f946f-5fab-4dea-85ea-aeb85f1f2fd1,powerhouse-rgh-operator-admin,bai-team-admin,growth-team-admin,core-dev-team-admin,teeps-team-admin,powerhouse-genesis-operational-hub"
 DATA_DIR="$SCRIPT_DIR/data"
 EXCLUDE_IDS=""
 CLEAN=false

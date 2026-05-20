@@ -1,5 +1,5 @@
-import type { Status } from "../../gen/schema/types.js";
 import type { InvoiceTransitionsOperations } from "document-models/invoice/v1";
+import type { Status } from "../../gen/schema/types.js";
 
 /**
  * Converts a date string to ISO datetime format if it's not already in that format

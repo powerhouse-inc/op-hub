@@ -1,11 +1,4 @@
-import type {
-  ScopeOfWorkProjectsOperations,
-  ScopeOfWorkState,
-  Deliverable,
-  DeliverablesSet,
-  Progress,
-  DeliverableStatus,
-} from "document-models/scope-of-work/v1";
+import type { ScopeOfWorkProjectsOperations } from "document-models/scope-of-work/v1";
 
 // Progress is a flat tagged-union: { completed, done, total, value }, all
 // nullable. Use this factory to keep field counts consistent — any field

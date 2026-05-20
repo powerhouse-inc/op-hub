@@ -1,30 +1,34 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { type SignalDispatch } from "document-model";
+import type { SubscriptionInstanceGlobalState } from "../types.js";
 import type {
-  MarkLineItemInvoicedAction,
-  ConfirmLineItemPaymentAction,
-  ReportPaymentAction,
   ApplyCreditAction,
+  ConfirmLineItemPaymentAction,
+  MarkLineItemInvoicedAction,
+  ReportPaymentAction,
 } from "./actions.js";
-import type { SubscriptionInstanceState } from "../types.js";
 
 export interface SubscriptionInstanceDebtLineItemsOperations {
   markLineItemInvoicedOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: MarkLineItemInvoicedAction,
     dispatch?: SignalDispatch,
   ) => void;
   confirmLineItemPaymentOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: ConfirmLineItemPaymentAction,
     dispatch?: SignalDispatch,
   ) => void;
   reportPaymentOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: ReportPaymentAction,
     dispatch?: SignalDispatch,
   ) => void;
   applyCreditOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: ApplyCreditAction,
     dispatch?: SignalDispatch,
   ) => void;

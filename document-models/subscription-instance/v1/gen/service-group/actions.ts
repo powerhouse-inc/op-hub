@@ -1,9 +1,13 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
   AddServiceGroupInput,
-  RemoveServiceGroupInput,
   AddServiceToGroupInput,
   RemoveServiceFromGroupInput,
+  RemoveServiceGroupInput,
   UpdateServiceGroupCostInput,
 } from "../types.js";
 

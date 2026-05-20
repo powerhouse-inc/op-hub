@@ -1,13 +1,17 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
   AddOptionGroupInput,
-  UpdateOptionGroupInput,
-  DeleteOptionGroupInput,
-  SetOptionGroupStandalonePricingInput,
   AddOptionGroupTierPricingInput,
-  UpdateOptionGroupTierPricingInput,
+  DeleteOptionGroupInput,
   RemoveOptionGroupTierPricingInput,
   SetOptionGroupDiscountModeInput,
+  SetOptionGroupStandalonePricingInput,
+  UpdateOptionGroupInput,
+  UpdateOptionGroupTierPricingInput,
 } from "../types.js";
 
 export type AddOptionGroupAction = Action & {

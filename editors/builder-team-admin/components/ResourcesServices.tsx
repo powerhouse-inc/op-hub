@@ -13,10 +13,6 @@ import {
   dispatchActions,
 } from "@powerhousedao/reactor-browser";
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import type {
-  FileNode,
-  FolderNode,
-} from "@powerhousedao/shared/document-drive";
 import { Plus, FileText, Package } from "lucide-react";
 import { useResourcesServicesAutoPlacement } from "../hooks/useResourcesServicesAutoPlacement.js";
 import { actions as resourceTemplateActions } from "document-models/resource-template";
@@ -34,9 +30,7 @@ const SERVICE_OFFERINGS_FOLDER_NAME = "Service Offerings";
  */
 export function ResourcesServices() {
   const hasNavigatedToFolder = useRef(false);
-  const selectedNodePath = useSelectedNodePath() as unknown as Array<
-    FileNode | FolderNode
-  >;
+  const selectedNodePath = useSelectedNodePath();
   const nodesInCurrentFolder = useNodesInSelectedDriveOrFolder();
   const { isAllowedToCreateDocuments } = useUserPermissions();
 

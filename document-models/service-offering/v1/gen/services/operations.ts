@@ -1,24 +1,28 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { type SignalDispatch } from "document-model";
+import type { ServiceOfferingGlobalState } from "../types.js";
 import type {
   AddServiceAction,
-  UpdateServiceAction,
   DeleteServiceAction,
+  UpdateServiceAction,
 } from "./actions.js";
-import type { ServiceOfferingState } from "../types.js";
 
 export interface ServiceOfferingServicesOperations {
   addServiceOperation: (
-    state: ServiceOfferingState,
+    state: ServiceOfferingGlobalState,
     action: AddServiceAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateServiceOperation: (
-    state: ServiceOfferingState,
+    state: ServiceOfferingGlobalState,
     action: UpdateServiceAction,
     dispatch?: SignalDispatch,
   ) => void;
   deleteServiceOperation: (
-    state: ServiceOfferingState,
+    state: ServiceOfferingGlobalState,
     action: DeleteServiceAction,
     dispatch?: SignalDispatch,
   ) => void;

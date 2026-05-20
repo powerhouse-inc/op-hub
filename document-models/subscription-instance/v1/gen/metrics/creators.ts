@@ -1,30 +1,34 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
+  AccrueMetricUsageInputSchema,
   AddServiceMetricInputSchema,
+  DecrementMetricUsageInputSchema,
+  IncrementMetricUsageInputSchema,
+  RemoveServiceMetricInputSchema,
   UpdateMetricInputSchema,
   UpdateMetricUsageInputSchema,
-  RemoveServiceMetricInputSchema,
-  IncrementMetricUsageInputSchema,
-  DecrementMetricUsageInputSchema,
-  AccrueMetricUsageInputSchema,
 } from "../schema/zod.js";
 import type {
+  AccrueMetricUsageInput,
   AddServiceMetricInput,
+  DecrementMetricUsageInput,
+  IncrementMetricUsageInput,
+  RemoveServiceMetricInput,
   UpdateMetricInput,
   UpdateMetricUsageInput,
-  RemoveServiceMetricInput,
-  IncrementMetricUsageInput,
-  DecrementMetricUsageInput,
-  AccrueMetricUsageInput,
 } from "../types.js";
 import type {
+  AccrueMetricUsageAction,
   AddServiceMetricAction,
+  DecrementMetricUsageAction,
+  IncrementMetricUsageAction,
+  RemoveServiceMetricAction,
   UpdateMetricAction,
   UpdateMetricUsageAction,
-  RemoveServiceMetricAction,
-  IncrementMetricUsageAction,
-  DecrementMetricUsageAction,
-  AccrueMetricUsageAction,
 } from "./actions.js";
 
 export const addServiceMetric = (input: AddServiceMetricInput) =>

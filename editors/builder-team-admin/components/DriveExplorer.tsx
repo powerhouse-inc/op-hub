@@ -331,11 +331,12 @@ export function DriveExplorer({ children }: EditorProps) {
     return <DriveContents />;
   };
 
-  // Normal layout when builder profile exists
   return (
-    <div className="flex h-full">
+    <div className="ph-drive-explorer-shell flex h-full w-full overflow-hidden">
       <FolderTree onCustomViewChange={setCustomView} />
-      <div className="flex-1 overflow-y-auto p-4">{renderContent()}</div>
+      <div className="min-h-0 min-w-0 flex-1 overflow-y-auto p-4">
+        {renderContent()}
+      </div>
     </div>
   );
 }

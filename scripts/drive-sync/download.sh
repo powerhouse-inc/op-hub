@@ -14,7 +14,7 @@ set -euo pipefail
 #   SB_PROFILE    Switchboard profile to use (optional)
 #
 # Example:
-#   SB_PROFILE=staging-remote bash download.sh powerhouse-operator-team-admin
+#   SB_PROFILE=bai-dev bash download.sh powerhouse-rgh-operator-admin
 ###############################################################################
 
 DRIVE_SLUG="${1:?Usage: $0 <drive-slug> [output-dir]}"

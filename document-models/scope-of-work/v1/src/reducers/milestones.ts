@@ -1,11 +1,4 @@
-import type {
-  ScopeOfWorkMilestonesOperations,
-  ScopeOfWorkState,
-  EditMilestoneAction,
-  Deliverable,
-  Milestone,
-  Progress,
-} from "document-models/scope-of-work/v1";
+import type { ScopeOfWorkMilestonesOperations } from "document-models/scope-of-work/v1";
 import { applyInvariants } from "./projects.js";
 
 // Progress is a flat tagged-union: { completed, done, total, value }, all

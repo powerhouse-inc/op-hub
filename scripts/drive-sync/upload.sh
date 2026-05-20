@@ -16,8 +16,8 @@ set -euo pipefail
 #   EXISTING_DRIVE    Drive ID to upload into (skips drive creation)
 #
 # Example:
-#   SB_PROFILE=local bash upload.sh data/powerhouse-operator-team-admin
-#   EXISTING_DRIVE=d8995a96-... SB_PROFILE=staging bash upload.sh data/powerhouse-operator-team-admin
+#   SB_PROFILE=local bash upload.sh data/powerhouse-rgh-operator-admin
+#   EXISTING_DRIVE=d8995a96-... SB_PROFILE=staging bash upload.sh data/powerhouse-rgh-operator-admin
 ###############################################################################
 
 DATA_DIR="${1:?Usage: $0 <data-dir> [drive-name]}"

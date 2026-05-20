@@ -9,13 +9,22 @@ Download drives from a source switchboard and recreate them on a target switchbo
 
 ## Quick Start
 
-### Sync staging → local (download + upload)
+### Sync bai-dev → local (download + upload)
 
 ```bash
-bash scripts/drive-sync/sync.sh --source staging-remote --target local
+bash scripts/drive-sync/sync.sh --source bai-dev --target local
 ```
 
-This downloads `builders` and `powerhouse-operator-team-admin` from staging, uploads them to your local switchboard, and remaps cross-drive references (e.g., contributor IDs).
+This downloads the 8 demo drives from bai-dev, uploads them to your local switchboard, and remaps cross-drive references (e.g., contributor IDs). The default drive list is:
+
+- `powerhouse-network-admin`
+- `933f946f-5fab-4dea-85ea-aeb85f1f2fd1` (the `builders` drive — its slug on bai-dev is its UUID)
+- `powerhouse-rgh-operator-admin`
+- `bai-team-admin`
+- `growth-team-admin`
+- `core-dev-team-admin`
+- `teeps-team-admin`
+- `powerhouse-genesis-operational-hub`
 
 ### Upload from an existing data folder (skip download)
 
@@ -28,7 +37,7 @@ SB_PROFILE=local bash scripts/drive-sync/upload-all.sh
 `upload-all.sh` will:
 
 1. **Discover drives automatically** by scanning every subdirectory of `data/` that contains a `drive-info.json`. Folders can be named with the drive's UUID or with its slug — both work, because the slug, name, and `preferredEditor` are read directly from `drive-info.json`.
-2. **Sort uploads in dependency-safe order** so cross-drive references can resolve: `powerhouse-network-admin` → `builders` → team admins → operational hub.
+2. **Sort uploads in dependency-safe order** so cross-drive references can resolve: `powerhouse-network-admin` → `builders` (uuid-slug) → operator/team admins → operational hub.
 3. **Create each drive with the correct `preferredEditor`** by passing `PREFERRED_EDITOR=<value from drive-info.json>` to `upload.sh`. So a team-admin drive lands on the target with the `builder-team-admin` editor, the network-admin drive with `network-admin`, etc.
 4. **Print Connect URLs** for every uploaded drive at the end.
 
@@ -57,14 +66,14 @@ print(f'Merged {len(merged)} IDs')
 "
 ```
 
-(Or just rerun `sync.sh` once with `--source staging-remote --target local` — the download phase is a no-op if data is already on disk, then phase 3's cross-drive remap kicks in. See "How It Works" below for the data-already-on-disk skip rules.)
+(Or just rerun `sync.sh` once with `--source bai-dev --target local` — the download phase is a no-op if data is already on disk, then phase 3's cross-drive remap kicks in. See "How It Works" below for the data-already-on-disk skip rules.)
 
 ## Individual Scripts
 
 ### download.sh — Download a drive
 
 ```bash
-SB_PROFILE=staging-remote bash scripts/drive-sync/download.sh <drive-slug> [output-dir]
+SB_PROFILE=bai-dev bash scripts/drive-sync/download.sh <drive-slug> [output-dir]
 ```
 
 Downloads the drive tree and all document states to a local directory. Skips if data already exists (delete the directory to re-download).
@@ -106,7 +115,7 @@ bash scripts/drive-sync/sync.sh --source <profile> --target <profile> [options]
 
 Options:
 
-- `--drives <slugs>` — Comma-separated drive slugs (default: `builders,powerhouse-operator-team-admin`)
+- `--drives <slugs>` — Comma-separated drive slugs (default: the 8 bai-dev demo drives listed above)
 - `--data-dir <dir>` — Data directory (default: `scripts/drive-sync/data`)
 - `--exclude <ids>` — Comma-separated doc IDs to exclude
 - `--clean` — Delete existing data before downloading

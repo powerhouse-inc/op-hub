@@ -25,31 +25,31 @@
         {
           "id": "builders-module",
           "name": "builders",
+          "description": "",
           "operations": [
             {
               "id": "add-builder-op",
               "name": "ADD_BUILDER",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input AddBuilderInput {\n  builderPhid: PHID!\n}",
-              "reducer": "state.builders.push(action.input.builderPhid);",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "state.builders.push(action.input.builderPhid);",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             },
             {
               "id": "remove-builder-op",
               "name": "REMOVE_BUILDER",
-              "scope": "global",
-              "errors": [],
+              "description": "",
               "schema": "input RemoveBuilderInput {\n  builderPhid: PHID!\n}",
-              "reducer": "state.builders = state.builders.filter(\n  (builder) => builder !== action.input.builderPhid,\n);",
-              "examples": [],
               "template": "",
-              "description": ""
+              "reducer": "state.builders = state.builders.filter(\n  (builder) => builder !== action.input.builderPhid,\n);",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
             }
-          ],
-          "description": ""
+          ]
         }
       ],
       "version": 1,

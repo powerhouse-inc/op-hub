@@ -670,16 +670,8 @@ function getDriveLink(driveSlug: string): string {
   const baseUri =
     typeof process !== "undefined" ? process.env.BASE_URI || "" : "";
 
-  if (baseUri.includes("-dev.")) {
-    return `https://connect-dev.powerhouse.xyz/?driveUrl=https://switchboard-dev.powerhouse.xyz/d/${driveSlug}`;
-  }
-
-  if (baseUri.includes("-staging.")) {
-    return `https://connect-staging.powerhouse.xyz/?driveUrl=https://switchboard-staging.powerhouse.xyz/d/${driveSlug}`;
-  }
-
-  if (baseUri && !baseUri.includes("localhost")) {
-    return `https://connect.powerhouse.xyz/?driveUrl=https://switchboard.powerhouse.xyz/d/${driveSlug}`;
+  if (baseUri.includes("mild-dove-63.vetra.io")) {
+    return `https://connect.mild-dove-63.vetra.io/?driveUrl=https://switchboard.mild-dove-63.vetra.io/d/${driveSlug}`;
   }
 
   return `http://localhost:3001/?driveUrl=http://localhost:4001/d/${driveSlug}`;

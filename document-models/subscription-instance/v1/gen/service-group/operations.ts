@@ -1,36 +1,40 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { type SignalDispatch } from "document-model";
+import type { SubscriptionInstanceGlobalState } from "../types.js";
 import type {
   AddServiceGroupAction,
-  RemoveServiceGroupAction,
   AddServiceToGroupAction,
   RemoveServiceFromGroupAction,
+  RemoveServiceGroupAction,
   UpdateServiceGroupCostAction,
 } from "./actions.js";
-import type { SubscriptionInstanceState } from "../types.js";
 
 export interface SubscriptionInstanceServiceGroupOperations {
   addServiceGroupOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: AddServiceGroupAction,
     dispatch?: SignalDispatch,
   ) => void;
   removeServiceGroupOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: RemoveServiceGroupAction,
     dispatch?: SignalDispatch,
   ) => void;
   addServiceToGroupOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: AddServiceToGroupAction,
     dispatch?: SignalDispatch,
   ) => void;
   removeServiceFromGroupOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: RemoveServiceFromGroupAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateServiceGroupCostOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: UpdateServiceGroupCostAction,
     dispatch?: SignalDispatch,
   ) => void;

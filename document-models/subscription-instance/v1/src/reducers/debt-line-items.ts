@@ -1,23 +1,23 @@
+import type { SubscriptionInstanceDebtLineItemsOperations } from "document-models/subscription-instance/v1";
 import {
-  MarkLineItemNotFoundError,
-  MarkLineItemInvalidStatusTransitionError,
-  ConfirmLineItemNotFoundError,
+  ApplyCreditAmountExceedsRemainingError,
+  ApplyCreditInvalidAmountError,
+  ApplyCreditLineItemNotFoundError,
+  ApplyCreditNoDebtError,
   ConfirmLineItemInvalidStatusTransitionError,
-  OverPaymentError,
+  ConfirmLineItemNotFoundError,
+  DynamicSliceNotYetChargeableError,
   InvalidPaymentAmountError,
+  MarkLineItemInvalidStatusTransitionError,
+  MarkLineItemNotFoundError,
+  OverPaymentError,
   ReportPaymentInvalidAmountError,
   ReportPaymentNoDebtError,
-  ApplyCreditInvalidAmountError,
-  ApplyCreditNoDebtError,
-  DynamicSliceNotYetChargeableError,
-  ApplyCreditLineItemNotFoundError,
-  ApplyCreditAmountExceedsRemainingError,
 } from "../../gen/debt-line-items/error.js";
 import type {
   DebtLineItem,
   SubscriptionInstanceState,
 } from "../../gen/schema/types.js";
-import type { SubscriptionInstanceDebtLineItemsOperations } from "document-models/subscription-instance/v1";
 
 // FIFO-within-priority allocation for bulk payments + credits.
 // BA Q4 Option (a): Setup beats Subscription beats Dynamic, then ascending

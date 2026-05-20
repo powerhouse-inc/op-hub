@@ -1,19 +1,23 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
+  AddServiceLevelInput,
   AddTierInput,
+  AddUsageLimitInput,
+  DeleteTierInput,
+  RemoveServiceLevelInput,
+  RemoveUsageLimitInput,
+  ReorderTiersInput,
+  SetTierBillingCycleDiscountsInput,
+  SetTierDefaultBillingCycleInput,
+  SetTierPricingModeInput,
+  UpdateServiceLevelInput,
   UpdateTierInput,
   UpdateTierPricingInput,
-  DeleteTierInput,
-  AddServiceLevelInput,
-  UpdateServiceLevelInput,
-  RemoveServiceLevelInput,
-  AddUsageLimitInput,
   UpdateUsageLimitInput,
-  RemoveUsageLimitInput,
-  SetTierDefaultBillingCycleInput,
-  SetTierBillingCycleDiscountsInput,
-  SetTierPricingModeInput,
-  ReorderTiersInput,
 } from "../types.js";
 
 export type AddTierAction = Action & { type: "ADD_TIER"; input: AddTierInput };

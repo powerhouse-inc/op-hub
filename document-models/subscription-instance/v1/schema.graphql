@@ -111,23 +111,11 @@ enum MetricType {
     NON_CUMULATIVE
 }
 
-"""
-Origin tag on each debt line item. MVP reducers emit only SETUP,
-SUBSCRIPTION_FEE, and DYNAMIC. The reserved values are for utility-style
-billing (where billing cycle < accrual cycle) and reconciliation true-ups
-at long-accrual close. The reserved branches throw via
-`assertEmittableOrigin` until their reducer logic ships.
-See: BA Q2 resolution (2026-05-01) + walkthrough §10.1 roadmap.
-"""
 enum DebtOriginType {
     SETUP
     SUBSCRIPTION_FEE
     DYNAMIC
-    # Reserved for future — utility-billing case (billing cycle < accrual cycle).
-    # Throws on emission via assertEmittableOrigin in utils.ts.
     ESTIMATED_USAGE
-    # Reserved for future — true-up at end of long accrual cycle against
-    # ESTIMATED_USAGE slices. Throws on emission via assertEmittableOrigin.
     RECONCILIATION
 }
 
@@ -145,7 +133,6 @@ type DebtLineItem {
     invoiced: Boolean!
     debitAmount: Amount_Money!
     settledAmount: Amount_Money!
-    "Portion of `settledAmount` that came from APPLY_CREDIT (vs cash payment). Cumulative."
     creditApplied: Amount_Money!
     currency: Currency!
     chargedAt: DateTime!
@@ -171,12 +158,14 @@ type DiscountInfo {
 type SetupCost {
     amount: Amount_Money!
     currency: Currency!
+    paymentDate: DateTime
 }
 
 type RecurringCost {
     amount: Amount_Money!
     currency: Currency!
     billingCycle: BillingCycle!
+    lastPaymentDate: DateTime
     discount: DiscountInfo
 }
 
@@ -332,6 +321,12 @@ input SetExpiringInput {
     expiringSince: DateTime!
 }
 
+input RenewSliceIdMappingInput {
+    sourceId: OID!
+    sliceId: OID!
+    sourceName: String
+}
+
 input CancelSubscriptionInput {
     cancelledSince: DateTime!
     cancellationReason: String
@@ -340,12 +335,6 @@ input CancelSubscriptionInput {
 
 input ResumeSubscriptionInput {
     timestamp: DateTime!
-}
-
-input RenewSliceIdMappingInput {
-    sourceId: OID!
-    sliceId: OID!
-    sourceName: String
 }
 
 input RenewExpiringSubscriptionInput {
@@ -375,33 +364,6 @@ input SetAutoRenewInput {
     autoRenew: Boolean!
 }
 
-input SettleSliceIdMappingInput {
-    sourceId: OID!
-    sliceId: OID!
-    sourceName: String
-}
-
-"""
-Operator-initiated invoice generation. Replaces the prior SETTLE_BILLING_CYCLE
-operation. Per 2026-05-07 stakeholder call: a single 'Generate Invoice'
-operator action force-accrues all metrics, sweeps every CHARGED slice to
-INVOICED stamping each with `invoiceRef`, and (when the simulated/actual
-clock is past `nextBillingDate` and `advanceCycleIfDue` is true) advances
-the billing cycle by emitting next-cycle SUBSCRIPTION_FEE slices and
-consuming any standing carry-over credit.
-"""
-input GenerateInvoiceInput {
-    "Pre-generated invoice document ID to stamp on every swept slice."
-    invoiceId: PHID!
-    generatedAt: DateTime!
-    "When true and currentTime >= nextBillingDate, advances the cycle and emits next-cycle slices."
-    advanceCycleIfDue: Boolean
-    "Pre-generated frozen-slice IDs for any live DYNAMIC slices that need crystallising at the accrual boundary."
-    metricFreezeSliceIds: [SettleSliceIdMappingInput!]!
-    "Pre-generated SUBSCRIPTION_FEE slice IDs for the next cycle (only used when cycle actually advances)."
-    nextCycleRecurringSliceIds: [SettleSliceIdMappingInput!]!
-}
-
 input ChangePlanInput {
     newTierPricingOptionId: OID!
     effectiveDate: DateTime!
@@ -411,6 +373,20 @@ input ChangePlanInput {
     newTierName: String
     newTierPrice: Amount_Money!
     newTierCurrency: Currency!
+}
+
+input SettleSliceIdMappingInput {
+    sourceId: OID!
+    sliceId: OID!
+    sourceName: String
+}
+
+input GenerateInvoiceInput {
+    invoiceId: PHID!
+    generatedAt: DateTime!
+    advanceCycleIfDue: Boolean
+    metricFreezeSliceIds: [SettleSliceIdMappingInput!]!
+    nextCycleRecurringSliceIds: [SettleSliceIdMappingInput!]!
 }
 
 # service
@@ -429,9 +405,11 @@ input AddServiceInput {
     customValue: String
     setupAmount: Amount_Money
     setupCurrency: Currency
+    setupPaymentDate: DateTime
     recurringAmount: Amount_Money
     recurringCurrency: Currency
     recurringBillingCycle: BillingCycle
+    recurringLastPaymentDate: DateTime
     recurringDiscount: DiscountServiceInfoInput
 }
 
@@ -443,6 +421,7 @@ input UpdateServiceSetupCostInput {
     serviceId: OID!
     amount: Amount_Money
     currency: Currency
+    paymentDate: DateTime
 }
 
 input UpdateServiceRecurringCostInput {
@@ -451,6 +430,17 @@ input UpdateServiceRecurringCostInput {
     currency: Currency
     billingCycle: BillingCycle
     nextBillingDate: DateTime
+    lastPaymentDate: DateTime
+}
+
+input ReportSetupPaymentInput {
+    serviceId: OID!
+    paymentDate: DateTime!
+}
+
+input ReportRecurringPaymentInput {
+    serviceId: OID!
+    paymentDate: DateTime!
 }
 
 input UpdateServiceInfoInput {
@@ -472,6 +462,11 @@ input RemoveServiceFacetSelectionInput {
     facetSelectionId: OID!
 }
 
+input ReportOveragePaymentInput {
+    paymentDate: DateTime!
+    amount: Amount_Money!
+}
+
 # service-group
 
 input AddServiceGroupInput {
@@ -486,14 +481,11 @@ input AddServiceGroupInput {
     recurringBillingCycle: BillingCycle
     recurringDiscount: DiscountServiceInfoInput
     effectiveDate: DateTime!
-    setupSliceId: OID!
-    recurringSliceId: OID!
 }
 
 input RemoveServiceGroupInput {
     groupId: OID!
     effectiveDate: DateTime!
-    creditSliceId: OID!
 }
 
 input AddServiceToGroupInput {
@@ -504,9 +496,11 @@ input AddServiceToGroupInput {
     customValue: String
     setupAmount: Amount_Money
     setupCurrency: Currency
+    setupPaymentDate: DateTime
     recurringAmount: Amount_Money
     recurringCurrency: Currency
     recurringBillingCycle: BillingCycle
+    recurringLastPaymentDate: DateTime
 }
 
 input RemoveServiceFromGroupInput {
@@ -559,7 +553,6 @@ input UpdateMetricUsageInput {
     currentTime: DateTime!
     currentUsage: Int!
     isAdjustment: Boolean
-    newSliceId: OID!
 }
 
 input RemoveServiceMetricInput {
@@ -572,7 +565,6 @@ input IncrementMetricUsageInput {
     metricId: OID!
     currentTime: DateTime!
     incrementBy: Int!
-    newSliceId: OID!
 }
 
 input DecrementMetricUsageInput {
@@ -580,14 +572,12 @@ input DecrementMetricUsageInput {
     metricId: OID!
     currentTime: DateTime!
     decrementBy: Int!
-    newSliceId: OID!
 }
 
 input AccrueMetricUsageInput {
     serviceId: OID!
     metricId: OID!
     accrualDate: DateTime!
-    newSliceIds: [OID!]!
 }
 
 # customer
@@ -626,6 +616,4 @@ input ApplyCreditInput {
     amount: Amount_Money!
     creditDate: DateTime!
     reason: String!
-    "When provided, allocates credit against a single specific debt line item; otherwise FIFO+priority across all collectible outstanding slices."
-    lineItemId: OID
 }

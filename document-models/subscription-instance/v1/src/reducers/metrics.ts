@@ -1,23 +1,28 @@
+import type { SubscriptionInstanceMetricsOperations } from "document-models/subscription-instance/v1";
 import {
-  AddServiceMetricServiceNotFoundError,
-  UpdateMetricServiceNotFoundError,
-  UpdateMetricNotFoundError,
-  UpdateMetricUsageServiceNotFoundError,
-  UpdateMetricUsageNotFoundError,
-  RemoveServiceMetricServiceNotFoundError,
-  RemoveServiceMetricNotFoundError,
-  IncrementMetricUsageServiceNotFoundError,
-  IncrementMetricUsageNotFoundError,
-  DecrementMetricUsageServiceNotFoundError,
-  DecrementMetricUsageNotFoundError,
-  SubscriptionNotActiveUpdateUsageError,
-  SubscriptionNotActiveIncrementUsageError,
-  SubscriptionNotActiveDecrementUsageError,
-  SubscriptionNotActiveAccrueMetricUsageError,
-  AccrueMetricUsageServiceNotFoundError,
   AccrueMetricUsageMetricNotFoundError,
+  AccrueMetricUsageServiceNotFoundError,
   AccrueMissingSliceIdError,
+  AddServiceMetricServiceNotFoundError,
+  DecrementMetricUsageNotFoundError,
+  DecrementMetricUsageServiceNotFoundError,
+  IncrementMetricUsageNotFoundError,
+  IncrementMetricUsageServiceNotFoundError,
+  RemoveServiceMetricNotFoundError,
+  RemoveServiceMetricServiceNotFoundError,
+  SubscriptionNotActiveAccrueMetricUsageError,
+  SubscriptionNotActiveDecrementUsageError,
+  SubscriptionNotActiveIncrementUsageError,
+  SubscriptionNotActiveUpdateUsageError,
+  UpdateMetricNotFoundError,
+  UpdateMetricServiceNotFoundError,
+  UpdateMetricUsageNotFoundError,
+  UpdateMetricUsageServiceNotFoundError,
 } from "../../gen/metrics/error.js";
+import type {
+  ServiceMetric,
+  SubscriptionInstanceState,
+} from "../../gen/schema/types.js";
 import {
   addAccrualPeriod,
   appendDebtSlice,
@@ -28,11 +33,6 @@ import {
   freezeDynamicSlice,
   updateDynamicSliceAmount,
 } from "../utils.js";
-import type {
-  ServiceMetric,
-  SubscriptionInstanceState,
-} from "../../gen/schema/types.js";
-import type { SubscriptionInstanceMetricsOperations } from "document-models/subscription-instance/v1";
 
 // Live-update helper shared across UPDATE/INCREMENT/DECREMENT.
 // Recomputes the metric's overage cost from current usage, then either
@@ -101,6 +101,7 @@ export const subscriptionInstanceMetricsOperations: SubscriptionInstanceMetricsO
                 amount: action.input.unitCostAmount,
                 currency: action.input.unitCostCurrency,
                 billingCycle: action.input.unitCostBillingCycle,
+                lastPaymentDate: null,
                 discount: null,
               }
             : null,

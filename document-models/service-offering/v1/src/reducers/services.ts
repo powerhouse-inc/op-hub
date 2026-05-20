@@ -1,8 +1,8 @@
-import {
-  UpdateServiceNotFoundError,
-  DeleteServiceNotFoundError,
-} from "../../gen/services/error.js";
 import type { ServiceOfferingServicesOperations } from "document-models/service-offering/v1";
+import {
+  DeleteServiceNotFoundError,
+  UpdateServiceNotFoundError,
+} from "../../gen/services/error.js";
 
 export const serviceOfferingServicesOperations: ServiceOfferingServicesOperations =
   {

@@ -1,24 +1,24 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
-  isSubscriptionInstanceDocument,
-  addServiceMetric,
-  updateMetric,
-  updateMetricUsage,
-  removeServiceMetric,
-  incrementMetricUsage,
-  decrementMetricUsage,
-  AddServiceMetricInputSchema,
-  UpdateMetricInputSchema,
-  UpdateMetricUsageInputSchema,
-  RemoveServiceMetricInputSchema,
-  IncrementMetricUsageInputSchema,
-  DecrementMetricUsageInputSchema,
   accrueMetricUsage,
   AccrueMetricUsageInputSchema,
+  addServiceMetric,
+  AddServiceMetricInputSchema,
+  decrementMetricUsage,
+  DecrementMetricUsageInputSchema,
+  incrementMetricUsage,
+  IncrementMetricUsageInputSchema,
+  isSubscriptionInstanceDocument,
+  reducer,
+  removeServiceMetric,
+  RemoveServiceMetricInputSchema,
+  updateMetric,
+  UpdateMetricInputSchema,
+  updateMetricUsage,
+  UpdateMetricUsageInputSchema,
+  utils,
 } from "document-models/subscription-instance/v1";
+import { describe, expect, it } from "vitest";
 
 describe("MetricsOperations", () => {
   it("should handle addServiceMetric operation", () => {

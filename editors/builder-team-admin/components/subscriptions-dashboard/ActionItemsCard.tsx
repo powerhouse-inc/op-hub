@@ -73,8 +73,7 @@ export function ActionItemsCard({ items }: ActionItemsCardProps) {
         ) : null}
       </div>
 
-      {/* Items */}
-      <div className="space-y-2">
+      <div className="max-h-96 space-y-2 overflow-y-auto pr-1">
         {grouped.map((item, i) => {
           const config = SEVERITY_CONFIG[item.severity];
           const Icon = config.icon;

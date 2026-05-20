@@ -1,8 +1,12 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
   AddServiceInput,
-  UpdateServiceInput,
   DeleteServiceInput,
+  UpdateServiceInput,
 } from "../types.js";
 
 export type AddServiceAction = Action & {

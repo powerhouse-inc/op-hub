@@ -1,21 +1,22 @@
+import type { SubscriptionInstanceSubscriptionOperations } from "document-models/subscription-instance/v1";
 import {
-  ActivateNotPendingError,
   ActivateMissingSliceIdError,
-  PauseNotActiveError,
-  SetExpiringNotActiveError,
+  ActivateNotPendingError,
+  BillingCycleSwapNotYetSupportedError,
   CancelAlreadyCancelledError,
   CancelMissingSliceIdError,
-  ResumeNotPausedError,
-  RenewNotExpiringError,
-  RenewMissingSliceIdError,
+  ChangePlanInvalidEffectiveDateError,
+  ChangePlanMissingTierPricingError,
+  ChangePlanNotActiveError,
   NoBillingCycleActiveError,
+  NoInvoiceableLineItemsError,
+  PauseNotActiveError,
+  RenewMissingSliceIdError,
+  RenewNotExpiringError,
+  ResumeNotPausedError,
+  SetExpiringNotActiveError,
   SettlementDateBeforeCycleStartError,
   SettleMissingSliceIdError,
-  NoInvoiceableLineItemsError,
-  ChangePlanNotActiveError,
-  ChangePlanInvalidEffectiveDateError,
-  BillingCycleSwapNotYetSupportedError,
-  ChangePlanMissingTierPricingError,
 } from "../../gen/subscription/error.js";
 import {
   appendDebtSlice,
@@ -27,7 +28,6 @@ import {
   consumeCarryOverCredit,
   getCustomerCreditBalance,
 } from "./debt-line-items.js";
-import type { SubscriptionInstanceSubscriptionOperations } from "document-models/subscription-instance/v1";
 
 export const subscriptionInstanceSubscriptionOperations: SubscriptionInstanceSubscriptionOperations =
   {
@@ -68,6 +68,7 @@ export const subscriptionInstanceSubscriptionOperations: SubscriptionInstanceSub
             ? {
                 amount: s.setupAmount,
                 currency: s.setupCurrency,
+                paymentDate: null,
               }
             : null,
         recurringCost:
@@ -76,6 +77,7 @@ export const subscriptionInstanceSubscriptionOperations: SubscriptionInstanceSub
                 amount: s.recurringAmount,
                 currency: s.recurringCurrency,
                 billingCycle: s.recurringBillingCycle,
+                lastPaymentDate: null,
                 discount: s.recurringDiscount
                   ? {
                       originalAmount: s.recurringDiscount.originalAmount,
@@ -98,6 +100,7 @@ export const subscriptionInstanceSubscriptionOperations: SubscriptionInstanceSub
                   amount: m.unitCostAmount,
                   currency: m.unitCostCurrency,
                   billingCycle: m.unitCostBillingCycle,
+                  lastPaymentDate: null,
                   discount: null,
                 }
               : null,

@@ -1,51 +1,55 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
-  InitializeSubscriptionInputSchema,
-  SetResourceDocumentInputSchema,
   ActivateSubscriptionInputSchema,
-  PauseSubscriptionInputSchema,
-  SetExpiringInputSchema,
   CancelSubscriptionInputSchema,
-  ResumeSubscriptionInputSchema,
+  ChangePlanInputSchema,
+  GenerateInvoiceInputSchema,
+  InitializeSubscriptionInputSchema,
+  PauseSubscriptionInputSchema,
   RenewExpiringSubscriptionInputSchema,
+  ResumeSubscriptionInputSchema,
+  SetAutoRenewInputSchema,
+  SetExpiringInputSchema,
+  SetOperatorNotesInputSchema,
+  SetResourceDocumentInputSchema,
   UpdateCustomerInfoInputSchema,
   UpdateTierInfoInputSchema,
-  SetOperatorNotesInputSchema,
-  SetAutoRenewInputSchema,
-  GenerateInvoiceInputSchema,
-  ChangePlanInputSchema,
 } from "../schema/zod.js";
 import type {
-  InitializeSubscriptionInput,
-  SetResourceDocumentInput,
   ActivateSubscriptionInput,
-  PauseSubscriptionInput,
-  SetExpiringInput,
   CancelSubscriptionInput,
-  ResumeSubscriptionInput,
+  ChangePlanInput,
+  GenerateInvoiceInput,
+  InitializeSubscriptionInput,
+  PauseSubscriptionInput,
   RenewExpiringSubscriptionInput,
+  ResumeSubscriptionInput,
+  SetAutoRenewInput,
+  SetExpiringInput,
+  SetOperatorNotesInput,
+  SetResourceDocumentInput,
   UpdateCustomerInfoInput,
   UpdateTierInfoInput,
-  SetOperatorNotesInput,
-  SetAutoRenewInput,
-  GenerateInvoiceInput,
-  ChangePlanInput,
 } from "../types.js";
 import type {
-  InitializeSubscriptionAction,
-  SetResourceDocumentAction,
   ActivateSubscriptionAction,
-  PauseSubscriptionAction,
-  SetExpiringAction,
   CancelSubscriptionAction,
-  ResumeSubscriptionAction,
+  ChangePlanAction,
+  GenerateInvoiceAction,
+  InitializeSubscriptionAction,
+  PauseSubscriptionAction,
   RenewExpiringSubscriptionAction,
+  ResumeSubscriptionAction,
+  SetAutoRenewAction,
+  SetExpiringAction,
+  SetOperatorNotesAction,
+  SetResourceDocumentAction,
   UpdateCustomerInfoAction,
   UpdateTierInfoAction,
-  SetOperatorNotesAction,
-  SetAutoRenewAction,
-  GenerateInvoiceAction,
-  ChangePlanAction,
 } from "./actions.js";
 
 export const initializeSubscription = (input: InitializeSubscriptionInput) =>
@@ -158,20 +162,20 @@ export const setAutoRenew = (input: SetAutoRenewInput) =>
     "global",
   );
 
-export const generateInvoice = (input: GenerateInvoiceInput) =>
-  createAction<GenerateInvoiceAction>(
-    "GENERATE_INVOICE",
-    { ...input },
-    undefined,
-    GenerateInvoiceInputSchema,
-    "global",
-  );
-
 export const changePlan = (input: ChangePlanInput) =>
   createAction<ChangePlanAction>(
     "CHANGE_PLAN",
     { ...input },
     undefined,
     ChangePlanInputSchema,
+    "global",
+  );
+
+export const generateInvoice = (input: GenerateInvoiceInput) =>
+  createAction<GenerateInvoiceAction>(
+    "GENERATE_INVOICE",
+    { ...input },
+    undefined,
+    GenerateInvoiceInputSchema,
     "global",
   );

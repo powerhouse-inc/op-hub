@@ -1,24 +1,30 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
-  isSubscriptionInstanceDocument,
   addService,
-  removeService,
-  updateServiceSetupCost,
-  updateServiceRecurringCost,
-  updateServiceInfo,
   addServiceFacetSelection,
-  removeServiceFacetSelection,
-  AddServiceInputSchema,
-  RemoveServiceInputSchema,
-  UpdateServiceSetupCostInputSchema,
-  UpdateServiceRecurringCostInputSchema,
-  UpdateServiceInfoInputSchema,
   AddServiceFacetSelectionInputSchema,
+  AddServiceInputSchema,
+  isSubscriptionInstanceDocument,
+  reducer,
+  removeService,
+  removeServiceFacetSelection,
   RemoveServiceFacetSelectionInputSchema,
+  RemoveServiceInputSchema,
+  reportOveragePayment,
+  ReportOveragePaymentInputSchema,
+  reportRecurringPayment,
+  ReportRecurringPaymentInputSchema,
+  reportSetupPayment,
+  ReportSetupPaymentInputSchema,
+  updateServiceInfo,
+  UpdateServiceInfoInputSchema,
+  updateServiceRecurringCost,
+  UpdateServiceRecurringCostInputSchema,
+  updateServiceSetupCost,
+  UpdateServiceSetupCostInputSchema,
+  utils,
 } from "document-models/subscription-instance/v1";
+import { describe, expect, it } from "vitest";
 
 describe("ServiceOperations", () => {
   it("should handle addService operation", () => {
@@ -139,6 +145,57 @@ describe("ServiceOperations", () => {
     expect(updatedDocument.operations.global).toHaveLength(1);
     expect(updatedDocument.operations.global[0].action.type).toBe(
       "REMOVE_SERVICE_FACET_SELECTION",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle reportSetupPayment operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(ReportSetupPaymentInputSchema());
+
+    const updatedDocument = reducer(document, reportSetupPayment(input));
+
+    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "REPORT_SETUP_PAYMENT",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle reportRecurringPayment operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(ReportRecurringPaymentInputSchema());
+
+    const updatedDocument = reducer(document, reportRecurringPayment(input));
+
+    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "REPORT_RECURRING_PAYMENT",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle reportOveragePayment operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(ReportOveragePaymentInputSchema());
+
+    const updatedDocument = reducer(document, reportOveragePayment(input));
+
+    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "REPORT_OVERAGE_PAYMENT",
     );
     expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
       input,

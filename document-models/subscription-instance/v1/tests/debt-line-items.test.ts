@@ -1,18 +1,18 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
+  applyCredit,
+  ApplyCreditInputSchema,
+  confirmLineItemPayment,
+  ConfirmLineItemPaymentInputSchema,
   isSubscriptionInstanceDocument,
   markLineItemInvoiced,
-  confirmLineItemPayment,
   MarkLineItemInvoicedInputSchema,
-  ConfirmLineItemPaymentInputSchema,
+  reducer,
   reportPayment,
-  applyCredit,
   ReportPaymentInputSchema,
-  ApplyCreditInputSchema,
+  utils,
 } from "document-models/subscription-instance/v1";
+import { describe, expect, it } from "vitest";
 
 describe("DebtLineItemsOperations", () => {
   it("should handle markLineItemInvoiced operation", () => {

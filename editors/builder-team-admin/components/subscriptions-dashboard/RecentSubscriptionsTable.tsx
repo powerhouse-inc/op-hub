@@ -20,7 +20,6 @@ export function RecentSubscriptionsTable({
     if (!b.createdAt) return -1;
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
   });
-  const display = sorted.slice(0, 6);
 
   // Status summary
   const statusCounts = new Map<string, { count: number; mrr: number }>();
@@ -42,79 +41,80 @@ export function RecentSubscriptionsTable({
 
   return (
     <div>
+      <div className="max-h-96 overflow-y-auto">
       <table className="w-full text-left" role="table">
-        <thead>
-          <tr className="border-b border-stone-200">
-            <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-              Customer
-            </th>
-            <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-              Plan
-            </th>
-            <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-              Resources
-            </th>
-            <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-              MRR
-            </th>
-            <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-              Status
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {display.length === 0 ? (
-            <tr>
-              <td
-                colSpan={5}
-                className="py-8 text-center text-sm text-stone-400"
-              >
-                No subscriptions yet
-              </td>
+          <thead>
+            <tr className="border-b border-stone-200">
+              <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                Customer
+              </th>
+              <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                Plan
+              </th>
+              <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                Resources
+              </th>
+              <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                MRR
+              </th>
+              <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                Status
+              </th>
             </tr>
-          ) : (
-            display.map((sub) => (
-              <tr
-                key={sub.id}
-                className="border-b border-stone-100 last:border-0"
-              >
-                <td className="py-2.5 text-sm">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedNode(sub.id)}
-                    className="group inline-flex max-w-full min-w-0 items-center gap-1.5 rounded-md px-1 -mx-1 py-0.5 text-left font-medium text-teal-700 transition-colors hover:bg-teal-50 hover:text-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-teal-500"
-                    title="Open subscription instance document"
-                  >
-                    <span className="truncate">{sub.customerName}</span>
-                    <SquareArrowOutUpRight
-                      className="h-3.5 w-3.5 shrink-0 text-teal-500/80 opacity-80 transition-opacity group-hover:opacity-100"
-                      aria-hidden
-                    />
-                    <span className="sr-only">Open in editor</span>
-                  </button>
-                </td>
-                <td className="py-2.5 text-sm text-stone-500">
-                  {sub.tierName}
-                </td>
-                <td className="py-2.5 text-sm text-stone-500">
-                  {sub.resourceCount}
-                </td>
-                <td className="py-2.5 text-sm font-medium text-stone-700">
-                  {formatCurrency(sub.mrr)}
-                </td>
-                <td className="py-2.5">
-                  <StatusBadge status={sub.status} />
+          </thead>
+          <tbody>
+            {sorted.length === 0 ? (
+              <tr>
+                <td
+                  colSpan={5}
+                  className="py-8 text-center text-sm text-stone-400"
+                >
+                  No subscriptions yet
                 </td>
               </tr>
-            ))
-          )}
-        </tbody>
+            ) : (
+              sorted.map((sub) => (
+                <tr
+                  key={sub.id}
+                  className="border-b border-stone-100 last:border-0"
+                >
+                  <td className="py-2.5 text-sm">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedNode(sub.id)}
+                      className="group inline-flex max-w-full min-w-0 items-center gap-1.5 rounded-md px-1 -mx-1 py-0.5 text-left font-medium text-teal-700 transition-colors hover:bg-teal-50 hover:text-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-teal-500"
+                      title="Open subscription instance document"
+                    >
+                      <span className="truncate">{sub.customerName}</span>
+                      <SquareArrowOutUpRight
+                        className="h-3.5 w-3.5 shrink-0 text-teal-500/80 opacity-80 transition-opacity group-hover:opacity-100"
+                        aria-hidden
+                      />
+                      <span className="sr-only">Open in editor</span>
+                    </button>
+                  </td>
+                  <td className="py-2.5 text-sm text-stone-500">
+                    {sub.tierName}
+                  </td>
+                  <td className="py-2.5 text-sm text-stone-500">
+                    {sub.resourceCount}
+                  </td>
+                  <td className="py-2.5 text-sm font-medium text-stone-700">
+                    {formatCurrency(sub.mrr)}
+                  </td>
+                  <td className="py-2.5">
+                    <StatusBadge status={sub.status} />
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
       </table>
+      </div>
 
       {/* Summary footer */}
       {subscriptions.length > 0 ? (
         <div className="mt-4 border-t border-stone-200 pt-3 space-y-2">
-          {/* Status breakdown */}
           <div className="flex flex-wrap gap-3">
             {statusEntries.map(([status, { count, mrr }]) => (
               <div
@@ -129,7 +129,6 @@ export function RecentSubscriptionsTable({
             ))}
           </div>
 
-          {/* Active total vs all total */}
           <div className="flex items-center justify-between text-sm">
             <span className="text-stone-500">
               Active MRR:{" "}
@@ -141,14 +140,6 @@ export function RecentSubscriptionsTable({
               Total (all statuses): {formatCurrency(totalMrr)}
             </span>
           </div>
-        </div>
-      ) : null}
-
-      {sorted.length > 6 ? (
-        <div className="mt-3 text-center">
-          <span className="text-xs font-medium text-teal-600 cursor-pointer hover:underline">
-            View all subscriptions
-          </span>
         </div>
       ) : null}
     </div>

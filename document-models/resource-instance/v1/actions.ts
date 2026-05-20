@@ -1,7 +1,11 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { baseActions } from "document-model";
 import {
-  resourceInstanceInstanceManagementActions,
   resourceInstanceConfigurationManagementActions,
+  resourceInstanceInstanceManagementActions,
 } from "./gen/creators.js";
 
 /** Actions for the ResourceInstance document model */

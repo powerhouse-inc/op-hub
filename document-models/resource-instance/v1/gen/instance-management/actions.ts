@@ -1,20 +1,24 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
-  InitializeInstanceInput,
-  UpdateInstanceInfoInput,
-  SetOperatorProfileInput,
-  UpdateInstanceStatusInput,
+  ActivateInstanceInput,
   ConfirmInstanceInput,
-  ReportProvisioningStartedInput,
+  InitializeInstanceInput,
   ReportProvisioningCompletedInput,
   ReportProvisioningFailedInput,
-  ActivateInstanceInput,
-  SuspendForNonPaymentInput,
-  SuspendForMaintenanceInput,
-  ResumeAfterPaymentInput,
+  ReportProvisioningStartedInput,
   ResumeAfterMaintenanceInput,
+  ResumeAfterPaymentInput,
+  SetOperatorProfileInput,
+  SuspendForMaintenanceInput,
+  SuspendForNonPaymentInput,
   SuspendInstanceInput,
   TerminateInstanceInput,
+  UpdateInstanceInfoInput,
+  UpdateInstanceStatusInput,
 } from "../types.js";
 
 export type InitializeInstanceAction = Action & {

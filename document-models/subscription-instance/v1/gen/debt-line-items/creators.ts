@@ -1,21 +1,25 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
-  MarkLineItemInvoicedInputSchema,
-  ConfirmLineItemPaymentInputSchema,
-  ReportPaymentInputSchema,
   ApplyCreditInputSchema,
+  ConfirmLineItemPaymentInputSchema,
+  MarkLineItemInvoicedInputSchema,
+  ReportPaymentInputSchema,
 } from "../schema/zod.js";
 import type {
-  MarkLineItemInvoicedInput,
-  ConfirmLineItemPaymentInput,
-  ReportPaymentInput,
   ApplyCreditInput,
+  ConfirmLineItemPaymentInput,
+  MarkLineItemInvoicedInput,
+  ReportPaymentInput,
 } from "../types.js";
 import type {
-  MarkLineItemInvoicedAction,
-  ConfirmLineItemPaymentAction,
-  ReportPaymentAction,
   ApplyCreditAction,
+  ConfirmLineItemPaymentAction,
+  MarkLineItemInvoicedAction,
+  ReportPaymentAction,
 } from "./actions.js";
 
 export const markLineItemInvoiced = (input: MarkLineItemInvoicedInput) =>

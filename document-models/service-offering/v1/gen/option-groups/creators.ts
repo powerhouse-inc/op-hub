@@ -1,33 +1,37 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
   AddOptionGroupInputSchema,
-  UpdateOptionGroupInputSchema,
-  DeleteOptionGroupInputSchema,
-  SetOptionGroupStandalonePricingInputSchema,
   AddOptionGroupTierPricingInputSchema,
-  UpdateOptionGroupTierPricingInputSchema,
+  DeleteOptionGroupInputSchema,
   RemoveOptionGroupTierPricingInputSchema,
   SetOptionGroupDiscountModeInputSchema,
+  SetOptionGroupStandalonePricingInputSchema,
+  UpdateOptionGroupInputSchema,
+  UpdateOptionGroupTierPricingInputSchema,
 } from "../schema/zod.js";
 import type {
   AddOptionGroupInput,
-  UpdateOptionGroupInput,
-  DeleteOptionGroupInput,
-  SetOptionGroupStandalonePricingInput,
   AddOptionGroupTierPricingInput,
-  UpdateOptionGroupTierPricingInput,
+  DeleteOptionGroupInput,
   RemoveOptionGroupTierPricingInput,
   SetOptionGroupDiscountModeInput,
+  SetOptionGroupStandalonePricingInput,
+  UpdateOptionGroupInput,
+  UpdateOptionGroupTierPricingInput,
 } from "../types.js";
 import type {
   AddOptionGroupAction,
-  UpdateOptionGroupAction,
-  DeleteOptionGroupAction,
-  SetOptionGroupStandalonePricingAction,
   AddOptionGroupTierPricingAction,
-  UpdateOptionGroupTierPricingAction,
+  DeleteOptionGroupAction,
   RemoveOptionGroupTierPricingAction,
   SetOptionGroupDiscountModeAction,
+  SetOptionGroupStandalonePricingAction,
+  UpdateOptionGroupAction,
+  UpdateOptionGroupTierPricingAction,
 } from "./actions.js";
 
 export const addOptionGroup = (input: AddOptionGroupInput) =>

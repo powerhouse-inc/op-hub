@@ -1,30 +1,43 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
-  AddServiceInputSchema,
-  RemoveServiceInputSchema,
-  UpdateServiceSetupCostInputSchema,
-  UpdateServiceRecurringCostInputSchema,
-  UpdateServiceInfoInputSchema,
   AddServiceFacetSelectionInputSchema,
+  AddServiceInputSchema,
   RemoveServiceFacetSelectionInputSchema,
+  RemoveServiceInputSchema,
+  ReportOveragePaymentInputSchema,
+  ReportRecurringPaymentInputSchema,
+  ReportSetupPaymentInputSchema,
+  UpdateServiceInfoInputSchema,
+  UpdateServiceRecurringCostInputSchema,
+  UpdateServiceSetupCostInputSchema,
 } from "../schema/zod.js";
 import type {
-  AddServiceInput,
-  RemoveServiceInput,
-  UpdateServiceSetupCostInput,
-  UpdateServiceRecurringCostInput,
-  UpdateServiceInfoInput,
   AddServiceFacetSelectionInput,
+  AddServiceInput,
   RemoveServiceFacetSelectionInput,
+  RemoveServiceInput,
+  ReportOveragePaymentInput,
+  ReportRecurringPaymentInput,
+  ReportSetupPaymentInput,
+  UpdateServiceInfoInput,
+  UpdateServiceRecurringCostInput,
+  UpdateServiceSetupCostInput,
 } from "../types.js";
 import type {
   AddServiceAction,
-  RemoveServiceAction,
-  UpdateServiceSetupCostAction,
-  UpdateServiceRecurringCostAction,
-  UpdateServiceInfoAction,
   AddServiceFacetSelectionAction,
+  RemoveServiceAction,
   RemoveServiceFacetSelectionAction,
+  ReportOveragePaymentAction,
+  ReportRecurringPaymentAction,
+  ReportSetupPaymentAction,
+  UpdateServiceInfoAction,
+  UpdateServiceRecurringCostAction,
+  UpdateServiceSetupCostAction,
 } from "./actions.js";
 
 export const addService = (input: AddServiceInput) =>
@@ -65,6 +78,24 @@ export const updateServiceRecurringCost = (
     "global",
   );
 
+export const reportSetupPayment = (input: ReportSetupPaymentInput) =>
+  createAction<ReportSetupPaymentAction>(
+    "REPORT_SETUP_PAYMENT",
+    { ...input },
+    undefined,
+    ReportSetupPaymentInputSchema,
+    "global",
+  );
+
+export const reportRecurringPayment = (input: ReportRecurringPaymentInput) =>
+  createAction<ReportRecurringPaymentAction>(
+    "REPORT_RECURRING_PAYMENT",
+    { ...input },
+    undefined,
+    ReportRecurringPaymentInputSchema,
+    "global",
+  );
+
 export const updateServiceInfo = (input: UpdateServiceInfoInput) =>
   createAction<UpdateServiceInfoAction>(
     "UPDATE_SERVICE_INFO",
@@ -93,5 +124,14 @@ export const removeServiceFacetSelection = (
     { ...input },
     undefined,
     RemoveServiceFacetSelectionInputSchema,
+    "global",
+  );
+
+export const reportOveragePayment = (input: ReportOveragePaymentInput) =>
+  createAction<ReportOveragePaymentAction>(
+    "REPORT_OVERAGE_PAYMENT",
+    { ...input },
+    undefined,
+    ReportOveragePaymentInputSchema,
     "global",
   );

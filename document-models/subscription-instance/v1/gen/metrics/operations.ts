@@ -1,48 +1,52 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { type SignalDispatch } from "document-model";
+import type { SubscriptionInstanceGlobalState } from "../types.js";
 import type {
+  AccrueMetricUsageAction,
   AddServiceMetricAction,
+  DecrementMetricUsageAction,
+  IncrementMetricUsageAction,
+  RemoveServiceMetricAction,
   UpdateMetricAction,
   UpdateMetricUsageAction,
-  RemoveServiceMetricAction,
-  IncrementMetricUsageAction,
-  DecrementMetricUsageAction,
-  AccrueMetricUsageAction,
 } from "./actions.js";
-import type { SubscriptionInstanceState } from "../types.js";
 
 export interface SubscriptionInstanceMetricsOperations {
   addServiceMetricOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: AddServiceMetricAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateMetricOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: UpdateMetricAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateMetricUsageOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: UpdateMetricUsageAction,
     dispatch?: SignalDispatch,
   ) => void;
   removeServiceMetricOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: RemoveServiceMetricAction,
     dispatch?: SignalDispatch,
   ) => void;
   incrementMetricUsageOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: IncrementMetricUsageAction,
     dispatch?: SignalDispatch,
   ) => void;
   decrementMetricUsageOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: DecrementMetricUsageAction,
     dispatch?: SignalDispatch,
   ) => void;
   accrueMetricUsageOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: AccrueMetricUsageAction,
     dispatch?: SignalDispatch,
   ) => void;

@@ -1,32 +1,32 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { Reducer, StateReducer } from "document-model";
-import { isDocumentAction, createReducer } from "document-model";
+import { createReducer, isDocumentAction } from "document-model";
 import type { ResourceInstancePHState } from "document-models/resource-instance/v1";
 
-import { resourceInstanceInstanceManagementOperations } from "../src/reducers/instance-management.js";
 import { resourceInstanceConfigurationManagementOperations } from "../src/reducers/configuration-management.js";
+import { resourceInstanceInstanceManagementOperations } from "../src/reducers/instance-management.js";
 
 import {
-  InitializeInstanceInputSchema,
-  UpdateInstanceInfoInputSchema,
-  SetOperatorProfileInputSchema,
-  UpdateInstanceStatusInputSchema,
+  ActivateInstanceInputSchema,
+  ApplyConfigurationChangesInputSchema,
   ConfirmInstanceInputSchema,
-  ReportProvisioningStartedInputSchema,
+  InitializeInstanceInputSchema,
+  RemoveInstanceFacetInputSchema,
   ReportProvisioningCompletedInputSchema,
   ReportProvisioningFailedInputSchema,
-  ActivateInstanceInputSchema,
-  SuspendForNonPaymentInputSchema,
-  SuspendForMaintenanceInputSchema,
-  ResumeAfterPaymentInputSchema,
+  ReportProvisioningStartedInputSchema,
   ResumeAfterMaintenanceInputSchema,
+  ResumeAfterPaymentInputSchema,
+  SetInstanceFacetInputSchema,
+  SetOperatorProfileInputSchema,
+  SuspendForMaintenanceInputSchema,
+  SuspendForNonPaymentInputSchema,
   SuspendInstanceInputSchema,
   TerminateInstanceInputSchema,
-  SetInstanceFacetInputSchema,
-  RemoveInstanceFacetInputSchema,
   UpdateInstanceFacetInputSchema,
-  ApplyConfigurationChangesInputSchema,
+  UpdateInstanceInfoInputSchema,
+  UpdateInstanceStatusInputSchema,
 } from "./schema/zod.js";
 
 const stateReducer: StateReducer<ResourceInstancePHState> = (

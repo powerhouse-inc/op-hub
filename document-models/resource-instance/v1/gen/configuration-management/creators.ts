@@ -1,21 +1,25 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
-  SetInstanceFacetInputSchema,
-  RemoveInstanceFacetInputSchema,
-  UpdateInstanceFacetInputSchema,
   ApplyConfigurationChangesInputSchema,
+  RemoveInstanceFacetInputSchema,
+  SetInstanceFacetInputSchema,
+  UpdateInstanceFacetInputSchema,
 } from "../schema/zod.js";
 import type {
-  SetInstanceFacetInput,
-  RemoveInstanceFacetInput,
-  UpdateInstanceFacetInput,
   ApplyConfigurationChangesInput,
+  RemoveInstanceFacetInput,
+  SetInstanceFacetInput,
+  UpdateInstanceFacetInput,
 } from "../types.js";
 import type {
-  SetInstanceFacetAction,
-  RemoveInstanceFacetAction,
-  UpdateInstanceFacetAction,
   ApplyConfigurationChangesAction,
+  RemoveInstanceFacetAction,
+  SetInstanceFacetAction,
+  UpdateInstanceFacetAction,
 } from "./actions.js";
 
 export const setInstanceFacet = (input: SetInstanceFacetInput) =>

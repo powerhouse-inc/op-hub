@@ -1,51 +1,51 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { Reducer, StateReducer } from "document-model";
-import { isDocumentAction, createReducer } from "document-model";
+import { createReducer, isDocumentAction } from "document-model";
 import type { ServiceOfferingPHState } from "document-models/service-offering/v1";
 
 import { serviceOfferingOfferingOperations } from "../src/reducers/offering.js";
+import { serviceOfferingOptionGroupsOperations } from "../src/reducers/option-groups.js";
 import { serviceOfferingServicesOperations } from "../src/reducers/services.js";
 import { serviceOfferingTiersOperations } from "../src/reducers/tiers.js";
-import { serviceOfferingOptionGroupsOperations } from "../src/reducers/option-groups.js";
 
 import {
+  AddFacetOptionInputSchema,
+  AddOptionGroupInputSchema,
+  AddOptionGroupTierPricingInputSchema,
+  AddServiceInputSchema,
+  AddServiceLevelInputSchema,
+  AddTierInputSchema,
+  AddUsageLimitInputSchema,
+  ChangeResourceTemplateInputSchema,
+  DeleteOptionGroupInputSchema,
+  DeleteServiceInputSchema,
+  DeleteTierInputSchema,
+  RemoveFacetOptionInputSchema,
+  RemoveFacetTargetInputSchema,
+  RemoveOptionGroupTierPricingInputSchema,
+  RemoveServiceLevelInputSchema,
+  RemoveUsageLimitInputSchema,
+  ReorderTiersInputSchema,
+  SelectResourceTemplateInputSchema,
+  SetAvailableBillingCyclesInputSchema,
+  SetFacetTargetInputSchema,
+  SetOfferingIdInputSchema,
+  SetOperatorInputSchema,
+  SetOptionGroupDiscountModeInputSchema,
+  SetOptionGroupStandalonePricingInputSchema,
+  SetTierBillingCycleDiscountsInputSchema,
+  SetTierDefaultBillingCycleInputSchema,
+  SetTierPricingModeInputSchema,
   UpdateOfferingInfoInputSchema,
   UpdateOfferingStatusInputSchema,
-  SetOperatorInputSchema,
-  SetOfferingIdInputSchema,
-  SetFacetTargetInputSchema,
-  RemoveFacetTargetInputSchema,
-  AddFacetOptionInputSchema,
-  RemoveFacetOptionInputSchema,
-  SelectResourceTemplateInputSchema,
-  ChangeResourceTemplateInputSchema,
-  SetAvailableBillingCyclesInputSchema,
-  AddServiceInputSchema,
+  UpdateOptionGroupInputSchema,
+  UpdateOptionGroupTierPricingInputSchema,
   UpdateServiceInputSchema,
-  DeleteServiceInputSchema,
-  AddTierInputSchema,
+  UpdateServiceLevelInputSchema,
   UpdateTierInputSchema,
   UpdateTierPricingInputSchema,
-  DeleteTierInputSchema,
-  AddServiceLevelInputSchema,
-  UpdateServiceLevelInputSchema,
-  RemoveServiceLevelInputSchema,
-  AddUsageLimitInputSchema,
   UpdateUsageLimitInputSchema,
-  RemoveUsageLimitInputSchema,
-  SetTierDefaultBillingCycleInputSchema,
-  SetTierBillingCycleDiscountsInputSchema,
-  SetTierPricingModeInputSchema,
-  ReorderTiersInputSchema,
-  AddOptionGroupInputSchema,
-  UpdateOptionGroupInputSchema,
-  DeleteOptionGroupInputSchema,
-  SetOptionGroupStandalonePricingInputSchema,
-  AddOptionGroupTierPricingInputSchema,
-  UpdateOptionGroupTierPricingInputSchema,
-  RemoveOptionGroupTierPricingInputSchema,
-  SetOptionGroupDiscountModeInputSchema,
 } from "./schema/zod.js";
 
 const stateReducer: StateReducer<ServiceOfferingPHState> = (

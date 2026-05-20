@@ -1,27 +1,20 @@
 export type ErrorCode =
-  | "MarkLineItemNotFoundError"
   | "MarkLineItemInvalidStatusTransitionError"
+  | "DynamicSliceNotYetChargeableError"
+  | "MarkLineItemNotFoundError"
   | "ConfirmLineItemNotFoundError"
   | "ConfirmLineItemInvalidStatusTransitionError"
   | "OverPaymentError"
   | "InvalidPaymentAmountError"
   | "ReportPaymentInvalidAmountError"
   | "ReportPaymentNoDebtError"
-  | "ApplyCreditInvalidAmountError"
-  | "ApplyCreditNoDebtError"
-  | "DynamicSliceNotYetChargeableError"
   | "ApplyCreditLineItemNotFoundError"
+  | "ApplyCreditNoDebtError"
+  | "ApplyCreditInvalidAmountError"
   | "ApplyCreditAmountExceedsRemainingError";
 
 export interface ReducerError {
   errorCode: ErrorCode;
-}
-
-export class MarkLineItemNotFoundError extends Error implements ReducerError {
-  errorCode = "MarkLineItemNotFoundError" as ErrorCode;
-  constructor(message = "MarkLineItemNotFoundError") {
-    super(message);
-  }
 }
 
 export class MarkLineItemInvalidStatusTransitionError
@@ -30,6 +23,23 @@ export class MarkLineItemInvalidStatusTransitionError
 {
   errorCode = "MarkLineItemInvalidStatusTransitionError" as ErrorCode;
   constructor(message = "MarkLineItemInvalidStatusTransitionError") {
+    super(message);
+  }
+}
+
+export class DynamicSliceNotYetChargeableError
+  extends Error
+  implements ReducerError
+{
+  errorCode = "DynamicSliceNotYetChargeableError" as ErrorCode;
+  constructor(message = "DynamicSliceNotYetChargeableError") {
+    super(message);
+  }
+}
+
+export class MarkLineItemNotFoundError extends Error implements ReducerError {
+  errorCode = "MarkLineItemNotFoundError" as ErrorCode;
+  constructor(message = "MarkLineItemNotFoundError") {
     super(message);
   }
 }
@@ -85,12 +95,12 @@ export class ReportPaymentNoDebtError extends Error implements ReducerError {
   }
 }
 
-export class ApplyCreditInvalidAmountError
+export class ApplyCreditLineItemNotFoundError
   extends Error
   implements ReducerError
 {
-  errorCode = "ApplyCreditInvalidAmountError" as ErrorCode;
-  constructor(message = "ApplyCreditInvalidAmountError") {
+  errorCode = "ApplyCreditLineItemNotFoundError" as ErrorCode;
+  constructor(message = "ApplyCreditLineItemNotFoundError") {
     super(message);
   }
 }
@@ -102,22 +112,12 @@ export class ApplyCreditNoDebtError extends Error implements ReducerError {
   }
 }
 
-export class DynamicSliceNotYetChargeableError
+export class ApplyCreditInvalidAmountError
   extends Error
   implements ReducerError
 {
-  errorCode = "DynamicSliceNotYetChargeableError" as ErrorCode;
-  constructor(message = "DynamicSliceNotYetChargeableError") {
-    super(message);
-  }
-}
-
-export class ApplyCreditLineItemNotFoundError
-  extends Error
-  implements ReducerError
-{
-  errorCode = "ApplyCreditLineItemNotFoundError" as ErrorCode;
-  constructor(message = "ApplyCreditLineItemNotFoundError") {
+  errorCode = "ApplyCreditInvalidAmountError" as ErrorCode;
+  constructor(message = "ApplyCreditInvalidAmountError") {
     super(message);
   }
 }
@@ -134,22 +134,21 @@ export class ApplyCreditAmountExceedsRemainingError
 
 export const errors = {
   MarkLineItemInvoiced: {
-    MarkLineItemNotFoundError,
     MarkLineItemInvalidStatusTransitionError,
     DynamicSliceNotYetChargeableError,
+    MarkLineItemNotFoundError,
   },
   ConfirmLineItemPayment: {
     ConfirmLineItemNotFoundError,
     ConfirmLineItemInvalidStatusTransitionError,
     OverPaymentError,
     InvalidPaymentAmountError,
-    DynamicSliceNotYetChargeableError,
   },
   ReportPayment: { ReportPaymentInvalidAmountError, ReportPaymentNoDebtError },
   ApplyCredit: {
-    ApplyCreditInvalidAmountError,
-    ApplyCreditNoDebtError,
     ApplyCreditLineItemNotFoundError,
+    ApplyCreditNoDebtError,
+    ApplyCreditInvalidAmountError,
     ApplyCreditAmountExceedsRemainingError,
   },
 };

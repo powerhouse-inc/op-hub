@@ -1,16 +1,16 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
-  isServiceOfferingDocument,
   addService,
-  updateService,
-  deleteService,
   AddServiceInputSchema,
-  UpdateServiceInputSchema,
+  deleteService,
   DeleteServiceInputSchema,
+  isServiceOfferingDocument,
+  reducer,
+  updateService,
+  UpdateServiceInputSchema,
+  utils,
 } from "document-models/service-offering/v1";
+import { describe, expect, it } from "vitest";
 
 describe("ServicesOperations", () => {
   it("should handle addService operation", () => {

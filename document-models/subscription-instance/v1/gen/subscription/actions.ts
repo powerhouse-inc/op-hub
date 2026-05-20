@@ -1,19 +1,23 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import type { Action } from "document-model";
 import type {
-  InitializeSubscriptionInput,
-  SetResourceDocumentInput,
   ActivateSubscriptionInput,
-  PauseSubscriptionInput,
-  SetExpiringInput,
   CancelSubscriptionInput,
-  ResumeSubscriptionInput,
+  ChangePlanInput,
+  GenerateInvoiceInput,
+  InitializeSubscriptionInput,
+  PauseSubscriptionInput,
   RenewExpiringSubscriptionInput,
+  ResumeSubscriptionInput,
+  SetAutoRenewInput,
+  SetExpiringInput,
+  SetOperatorNotesInput,
+  SetResourceDocumentInput,
   UpdateCustomerInfoInput,
   UpdateTierInfoInput,
-  SetOperatorNotesInput,
-  SetAutoRenewInput,
-  GenerateInvoiceInput,
-  ChangePlanInput,
 } from "../types.js";
 
 export type InitializeSubscriptionAction = Action & {
@@ -64,13 +68,13 @@ export type SetAutoRenewAction = Action & {
   type: "SET_AUTO_RENEW";
   input: SetAutoRenewInput;
 };
-export type GenerateInvoiceAction = Action & {
-  type: "GENERATE_INVOICE";
-  input: GenerateInvoiceInput;
-};
 export type ChangePlanAction = Action & {
   type: "CHANGE_PLAN";
   input: ChangePlanInput;
+};
+export type GenerateInvoiceAction = Action & {
+  type: "GENERATE_INVOICE";
+  input: GenerateInvoiceInput;
 };
 
 export type SubscriptionInstanceSubscriptionAction =
@@ -86,5 +90,5 @@ export type SubscriptionInstanceSubscriptionAction =
   | UpdateTierInfoAction
   | SetOperatorNotesAction
   | SetAutoRenewAction
-  | GenerateInvoiceAction
-  | ChangePlanAction;
+  | ChangePlanAction
+  | GenerateInvoiceAction;

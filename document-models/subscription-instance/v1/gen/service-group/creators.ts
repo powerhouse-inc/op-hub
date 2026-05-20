@@ -1,23 +1,27 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
   AddServiceGroupInputSchema,
-  RemoveServiceGroupInputSchema,
   AddServiceToGroupInputSchema,
   RemoveServiceFromGroupInputSchema,
+  RemoveServiceGroupInputSchema,
   UpdateServiceGroupCostInputSchema,
 } from "../schema/zod.js";
 import type {
   AddServiceGroupInput,
-  RemoveServiceGroupInput,
   AddServiceToGroupInput,
   RemoveServiceFromGroupInput,
+  RemoveServiceGroupInput,
   UpdateServiceGroupCostInput,
 } from "../types.js";
 import type {
   AddServiceGroupAction,
-  RemoveServiceGroupAction,
   AddServiceToGroupAction,
   RemoveServiceFromGroupAction,
+  RemoveServiceGroupAction,
   UpdateServiceGroupCostAction,
 } from "./actions.js";
 

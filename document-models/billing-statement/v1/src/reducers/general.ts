@@ -1,5 +1,5 @@
-import { BillingStatementStatusInputSchema } from "../../gen/schema/zod.js";
 import type { BillingStatementGeneralOperations } from "document-models/billing-statement/v1";
+import { BillingStatementStatusInputSchema } from "../../gen/schema/zod.js";
 
 export const billingStatementGeneralOperations: BillingStatementGeneralOperations =
   {

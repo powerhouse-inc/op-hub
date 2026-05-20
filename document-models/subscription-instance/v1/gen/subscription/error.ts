@@ -8,14 +8,14 @@ export type ErrorCode =
   | "ResumeNotPausedError"
   | "RenewNotExpiringError"
   | "RenewMissingSliceIdError"
+  | "ChangePlanNotActiveError"
+  | "BillingCycleSwapNotYetSupportedError"
+  | "ChangePlanInvalidEffectiveDateError"
+  | "ChangePlanMissingTierPricingError"
   | "NoBillingCycleActiveError"
-  | "SettlementDateBeforeCycleStartError"
   | "SettleMissingSliceIdError"
   | "NoInvoiceableLineItemsError"
-  | "ChangePlanNotActiveError"
-  | "ChangePlanInvalidEffectiveDateError"
-  | "BillingCycleSwapNotYetSupportedError"
-  | "ChangePlanMissingTierPricingError";
+  | "SettlementDateBeforeCycleStartError";
 
 export interface ReducerError {
   errorCode: ErrorCode;
@@ -84,19 +84,46 @@ export class RenewMissingSliceIdError extends Error implements ReducerError {
   }
 }
 
-export class NoBillingCycleActiveError extends Error implements ReducerError {
-  errorCode = "NoBillingCycleActiveError" as ErrorCode;
-  constructor(message = "NoBillingCycleActiveError") {
+export class ChangePlanNotActiveError extends Error implements ReducerError {
+  errorCode = "ChangePlanNotActiveError" as ErrorCode;
+  constructor(message = "ChangePlanNotActiveError") {
     super(message);
   }
 }
 
-export class SettlementDateBeforeCycleStartError
+export class BillingCycleSwapNotYetSupportedError
   extends Error
   implements ReducerError
 {
-  errorCode = "SettlementDateBeforeCycleStartError" as ErrorCode;
-  constructor(message = "SettlementDateBeforeCycleStartError") {
+  errorCode = "BillingCycleSwapNotYetSupportedError" as ErrorCode;
+  constructor(message = "BillingCycleSwapNotYetSupportedError") {
+    super(message);
+  }
+}
+
+export class ChangePlanInvalidEffectiveDateError
+  extends Error
+  implements ReducerError
+{
+  errorCode = "ChangePlanInvalidEffectiveDateError" as ErrorCode;
+  constructor(message = "ChangePlanInvalidEffectiveDateError") {
+    super(message);
+  }
+}
+
+export class ChangePlanMissingTierPricingError
+  extends Error
+  implements ReducerError
+{
+  errorCode = "ChangePlanMissingTierPricingError" as ErrorCode;
+  constructor(message = "ChangePlanMissingTierPricingError") {
+    super(message);
+  }
+}
+
+export class NoBillingCycleActiveError extends Error implements ReducerError {
+  errorCode = "NoBillingCycleActiveError" as ErrorCode;
+  constructor(message = "NoBillingCycleActiveError") {
     super(message);
   }
 }
@@ -115,39 +142,12 @@ export class NoInvoiceableLineItemsError extends Error implements ReducerError {
   }
 }
 
-export class ChangePlanNotActiveError extends Error implements ReducerError {
-  errorCode = "ChangePlanNotActiveError" as ErrorCode;
-  constructor(message = "ChangePlanNotActiveError") {
-    super(message);
-  }
-}
-
-export class ChangePlanInvalidEffectiveDateError
+export class SettlementDateBeforeCycleStartError
   extends Error
   implements ReducerError
 {
-  errorCode = "ChangePlanInvalidEffectiveDateError" as ErrorCode;
-  constructor(message = "ChangePlanInvalidEffectiveDateError") {
-    super(message);
-  }
-}
-
-export class BillingCycleSwapNotYetSupportedError
-  extends Error
-  implements ReducerError
-{
-  errorCode = "BillingCycleSwapNotYetSupportedError" as ErrorCode;
-  constructor(message = "BillingCycleSwapNotYetSupportedError") {
-    super(message);
-  }
-}
-
-export class ChangePlanMissingTierPricingError
-  extends Error
-  implements ReducerError
-{
-  errorCode = "ChangePlanMissingTierPricingError" as ErrorCode;
-  constructor(message = "ChangePlanMissingTierPricingError") {
+  errorCode = "SettlementDateBeforeCycleStartError" as ErrorCode;
+  constructor(message = "SettlementDateBeforeCycleStartError") {
     super(message);
   }
 }
@@ -159,22 +159,25 @@ export const errors = {
   },
   PauseSubscription: { PauseNotActiveError },
   SetExpiring: { SetExpiringNotActiveError },
-  CancelSubscription: { CancelAlreadyCancelledError },
+  CancelSubscription: {
+    CancelAlreadyCancelledError,
+    CancelMissingSliceIdError,
+  },
   ResumeSubscription: { ResumeNotPausedError },
   RenewExpiringSubscription: {
     RenewNotExpiringError,
     RenewMissingSliceIdError,
   },
-  GenerateInvoice: {
-    NoBillingCycleActiveError,
-    SettlementDateBeforeCycleStartError,
-    SettleMissingSliceIdError,
-    NoInvoiceableLineItemsError,
-  },
   ChangePlan: {
     ChangePlanNotActiveError,
-    ChangePlanInvalidEffectiveDateError,
     BillingCycleSwapNotYetSupportedError,
+    ChangePlanInvalidEffectiveDateError,
     ChangePlanMissingTierPricingError,
+  },
+  GenerateInvoice: {
+    NoBillingCycleActiveError,
+    SettleMissingSliceIdError,
+    NoInvoiceableLineItemsError,
+    SettlementDateBeforeCycleStartError,
   },
 };

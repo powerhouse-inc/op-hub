@@ -53,18 +53,21 @@ step() { echo -e "\n${CYAN}━━━ $* ━━━${NC}"; }
 # Dependency-safe priority. Lower number uploads first.
 # Anything not in this map falls into the trailing bucket (priority 99),
 # uploaded after the known drives in alphabetical order.
+#
+# The builders drive on bai-dev uses its UUID as its slug
+# (933f946f-5fab-4dea-85ea-aeb85f1f2fd1) — that's why the UUID
+# appears alongside the human-readable slugs here.
 priority_for() {
   case "$1" in
-    powerhouse-network-admin) echo 1 ;;
-    builders)                 echo 2 ;;
-    powerhouse-operator-team-admin) echo 3 ;;
-    bai-team-admin)           echo 4 ;;
-    powerhouse-rgh-operator-admin) echo 5 ;;
-    growth-team-admin)        echo 6 ;;
-    core-dev-team-admin)      echo 7 ;;
-    teeps-team-admin)         echo 8 ;;
-    powerhouse-genesis-operational-hub) echo 9 ;;
-    *)                        echo 99 ;;
+    powerhouse-network-admin)              echo 1 ;;
+    933f946f-5fab-4dea-85ea-aeb85f1f2fd1)  echo 2 ;;
+    powerhouse-rgh-operator-admin)         echo 3 ;;
+    bai-team-admin)                        echo 4 ;;
+    growth-team-admin)                     echo 5 ;;
+    core-dev-team-admin)                   echo 6 ;;
+    teeps-team-admin)                      echo 7 ;;
+    powerhouse-genesis-operational-hub)    echo 8 ;;
+    *)                                     echo 99 ;;
   esac
 }
 

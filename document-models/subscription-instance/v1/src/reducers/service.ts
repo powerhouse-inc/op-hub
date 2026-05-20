@@ -1,14 +1,24 @@
+import type { SubscriptionInstanceServiceOperations } from "document-models/subscription-instance/v1";
 import {
-  RemoveServiceNotFoundError,
-  UpdateServiceSetupCostNotFoundError,
-  UpdateServiceRecurringCostNotFoundError,
-  UpdateServiceInfoNotFoundError,
   AddServiceFacetSelectionServiceNotFoundError,
   RemoveServiceFacetSelectionServiceNotFoundError,
+  RemoveServiceNotFoundError,
+  ReportOveragePaymentExceedsDebtError,
+  ReportOveragePaymentInvalidAmountError,
+  ReportRecurringPaymentAlreadyPaidThisCycleError,
+  ReportRecurringPaymentNoCostError,
+  ReportRecurringPaymentNothingOwedError,
+  ReportRecurringPaymentServiceNotFoundError,
+  ReportSetupPaymentAlreadyPaidError,
+  ReportSetupPaymentNoCostError,
+  ReportSetupPaymentNothingOwedError,
+  ReportSetupPaymentServiceNotFoundError,
   SubscriptionNotActiveAddServiceError,
   SubscriptionNotActiveRemoveServiceError,
+  UpdateServiceInfoNotFoundError,
+  UpdateServiceRecurringCostNotFoundError,
+  UpdateServiceSetupCostNotFoundError,
 } from "../../gen/service/error.js";
-import type { SubscriptionInstanceServiceOperations } from "document-models/subscription-instance/v1";
 
 export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceOperations =
   {
@@ -164,5 +174,122 @@ export const subscriptionInstanceServiceOperations: SubscriptionInstanceServiceO
       if (index !== -1) {
         svc.facetSelections.splice(index, 1);
       }
+    },
+    reportSetupPaymentOperation(state, action) {
+      const currentOwed = (state.totalDebt ?? 0) - (state.totalCredit ?? 0);
+      if (currentOwed <= 0) {
+        throw new ReportSetupPaymentNothingOwedError(
+          "Cannot report payment when nothing is owed",
+        );
+      }
+      function findSvc(serviceId) {
+        const flat = state.services.find((s) => s.id === serviceId);
+        if (flat) return flat;
+        for (const group of state.serviceGroups) {
+          const grouped = group.services.find((s) => s.id === serviceId);
+          if (grouped) return grouped;
+        }
+        return undefined;
+      }
+      const svc = findSvc(action.input.serviceId);
+      const directGroup = state.serviceGroups.find(
+        (g) => g.id === action.input.serviceId,
+      );
+      if (!svc && !directGroup) {
+        throw new ReportSetupPaymentServiceNotFoundError(
+          `Service or group with ID ${action.input.serviceId} not found`,
+        );
+      }
+      function findGroup(serviceId) {
+        for (const group of state.serviceGroups) {
+          if (group.services.some((s) => s.id === serviceId)) return group;
+        }
+        return undefined;
+      }
+      const targetGroup = directGroup ?? findGroup(action.input.serviceId);
+      const setupEntity =
+        (svc?.setupCost ? svc : null) ||
+        (targetGroup?.setupCost ? targetGroup : null);
+      if (!setupEntity || !setupEntity.setupCost) {
+        throw new ReportSetupPaymentNoCostError(
+          `No setup cost found for ID ${action.input.serviceId}`,
+        );
+      }
+      if (setupEntity.setupCost.paymentDate) {
+        throw new ReportSetupPaymentAlreadyPaidError(
+          `Setup cost for ID ${action.input.serviceId} is already paid`,
+        );
+      }
+      setupEntity.setupCost.paymentDate = action.input.paymentDate;
+      state.totalCredit =
+        (state.totalCredit ?? 0) + setupEntity.setupCost.amount;
+    },
+    reportRecurringPaymentOperation(state, action) {
+      const currentOwed = (state.totalDebt ?? 0) - (state.totalCredit ?? 0);
+      if (currentOwed <= 0) {
+        throw new ReportRecurringPaymentNothingOwedError(
+          "Cannot report payment when nothing is owed",
+        );
+      }
+      function findSvc(serviceId) {
+        const flat = state.services.find((s) => s.id === serviceId);
+        if (flat) return flat;
+        for (const group of state.serviceGroups) {
+          const grouped = group.services.find((s) => s.id === serviceId);
+          if (grouped) return grouped;
+        }
+        return undefined;
+      }
+      const svc = findSvc(action.input.serviceId);
+      const directGroup = state.serviceGroups.find(
+        (g) => g.id === action.input.serviceId,
+      );
+      if (!svc && !directGroup) {
+        throw new ReportRecurringPaymentServiceNotFoundError(
+          `Service or group with ID ${action.input.serviceId} not found`,
+        );
+      }
+      function findGroup(serviceId) {
+        for (const group of state.serviceGroups) {
+          if (group.services.some((s) => s.id === serviceId)) return group;
+        }
+        return undefined;
+      }
+      const targetGroup = directGroup ?? findGroup(action.input.serviceId);
+      const recurringEntity =
+        (svc?.recurringCost ? svc : null) ||
+        (targetGroup?.recurringCost ? targetGroup : null);
+      if (!recurringEntity || !recurringEntity.recurringCost) {
+        throw new ReportRecurringPaymentNoCostError(
+          `No recurring cost found for ID ${action.input.serviceId}`,
+        );
+      }
+      if (
+        recurringEntity.recurringCost.lastPaymentDate &&
+        state.currentBillingCycleStart &&
+        recurringEntity.recurringCost.lastPaymentDate >=
+          state.currentBillingCycleStart
+      ) {
+        throw new ReportRecurringPaymentAlreadyPaidThisCycleError(
+          `Recurring cost for ID ${action.input.serviceId} already paid this cycle`,
+        );
+      }
+      recurringEntity.recurringCost.lastPaymentDate = action.input.paymentDate;
+      state.totalCredit =
+        (state.totalCredit ?? 0) + recurringEntity.recurringCost.amount;
+    },
+    reportOveragePaymentOperation(state, action) {
+      if (action.input.amount <= 0) {
+        throw new ReportOveragePaymentInvalidAmountError(
+          "Payment amount must be greater than zero",
+        );
+      }
+      const currentOwed = (state.totalDebt ?? 0) - (state.totalCredit ?? 0);
+      if (action.input.amount > currentOwed) {
+        throw new ReportOveragePaymentExceedsDebtError(
+          `Payment amount ${action.input.amount} exceeds outstanding balance ${currentOwed}`,
+        );
+      }
+      state.totalCredit = (state.totalCredit ?? 0) + action.input.amount;
     },
   };

@@ -1,26 +1,26 @@
 import { generateMock } from "document-model";
-import { describe, expect, it } from "vitest";
 import {
-  reducer,
-  utils,
-  isServiceOfferingDocument,
   addOptionGroup,
-  updateOptionGroup,
-  deleteOptionGroup,
-  setOptionGroupStandalonePricing,
-  addOptionGroupTierPricing,
-  updateOptionGroupTierPricing,
-  removeOptionGroupTierPricing,
-  setOptionGroupDiscountMode,
   AddOptionGroupInputSchema,
-  UpdateOptionGroupInputSchema,
-  DeleteOptionGroupInputSchema,
-  SetOptionGroupStandalonePricingInputSchema,
+  addOptionGroupTierPricing,
   AddOptionGroupTierPricingInputSchema,
-  UpdateOptionGroupTierPricingInputSchema,
+  deleteOptionGroup,
+  DeleteOptionGroupInputSchema,
+  isServiceOfferingDocument,
+  reducer,
+  removeOptionGroupTierPricing,
   RemoveOptionGroupTierPricingInputSchema,
+  setOptionGroupDiscountMode,
   SetOptionGroupDiscountModeInputSchema,
+  setOptionGroupStandalonePricing,
+  SetOptionGroupStandalonePricingInputSchema,
+  updateOptionGroup,
+  UpdateOptionGroupInputSchema,
+  updateOptionGroupTierPricing,
+  UpdateOptionGroupTierPricingInputSchema,
+  utils,
 } from "document-models/service-offering/v1";
+import { describe, expect, it } from "vitest";
 
 describe("OptionGroupsOperations", () => {
   it("should handle addOptionGroup operation", () => {

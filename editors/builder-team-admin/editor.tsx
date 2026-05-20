@@ -5,8 +5,6 @@ import { editorConfig } from "./config.js";
 
 /** Editor component for the BuilderTeamAdmin drive editor */
 export default function Editor(props: EditorProps) {
-  // set the config for this drive editor
-  // you can update these configs in `./config.ts`
   useSetPHAppConfig(editorConfig);
   return <DriveExplorer {...props} />;
 }

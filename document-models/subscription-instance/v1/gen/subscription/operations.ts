@@ -1,91 +1,95 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { type SignalDispatch } from "document-model";
+import type { SubscriptionInstanceGlobalState } from "../types.js";
 import type {
-  InitializeSubscriptionAction,
-  SetResourceDocumentAction,
   ActivateSubscriptionAction,
-  PauseSubscriptionAction,
-  SetExpiringAction,
   CancelSubscriptionAction,
-  ResumeSubscriptionAction,
+  ChangePlanAction,
+  GenerateInvoiceAction,
+  InitializeSubscriptionAction,
+  PauseSubscriptionAction,
   RenewExpiringSubscriptionAction,
+  ResumeSubscriptionAction,
+  SetAutoRenewAction,
+  SetExpiringAction,
+  SetOperatorNotesAction,
+  SetResourceDocumentAction,
   UpdateCustomerInfoAction,
   UpdateTierInfoAction,
-  SetOperatorNotesAction,
-  SetAutoRenewAction,
-  GenerateInvoiceAction,
-  ChangePlanAction,
 } from "./actions.js";
-import type { SubscriptionInstanceState } from "../types.js";
 
 export interface SubscriptionInstanceSubscriptionOperations {
   initializeSubscriptionOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: InitializeSubscriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
   setResourceDocumentOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: SetResourceDocumentAction,
     dispatch?: SignalDispatch,
   ) => void;
   activateSubscriptionOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: ActivateSubscriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
   pauseSubscriptionOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: PauseSubscriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
   setExpiringOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: SetExpiringAction,
     dispatch?: SignalDispatch,
   ) => void;
   cancelSubscriptionOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: CancelSubscriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
   resumeSubscriptionOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: ResumeSubscriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
   renewExpiringSubscriptionOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: RenewExpiringSubscriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateCustomerInfoOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: UpdateCustomerInfoAction,
     dispatch?: SignalDispatch,
   ) => void;
   updateTierInfoOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: UpdateTierInfoAction,
     dispatch?: SignalDispatch,
   ) => void;
   setOperatorNotesOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: SetOperatorNotesAction,
     dispatch?: SignalDispatch,
   ) => void;
   setAutoRenewOperation: (
-    state: SubscriptionInstanceState,
+    state: SubscriptionInstanceGlobalState,
     action: SetAutoRenewAction,
     dispatch?: SignalDispatch,
   ) => void;
-  generateInvoiceOperation: (
-    state: SubscriptionInstanceState,
-    action: GenerateInvoiceAction,
+  changePlanOperation: (
+    state: SubscriptionInstanceGlobalState,
+    action: ChangePlanAction,
     dispatch?: SignalDispatch,
   ) => void;
-  changePlanOperation: (
-    state: SubscriptionInstanceState,
-    action: ChangePlanAction,
+  generateInvoiceOperation: (
+    state: SubscriptionInstanceGlobalState,
+    action: GenerateInvoiceAction,
     dispatch?: SignalDispatch,
   ) => void;
 }

@@ -1,18 +1,22 @@
+/**
+ * WARNING: DO NOT EDIT
+ * This file is auto-generated and updated by codegen
+ */
 import { createAction } from "document-model";
 import {
   AddServiceInputSchema,
-  UpdateServiceInputSchema,
   DeleteServiceInputSchema,
+  UpdateServiceInputSchema,
 } from "../schema/zod.js";
 import type {
   AddServiceInput,
-  UpdateServiceInput,
   DeleteServiceInput,
+  UpdateServiceInput,
 } from "../types.js";
 import type {
   AddServiceAction,
-  UpdateServiceAction,
   DeleteServiceAction,
+  UpdateServiceAction,
 } from "./actions.js";
 
 export const addService = (input: AddServiceInput) =>

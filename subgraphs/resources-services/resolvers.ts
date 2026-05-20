@@ -267,6 +267,7 @@ export const getResolvers = (
       createProductInstances: async (
         _: unknown,
         args: { input: CreateProductInstancesInput },
+        context: { headers?: { host?: string } } | undefined,
       ) => {
         const { input } = args;
         const { serviceOfferingId, name, teamName, customerEmail } = input;
@@ -641,7 +642,7 @@ export const getResolvers = (
           return {
             success: true,
             data: {
-              linkToDrive: getDriveLink(parsedTeamName),
+              linkToDrive: getDriveLink(parsedTeamName, context?.headers?.host),
             },
             errors: [],
           };
@@ -664,14 +665,26 @@ export const getResolvers = (
 
 /**
  * Build a link to a drive based on the current environment.
- * Uses the drive slug in the switchboard URL path.
+ *
+ * Prefers the incoming request's Host header (set by the GraphQL context)
+ * since `process.env.BASE_URI` isn't reliably populated on every Powerhouse
+ * deployment. The Host typically looks like `switchboard.<env-host>` for a
+ * Vetra-hosted deployment (e.g. `switchboard.mild-dove-63.vetra.io`); we
+ * derive the sibling Connect host (`connect.<env-host>`) from it.
+ *
+ * Falls back to BASE_URI for non-HTTP invocations, then to localhost.
  */
-function getDriveLink(driveSlug: string): string {
-  const baseUri =
+function getDriveLink(driveSlug: string, host?: string): string {
+  const envBaseUri =
     typeof process !== "undefined" ? process.env.BASE_URI || "" : "";
+  const source = (host ?? envBaseUri).toLowerCase();
 
-  if (baseUri.includes("mild-dove-63.vetra.io")) {
-    return `https://connect.mild-dove-63.vetra.io/?driveUrl=https://switchboard.mild-dove-63.vetra.io/d/${driveSlug}`;
+  // Match any `switchboard.<env-host>` and substitute the Connect prefix.
+  // Works for both Vetra deployments and the legacy *-dev/*-staging hosts.
+  const m = source.match(/switchboard\.([a-z0-9.-]+)(?::|\/|$)/);
+  if (m) {
+    const envHost = m[1];
+    return `https://connect.${envHost}/?driveUrl=https://switchboard.${envHost}/d/${driveSlug}`;
   }
 
   return `http://localhost:3001/?driveUrl=http://localhost:4001/d/${driveSlug}`;

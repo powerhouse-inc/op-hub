@@ -128,7 +128,10 @@
       "Bash(switchboard -p bai-dev drives get powerhouse-rgh-operator-admin --format json)",
       "Bash(switchboard -p bai-dev docs delete --yes 49b1041f-4842-4b29-8ab5-8bdb603f9a99 ea0c2a63-997e-4b28-996b-0be8bfe97434 e98851c9-100d-41de-aafb-4943f26b0144 f698ec5f-de64-4265-a665-ffa88af94d54)",
       "Bash(switchboard -p bai-dev docs mutate c4618bc9-e06a-479f-9813-13e37cba4e86 --op deleteNode --input '{\"id\":\"4931e94b-bb17-44cf-9d79-c0708835116b\"}')",
-      "Bash(switchboard -p bai-dev docs mutate c4618bc9-e06a-479f-9813-13e37cba4e86 --op deleteNode --input '{\"id\":\"13295671-7f9a-4c0b-ba25-45d23502b63e\"}' --quiet)"
+      "Bash(switchboard -p bai-dev docs mutate c4618bc9-e06a-479f-9813-13e37cba4e86 --op deleteNode --input '{\"id\":\"13295671-7f9a-4c0b-ba25-45d23502b63e\"}' --quiet)",
+      "Bash(env)",
+      "Bash(python3 -c \"import sys,json; p=json.load\\(sys.stdin\\); print\\('main:', p.get\\('main'\\)\\); print\\('types:', p.get\\('types'\\)\\)\")",
+      "Bash(awk 'NR>=424 && NR<=465 {print NR\": \"$0}' node_modules/@powerhousedao/reactor-api/dist/index.d.mts)"
     ],
     "additionalDirectories": [
       "/home/p"

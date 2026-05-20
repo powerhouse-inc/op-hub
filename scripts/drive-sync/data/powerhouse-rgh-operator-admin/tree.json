@@ -59,27 +59,6 @@
       "parentFolder": "93f1a413-3b9e-4ae8-b739-7c005ddbe923"
     },
     {
-      "documentType": null,
-      "id": "4931e94b-bb17-44cf-9d79-c0708835116b",
-      "kind": "folder",
-      "name": "E2E Team 1779261096130",
-      "parentFolder": "6c4157b4-1e4f-4e67-acda-8563b7bd4529"
-    },
-    {
-      "documentType": "powerhouse/subscription-instance",
-      "id": "49b1041f-4842-4b29-8ab5-8bdb603f9a99",
-      "kind": "file",
-      "name": "e2e-team-1779261096130 Subscription Instance",
-      "parentFolder": "4931e94b-bb17-44cf-9d79-c0708835116b"
-    },
-    {
-      "documentType": null,
-      "id": "49c0b43c-2c2e-46c7-b42f-b53f5ef47fb0",
-      "kind": "folder",
-      "name": "E2E Team 1779261303564",
-      "parentFolder": "6c4157b4-1e4f-4e67-acda-8563b7bd4529"
-    },
-    {
       "documentType": "powerhouse/service-offering",
       "id": "5e01fe27-474c-41c5-b0b7-6633edce651e",
       "kind": "file",
@@ -206,13 +185,6 @@
       "parentFolder": null
     },
     {
-      "documentType": "powerhouse/resource-instance",
-      "id": "e98851c9-100d-41de-aafb-4943f26b0144",
-      "kind": "file",
-      "name": "e2e-team-1779261303564 Resource Instance",
-      "parentFolder": "49c0b43c-2c2e-46c7-b42f-b53f5ef47fb0"
-    },
-    {
       "documentType": "powerhouse/resource-template",
       "id": "ea0081ba-3d01-4872-bf25-e957fbd023fd",
       "kind": "file",
@@ -220,25 +192,11 @@
       "parentFolder": "93f1a413-3b9e-4ae8-b739-7c005ddbe923"
     },
     {
-      "documentType": "powerhouse/resource-instance",
-      "id": "ea0c2a63-997e-4b28-996b-0be8bfe97434",
-      "kind": "file",
-      "name": "e2e-team-1779261096130 Resource Instance",
-      "parentFolder": "4931e94b-bb17-44cf-9d79-c0708835116b"
-    },
-    {
       "documentType": "powerhouse/service-offering",
       "id": "efb57cb7-6009-45d9-a4cb-db2287222f31",
       "kind": "file",
       "name": "OperationalHubOffering (active) (copy) 1",
       "parentFolder": "1ebf7f33-1060-44b5-aa70-0acf1d1b1fa0"
-    },
-    {
-      "documentType": "powerhouse/subscription-instance",
-      "id": "f698ec5f-de64-4265-a665-ffa88af94d54",
-      "kind": "file",
-      "name": "e2e-team-1779261303564 Subscription Instance",
-      "parentFolder": "49c0b43c-2c2e-46c7-b42f-b53f5ef47fb0"
     }
   ]
 }

@@ -124,7 +124,11 @@
       "Bash(awk 'NR>=400 && NR<=600 && /handleGenerateInvoice|async function|async \\\\\\(|\\\\\\) => \\\\{/{print NR\": \"$0}' editors/subscription-instance-editor/components/SubscriptionActions.tsx)",
       "Bash(python3 -c 'import json; di=json.load\\(open\\('\\\\''__TRACKED_VAR__/drive-info.json'\\\\''\\)\\); print\\('\\\\''__TRACKED_VAR__'\\\\''.rstrip\\('\\\\''/'\\\\''\\), '\\\\''->'\\\\'', di.get\\('\\\\''slug'\\\\'', '\\\\''?'\\\\''\\), '\\\\''|'\\\\'', di.get\\('\\\\''name'\\\\'', '\\\\''?'\\\\''\\)\\)')",
       "Bash(awk '{print $1, $2}')",
-      "Bash(tee /tmp/upload-all-local.log)"
+      "Bash(tee /tmp/upload-all-local.log)",
+      "Bash(switchboard -p bai-dev drives get powerhouse-rgh-operator-admin --format json)",
+      "Bash(switchboard -p bai-dev docs delete --yes 49b1041f-4842-4b29-8ab5-8bdb603f9a99 ea0c2a63-997e-4b28-996b-0be8bfe97434 e98851c9-100d-41de-aafb-4943f26b0144 f698ec5f-de64-4265-a665-ffa88af94d54)",
+      "Bash(switchboard -p bai-dev docs mutate c4618bc9-e06a-479f-9813-13e37cba4e86 --op deleteNode --input '{\"id\":\"4931e94b-bb17-44cf-9d79-c0708835116b\"}')",
+      "Bash(switchboard -p bai-dev docs mutate c4618bc9-e06a-479f-9813-13e37cba4e86 --op deleteNode --input '{\"id\":\"13295671-7f9a-4c0b-ba25-45d23502b63e\"}' --quiet)"
     ],
     "additionalDirectories": [
       "/home/p"

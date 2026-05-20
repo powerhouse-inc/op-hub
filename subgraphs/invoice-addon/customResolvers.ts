@@ -253,6 +253,12 @@ export const Invoice_uploadInvoicePdfChunk = async (
 
         const responseData = {
           invoiceData: claudeResult.invoiceData as Record<string, unknown>,
+          warnings: claudeResult.warnings,
+          invalidFields: claudeResult.invalidFields,
+          confidence: claudeResult.confidence,
+          groundingAvailable: claudeResult.groundingAvailable,
+          retried: claudeResult.retried,
+          truncated: claudeResult.truncated,
           processingMetadata: {
             provider: "claude-haiku-4-5-20251001",
             processingTimeMs: processingTime,

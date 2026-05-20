@@ -1,5 +1,10 @@
 import { generateId } from "document-model";
 import { autoTagLineItems } from "./autoTagging.js";
+import { extractPdfText } from "./extractPdfText.js";
+import {
+  validateExtractedInvoice,
+  type ValidationReport,
+} from "./invoiceValidation.js";
 
 /**
  * Attempts to repair truncated JSON by closing unclosed brackets and braces.
@@ -191,284 +196,338 @@ function truncateToLastCompleteElement(json: string): string {
   return json;
 }
 
-export async function uploadPdfAndGetJsonClaude(inputDoc: string) {
-  try {
-    console.log("Starting PDF upload and processing with Claude AI");
+/**
+ * Primary extraction prompt.
+ *
+ * Anchors that matter most for trust:
+ *   - Wallet addresses & IBANs must be copied verbatim, character by character
+ *   - Issuer = party RECEIVING payment (owner of destination bank/wallet)
+ *   - Payer  = party SENDING payment
+ *   - Return null when unsure; never guess
+ *   - Provide a `_confidence` block for high-stakes fields
+ */
+const EXTRACTION_PROMPT = `
+You are extracting structured data from an invoice PDF. Accuracy on identity, addresses, and payment routing is critical — these values move money. Follow these rules without exception:
 
-    const apiKey = process.env.CLAUDE_API_KEY;
-    if (!apiKey) {
-      throw new Error("CLAUDE_API_KEY environment variable is not set");
-    }
+RULE 1 — VERBATIM TRANSCRIPTION (HIGHEST PRIORITY)
+The following fields must be copied character-by-character exactly as they appear in the PDF text. Do NOT normalize case, insert spaces, remove dashes, or "correct" anything:
+  • Crypto wallet addresses (must be exactly 42 characters: \`0x\` prefix + 40 hex chars, no whitespace)
+  • IBAN / account numbers
+  • ABA / SWIFT / BIC codes
+  • Tax IDs
+If you cannot transcribe one of these values with 100% confidence, return null for it. Do not guess. Do not infer.
 
-    console.log("Preparing Claude API request with PDF...");
+RULE 2 — ISSUER vs PAYER (semantic anchor, not label-matching)
+  • The "issuer" is the party RECEIVING payment — the owner of the bank account or wallet that money is being sent to. This is the supplier, vendor, contractor, or freelancer.
+  • The "payer" is the party SENDING payment — the customer, client, or buyer.
+Invoices use inconsistent labels ("From"/"To", "Bill To"/"Sold By", "Customer"/"Supplier"). Do NOT rely on labels. Use this rule: whichever party's bank/wallet appears in the payment instructions is the issuer. If only one party has payment routing visible, that party is the issuer.
+If you cannot determine which is which with high confidence, set both to null.
 
-    // Create the prompt for Claude to extract invoice data from PDF
-    const prompt = `
-Please analyze this PDF invoice document and extract the following information in JSON format:
+RULE 3 — NULL OVER GUESS
+For every field below, return null if the value is not clearly visible in the PDF. Empty string is not acceptable for unknown fields.
+
+RULE 4 — NUMBERS
+Preserve numbers exactly as written. Do not round, recompute, or convert currencies.
+
+OUTPUT FORMAT
+Return a single JSON object. Do not wrap in markdown. Do not include commentary.
 
 {
-  "status": "status of invoice (DRAFT, ISSUED, CANCELLED, ACCEPTED, REJECTED, PAYMENTSCHEDULED, PAYMENTSENT, PAYMENTISSUE, PAYMENTRECEIVED, PAYMENTCLOSED)",
-  "invoiceNo": "invoice number",
-  "dateIssued": "invoice date in YYYY-MM-DDTHH:mm:ss.sssZ format",
-  "dateDue": "due date in YYYY-MM-DDTHH:mm:ss.sssZ format",
-  "dateDelivered": "delivery date in YYYY-MM-DDTHH:mm:ss.sssZ format (if specified)",
-  "currency": "currency code crypto or fiat (USD, EUR, DAI, USDC, USDT, etc.)",
-  "notes": "any notes or additional information on the invoice",
-  "payAfter": "earliest payment date in ISO format (if specified)",
-  "invoiceTags": [
-    {
-      "dimension": "tag category (e.g. xero-expense-account, accounting-period)",
-      "value": "tag value (e.g. 627, 2025/05)",
-      "label": "human readable label (e.g. Marketing, May 2025)"
-    }
-  ],
+  "status": "DRAFT|ISSUED|CANCELLED|ACCEPTED|REJECTED|PAYMENTSCHEDULED|PAYMENTSENT|PAYMENTISSUE|PAYMENTRECEIVED|PAYMENTCLOSED",
+  "invoiceNo": "...",
+  "dateIssued": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "dateDue": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "dateDelivered": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "currency": "USD|EUR|DAI|USDC|...",
+  "notes": "...",
+  "payAfter": "ISO date",
+  "invoiceTags": [{ "dimension": "...", "value": "...", "label": "..." }],
+
   "issuer": {
-    "name": "supplier/issuer company name",
+    "name": "supplier/vendor — the party receiving payment",
     "address": {
-      "streetAddress": "street address",
-      "extendedAddress": "apartment/suite (if any)",
-      "city": "city",
-      "postalCode": "postal/zip code",
-      "stateProvince": "state/province",
-      "country": "country"
+      "streetAddress": "...", "extendedAddress": "...",
+      "city": "...", "postalCode": "...", "stateProvince": "...", "country": "..."
     },
-    "contactInfo": {
-      "email": "email address",
-      "tel": "phone number"
-    },
-    "country": "issuer country",
-    "id": {
-      "taxId": "tax ID number"
-    },
+    "contactInfo": { "email": "...", "tel": "..." },
+    "country": "...",
+    "id": { "taxId": "..." },
     "paymentRouting": {
       "bank": {
-        "name": "bank name",
-        "accountNum": "account number or IBAN",
-        "ABA": "ABA routing number",
-        "BIC": "BIC/SWIFT code",
-        "SWIFT": "SWIFT code",
-        "accountType": "CHECKING or SAVINGS",
-        "beneficiary": "beneficiary name",
-        "memo": "payment memo",
-        "address": {
-          "streetAddress": "bank street address",
-          "city": "bank city",
-          "stateProvince": "bank state/province",
-          "postalCode": "bank postal code",
-          "country": "bank country",
-          "extendedAddress": "bank extended address"
-        },
-        "intermediaryBank": {
-          "name": "intermediary bank name (if any)",
-          "address": "intermediary bank address",
-          "ABA": "intermediary ABA",
-          "BIC": "intermediary BIC",
-          "SWIFT": "intermediary SWIFT",
-          "accountNum": "intermediary account",
-          "accountType": "intermediary account type",
-          "beneficiary": "intermediary beneficiary",
-          "memo": "intermediary memo"
-        }
+        "name": "...", "accountNum": "verbatim IBAN/account",
+        "ABA": "verbatim", "BIC": "verbatim", "SWIFT": "verbatim",
+        "accountType": "CHECKING|SAVINGS",
+        "beneficiary": "...", "memo": "...",
+        "address": { "streetAddress": "...", "city": "...", "stateProvince": "...", "postalCode": "...", "country": "...", "extendedAddress": "..." },
+        "intermediaryBank": { "name": "...", "address": "...", "ABA": "...", "BIC": "...", "SWIFT": "...", "accountNum": "...", "accountType": "...", "beneficiary": "...", "memo": "..." }
       },
       "wallet": {
-        "address": "crypto wallet address",
-        "chainId": "blockchain chain ID",
-        "chainName": "blockchain name (e.g., Base, Ethereum)",
-        "rpc": "RPC endpoint"
+        "address": "VERBATIM 0x... wallet address, exactly 42 chars",
+        "chainId": "...",
+        "chainName": "Base|Ethereum|Polygon|...",
+        "rpc": "..."
       }
     }
   },
+
   "payer": {
-    "name": "payer/receiver company name",
-    "address": {
-      "streetAddress": "payer street address",
-      "extendedAddress": "payer apartment/suite",
-      "city": "payer city",
-      "postalCode": "payer postal code",
-      "stateProvince": "payer state/province",
-      "country": "payer country"
-    },
-    "contactInfo": {
-      "email": "payer email",
-      "tel": "payer phone"
-    },
-    "country": "payer country",
-    "id": {
-      "taxId": "payer tax ID"
-    },
+    "name": "client/customer — the party sending payment",
+    "address": { "streetAddress": "...", "extendedAddress": "...", "city": "...", "postalCode": "...", "stateProvince": "...", "country": "..." },
+    "contactInfo": { "email": "...", "tel": "..." },
+    "country": "...",
+    "id": { "taxId": "..." },
     "paymentRouting": {
-      "bank": {
-        "name": "payer bank name (if specified)",
-        "accountNum": "payer account number",
-        "ABA": "payer ABA",
-        "BIC": "payer BIC",
-        "SWIFT": "payer SWIFT",
-        "accountType": "payer account type",
-        "beneficiary": "payer beneficiary",
-        "memo": "payer memo"
-      },
-      "wallet": {
-        "address": "payer wallet address (if specified)",
-        "chainId": "payer chain ID",
-        "chainName": "payer chain name",
-        "rpc": "payer RPC"
-      }
+      "bank": { "name": "...", "accountNum": "...", "ABA": "...", "BIC": "...", "SWIFT": "...", "accountType": "...", "beneficiary": "...", "memo": "..." },
+      "wallet": { "address": "...", "chainId": "...", "chainName": "...", "rpc": "..." }
     }
   },
+
   "lineItems": [
     {
-      "description": "item description",
-      "quantity": numeric_quantity,
-      "unitPriceTaxExcl": numeric_unit_price,
-      "unitPriceTaxIncl": numeric_unit_price_with_tax,
-      "totalPriceTaxExcl": numeric_total_price,
-      "totalPriceTaxIncl": numeric_total_price_with_tax,
-      "taxPercent": numeric_tax_percentage,
-      "currency": "currency_code",
-      "lineItemTag": [
-        {
-          "dimension": "tag category (e.g. xero-expense-account)",
-          "value": "tag value (e.g. 627)",
-          "label": "human readable label (e.g. Marketing)"
-        }
-      ]
+      "description": "...",
+      "quantity": <number>, "unitPriceTaxExcl": <number>, "unitPriceTaxIncl": <number>,
+      "totalPriceTaxExcl": <number>, "totalPriceTaxIncl": <number>,
+      "taxPercent": <number>, "currency": "...",
+      "lineItemTag": [{ "dimension": "...", "value": "...", "label": "..." }]
     }
   ],
-  "totalPriceTaxExcl": numeric_total_amount,
-  "totalPriceTaxIncl": numeric_total_amount_with_tax,
-  "rejections": [
-    {
-      "reason": "rejection reason (if any)",
-      "final": boolean_if_final_rejection
-    }
-  ],
-  "payments": [
-    {
-      "processorRef": "payment processor reference",
-      "paymentDate": "payment date in ISO format",
-      "txnRef": "transaction reference",
-      "confirmed": boolean_if_confirmed,
-      "issue": "payment issue description",
-      "amount": numeric_payment_amount
-    }
-  ],
-  "exported": {
-    "timestamp": "export timestamp in ISO format",
-    "exportedLineItems": [["CSV formatted line items"]]
-  },
-  "closureReason": "UNDERPAID, OVERPAID, or CANCELLED (if applicable)"
+  "totalPriceTaxExcl": <number>,
+  "totalPriceTaxIncl": <number>,
+  "rejections": [{ "reason": "...", "final": <boolean> }],
+  "payments": [{ "processorRef": "...", "paymentDate": "...", "txnRef": "...", "confirmed": <boolean>, "issue": "...", "amount": <number> }],
+  "exported": { "timestamp": "...", "exportedLineItems": [["..."]] },
+  "closureReason": "UNDERPAID|OVERPAID|CANCELLED",
+
+  "_confidence": {
+    "issuer.name": { "level": "high|medium|low", "evidence": "verbatim PDF snippet showing this" },
+    "payer.name": { "level": "high|medium|low", "evidence": "..." },
+    "issuer.paymentRouting.wallet.address": { "level": "high|medium|low", "evidence": "..." },
+    "payer.paymentRouting.wallet.address": { "level": "high|medium|low", "evidence": "..." },
+    "issuer.paymentRouting.bank.accountNum": { "level": "high|medium|low", "evidence": "..." },
+    "totalPriceTaxIncl": { "level": "high|medium|low", "evidence": "..." }
+  }
 }
 
-Extract only the data that is clearly visible in the PDF. If a field is not present, use null. Be very careful with numbers - preserve the exact values without modification. For dates, convert to YYYY-MM-DD format. For currencies, use standard 3-letter codes (USD, EUR, GBP, etc.).
+For every key in _confidence, set level=low whenever the field is null OR you had to interpret a label rather than copy a value. Set evidence to the literal PDF text you copied from (or null if the field was not present).
 
-IMPORTANT: You MUST output valid, complete JSON. Do not truncate or abbreviate the output. Include all line items.
-`;
+You MUST output a single valid, complete JSON object. Do not truncate. Do not include line items beyond what fits — better to omit later items than to ship malformed JSON.
+`.trim();
 
-    // Use Haiku for faster processing to avoid gateway timeouts
-    // Haiku is significantly faster than Sonnet while still being capable for invoice extraction
-    const requestBody = {
-      model: "claude-haiku-4-5-20251001",
-      max_tokens: 32000,
-      messages: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "text",
-              text: prompt,
-            },
-            {
-              type: "document",
-              source: {
-                type: "base64",
-                media_type: "application/pdf",
-                data: inputDoc,
-              },
-            },
-          ],
-        },
-      ],
-    };
+interface ClaudeCallResult {
+  rawJson: any;
+  truncated: boolean;
+}
 
-    console.log("Sending request to Claude API...");
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify(requestBody),
-    });
+async function callClaude(
+  base64Pdf: string,
+  apiKey: string,
+  extraSystemMessage?: string,
+): Promise<ClaudeCallResult> {
+  const userContent: any[] = [];
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Claude API error: ${response.status} - ${errorText}`);
-    }
-
-    const result = await response.json();
-    console.log("PDF processed successfully with Claude AI");
-
-    // Check if the response was truncated due to max_tokens
-    const stopReason = result.stop_reason;
-    if (stopReason === "max_tokens") {
-      console.warn(
-        "Warning: Claude response was truncated due to max_tokens limit",
-      );
-    }
-
-    // Extract JSON from Claude's response
-    const responseText = result.content[0]?.text;
-    if (!responseText) {
-      throw new Error("No response text from Claude API");
-    }
-
-    // Try to extract JSON from the response
-    let invoiceData;
-    try {
-      // Look for JSON block in the response
-      const jsonMatch =
-        responseText.match(/```json\s*([\s\S]*?)\s*```/) ||
-        responseText.match(/\{[\s\S]*\}/);
-
-      if (jsonMatch) {
-        let jsonString = jsonMatch[1] || jsonMatch[0];
-
-        // Attempt to repair truncated JSON if needed
-        jsonString = repairTruncatedJson(jsonString);
-
-        invoiceData = JSON.parse(jsonString);
-      } else {
-        // Fallback: try to parse the entire response as JSON
-        invoiceData = JSON.parse(responseText);
-      }
-    } catch (parseError) {
-      console.error("Failed to parse Claude response as JSON:", parseError);
-      console.error("Response text:", responseText);
-
-      // Try one more time with aggressive repair
-      try {
-        const jsonMatch = responseText.match(/\{[\s\S]*/);
-        if (jsonMatch) {
-          const repairedJson = repairTruncatedJson(jsonMatch[0]);
-          invoiceData = JSON.parse(repairedJson);
-          console.log("Successfully repaired truncated JSON");
-        } else {
-          throw new Error("Failed to parse Claude response as valid JSON");
-        }
-      } catch {
-        throw new Error("Failed to parse Claude response as valid JSON");
-      }
-    }
-
-    // Process the invoice data to ensure it matches our expected format
-    const processedInvoiceData = await processClaudeInvoiceData(invoiceData);
-
-    return { invoiceData: processedInvoiceData };
-  } catch (error) {
-    console.error("Error in uploadPdfAndGetJsonClaude:", error);
-    throw error;
+  if (extraSystemMessage) {
+    userContent.push({ type: "text", text: extraSystemMessage });
   }
+  userContent.push({ type: "text", text: EXTRACTION_PROMPT });
+  userContent.push({
+    type: "document",
+    source: {
+      type: "base64",
+      media_type: "application/pdf",
+      data: base64Pdf,
+    },
+  });
+
+  const requestBody = {
+    model: "claude-haiku-4-5-20251001",
+    max_tokens: 32000,
+    messages: [{ role: "user", content: userContent }],
+  };
+
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Claude API error: ${response.status} - ${errorText}`);
+  }
+
+  const result = await response.json();
+  const stopReason = result.stop_reason;
+  const truncated = stopReason === "max_tokens";
+
+  const responseText = result.content[0]?.text;
+  if (!responseText) {
+    throw new Error("No response text from Claude API");
+  }
+
+  // Try to extract JSON from the response
+  let invoiceData;
+  try {
+    const jsonMatch =
+      responseText.match(/```json\s*([\s\S]*?)\s*```/) ||
+      responseText.match(/\{[\s\S]*\}/);
+
+    if (jsonMatch) {
+      let jsonString = jsonMatch[1] || jsonMatch[0];
+      jsonString = repairTruncatedJson(jsonString);
+      invoiceData = JSON.parse(jsonString);
+    } else {
+      invoiceData = JSON.parse(responseText);
+    }
+  } catch (parseError) {
+    console.error("Failed to parse Claude response as JSON:", parseError);
+    const jsonMatch = responseText.match(/\{[\s\S]*/);
+    if (jsonMatch) {
+      const repairedJson = repairTruncatedJson(jsonMatch[0]);
+      invoiceData = JSON.parse(repairedJson);
+    } else {
+      throw new Error("Failed to parse Claude response as valid JSON");
+    }
+  }
+
+  return { rawJson: invoiceData, truncated };
+}
+
+/**
+ * Builds the corrective prompt used on the re-extraction pass when
+ * format validation or PDF grounding fails for high-stakes fields.
+ */
+function buildCorrectivePrompt(
+  invalidFields: string[],
+  rawText: string,
+): string {
+  const truncatedText =
+    rawText.length > 8000 ? rawText.slice(0, 8000) + "\n…[truncated]" : rawText;
+  return `
+Your previous extraction had problems on these fields: ${invalidFields.join(", ")}.
+
+Common causes:
+  • You returned a wallet address that doesn't appear verbatim in the PDF (transposed/inserted character or whitespace)
+  • You returned an IBAN that fails format checks
+  • You confused issuer and payer (remember: issuer = party RECEIVING payment / owner of destination payment routing)
+
+Re-extract the entire invoice. For the listed problem fields, copy values character-by-character from the PDF text below — do NOT re-render or normalize them. If a value cannot be found verbatim in the text, return null.
+
+PDF TEXT (authoritative source — match values from here when possible):
+---
+${truncatedText}
+---
+  `.trim();
+}
+
+export interface ExtractInvoiceResult {
+  invoiceData: any;
+  warnings: string[];
+  invalidFields: string[];
+  confidence: Record<string, { level: string; evidence?: string | null }>;
+  groundingAvailable: boolean;
+  retried: boolean;
+  truncated: boolean;
+}
+
+export async function uploadPdfAndGetJsonClaude(
+  inputDoc: string,
+): Promise<{ invoiceData: any } & Omit<ExtractInvoiceResult, "invoiceData">> {
+  console.log("Starting PDF upload and processing with Claude AI");
+
+  const apiKey = process.env.CLAUDE_API_KEY;
+  if (!apiKey) {
+    throw new Error("CLAUDE_API_KEY environment variable is not set");
+  }
+
+  // Pull the raw text layer in parallel with the Claude call — used for
+  // grounding and (if needed) the corrective re-prompt. Empty string on
+  // failure / scanned PDFs; validation degrades gracefully.
+  const rawTextPromise = extractPdfText(inputDoc);
+
+  console.log("Sending request to Claude API...");
+  const [{ rawJson, truncated }, rawText] = await Promise.all([
+    callClaude(inputDoc, apiKey),
+    rawTextPromise,
+  ]);
+
+  const groundingAvailable = rawText.trim() !== "";
+  if (truncated) {
+    console.warn(
+      "Warning: Claude response was truncated due to max_tokens limit",
+    );
+  }
+
+  // First validation pass against the raw text
+  let validation: ValidationReport = validateExtractedInvoice(rawJson, rawText);
+  let finalRaw = rawJson;
+  let retried = false;
+
+  // Re-prompt once if any high-stakes field failed AND we have text to ground against.
+  // Without grounding the re-prompt has nothing to anchor on, so we skip it.
+  if (validation.invalidFields.length > 0 && groundingAvailable) {
+    console.log(
+      `Validation failed on ${validation.invalidFields.length} field(s); doing corrective re-extraction…`,
+    );
+    try {
+      const corrective = buildCorrectivePrompt(
+        validation.invalidFields,
+        rawText,
+      );
+      const second = await callClaude(inputDoc, apiKey, corrective);
+      const secondValidation = validateExtractedInvoice(
+        second.rawJson,
+        rawText,
+      );
+      // Only accept the retry if it improved things — otherwise we'd risk
+      // overwriting a mostly-good first extraction with a worse one.
+      if (
+        secondValidation.invalidFields.length < validation.invalidFields.length
+      ) {
+        finalRaw = second.rawJson;
+        validation = secondValidation;
+        retried = true;
+        console.log(
+          "Corrective re-extraction improved validation; using retry result.",
+        );
+      } else {
+        console.log(
+          "Corrective re-extraction did not improve results; keeping original.",
+        );
+      }
+    } catch (err) {
+      console.warn("Corrective re-extraction failed:", err);
+    }
+  }
+
+  // Merge truncation warning if applicable
+  const warnings = [...validation.warnings];
+  if (truncated) {
+    warnings.unshift(
+      "Extraction was truncated by the model's output limit. Some line items may be missing — please review carefully.",
+    );
+  }
+  if (!groundingAvailable) {
+    warnings.push(
+      "PDF text layer could not be extracted (likely a scanned image). Values could not be cross-checked against the source text — please verify high-value fields by eye.",
+    );
+  }
+
+  const processedInvoiceData = await processClaudeInvoiceData(finalRaw);
+  const confidence = (finalRaw && finalRaw._confidence) || {};
+
+  return {
+    invoiceData: processedInvoiceData,
+    warnings,
+    invalidFields: validation.invalidFields,
+    confidence,
+    groundingAvailable,
+    retried,
+    truncated,
+  };
 }
 
 async function processClaudeInvoiceData(rawData: any) {
@@ -579,9 +638,5 @@ async function processClaudeInvoiceData(rawData: any) {
     invoiceData.lineItems = taggedItems;
   }
 
-  console.log(
-    "Processed Claude invoice data:",
-    JSON.stringify(invoiceData, null, 2),
-  );
   return invoiceData;
 }

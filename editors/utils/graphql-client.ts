@@ -17,7 +17,7 @@ function getGraphQLUrl(): string {
   }
 
   const url = new URL(baseURI);
-  url.host = url.host.replace(/^connect\./, "switchboard.");
+  url.host = url.host.replace(/^connect([.-])/, "switchboard$1");
   return `${url.origin}/graphql`;
 }
 

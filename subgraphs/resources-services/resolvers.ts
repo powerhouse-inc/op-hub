@@ -748,8 +748,48 @@ function byOptionGroupAndDisplayOrder<
     .map(({ item }) => item);
 }
 
+// Built-in target environments. The default is the Vetra-hosted "mild-dove-63"
+// reactor; the staging Powerhouse env is an emergency fallback selected via
+// `BASE_URI` (or `PH_BASE_URL`) — set it when bai-dev is down and we need to
+// keep `createProductInstances` returning links that resolve.
+const DRIVE_LINK_TARGETS = [
+  {
+    match: /staging\.powerhouse\.xyz/i,
+    connect: "https://connect-staging.powerhouse.xyz",
+    switchboard: "https://switchboard-staging.powerhouse.xyz",
+  },
+] as const;
+
+const DEFAULT_DRIVE_LINK_TARGET = {
+  connect: "https://connect.mild-dove-63.vetra.io",
+  switchboard: "https://switchboard.mild-dove-63.vetra.io",
+};
+
+// Concatenated string of every env var the deploy might use to identify
+// itself. Any one of these containing "staging.powerhouse.xyz" trips the
+// staging branch — we cast a wide net because Vetra/k8s deploys don't
+// expose a single canonical "what host am I" variable.
+function detectDeployIdentity(): string {
+  return [
+    process.env.BASE_URI,
+    process.env.PH_BASE_URL,
+    process.env.PH_SWITCHBOARD_URL,
+    process.env.SWITCHBOARD_URL,
+    process.env.PH_REGISTRY_URL,
+    process.env.PH_SWITCHBOARD_DATABASE_URL,
+    process.env.HOSTNAME,
+    process.env.POD_NAMESPACE,
+  ]
+    .filter((v): v is string => typeof v === "string" && v.length > 0)
+    .join("|");
+}
+
 function getDriveLink(driveSlug: string): string {
-  return `https://connect.mild-dove-63.vetra.io/?driveUrl=https://switchboard.mild-dove-63.vetra.io/d/${driveSlug}`;
+  const identity = detectDeployIdentity();
+  const target =
+    DRIVE_LINK_TARGETS.find((t) => t.match.test(identity)) ??
+    DEFAULT_DRIVE_LINK_TARGET;
+  return `${target.connect}/?driveUrl=${target.switchboard}/d/${driveSlug}`;
 }
 
 /**

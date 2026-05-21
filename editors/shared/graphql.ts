@@ -15,7 +15,10 @@ export function getGraphQLUrl(): string {
   }
 
   const url = new URL(baseURI);
-  url.host = url.host.replace(/^connect\./, "switchboard.");
+  // Matches `connect.X` (Vetra-style: connect.mild-dove-63.vetra.io)
+  // and `connect-X` (Powerhouse-style: connect-staging.powerhouse.xyz,
+  // connect-dev.powerhouse.xyz). The captured separator is preserved.
+  url.host = url.host.replace(/^connect([.-])/, "switchboard$1");
   return `${url.origin}/graphql`;
 }
 

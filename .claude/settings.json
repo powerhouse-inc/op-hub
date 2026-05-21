@@ -162,7 +162,24 @@
       "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __schema { queryType { fields { name } } mutationType { fields { name } } } }\"}')",
       "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ Packages { installedPackages { name version } } system { version } }\"}')",
       "Bash(curl -sS https://switchboard.mild-dove-63.vetra.io/__packages)",
-      "Bash(curl -sS http://localhost:4001/__packages)"
+      "Bash(curl -sS http://localhost:4001/__packages)",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ system { version } Packages { installedPackages { name version } } __schema { queryType { fields { name } } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ DocumentDrive { drives } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name: \\\\\"DocumentDriveQueries\\\\\"\\) { fields { name } } }\"}')",
+      "Bash(switchboard -p bai-dev drives delete --yes 9d454382-f637-49c7-ba76-0813ade59d87)",
+      "Bash(switchboard -p bai-dev drives delete --yes 1bbf1ac2-178b-4f55-9016-2ca94e4e6cb1)",
+      "Bash(switchboard -p bai-dev drives delete --yes 591af387-075b-4d32-a834-685a10c952c5)",
+      "Bash(switchboard -p bai-dev drives delete --yes powerhouse)",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ system { version } Packages { installedPackages { name version } } __schema { queryType { fields { name } } mutationType { fields { name } } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name:\\\\\"PackagesMutations\\\\\"\\) { fields { name args { name type { name kind ofType { name } } } } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name:\\\\\"PackagesQueries\\\\\"\\) { fields { name } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"mutation { Packages { installPackage\\(name: \\\\\"@powerhousedao/op-hub\\\\\"\\) } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __type\\(name:\\\\\"InstallPackageResult\\\\\"\\) { fields { name type { name kind } } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"mutation { Packages { installPackage\\(name: \\\\\"@powerhousedao/op-hub\\\\\"\\) { package { name version } documentModelsLoaded } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ Packages { installedPackages { name version installedAt } } __schema { queryType { fields { name } } mutationType { fields { name } } } }\"}')",
+      "Bash(curl -sS https://registry.dev.vetra.io/@powerhousedao/op-hub)",
+      "Bash(curl -sS https://registry.dev.vetra.io/@powerhousedao/op-hub/0.0.8)",
+      "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ system { version } Packages { installedPackages { name version } } __schema { queryType { fields { name } } mutationType { fields { name } } } }\"}')"
     ],
     "additionalDirectories": [
       "/home/p"

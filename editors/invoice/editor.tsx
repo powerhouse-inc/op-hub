@@ -12,7 +12,10 @@ import {
 import { LegalEntityForm } from "./legalEntity/legalEntity.js";
 import { LineItemsTable } from "./lineItems.js";
 import { loadUBLFile } from "./ingestUBL.js";
-import PDFUploader from "./ingestPDF.js";
+import PDFUploader, { applyExtractedInvoice } from "./ingestPDF.js";
+import PDFReviewModal, {
+  type PDFReviewData,
+} from "./components/PDFReviewModal.js";
 import RequestFinance from "./requestFinance.js";
 import InvoiceToGnosis from "./invoiceToGnosis.js";
 import { PDFDownloadLink } from "@react-pdf/renderer";
@@ -87,6 +90,15 @@ export default function Editor() {
   // Initialize hooks with safe defaults that don't depend on state being available
   const [fiatMode, setFiatMode] = useState(false);
   const [uploadDropdownOpen, setUploadDropdownOpen] = useState(false);
+
+  // PDF review modal state — lifted up from PDFUploader so it survives
+  // the dropdown unmounting on outside click.
+  const [pdfReviewData, setPdfReviewData] = useState<PDFReviewData | null>(
+    null,
+  );
+  const [pdfBase64, setPdfBase64] = useState<string | null>(null);
+  const [pdfFileName, setPdfFileName] = useState<string>("");
+  const [isApplyingPdf, setIsApplyingPdf] = useState(false);
   const [exportDropdownOpen, setExportDropdownOpen] = useState(false);
   const [invoiceNoInput, setInvoiceNoInput] = useState("");
   const uploadDropdownRef = useRef<HTMLDivElement>(null);
@@ -381,6 +393,43 @@ export default function Editor() {
         type: "error",
       });
     }
+  };
+
+  const handlePdfUploadComplete = (
+    data: PDFReviewData,
+    base64: string,
+    fileName: string,
+  ) => {
+    setPdfBase64(base64);
+    setPdfFileName(fileName);
+    setPdfReviewData(data);
+  };
+
+  const handlePdfAccept = (edited: Record<string, any>) => {
+    setIsApplyingPdf(true);
+    try {
+      applyExtractedInvoice(dispatch, edited);
+      toast?.("Invoice applied successfully", { type: "success" });
+      setPdfReviewData(null);
+      setPdfBase64(null);
+      setPdfFileName("");
+    } catch (err) {
+      console.error("Failed to apply extracted invoice:", err);
+      toast?.(
+        err instanceof Error
+          ? err.message
+          : "Failed to apply extracted invoice",
+        { type: "error" },
+      );
+    } finally {
+      setIsApplyingPdf(false);
+    }
+  };
+
+  const handlePdfReject = () => {
+    setPdfReviewData(null);
+    setPdfBase64(null);
+    setPdfFileName("");
   };
 
   const handleExportPDF = () => {
@@ -752,8 +801,8 @@ export default function Editor() {
                         />
                       </label>
                       <PDFUploader
-                        dispatch={dispatch}
                         changeDropdownOpen={setUploadDropdownOpen}
+                        onUploadComplete={handlePdfUploadComplete}
                       />
                     </div>
                   </div>
@@ -1118,6 +1167,16 @@ export default function Editor() {
         </div>
       </div> */}
       </div>
+
+      <PDFReviewModal
+        open={pdfReviewData !== null}
+        base64Pdf={pdfBase64}
+        fileName={pdfFileName}
+        reviewData={pdfReviewData}
+        onAccept={handlePdfAccept}
+        onReject={handlePdfReject}
+        isApplying={isApplyingPdf}
+      />
     </div>
   );
 }

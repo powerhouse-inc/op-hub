@@ -155,7 +155,14 @@
       "Bash(git -C /home/p/Powerhouse/demos/op-hub log -1 --format=\"%ai %s\" -- scripts/drive-sync/data/powerhouse-genesis-operational-hub/id-map.json)",
       "Bash(TARGET_PROFILE=local DATA_DIR=scripts/drive-sync/data python3 scripts/drive-sync/phase3-remap.py)",
       "Bash(bash -n /home/p/Powerhouse/demos/op-hub/scripts/drive-sync/upload-all.sh)",
-      "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{ *)"
+      "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{ *)",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __schema { queryType { fields { name } } mutationType { fields { name } } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ system { version } Packages { installedPackages { name version registryUrl installedAt } } }\"}')",
+      "Bash(curl -sS -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ ResourceTemplate { getDocuments { id } } }\"}')",
+      "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ __schema { queryType { fields { name } } mutationType { fields { name } } } }\"}')",
+      "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{\"query\":\"{ Packages { installedPackages { name version } } system { version } }\"}')",
+      "Bash(curl -sS https://switchboard.mild-dove-63.vetra.io/__packages)",
+      "Bash(curl -sS http://localhost:4001/__packages)"
     ],
     "additionalDirectories": [
       "/home/p"

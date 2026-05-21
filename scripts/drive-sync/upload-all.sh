@@ -198,6 +198,40 @@ echo -e "  ${GREEN}✓${NC} Succeeded: $SUCCEEDED"
 [[ $FAILED -gt 0 ]] && echo -e "  ${RED}✗${NC} Failed: $FAILED"
 echo -e "  ${CYAN}Total:${NC} $TOTAL drives"
 
+# Phase 3: cross-drive PHID remap.
+# Per-drive id-maps are written by upload.sh. Merge them into a single
+# map and run phase3-remap.py so cross-drive refs (e.g. builder-profile
+# contributors[] and operationalHubMember.phid) point at the freshly
+# created document IDs on the target — they change on every upload.
+if [[ $SUCCEEDED -gt 0 ]]; then
+  step "Phase 3: cross-drive PHID remap"
+  if python3 - "$DATA_DIR" <<'PY'
+import json, os, sys
+data_dir = sys.argv[1]
+merged = {}
+for d in sorted(os.listdir(data_dir)):
+    p = os.path.join(data_dir, d, "id-map.json")
+    if not os.path.isfile(p):
+        continue
+    with open(p) as f:
+        merged.update(json.load(f))
+out = os.path.join(data_dir, "merged-id-map.json")
+with open(out, "w") as f:
+    json.dump(merged, f, indent=2)
+print(f"  merged {len(merged)} ids -> {out}")
+PY
+  then
+    if TARGET_PROFILE="$TARGET_PROFILE" DATA_DIR="$DATA_DIR" \
+         python3 "$SCRIPT_DIR/phase3-remap.py"; then
+      log "Phase 3 remap completed"
+    else
+      err "Phase 3 remap failed (drives are uploaded, but cross-drive refs may be stale)"
+    fi
+  else
+    err "Failed to build merged-id-map.json — skipping Phase 3 remap"
+  fi
+fi
+
 step "Drives on target"
 switchboard drives list --format json 2>/dev/null | python3 -c "
 import sys, json

@@ -11,7 +11,9 @@ export const serviceOfferingServicesOperations: ServiceOfferingServicesOperation
         id: action.input.id,
         title: action.input.title,
         description: action.input.description || null,
-        displayOrder: action.input.displayOrder || null,
+        // Use `??` so a valid `displayOrder: 0` is preserved (pairwise-swap
+        // reorder dispatches send the receiving index, which can be 0).
+        displayOrder: action.input.displayOrder ?? null,
         isSetupFormation: action.input.isSetupFormation || false,
         optionGroupId: action.input.optionGroupId || null,
       });
@@ -28,7 +30,7 @@ export const serviceOfferingServicesOperations: ServiceOfferingServicesOperation
       if (action.input.description !== undefined)
         service.description = action.input.description || null;
       if (action.input.displayOrder !== undefined)
-        service.displayOrder = action.input.displayOrder || null;
+        service.displayOrder = action.input.displayOrder ?? null;
       if (
         action.input.isSetupFormation !== undefined &&
         action.input.isSetupFormation !== null

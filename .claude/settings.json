@@ -152,7 +152,10 @@
       "Bash(CONFIRM_REMOTE=yes SB_PROFILE=bai-dev PREFERRED_EDITOR=builder-team-admin bash scripts/drive-sync/upload.sh scripts/drive-sync/data/powerhouse-rgh-operator-admin 'Powerhouse RGH Operator Admin')",
       "Bash(switchboard -p local drives list --format json)",
       "Bash(python3 -c \"import json,sys; m=json.load\\(sys.stdin\\); print\\('documents:', len\\(m['documents']\\)\\); types=set\\(d['type'] for d in m['documents']\\); print\\('types:'\\); [print\\(' ',t\\) for t in sorted\\(types\\)]\")",
-      "Bash(git -C /home/p/Powerhouse/demos/op-hub log -1 --format=\"%ai %s\" -- scripts/drive-sync/data/powerhouse-genesis-operational-hub/id-map.json)"
+      "Bash(git -C /home/p/Powerhouse/demos/op-hub log -1 --format=\"%ai %s\" -- scripts/drive-sync/data/powerhouse-genesis-operational-hub/id-map.json)",
+      "Bash(TARGET_PROFILE=local DATA_DIR=scripts/drive-sync/data python3 scripts/drive-sync/phase3-remap.py)",
+      "Bash(bash -n /home/p/Powerhouse/demos/op-hub/scripts/drive-sync/upload-all.sh)",
+      "Bash(curl -sS -X POST http://localhost:4001/graphql -H 'Content-Type: application/json' -d '{ *)"
     ],
     "additionalDirectories": [
       "/home/p"

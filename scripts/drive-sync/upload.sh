@@ -142,17 +142,58 @@ def wait_for_doc(doc_id, timeout=15):
         time.sleep(1)
     return False
 
+def _poll_job(job_id, timeout=120, interval=0.5):
+    """Poll jobStatus via raw GraphQL using only fields this server exposes
+    (status, error, completedAt). Older switchboards don't have JobInfo.progress,
+    so we can't use `docs apply --wait`."""
+    query = ('query($id:String!){ jobStatus(jobId:$id) '
+             '{ id status error completedAt } }')
+    variables = json.dumps({"id": job_id})
+    deadline = time.time() + timeout
+    last_status = None
+    while time.time() < deadline:
+        result = subprocess.run(
+            ["switchboard", "query", query,
+             "--variables", variables, "--format", "json"],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode != 0:
+            time.sleep(interval)
+            continue
+        try:
+            data = json.loads(result.stdout)
+        except json.JSONDecodeError:
+            time.sleep(interval)
+            continue
+        if data.get("errors"):
+            raise RuntimeError(f"jobStatus GraphQL errors: {data['errors']}")
+        # `switchboard query --format json` returns the unwrapped data object,
+        # but tolerate the wrapped {data:{...}} shape too.
+        root = data.get("data") if isinstance(data.get("data"), dict) else data
+        info = (root or {}).get("jobStatus") or {}
+        last_status = info.get("status")
+        # Terminal-fail signal from reactor-api.
+        if last_status in ("FAILED", "failed", "ERROR", "error"):
+            raise RuntimeError(f"job {job_id} failed: {info.get('error') or 'unknown'}")
+        # Terminal-success: status reaches READ_MODELS_READY (or older READ_READY
+        # alias) OR completedAt is populated, matching reactor-api's isTerminal.
+        if last_status in ("READ_MODELS_READY", "READ_READY", "COMPLETED",
+                           "completed", "SUCCESS", "success"):
+            return
+        if info.get("completedAt"):
+            return
+        time.sleep(interval)
+    raise RuntimeError(f"job {job_id} did not complete within {timeout}s (last status: {last_status})")
+
+
 def apply_actions(doc_id, actions, retries=3):
-    """Apply actions to a document using docs apply --wait.
-    This blocks until the reactor has fully processed the job — no race conditions.
-    Works for single actions or batches."""
+    """Apply actions to a document. Submits async via `docs apply` (no --wait),
+    then polls jobStatus via raw GraphQL. Compatible with switchboards whose
+    JobInfo type lacks the `progress` field that CLI 1.0.27's --wait queries."""
     if not actions:
         return
     if isinstance(actions, dict):
         actions = [actions]
-    # Inject missing action fields required by the reactor:
-    # - id: required for pollSyncEnvelopes (Action.id is non-nullable)
-    # - timestampUtcMs: ISO-8601 string for the operation store
     now_iso = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.") + \
         f"{datetime.datetime.now(datetime.timezone.utc).microsecond // 1000:03d}Z"
     for action in actions:
@@ -167,16 +208,34 @@ def apply_actions(doc_id, actions, retries=3):
         for attempt in range(retries):
             result = subprocess.run(
                 ["switchboard", "docs", "apply", doc_id,
-                 "--file", tmppath, "--wait", "--format", "json"],
-                capture_output=True, text=True, timeout=120,
+                 "--file", tmppath, "--format", "json"],
+                capture_output=True, text=True, timeout=60,
             )
-            if result.returncode == 0:
+            if result.returncode != 0:
+                if attempt < retries - 1:
+                    wait = (attempt + 1) * 3
+                    warn(f"  apply submit failed (attempt {attempt+1}): {result.stderr[:100]}... retrying in {wait}s")
+                    time.sleep(wait)
+                    continue
+                raise RuntimeError(f"apply on {doc_id} failed after {retries} attempts: {result.stderr[:300]}")
+            try:
+                resp = json.loads(result.stdout)
+            except json.JSONDecodeError:
+                resp = {}
+            job_id = (resp.get("jobId") or resp.get("id")
+                      or (resp.get("data") or {}).get("jobId"))
+            if not job_id:
                 return
-            if attempt < retries - 1:
-                wait = (attempt + 1) * 3
-                warn(f"  apply failed (attempt {attempt+1}): {result.stderr[:100]}... retrying in {wait}s")
-                time.sleep(wait)
-        raise RuntimeError(f"apply on {doc_id} failed after {retries} attempts: {result.stderr[:300]}")
+            try:
+                _poll_job(job_id)
+                return
+            except RuntimeError as e:
+                if attempt < retries - 1:
+                    wait = (attempt + 1) * 3
+                    warn(f"  apply job failed (attempt {attempt+1}): {str(e)[:100]}... retrying in {wait}s")
+                    time.sleep(wait)
+                    continue
+                raise
     finally:
         os.unlink(tmppath)
 

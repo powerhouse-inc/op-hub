@@ -2385,18 +2385,18 @@ export function TheMatrix({ document, dispatch }: TheMatrixProps) {
                   style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
                 >
                   <option value="NON_CUMULATIVE">
-                    Non-cumulative (running count, persists)
+                    Cumulative (running count, persists)
                   </option>
                   <option value="CUMULATIVE">
-                    Cumulative (resets to 0 on settle)
+                    Non-cumulative (resets to 0 on settle)
                   </option>
                 </select>
                 <p
                   className="text-[0.8125rem] text-slate-600 mb-5 leading-6"
                   style={{ marginTop: "0.375rem" }}
                 >
-                  Cumulative metrics reset to zero each billing cycle (e.g.
-                  monthly invoices). Non-cumulative metrics keep their value
+                  Non-cumulative metrics reset to zero each billing cycle (e.g.
+                  monthly invoices). Cumulative metrics keep their value
                   (e.g. number of contributors).
                 </p>
               </div>

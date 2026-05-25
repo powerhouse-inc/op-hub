@@ -16,9 +16,9 @@
           "initialValue": ""
         },
         "global": {
-          "schema": "type BuilderProfileState {\n  id: PHID\n  code: String\n  slug: String\n  name: String\n  icon: URL\n  description: String\n  about: String\n  lastModified: DateTime\n  isOperator: Boolean!\n  operationalHubMember: OpHubMember!\n  contributors: [PHID!]!\n  status: BuilderStatus\n  skills: [BuilderSkill!]!\n  scopes: [BuilderScope!]!\n  links: [BuilderLink!]!\n}\n\n\nenum BuilderStatus {\n  ACTIVE\n  INACTIVE\n  ON_HOLD\n  COMPLETED\n  ARCHIVED\n}\n\nenum BuilderSkill {\n  FRONTEND_DEVELOPMENT\n  BACKEND_DEVELOPMENT\n  FULL_STACK_DEVELOPMENT\n  DEVOPS_ENGINEERING\n  SMART_CONTRACT_DEVELOPMENT\n  UI_UX_DESIGN\n  TECHNICAL_WRITING\n  QA_TESTING\n  DATA_ENGINEERING\n  SECURITY_ENGINEERING\n}\n\nenum BuilderScope {\n  ACC\n  STA\n  SUP\n  STABILITY_SCOPE\n  SUPPORT_SCOPE\n  PROTOCOL_SCOPE\n  GOVERNANCE_SCOPE\n}\n\ntype BuilderLink {\n  id: OID!\n  url: URL!\n  label: String\n}\n\nenum BuilderStatusInput {\n  ACTIVE\n  INACTIVE\n  ON_HOLD\n  COMPLETED\n  ARCHIVED\n}\n\nenum BuilderSkillInput {\n  FRONTEND_DEVELOPMENT\n  BACKEND_DEVELOPMENT\n  FULL_STACK_DEVELOPMENT\n  DEVOPS_ENGINEERING\n  SMART_CONTRACT_DEVELOPMENT\n  UI_UX_DESIGN\n  TECHNICAL_WRITING\n  QA_TESTING\n  DATA_ENGINEERING\n  SECURITY_ENGINEERING\n}\n\nenum BuilderScopeInput {\n  ACC\n  STA\n  SUP\n  STABILITY_SCOPE\n  SUPPORT_SCOPE\n  PROTOCOL_SCOPE\n  GOVERNANCE_SCOPE\n}\n\ntype OpHubMember {\n  name: String\n  phid: PHID\n}",
+          "schema": "type BuilderProfileState {\n  id: PHID\n  walletAddress: EthereumAddress\n  code: String\n  slug: String\n  name: String\n  icon: URL\n  description: String\n  about: String\n  lastModified: DateTime\n  isOperator: Boolean!\n  operationalHubMember: OpHubMember!\n  contributors: [PHID!]!\n  status: BuilderStatus\n  skills: [BuilderSkill!]!\n  scopes: [BuilderScope!]!\n  links: [BuilderLink!]!\n}\n\n\nenum BuilderStatus {\n  ACTIVE\n  INACTIVE\n  ON_HOLD\n  COMPLETED\n  ARCHIVED\n}\n\nenum BuilderSkill {\n  FRONTEND_DEVELOPMENT\n  BACKEND_DEVELOPMENT\n  FULL_STACK_DEVELOPMENT\n  DEVOPS_ENGINEERING\n  SMART_CONTRACT_DEVELOPMENT\n  UI_UX_DESIGN\n  TECHNICAL_WRITING\n  QA_TESTING\n  DATA_ENGINEERING\n  SECURITY_ENGINEERING\n}\n\nenum BuilderScope {\n  ACC\n  STA\n  SUP\n  STABILITY_SCOPE\n  SUPPORT_SCOPE\n  PROTOCOL_SCOPE\n  GOVERNANCE_SCOPE\n}\n\ntype BuilderLink {\n  id: OID!\n  url: URL!\n  label: String\n}\n\nenum BuilderStatusInput {\n  ACTIVE\n  INACTIVE\n  ON_HOLD\n  COMPLETED\n  ARCHIVED\n}\n\nenum BuilderSkillInput {\n  FRONTEND_DEVELOPMENT\n  BACKEND_DEVELOPMENT\n  FULL_STACK_DEVELOPMENT\n  DEVOPS_ENGINEERING\n  SMART_CONTRACT_DEVELOPMENT\n  UI_UX_DESIGN\n  TECHNICAL_WRITING\n  QA_TESTING\n  DATA_ENGINEERING\n  SECURITY_ENGINEERING\n}\n\nenum BuilderScopeInput {\n  ACC\n  STA\n  SUP\n  STABILITY_SCOPE\n  SUPPORT_SCOPE\n  PROTOCOL_SCOPE\n  GOVERNANCE_SCOPE\n}\n\ntype OpHubMember {\n  name: String\n  phid: PHID\n}",
           "examples": [],
-          "initialValue": "{\n  \"id\": null,\n  \"code\": null,\n  \"slug\": null,\n  \"name\": null,\n  \"icon\": null,\n  \"description\": null,\n  \"about\": null,\n  \"lastModified\": null,\n  \"isOperator\": false,\n  \"operationalHubMember\": {\n    \"name\": null,\n    \"phid\": null\n  },\n  \"contributors\": [],\n  \"status\": null,\n  \"skills\": [],\n  \"scopes\": [],\n  \"links\": []\n}"
+          "initialValue": "{\n  \"id\": null,\n  \"walletAddress\": null,\n  \"code\": null,\n  \"slug\": null,\n  \"name\": null,\n  \"icon\": null,\n  \"description\": null,\n  \"about\": null,\n  \"lastModified\": null,\n  \"isOperator\": false,\n  \"operationalHubMember\": {\n    \"name\": null,\n    \"phid\": null\n  },\n  \"contributors\": [],\n  \"status\": null,\n  \"skills\": [],\n  \"scopes\": [],\n  \"links\": []\n}"
         }
       },
       "modules": [
@@ -153,6 +153,17 @@
               "name": "SET_OP_HUB_MEMBER",
               "description": "",
               "schema": "input SetOpHubMemberInput {\n  name: String\n  phid: PHID\n}",
+              "template": "",
+              "reducer": "",
+              "errors": [],
+              "examples": [],
+              "scope": "global"
+            },
+            {
+              "id": "1ea5916f-cdb2-4f4c-b552-0ca0f9fc3db9",
+              "name": "SET_WALLET_ADDRESS",
+              "description": "",
+              "schema": "input SetWalletAddressInput {\n  walletAddress: EthereumAddress!\n}",
               "template": "",
               "reducer": "",
               "errors": [],

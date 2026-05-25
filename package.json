@@ -114,7 +114,5 @@
     "typescript-eslint": "^8.46.2",
     "vite-tsconfig-paths": "6.1.1",
     "vitest": "4.1.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@powerhousedao/op-hub@0.0.13"
+  }
 }

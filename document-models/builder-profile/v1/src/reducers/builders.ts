@@ -122,4 +122,11 @@ export const builderProfileBuildersOperations: BuilderProfileBuildersOperations 
       // Convert UTC timestamp (ms) to ISO string for storage
       state.lastModified = new Date(action.timestampUtcMs).toISOString();
     },
+    setWalletAddressOperation(state, action) {
+      if (action.input.walletAddress) {
+        state.walletAddress = action.input.walletAddress;
+      }
+      // Convert UTC timestamp (ms) to ISO string for storage
+      state.lastModified = new Date(action.timestampUtcMs).toISOString();
+    },
   };

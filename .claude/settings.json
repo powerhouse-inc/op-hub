@@ -230,7 +230,9 @@
       "Bash(switchboard -p staging-remote docs mutate 765070e9-2c3e-4dbc-b150-8360d0a736cd --op addBuilder --input-file /tmp/add-builder.json --format json)",
       "Bash(python3 -c \"import py_compile; py_compile.compile\\('/home/p/Powerhouse/demos/op-hub/scripts/drive-sync/phase3-remap.py', doraise=True\\); print\\('syntax OK'\\)\")",
       "Bash(TARGET_PROFILE=staging-remote DATA_DIR=/home/p/Powerhouse/demos/op-hub/scripts/drive-sync/data python3 /home/p/Powerhouse/demos/op-hub/scripts/drive-sync/phase3-remap.py)",
-      "Bash(switchboard -p staging-remote docs get 765070e9-2c3e-4dbc-b150-8360d0a736cd --state --format json)"
+      "Bash(switchboard -p staging-remote docs get 765070e9-2c3e-4dbc-b150-8360d0a736cd --state --format json)",
+      "Bash(ps -p 6101 -o pid,ppid,etime,cmd --no-headers)",
+      "Bash(kill 6101)"
     ],
     "additionalDirectories": [
       "/home/p"

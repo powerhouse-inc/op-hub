@@ -26,6 +26,7 @@ import type {
 
 export const initialGlobalState: BuilderProfileGlobalState = {
   id: null,
+  walletAddress: null,
   code: null,
   slug: null,
   name: null,

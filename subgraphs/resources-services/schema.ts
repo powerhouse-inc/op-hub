@@ -8,6 +8,7 @@ export const schema: DocumentNode = gql`
   type Query {
     resourceTemplates(filter: RSResourceTemplatesFilter): [RSResourceTemplate!]!
     serviceOfferings(filter: RSServiceOfferingsFilter): [RSServiceOffering!]!
+    getBuilderDrives(filter: GetBuilderDrivesFilter!): [BuilderDriveLink!]!
   }
 
   type Mutation {
@@ -20,6 +21,7 @@ export const schema: DocumentNode = gql`
     serviceOfferingId: PHID!
     name: String!
     teamName: String!
+    ethereumAddress: EthereumAddress!
     customerEmail: EmailAddress
     userSelection: UserSelectionInput!
   }
@@ -56,6 +58,17 @@ export const schema: DocumentNode = gql`
     status: [RSServiceStatus!]
     operatorId: PHID
     resourceTemplateId: PHID
+  }
+
+  input GetBuilderDrivesFilter {
+    ethereumAddress: EthereumAddress!
+  }
+
+  type BuilderDriveLink {
+    driveId: PHID!
+    driveSlug: String!
+    driveName: String!
+    driveLink: URL!
   }
 
   # ============ Resource Template Types ============

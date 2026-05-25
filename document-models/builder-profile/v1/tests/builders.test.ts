@@ -24,6 +24,8 @@ import {
   SetOperatorInputSchema,
   setOpHubMember,
   SetOpHubMemberInputSchema,
+  setWalletAddress,
+  SetWalletAddressInputSchema,
   updateProfile,
   UpdateProfileInputSchema,
   utils,
@@ -220,6 +222,23 @@ describe("BuildersOperations", () => {
     expect(updatedDocument.operations.global).toHaveLength(1);
     expect(updatedDocument.operations.global[0].action.type).toBe(
       "SET_OP_HUB_MEMBER",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle setWalletAddress operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(SetWalletAddressInputSchema());
+
+    const updatedDocument = reducer(document, setWalletAddress(input));
+
+    expect(isBuilderProfileDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "SET_WALLET_ADDRESS",
     );
     expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
       input,

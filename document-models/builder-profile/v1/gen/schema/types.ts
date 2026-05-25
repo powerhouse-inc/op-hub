@@ -99,6 +99,7 @@ export type BuilderProfileState = {
   skills: Array<BuilderSkill>;
   slug: Maybe<Scalars["String"]["output"]>;
   status: Maybe<BuilderStatus>;
+  walletAddress: Maybe<Scalars["EthereumAddress"]["output"]>;
 };
 
 export type BuilderScope =
@@ -191,6 +192,10 @@ export type SetOpHubMemberInput = {
 
 export type SetOperatorInput = {
   isOperator: Scalars["Boolean"]["input"];
+};
+
+export type SetWalletAddressInput = {
+  walletAddress: Scalars["EthereumAddress"]["input"];
 };
 
 export type UpdateProfileInput = {

@@ -18,6 +18,7 @@ import {
   RemoveSkillInputSchema,
   SetOperatorInputSchema,
   SetOpHubMemberInputSchema,
+  SetWalletAddressInputSchema,
   UpdateProfileInputSchema,
 } from "./schema/zod.js";
 
@@ -166,6 +167,18 @@ const stateReducer: StateReducer<BuilderProfilePHState> = (
       SetOpHubMemberInputSchema().parse(action.input);
 
       builderProfileBuildersOperations.setOpHubMemberOperation(
+        (state as any)[action.scope],
+        action as any,
+        dispatch,
+      );
+
+      break;
+    }
+
+    case "SET_WALLET_ADDRESS": {
+      SetWalletAddressInputSchema().parse(action.input);
+
+      builderProfileBuildersOperations.setWalletAddressOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,

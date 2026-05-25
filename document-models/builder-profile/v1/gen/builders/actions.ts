@@ -15,6 +15,7 @@ import type {
   RemoveSkillInput,
   SetOperatorInput,
   SetOpHubMemberInput,
+  SetWalletAddressInput,
   UpdateProfileInput,
 } from "../types.js";
 
@@ -63,6 +64,10 @@ export type SetOpHubMemberAction = Action & {
   type: "SET_OP_HUB_MEMBER";
   input: SetOpHubMemberInput;
 };
+export type SetWalletAddressAction = Action & {
+  type: "SET_WALLET_ADDRESS";
+  input: SetWalletAddressInput;
+};
 
 export type BuilderProfileBuildersAction =
   | UpdateProfileAction
@@ -76,4 +81,5 @@ export type BuilderProfileBuildersAction =
   | AddContributorAction
   | RemoveContributorAction
   | SetOperatorAction
-  | SetOpHubMemberAction;
+  | SetOpHubMemberAction
+  | SetWalletAddressAction;

@@ -16,6 +16,7 @@ import { utils } from "./utils.js";
 export function defaultGlobalState(): BuilderProfileGlobalState {
   return {
     id: null,
+    walletAddress: null,
     code: null,
     slug: null,
     name: null,

@@ -325,6 +325,18 @@
       "type": "var",
       "description": "Gnosis Safe address (0x-prefixed) used by scripts/invoice/gnosisTransactionBuilder.ts when NODE_ENV is not `production` (dev / staging).",
       "required": true
+    },
+    {
+      "name": "PH_CONNECT_URL",
+      "type": "var",
+      "description": "URL of the Connect application. Used by the resources-services subgraph to generate drive links.",
+      "required": true
+    },
+    {
+      "name": "PH_SWITCHBOARD_URL",
+      "type": "var",
+      "description": "URL of the Switchboard application. Used by the resources-services subgraph to generate drive links.",
+      "required": true
     }
   ]
 }

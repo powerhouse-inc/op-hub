@@ -21,6 +21,7 @@ scalar Upload
 
 type BuilderProfileState {
   id: PHID
+  walletAddress: EthereumAddress
   code: String
   slug: String
   name: String
@@ -180,4 +181,8 @@ input SetOperatorInput {
 input SetOpHubMemberInput {
   name: String
   phid: PHID
+}
+
+input SetWalletAddressInput {
+  walletAddress: EthereumAddress!
 }

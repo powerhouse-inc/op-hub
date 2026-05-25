@@ -26,7 +26,12 @@ import type {
   FileNode,
   Node,
 } from "@powerhousedao/shared/document-drive";
-import { BuilderProfile } from "document-models/builder-profile";
+import {
+  actions as builderProfileActions,
+  type BuilderProfileDocument,
+  type SetWalletAddressAction,
+  type UpdateProfileAction,
+} from "document-models/builder-profile";
 import { ResourceInstance } from "document-models/resource-instance";
 import { SubscriptionInstance } from "document-models/subscription-instance";
 import { mapOfferingToSubscription } from "../../editors/subscription-instance-editor/components/mapOfferingToSubscription.js";
@@ -62,8 +67,17 @@ interface CreateProductInstancesInput {
   serviceOfferingId: string;
   name: string;
   teamName: string;
+  ethereumAddress: string;
   customerEmail?: string;
   userSelection: UserSelectionInput;
+}
+
+interface GetBuilderDrivesFilter {
+  ethereumAddress: string;
+}
+
+interface GetBuilderDrivesFilter {
+  ethereumAddress: string;
 }
 
 export const getResolvers = (
@@ -263,6 +277,64 @@ export const getResolvers = (
 
         return serviceOfferings;
       },
+      getBuilderDrives: async (
+        _: unknown,
+        args: { filter: GetBuilderDrivesFilter },
+      ) => {
+        const ethereumAddress = args.filter.ethereumAddress;
+        if (!ethereumAddress) return [];
+        const target = ethereumAddress.toLowerCase();
+
+        const deletedDriveDocIds = await getDeletedDriveDocIds(reactorClient);
+
+        const { results: profileDocs } = await reactorClient.find({
+          type: "powerhouse/builder-profile",
+        });
+
+        const matchingProfileIds = new Set<string>();
+        for (const doc of profileDocs) {
+          if (doc.state.document.isDeleted) continue;
+          if (deletedDriveDocIds.has(doc.header.id)) continue;
+          const profile = doc as BuilderProfileDocument;
+          const addr = profile.state.global.walletAddress;
+          if (typeof addr === "string" && addr.toLowerCase() === target) {
+            matchingProfileIds.add(doc.header.id);
+          }
+        }
+
+        if (matchingProfileIds.size === 0) return [];
+
+        const { results: drives } = await reactorClient.find({
+          type: "powerhouse/document-drive",
+        });
+
+        const out: {
+          driveId: string;
+          driveSlug: string;
+          driveName: string;
+          driveLink: string;
+        }[] = [];
+
+        for (const drive of drives) {
+          if (drive.state.document.isDeleted) continue;
+          const driveDoc = drive as DocumentDriveDocument;
+          const hasMatch = driveDoc.state.global.nodes.some(
+            (node: Node) =>
+              node.kind === "file" && matchingProfileIds.has(node.id),
+          );
+          if (!hasMatch) continue;
+
+          const slug = driveDoc.header.slug || driveDoc.header.id;
+          out.push({
+            driveId: driveDoc.header.id,
+            driveSlug: slug,
+            driveName: driveDoc.state.global.name || slug,
+            driveLink: getDriveLink(slug),
+          });
+        }
+
+        return out;
+      },
     },
     Mutation: {
       createProductInstances: async (
@@ -270,7 +342,21 @@ export const getResolvers = (
         args: { input: CreateProductInstancesInput },
       ) => {
         const { input } = args;
-        const { serviceOfferingId, name, teamName, customerEmail } = input;
+        const {
+          serviceOfferingId,
+          name,
+          teamName,
+          ethereumAddress,
+          customerEmail,
+        } = input;
+
+        if (!ethereumAddress) {
+          return {
+            success: false,
+            data: null,
+            errors: ["Ethereum address is required"],
+          };
+        }
 
         // Validate input
         if (!serviceOfferingId) {
@@ -333,15 +419,7 @@ export const getResolvers = (
           };
         }
 
-        // Validate userSelection
         const { userSelection } = input;
-        if (!userSelection) {
-          return {
-            success: false,
-            data: null,
-            errors: ["User selection is required"],
-          };
-        }
 
         if (!userSelection.tierId) {
           return {
@@ -364,7 +442,6 @@ export const getResolvers = (
         const serviceOfferingDoc =
           await reactorClient.get<ServiceOfferingDocument>(serviceOfferingId);
         if (
-          !serviceOfferingDoc ||
           (serviceOfferingDoc as PHDocument).state.document.isDeleted ||
           deletedDriveDocIds.has(serviceOfferingDoc.header.id)
         ) {
@@ -401,7 +478,7 @@ export const getResolvers = (
         const selection: UserSelection = {
           tierId: userSelection.tierId,
           billingCycle: userSelection.billingCycle as BillingCycle,
-          optionGroupIds: userSelection.optionGroupIds ?? [],
+          optionGroupIds: userSelection.optionGroupIds,
           groupBillingCycleOverrides,
           addonBillingCycleOverrides,
         };
@@ -533,8 +610,15 @@ export const getResolvers = (
 
           // update builder profile — use the typed action creator so
           // input shape changes are caught at build time instead of runtime.
+          const updateAction: UpdateProfileAction =
+            builderProfileActions.updateProfile({ name: parsedTeamName });
+          const walletAction: SetWalletAddressAction =
+            builderProfileActions.setWalletAddress({
+              walletAddress: ethereumAddress,
+            });
           await reactorClient.execute(builderProfileDoc.header.id, "main", [
-            BuilderProfile.actions.updateProfile({ name: parsedTeamName }),
+            updateAction,
+            walletAction,
           ]);
 
           // find operator drive and add references there too
@@ -705,11 +789,6 @@ export const getResolvers = (
   };
 };
 
-/**
- * Build a link to a drive. Hardcoded to the bai-dev (mild-dove-63) Vetra
- * deployment — this is the only environment that hosts the staging.achra.com
- * checkout flow today. Update the constants below if/when we add more.
- */
 // Stable sort to mirror TheMatrix editor view:
 //   1. Group services by `optionGroupId` (ungrouped services last).
 //   2. Within each group, sort by `displayOrder` ascending; nulls sink to the
@@ -748,48 +827,21 @@ function byOptionGroupAndDisplayOrder<
     .map(({ item }) => item);
 }
 
-// Built-in target environments. The default is the Vetra-hosted "mild-dove-63"
-// reactor; the staging Powerhouse env is an emergency fallback selected via
-// `BASE_URI` (or `PH_BASE_URL`) — set it when bai-dev is down and we need to
-// keep `createProductInstances` returning links that resolve.
-const DRIVE_LINK_TARGETS = [
-  {
-    match: /staging\.powerhouse\.xyz/i,
-    connect: "https://connect-staging.powerhouse.xyz",
-    switchboard: "https://switchboard-staging.powerhouse.xyz",
-  },
-] as const;
-
-const DEFAULT_DRIVE_LINK_TARGET = {
-  connect: "https://connect.mild-dove-63.vetra.io",
-  switchboard: "https://switchboard.mild-dove-63.vetra.io",
-};
-
-// Concatenated string of every env var the deploy might use to identify
-// itself. Any one of these containing "staging.powerhouse.xyz" trips the
-// staging branch — we cast a wide net because Vetra/k8s deploys don't
-// expose a single canonical "what host am I" variable.
-function detectDeployIdentity(): string {
-  return [
-    process.env.BASE_URI,
-    process.env.PH_BASE_URL,
-    process.env.PH_SWITCHBOARD_URL,
-    process.env.SWITCHBOARD_URL,
-    process.env.PH_REGISTRY_URL,
-    process.env.PH_SWITCHBOARD_DATABASE_URL,
-    process.env.HOSTNAME,
-    process.env.POD_NAMESPACE,
-  ]
-    .filter((v): v is string => typeof v === "string" && v.length > 0)
-    .join("|");
-}
+// Drive link base URLs. Read from env so the deployment tells the process
+// where it lives (containers can't introspect their public hostname). Local
+// dev leaves them unset and gets localhost.
+const DEFAULT_CONNECT_URL = "http://localhost:3001";
+const DEFAULT_SWITCHBOARD_URL = "http://localhost:4001";
 
 function getDriveLink(driveSlug: string): string {
-  const identity = detectDeployIdentity();
-  const target =
-    DRIVE_LINK_TARGETS.find((t) => t.match.test(identity)) ??
-    DEFAULT_DRIVE_LINK_TARGET;
-  return `${target.connect}/?driveUrl=${target.switchboard}/d/${driveSlug}`;
+  const connect = (process.env.PH_CONNECT_URL ?? DEFAULT_CONNECT_URL).replace(
+    /\/$/,
+    "",
+  );
+  const switchboard = (
+    process.env.PH_SWITCHBOARD_URL ?? DEFAULT_SWITCHBOARD_URL
+  ).replace(/\/$/, "");
+  return `${connect}/?driveUrl=${switchboard}/d/${driveSlug}`;
 }
 
 /**

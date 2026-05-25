@@ -15,6 +15,7 @@ import {
   RemoveSkillInputSchema,
   SetOperatorInputSchema,
   SetOpHubMemberInputSchema,
+  SetWalletAddressInputSchema,
   UpdateProfileInputSchema,
 } from "../schema/zod.js";
 import type {
@@ -29,6 +30,7 @@ import type {
   RemoveSkillInput,
   SetOperatorInput,
   SetOpHubMemberInput,
+  SetWalletAddressInput,
   UpdateProfileInput,
 } from "../types.js";
 import type {
@@ -43,6 +45,7 @@ import type {
   RemoveSkillAction,
   SetOperatorAction,
   SetOpHubMemberAction,
+  SetWalletAddressAction,
   UpdateProfileAction,
 } from "./actions.js";
 
@@ -151,5 +154,14 @@ export const setOpHubMember = (input: SetOpHubMemberInput) =>
     { ...input },
     undefined,
     SetOpHubMemberInputSchema,
+    "global",
+  );
+
+export const setWalletAddress = (input: SetWalletAddressInput) =>
+  createAction<SetWalletAddressAction>(
+    "SET_WALLET_ADDRESS",
+    { ...input },
+    undefined,
+    SetWalletAddressInputSchema,
     "global",
   );

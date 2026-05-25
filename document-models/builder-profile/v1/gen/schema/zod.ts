@@ -22,6 +22,7 @@ import type {
   RemoveSkillInput,
   SetOpHubMemberInput,
   SetOperatorInput,
+  SetWalletAddressInput,
   UpdateProfileInput,
 } from "./types.js";
 
@@ -157,6 +158,12 @@ export function BuilderProfileStateSchema(): z.ZodObject<
     skills: z.array(BuilderSkillSchema),
     slug: z.string().nullish(),
     status: BuilderStatusSchema.nullish(),
+    walletAddress: z
+      .string()
+      .regex(/^0x[a-fA-F0-9]{40}$/, {
+        message: "Invalid Ethereum address format",
+      })
+      .nullish(),
   });
 }
 
@@ -222,6 +229,18 @@ export function SetOperatorInputSchema(): z.ZodObject<
 > {
   return z.object({
     isOperator: z.boolean(),
+  });
+}
+
+export function SetWalletAddressInputSchema(): z.ZodObject<
+  Properties<SetWalletAddressInput>
+> {
+  return z.object({
+    walletAddress: z
+      .string()
+      .regex(/^0x[a-fA-F0-9]{40}$/, {
+        message: "Invalid Ethereum address format",
+      }),
   });
 }
 

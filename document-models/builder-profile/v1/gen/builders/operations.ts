@@ -16,6 +16,7 @@ import type {
   RemoveSkillAction,
   SetOperatorAction,
   SetOpHubMemberAction,
+  SetWalletAddressAction,
   UpdateProfileAction,
 } from "./actions.js";
 
@@ -78,6 +79,11 @@ export interface BuilderProfileBuildersOperations {
   setOpHubMemberOperation: (
     state: BuilderProfileGlobalState,
     action: SetOpHubMemberAction,
+    dispatch?: SignalDispatch,
+  ) => void;
+  setWalletAddressOperation: (
+    state: BuilderProfileGlobalState,
+    action: SetWalletAddressAction,
     dispatch?: SignalDispatch,
   ) => void;
 }

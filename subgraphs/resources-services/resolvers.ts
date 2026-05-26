@@ -29,7 +29,6 @@ import type {
 import {
   actions as builderProfileActions,
   type BuilderProfileDocument,
-  type SetOperatorAction,
   type SetWalletAddressAction,
   type UpdateProfileAction,
 } from "document-models/builder-profile";
@@ -514,46 +513,74 @@ export const getResolvers = (
           .replace(/\s+/g, "-")
           .replace(/_/g, "-");
 
-        // Pre-flight: bail out if a drive with this slug already exists.
-        // Without this the reactor would happily create a second drive with
-        // the same slug (the underlying ID is unique, the slug is not) and
-        // we'd silently produce a duplicate team workspace.
-        const existing = await findDriveBySlug(reactorClient, parsedTeamName);
-        if (existing) {
-          return {
-            success: false,
-            data: null,
-            errors: [
-              `A team workspace with slug "${parsedTeamName}" already exists. Pick a different team name.`,
-            ],
-          };
+        // Reuse path: if this wallet already owns a builder-team-admin drive,
+        // skip drive + profile creation and place the new instance docs into
+        // that existing workspace. The slug-conflict check below only applies
+        // when we're creating a new drive.
+        const existingWorkspace = await findUserBuilderTeamAdminDrive(
+          reactorClient,
+          ethereumAddress,
+        );
+
+        if (!existingWorkspace) {
+          // Pre-flight: bail out if a drive with this slug already exists.
+          // Without this the reactor would happily create a second drive with
+          // the same slug (the underlying ID is unique, the slug is not) and
+          // we'd silently produce a duplicate team workspace.
+          const existing = await findDriveBySlug(reactorClient, parsedTeamName);
+          if (existing) {
+            return {
+              success: false,
+              data: null,
+              errors: [
+                `A team workspace with slug "${parsedTeamName}" already exists. Pick a different team name.`,
+              ],
+            };
+          }
         }
 
         // Track resources created during this mutation so we can roll them
-        // back if a later step fails.
+        // back if a later step fails. Only the brand-new-drive path populates
+        // this; the reuse path doesn't create a drive.
         let createdDriveId: string | undefined;
 
         try {
-          // create team-builder-admin drive
-          const driveDoc = driveCreateDocument();
-          driveDoc.header.name = teamName;
-          driveDoc.state.global.name = teamName;
-          driveDoc.state.global.icon =
-            "https://cdn-icons-png.flaticon.com/512/6020/6020347.png";
-          driveDoc.header.slug = parsedTeamName;
-          if (!driveDoc.header.meta) driveDoc.header.meta = {};
-          driveDoc.header.meta.preferredEditor = "builder-team-admin";
-          const teamBuilderAdminDrive =
-            await reactorClient.create<DocumentDriveDocument>(driveDoc);
+          let driveId: string;
+          let builderProfileId: string;
 
-          const driveId = teamBuilderAdminDrive.header.id;
-          createdDriveId = driveId;
+          if (existingWorkspace) {
+            driveId = existingWorkspace.driveId;
+            builderProfileId = existingWorkspace.builderProfileId;
+          } else {
+            // create team-builder-admin drive
+            const driveDoc = driveCreateDocument();
+            driveDoc.header.name = teamName;
+            driveDoc.state.global.name = teamName;
+            driveDoc.state.global.icon =
+              "https://cdn-icons-png.flaticon.com/512/6020/6020347.png";
+            driveDoc.header.slug = parsedTeamName;
+            if (!driveDoc.header.meta) driveDoc.header.meta = {};
+            driveDoc.header.meta.preferredEditor = "builder-team-admin";
+            const teamBuilderAdminDrive =
+              await reactorClient.create<DocumentDriveDocument>(driveDoc);
+            driveId = teamBuilderAdminDrive.header.id;
+            createdDriveId = driveId;
 
-          // create documents as children of the drive so Connect can sync them
-          const builderProfileDoc = await reactorClient.createEmpty(
-            "powerhouse/builder-profile",
-            { parentIdentifier: driveId },
-          );
+            // create builder profile as a child of the new drive
+            const builderProfileDoc = await reactorClient.createEmpty(
+              "powerhouse/builder-profile",
+              { parentIdentifier: driveId },
+            );
+            builderProfileId = builderProfileDoc.header.id;
+            await reactorClient.addRelationship(
+              driveId,
+              builderProfileId,
+              "child",
+            );
+          }
+
+          // Common: create the two instance docs as children of the
+          // (existing or just-created) team drive.
           const resourceInstanceDoc = await reactorClient.createEmpty(
             "powerhouse/resource-instance",
             { parentIdentifier: driveId },
@@ -563,18 +590,12 @@ export const getResolvers = (
             { parentIdentifier: driveId },
           );
 
-          // Wire the relationship index so Connect's drive-sync pulls
-          // the new documents into the drive's view. ADD_FILE alone
-          // updates the drive's nodes array but without the explicit
-          // parent→child relationship the docs render as orphans and
-          // never appear in the drive UI. The three calls are independent
-          // so we fan them out and await once.
+          // Wire the relationship index so Connect's drive-sync pulls the
+          // new documents into the drive's view. ADD_FILE alone updates the
+          // drive's nodes array but without the explicit parent→child
+          // relationship the docs render as orphans and never appear in the
+          // drive UI.
           await Promise.all([
-            reactorClient.addRelationship(
-              driveId,
-              builderProfileDoc.header.id,
-              "child",
-            ),
             reactorClient.addRelationship(
               driveId,
               resourceInstanceDoc.header.id,
@@ -587,19 +608,43 @@ export const getResolvers = (
             ),
           ]);
 
-          // create "Service Subscriptions" folder and organize files in team drive
-          const teamServiceSubsFolderId = generateId();
+          // Find or create the "Service Subscriptions" folder in the team
+          // drive. New-drive path always creates it; reuse path checks
+          // whether one already exists in the existing drive's nodes.
+          let teamServiceSubsFolderId: string | undefined;
+          if (existingWorkspace) {
+            const existingDriveDoc =
+              await reactorClient.get<DocumentDriveDocument>(driveId);
+            teamServiceSubsFolderId = existingDriveDoc.state.global.nodes.find(
+              (node: Node) =>
+                node.kind === "folder" && node.name === "Service Subscriptions",
+            )?.id;
+          }
 
-          await reactorClient.execute(driveId, "main", [
-            addFolder({
-              id: teamServiceSubsFolderId,
-              name: "Service Subscriptions",
-            }),
-            addFile({
-              documentType: "powerhouse/builder-profile",
-              id: builderProfileDoc.header.id,
-              name: `${parsedTeamName} Builder Profile`,
-            }),
+          const teamDriveActions: Array<
+            ReturnType<typeof addFolder | typeof addFile>
+          > = [];
+          if (!teamServiceSubsFolderId) {
+            teamServiceSubsFolderId = generateId();
+            teamDriveActions.push(
+              addFolder({
+                id: teamServiceSubsFolderId,
+                name: "Service Subscriptions",
+              }),
+            );
+          }
+          if (!existingWorkspace) {
+            // Only the new-drive path adds the builder profile to the file
+            // tree — the reuse path's profile is already there.
+            teamDriveActions.push(
+              addFile({
+                documentType: "powerhouse/builder-profile",
+                id: builderProfileId,
+                name: `${parsedTeamName} Builder Profile`,
+              }),
+            );
+          }
+          teamDriveActions.push(
             addFile({
               documentType: "powerhouse/resource-instance",
               id: resourceInstanceDoc.header.id,
@@ -612,20 +657,24 @@ export const getResolvers = (
               name: `${parsedTeamName} Subscription Instance`,
               parentFolder: teamServiceSubsFolderId,
             }),
-          ]);
+          );
+          await reactorClient.execute(driveId, "main", teamDriveActions);
 
-          // update builder profile — use the typed action creator so
-          // input shape changes are caught at build time instead of runtime.
-          const updateAction: UpdateProfileAction =
-            builderProfileActions.updateProfile({ name: parsedTeamName });
-          const walletAction: SetWalletAddressAction =
-            builderProfileActions.setWalletAddress({
-              walletAddress: ethereumAddress,
-            });
-          await reactorClient.execute(builderProfileDoc.header.id, "main", [
-            updateAction,
-            walletAction,
-          ]);
+          if (!existingWorkspace) {
+            // Only the new-drive path updates the builder profile. In the
+            // reuse path the profile already has the correct wallet (we
+            // matched on it) and we don't want to clobber its display name.
+            const updateAction: UpdateProfileAction =
+              builderProfileActions.updateProfile({ name: parsedTeamName });
+            const walletAction: SetWalletAddressAction =
+              builderProfileActions.setWalletAddress({
+                walletAddress: ethereumAddress,
+              });
+            await reactorClient.execute(builderProfileId, "main", [
+              updateAction,
+              walletAction,
+            ]);
+          }
 
           // find operator drive and add references there too
           const operatorDrive = await getOperatorDrive(
@@ -716,7 +765,7 @@ export const getResolvers = (
             resourceInstanceDoc.header.id,
             resourceTemplateId,
             operatorProfileId, // operator profile id
-            builderProfileDoc.header.id, // customer id
+            builderProfileId, // customer id
             parsedTeamName, // customer name from builder profile
           );
 
@@ -726,7 +775,7 @@ export const getResolvers = (
             offering: serviceOfferingState,
             tierId: selection.tierId,
             selectedBillingCycle: selection.billingCycle,
-            customerId: builderProfileDoc.header.id,
+            customerId: builderProfileId,
             customerName: name,
             customerEmail,
             createdAt: now,
@@ -923,9 +972,11 @@ export const getResolvers = (
             }),
           ]);
 
-          // Dispatch profile actions: name/slug → wallet → (operator flag)
+          // Dispatch profile actions: name/slug → wallet. isOperator stays
+          // false on the profile for both roles — OPERATOR is distinguished
+          // only by getting the extra service-offering-app drive below.
           const profileActions: Array<
-            UpdateProfileAction | SetWalletAddressAction | SetOperatorAction
+            UpdateProfileAction | SetWalletAddressAction
           > = [
             builderProfileActions.updateProfile({
               name: profileDisplayName,
@@ -933,11 +984,6 @@ export const getResolvers = (
             }),
             builderProfileActions.setWalletAddress({ walletAddress: user }),
           ];
-          if (isOperator) {
-            profileActions.push(
-              builderProfileActions.setOperator({ isOperator: true }),
-            );
-          }
           await reactorClient.execute(
             builderProfileDoc.header.id,
             "main",
@@ -1469,6 +1515,63 @@ async function findDriveBySlug(
   for (const drive of drives) {
     if (drive.state.document.isDeleted) continue;
     if (drive.header.slug === slug) return drive as DocumentDriveDocument;
+  }
+  return undefined;
+}
+
+/**
+ * Locate an existing builder-team-admin drive owned by `walletAddress`.
+ *
+ * Returns `{ driveId, builderProfileId }` for the first non-deleted drive
+ * whose `preferredEditor` is `builder-team-admin` AND that contains a
+ * non-deleted builder-profile document whose `walletAddress` matches
+ * (case-insensitive). Used by `createProductInstances` to upsert into an
+ * existing workspace instead of creating a duplicate one.
+ */
+async function findUserBuilderTeamAdminDrive(
+  reactorClient: IReactorClient,
+  walletAddress: string,
+): Promise<{ driveId: string; builderProfileId: string } | undefined> {
+  const target = walletAddress.toLowerCase();
+  const deletedDriveDocIds = await getDeletedDriveDocIds(reactorClient);
+
+  const { results: profileDocs } = await reactorClient.find({
+    type: "powerhouse/builder-profile",
+  });
+  const matchingProfileIds = new Set<string>();
+  for (const doc of profileDocs) {
+    if (doc.state.document.isDeleted) continue;
+    if (deletedDriveDocIds.has(doc.header.id)) continue;
+    const profile = doc as BuilderProfileDocument;
+    const addr = profile.state.global.walletAddress;
+    if (typeof addr === "string" && addr.toLowerCase() === target) {
+      matchingProfileIds.add(doc.header.id);
+    }
+  }
+  if (matchingProfileIds.size === 0) return undefined;
+
+  const { results: drives } = await reactorClient.find({
+    type: "powerhouse/document-drive",
+  });
+  for (const drive of drives) {
+    if (drive.state.document.isDeleted) continue;
+    const driveDoc = drive as DocumentDriveDocument;
+    if (driveDoc.header.meta?.preferredEditor !== "builder-team-admin") {
+      continue;
+    }
+    const profileNode = driveDoc.state.global.nodes
+      .filter((node: Node): node is FileNode => node.kind === "file")
+      .find(
+        (node) =>
+          node.documentType === "powerhouse/builder-profile" &&
+          matchingProfileIds.has(node.id),
+      );
+    if (profileNode) {
+      return {
+        driveId: driveDoc.header.id,
+        builderProfileId: profileNode.id,
+      };
+    }
   }
   return undefined;
 }

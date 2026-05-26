@@ -1,7 +1,7 @@
 import {
   type InvoiceAction,
   actions,
-} from "../../document-models/invoice/index.js";
+} from "document-models/invoice";
 
 interface LoadUBLFileProps {
   file: File;

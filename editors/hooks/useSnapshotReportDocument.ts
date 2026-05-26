@@ -5,7 +5,7 @@ import {
 import type {
   SnapshotReportAction,
   SnapshotReportDocument,
-} from "../../document-models/snapshot-report/index.js";
+} from "document-models/snapshot-report";
 
 export function useSnapshotReportDocument(
   documentId: string | null | undefined,

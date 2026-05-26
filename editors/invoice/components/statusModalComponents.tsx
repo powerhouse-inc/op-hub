@@ -3,7 +3,7 @@ import {
   type ClosureReason,
   type Payment,
   actions,
-} from "../../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import { InputField } from "../components/inputField.js";
 import { DatePicker } from "../components/datePicker.js";
 import { useEffect } from "react";

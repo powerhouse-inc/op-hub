@@ -4,7 +4,7 @@ import {
   type DeleteLineItemInput,
   type EditInvoiceInput,
   type InvoiceTag,
-} from "../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import {
   forwardRef,
   useState,

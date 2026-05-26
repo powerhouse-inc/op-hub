@@ -6,7 +6,7 @@ import { expenseAccountOptions } from "./tagMapping.js";
 import {
   actions,
   type InvoiceTag,
-} from "../../../document-models/invoice/index.js";
+} from "document-models/invoice";
 
 type TagAssignmentRow = {
   id: string;

@@ -23,7 +23,7 @@ import { SetOwner } from "./components/SetOwner.js";
 import { useSyncSnapshotAccount } from "./hooks/useSyncSnapshotAccount.js";
 import { formatBalance } from "./utils/balanceCalculations.js";
 import { calculateTransactionFlowInfo } from "./utils/flowTypeCalculations.js";
-import { actions as accountsActions } from "../../document-models/accounts/index.js";
+import { actions as accountsActions } from "document-models/accounts";
 
 // Helper function to generate month options from January 2025 to current month
 function generateMonthOptions() {

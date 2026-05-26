@@ -9,7 +9,7 @@ import {
   type Agent,
   type ScopeOfWorkAction,
 } from "../../../document-models/scope-of-work/v1/gen/types.js";
-import { actions } from "../../../document-models/scope-of-work/index.js";
+import { actions } from "document-models/scope-of-work";
 import {
   type DocumentDispatch,
   useDrives,

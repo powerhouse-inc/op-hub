@@ -111,8 +111,8 @@
       ]
     },
     {
-      "name": "Service Offering App",
       "id": "service-offering-app",
+      "name": "Service Offering App",
       "documentTypes": [
         "powerhousedao/document-drive"
       ]

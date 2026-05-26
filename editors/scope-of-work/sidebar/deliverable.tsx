@@ -16,8 +16,8 @@ import {
   type ScopeOfWorkAction,
   type KeyResult,
   type Progress,
-} from "../../../document-models/scope-of-work/index.js";
-import { actions } from "../../../document-models/scope-of-work/index.js";
+} from "document-models/scope-of-work";
+import { actions } from "document-models/scope-of-work";
 import { useEffect, useMemo, useState } from "react";
 import { generateId } from "document-model/core";
 import BudgetCalculator from "./budgetCalculator.js";

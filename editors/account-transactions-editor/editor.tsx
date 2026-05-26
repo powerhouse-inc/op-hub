@@ -25,8 +25,8 @@ import { TransactionsTable } from "./components/TransactionsTable.js";
 import { TransactionForm } from "./components/TransactionForm.js";
 import { AccountSection } from "./components/AccountSection.js";
 import { alchemyIntegration } from "./alchemyIntegration.js";
-import { actions as accountsActions } from "../../document-models/accounts/index.js";
-import { actions as expenseReportActions } from "../../document-models/expense-report/index.js";
+import { actions as accountsActions } from "document-models/accounts";
+import { actions as expenseReportActions } from "document-models/expense-report";
 
 type ViewMode = "list" | "add" | "edit";
 

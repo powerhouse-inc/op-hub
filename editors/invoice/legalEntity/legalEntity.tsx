@@ -6,7 +6,7 @@ import type {
   EditPayerInput,
   EditPayerWalletInput,
   LegalEntity,
-} from "../../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import React, { type ComponentPropsWithRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { LegalEntityWalletSection } from "./walletSection.js";

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { actions } from "../../document-models/invoice/index.js";
+import { actions } from "document-models/invoice";
 import { generateId } from "document-model";
 import type {
   InvoiceAction,
   InvoiceState,
   InvoiceLineItem,
-} from "../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import { getSubgraphUrl } from "../shared/graphql.js";
 
 const GRAPHQL_URL = getSubgraphUrl("invoice-addon");

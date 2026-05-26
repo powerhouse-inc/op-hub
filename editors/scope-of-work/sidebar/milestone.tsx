@@ -14,8 +14,8 @@ import {
   type DeliverableSetStatusInput,
   type Agent,
   type ScopeOfWorkAction,
-} from "../../../document-models/scope-of-work/index.js";
-import { actions } from "../../../document-models/scope-of-work/index.js";
+} from "document-models/scope-of-work";
+import { actions } from "document-models/scope-of-work";
 import { useEffect, useMemo, useState } from "react";
 import { generateId } from "document-model/core";
 import { Icon } from "@powerhousedao/design-system";

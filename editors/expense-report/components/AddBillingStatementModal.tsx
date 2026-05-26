@@ -10,7 +10,7 @@ import { generateId } from "document-model";
 import { X, FileText, Check } from "lucide-react";
 import type { LineItemGroup } from "../../../document-models/expense-report/v1/gen/types.js";
 import type { BillingStatementLineItem } from "../../../document-models/billing-statement/v1/gen/types.js";
-import { actions } from "../../../document-models/expense-report/index.js";
+import { actions } from "document-models/expense-report";
 
 interface AddBillingStatementModalProps {
   isOpen: boolean;

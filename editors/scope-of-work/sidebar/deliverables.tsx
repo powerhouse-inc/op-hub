@@ -14,7 +14,7 @@ import {
   buildEnumCellEditor,
 } from "@powerhousedao/document-engineering";
 import { Icon } from "@powerhousedao/design-system";
-import { actions } from "../../../document-models/scope-of-work/index.js";
+import { actions } from "document-models/scope-of-work";
 import { generateId } from "document-model/core";
 import type { Operation } from "document-model";
 import { statusOptions, statusStyles } from "./deliverable.js";

@@ -7,7 +7,7 @@ import {
   type BillingStatementAction,
   type BillingStatementState,
   type BillingStatementUnitInput,
-} from "../../../document-models/billing-statement/index.js";
+} from "document-models/billing-statement";
 import { useState, useRef, useEffect } from "react";
 import { formatNumber } from "../../invoice/lineItems.js";
 import { LineItemTagsTable } from "../lineItemTags/lineItemTags.js";

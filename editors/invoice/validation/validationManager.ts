@@ -1,4 +1,4 @@
-import { type Status } from "../../../document-models/invoice/index.js";
+import { type Status } from "document-models/invoice";
 import {
   accountIbanRule,
   bicNumberRule,

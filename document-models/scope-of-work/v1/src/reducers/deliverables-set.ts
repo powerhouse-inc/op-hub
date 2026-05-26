@@ -1,10 +1,6 @@
 import type { ScopeOfWorkDeliverablesSetOperations } from "document-models/scope-of-work/v1";
-import type {
-  Milestone,
-  Progress,
-  ScopeOfWorkState,
-} from "../../gen/schema/types.js";
 import type { EditDeliverablesSetAction } from "../../gen/deliverables-set/actions.js";
+import type { Progress, ScopeOfWorkState } from "../../gen/schema/types.js";
 import { applyInvariants } from "./projects.js";
 
 // Progress is a flat tagged-union: { completed, done, total, value }, all

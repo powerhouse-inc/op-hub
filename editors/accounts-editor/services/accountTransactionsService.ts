@@ -8,8 +8,8 @@ import { addDocument, dispatchActions } from "@powerhousedao/reactor-browser";
 import {
   actions as accountTransactionsActions,
   addTransaction,
-} from "../../../document-models/account-transactions/index.js";
-import { actions as accountsActions } from "../../../document-models/accounts/index.js";
+} from "document-models/account-transactions";
+import { actions as accountsActions } from "document-models/accounts";
 import { generateId } from "document-model/core";
 import { alchemyIntegration } from "../../account-transactions-editor/alchemyIntegration.js";
 

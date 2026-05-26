@@ -5,7 +5,7 @@ import type {
   LineItemGroup,
   LineItem,
 } from "../../../document-models/expense-report/v1/gen/types.js";
-import { actions } from "../../../document-models/expense-report/index.js";
+import { actions } from "document-models/expense-report";
 import { Textarea, Select, Button } from "@powerhousedao/document-engineering";
 import { Plus, Trash2 } from "lucide-react";
 import { generateId } from "document-model";

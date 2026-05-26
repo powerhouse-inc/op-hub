@@ -8,7 +8,7 @@ import {
   type Rejection,
   type Status,
   actions,
-} from "../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import { LegalEntityForm } from "./legalEntity/legalEntity.js";
 import { LineItemsTable } from "./lineItems.js";
 import { loadUBLFile } from "./ingestUBL.js";

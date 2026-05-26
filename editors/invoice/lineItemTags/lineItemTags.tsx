@@ -6,7 +6,7 @@ import { expenseAccountOptions, paymentAccountOptions } from "./tagMapping.js";
 import {
   actions,
   type InvoiceTag,
-} from "../../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import { InputField } from "../components/inputField.js";
 
 interface TagAssignmentRow {

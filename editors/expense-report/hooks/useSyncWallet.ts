@@ -1,5 +1,5 @@
 import { useDocumentsInSelectedDrive } from "@powerhousedao/reactor-browser";
-import { actions } from "../../../document-models/expense-report/index.js";
+import { actions } from "document-models/expense-report";
 import { generateId } from "document-model";
 import type {
   LineItemGroup,

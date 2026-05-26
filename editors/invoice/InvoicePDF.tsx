@@ -4,7 +4,7 @@ import type {
   InvoiceLineItem as InvoiceLineItemType,
   Maybe,
   PaymentRouting,
-} from "../../document-models/invoice/index.js";
+} from "document-models/invoice";
 import countries from "world-countries";
 
 type Country = {

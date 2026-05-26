@@ -4,7 +4,7 @@ import {
   type BillingStatementDocument,
   type BillingStatementState,
   actions,
-} from "../../document-models/billing-statement/index.js";
+} from "document-models/billing-statement";
 import { Textarea, Select } from "@powerhousedao/document-engineering";
 import LineItemsTable from "./components/lineItemsTable.js";
 import { formatNumber } from "../invoice/lineItems.js";

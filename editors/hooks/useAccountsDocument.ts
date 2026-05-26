@@ -5,7 +5,7 @@ import {
 import type {
   AccountsAction,
   AccountsDocument,
-} from "../../document-models/accounts/index.js";
+} from "document-models/accounts";
 
 export function useAccountsDocument(documentId: string | null | undefined) {
   return useDocumentOfType<AccountsDocument, AccountsAction>(

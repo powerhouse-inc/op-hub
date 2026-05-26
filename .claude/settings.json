@@ -250,7 +250,9 @@
       "Bash([ -f \"dist/node/subgraphs/$sg/index.mjs\" ])",
       "Bash(node -e \"console.log\\(require.resolve ? 'cjs only' : 'esm'\\); import\\('./dist/node/subgraphs/resources-services/index.mjs'\\).then\\(m => console.log\\('imports OK, exports:', Object.keys\\(m\\)\\)\\)\")",
       "Bash(awk '{print $NF}')",
-      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('bin:', d.get\\('bin',''\\)\\); print\\('exports keys:', list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:5]\\)\")"
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('bin:', d.get\\('bin',''\\)\\); print\\('exports keys:', list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:5]\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('package.json'\\)\\); print\\('=== dependencies ==='\\); [print\\(f'  {k}: {v}'\\) for k,v in d.get\\('dependencies',{}\\).items\\(\\)]; print\\(f'\\\\\\\\n=== devDependencies \\({len\\(d.get\\(\\\\\"devDependencies\\\\\",{}\\)\\)}\\) ==='\\); print\\('=== peerDependencies ==='\\); [print\\(f'  {k}: {v}'\\) for k,v in d.get\\('peerDependencies',{}\\).items\\(\\)]\")",
+      "Bash(python3 -c \"import json; print\\(json.dumps\\(json.load\\(open\\('powerhouse.manifest.json'\\)\\).get\\('config',[]\\), indent=2\\)\\)\")"
     ],
     "additionalDirectories": [
       "/home/p",

@@ -6,7 +6,7 @@ import {
   actions,
   type PmCurrencyInput,
   type ScopeOfWorkAction,
-} from "../../../document-models/scope-of-work/index.js";
+} from "document-models/scope-of-work";
 import { useState } from "react";
 import {
   Select,

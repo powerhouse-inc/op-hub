@@ -17,8 +17,8 @@ import {
   type MonthReportSet,
 } from "../hooks/useMonthlyReports.js";
 import { MonthReportCard, type MonthPaymentStats } from "./MonthReportCard.js";
-import { actions as expenseReportActions } from "../../../document-models/expense-report/index.js";
-import { actions as snapshotReportActions } from "../../../document-models/snapshot-report/index.js";
+import { actions as expenseReportActions } from "document-models/expense-report";
+import { actions as snapshotReportActions } from "document-models/snapshot-report";
 import type { SelectedFolderInfo } from "./FolderTree.js";
 
 interface MonthlyReportsOverviewProps {

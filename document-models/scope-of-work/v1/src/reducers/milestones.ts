@@ -1,11 +1,11 @@
 import type { ScopeOfWorkMilestonesOperations } from "document-models/scope-of-work/v1";
+import type { EditMilestoneAction } from "../../gen/milestones/actions.js";
 import type {
   Deliverable,
   Milestone,
   Progress,
   ScopeOfWorkState,
 } from "../../gen/schema/types.js";
-import type { EditMilestoneAction } from "../../gen/milestones/actions.js";
 import { applyInvariants } from "./projects.js";
 
 // Progress is a flat tagged-union: { completed, done, total, value }, all

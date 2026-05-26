@@ -11,8 +11,8 @@ import { FileText, Camera, Plus, Trash2 } from "lucide-react";
 import { setName } from "document-model";
 import { moveNode, deleteNode } from "@powerhousedao/shared/document-drive";
 import { ConfirmationModal } from "./InvoiceTable/ConfirmationModal.js";
-import { actions as expenseReportActions } from "../../../document-models/expense-report/index.js";
-import { actions as snapshotReportActions } from "../../../document-models/snapshot-report/index.js";
+import { actions as expenseReportActions } from "document-models/expense-report";
+import { actions as snapshotReportActions } from "document-models/snapshot-report";
 import { useMonthlyReports } from "../hooks/useMonthlyReports.js";
 
 interface ReportingViewProps {

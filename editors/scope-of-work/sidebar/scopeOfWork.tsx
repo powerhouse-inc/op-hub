@@ -15,7 +15,7 @@ import {
   type ScopeOfWorkAction,
   type ScopeOfWorkDocument,
   type ScopeOfWorkStatusInput,
-} from "../../../document-models/scope-of-work/index.js";
+} from "document-models/scope-of-work";
 import { generateId } from "document-model/core";
 import ProgressBar from "../components/progressBar.js";
 import { type DocumentDispatch } from "@powerhousedao/reactor-browser";

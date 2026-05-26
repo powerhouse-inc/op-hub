@@ -11,9 +11,9 @@ import {
   deleteNode,
   type FileNode,
 } from "@powerhousedao/shared/document-drive";
-import { actions as invoiceActions } from "../../../../document-models/invoice/index.js";
+import { actions as invoiceActions } from "document-models/invoice";
 import type { InvoiceTag } from "../../../../document-models/invoice/v1/gen/types.js";
-import { actions as billingStatementActions } from "../../../../document-models/billing-statement/index.js";
+import { actions as billingStatementActions } from "document-models/billing-statement";
 import {
   setPeriodStart,
   setPeriodEnd,

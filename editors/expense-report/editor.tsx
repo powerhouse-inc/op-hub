@@ -4,7 +4,7 @@ import { useSelectedExpenseReportDocument } from "../../document-models/expense-
 import {
   actions,
   type ExpenseReportStatus,
-} from "../../document-models/expense-report/index.js";
+} from "document-models/expense-report";
 import { Icon, Button, Select } from "@powerhousedao/document-engineering";
 import {
   DatePickerField,

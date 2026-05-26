@@ -20,6 +20,7 @@ import { ResourceInstanceEditor } from "./resource-instance-editor/module.js";
 import { ResourceTemplateEditor } from "./resource-template-editor/module.js";
 import { RequestForProposals } from "./rfp-editor/module.js";
 import { ScopeOfWorkEditor } from "./scope-of-work/module.js";
+import { ServiceOfferingApp } from "./service-offering-app/module.js";
 import { ServiceOfferingEditor } from "./service-offering-editor/module.js";
 import { SnapshotReport } from "./snapshot-report-editor/module.js";
 import { SubscriptionInstanceEditor } from "./subscription-instance-editor/module.js";
@@ -44,6 +45,7 @@ export const editors: EditorModule[] = [
   ResourceTemplateEditor,
   RequestForProposals,
   ScopeOfWorkEditor,
+  ServiceOfferingApp,
   ServiceOfferingEditor,
   SnapshotReport,
   SubscriptionInstanceEditor,

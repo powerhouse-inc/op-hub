@@ -232,10 +232,29 @@
       "Bash(TARGET_PROFILE=staging-remote DATA_DIR=/home/p/Powerhouse/demos/op-hub/scripts/drive-sync/data python3 /home/p/Powerhouse/demos/op-hub/scripts/drive-sync/phase3-remap.py)",
       "Bash(switchboard -p staging-remote docs get 765070e9-2c3e-4dbc-b150-8360d0a736cd --state --format json)",
       "Bash(ps -p 6101 -o pid,ppid,etime,cmd --no-headers)",
-      "Bash(kill 6101)"
+      "Bash(kill 6101)",
+      "Bash(mkdir -p editors/service-offering-app/hooks editors/service-offering-app/components/subscriptions-dashboard && \\\\ *)",
+      "Bash(switchboard -p bai-dev drives delete -y ab3a487e-e4c8-4091-902b-2ba1cfde443d 6c93a20a-3a54-42cc-8c41-98a87e0329da a59b3329-909c-4870-9f5e-0e5c68a20847 2acea349-946d-4bb6-98c6-6d0f7410bb54 933f946f-5fab-4dea-85ea-aeb85f1f2fd1 c580e7aa-2e15-4bd7-9eb2-d650b99b48a1 cdd2a1a9-d1e4-4e55-a071-dee036faa0c7 2f21902c-b367-481f-b3ec-625fdc8d6fe0 b4822754-ac09-4fc3-9190-fa6ee4911dab d0b7ae39-de2a-4aef-af19-035c90d1fbb1 --format json)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(f'{len\\(d\\)} drives remaining'\\); [print\\(f'  {x[\\\\\"id\\\\\"]}  {x.get\\(\\\\\"name\\\\\",\\\\\"\\\\\"\\)}  \\({x.get\\(\\\\\"slug\\\\\",\\\\\"\\\\\"\\)}\\)'\\) for x in d]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('=== exports ==='\\); print\\(json.dumps\\(d.get\\('exports',{}\\), indent=2\\)\\); print\\('=== files ==='\\); print\\(d.get\\('files',[]\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('subgraphs:', d.get\\('subgraphs', '\\(missing\\)'\\)[:5] if isinstance\\(d.get\\('subgraphs'\\),list\\) else d.get\\('subgraphs'\\)\\); print\\('keys:', list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('All 7 custom subgraphs in manifest:'\\); [print\\(f' - {s[\\\\\"id\\\\\"]}'\\) for s in d.get\\('subgraphs',[]\\)]\")",
+      "Bash(curl -sS --max-time 10 -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H \"Content-Type: application/json\" -d '{\"query\":\"{ Packages { installedPackages { name version registryUrl installedAt } } }\"}')",
+      "Bash(curl -sS --max-time 60 -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H \"Content-Type: application/json\" -d '{\"query\":\"mutation { Packages { installPackage\\(name: \\\\\"@powerhousedao/op-hub\\\\\"\\) { package { name version } documentModelsLoaded } } }\"}')",
+      "Bash(curl -sS --max-time 15 -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H \"Content-Type: application/json\" -d '{\"query\":\"mutation { Packages { uninstallPackage\\(name: \\\\\"@powerhousedao/op-hub\\\\\"\\) } }\"}')",
+      "Bash(curl -sS --max-time 10 -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H \"Content-Type: application/json\" -d '{\"query\":\"{ Packages { installedPackages { name } } }\"}')",
+      "Bash(curl -sS --max-time 10 -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H \"Content-Type: application/json\" -d '{\"query\":\"{ Packages { installedPackages { name version } } }\"}')",
+      "Bash(curl -sS --max-time 10 -X POST https://switchboard.mild-dove-63.vetra.io/graphql -H \"Content-Type: application/json\" -d '{\"query\":\"{ __schema { queryType { fields { name } } } }\"}')",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('package.json'\\)\\); print\\(json.dumps\\(d['exports'], indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('package.json'\\)\\); print\\('./subgraphs/*' in d['exports'], '←', d['exports'].get\\('./subgraphs/*'\\)\\)\")",
+      "Bash([ -f \"dist/node/subgraphs/$sg/index.mjs\" ])",
+      "Bash(node -e \"console.log\\(require.resolve ? 'cjs only' : 'esm'\\); import\\('./dist/node/subgraphs/resources-services/index.mjs'\\).then\\(m => console.log\\('imports OK, exports:', Object.keys\\(m\\)\\)\\)\")",
+      "Bash(awk '{print $NF}')",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('bin:', d.get\\('bin',''\\)\\); print\\('exports keys:', list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:5]\\)\")"
     ],
     "additionalDirectories": [
-      "/home/p"
+      "/home/p",
+      "/home/p/Powerhouse/demos/op-hub/editors/builder-team-admin/components/subscriptions-dashboard"
     ]
   }
 }

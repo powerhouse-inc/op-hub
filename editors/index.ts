@@ -15,6 +15,7 @@ export { ResourceInstanceEditor } from "./resource-instance-editor/module.js";
 export { ResourceTemplateEditor } from "./resource-template-editor/module.js";
 export { RequestForProposals } from "./rfp-editor/module.js";
 export { ScopeOfWorkEditor } from "./scope-of-work/module.js";
+export { ServiceOfferingApp } from "./service-offering-app/module.js";
 export { ServiceOfferingEditor } from "./service-offering-editor/module.js";
 export { SnapshotReport } from "./snapshot-report-editor/module.js";
 export { SubscriptionInstanceEditor } from "./subscription-instance-editor/module.js";

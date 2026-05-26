@@ -15,9 +15,7 @@ const NETWORK_ADMIN_EDITOR_ID = "network-admin";
 export const workstreamsProcessorFactory =
   (module: IProcessorHostModule) =>
   async (driveHeader: PHDocumentHeader): Promise<ProcessorRecord[]> => {
-    const preferredEditor = (
-      driveHeader.meta as { preferredEditor?: string } | undefined
-    )?.preferredEditor;
+    const preferredEditor = driveHeader.meta?.preferredEditor;
     if (preferredEditor !== NETWORK_ADMIN_EDITOR_ID) {
       return [];
     }

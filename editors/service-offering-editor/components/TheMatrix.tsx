@@ -2396,8 +2396,8 @@ export function TheMatrix({ document, dispatch }: TheMatrixProps) {
                   style={{ marginTop: "0.375rem" }}
                 >
                   Non-cumulative metrics reset to zero each billing cycle (e.g.
-                  monthly invoices). Cumulative metrics keep their value
-                  (e.g. number of contributors).
+                  monthly invoices). Cumulative metrics keep their value (e.g.
+                  number of contributors).
                 </p>
               </div>
 

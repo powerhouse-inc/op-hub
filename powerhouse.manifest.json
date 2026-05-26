@@ -109,6 +109,13 @@
       "documentTypes": [
         "powerhousedao/document-drive"
       ]
+    },
+    {
+      "name": "Service Offering App",
+      "id": "service-offering-app",
+      "documentTypes": [
+        "powerhousedao/document-drive"
+      ]
     }
   ],
   "editors": [

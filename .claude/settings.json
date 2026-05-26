@@ -252,7 +252,8 @@
       "Bash(awk '{print $NF}')",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('bin:', d.get\\('bin',''\\)\\); print\\('exports keys:', list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:5]\\)\")",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('package.json'\\)\\); print\\('=== dependencies ==='\\); [print\\(f'  {k}: {v}'\\) for k,v in d.get\\('dependencies',{}\\).items\\(\\)]; print\\(f'\\\\\\\\n=== devDependencies \\({len\\(d.get\\(\\\\\"devDependencies\\\\\",{}\\)\\)}\\) ==='\\); print\\('=== peerDependencies ==='\\); [print\\(f'  {k}: {v}'\\) for k,v in d.get\\('peerDependencies',{}\\).items\\(\\)]\")",
-      "Bash(python3 -c \"import json; print\\(json.dumps\\(json.load\\(open\\('powerhouse.manifest.json'\\)\\).get\\('config',[]\\), indent=2\\)\\)\")"
+      "Bash(python3 -c \"import json; print\\(json.dumps\\(json.load\\(open\\('powerhouse.manifest.json'\\)\\).get\\('config',[]\\), indent=2\\)\\)\")",
+      "Bash(grep -nE \"createProductInstances:|Mutation:|^\\\\s*\\\\},\\\\s*$\" subgraphs/resources-services/resolvers.ts)"
     ],
     "additionalDirectories": [
       "/home/p",

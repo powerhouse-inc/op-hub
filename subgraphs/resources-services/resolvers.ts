@@ -29,6 +29,7 @@ import type {
 import {
   actions as builderProfileActions,
   type BuilderProfileDocument,
+  type SetOperatorAction,
   type SetWalletAddressAction,
   type UpdateProfileAction,
 } from "document-models/builder-profile";
@@ -76,8 +77,13 @@ interface GetBuilderDrivesFilter {
   ethereumAddress: string;
 }
 
-interface GetBuilderDrivesFilter {
-  ethereumAddress: string;
+type UserRole = "BUILDER" | "OPERATOR";
+
+interface CreateUserDriveInput {
+  role: UserRole;
+  user: string;
+  name?: string | null;
+  teamName?: string | null;
 }
 
 export const getResolvers = (
@@ -774,6 +780,217 @@ export const getResolvers = (
             }
           }
 
+          return {
+            success: false,
+            data: null,
+            errors: [
+              error instanceof Error
+                ? error.message
+                : "An unexpected error occurred",
+            ],
+          };
+        }
+      },
+
+      createUserDrive: async (
+        _: unknown,
+        args: { input: CreateUserDriveInput },
+      ) => {
+        const { role, user, name, teamName } = args.input;
+
+        if (!user) {
+          return {
+            success: false,
+            data: null,
+            errors: ["Ethereum address is required"],
+          };
+        }
+        // role is constrained to the UserRole enum by GraphQL — no runtime
+        // check needed.
+
+        // Slug + display-name derivation. teamName wins, then name, then a
+        // stable address-derived fallback so we never produce an empty slug.
+        const addrSuffix = user.replace(/^0x/i, "").slice(0, 8).toLowerCase();
+        const slugify = (value: string) =>
+          value
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/_/g, "-")
+            .replace(/[^a-z0-9-]/g, "");
+
+        const trimmedTeamName = teamName?.trim() || "";
+        const trimmedName = name?.trim() || "";
+        const baseDisplayName =
+          trimmedTeamName || trimmedName || `User ${addrSuffix}`;
+        const baseSlug =
+          slugify(trimmedTeamName) ||
+          slugify(trimmedName) ||
+          `user-${addrSuffix}`;
+        const profileDisplayName =
+          trimmedName || trimmedTeamName || `User ${addrSuffix}`;
+
+        const isOperator = role === "OPERATOR";
+
+        // Idempotency: refuse if any non-deleted builder profile already
+        // points at this wallet address. Same matching logic as
+        // getBuilderDrives so the two views agree on "user has a drive".
+        const target = user.toLowerCase();
+        const deletedDriveDocIds = await getDeletedDriveDocIds(reactorClient);
+        const { results: profileDocs } = await reactorClient.find({
+          type: "powerhouse/builder-profile",
+        });
+        for (const doc of profileDocs) {
+          if (doc.state.document.isDeleted) continue;
+          if (deletedDriveDocIds.has(doc.header.id)) continue;
+          const profile = doc as BuilderProfileDocument;
+          const addr = profile.state.global.walletAddress;
+          if (typeof addr === "string" && addr.toLowerCase() === target) {
+            return {
+              success: false,
+              data: null,
+              errors: [
+                `A drive for wallet ${user} already exists. Use the existing workspace.`,
+              ],
+            };
+          }
+        }
+
+        // Pre-flight slug conflict checks. The reactor will accept a duplicate
+        // slug (id is unique, slug is not) so we have to guard explicitly.
+        const primaryExisting = await findDriveBySlug(reactorClient, baseSlug);
+        if (primaryExisting) {
+          return {
+            success: false,
+            data: null,
+            errors: [
+              `A drive with slug "${baseSlug}" already exists. Pick a different team or display name.`,
+            ],
+          };
+        }
+        const offeringSlug = `${baseSlug}-services`;
+        if (isOperator) {
+          const offeringExisting = await findDriveBySlug(
+            reactorClient,
+            offeringSlug,
+          );
+          if (offeringExisting) {
+            return {
+              success: false,
+              data: null,
+              errors: [
+                `A drive with slug "${offeringSlug}" already exists. Pick a different team or display name.`,
+              ],
+            };
+          }
+        }
+
+        const createdDriveIds: string[] = [];
+        const drives: {
+          driveId: string;
+          driveSlug: string;
+          driveName: string;
+          driveLink: string;
+        }[] = [];
+
+        try {
+          // ── Primary drive: builder-team-admin ──────────────────────────
+          const primaryDriveDoc = driveCreateDocument();
+          primaryDriveDoc.header.name = baseDisplayName;
+          primaryDriveDoc.state.global.name = baseDisplayName;
+          primaryDriveDoc.header.slug = baseSlug;
+          if (!primaryDriveDoc.header.meta) primaryDriveDoc.header.meta = {};
+          primaryDriveDoc.header.meta.preferredEditor = "builder-team-admin";
+          const primaryDrive =
+            await reactorClient.create<DocumentDriveDocument>(primaryDriveDoc);
+          createdDriveIds.push(primaryDrive.header.id);
+
+          // Builder profile inside the primary drive
+          const builderProfileDoc = await reactorClient.createEmpty(
+            "powerhouse/builder-profile",
+            { parentIdentifier: primaryDrive.header.id },
+          );
+          await reactorClient.addRelationship(
+            primaryDrive.header.id,
+            builderProfileDoc.header.id,
+            "child",
+          );
+          await reactorClient.execute(primaryDrive.header.id, "main", [
+            addFile({
+              documentType: "powerhouse/builder-profile",
+              id: builderProfileDoc.header.id,
+              name: `${baseSlug} Builder Profile`,
+            }),
+          ]);
+
+          // Dispatch profile actions: name/slug → wallet → (operator flag)
+          const profileActions: Array<
+            UpdateProfileAction | SetWalletAddressAction | SetOperatorAction
+          > = [
+            builderProfileActions.updateProfile({
+              name: profileDisplayName,
+              slug: baseSlug,
+            }),
+            builderProfileActions.setWalletAddress({ walletAddress: user }),
+          ];
+          if (isOperator) {
+            profileActions.push(
+              builderProfileActions.setOperator({ isOperator: true }),
+            );
+          }
+          await reactorClient.execute(
+            builderProfileDoc.header.id,
+            "main",
+            profileActions,
+          );
+
+          drives.push({
+            driveId: primaryDrive.header.id,
+            driveSlug: baseSlug,
+            driveName: baseDisplayName,
+            driveLink: getDriveLink(baseSlug),
+          });
+
+          // ── Operator-only second drive: service-offering-app ───────────
+          if (isOperator) {
+            const offeringDisplayName = `${baseDisplayName} Services`;
+            const offeringDriveDoc = driveCreateDocument();
+            offeringDriveDoc.header.name = offeringDisplayName;
+            offeringDriveDoc.state.global.name = offeringDisplayName;
+            offeringDriveDoc.header.slug = offeringSlug;
+            if (!offeringDriveDoc.header.meta)
+              offeringDriveDoc.header.meta = {};
+            offeringDriveDoc.header.meta.preferredEditor =
+              "service-offering-app";
+            const offeringDrive =
+              await reactorClient.create<DocumentDriveDocument>(
+                offeringDriveDoc,
+              );
+            createdDriveIds.push(offeringDrive.header.id);
+
+            drives.push({
+              driveId: offeringDrive.header.id,
+              driveSlug: offeringSlug,
+              driveName: offeringDisplayName,
+              driveLink: getDriveLink(offeringSlug),
+            });
+          }
+
+          return { success: true, data: { drives }, errors: [] };
+        } catch (error) {
+          console.error("createUserDrive failed:", error);
+          // Roll back any drives we created so we don't leave a half-wired
+          // workspace behind.
+          for (const id of createdDriveIds) {
+            try {
+              await reactorClient.deleteDocument(id);
+            } catch (cleanupError) {
+              console.error(
+                `Rollback failed: could not delete drive ${id}`,
+                cleanupError,
+              );
+            }
+          }
           return {
             success: false,
             data: null,

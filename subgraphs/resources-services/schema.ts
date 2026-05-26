@@ -15,6 +15,29 @@ export const schema: DocumentNode = gql`
     createProductInstances(
       input: CreateProductInstancesInput!
     ): CreateProductInstancesOutput
+    createUserDrive(input: CreateUserDriveInput!): CreateUserDriveOutput
+  }
+
+  enum UserRole {
+    BUILDER
+    OPERATOR
+  }
+
+  input CreateUserDriveInput {
+    role: UserRole!
+    user: EthereumAddress!
+    name: String
+    teamName: String
+  }
+
+  type CreateUserDriveOutput {
+    success: Boolean!
+    data: CreateUserDriveData
+    errors: [String!]!
+  }
+
+  type CreateUserDriveData {
+    drives: [BuilderDriveLink!]!
   }
 
   input CreateProductInstancesInput {

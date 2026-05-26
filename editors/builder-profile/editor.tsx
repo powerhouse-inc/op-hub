@@ -465,7 +465,7 @@ export default function Editor() {
             </div>
 
             {/* Role Toggle */}
-            <div className="flex flex-col items-end gap-1.5">
+            {/* <div className="flex flex-col items-end gap-1.5">
               <div className="role-toggle">
                 <button
                   type="button"
@@ -496,7 +496,7 @@ export default function Editor() {
               <p className="text-xs text-slate-400 text-right max-w-[180px]">
                 {state?.isOperator ? "Sells & buys services" : "Buys services"}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 

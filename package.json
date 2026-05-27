@@ -1,6 +1,6 @@
 {
   "name": "@powerhousedao/op-hub",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "license": "AGPL-3.0-only",
   "type": "module",
   "files": [
@@ -119,6 +119,7 @@
     "zod": "4.3.6"
   },
   "peerDependencies": {
+    "@powerhousedao/reactor-api": "6.0.0",
     "@powerhousedao/reactor-browser": "6.0.0",
     "document-model": "6.0.0",
     "graphql": "^16",

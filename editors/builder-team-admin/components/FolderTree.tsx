@@ -107,6 +107,39 @@ const BASE_NAVIGATION_SECTIONS: SidebarNode[] = [
   },
 ];
 
+// Non-interactive grouping headers rendered between sections. The Sidebar has
+// no native group concept, so these are SidebarNodes styled as labels via
+// `className` and short-circuited in the click handler.
+const GROUP_HEADER_CLASS = "bta-sidebar-group-header";
+const IDENTITY_HEADER_ID = "__group-identity__";
+const WHAT_YOU_BUY_HEADER_ID = "__group-what-you-buy__";
+const GROUP_HEADER_IDS = new Set([IDENTITY_HEADER_ID, WHAT_YOU_BUY_HEADER_ID]);
+
+function groupHeader(id: string, title: string): SidebarNode {
+  return { id, title, className: GROUP_HEADER_CLASS };
+}
+
+/**
+ * Select and group the displayed sidebar sections:
+ *   IDENTITY      → Builder Profile, Team Members
+ *   WHAT YOU BUY  → Service Subscriptions
+ * Sections not listed here (Service Offerings, Expense Reports, Snapshot
+ * Reports) are intentionally hidden — their underlying logic stays intact so
+ * they can be re-surfaced later by adding them back to the output.
+ */
+function withGroupHeaders(sections: SidebarNode[]): SidebarNode[] {
+  const byId = (id: string) => sections.find((s) => s.id === id);
+  const out: SidebarNode[] = [groupHeader(IDENTITY_HEADER_ID, "IDENTITY")];
+  const builderProfile = byId("builder-profile");
+  if (builderProfile) out.push(builderProfile);
+  const teamMembers = byId("team-members");
+  if (teamMembers) out.push(teamMembers);
+  out.push(groupHeader(WHAT_YOU_BUY_HEADER_ID, "WHAT YOU BUY"));
+  const serviceSubscriptions = byId("service-subscriptions");
+  if (serviceSubscriptions) out.push(serviceSubscriptions);
+  return out;
+}
+
 /**
  * Recursively builds SidebarNode children from folder contents.
  * Folders get folder icons, files get document icons.
@@ -373,7 +406,7 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
   // Build navigation sections with dynamic expense reports, snapshot reports, and resources & services children
   const navigationSections = useMemo(() => {
     if (!driveDocument) {
-      return BASE_NAVIGATION_SECTIONS;
+      return withGroupHeaders(BASE_NAVIGATION_SECTIONS);
     }
 
     const allNodes = driveDocument.state.global.nodes;
@@ -422,54 +455,53 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
     }
 
     // Filter and transform the sections based on isOperator flag
-    return (
-      BASE_NAVIGATION_SECTIONS
-        // Hide "Resources & Services" when isOperator is false
-        .filter((section) => {
-          if (section.id === "resources-services" && !isOperator) {
-            return false;
-          }
-          return true;
-        })
-        // Transform sections with dynamic content
-        .map((section) => {
-          // Change "Builder Profile" to "Operator Profile" when isOperator is true
-          if (section.id === "builder-profile" && isOperator) {
-            return {
-              ...section,
-              title: "Operator Profile",
-            };
-          }
-          if (
-            section.id === "resources-services" &&
-            resourcesServicesChildren.length > 0
-          ) {
-            return {
-              ...section,
-              children: resourcesServicesChildren,
-            };
-          }
-          if (
-            section.id === "expense-reports" &&
-            expenseReportsChildren.length > 0
-          ) {
-            return {
-              ...section,
-              children: expenseReportsChildren,
-            };
-          }
-          if (
-            section.id === "snapshot-reports" &&
-            snapshotReportsChildren.length > 0
-          ) {
-            return {
-              ...section,
-              children: snapshotReportsChildren,
-            };
-          }
-          return section;
-        })
-    );
+    const mapped = BASE_NAVIGATION_SECTIONS
+      // Hide "Resources & Services" when isOperator is false
+      .filter((section) => {
+        if (section.id === "resources-services" && !isOperator) {
+          return false;
+        }
+        return true;
+      })
+      // Transform sections with dynamic content
+      .map((section) => {
+        // Change "Builder Profile" to "Operator Profile" when isOperator is true
+        if (section.id === "builder-profile" && isOperator) {
+          return {
+            ...section,
+            title: "Operator Profile",
+          };
+        }
+        if (
+          section.id === "resources-services" &&
+          resourcesServicesChildren.length > 0
+        ) {
+          return {
+            ...section,
+            children: resourcesServicesChildren,
+          };
+        }
+        if (
+          section.id === "expense-reports" &&
+          expenseReportsChildren.length > 0
+        ) {
+          return {
+            ...section,
+            children: expenseReportsChildren,
+          };
+        }
+        if (
+          section.id === "snapshot-reports" &&
+          snapshotReportsChildren.length > 0
+        ) {
+          return {
+            ...section,
+            children: snapshotReportsChildren,
+          };
+        }
+        return section;
+      });
+    return withGroupHeaders(mapped);
   }, [
     expenseReportsFolder,
     snapshotReportsFolder,
@@ -500,6 +532,9 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
   }
 
   const handleActiveNodeChange = (node: SidebarNode) => {
+    // Group headers are non-interactive labels.
+    if (GROUP_HEADER_IDS.has(node.id)) return;
+
     setActiveNodeId(node.id);
 
     // Check if this is a child node within the Expense Reports folder
@@ -621,27 +656,47 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
   };
 
   return (
-    <SidebarProvider nodes={navigationSections}>
-      <Sidebar
-        className="pt-1"
-        nodes={navigationSections}
-        activeNodeId={activeNodeId}
-        onActiveNodeChange={handleActiveNodeChange}
-        sidebarTitle={
-          builderProfileName ||
-          (isOperator ? "Operator Team Admin" : "Builder Team Admin")
+    <>
+      <style>{`
+        .${GROUP_HEADER_CLASS} {
+          pointer-events: none;
+          text-transform: uppercase;
+          font-size: 0.6875rem;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          color: #94a3b8;
+          margin-top: 0.75rem;
         }
-        showSearchBar={false}
-        resizable={true}
-        allowPinning={false}
-        showStatusFilter={false}
-        initialWidth={256}
-        defaultLevel={2}
-        handleOnTitleClick={() => {
-          onCustomViewChange?.(null);
-          setSelectedNode("");
-        }}
-      />
-    </SidebarProvider>
+        .${GROUP_HEADER_CLASS}:first-child {
+          margin-top: 0;
+        }
+        /* Hide the expand caret on group-header rows (they have no children). */
+        .${GROUP_HEADER_CLASS} .sidebar__item-caret {
+          display: none;
+        }
+      `}</style>
+      <SidebarProvider nodes={navigationSections}>
+        <Sidebar
+          className="pt-1"
+          nodes={navigationSections}
+          activeNodeId={activeNodeId}
+          onActiveNodeChange={handleActiveNodeChange}
+          sidebarTitle={
+            builderProfileName ||
+            (isOperator ? "Operator Team Admin" : "Builder Team Admin")
+          }
+          showSearchBar={false}
+          resizable={true}
+          allowPinning={false}
+          showStatusFilter={false}
+          initialWidth={256}
+          defaultLevel={2}
+          handleOnTitleClick={() => {
+            onCustomViewChange?.(null);
+            setSelectedNode("");
+          }}
+        />
+      </SidebarProvider>
+    </>
   );
 }

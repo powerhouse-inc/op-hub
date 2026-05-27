@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "@powerhousedao/design-system/theme.css";
 @import "@powerhousedao/connect/style.css";
+/* Markdown editor (@uiw/react-md-editor) styles — bundled into dist/style.css
+   (the package's exported stylesheet) so the editor renders correctly in
+   deployed Connect, where the library's lazy-loaded CSS chunk isn't served. */
+@import "@uiw/react-md-editor/markdown-editor.css";
 
 @theme {
   /* You can customize the theme by overriding the theme variables here */

@@ -1,5 +1,5 @@
 import type { BaseSubgraph } from "@powerhousedao/reactor-api";
-import type { PHDocument } from "document-model";
+import { createAction, type PHDocument } from "document-model";
 import type { IReactorClient } from "@powerhousedao/reactor";
 import type {
   ResourceTemplateDocument,
@@ -26,15 +26,28 @@ import type {
   FileNode,
   Node,
 } from "@powerhousedao/shared/document-drive";
-import {
-  actions as builderProfileActions,
-  type BuilderProfileDocument,
-  type SetWalletAddressAction,
-  type UpdateProfileAction,
-} from "document-models/builder-profile";
+import type {
+  BuilderProfileAction,
+  BuilderProfileDocument,
+  SetWalletAddressAction,
+  UpdateProfileAction,
+} from "document-models/builder-profile/v1";
+import * as builderProfileCreators from "../../document-models/builder-profile/v1/gen/builders/creators.js";
 import { ResourceInstance } from "document-models/resource-instance";
 import { SubscriptionInstance } from "document-models/subscription-instance";
 import { mapOfferingToSubscription } from "../../editors/subscription-instance-editor/components/mapOfferingToSubscription.js";
+
+function createBuilderProfileWalletAddressAction(
+  walletAddress: string,
+): SetWalletAddressAction {
+  return createAction<SetWalletAddressAction>(
+    "SET_WALLET_ADDRESS",
+    { walletAddress },
+    undefined,
+    undefined,
+    "global",
+  );
+}
 
 // Filter types
 interface ResourceTemplatesFilter {
@@ -557,7 +570,7 @@ export const getResolvers = (
             driveDoc.header.name = teamName;
             driveDoc.state.global.name = teamName;
             driveDoc.state.global.icon =
-              "https://cdn-icons-png.flaticon.com/512/6020/6020347.png";
+              "https://www.pngall.com/wp-content/uploads/12/Engineer-Helmet-Equipment-PNG-Image-HD.png";
             driveDoc.header.slug = parsedTeamName;
             if (!driveDoc.header.meta) driveDoc.header.meta = {};
             driveDoc.header.meta.preferredEditor = "builder-team-admin";
@@ -665,14 +678,12 @@ export const getResolvers = (
             // reuse path the profile already has the correct wallet (we
             // matched on it) and we don't want to clobber its display name.
             const updateAction: UpdateProfileAction =
-              builderProfileActions.updateProfile({ name: parsedTeamName });
-            const walletAction: SetWalletAddressAction =
-              builderProfileActions.setWalletAddress({
-                walletAddress: ethereumAddress,
+              builderProfileCreators.updateProfile({
+                name: parsedTeamName,
               });
             await reactorClient.execute(builderProfileId, "main", [
               updateAction,
-              walletAction,
+              createBuilderProfileWalletAddressAction(ethereumAddress),
             ]);
           }
 
@@ -688,16 +699,14 @@ export const getResolvers = (
           }
 
           // get operator profile id from operator drive
-          const operatorProfileId = operatorDrive.state.global.nodes
-            .filter((node: Node): node is FileNode => node.kind === "file")
-            .find(
-              (node: FileNode) =>
-                node.documentType === "powerhouse/builder-profile",
-            )?.id;
+          // The operatorProfileId should be fetched from the serviceOfferingId document's state (field: operatorId)
+          const serviceOfferingDoc =
+            await reactorClient.get<ServiceOfferingDocument>(serviceOfferingId);
+          const operatorProfileId = serviceOfferingDoc.state.global.operatorId;
 
           if (!operatorProfileId) {
             throw new Error(
-              `Operator profile not found for drive ${operatorDrive.header.id}`,
+              `Operator profile not found in serviceOffering document ${serviceOfferingId}`,
             );
           }
 
@@ -782,6 +791,12 @@ export const getResolvers = (
             priceBreakdown,
           });
 
+          const resourceTemplateDoc =
+            await reactorClient.get<ResourceTemplateDocument>(
+              resourceTemplateId,
+            );
+          if (!resourceTemplateDoc) return;
+
           await reactorClient.execute(
             subscriptionInstanceDoc.header.id,
             "main",
@@ -789,7 +804,7 @@ export const getResolvers = (
               SubscriptionInstance.actions.initializeSubscription({
                 ...subscriptionInput,
                 resourceId: resourceInstanceDoc.header.id,
-                resourceLabel: parsedTeamName,
+                resourceLabel: resourceTemplateDoc.state.global.title,
                 resourceThumbnailUrl: serviceOfferingState.thumbnailUrl,
               }),
             ],
@@ -881,25 +896,107 @@ export const getResolvers = (
 
         const isOperator = role === "OPERATOR";
 
-        // Idempotency: refuse if any non-deleted builder profile already
-        // points at this wallet address. Same matching logic as
-        // getBuilderDrives so the two views agree on "user has a drive".
-        const target = user.toLowerCase();
-        const deletedDriveDocIds = await getDeletedDriveDocIds(reactorClient);
-        const { results: profileDocs } = await reactorClient.find({
-          type: "powerhouse/builder-profile",
-        });
-        for (const doc of profileDocs) {
-          if (doc.state.document.isDeleted) continue;
-          if (deletedDriveDocIds.has(doc.header.id)) continue;
-          const profile = doc as BuilderProfileDocument;
-          const addr = profile.state.global.walletAddress;
-          if (typeof addr === "string" && addr.toLowerCase() === target) {
+        // If the wallet already owns a builder-team-admin drive, don't fail
+        // outright. For BUILDER there's nothing more to create. For OPERATOR
+        // we top up the workspace: keep the existing builder drive and add the
+        // paired operator (service-offering-app) drive if it's missing.
+        const existingWorkspace = await findUserBuilderTeamAdminDrive(
+          reactorClient,
+          user,
+        );
+        if (existingWorkspace) {
+          const existingDrive = await reactorClient.get<DocumentDriveDocument>(
+            existingWorkspace.driveId,
+          );
+          const existingSlug =
+            existingDrive.header.slug || existingWorkspace.driveId;
+          const existingName = existingDrive.state.global.name || existingSlug;
+
+          if (!isOperator) {
             return {
               success: false,
               data: null,
               errors: [
-                `A drive for wallet ${user} already exists. Use the existing workspace.`,
+                `A builder drive for wallet ${user} already exists. Use the existing workspace.`,
+              ],
+            };
+          }
+
+          // The operator drive is paired to the existing builder drive's slug
+          // so it's stable regardless of the name/teamName passed this call.
+          const pairedOfferingSlug = `${existingSlug}-operator`;
+          const pairedOfferingExisting = await findDriveBySlug(
+            reactorClient,
+            pairedOfferingSlug,
+          );
+          if (pairedOfferingExisting) {
+            return {
+              success: false,
+              data: null,
+              errors: [
+                `An operator workspace for wallet ${user} already exists.`,
+              ],
+            };
+          }
+
+          const createdForExisting: string[] = [];
+          try {
+            const offeringDisplayName = `${existingName} Operator`;
+            const offeringDriveDoc = driveCreateDocument();
+            offeringDriveDoc.header.name = offeringDisplayName;
+            offeringDriveDoc.state.global.name = offeringDisplayName;
+            offeringDriveDoc.header.slug = pairedOfferingSlug;
+            offeringDriveDoc.state.global.icon =
+              "https://cdn-icons-png.magnific.com/256/17754/17754439.png";
+            if (!offeringDriveDoc.header.meta)
+              offeringDriveDoc.header.meta = {};
+            offeringDriveDoc.header.meta.preferredEditor =
+              "service-offering-app";
+            const offeringDrive =
+              await reactorClient.create<DocumentDriveDocument>(
+                offeringDriveDoc,
+              );
+            createdForExisting.push(offeringDrive.header.id);
+
+            return {
+              success: true,
+              data: {
+                drives: [
+                  {
+                    driveId: existingWorkspace.driveId,
+                    driveSlug: existingSlug,
+                    driveName: existingName,
+                    driveLink: getDriveLink(existingSlug),
+                  },
+                  {
+                    driveId: offeringDrive.header.id,
+                    driveSlug: pairedOfferingSlug,
+                    driveName: offeringDisplayName,
+                    driveLink: getDriveLink(pairedOfferingSlug),
+                  },
+                ],
+              },
+              errors: [],
+            };
+          } catch (error) {
+            console.error("createUserDrive (operator top-up) failed:", error);
+            for (const id of createdForExisting) {
+              try {
+                await reactorClient.deleteDocument(id);
+              } catch (cleanupError) {
+                console.error(
+                  `Rollback failed: could not delete drive ${id}`,
+                  cleanupError,
+                );
+              }
+            }
+            return {
+              success: false,
+              data: null,
+              errors: [
+                error instanceof Error
+                  ? error.message
+                  : "An unexpected error occurred",
               ],
             };
           }
@@ -917,7 +1014,7 @@ export const getResolvers = (
             ],
           };
         }
-        const offeringSlug = `${baseSlug}-services`;
+        const offeringSlug = `${baseSlug}-operator`;
         if (isOperator) {
           const offeringExisting = await findDriveBySlug(
             reactorClient,
@@ -948,6 +1045,8 @@ export const getResolvers = (
           primaryDriveDoc.header.name = baseDisplayName;
           primaryDriveDoc.state.global.name = baseDisplayName;
           primaryDriveDoc.header.slug = baseSlug;
+          primaryDriveDoc.state.global.icon =
+            "https://www.pngall.com/wp-content/uploads/12/Engineer-Helmet-Equipment-PNG-Image-HD.png";
           if (!primaryDriveDoc.header.meta) primaryDriveDoc.header.meta = {};
           primaryDriveDoc.header.meta.preferredEditor = "builder-team-admin";
           const primaryDrive =
@@ -975,15 +1074,19 @@ export const getResolvers = (
           // Dispatch profile actions: name/slug → wallet. isOperator stays
           // false on the profile for both roles — OPERATOR is distinguished
           // only by getting the extra service-offering-app drive below.
-          const profileActions: Array<
-            UpdateProfileAction | SetWalletAddressAction
-          > = [
-            builderProfileActions.updateProfile({
+          const profileActions: BuilderProfileAction[] = [];
+          profileActions.push(
+            builderProfileCreators.updateProfile({
               name: profileDisplayName,
               slug: baseSlug,
             }),
-            builderProfileActions.setWalletAddress({ walletAddress: user }),
-          ];
+          );
+          profileActions.push(createBuilderProfileWalletAddressAction(user));
+          if (isOperator) {
+            profileActions.push(
+              builderProfileCreators.setOperator({ isOperator: true }),
+            );
+          }
           await reactorClient.execute(
             builderProfileDoc.header.id,
             "main",
@@ -999,11 +1102,13 @@ export const getResolvers = (
 
           // ── Operator-only second drive: service-offering-app ───────────
           if (isOperator) {
-            const offeringDisplayName = `${baseDisplayName} Services`;
+            const offeringDisplayName = `${baseDisplayName} Operator`;
             const offeringDriveDoc = driveCreateDocument();
             offeringDriveDoc.header.name = offeringDisplayName;
             offeringDriveDoc.state.global.name = offeringDisplayName;
             offeringDriveDoc.header.slug = offeringSlug;
+            offeringDriveDoc.state.global.icon =
+              "https://cdn-icons-png.magnific.com/256/17754/17754439.png";
             if (!offeringDriveDoc.header.meta)
               offeringDriveDoc.header.meta = {};
             offeringDriveDoc.header.meta.preferredEditor =

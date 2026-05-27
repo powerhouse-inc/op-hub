@@ -243,16 +243,17 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
         driveSlug: string;
         driveName: string;
         driveLink: string;
+        builderProfileId: string;
       }[] = [];
 
       for (const drive of drives) {
         if (drive.state.document.isDeleted) continue;
         const driveDoc = drive as DocumentDriveDocument;
-        const hasMatch = driveDoc.state.global.nodes.some(
+        const profileNode = driveDoc.state.global.nodes.find(
           (node: Node) =>
             node.kind === "file" && matchingProfileIds.has(node.id),
         );
-        if (!hasMatch) continue;
+        if (!profileNode) continue;
 
         const slug = driveDoc.header.slug || driveDoc.header.id;
         out.push({
@@ -260,6 +261,7 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
           driveSlug: slug,
           driveName: driveDoc.state.global.name || slug,
           driveLink: getDriveLink(slug),
+          builderProfileId: profileNode.id,
         });
       }
 

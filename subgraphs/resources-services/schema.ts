@@ -92,6 +92,7 @@ export const schema: DocumentNode = gql`
     driveSlug: String!
     driveName: String!
     driveLink: URL!
+    builderProfileId: PHID
   }
 
   # ============ Resource Template Types ============

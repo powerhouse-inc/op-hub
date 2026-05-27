@@ -421,6 +421,11 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
       ? buildSidebarNodesFromFolder(snapshotReportsFolder.id, allNodes)
       : [];
 
+    // Build service subscriptions children (folders + files in the folder)
+    const serviceSubscriptionsChildren = serviceSubscriptionsFolder
+      ? buildSidebarNodesFromFolder(serviceSubscriptionsFolder.id, allNodes)
+      : [];
+
     // Build resources & services children (Resource Templates and Service Offerings folders)
     const resourcesServicesChildren: SidebarNode[] = [];
     if (resourceTemplatesFolder) {
@@ -473,6 +478,15 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
           };
         }
         if (
+          section.id === "service-subscriptions" &&
+          serviceSubscriptionsChildren.length > 0
+        ) {
+          return {
+            ...section,
+            children: serviceSubscriptionsChildren,
+          };
+        }
+        if (
           section.id === "resources-services" &&
           resourcesServicesChildren.length > 0
         ) {
@@ -505,6 +519,7 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
   }, [
     expenseReportsFolder,
     snapshotReportsFolder,
+    serviceSubscriptionsFolder,
     resourceTemplatesFolder,
     serviceOfferingsFolder,
     driveDocument,

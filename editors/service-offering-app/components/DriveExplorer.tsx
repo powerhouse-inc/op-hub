@@ -1,6 +1,5 @@
 import type { EditorProps } from "document-model";
 import { Component, useState, type ReactNode } from "react";
-import { DriveContents } from "./DriveContents.js";
 import { FolderTree, type CustomView } from "./FolderTree.js";
 import { ResourcesServices } from "./ResourcesServices.js";
 import { ServiceSubscriptions } from "./service-subscriptions.js";
@@ -115,7 +114,7 @@ export function DriveExplorer({ children }: EditorProps) {
     if (customView === "resources-services") {
       return <ResourcesServices />;
     }
-    return <DriveContents />;
+    return <ServiceSubscriptions />;
   };
 
   return (

@@ -1,4 +1,5 @@
 import type { SubscriptionSummary } from "../../hooks/useSubscriptionMetrics.js";
+import { setSelectedNode } from "@powerhousedao/reactor-browser";
 
 interface MySubscriptionsTableProps {
   subscriptions: SubscriptionSummary[];
@@ -62,7 +63,11 @@ export function MySubscriptionsTable({
               key={sub.id}
               className="border-b border-stone-100 last:border-0"
             >
-              <td className="py-2.5 text-sm font-medium text-stone-700">
+              <td
+                className="py-2.5 text-sm font-medium text-teal-600 cursor-pointer hover:underline"
+                onClick={() => setSelectedNode(sub.id)}
+                title="Open subscription instance document"
+              >
                 {sub.name}
               </td>
               <td className="py-2.5 text-sm text-stone-500">{sub.tierName}</td>

@@ -21,6 +21,7 @@ import {
 } from "./components/SimulatedClock.js";
 import { accrueMetricUsage } from "../../document-models/subscription-instance/v1/gen/metrics/creators.js";
 import { generateInvoice } from "../../document-models/subscription-instance/v1/gen/subscription/creators.js";
+import { useSelectedDrive } from "@powerhousedao/reactor-browser";
 
 export default function SubscriptionInstanceEditor() {
   return (
@@ -34,6 +35,14 @@ function SubscriptionInstanceEditorInner() {
   const [document, dispatch] = useSelectedSubscriptionInstanceDocument();
   const [mode, setMode] = useState<ViewMode>("client");
   const { simulatedNow } = useSimulatedClock();
+
+  const [selectedDrive] = useSelectedDrive();
+
+  useEffect(() => {
+    if (selectedDrive.header.meta?.preferredEditor === "service-offering-app") {
+      setMode("operator");
+    }
+  }, [selectedDrive]);
 
   // Auto-tick: when the operator advances the simulated clock, dispatch
   // ACCRUE_METRIC_USAGE for every metric on the document with the new
@@ -221,7 +230,7 @@ function SubscriptionInstanceEditorInner() {
               <MockDataButton document={document} dispatch={dispatch} />
             </>
           )}
-          <ModeToggle mode={mode} onModeChange={setMode} />
+          {/* <ModeToggle mode={mode} onModeChange={setMode} /> */}
         </div>
 
         {/* Simulated clock — operator-only test tool */}

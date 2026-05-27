@@ -1,5 +1,6 @@
 import type { ResourceSummary } from "../../hooks/useSubscriptionMetrics.js";
 import { StatusBadge } from "./StatusBadge.js";
+import { setSelectedNode } from "@powerhousedao/reactor-browser";
 
 interface ResourceInstancesTableProps {
   resources: ResourceSummary[];
@@ -29,10 +30,7 @@ export function ResourceInstancesTable({
       <thead>
         <tr className="border-b border-stone-200">
           <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Resource
-          </th>
-          <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Template
+            Product
           </th>
           <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
             Status
@@ -62,8 +60,14 @@ export function ResourceInstancesTable({
               className="border-b border-stone-100 last:border-0"
             >
               <td className="py-3">
-                <div className="text-sm font-medium text-stone-700">
-                  {res.name}
+                <div className="text-sm font-medium text-teal-600">
+                  <span
+                    className="cursor-pointer hover:underline"
+                    onClick={() => setSelectedNode(res.id)}
+                    title="Open resource template document"
+                  >
+                    {res.templateName}
+                  </span>
                 </div>
                 {res.description ? (
                   <div className="mt-0.5 text-xs text-stone-400 line-clamp-1 max-w-[200px]">
@@ -71,7 +75,6 @@ export function ResourceInstancesTable({
                   </div>
                 ) : null}
               </td>
-              <td className="py-3 text-sm text-teal-600">{res.templateName}</td>
               <td className="py-3">
                 <StatusBadge status={res.status} />
               </td>

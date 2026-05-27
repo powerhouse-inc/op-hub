@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { generateId } from "document-model/core";
 import { DocumentToolbar } from "@powerhousedao/design-system/connect";
 import type { DocumentDispatch } from "@powerhousedao/reactor-browser";
@@ -32,10 +32,19 @@ import {
 } from "../../document-models/resource-instance/v1/gen/configuration-management/creators.js";
 import type { ViewMode } from "./types.js";
 import { OperatorProfilePanel } from "./components/OperatorProfilePanel.js";
+import { useSelectedDrive } from "@powerhousedao/reactor-browser";
 
 export default function ResourceInstanceEditor() {
   const [document, dispatch] = useSelectedResourceInstanceDocument();
   const [mode, setMode] = useState<ViewMode>("client");
+
+  const [selectedDrive] = useSelectedDrive();
+
+  useEffect(() => {
+    if (selectedDrive.header.meta?.preferredEditor === "service-offering-app") {
+      setMode("operator");
+    }
+  }, [selectedDrive]);
 
   const handleImportData = useCallback(() => {
     // Initialize instance with sample data
@@ -120,7 +129,7 @@ export default function ResourceInstanceEditor() {
               Import Data
             </button>
           )}
-          <ModeToggle mode={mode} onModeChange={setMode} />
+          {/* <ModeToggle mode={mode} onModeChange={setMode} /> */}
         </div>
 
         {/* Instance Header */}

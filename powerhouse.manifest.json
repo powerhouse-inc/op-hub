@@ -253,7 +253,12 @@
       ]
     }
   ],
-  "processors": [],
+  "processors": [
+    {
+      "name": "workstreams",
+      "id": "workstreams"
+    }
+  ],
   "subgraphs": [
     {
       "id": "resources-services",

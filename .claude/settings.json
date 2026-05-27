@@ -258,7 +258,9 @@
       "Bash(node --input-type=module -e ' *)",
       "Bash(tar -xzf powerhousedao-op-hub-0.0.20.tgz)",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('package/package.json'\\)\\); print\\('   ', '@powerhousedao/reactor-api' in d.get\\('peerDependencies', {}\\)\\)\")",
-      "Bash(bunx eslint *)"
+      "Bash(bunx eslint *)",
+      "Bash(grep -iv \"template\\\\|//#region\\\\|ts\\\\$1\\\\|import\\\\b\")",
+      "Bash(grep -E \"^ph$|generate\")"
     ],
     "additionalDirectories": [
       "/home/p",

@@ -1,4 +1,4 @@
-import type { IRelationalDb } from "@powerhousedao/shared/processors";
+import type { IRelationalDb } from "@powerhousedao/reactor-browser";
 
 export async function up(db: IRelationalDb<any>): Promise<void> {
   try {

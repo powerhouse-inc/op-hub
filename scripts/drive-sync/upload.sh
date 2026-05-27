@@ -27,6 +27,7 @@ ID_MAP_FILE="${ID_MAP_FILE:-$DATA_DIR/id-map.json}"
 PREFERRED_EDITOR="${PREFERRED_EDITOR:-}"
 EXISTING_DRIVE="${EXISTING_DRIVE:-}"
 EXTERNAL_ID_MAP="${EXTERNAL_ID_MAP:-}"  # Path to another drive's id-map.json for cross-drive remapping
+DRIVE_ICON="${DRIVE_ICON:-}"  # Optional icon URL to set on the created/used drive
 
 [ -f "$DATA_DIR/manifest.json" ] || { echo "Error: $DATA_DIR/manifest.json not found" >&2; exit 1; }
 
@@ -67,7 +68,7 @@ compat_check $REQUIRED_TYPES || true
 
 step "Creating drive from downloaded data"
 
-export DATA_DIR DRIVE_NAME ID_MAP_FILE PREFERRED_EDITOR EXISTING_DRIVE EXTERNAL_ID_MAP
+export DATA_DIR DRIVE_NAME ID_MAP_FILE PREFERRED_EDITOR EXISTING_DRIVE EXTERNAL_ID_MAP DRIVE_ICON
 
 python3 << 'PYEOF'
 import subprocess, json, sys, os, tempfile, uuid, datetime, time
@@ -77,6 +78,7 @@ drive_name_override = os.environ.get("DRIVE_NAME", "").strip()
 id_map_file = os.environ["ID_MAP_FILE"]
 preferred_editor = os.environ.get("PREFERRED_EDITOR", "")
 existing_drive = os.environ.get("EXISTING_DRIVE", "").strip()
+drive_icon = os.environ.get("DRIVE_ICON", "").strip()
 
 G = "\033[0;32m"
 Y = "\033[1;33m"
@@ -245,6 +247,18 @@ def op_to_action_type(op_name):
     """Convert camelCase operation name to SCREAMING_SNAKE_CASE action type.
     e.g., 'updateTemplateInfo' → 'UPDATE_TEMPLATE_INFO', 'addFaq' → 'ADD_FAQ'"""
     return _re.sub(r'([A-Z])', r'_\1', op_name).upper().lstrip('_')
+
+def clean_name(name):
+    """Strip '(copy)' / '(draft)' / '(active …)' markers — and the copy index
+    left behind — from a document's display name. Names without such a marker
+    are returned unchanged, so legitimate trailing numbers (invoice numbers,
+    dates, etc.) are preserved."""
+    if not name or not _re.search(r'\((?:copy|draft|active)\b', name, _re.I):
+        return name
+    n = _re.sub(r'\s*\((?:copy|draft|active)[^)]*\)', '', name, flags=_re.I)
+    n = _re.sub(r'\s+\d+\s*$', '', n)
+    n = _re.sub(r'\s{2,}', ' ', n).strip()
+    return n or name
 
 def mutate(doc_id, op, input_data, retries=3):
     """Mutate a single document. When batch mode is active (begin_batch/flush_batch),
@@ -447,6 +461,11 @@ if existing_drive and drive_name:
     mutate(drive_id, "setDriveName", {"name": drive_name})
     log(f"Set drive state name: {drive_name}")
 
+# Set the drive icon if requested (applies to both new and existing drives).
+if drive_icon:
+    mutate(drive_id, "setDriveIcon", {"icon": drive_icon})
+    log("Set drive icon")
+
 # ── Step 2: Create folders ───────────────────────────────────────────────────
 
 step("Step 2: Create folders")
@@ -558,9 +577,10 @@ for doc in docs_sorted:
     doc_type = doc["type"]
 
     try:
-        new_id = create_document(doc_type, doc["name"], drive_id)
+        display_name = clean_name(doc["name"])
+        new_id = create_document(doc_type, display_name, drive_id)
         id_map[doc["id"]] = new_id
-        log(f"{doc['name']} ({doc_type}) → {new_id}")
+        log(f"{display_name} ({doc_type}) → {new_id}")
     except Exception as e:
         errf(f"Failed to create {doc['name']}: {e}")
 

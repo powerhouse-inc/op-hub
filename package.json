@@ -1,6 +1,6 @@
 {
   "name": "@powerhousedao/op-hub",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "license": "AGPL-3.0-only",
   "type": "module",
   "files": [
@@ -137,7 +137,5 @@
     "react": "^19",
     "react-dom": "^19",
     "zod": "^4"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@powerhousedao/op-hub@0.0.20"
+  }
 }

@@ -8,9 +8,10 @@
  * Returns an empty string on any failure — callers should treat empty raw
  * text as "no grounding available" and fall back to format-only validation.
  */
-import { PDFParse } from "pdf-parse";
+import type { PDFParse } from "pdf-parse";
 
 export async function extractPdfText(base64Pdf: string): Promise<string> {
+  const { PDFParse } = await import("pdf-parse");
   let parser: PDFParse | undefined;
   try {
     const buffer = Buffer.from(base64Pdf, "base64");

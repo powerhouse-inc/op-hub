@@ -26,6 +26,9 @@ import {
   Folder,
   Camera,
   Layers,
+  File,
+  Landmark,
+  Check,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
@@ -44,6 +47,7 @@ export type CustomView =
   | "snapshot-reports"
   | "resources-services"
   | "service-subscriptions"
+  | "operational-hub"
   | null;
 
 /**
@@ -116,13 +120,61 @@ const IDENTITY_HEADER_ID = "__group-identity__";
 const WHAT_YOU_BUY_HEADER_ID = "__group-what-you-buy__";
 const OPERATIONAL_HUB_HEADER_ID = "__group-operational-hub__";
 const REPORTS_HEADER_ID = "__group-reports__";
+const DOCUMENTS_HEADER_ID = "__group-documents__";
 const OH_HEADER_CLASS = "bta-sidebar-oh-header";
+// OPERATIONAL HUB is intentionally NOT in this set — it's a clickable header
+// that opens its landing view (see handleActiveNodeChange).
 const GROUP_HEADER_IDS = new Set([
   IDENTITY_HEADER_ID,
   WHAT_YOU_BUY_HEADER_ID,
-  OPERATIONAL_HUB_HEADER_ID,
   REPORTS_HEADER_ID,
+  DOCUMENTS_HEADER_ID,
 ]);
+
+// Hardcoded placeholder nodes under OPERATIONAL HUB → DOCUMENTS. No backing
+// documents yet — clicks are intercepted as no-ops in the handler.
+const DOC_FOUNDING_ID = "__doc-founding-documents__";
+const DOC_ARTICLES_ID = "__doc-articles-of-association__";
+const DOC_LEGAL_DOCS_ID = "__doc-legal-docs__";
+const DOC_NEEDS_ANALYSIS_ID = "__doc-needs-analysis__";
+const DOC_LEGAL_TEMPLATES_ID = "__doc-legal-templates__";
+const DOCUMENT_PLACEHOLDER_IDS = new Set([
+  DOC_FOUNDING_ID,
+  DOC_ARTICLES_ID,
+  DOC_LEGAL_DOCS_ID,
+  DOC_NEEDS_ANALYSIS_ID,
+  DOC_LEGAL_TEMPLATES_ID,
+]);
+
+const DOCUMENTS_SECTIONS: SidebarNode[] = [
+  {
+    id: DOC_FOUNDING_ID,
+    title: "Founding Documents",
+    icon: <File size={ICON_SIZE} />,
+    children: [
+      {
+        id: DOC_ARTICLES_ID,
+        title: "Articles of Association",
+        icon: <Landmark size={ICON_SIZE} />,
+      },
+    ],
+  },
+  {
+    id: DOC_LEGAL_DOCS_ID,
+    title: "Legal Docs",
+    icon: <File size={ICON_SIZE} />,
+  },
+  {
+    id: DOC_NEEDS_ANALYSIS_ID,
+    title: "Needs Analysis",
+    icon: <Check size={ICON_SIZE} />,
+  },
+  {
+    id: DOC_LEGAL_TEMPLATES_ID,
+    title: "Legal Templates",
+    icon: <File size={ICON_SIZE} />,
+  },
+];
 
 function groupHeader(id: string, title: string): SidebarNode {
   return { id, title, className: GROUP_HEADER_CLASS };
@@ -163,6 +215,8 @@ function withGroupHeaders(
     if (expenseReports) out.push(expenseReports);
     const snapshotReports = byId("snapshot-reports");
     if (snapshotReports) out.push(snapshotReports);
+    out.push(groupHeader(DOCUMENTS_HEADER_ID, "DOCUMENTS"));
+    out.push(...DOCUMENTS_SECTIONS);
   }
   return out;
 }
@@ -599,6 +653,17 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
 
     setActiveNodeId(node.id);
 
+    // OPERATIONAL HUB header opens its landing view.
+    if (node.id === OPERATIONAL_HUB_HEADER_ID) {
+      onCustomViewChange?.("operational-hub");
+      setSelectedNode("");
+      return;
+    }
+
+    // Hardcoded OPERATIONAL HUB → DOCUMENTS placeholders have no backing
+    // documents yet. Activate visually but don't change view or selection.
+    if (DOCUMENT_PLACEHOLDER_IDS.has(node.id)) return;
+
     // Check if this is a child node within the Expense Reports folder
     if (expenseReportsNodeIds.has(node.id)) {
       // Check if it's a folder or a document
@@ -737,11 +802,17 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
           display: none;
         }
         /* OPERATIONAL HUB header — violet, with a top border acting as a
-           section divider above the group. */
+           section divider. Clickable (overrides the group-header
+           pointer-events: none) so it opens the landing view. */
         .${OH_HEADER_CLASS} {
           color: #6d28d9;
           border-top: 1px solid #e7e5e4;
           padding-top: 0.75rem;
+          pointer-events: auto;
+          cursor: pointer;
+        }
+        .${OH_HEADER_CLASS}:hover {
+          color: #5b21b6;
         }
       `}</style>
       <SidebarProvider nodes={navigationSections}>

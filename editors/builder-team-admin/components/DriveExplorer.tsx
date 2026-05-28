@@ -22,6 +22,7 @@ import { ExpenseReports } from "./expense-reports.js";
 import { SnapshotReports } from "./snapshot-reports.js";
 import { ResourcesServices } from "./ResourcesServices.js";
 import { ServiceSubscriptions } from "./service-subscriptions.js";
+import { OperationalHubLanding } from "./OperationalHubLanding.js";
 import { actions as builderProfileActions } from "document-models/builder-profile";
 import { useServiceSubscriptionAutoPlacement } from "../hooks/useServiceSubscriptionAutoPlacement.js";
 import { useSnapshotReportAutoPlacement } from "../hooks/useSnapshotReportAutoPlacement.js";
@@ -325,6 +326,10 @@ export function DriveExplorer({ children }: EditorProps) {
 
     if (customView === "resources-services") {
       return <ResourcesServices />;
+    }
+
+    if (customView === "operational-hub") {
+      return <OperationalHubLanding onNavigate={setCustomView} />;
     }
 
     // Default: folder contents

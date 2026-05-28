@@ -11,63 +11,6 @@ export const schema: DocumentNode = gql`
     getBuilderDrives(filter: GetBuilderDrivesFilter!): [BuilderDriveLink!]!
   }
 
-  type Mutation {
-    createProductInstances(
-      input: CreateProductInstancesInput!
-    ): CreateProductInstancesOutput
-    createUserDrive(input: CreateUserDriveInput!): CreateUserDriveOutput
-  }
-
-  enum UserRole {
-    BUILDER
-    OPERATOR
-  }
-
-  input CreateUserDriveInput {
-    role: UserRole!
-    user: EthereumAddress!
-    name: String
-    teamName: String
-  }
-
-  type CreateUserDriveOutput {
-    success: Boolean!
-    data: CreateUserDriveData
-    errors: [String!]!
-  }
-
-  type CreateUserDriveData {
-    drives: [BuilderDriveLink!]!
-  }
-
-  input CreateProductInstancesInput {
-    serviceOfferingId: PHID!
-    name: String!
-    teamName: String!
-    ethereumAddress: EthereumAddress!
-    customerEmail: EmailAddress
-    userSelection: UserSelectionInput!
-  }
-
-  input UserSelectionInput {
-    tierId: OID!
-    billingCycle: RSBillingCycle!
-    optionGroupIds: [OID!]!
-    groupBillingCycleOverrides: [BillingCycleOverrideInput!]
-    addonBillingCycleOverrides: [BillingCycleOverrideInput!]
-  }
-
-  input BillingCycleOverrideInput {
-    groupId: OID!
-    billingCycle: RSBillingCycle!
-  }
-
-  type CreateProductInstancesOutput {
-    success: Boolean!
-    data: JSONObject
-    errors: [String!]!
-  }
-
   # ============ Filters ============
 
   input RSResourceTemplatesFilter {

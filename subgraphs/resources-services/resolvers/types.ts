@@ -15,37 +15,6 @@ export interface ServiceOfferingsFilter {
   resourceTemplateId?: string;
 }
 
-export interface BillingCycleOverrideInput {
-  groupId: string;
-  billingCycle: string;
-}
-
-export interface UserSelectionInput {
-  tierId: string;
-  billingCycle: string;
-  optionGroupIds: string[];
-  groupBillingCycleOverrides?: BillingCycleOverrideInput[];
-  addonBillingCycleOverrides?: BillingCycleOverrideInput[];
-}
-
-export interface CreateProductInstancesInput {
-  serviceOfferingId: string;
-  name: string;
-  teamName: string;
-  ethereumAddress: string;
-  customerEmail?: string;
-  userSelection: UserSelectionInput;
-}
-
 export interface GetBuilderDrivesFilter {
   ethereumAddress: string;
-}
-
-export type UserRole = "BUILDER" | "OPERATOR";
-
-export interface CreateUserDriveInput {
-  role: UserRole;
-  user: string;
-  name?: string | null;
-  teamName?: string | null;
 }

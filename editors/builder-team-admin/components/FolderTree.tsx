@@ -17,6 +17,7 @@ import type {
   FileNode,
 } from "@powerhousedao/shared/document-drive";
 import type { BuilderProfileState } from "document-models/builder-profile";
+import type { SubscriptionInstanceState } from "document-models/subscription-instance";
 import {
   CreditCard,
   FileText,
@@ -113,7 +114,15 @@ const BASE_NAVIGATION_SECTIONS: SidebarNode[] = [
 const GROUP_HEADER_CLASS = "bta-sidebar-group-header";
 const IDENTITY_HEADER_ID = "__group-identity__";
 const WHAT_YOU_BUY_HEADER_ID = "__group-what-you-buy__";
-const GROUP_HEADER_IDS = new Set([IDENTITY_HEADER_ID, WHAT_YOU_BUY_HEADER_ID]);
+const OPERATIONAL_HUB_HEADER_ID = "__group-operational-hub__";
+const REPORTS_HEADER_ID = "__group-reports__";
+const OH_HEADER_CLASS = "bta-sidebar-oh-header";
+const GROUP_HEADER_IDS = new Set([
+  IDENTITY_HEADER_ID,
+  WHAT_YOU_BUY_HEADER_ID,
+  OPERATIONAL_HUB_HEADER_ID,
+  REPORTS_HEADER_ID,
+]);
 
 function groupHeader(id: string, title: string): SidebarNode {
   return { id, title, className: GROUP_HEADER_CLASS };
@@ -121,13 +130,16 @@ function groupHeader(id: string, title: string): SidebarNode {
 
 /**
  * Select and group the displayed sidebar sections:
- *   IDENTITY      → Builder Profile, Team Members
- *   WHAT YOU BUY  → Service Subscriptions
- * Sections not listed here (Service Offerings, Expense Reports, Snapshot
- * Reports) are intentionally hidden — their underlying logic stays intact so
- * they can be re-surfaced later by adding them back to the output.
+ *   IDENTITY        → Builder Profile, Team Members
+ *   WHAT YOU BUY    → Service Subscriptions
+ *   OPERATIONAL HUB → (status badge), REPORTS → Expense Reports, Snapshot Reports
+ * Service Offerings is intentionally hidden — its underlying logic stays
+ * intact so it can be re-surfaced later by adding it back to the output.
  */
-function withGroupHeaders(sections: SidebarNode[]): SidebarNode[] {
+function withGroupHeaders(
+  sections: SidebarNode[],
+  showOperationalHub: boolean,
+): SidebarNode[] {
   const byId = (id: string) => sections.find((s) => s.id === id);
   const out: SidebarNode[] = [groupHeader(IDENTITY_HEADER_ID, "IDENTITY")];
   const builderProfile = byId("builder-profile");
@@ -137,6 +149,21 @@ function withGroupHeaders(sections: SidebarNode[]): SidebarNode[] {
   out.push(groupHeader(WHAT_YOU_BUY_HEADER_ID, "WHAT YOU BUY"));
   const serviceSubscriptions = byId("service-subscriptions");
   if (serviceSubscriptions) out.push(serviceSubscriptions);
+
+  // OPERATIONAL HUB group is only surfaced when this drive holds a subscription
+  // whose linked resource is the "Operational Hub" product.
+  if (showOperationalHub) {
+    out.push({
+      id: OPERATIONAL_HUB_HEADER_ID,
+      title: "OPERATIONAL HUB",
+      className: `${GROUP_HEADER_CLASS} ${OH_HEADER_CLASS}`,
+    });
+    out.push(groupHeader(REPORTS_HEADER_ID, "REPORTS"));
+    const expenseReports = byId("expense-reports");
+    if (expenseReports) out.push(expenseReports);
+    const snapshotReports = byId("snapshot-reports");
+    if (snapshotReports) out.push(snapshotReports);
+  }
   return out;
 }
 
@@ -403,10 +430,29 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
   const isOperator = builderProfileState?.isOperator ?? false;
   const builderProfileName = builderProfileState?.name || null;
 
+  // The OPERATIONAL HUB group only shows when this drive owns a subscription
+  // for the "Operational Hub" product. We match on the subscription's
+  // resource.label, which is populated from the resource-template's title at
+  // subscription-creation time (see createProductInstances).
+  const hasOperationalHubSubscription = useMemo(() => {
+    if (!documentsInDrive) return false;
+    return documentsInDrive.some((doc) => {
+      if (doc.header.documentType !== "powerhouse/subscription-instance") {
+        return false;
+      }
+      if (!serviceSubscriptionsNodeIds.has(doc.header.id)) return false;
+      const state = (
+        doc.state as unknown as { global: SubscriptionInstanceState }
+      ).global;
+      const label = state.resource?.label ?? "";
+      return label.trim().toLowerCase() === "operational hub";
+    });
+  }, [documentsInDrive, serviceSubscriptionsNodeIds]);
+
   // Build navigation sections with dynamic expense reports, snapshot reports, and resources & services children
   const navigationSections = useMemo(() => {
     if (!driveDocument) {
-      return withGroupHeaders(BASE_NAVIGATION_SECTIONS);
+      return withGroupHeaders(BASE_NAVIGATION_SECTIONS, false);
     }
 
     const allNodes = driveDocument.state.global.nodes;
@@ -515,7 +561,7 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
         }
         return section;
       });
-    return withGroupHeaders(mapped);
+    return withGroupHeaders(mapped, hasOperationalHubSubscription);
   }, [
     expenseReportsFolder,
     snapshotReportsFolder,
@@ -524,6 +570,7 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
     serviceOfferingsFolder,
     driveDocument,
     isOperator,
+    hasOperationalHubSubscription,
   ]);
 
   // Create a map of document type to existing document (first one found)
@@ -688,6 +735,13 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
         /* Hide the expand caret on group-header rows (they have no children). */
         .${GROUP_HEADER_CLASS} .sidebar__item-caret {
           display: none;
+        }
+        /* OPERATIONAL HUB header — violet, with a top border acting as a
+           section divider above the group. */
+        .${OH_HEADER_CLASS} {
+          color: #6d28d9;
+          border-top: 1px solid #e7e5e4;
+          padding-top: 0.75rem;
         }
       `}</style>
       <SidebarProvider nodes={navigationSections}>

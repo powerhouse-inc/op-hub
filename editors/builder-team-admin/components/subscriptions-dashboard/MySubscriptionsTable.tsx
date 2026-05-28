@@ -26,64 +26,116 @@ function formatCycle(cycle: string): string {
   return map[cycle] ?? cycle;
 }
 
+// Matches the SubscriptionStatus enum in the document model.
+const STATUS_STYLES: Record<string, string> = {
+  ACTIVE: "bg-emerald-100 text-emerald-700",
+  PENDING: "bg-stone-100 text-stone-600",
+  PAUSED: "bg-amber-100 text-amber-700",
+  EXPIRING: "bg-amber-100 text-amber-700",
+  CANCELLED: "bg-rose-100 text-rose-700",
+};
+
+function StatusPill({ status }: { status: string }) {
+  const cls = STATUS_STYLES[status] ?? "bg-stone-100 text-stone-600";
+  return (
+    <span
+      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${cls}`}
+    >
+      {status}
+    </span>
+  );
+}
+
 export function MySubscriptionsTable({
   subscriptions,
 }: MySubscriptionsTableProps) {
+  const headerCellClass =
+    "pb-2 text-xs font-medium uppercase tracking-wider text-stone-400";
+
   return (
-    <table className="w-full text-left" role="table">
-      <thead>
-        <tr className="border-b border-stone-200">
-          <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Plan
-          </th>
-          <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Tier
-          </th>
-          <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Cycle
-          </th>
-          <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Monthly
-          </th>
-          <th className="pb-2 text-xs font-medium uppercase tracking-wider text-stone-400">
-            Renewal
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {subscriptions.length === 0 ? (
-          <tr>
-            <td colSpan={5} className="py-8 text-center text-sm text-stone-400">
-              No subscriptions yet
-            </td>
+    <div className="overflow-x-auto">
+      <table className="w-full text-left" role="table">
+        <thead>
+          <tr className="border-b border-stone-200">
+            <th className={headerCellClass}>Plan</th>
+            <th className={headerCellClass}>Product</th>
+            <th className={headerCellClass}>Status</th>
+            <th className={headerCellClass}>Tier</th>
+            <th className={headerCellClass}>Cycle</th>
+            <th className={headerCellClass}>Monthly</th>
+            <th className={headerCellClass}>Outstanding</th>
+            <th className={headerCellClass}>Started</th>
+            <th className={headerCellClass}>Renewal</th>
           </tr>
-        ) : (
-          subscriptions.map((sub) => (
-            <tr
-              key={sub.id}
-              className="border-b border-stone-100 last:border-0"
-            >
+        </thead>
+        <tbody>
+          {subscriptions.length === 0 ? (
+            <tr>
               <td
-                className="py-2.5 text-sm font-medium text-teal-600 cursor-pointer hover:underline"
-                onClick={() => setSelectedNode(sub.id)}
-                title="Open subscription instance document"
+                colSpan={9}
+                className="py-8 text-center text-sm text-stone-400"
               >
-                {sub.name}
-              </td>
-              <td className="py-2.5 text-sm text-stone-500">{sub.tierName}</td>
-              <td className="py-2.5 text-sm text-stone-500">
-                {formatCycle(sub.billingCycle)}
-              </td>
-              <td className="py-2.5 text-sm font-medium text-stone-700">
-                {formatCurrency(sub.mrr)}
-              </td>
-              <td className="py-2.5 text-sm text-stone-500">
-                {formatDate(sub.renewalDate)}
+                No subscriptions yet
               </td>
             </tr>
-          ))
-        )}
-      </tbody>
-    </table>
+          ) : (
+            subscriptions.map((sub) => (
+              <tr
+                key={sub.id}
+                className="border-b border-stone-100 last:border-0"
+              >
+                <td
+                  className="py-2.5 text-sm font-medium text-teal-600 cursor-pointer hover:underline whitespace-nowrap"
+                  onClick={() => setSelectedNode(sub.id)}
+                  title="Open subscription instance document"
+                >
+                  {sub.name}
+                </td>
+                <td
+                  className="py-2.5 text-sm text-stone-700 whitespace-nowrap"
+                  title={sub.linkedTemplateName ?? undefined}
+                >
+                  {sub.linkedTemplateName ?? "—"}
+                </td>
+                <td className="py-2.5">
+                  <StatusPill status={sub.status} />
+                </td>
+                <td className="py-2.5 text-sm text-stone-500 whitespace-nowrap">
+                  {sub.tierName}
+                </td>
+                <td className="py-2.5 text-sm text-stone-500 whitespace-nowrap">
+                  {formatCycle(sub.billingCycle)}
+                </td>
+                <td className="py-2.5 text-sm font-medium text-stone-700 whitespace-nowrap">
+                  {formatCurrency(sub.mrr)}
+                </td>
+                <td
+                  className={`py-2.5 text-sm font-medium whitespace-nowrap ${
+                    sub.outstandingAmount > 0
+                      ? "text-rose-600"
+                      : "text-stone-400"
+                  }`}
+                  title={
+                    sub.outstandingAmount > 0
+                      ? "Unpaid balance — payment required"
+                      : "No outstanding balance"
+                  }
+                >
+                  {sub.outstandingAmount > 0
+                    ? formatCurrency(sub.outstandingAmount)
+                    : "—"}
+                </td>
+                <td className="py-2.5 text-sm text-stone-500 whitespace-nowrap">
+                  {formatDate(sub.createdAt)}
+                </td>
+                <td className="py-2.5 text-sm text-stone-500 whitespace-nowrap">
+                  {formatDate(sub.renewalDate)}
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
   );
 }

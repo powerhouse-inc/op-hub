@@ -26,13 +26,21 @@ export function SubscriptionsDashboard({
     }>,
   );
 
-  return isOperator ? (
-    <OperatorDashboard
-      metrics={metrics}
-      operatorName={builderProfileName}
-      onBrowseFiles={onBrowseFiles}
-    />
-  ) : (
+  // return isOperator ? (
+  //   <OperatorDashboard
+  //     metrics={metrics}
+  //     operatorName={builderProfileName}
+  //     onBrowseFiles={onBrowseFiles}
+  //   />
+  // ) : (
+  //   <CustomerDashboard
+  //     metrics={metrics}
+  //     customerName={builderProfileName}
+  //     onBrowseFiles={onBrowseFiles}
+  //   />
+  // );
+
+  return (
     <CustomerDashboard
       metrics={metrics}
       customerName={builderProfileName}

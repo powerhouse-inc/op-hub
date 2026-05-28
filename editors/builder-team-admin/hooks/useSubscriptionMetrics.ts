@@ -16,6 +16,7 @@ export interface SubscriptionSummary {
   currency: string;
   renewalDate: string | null;
   createdAt: string | null;
+  outstandingAmount: number;
   linkedResourceId: string | null;
   linkedTemplateName: string | null;
   resourceCount: number;
@@ -223,6 +224,7 @@ export function useSubscriptionMetrics(
         currency: sub.tierCurrency || sub.globalCurrency || "USD",
         renewalDate: sub.nextBillingDate || null,
         createdAt: sub.createdAt || null,
+        outstandingAmount: sub.totalDebt ?? 0,
         linkedResourceId,
         linkedTemplateName: linkedResource?.state.templateName ?? null,
         resourceCount: linkedResourceId ? 1 : 0,

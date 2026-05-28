@@ -1,7 +1,6 @@
 import type { SubscriptionMetrics } from "../../hooks/useSubscriptionMetrics.js";
 import { DashboardHeader } from "./DashboardHeader.js";
 import { KpiCard } from "./KpiCard.js";
-import { ResourceInstancesTable } from "./ResourceInstancesTable.js";
 import { MySubscriptionsTable } from "./MySubscriptionsTable.js";
 import { SpendBreakdown } from "./SpendBreakdown.js";
 
@@ -26,8 +25,8 @@ export function CustomerDashboard({
   onBrowseFiles,
 }: CustomerDashboardProps) {
   const welcome = customerName
-    ? `Welcome back, ${customerName}. Here's your service overview.`
-    : "Here's your service overview.";
+    ? `Welcome back, ${customerName}. Here's your bought services overview.`
+    : "Here's your bought services overview.";
 
   // Build status subtitle for active resources
   const statusCounts = new Map<string, number>();
@@ -56,7 +55,7 @@ export function CustomerDashboard({
   return (
     <div className="space-y-6 p-2">
       <DashboardHeader
-        title="Dashboard"
+        title="Builder Dashboard"
         subtitle={welcome}
         onBrowseFiles={onBrowseFiles}
       />
@@ -91,17 +90,6 @@ export function CustomerDashboard({
                 : "negative"
           }
         />
-      </div>
-
-      {/* Resource Instances */}
-      <div className="rounded-xl bg-stone-50 p-5 shadow-sm border border-stone-200/60">
-        <h2 className="mb-1 text-base font-bold text-stone-700">
-          My Resource Instances
-        </h2>
-        <p className="mb-4 text-xs text-stone-400">
-          Provisioned services and their current status
-        </p>
-        <ResourceInstancesTable resources={metrics.resourceSummaries} />
       </div>
 
       {/* Bottom Row */}

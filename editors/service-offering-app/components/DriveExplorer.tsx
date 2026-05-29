@@ -4,6 +4,8 @@ import { FolderTree, type CustomView } from "./FolderTree.js";
 import { ResourcesServices } from "./ResourcesServices.js";
 import { Customers } from "./customers.js";
 import { useCustomersAutoPlacement } from "../hooks/useCustomersAutoPlacement.js";
+import { setSelectedDrive } from "@powerhousedao/reactor-browser";
+import { X } from "lucide-react";
 
 /**
  * Catches "Document not found" errors when the reactor tries to render a
@@ -120,8 +122,24 @@ export function DriveExplorer({ children }: EditorProps) {
   return (
     <div className="ph-drive-explorer-shell flex h-full w-full overflow-hidden">
       <FolderTree onCustomViewChange={setCustomView} />
-      <div className="min-h-0 min-w-0 flex-1 overflow-y-auto p-4">
-        {renderContent()}
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+        {/* Close button — only in custom views, not the document editor */}
+        {!showDocumentEditor && (
+          <div className="flex shrink-0 justify-end px-3 pt-2">
+            <button
+              type="button"
+              aria-label="Close drive"
+              title="Close drive"
+              onClick={() => setSelectedDrive(undefined)}
+              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-100 hover:text-gray-800"
+            >
+              <X size={18} />
+            </button>
+          </div>
+        )}
+        <div className="min-h-0 min-w-0 flex-1 overflow-y-auto p-4 pt-2">
+          {renderContent()}
+        </div>
       </div>
     </div>
   );

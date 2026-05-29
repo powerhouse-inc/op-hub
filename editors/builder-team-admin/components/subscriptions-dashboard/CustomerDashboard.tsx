@@ -55,7 +55,7 @@ export function CustomerDashboard({
   return (
     <div className="space-y-6 p-2">
       <DashboardHeader
-        title="Builder Dashboard"
+        title="Service Subscriptions"
         subtitle={welcome}
         onBrowseFiles={onBrowseFiles}
       />

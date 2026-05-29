@@ -128,6 +128,21 @@ query($filter: OperationsFilterInput!) {
 (`did:key`) on `CREATE_DOCUMENT` is the session key; its binding to the wallet
 is the Renown Verifiable Credential.
 
+## Used by the import pipeline
+
+`scripts/drive-sync/signed-apply.mjs` is a batch version of this recipe that the
+import pipeline (`upload.sh`) calls for every operation when `RENOWN_ADDRESS` is
+set, so uploaded drives/documents are attributed:
+
+```bash
+RENOWN_ADDRESS=0x… SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh --target local
+```
+
+It **derives the `did:key` from the keypair** (so it can't go stale after a
+`ph login` rotates the key) and signs each action's `context.signer`. The
+drive/doc genesis stays server-generated (`app.name: "switchboard"`); creator
+attribution rides on the operations' `user.address`.
+
 ## Gotchas (learned the hard way)
 
 - **`createDocument` takes a full PHDocument `JSONObject`**; `mutateDocument`

@@ -44,23 +44,31 @@ const data = await gql(
 
 const ops = data.documentOperations.items;
 const wallets = new Set();
+const bySource = new Map(); // app.name → count
 let creatorKey = null;
 
 for (const op of ops) {
   const s = op.action?.context?.signer;
-  if (!s) continue;
+  if (!s) {
+    bySource.set("(unsigned)", (bySource.get("(unsigned)") || 0) + 1);
+    continue;
+  }
+  const appName = s.app?.name || "(no app)";
+  bySource.set(appName, (bySource.get(appName) || 0) + 1);
   if (op.action.type === "CREATE_DOCUMENT" && s.app?.key) creatorKey = s.app.key;
   if (s.user?.address) {
-    wallets.add(
-      `did:pkh:${s.user.networkId}:${s.user.chainId}:${s.user.address}`,
-    );
+    wallets.add(`did:pkh:${s.user.networkId}:${s.user.chainId}:${s.user.address}`);
   }
 }
 
 console.log("Document:", docId);
 console.log("Operations:", ops.length);
-console.log("Creator app key (CREATE_DOCUMENT):", creatorKey ?? "(unsigned)");
+console.log("Genesis app key (CREATE_DOCUMENT):", creatorKey ?? "(unsigned)");
 console.log(
-  "Signing wallet identities:",
-  wallets.size ? [...wallets].join(", ") : "(none)",
+  "Ops by signer app.name:",
+  [...bySource.entries()].map(([k, v]) => `${k}=${v}`).join("  "),
+);
+console.log(
+  "Creator wallet (did:pkh on signed ops):",
+  wallets.size ? [...wallets].join(", ") : "(none — only server/genesis ops)",
 );

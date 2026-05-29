@@ -302,7 +302,8 @@
       "Bash(python3 -c \"import json; p=json.load\\(open\\('node_modules/@uiw/react-md-editor/package.json'\\)\\); print\\('main:',p.get\\('main'\\)\\); print\\('exports keys:', list\\(\\(p.get\\('exports'\\) or {}\\).keys\\(\\)\\)\\); print\\('style:', p.get\\('style'\\)\\)\")",
       "Bash(echo \"=== EXIT $? ===\")",
       "Bash(git check-ignore *)",
-      "Bash(grep -nB1 -A2 \"UserSelectionInput\\\\|BillingCycleOverrideInput\" editors/service-offering-editor/components/TheMatrix.tsx)"
+      "Bash(grep -nB1 -A2 \"UserSelectionInput\\\\|BillingCycleOverrideInput\" editors/service-offering-editor/components/TheMatrix.tsx)",
+      "Bash(bunx prettier *)"
     ],
     "additionalDirectories": [
       "/home/p",

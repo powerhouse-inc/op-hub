@@ -343,7 +343,16 @@
       "Bash(switchboard auth *)",
       "Bash(tee scripts/renown-signing/example-output.txt)",
       "Bash(python3 -c \"import json,sys;ds=json.load\\(sys.stdin\\);print\\(len\\(ds\\),'drives:',[d.get\\('slug'\\) for d in ds]\\)\")",
-      "Bash(node --input-type=module -e \"import { generateId } from '@powerhousedao/shared/document-model'; console.log\\(generateId\\(\\)\\);\")"
+      "Bash(node --input-type=module -e \"import { generateId } from '@powerhousedao/shared/document-model'; console.log\\(generateId\\(\\)\\);\")",
+      "Bash(ls -la ../../.ph/)",
+      "Bash(python3 -c 'import json;d=json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\);print\\(list\\(d.keys\\(\\)\\) if isinstance\\(d,dict\\) else type\\(d\\)\\)')",
+      "Bash(sed -n '1,55p' upload.sh)",
+      "Bash(node --input-type=module *)",
+      "Bash(RENOWN_ADDRESS=0xadbA7C2F82139031D7564D18aC22D09B12A0BcA4 RENOWN_CLI_DID=did:key:zDnaen2YLkpSUCyTXMoaxnHCe1XzAG3oWjLXqwgJi2nGmgKiu SB_PROFILE=local ID_MAP_FILE=/tmp/sign-upload-test-idmap.json bash scripts/drive-sync/upload.sh scripts/drive-sync/data/growth-team-admin 'SIGNED TEST Growth')",
+      "Bash(python3 -c \"import json,sys;ds=json.load\\(sys.stdin\\);print\\([d.get\\('slug'\\) for d in ds]\\)\")",
+      "Bash(RENOWN_ADDRESS=0xadbA7C2F82139031D7564D18aC22D09B12A0BcA4 SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh --target local)",
+      "Bash(python3 -c \"import json,sys;ds=json.load\\(sys.stdin\\);print\\(len\\(ds\\),[d.get\\('slug'\\) for d in ds]\\)\")",
+      "Bash(node -e ' *)"
     ],
     "additionalDirectories": [
       "/home/p",

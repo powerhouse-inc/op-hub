@@ -15,37 +15,37 @@ import type {
 } from "@powerhousedao/shared/document-drive";
 import { isDocumentSynced } from "../../shared/document-sync.js";
 
-const SERVICE_SUBSCRIPTIONS_FOLDER_NAME = "Service Subscriptions";
+const CUSTOMERS_FOLDER_NAME = "Customers";
 
 // Module-level tracking to prevent duplicate folder creation across all hook instances
 const globalCreationState = {
-  createdServiceSubscriptionsFolderForDrives: new Set<string>(),
+  createdCustomersFolderForDrives: new Set<string>(),
   processedDocs: new Map<string, Set<string>>(), // driveId -> Set of doc IDs processed
 };
 
-interface UseServiceSubscriptionAutoPlacementResult {
-  /** The Service Subscriptions folder node, or null if it doesn't exist yet */
-  serviceSubscriptionsFolder: FolderNode | null;
-  /** Set of all node IDs within the Service Subscriptions folder tree */
-  serviceSubscriptionsFolderNodeIds: Set<string>;
-  /** All resource instance documents within the Service Subscriptions folder */
-  resourceInstanceDocuments: any[];
-  /** All subscription instance documents within the Service Subscriptions folder */
-  subscriptionInstanceDocuments: any[];
+interface UseCustomersAutoPlacementResult {
+  /** The Customers folder node, or null if it doesn't exist yet */
+  customersFolder: FolderNode | null;
+  /** Set of all node IDs within the Customers folder tree */
+  customersFolderNodeIds: Set<string>;
+  /** All resource instance documents within the Customers folder */
+  resourceInstanceDocuments: unknown[];
+  /** All subscription instance documents within the Customers folder */
+  subscriptionInstanceDocuments: unknown[];
 }
 
 /**
  * Hook that handles automatic placement of service subscription documents into the
- * "Service Subscriptions" folder.
+ * "Customers" folder.
  *
  * This hook:
- * 1. Creates the "Service Subscriptions" folder if it doesn't exist
+ * 1. Creates the "Customers" folder if it doesn't exist
  * 2. Monitors for resource-instance and subscription-instance documents dropped anywhere in the drive
- * 3. Automatically moves them into the "Service Subscriptions" folder
+ * 3. Automatically moves them into the "Customers" folder
  *
  * Use this hook in any component that needs the auto-placement behavior.
  */
-export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAutoPlacementResult {
+export function useCustomersAutoPlacement(): UseCustomersAutoPlacementResult {
   const [driveDocument] = useSelectedDrive();
   const documentsInDrive = useDocumentsInSelectedDrive();
   const driveId = driveDocument?.header.id;
@@ -55,23 +55,22 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
     globalCreationState.processedDocs.set(driveId, new Set());
   }
 
-  // Find the "Service Subscriptions" folder in the drive
-  const serviceSubscriptionsFolder = useMemo(() => {
+  // Find the "Customers" folder in the drive
+  const customersFolder = useMemo(() => {
     if (!driveDocument) return null;
     const nodes = driveDocument.state.global.nodes;
     return (
       nodes.find(
         (node: Node): node is FolderNode =>
-          isFolderNodeKind(node) &&
-          node.name === SERVICE_SUBSCRIPTIONS_FOLDER_NAME,
+          isFolderNodeKind(node) && node.name === CUSTOMERS_FOLDER_NAME,
       ) ?? null
     );
   }, [driveDocument]);
 
-  // Build a set of all node IDs within the Service Subscriptions folder tree
-  const serviceSubscriptionsFolderNodeIds = useMemo(() => {
+  // Build a set of all node IDs within the Customers folder tree
+  const customersFolderNodeIds = useMemo(() => {
     const nodeIds = new Set<string>();
-    if (!serviceSubscriptionsFolder || !driveDocument) return nodeIds;
+    if (!customersFolder || !driveDocument) return nodeIds;
 
     const allNodes = driveDocument.state.global.nodes;
 
@@ -93,20 +92,20 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
       }
     };
 
-    collectNodeIds(serviceSubscriptionsFolder.id);
+    collectNodeIds(customersFolder.id);
     return nodeIds;
-  }, [serviceSubscriptionsFolder, driveDocument]);
+  }, [customersFolder, driveDocument]);
 
-  // Filter resource instance documents that are inside the Service Subscriptions folder
+  // Filter resource instance documents that are inside the Customers folder
   const resourceInstanceDocuments = useMemo(() => {
     if (!documentsInDrive || !driveDocument) return [];
 
-    // Get file nodes for resource instances in the Service Subscriptions folder
+    // Get file nodes for resource instances in the Customers folder
     const resourceInstanceFileNodes = driveDocument.state.global.nodes.filter(
       (node): node is FileNode =>
         isFileNodeKind(node) &&
         node.documentType === "powerhouse/resource-instance" &&
-        serviceSubscriptionsFolderNodeIds.has(node.id),
+        customersFolderNodeIds.has(node.id),
     );
 
     // Map file node IDs to their documents
@@ -117,19 +116,19 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
         doc.header.documentType === "powerhouse/resource-instance" &&
         fileNodeIds.has(doc.header.id),
     );
-  }, [documentsInDrive, driveDocument, serviceSubscriptionsFolderNodeIds]);
+  }, [documentsInDrive, driveDocument, customersFolderNodeIds]);
 
-  // Filter subscription instance documents that are inside the Service Subscriptions folder
+  // Filter subscription instance documents that are inside the Customers folder
   const subscriptionInstanceDocuments = useMemo(() => {
     if (!documentsInDrive || !driveDocument) return [];
 
-    // Get file nodes for subscription instances in the Service Subscriptions folder
+    // Get file nodes for subscription instances in the Customers folder
     const subscriptionInstanceFileNodes =
       driveDocument.state.global.nodes.filter(
         (node): node is FileNode =>
           isFileNodeKind(node) &&
           node.documentType === "powerhouse/subscription-instance" &&
-          serviceSubscriptionsFolderNodeIds.has(node.id),
+          customersFolderNodeIds.has(node.id),
       );
 
     // Map file node IDs to their documents
@@ -140,43 +139,39 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
         doc.header.documentType === "powerhouse/subscription-instance" &&
         fileNodeIds.has(doc.header.id),
     );
-  }, [documentsInDrive, driveDocument, serviceSubscriptionsFolderNodeIds]);
+  }, [documentsInDrive, driveDocument, customersFolderNodeIds]);
 
   // Create folder if it doesn't exist
   useEffect(() => {
-    if (!driveId || serviceSubscriptionsFolder) return;
-    if (
-      globalCreationState.createdServiceSubscriptionsFolderForDrives.has(
-        driveId,
-      )
-    )
+    if (!driveId || customersFolder) return;
+    if (globalCreationState.createdCustomersFolderForDrives.has(driveId))
       return;
 
-    globalCreationState.createdServiceSubscriptionsFolderForDrives.add(driveId);
-    void addFolder(driveId, SERVICE_SUBSCRIPTIONS_FOLDER_NAME);
-  }, [driveId, serviceSubscriptionsFolder]);
+    globalCreationState.createdCustomersFolderForDrives.add(driveId);
+    void addFolder(driveId, CUSTOMERS_FOLDER_NAME);
+  }, [driveId, customersFolder]);
 
   // Auto-place service subscription documents into the folder
   // This monitors ALL resource-instance and subscription-instance documents in the drive
   useEffect(() => {
-    if (!driveId || !serviceSubscriptionsFolder || !documentsInDrive) return;
+    if (!driveId || !customersFolder || !documentsInDrive) return;
 
     const allNodes = driveDocument?.state.global.nodes ?? [];
     const processedDocs = globalCreationState.processedDocs.get(driveId);
     if (!processedDocs) return;
 
-    // Find ALL resource-instance and subscription-instance file nodes that are NOT inside the Service Subscriptions folder tree
+    // Find ALL resource-instance and subscription-instance file nodes that are NOT inside the Customers folder tree
     // These need to be moved into the folder
-    const serviceSubscriptionNodesOutsideFolder = allNodes.filter(
+    const customerDocsOutsideFolder = allNodes.filter(
       (node): node is FileNode =>
         isFileNodeKind(node) &&
         (node.documentType === "powerhouse/resource-instance" ||
           node.documentType === "powerhouse/subscription-instance") &&
-        !serviceSubscriptionsFolderNodeIds.has(node.id),
+        !customersFolderNodeIds.has(node.id),
     );
 
     // Process each service subscription document
-    for (const fileNode of serviceSubscriptionNodesOutsideFolder) {
+    for (const fileNode of customerDocsOutsideFolder) {
       // Skip if already processed
       if (processedDocs.has(fileNode.id)) continue;
 
@@ -191,11 +186,11 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
       // Mark as processed immediately to prevent duplicate processing
       processedDocs.add(fileNode.id);
 
-      // Move the document to the Service Subscriptions folder root
+      // Move the document to the Customers folder root
       dispatchActions(
         moveNode({
           srcFolder: fileNode.id,
-          targetParentFolder: serviceSubscriptionsFolder.id,
+          targetParentFolder: customersFolder.id,
         }),
         driveId,
       ).catch((error: unknown) => {
@@ -203,11 +198,11 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
         if (msg.includes("source document not found")) {
           // Document not yet synced — will retry on next render cycle
           console.debug(
-            `[ServiceSubscriptionAutoPlacement] Document ${fileNode.id} not synced yet, will retry`,
+            `[CustomersAutoPlacement] Document ${fileNode.id} not synced yet, will retry`,
           );
         } else {
           console.error(
-            `[ServiceSubscriptionAutoPlacement] Failed to move document:`,
+            `[CustomersAutoPlacement] Failed to move document:`,
             error,
           );
         }
@@ -218,14 +213,14 @@ export function useServiceSubscriptionAutoPlacement(): UseServiceSubscriptionAut
   }, [
     driveId,
     driveDocument,
-    serviceSubscriptionsFolder,
+    customersFolder,
     documentsInDrive,
-    serviceSubscriptionsFolderNodeIds,
+    customersFolderNodeIds,
   ]);
 
   return {
-    serviceSubscriptionsFolder,
-    serviceSubscriptionsFolderNodeIds,
+    customersFolder,
+    customersFolderNodeIds,
     resourceInstanceDocuments,
     subscriptionInstanceDocuments,
   };

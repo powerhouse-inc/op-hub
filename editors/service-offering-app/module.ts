@@ -10,7 +10,7 @@ export const ServiceOfferingApp: EditorModule = {
   Component: lazy(() => import("./editor.js")),
   documentTypes: ["powerhouse/document-drive"],
   config: {
-    id: "service-offering-app",
-    name: "Service Offering App",
+    id: "service-offering",
+    name: "Service Offering",
   },
 };

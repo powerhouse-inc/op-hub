@@ -1,6 +1,6 @@
 import { useIsOperator } from "../../hooks/useIsOperator.js";
 import { useSubscriptionMetrics } from "../../hooks/useSubscriptionMetrics.js";
-import { useServiceSubscriptionAutoPlacement } from "../../hooks/useServiceSubscriptionAutoPlacement.js";
+import { useCustomersAutoPlacement } from "../../hooks/useCustomersAutoPlacement.js";
 import { OperatorDashboard } from "./OperatorDashboard.js";
 
 interface SubscriptionsDashboardProps {
@@ -17,7 +17,7 @@ export function SubscriptionsDashboard({
 }: SubscriptionsDashboardProps) {
   const { builderProfileName } = useIsOperator();
   const { resourceInstanceDocuments, subscriptionInstanceDocuments } =
-    useServiceSubscriptionAutoPlacement();
+    useCustomersAutoPlacement();
 
   const metrics = useSubscriptionMetrics(
     subscriptionInstanceDocuments as Array<{

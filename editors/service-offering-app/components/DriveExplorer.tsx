@@ -2,8 +2,8 @@ import type { EditorProps } from "document-model";
 import { Component, useState, type ReactNode } from "react";
 import { FolderTree, type CustomView } from "./FolderTree.js";
 import { ResourcesServices } from "./ResourcesServices.js";
-import { ServiceSubscriptions } from "./service-subscriptions.js";
-import { useServiceSubscriptionAutoPlacement } from "../hooks/useServiceSubscriptionAutoPlacement.js";
+import { Customers } from "./customers.js";
+import { useCustomersAutoPlacement } from "../hooks/useCustomersAutoPlacement.js";
 
 /**
  * Catches "Document not found" errors when the reactor tries to render a
@@ -102,19 +102,19 @@ export function DriveExplorer({ children }: EditorProps) {
 
   // Auto-placement hook — must run regardless of which view is active so docs
   // synced from the server land in the right folder.
-  useServiceSubscriptionAutoPlacement();
+  useCustomersAutoPlacement();
 
   const renderContent = () => {
     if (showDocumentEditor) {
       return <DocumentEditorBoundary>{children}</DocumentEditorBoundary>;
     }
-    if (customView === "service-subscriptions") {
-      return <ServiceSubscriptions />;
+    if (customView === "customers") {
+      return <Customers />;
     }
     if (customView === "resources-services") {
       return <ResourcesServices />;
     }
-    return <ServiceSubscriptions />;
+    return <Customers />;
   };
 
   return (

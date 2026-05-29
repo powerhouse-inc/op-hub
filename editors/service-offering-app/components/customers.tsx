@@ -14,7 +14,7 @@ import {
 import { useEffect, useRef, useState, Fragment } from "react";
 import type { FolderNode } from "@powerhousedao/shared/document-drive";
 import { Plus } from "lucide-react";
-import { useServiceSubscriptionAutoPlacement } from "../hooks/useServiceSubscriptionAutoPlacement.js";
+import { useCustomersAutoPlacement } from "../hooks/useCustomersAutoPlacement.js";
 import { SubscriptionsDashboard } from "./subscriptions-dashboard/index.js";
 import { DashboardHeader } from "./subscriptions-dashboard/DashboardHeader.js";
 
@@ -66,11 +66,7 @@ function FolderNameInput({
   );
 }
 
-function ServiceSubscriptionsBreadcrumbs({
-  rootFolderId,
-}: {
-  rootFolderId: string;
-}) {
+function CustomersBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
   const selectedNodePath = useSelectedNodePath();
   const selectedDriveId = useSelectedDriveId();
   const { isAllowedToCreateDocuments } = useUserPermissions();
@@ -141,11 +137,11 @@ function ServiceSubscriptionsBreadcrumbs({
 
 // ---------- Folder browser view ----------
 
-function ServiceSubscriptionsFolderBrowser({
-  serviceSubscriptionsFolder,
+function CustomersFolderBrowser({
+  customersFolder,
   onBackToDashboard,
 }: {
-  serviceSubscriptionsFolder: FolderNode;
+  customersFolder: FolderNode;
   onBackToDashboard: () => void;
 }) {
   const hasNavigatedToFolder = useRef(false);
@@ -153,21 +149,21 @@ function ServiceSubscriptionsFolderBrowser({
   const nodesInCurrentFolder = useNodesInSelectedDriveOrFolder();
 
   useEffect(() => {
-    if (serviceSubscriptionsFolder && !hasNavigatedToFolder.current) {
+    if (customersFolder && !hasNavigatedToFolder.current) {
       hasNavigatedToFolder.current = true;
-      setSelectedNode(serviceSubscriptionsFolder.id);
+      setSelectedNode(customersFolder.id);
     }
-  }, [serviceSubscriptionsFolder]);
+  }, [customersFolder]);
 
-  const isWithinServiceSubscriptions = selectedNodePath.some(
-    (node) => node.id === serviceSubscriptionsFolder.id,
+  const isWithinCustomers = selectedNodePath.some(
+    (node) => node.id === customersFolder.id,
   );
 
   useEffect(() => {
-    if (!isWithinServiceSubscriptions && hasNavigatedToFolder.current) {
-      setSelectedNode(serviceSubscriptionsFolder.id);
+    if (!isWithinCustomers && hasNavigatedToFolder.current) {
+      setSelectedNode(customersFolder.id);
     }
-  }, [serviceSubscriptionsFolder, isWithinServiceSubscriptions]);
+  }, [customersFolder, isWithinCustomers]);
 
   const folderNodes = nodesInCurrentFolder.filter((n) => isFolderNodeKind(n));
   const fileNodes = nodesInCurrentFolder.filter((n) => isFileNodeKind(n));
@@ -178,7 +174,7 @@ function ServiceSubscriptionsFolderBrowser({
   return (
     <div>
       <DashboardHeader
-        title="Service Subscriptions"
+        title="Customers"
         subtitle="Browse and manage subscription documents"
         onBackToDashboard={onBackToDashboard}
         showBack
@@ -207,9 +203,7 @@ function ServiceSubscriptionsFolderBrowser({
           </button>
         </div>
 
-        <ServiceSubscriptionsBreadcrumbs
-          rootFolderId={serviceSubscriptionsFolder.id}
-        />
+        <CustomersBreadcrumbs rootFolderId={customersFolder.id} />
 
         {hasFolders ? (
           <div>
@@ -253,8 +247,7 @@ function ServiceSubscriptionsFolderBrowser({
               </svg>
             </div>
             <p className="text-gray-500 text-sm">
-              No service subscriptions yet. Add documents to this folder to get
-              started.
+              No customers yet. Add documents to this folder to get started.
             </p>
           </div>
         ) : null}
@@ -265,23 +258,21 @@ function ServiceSubscriptionsFolderBrowser({
 
 // ---------- Main component ----------
 
-export function ServiceSubscriptions() {
+export function Customers() {
   const [showFolderBrowser, setShowFolderBrowser] = useState(false);
-  const { serviceSubscriptionsFolder } = useServiceSubscriptionAutoPlacement();
+  const { customersFolder } = useCustomersAutoPlacement();
 
-  if (!serviceSubscriptionsFolder) {
+  if (!customersFolder) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-gray-500">
-          Setting up Service Subscriptions folder...
-        </div>
+        <div className="text-gray-500">Setting up Customers folder...</div>
       </div>
     );
   }
 
   return showFolderBrowser ? (
-    <ServiceSubscriptionsFolderBrowser
-      serviceSubscriptionsFolder={serviceSubscriptionsFolder}
+    <CustomersFolderBrowser
+      customersFolder={customersFolder}
       onBackToDashboard={() => setShowFolderBrowser(false)}
     />
   ) : (

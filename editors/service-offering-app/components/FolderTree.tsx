@@ -14,21 +14,21 @@ import type {
   FolderNode,
   FileNode,
 } from "@powerhousedao/shared/document-drive";
-import { CreditCard, FileText, Folder, Layers } from "lucide-react";
+import { FileText, Folder, Layers, UserRound, Users } from "lucide-react";
 import { useMemo, useState } from "react";
 
 const ICON_SIZE = 16;
-const SERVICE_SUBSCRIPTIONS_FOLDER_NAME = "Service Subscriptions";
+const CUSTOMERS_FOLDER_NAME = "Customers";
 const SERVICES_AND_OFFERINGS_FOLDER_NAME = "Services And Offerings";
 const RESOURCE_TEMPLATES_FOLDER_NAME = "Products";
 const SERVICE_OFFERINGS_FOLDER_NAME = "Service Offerings";
 
 /** Custom view types that don't correspond to document models */
-export type CustomView = "resources-services" | "service-subscriptions" | null;
+export type CustomView = "resources-services" | "customers" | null;
 
 /** Maps navigation section IDs to custom view identifiers. */
 const SECTION_TO_CUSTOM_VIEW: Record<string, CustomView> = {
-  "service-subscriptions": "service-subscriptions",
+  customers: "customers",
   "resources-services": "resources-services",
 };
 
@@ -38,24 +38,27 @@ const SECTION_TO_CUSTOM_VIEW: Record<string, CustomView> = {
  */
 const BASE_NAVIGATION_SECTIONS: SidebarNode[] = [
   {
-    id: "service-subscriptions",
-    title: "Service Subscriptions",
-    icon: <CreditCard size={ICON_SIZE} />,
-  },
-  {
     id: "resources-services",
     title: "Service Offerings",
     icon: <Layers size={ICON_SIZE} />,
+  },
+  {
+    id: "customers",
+    title: "Customers",
+    icon: <Users size={ICON_SIZE} />,
   },
 ];
 
 /**
  * Recursively builds SidebarNode children from folder contents.
- * Folders get folder icons, files get document icons.
+ * Folders get folder icons, files get document icons. Pass `folderIcon` to
+ * override the icon used for folders in this subtree (e.g. a customer icon for
+ * the Customers section).
  */
 function buildSidebarNodesFromFolder(
   parentId: string,
   allNodes: Node[],
+  folderIcon?: SidebarNode["icon"],
 ): SidebarNode[] {
   const childNodes = allNodes.filter((node) => {
     if (isFolderNodeKind(node)) {
@@ -73,14 +76,18 @@ function buildSidebarNodesFromFolder(
       id: node.id,
       title: node.name,
       icon: isFolder ? (
-        <Folder size={ICON_SIZE} />
+        (folderIcon ?? <Folder size={ICON_SIZE} />)
       ) : (
         <FileText size={ICON_SIZE} />
       ),
     };
 
     if (isFolder) {
-      const children = buildSidebarNodesFromFolder(node.id, allNodes);
+      const children = buildSidebarNodesFromFolder(
+        node.id,
+        allNodes,
+        folderIcon,
+      );
       if (children.length > 0) {
         sidebarNode.children = children;
       }
@@ -96,7 +103,7 @@ type FolderTreeProps = {
 
 /**
  * Sidebar for the Service Offering App.
- * Two sections: Service Subscriptions and Service Offerings (Products + Service
+ * Two sections: Customers and Service Offerings (Products + Service
  * Offerings folders inside the "Services And Offerings" parent). Each section
  * routes to its own custom view; child folder/document clicks navigate within
  * that view.
@@ -108,14 +115,13 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
 
   const [driveDocument] = useSelectedDrive();
 
-  // Find the "Service Subscriptions" folder in the drive
-  const serviceSubscriptionsFolder = useMemo(() => {
+  // Find the "Customers" folder in the drive
+  const customersFolder = useMemo(() => {
     if (!driveDocument) return null;
     const nodes = driveDocument.state.global.nodes;
     return nodes.find(
       (node: Node): node is FolderNode =>
-        isFolderNodeKind(node) &&
-        node.name === SERVICE_SUBSCRIPTIONS_FOLDER_NAME,
+        isFolderNodeKind(node) && node.name === CUSTOMERS_FOLDER_NAME,
     );
   }, [driveDocument]);
 
@@ -175,13 +181,13 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
     return ids;
   }
 
-  const serviceSubscriptionsNodeIds = useMemo(() => {
-    if (!serviceSubscriptionsFolder || !driveDocument) return new Set<string>();
+  const customersNodeIds = useMemo(() => {
+    if (!customersFolder || !driveDocument) return new Set<string>();
     return collectDescendantIds(
-      serviceSubscriptionsFolder.id,
+      customersFolder.id,
       driveDocument.state.global.nodes,
     );
-  }, [serviceSubscriptionsFolder, driveDocument]);
+  }, [customersFolder, driveDocument]);
 
   const resourceTemplatesNodeIds = useMemo(() => {
     if (!resourceTemplatesFolder || !driveDocument) return new Set<string>();
@@ -207,9 +213,14 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
 
     const allNodes = driveDocument.state.global.nodes;
 
-    // Service Subscriptions children = direct contents of the folder
-    const serviceSubscriptionsChildren = serviceSubscriptionsFolder
-      ? buildSidebarNodesFromFolder(serviceSubscriptionsFolder.id, allNodes)
+    // Customers children = direct contents of the folder. Each customer is a
+    // folder, so use a customer icon instead of the generic folder icon.
+    const customersChildren = customersFolder
+      ? buildSidebarNodesFromFolder(
+          customersFolder.id,
+          allNodes,
+          <UserRound size={ICON_SIZE} />,
+        )
       : [];
 
     // Resources & Services children = Products + Service Offerings subfolders
@@ -246,11 +257,8 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
     }
 
     return BASE_NAVIGATION_SECTIONS.map((section) => {
-      if (
-        section.id === "service-subscriptions" &&
-        serviceSubscriptionsChildren.length > 0
-      ) {
-        return { ...section, children: serviceSubscriptionsChildren };
+      if (section.id === "customers" && customersChildren.length > 0) {
+        return { ...section, children: customersChildren };
       }
       if (
         section.id === "resources-services" &&
@@ -262,7 +270,7 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
     });
   }, [
     driveDocument,
-    serviceSubscriptionsFolder,
+    customersFolder,
     resourceTemplatesFolder,
     serviceOfferingsFolder,
   ]);
@@ -272,13 +280,13 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
   const handleActiveNodeChange = (node: SidebarNode) => {
     setActiveNodeId(node.id);
 
-    // Child node within Service Subscriptions tree
-    if (serviceSubscriptionsNodeIds.has(node.id)) {
+    // Child node within Customers tree
+    if (customersNodeIds.has(node.id)) {
       const driveNode = driveDocument?.state.global.nodes.find(
         (n: Node) => n.id === node.id,
       );
       if (driveNode && isFolderNodeKind(driveNode)) {
-        onCustomViewChange?.("service-subscriptions");
+        onCustomViewChange?.("customers");
         setSelectedNode(node.id);
       } else if (driveNode && isFileNodeKind(driveNode)) {
         onCustomViewChange?.(null);

@@ -25,6 +25,16 @@ set -euo pipefail
 #   --skip <slugs>      Comma-separated drive slugs to skip
 #   --only <slugs>      Comma-separated drive slugs to upload (overrides defaults)
 #   --dry-run           Show what would be uploaded without doing it
+#
+# Renown signing (creator attribution), forwarded to upload.sh via env:
+#   RENOWN_ADDRESS=0x…  Wallet to record as creator on every operation. When
+#                       set, each created drive/document carries context.signer
+#                       so `who-created.mjs <id>` reverse-looks-up the creator.
+#                       (did:key is auto-derived from .ph/.keypair.json.)
+#   Example:
+#     RENOWN_ADDRESS=0x… SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh --target local
+#   Note: the phase-3 cross-drive reference remap is NOT signed (post-creation
+#   edits via the CLI); creation + state operations are.
 ###############################################################################
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

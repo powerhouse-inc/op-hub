@@ -18,7 +18,19 @@ set -euo pipefail
 #                     the editor id (team-admin / service-offering)
 #   EXISTING_DRIVE    Drive ID to upload into (skips drive creation)
 #
+#   Renown signing (creator attribution) — optional:
+#   RENOWN_ADDRESS    Wallet address to record as creator (did:pkh). Setting
+#                     this ENABLES signing: every applied operation is routed
+#                     through signed-apply.mjs and carries context.signer.user,
+#                     so `who-created.mjs <docId>` can reverse-lookup the creator.
+#   RENOWN_KEYPAIR    P-256 keypair json from `ph login` (default .ph/.keypair.json)
+#   RENOWN_CLI_DID    did:key override (default: derived from the keypair)
+#   RENOWN_NETWORK_ID / RENOWN_CHAIN_ID   identity chain (default eip155 / 1)
+#   Note: the drive/doc genesis CREATE_DOCUMENT is still server-generated
+#   (app.name "switchboard"); attribution rides on the operations' user.address.
+#
 # Example:
+#   RENOWN_ADDRESS=0x… SB_PROFILE=local bash upload.sh data/powerhouse-rgh-operator-admin
 #   SB_PROFILE=local bash upload.sh data/powerhouse-rgh-operator-admin
 #   EXISTING_DRIVE=d8995a96-... SB_PROFILE=staging bash upload.sh data/powerhouse-rgh-operator-admin
 ###############################################################################
@@ -71,7 +83,16 @@ compat_check $REQUIRED_TYPES || true
 
 step "Creating drive from downloaded data"
 
+# Renown operation signing (optional). When RENOWN_ADDRESS is set, every
+# applied operation is signed with the Renown keypair so the creator is
+# recorded in each op's context.signer (reverse-lookup). See signed-apply.mjs.
+export SIGNED_WRITE_SIDECAR="$SCRIPT_DIR/signed-apply.mjs"
+export RENOWN_KEYPAIR="${RENOWN_KEYPAIR:-$SCRIPT_DIR/../../.ph/.keypair.json}"
+
 export DATA_DIR DRIVE_NAME ID_MAP_FILE PREFERRED_EDITOR EXISTING_DRIVE EXTERNAL_ID_MAP DRIVE_ICON
+export SIGNED_WRITE_SIDECAR RENOWN_KEYPAIR
+export RENOWN_ADDRESS="${RENOWN_ADDRESS:-}" RENOWN_CLI_DID="${RENOWN_CLI_DID:-}"
+export RENOWN_NETWORK_ID="${RENOWN_NETWORK_ID:-eip155}" RENOWN_CHAIN_ID="${RENOWN_CHAIN_ID:-1}"
 
 python3 << 'PYEOF'
 import subprocess, json, sys, os, tempfile, uuid, datetime, time
@@ -212,10 +233,61 @@ def _poll_job(job_id, timeout=120, interval=0.5):
     raise RuntimeError(f"job {job_id} did not complete within {timeout}s (last status: {last_status})")
 
 
+# ── Renown operation signing (optional) ───────────────────────────────────────
+# When RENOWN_ADDRESS is set, applied operations are routed through the Node
+# signing sidecar (signed-apply.mjs) so each op carries context.signer with the
+# creator's wallet. Otherwise the original switchboard-CLI path is used.
+SIGN = bool(os.environ.get("RENOWN_ADDRESS", "").strip())
+SIDECAR = os.environ.get("SIGNED_WRITE_SIDECAR", "")
+SB_ENDPOINT = None
+SB_TOKEN = ""
+if SIGN:
+    try:
+        cfg = json.loads(subprocess.run(
+            ["switchboard", "config", "show", "--format", "json"],
+            capture_output=True, text=True, timeout=30).stdout)
+        SB_ENDPOINT = cfg.get("url")
+        tok = subprocess.run(
+            ["switchboard", "auth", "token"],
+            capture_output=True, text=True, timeout=30).stdout.strip().splitlines()
+        SB_TOKEN = tok[-1] if tok else ""
+        log(f"Renown signing ENABLED → {os.environ['RENOWN_ADDRESS']} (endpoint {SB_ENDPOINT})")
+    except Exception as e:
+        errf(f"Could not resolve signing endpoint/token; disabling signing: {e}")
+        SIGN = False
+
+def _signed_apply(doc_id, actions, retries=3):
+    """Sign actions and push them via the Node sidecar (mutateDocument)."""
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+        json.dump(actions, f)
+        tmppath = f.name
+    env = dict(os.environ)
+    env["ENDPOINT"] = SB_ENDPOINT or ""
+    env["TOKEN"] = SB_TOKEN
+    try:
+        for attempt in range(retries):
+            result = subprocess.run(
+                ["node", SIDECAR, "apply", doc_id, tmppath],
+                capture_output=True, text=True, timeout=180, env=env,
+            )
+            if result.returncode == 0:
+                return
+            if attempt < retries - 1:
+                wait = (attempt + 1) * 3
+                warn(f"  signed apply failed (attempt {attempt+1}): {result.stderr[:120] or result.stdout[:120]}... retrying in {wait}s")
+                time.sleep(wait)
+                continue
+            raise RuntimeError(f"signed apply on {doc_id} failed after {retries} attempts: {result.stderr[:300] or result.stdout[:300]}")
+    finally:
+        os.unlink(tmppath)
+
 def apply_actions(doc_id, actions, retries=3):
     """Apply actions to a document. Submits async via `docs apply` (no --wait),
     then polls jobStatus via raw GraphQL. Compatible with switchboards whose
-    JobInfo type lacks the `progress` field that CLI 1.0.27's --wait queries."""
+    JobInfo type lacks the `progress` field that CLI 1.0.27's --wait queries.
+
+    When signing is enabled, routes through the Node sidecar so each op carries
+    context.signer with the creator's wallet."""
     if not actions:
         return
     if isinstance(actions, dict):
@@ -227,6 +299,9 @@ def apply_actions(doc_id, actions, retries=3):
             action["id"] = str(uuid.uuid4())
         if "timestampUtcMs" not in action:
             action["timestampUtcMs"] = now_iso
+    if SIGN:
+        _signed_apply(doc_id, actions, retries)
+        return
     with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
         json.dump(actions, f)
         tmppath = f.name
@@ -294,6 +369,15 @@ def mutate(doc_id, op, input_data, retries=3):
             "input": input_data,
             "scope": "global",
         })
+        return
+    # When signing, funnel single mutations through the signed apply path so
+    # they carry context.signer like every other operation.
+    if SIGN:
+        apply_actions(doc_id, [{
+            "type": op_to_action_type(op),
+            "input": input_data,
+            "scope": "global",
+        }])
         return
     with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
         json.dump(input_data, f)
@@ -480,8 +564,12 @@ else:
     errf("Drive verification failed after 5 attempts — aborting")
     sys.exit(1)
 
-# Ensure the drive state has the correct name (the /d/<slug> endpoint uses state.global.name)
-if existing_drive and drive_name:
+# Ensure the drive state has the correct name (the /d/<slug> endpoint uses
+# state.global.name). When signing, ALWAYS do this so the drive document carries
+# at least one signed op (creator attribution) — the auto-generated ADD_FILE ops
+# from `docs create --drive` are server-signed, so a drive with no folders/icon
+# would otherwise have no wallet on it.
+if drive_name and (existing_drive or SIGN):
     mutate(drive_id, "setDriveName", {"name": drive_name})
     log(f"Set drive state name: {drive_name}")
 

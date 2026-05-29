@@ -3,24 +3,27 @@ set -euo pipefail
 
 ###############################################################################
 # upload-split.sh — Upload one drive's data, splitting the offering documents
-# into a separate `service-offering-app` drive (new op-hub app architecture).
+# into a separate `service-offering` drive (new op-hub app architecture).
 #
 # The legacy operator drive bundled everything together: the operator's
 # builder-profile AND its powerhouse/resource-template + powerhouse/service-
 # offering catalog. The current app keeps those apart:
 #
-#   • builder-team-admin drive  — the operator's profile (+ subscriptions, etc.)
-#   • service-offering-app drive — the resource-template + service-offering docs
+#   • team-admin drive       (editor "team-admin")       — the operator's
+#     profile (+ the "Service Subscriptions" folder, etc.)
+#   • service-offering drive (editor "service-offering")  — the resource-template
+#     + service-offering catalog
 #
 # So for any data dir that contains offering docs this creates TWO drives on
 # the target:
 #
-#   1. builder-team-admin drive — keeps the original name/slug/editor. Receives
-#      every NON-offering doc (builder-profile, …) and every folder that is not
-#      part of the offering subtree.
-#   2. service-offering-app drive — a new "<base> Operator" drive. Receives the
+#   1. team-admin drive — keeps the original name/slug. Receives every
+#      NON-offering doc (builder-profile, …) and every folder that is not part
+#      of the offering subtree, including the "Service Subscriptions" folder.
+#   2. service-offering drive — a new "<base> Operator" drive. Receives the
 #      resource-template + service-offering docs under the SAME folder subtree
-#      they had in the source drive.
+#      they had in the source drive, PLUS a mirror of the "Service Subscriptions"
+#      subtree (the same product/subscription-instance docs) renamed "Customers".
 #
 # Both halves are uploaded with the existing, battle-tested upload.sh (one call
 # each, against a filtered copy of the manifest in a temp dir). The only thing
@@ -36,10 +39,13 @@ set -euo pipefail
 #
 # Env:
 #   SB_PROFILE            switchboard profile (forwarded to upload.sh)
-#   OPERATOR_DRIVE_NAME   override the new service-offering-app drive name
+#   OPERATOR_DRIVE_NAME   override the new service-offering drive name
 #                         (default: builder name with trailing "Admin"/"Operator"
 #                         words stripped, then "+ Operator" — e.g.
 #                         "Powerhouse RGH Operator Admin" → "Powerhouse RGH Operator")
+#
+# Drive icons are assigned by upload.sh from the editor id (team-admin /
+# service-offering), so both halves of a split get the right icon automatically.
 ###############################################################################
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -56,18 +62,18 @@ done
 
 [ -f "$DATA_DIR/manifest.json" ] || { echo "Error: $DATA_DIR/manifest.json not found" >&2; exit 1; }
 
-# Document types that move to the service-offering-app drive.
+# Document types that move to the service-offering drive.
 OFFERING_TYPES_CSV="powerhouse/resource-template,powerhouse/service-offering"
 
 export DATA_DIR BUILDER_NAME DRY_RUN OFFERING_TYPES_CSV SCRIPT_DIR
 export SB_PROFILE="${SB_PROFILE:-}"
 export OPERATOR_DRIVE_NAME="${OPERATOR_DRIVE_NAME:-}"
-# Icon applied to BOTH drives produced by a split (the RGH drives). Override
-# via SPLIT_DRIVE_ICON; set to empty to skip.
-export SPLIT_DRIVE_ICON="${SPLIT_DRIVE_ICON:-https://framerusercontent.com/images/GZkbeeiIcPgM6wgEk8vIZlWi7o.png?scale-down-to=512&width=1024&height=1024}"
+# Drive icons are assigned by upload.sh based on the drive's editor id
+# (team-admin / service-offering), so both halves of a split get the right icon
+# automatically. Set DRIVE_ICON when calling upload.sh to override.
 
 python3 << 'PYEOF'
-import os, sys, json, subprocess, tempfile, shutil, datetime
+import os, sys, json, subprocess, tempfile, shutil, datetime, copy
 
 data_dir       = os.environ["DATA_DIR"]
 builder_name   = os.environ.get("BUILDER_NAME", "").strip()
@@ -76,7 +82,6 @@ offering_types = set(os.environ["OFFERING_TYPES_CSV"].split(","))
 script_dir     = os.environ["SCRIPT_DIR"]
 sb_profile     = os.environ.get("SB_PROFILE", "").strip()
 op_name_over   = os.environ.get("OPERATOR_DRIVE_NAME", "").strip()
-split_drive_icon = os.environ.get("SPLIT_DRIVE_ICON", "").strip()
 
 G, Y, R, C, NC = "\033[0;32m", "\033[1;33m", "\033[0;31m", "\033[0;36m", "\033[0m"
 def log(m):  print(f"  {G}✓{NC} {m}", flush=True)
@@ -99,7 +104,25 @@ except Exception:
 
 src_name      = builder_name or drive_info.get("name") or source.get("name") or "Drive"
 src_slug      = drive_info.get("slug") or source.get("slug") or "(auto)"
-builder_editor = drive_info.get("preferredEditor") or "builder-team-admin"
+
+# Editor config.ids (these must match the editor modules' config.id in
+# editors/*/module.ts). The editor modules were renamed in the app, so map any
+# legacy id captured in drive-info.json onto the current one.
+EDITOR_ID_REMAP = {
+    "builder-team-admin": "team-admin",
+    "service-offering-app": "service-offering",
+}
+BUILDER_EDITOR_ID  = "team-admin"
+OFFERING_EDITOR_ID = "service-offering"
+builder_editor = drive_info.get("preferredEditor") or BUILDER_EDITOR_ID
+builder_editor = EDITOR_ID_REMAP.get(builder_editor, builder_editor)
+
+# The customer/subscription area is one folder that appears in BOTH drives. The
+# team-admin drive keeps the original "Service Subscriptions" name; the service-
+# offering drive shows the same folder (and the product/subscription-instance
+# docs inside it) under the name "Customers".
+CUSTOMERS_SRC_FOLDER_NAME = "Service Subscriptions"
+CUSTOMERS_DST_FOLDER_NAME = "Customers"
 
 offering_docs = [d for d in docs if d.get("type") in offering_types]
 
@@ -177,6 +200,46 @@ builder_docs     = [d for d in docs if d.get("type") not in offering_types]
 builder_folders  = [f for f in folders if f["id"] not in offering_folder_ids]
 offering_folders = [f for f in folders if f["id"] in offering_folder_ids]
 
+# ── Mirror the customers subtree into the offering drive ───────────────────────
+# The "Service Subscriptions" folder and the product/subscription-instance docs
+# inside it are NOT offering types, so they already belong to the builder drive
+# (keeping the original name). The service-offering drive shows the SAME folder
+# and docs under the name "Customers", so mirror that subtree into the offering
+# subset too — each drive gets its own uploaded copy/ids; only the offering side
+# renames the root folder.
+def subtree_folder_ids(root_id):
+    ids, frontier = {root_id}, [root_id]
+    while frontier:
+        cur = frontier.pop()
+        for f in folders:
+            if f.get("parentFolder") == cur and f["id"] not in ids:
+                ids.add(f["id"]); frontier.append(f["id"])
+    return ids
+
+customers_root_ids   = {f["id"] for f in folders if f.get("name") == CUSTOMERS_SRC_FOLDER_NAME}
+customers_folder_ids = set()
+for rid in customers_root_ids:
+    customers_folder_ids.update(subtree_folder_ids(rid))
+
+# Offering-side copy of the customers folders, with each root renamed.
+customers_folders_offering = []
+for f in folders:
+    if f["id"] in customers_folder_ids:
+        cf = copy.deepcopy(f)
+        if cf["id"] in customers_root_ids:
+            cf["name"] = CUSTOMERS_DST_FOLDER_NAME
+        customers_folders_offering.append(cf)
+
+offering_doc_ids = {d["id"] for d in offering_docs}
+customers_docs   = [d for d in docs
+                    if d.get("parentFolder") in customers_folder_ids
+                    and d["id"] not in offering_doc_ids]
+
+# Full doc/folder sets the offering drive is uploaded with. `offering_docs` stays
+# the catalog-only list used by the operatorId fixup below.
+offering_upload_docs    = offering_docs + customers_docs
+offering_upload_folders = offering_folders + customers_folders_offering
+
 # ── Derive the new service-offering-app drive name ─────────────────────────────
 def derive_operator_name(base):
     toks = base.split()
@@ -195,17 +258,17 @@ def type_counts(items):
 
 # ── Report (always; also the full body of --dry-run) ───────────────────────────
 step(f"Split plan for {src_name!r} ({src_slug})")
-print(f"  {C}→ builder-team-admin{NC}  name={src_name!r}  editor={builder_editor}")
+print(f"  {C}→ team-admin{NC}  name={src_name!r}  editor={builder_editor}")
 print(f"      docs={len(builder_docs)}  folders={len(builder_folders)}")
 for t, n in sorted(type_counts(builder_docs).items()):
     print(f"        {n:3d}  {t}")
 for f in builder_folders:
     print(f"        [folder] {f['name']}")
-print(f"  {C}→ service-offering-app{NC}  name={operator_name!r}  slug≈{approx_slug(operator_name)}  editor=service-offering-app")
-print(f"      docs={len(offering_docs)}  folders={len(offering_folders)}")
-for t, n in sorted(type_counts(offering_docs).items()):
+print(f"  {C}→ service-offering{NC}  name={operator_name!r}  slug≈{approx_slug(operator_name)}  editor={OFFERING_EDITOR_ID}")
+print(f"      docs={len(offering_upload_docs)}  folders={len(offering_upload_folders)}")
+for t, n in sorted(type_counts(offering_upload_docs).items()):
     print(f"        {n:3d}  {t}")
-for f in offering_folders:
+for f in offering_upload_folders:
     print(f"        [folder] {f['name']}")
 
 if dry_run:
@@ -234,7 +297,7 @@ work = tempfile.mkdtemp(prefix="upload-split-")
 tmp_builder  = os.path.join(work, "builder")
 tmp_offering = os.path.join(work, "offering")
 make_subset(tmp_builder, builder_docs, builder_folders)
-make_subset(tmp_offering, offering_docs, offering_folders)
+make_subset(tmp_offering, offering_upload_docs, offering_upload_folders)
 
 idmap_builder  = os.path.join(work, "id-map.builder.json")
 idmap_offering = os.path.join(work, "id-map.offering.json")
@@ -245,8 +308,8 @@ def run_upload(tmp, name, editor, idmap_path):
         env["SB_PROFILE"] = sb_profile
     env["PREFERRED_EDITOR"] = editor
     env["ID_MAP_FILE"] = idmap_path
-    if split_drive_icon:
-        env["DRIVE_ICON"] = split_drive_icon
+    # upload.sh picks the drive icon from the editor id; don't force one here.
+    env.pop("DRIVE_ICON", None)
     for k in ("DRY_RUN", "BUILDER_NAME", "OFFERING_TYPES_CSV", "OPERATOR_DRIVE_NAME", "EXTERNAL_ID_MAP"):
         env.pop(k, None)
     rc = subprocess.run(["bash", os.path.join(script_dir, "upload.sh"), tmp, name], env=env).returncode
@@ -254,11 +317,11 @@ def run_upload(tmp, name, editor, idmap_path):
         raise SystemExit(f"upload.sh failed for {name!r} (exit {rc})")
 
 try:
-    step("Uploading builder-team-admin drive")
+    step("Uploading team-admin drive")
     run_upload(tmp_builder, src_name, builder_editor, idmap_builder)
 
-    step("Uploading service-offering-app drive")
-    run_upload(tmp_offering, operator_name, "service-offering-app", idmap_offering)
+    step("Uploading service-offering drive")
+    run_upload(tmp_offering, operator_name, OFFERING_EDITOR_ID, idmap_offering)
 
     # ── Re-point offering operatorId at the operator's builder-profile ─────────
     # Every offering in this drive belongs to the drive's operator, but the
@@ -340,6 +403,6 @@ finally:
     shutil.rmtree(work, ignore_errors=True)
 
 step("Done")
-log(f"builder-team-admin: {src_name!r}  ({len(builder_docs)} docs)")
-log(f"service-offering-app: {operator_name!r}  ({len(offering_docs)} docs)")
+log(f"team-admin: {src_name!r}  ({len(builder_docs)} docs, editor={builder_editor})")
+log(f"service-offering: {operator_name!r}  ({len(offering_upload_docs)} docs, editor={OFFERING_EDITOR_ID})")
 PYEOF

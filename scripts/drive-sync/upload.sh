@@ -12,7 +12,10 @@ set -euo pipefail
 # Environment:
 #   SB_PROFILE        Switchboard profile to use (optional)
 #   ID_MAP_FILE       Path to write the ID mapping JSON (old→new). Default: <data-dir>/id-map.json
-#   PREFERRED_EDITOR  Drive editor override
+#   PREFERRED_EDITOR  Drive editor override (legacy ids are normalized to the
+#                     current config.id, e.g. builder-team-admin → team-admin)
+#   DRIVE_ICON        Drive icon URL override. If unset, an icon is chosen from
+#                     the editor id (team-admin / service-offering)
 #   EXISTING_DRIVE    Drive ID to upload into (skips drive creation)
 #
 # Example:
@@ -109,6 +112,27 @@ except Exception:
 # Use: env override > source drive info > nothing
 if not preferred_editor and source_preferred_editor:
     preferred_editor = source_preferred_editor
+
+# Normalize legacy editor ids to their current config.id. The editor modules
+# were renamed in the app (builder-team-admin → team-admin, service-offering-app
+# → service-offering) but the captured drive-info.json files still carry the old
+# ids; a drive whose preferredEditor doesn't match an editor's config.id won't
+# open with that editor in Connect.
+EDITOR_ID_REMAP = {
+    "builder-team-admin": "team-admin",
+    "service-offering-app": "service-offering",
+}
+if preferred_editor in EDITOR_ID_REMAP:
+    preferred_editor = EDITOR_ID_REMAP[preferred_editor]
+
+# Default drive icon per editor type, so every team-admin / service-offering
+# drive lands with the matching icon. An explicit DRIVE_ICON env always wins.
+EDITOR_DEFAULT_ICON = {
+    "team-admin":       "https://i.postimg.cc/FztDhVrh/team-admin-bg.png",
+    "service-offering": "https://i.postimg.cc/QtFy8Mc4/service-offering-bg.png",
+}
+if not drive_icon and preferred_editor in EDITOR_DEFAULT_ICON:
+    drive_icon = EDITOR_DEFAULT_ICON[preferred_editor]
 
 log(f"Source: {manifest['source']['slug']} ({manifest['source']['downloadedAt']})")
 log(f"Drive name: {drive_name}")

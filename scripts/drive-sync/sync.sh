@@ -100,184 +100,30 @@ for slug in "${DRIVE_SLUGS[@]}"; do
     bash "$SCRIPT_DIR/download.sh" "$slug" "$DATA_DIR/$slug"
 done
 
-# ── Phase 2: Upload all drives to target (order matters) ─────────────────────
+# ── Phase 2: Upload all drives to target (split pattern) ─────────────────────
 
-step "Phase 2: Upload drives to target"
+step "Phase 2: Upload drives to target (split pattern)"
 
-# Upload in order. Earlier drives' ID maps are available for later drives.
-# The "builders" drive should be uploaded first so its ID map can be used
-# to remap contributor references in the operator drive.
+# Hand the upload off to upload-all-split.sh — the current op-hub pattern. It
+# uploads every drive now sitting in $DATA_DIR (just populated by phase 1) in
+# dependency-safe order, splitting any operator drive that bundles a service-
+# offering catalog into a team-admin + service-offering pair, merges the per-
+# drive id-maps, and runs phase3-remap.py to fix cross-drive references
+# (builder-profile contributors, operationalHubMember, etc.). Drives already on
+# the target (matched by slug) are skipped, so this stays safe to re-run.
 
-MERGED_ID_MAP="$DATA_DIR/merged-id-map.json"
-echo "{}" > "$MERGED_ID_MAP"
+# Safety: verify we're targeting the right profile before uploading.
+switchboard config use "$TARGET_PROFILE" >/dev/null 2>&1
+assert_profile "$TARGET_PROFILE"
 
-for slug in "${DRIVE_SLUGS[@]}"; do
-  echo ""
-  log "Uploading: $slug"
-
-  # Safety: verify we're targeting the right profile before each upload
-  switchboard config use "$TARGET_PROFILE" >/dev/null 2>&1
-  assert_profile "$TARGET_PROFILE"
-
-  ID_MAP_FILE="$DATA_DIR/$slug/id-map.json"
-
-  SB_PROFILE="$TARGET_PROFILE" ID_MAP_FILE="$ID_MAP_FILE" \
-    bash "$SCRIPT_DIR/upload.sh" "$DATA_DIR/$slug"
-
-  # Merge this drive's ID map into the global map
-  if [ -f "$ID_MAP_FILE" ]; then
-    python3 -c "
-import json
-with open('$MERGED_ID_MAP') as f:
-    merged = json.load(f)
-with open('$ID_MAP_FILE') as f:
-    drive_map = json.load(f)
-merged.update(drive_map)
-with open('$MERGED_ID_MAP', 'w') as f:
-    json.dump(merged, f, indent=2)
-"
-  fi
-done
-
-# ── Phase 3: Cross-drive ID remapping ─────────────────────────────────────────
-
-step "Phase 3: Cross-drive ID remapping"
-
-# After all drives are uploaded, we need to fix cross-drive references.
-# The main case: operator drive's builder-profile has `contributors` that
-# reference builder IDs from the builders drive.
-
-python3 << 'PYEOF'
-import subprocess, json, sys, os, tempfile
-
-data_dir = os.environ.get("DATA_DIR", "data")
-target_profile = os.environ.get("TARGET_PROFILE", "local")
-
-G = "\033[0;32m"
-Y = "\033[1;33m"
-R = "\033[0;31m"
-NC = "\033[0m"
-
-def log(msg):  print(f"  {G}✓{NC} {msg}")
-def warn(msg): print(f"  {Y}!{NC} {msg}")
-
-# Load merged ID map
-merged_map_path = os.path.join(data_dir, "merged-id-map.json")
-if not os.path.exists(merged_map_path):
-    print(f"  {Y}!{NC} No merged ID map found — skipping cross-drive remapping")
-    sys.exit(0)
-
-with open(merged_map_path) as f:
-    merged_map = json.load(f)
-
-if not merged_map:
-    log("No IDs to remap")
-    sys.exit(0)
-
-def map_id(old_id):
-    return merged_map.get(old_id, old_id)
-
-def mutate(doc_id, op, input_data):
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-        json.dump(input_data, f)
-        tmppath = f.name
-    try:
-        subprocess.run(
-            ["switchboard", "docs", "mutate", doc_id, "--op", op,
-             "--input-file", tmppath, "--format", "json", "--quiet"],
-            capture_output=True, text=True, timeout=30, check=True,
-        )
-    finally:
-        os.unlink(tmppath)
-
-# Find all uploaded drives' manifests
-drive_dirs = [d for d in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, d))]
-
-remapped = 0
-for drive_dir_name in drive_dirs:
-    drive_path = os.path.join(data_dir, drive_dir_name)
-    manifest_path = os.path.join(drive_path, "manifest.json")
-    id_map_path = os.path.join(drive_path, "id-map.json")
-
-    if not os.path.exists(manifest_path) or not os.path.exists(id_map_path):
-        continue
-
-    with open(manifest_path) as f:
-        manifest = json.load(f)
-    with open(id_map_path) as f:
-        drive_id_map = json.load(f)
-
-    for doc in manifest["documents"]:
-        old_id = doc["id"]
-        new_id = drive_id_map.get(old_id)
-        if not new_id:
-            continue
-
-        state_path = os.path.join(drive_path, "states", f"{old_id}.json")
-        if not os.path.exists(state_path):
-            continue
-        with open(state_path) as f:
-            state = json.load(f)
-        if not state:
-            continue
-
-        doc_type = doc["type"]
-
-        # Builder profile: remap contributors
-        if doc_type == "powerhouse/builder-profile":
-            contributors = state.get("contributors") or []
-            needs_remap = any(c in merged_map and merged_map[c] != drive_id_map.get(c) for c in contributors)
-            if needs_remap:
-                # The upload already added contributors with map_id from the drive's own map.
-                # But those contributor IDs come from a DIFFERENT drive (builders).
-                # We need to check if any were mapped incorrectly (not in this drive's map).
-                for old_contrib_id in contributors:
-                    # If this contributor ID exists in merged map but NOT in this drive's map,
-                    # it's a cross-drive reference that needs remapping.
-                    if old_contrib_id in merged_map and old_contrib_id not in drive_id_map:
-                        new_contrib_id = merged_map[old_contrib_id]
-                        # Remove the old (unmapped) contributor and add the remapped one
-                        try:
-                            mutate(new_id, "removeContributor", {"contributorPHID": old_contrib_id})
-                        except Exception:
-                            pass  # might not exist
-                        try:
-                            mutate(new_id, "addContributor", {"contributorPHID": new_contrib_id})
-                            remapped += 1
-                        except Exception as e:
-                            warn(f"Failed to remap contributor {old_contrib_id} → {new_contrib_id}: {e}")
-
-            # Also remap operationalHubMember.phid if it's cross-drive
-            ohm = state.get("operationalHubMember") or {}
-            if ohm.get("phid") and ohm["phid"] in merged_map and ohm["phid"] not in drive_id_map:
-                new_phid = merged_map[ohm["phid"]]
-                try:
-                    mutate(new_id, "setOpHubMember", {
-                        "name": ohm.get("name"),
-                        "phid": new_phid,
-                    })
-                    remapped += 1
-                except Exception as e:
-                    warn(f"Failed to remap opHubMember phid: {e}")
-
-if remapped > 0:
-    log(f"Remapped {remapped} cross-drive reference(s)")
-else:
-    log("No cross-drive references needed remapping")
-PYEOF
+SB_PROFILE="$TARGET_PROFILE" \
+  bash "$SCRIPT_DIR/upload-all-split.sh" \
+    --target "$TARGET_PROFILE" \
+    --data-dir "$DATA_DIR"
 
 # ── Done ─────────────────────────────────────────────────────────────────────
 
 step "Sync complete"
 log "All drives synced from $SOURCE_PROFILE → $TARGET_PROFILE"
-
-# Print Connect URLs for all uploaded drives
-for slug in "${DRIVE_SLUGS[@]}"; do
-  if [ -f "$DATA_DIR/$slug/id-map.json" ]; then
-    # Read the drive slug from the upload output (it's in the id-map context)
-    log "Data for $slug: $DATA_DIR/$slug/"
-  fi
-done
-
 echo ""
 log "Done!"

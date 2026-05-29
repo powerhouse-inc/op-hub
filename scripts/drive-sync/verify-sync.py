@@ -31,6 +31,16 @@ def ok(m):   print(f"  {G}✓{NC} {m}", flush=True)
 def warn(m): print(f"  {Y}!{NC} {m}", flush=True)
 def fail(m): print(f"  {R}✗{NC} {m}", flush=True)
 
+# upload.sh normalizes legacy editor ids to the current config.id, so the target
+# drive carries the new id while the captured drive-info.json still has the old
+# one. Apply the same remap to the source value before comparing.
+EDITOR_ID_REMAP = {
+    "builder-team-admin": "team-admin",
+    "service-offering-app": "service-offering",
+}
+def normalize_editor(editor):
+    return EDITOR_ID_REMAP.get(editor, editor)
+
 failures = 0
 
 def sb_json(*args):
@@ -119,9 +129,10 @@ for drive_dir in selected:
     tgt_editor = tgt.get("preferredEditor")
     tgt_nodes = tgt["state"]["global"]["nodes"]
 
-    # preferredEditor parity
-    if src_editor != tgt_editor:
-        fail(f"preferredEditor mismatch: source={src_editor!r} target={tgt_editor!r}"); failures += 1
+    # preferredEditor parity (normalize legacy source ids to current config.id)
+    src_editor_norm = normalize_editor(src_editor)
+    if src_editor_norm != tgt_editor:
+        fail(f"preferredEditor mismatch: source={src_editor_norm!r} target={tgt_editor!r}"); failures += 1
     else:
         ok(f"preferredEditor: {tgt_editor!r}")
 

@@ -303,11 +303,21 @@
       "Bash(echo \"=== EXIT $? ===\")",
       "Bash(git check-ignore *)",
       "Bash(grep -nB1 -A2 \"UserSelectionInput\\\\|BillingCycleOverrideInput\" editors/service-offering-editor/components/TheMatrix.tsx)",
-      "Bash(bunx prettier *)"
+      "Bash(bunx prettier *)",
+      "Bash(bash scripts/drive-sync/upload-split.sh scripts/drive-sync/data/powerhouse-rgh-operator-admin --dry-run)",
+      "Bash(SB_PROFILE=local bash scripts/drive-sync/upload-split.sh scripts/drive-sync/data/powerhouse-rgh-operator-admin)",
+      "Bash(switchboard --profile local drives get a2864d4c-316c-40ec-b805-1f00b54bae25 --format json)",
+      "Bash(bash -n sync.sh)",
+      "Bash(sed -n '84,127p' verify-sync.py)",
+      "Bash(SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh --target local)",
+      "Bash(rm -f scripts/drive-sync/data/*/id-map.json scripts/drive-sync/data/merged-id-map.json)",
+      "Bash(python3 -c \"import json,sys; [print\\('  ',d.get\\('slug'\\)\\) for d in json.load\\(sys.stdin\\)]\")",
+      "Bash(python3 -c \"import json,sys; ds=json.load\\(sys.stdin\\); [print\\('  ',d.get\\('slug'\\)\\) for d in ds] or \\(print\\('  \\(none\\)'\\) if not ds else None\\)\")"
     ],
     "additionalDirectories": [
       "/home/p",
-      "/home/p/Powerhouse/demos/op-hub/editors/builder-team-admin/components/subscriptions-dashboard"
+      "/home/p/Powerhouse/demos/op-hub/editors/builder-team-admin/components/subscriptions-dashboard",
+      "/home/p/Powerhouse/demos/op-hub/scripts/drive-sync/data/*"
     ]
   }
 }

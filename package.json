@@ -78,10 +78,10 @@
     "ethers": "^6.14.0",
     "kysely": "0.28.16",
     "lucide-react": "^1.14.0",
-    "pdf-parse": "^2.4.5",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.6.0",
+    "unpdf": "^1.6.2",
     "usehooks-ts": "^3.1.1",
     "world-countries": "^5.1.0"
   },

@@ -41,10 +41,10 @@ export function useOperationalHubSubteams() {
     if (!drives) return map;
 
     for (const drive of drives) {
-      // Look for builder-profile documents in drives with builder-team-admin editor
+      // Look for builder-profile documents in drives with team-admin editor
       if (
         drive.header.documentType === "powerhouse/document-drive" &&
-        drive.header.meta?.preferredEditor === "builder-team-admin"
+        drive.header.meta?.preferredEditor === "team-admin"
       ) {
         const nodes = drive.state.global.nodes;
         for (const node of nodes) {

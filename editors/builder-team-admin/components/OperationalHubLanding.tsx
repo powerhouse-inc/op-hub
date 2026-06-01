@@ -141,7 +141,7 @@ export function OperationalHubLanding({ onNavigate }: Props) {
       ids.add(parentId);
       for (const n of all) {
         if (isFolderNodeKind(n) && n.parentFolder === parentId) visit(n.id);
-        else if (isFileNodeKind(n) && (n as FileNode).parentFolder === parentId)
+        else if (isFileNodeKind(n) && n.parentFolder === parentId)
           ids.add(n.id);
       }
     };
@@ -178,10 +178,11 @@ export function OperationalHubLanding({ onNavigate }: Props) {
     for (const doc of docs) {
       if (doc.header.documentType !== "powerhouse/resource-instance") continue;
       if (!nodesInSubscriptions.has(doc.header.id)) continue;
-      const state = (
-        doc.state as unknown as { global: ResourceInstanceState }
-      ).global;
-      if ((state.templateName ?? "").trim().toLowerCase() === OH_PRODUCT_LABEL) {
+      const state = (doc.state as unknown as { global: ResourceInstanceState })
+        .global;
+      if (
+        (state.templateName ?? "").trim().toLowerCase() === OH_PRODUCT_LABEL
+      ) {
         return state;
       }
     }
@@ -205,7 +206,8 @@ export function OperationalHubLanding({ onNavigate }: Props) {
   }
 
   const subStatus = subscription?.status ?? "PENDING";
-  const subStatusPill = SUBSCRIPTION_PILL[subStatus] ?? SUBSCRIPTION_PILL.PENDING;
+  const subStatusPill =
+    SUBSCRIPTION_PILL[subStatus] ?? SUBSCRIPTION_PILL.PENDING;
   const debt = Number(subscription?.totalDebt ?? 0);
   const currency =
     subscription?.tierCurrency ?? subscription?.globalCurrency ?? "USD";
@@ -242,16 +244,23 @@ export function OperationalHubLanding({ onNavigate }: Props) {
                 </span>
               ) : null}
               {subscription?.selectedBillingCycle ? (
-                <span>· {formatCycle(subscription.selectedBillingCycle)} billing</span>
+                <span>
+                  · {formatCycle(subscription.selectedBillingCycle)} billing
+                </span>
               ) : null}
               {resourceInstance?.activatedAt ? (
-                <span>· Active since {formatDate(resourceInstance.activatedAt)}</span>
+                <span>
+                  · Active since {formatDate(resourceInstance.activatedAt)}
+                </span>
               ) : subscription?.activatedSince ? (
-                <span>· Active since {formatDate(subscription.activatedSince)}</span>
+                <span>
+                  · Active since {formatDate(subscription.activatedSince)}
+                </span>
               ) : null}
               {resourceInstance?.operatorProfile?.operatorName ? (
                 <span className="inline-flex items-center gap-1">
-                  · <User size={12} /> {resourceInstance.operatorProfile.operatorName}
+                  · <User size={12} />{" "}
+                  {resourceInstance.operatorProfile.operatorName}
                 </span>
               ) : null}
             </div>
@@ -354,7 +363,10 @@ export function OperationalHubLanding({ onNavigate }: Props) {
           </div>
           <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm md:grid-cols-3">
             {resourceInstance.confirmedAt ? (
-              <Step label="Confirmed" value={formatDate(resourceInstance.confirmedAt)} />
+              <Step
+                label="Confirmed"
+                value={formatDate(resourceInstance.confirmedAt)}
+              />
             ) : null}
             {resourceInstance.provisioningStartedAt ? (
               <Step
@@ -369,7 +381,10 @@ export function OperationalHubLanding({ onNavigate }: Props) {
               />
             ) : null}
             {resourceInstance.activatedAt ? (
-              <Step label="Activated" value={formatDate(resourceInstance.activatedAt)} />
+              <Step
+                label="Activated"
+                value={formatDate(resourceInstance.activatedAt)}
+              />
             ) : null}
             {resourceInstance.suspendedAt ? (
               <Step

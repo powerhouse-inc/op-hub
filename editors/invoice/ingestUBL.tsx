@@ -1,7 +1,4 @@
-import {
-  type InvoiceAction,
-  actions,
-} from "document-models/invoice";
+import { type InvoiceAction, actions } from "document-models/invoice";
 
 interface LoadUBLFileProps {
   file: File;

@@ -57,10 +57,20 @@ const uuid = () => webcrypto.randomUUID();
 // ---- 1. Load the Renown keypair → an ISigner -----------------------------
 const { keyPair } = JSON.parse(readFileSync(KEYPAIR_PATH, "utf8"));
 const algo = { name: "ECDSA", namedCurve: "P-256" };
-const privateKey = await subtle.importKey("jwk", keyPair.privateKey, algo, true, ["sign"]);
-const publicKey = await subtle.importKey("jwk", keyPair.publicKey, algo, true, ["verify"]);
+const privateKey = await subtle.importKey(
+  "jwk",
+  keyPair.privateKey,
+  algo,
+  true,
+  ["sign"],
+);
+const publicKey = await subtle.importKey("jwk", keyPair.publicKey, algo, true, [
+  "verify",
+]);
 const signMethod = async (data) =>
-  new Uint8Array(await subtle.sign({ name: "ECDSA", hash: "SHA-256" }, privateKey, data));
+  new Uint8Array(
+    await subtle.sign({ name: "ECDSA", hash: "SHA-256" }, privateKey, data),
+  );
 const signer = { publicKey, sign: signMethod };
 
 // Reusable ActionSigner identity block.
@@ -116,7 +126,12 @@ const created = await gql(
   { document: driveDoc },
 );
 const driveId = created.createDocument.id;
-console.log("✓ createDocument:", driveId, "| slug:", created.createDocument.slug);
+console.log(
+  "✓ createDocument:",
+  driveId,
+  "| slug:",
+  created.createDocument.slug,
+);
 
 // ---- 3. Build + sign an ADD_FOLDER operation (carries wallet identity) ----
 const folderInput = { id: uuid(), name: "Signed Folder", parentFolder: null };

@@ -27,7 +27,10 @@ function sb(...args) {
 async function gql(query, variables) {
   const res = await fetch(ENDPOINT, {
     method: "POST",
-    headers: { "content-type": "application/json", ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}) },
+    headers: {
+      "content-type": "application/json",
+      ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}),
+    },
     body: JSON.stringify({ query, variables }),
   });
   const json = await res.json();
@@ -52,12 +55,14 @@ async function summarize(docId) {
     const name = s?.app?.name || "(unsigned)";
     apps.set(name, (apps.get(name) || 0) + 1);
     if (s?.app?.key && !key) key = s.app.key;
-    if (s?.user?.address) wallets.add(`${s.user.networkId}:${s.user.chainId}:${s.user.address}`);
+    if (s?.user?.address)
+      wallets.add(`${s.user.networkId}:${s.user.chainId}:${s.user.address}`);
   }
   return { count: items.length, wallets: [...wallets], apps, key };
 }
 
-const fmtApps = (apps) => [...apps.entries()].map(([k, v]) => `${k}=${v}`).join(" ");
+const fmtApps = (apps) =>
+  [...apps.entries()].map(([k, v]) => `${k}=${v}`).join(" ");
 
 function listDrives() {
   if (ONLY) {
@@ -65,7 +70,11 @@ function listDrives() {
     return [{ id: d.id, name: d.name || d.slug || ONLY }];
   }
   return sb("drives", "list")
-    .filter((x) => !(x.slug || "").startsWith("vetra-") && !(x.slug || "").startsWith("preview-"))
+    .filter(
+      (x) =>
+        !(x.slug || "").startsWith("vetra-") &&
+        !(x.slug || "").startsWith("preview-"),
+    )
     .map((x) => ({ id: x.id, name: x.name || x.slug }));
 }
 
@@ -80,7 +89,10 @@ function driveFiles(driveId) {
 }
 
 const drives = listDrives();
-let totalDocs = 0, attributedDocs = 0, drivesOk = 0, allKeys = new Set();
+let totalDocs = 0,
+  attributedDocs = 0,
+  drivesOk = 0,
+  allKeys = new Set();
 
 for (const drive of drives) {
   const ds = await summarize(drive.id);
@@ -88,7 +100,9 @@ for (const drive of drives) {
   const driveOk = ds.wallets.length > 0;
   if (driveOk) drivesOk++;
   console.log(`\n■ DRIVE ${drive.name}  [${drive.id}]`);
-  console.log(`    ops=${ds.count}  { ${fmtApps(ds.apps)} }  wallet=${driveOk ? ds.wallets.join(",") : "(none)"}`);
+  console.log(
+    `    ops=${ds.count}  { ${fmtApps(ds.apps)} }  wallet=${driveOk ? ds.wallets.join(",") : "(none)"}`,
+  );
 
   for (const f of driveFiles(drive.id)) {
     totalDocs++;
@@ -96,11 +110,18 @@ for (const drive of drives) {
     if (fs.key) allKeys.add(fs.key);
     const ok = fs.wallets.length > 0;
     if (ok) attributedDocs++;
-    console.log(`      ${ok ? "✓" : "·"} ${(f.name || f.id).slice(0, 40).padEnd(40)} ops=${String(fs.count).padStart(3)}  { ${fmtApps(fs.apps)} }${ok ? "" : "  ← no wallet (content-empty)"}`);
+    console.log(
+      `      ${ok ? "✓" : "·"} ${(f.name || f.id).slice(0, 40).padEnd(40)} ops=${String(fs.count).padStart(3)}  { ${fmtApps(fs.apps)} }${ok ? "" : "  ← no wallet (content-empty)"}`,
+    );
   }
 }
 
 console.log(`\n========================================`);
 console.log(`Drives attributed:    ${drivesOk}/${drives.length}`);
-console.log(`Documents attributed: ${attributedDocs}/${totalDocs}` + (totalDocs - attributedDocs ? `  (${totalDocs - attributedDocs} content-empty / server-only)` : ""));
+console.log(
+  `Documents attributed: ${attributedDocs}/${totalDocs}` +
+    (totalDocs - attributedDocs
+      ? `  (${totalDocs - attributedDocs} content-empty / server-only)`
+      : ""),
+);
 console.log(`Signer app.key(s) seen: ${[...allKeys].join(", ") || "(none)"}`);

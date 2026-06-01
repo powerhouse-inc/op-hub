@@ -18,7 +18,11 @@ const ENDPOINT = process.env.ENDPOINT || "http://localhost:4001/graphql";
 const TOKEN = process.env.TOKEN || "";
 const args = process.argv.slice(2);
 const WITH_DOCS = args.includes("--docs");
-const ADDRESS = (args.find((a) => !a.startsWith("--")) || process.env.RENOWN_ADDRESS || "").toLowerCase();
+const ADDRESS = (
+  args.find((a) => !a.startsWith("--")) ||
+  process.env.RENOWN_ADDRESS ||
+  ""
+).toLowerCase();
 
 if (!ADDRESS) {
   console.error("provide a wallet address (arg or RENOWN_ADDRESS)");
@@ -26,12 +30,20 @@ if (!ADDRESS) {
 }
 
 const sb = (...a) =>
-  JSON.parse(execFileSync("switchboard", [...a, "--format", "json"], { encoding: "utf8", maxBuffer: 64 << 20 }));
+  JSON.parse(
+    execFileSync("switchboard", [...a, "--format", "json"], {
+      encoding: "utf8",
+      maxBuffer: 64 << 20,
+    }),
+  );
 
 async function gql(query, variables) {
   const res = await fetch(ENDPOINT, {
     method: "POST",
-    headers: { "content-type": "application/json", ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}) },
+    headers: {
+      "content-type": "application/json",
+      ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}),
+    },
     body: JSON.stringify({ query, variables }),
   });
   const j = await res.json();
@@ -55,7 +67,9 @@ async function signedByMe(docId) {
 }
 
 const drives = sb("drives", "list").filter(
-  (x) => !(x.slug || "").startsWith("vetra-") && !(x.slug || "").startsWith("preview-"),
+  (x) =>
+    !(x.slug || "").startsWith("vetra-") &&
+    !(x.slug || "").startsWith("preview-"),
 );
 
 console.log(`Drives signed by ${ADDRESS}:\n`);
@@ -64,13 +78,22 @@ for (const drive of drives) {
   const r = await signedByMe(drive.id);
   if (r.mine === 0) continue;
   hits++;
-  console.log(`  ✓ ${(drive.name || drive.slug || drive.id).padEnd(38)} ${drive.id}  (${r.mine}/${r.total} ops)`);
+  console.log(
+    `  ✓ ${(drive.name || drive.slug || drive.id).padEnd(38)} ${drive.id}  (${r.mine}/${r.total} ops)`,
+  );
   if (WITH_DOCS) {
     let nodes = [];
-    try { nodes = sb("docs", "get", drive.id, "--state").state.global.nodes.filter((n) => n.kind === "file"); } catch {}
+    try {
+      nodes = sb("docs", "get", drive.id, "--state").state.global.nodes.filter(
+        (n) => n.kind === "file",
+      );
+    } catch {}
     for (const f of nodes) {
       const fr = await signedByMe(f.id);
-      if (fr.mine > 0) console.log(`        - ${(f.name || f.id).slice(0, 40).padEnd(40)} (${fr.mine}/${fr.total})`);
+      if (fr.mine > 0)
+        console.log(
+          `        - ${(f.name || f.id).slice(0, 40).padEnd(40)} (${fr.mine}/${fr.total})`,
+        );
     }
   }
 }

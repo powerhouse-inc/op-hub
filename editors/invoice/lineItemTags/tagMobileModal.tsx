@@ -3,10 +3,7 @@ import { useState, useEffect, type Dispatch } from "react";
 import { InputField } from "../components/inputField.js";
 import { Select, DatePicker } from "@powerhousedao/document-engineering/ui";
 import { expenseAccountOptions } from "./tagMapping.js";
-import {
-  actions,
-  type InvoiceTag,
-} from "document-models/invoice";
+import { actions, type InvoiceTag } from "document-models/invoice";
 
 type TagAssignmentRow = {
   id: string;

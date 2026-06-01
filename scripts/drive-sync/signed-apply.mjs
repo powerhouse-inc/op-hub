@@ -28,7 +28,9 @@ import {
 
 const [, , cmd, docId, actionsFile] = process.argv;
 if (cmd !== "apply" || !docId || !actionsFile) {
-  console.error("usage: node signed-apply.mjs apply <documentId> <actionsJsonFile>");
+  console.error(
+    "usage: node signed-apply.mjs apply <documentId> <actionsJsonFile>",
+  );
   process.exit(2);
 }
 
@@ -47,7 +49,8 @@ if (!ENDPOINT || !ADDRESS) {
 
 const { subtle } = webcrypto;
 const uuid = () => webcrypto.randomUUID();
-const b64u = (s) => Buffer.from(s.replace(/-/g, "+").replace(/_/g, "/"), "base64");
+const b64u = (s) =>
+  Buffer.from(s.replace(/-/g, "+").replace(/_/g, "/"), "base64");
 
 /**
  * Derive the P-256 did:key for the keypair's public JWK. The reactor verifies
@@ -58,17 +61,30 @@ const b64u = (s) => Buffer.from(s.replace(/-/g, "+").replace(/_/g, "/"), "base64
 function didKeyFromJwk(jwk) {
   const x = b64u(jwk.x);
   const y = b64u(jwk.y);
-  const compressed = Buffer.concat([Buffer.from([(y[y.length - 1] & 1) === 0 ? 0x02 : 0x03]), x]);
+  const compressed = Buffer.concat([
+    Buffer.from([(y[y.length - 1] & 1) === 0 ? 0x02 : 0x03]),
+    x,
+  ]);
   const mc = Buffer.concat([Buffer.from([0x80, 0x24]), compressed]); // multicodec p256-pub
   const A = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
   let digits = [0];
   for (const byte of mc) {
     let carry = byte;
-    for (let j = 0; j < digits.length; j++) { carry += digits[j] << 8; digits[j] = carry % 58; carry = (carry / 58) | 0; }
-    while (carry) { digits.push(carry % 58); carry = (carry / 58) | 0; }
+    for (let j = 0; j < digits.length; j++) {
+      carry += digits[j] << 8;
+      digits[j] = carry % 58;
+      carry = (carry / 58) | 0;
+    }
+    while (carry) {
+      digits.push(carry % 58);
+      carry = (carry / 58) | 0;
+    }
   }
   let s = "";
-  for (const byte of mc) { if (byte === 0) s += "1"; else break; }
+  for (const byte of mc) {
+    if (byte === 0) s += "1";
+    else break;
+  }
   for (let i = digits.length - 1; i >= 0; i--) s += A[digits[i]];
   return "did:key:z" + s;
 }
@@ -76,9 +92,17 @@ function didKeyFromJwk(jwk) {
 // ---- signer ---------------------------------------------------------------
 const { keyPair } = JSON.parse(readFileSync(KEYPAIR_PATH, "utf8"));
 const algo = { name: "ECDSA", namedCurve: "P-256" };
-const privateKey = await subtle.importKey("jwk", keyPair.privateKey, algo, true, ["sign"]);
+const privateKey = await subtle.importKey(
+  "jwk",
+  keyPair.privateKey,
+  algo,
+  true,
+  ["sign"],
+);
 const signMethod = async (data) =>
-  new Uint8Array(await subtle.sign({ name: "ECDSA", hash: "SHA-256" }, privateKey, data));
+  new Uint8Array(
+    await subtle.sign({ name: "ECDSA", hash: "SHA-256" }, privateKey, data),
+  );
 const CLI_DID = process.env.RENOWN_CLI_DID || didKeyFromJwk(keyPair.publicKey);
 // app.name distinguishes our signed ops from the reactor's own genesis ops
 // (which use app.name "switchboard") — important because a local reactor signs
@@ -114,7 +138,12 @@ for (const a of actions) {
   const scope = a.scope || "global";
   const action = { scope, type: a.type, input: a.input };
   const sig = await buildOperationSignature(
-    { documentId: docId, signer: actionSigner(user, app, []), action, previousStateHash: "" },
+    {
+      documentId: docId,
+      signer: actionSigner(user, app, []),
+      action,
+      previousStateHash: "",
+    },
     signMethod,
   );
   signed.push({

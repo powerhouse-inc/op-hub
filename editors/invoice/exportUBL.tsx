@@ -1,8 +1,4 @@
-import type {
-  InvoiceState,
-  LegalEntity,
-  Maybe,
-} from "document-models/invoice";
+import type { InvoiceState, LegalEntity, Maybe } from "document-models/invoice";
 
 interface ExportUBLOptions {
   invoice: InvoiceState;

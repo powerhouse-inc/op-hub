@@ -55,9 +55,12 @@ for (const op of ops) {
   }
   const appName = s.app?.name || "(no app)";
   bySource.set(appName, (bySource.get(appName) || 0) + 1);
-  if (op.action.type === "CREATE_DOCUMENT" && s.app?.key) creatorKey = s.app.key;
+  if (op.action.type === "CREATE_DOCUMENT" && s.app?.key)
+    creatorKey = s.app.key;
   if (s.user?.address) {
-    wallets.add(`did:pkh:${s.user.networkId}:${s.user.chainId}:${s.user.address}`);
+    wallets.add(
+      `did:pkh:${s.user.networkId}:${s.user.chainId}:${s.user.address}`,
+    );
   }
 }
 

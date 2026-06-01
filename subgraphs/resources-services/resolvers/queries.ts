@@ -15,7 +15,7 @@ import {
   mapResourceTemplateState,
   mapServiceOfferingState,
 } from "./mappers.js";
-import { getDeletedDriveDocIds } from "./drive-utils.js";
+import { getDeletedDriveDocIds, getDriveOwner } from "./drive-utils.js";
 import {
   getVisibleResourceTemplateIdSet,
   isResourceTemplateVisibleForQuery,
@@ -232,8 +232,6 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
         }
       }
 
-      if (matchingProfileIds.size === 0) return [];
-
       const { results: drives } = await reactorClient.find({
         type: "powerhouse/document-drive",
       });
@@ -243,7 +241,7 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
         driveSlug: string;
         driveName: string;
         driveLink: string;
-        builderProfileId: string;
+        builderProfileId: string | null;
       }[] = [];
 
       for (const drive of drives) {
@@ -253,7 +251,13 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
           (node: Node) =>
             node.kind === "file" && matchingProfileIds.has(node.id),
         );
-        if (!profileNode) continue;
+
+        let owned = Boolean(profileNode);
+        if (!owned) {
+          const owner = await getDriveOwner(reactorClient, driveDoc.header.id);
+          owned = owner === target;
+        }
+        if (!owned) continue;
 
         const slug = driveDoc.header.slug || driveDoc.header.id;
         out.push({
@@ -261,7 +265,7 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
           driveSlug: slug,
           driveName: driveDoc.state.global.name || slug,
           driveLink: getDriveLink(slug),
-          builderProfileId: profileNode.id,
+          builderProfileId: profileNode?.id ?? null,
         });
       }
 

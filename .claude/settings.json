@@ -363,7 +363,9 @@
       "Bash(node -p \"require\\('./package.json'\\).devDependencies['typescript-eslint']\")",
       "Bash(echo \"  typescript-eslint pinned: $\\(node -p \"require\\('./package.json'\\).devDependencies['typescript-eslint']\"\\)\")",
       "Bash(RENOWN_ADDRESS=0xadbA7C2F82139031D7564D18aC22D09B12A0BcA4 RENOWN_APP_NAME=drive-sync-import SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh)",
-      "Bash(git diff *)"
+      "Bash(git diff *)",
+      "Bash(grep -E \"error|warning|\\\\.ts$\")",
+      "Bash(grep -E \"error|\\\\.ts$\")"
     ],
     "additionalDirectories": [
       "/home/p",

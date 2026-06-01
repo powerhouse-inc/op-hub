@@ -90,13 +90,6 @@
   ],
   "apps": [
     {
-      "id": "builder-team-admin",
-      "name": "Builder Team Admin",
-      "documentTypes": [
-        "powerhouse/document-drive"
-      ]
-    },
-    {
       "id": "network-admin",
       "name": "Network Admin",
       "documentTypes": [
@@ -111,10 +104,17 @@
       ]
     },
     {
-      "id": "service-offering-app",
-      "name": "Service Offering App",
+      "id": "team-admin",
+      "name": "Team Admin",
       "documentTypes": [
-        "powerhousedao/document-drive"
+        "powerhouse/document-drive"
+      ]
+    },
+    {
+      "id": "service-offering",
+      "name": "Service Offering",
+      "documentTypes": [
+        "powerhouse/document-drive"
       ]
     }
   ],
@@ -255,8 +255,8 @@
   ],
   "processors": [
     {
-      "name": "workstreams",
-      "id": "workstreams"
+      "id": "workstreams",
+      "name": "workstreams"
     }
   ],
   "subgraphs": [

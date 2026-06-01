@@ -7,6 +7,6 @@ export const getResolvers = (
   const reactorClient = subgraph.reactorClient;
 
   return {
-    Query: createQueryResolvers(reactorClient),
+    Query: createQueryResolvers(reactorClient, subgraph.relationalDb),
   };
 };

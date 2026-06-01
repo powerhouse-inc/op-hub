@@ -4,7 +4,9 @@
  */
 import type { ProcessorFactoryBuilder } from "@powerhousedao/reactor";
 import { workstreamsFactoryBuilder } from "processors/workstreams";
+import { driveOwnershipFactoryBuilder } from "processors/drive-ownership";
 
 export const processorFactoryBuilders: ProcessorFactoryBuilder[] = [
   workstreamsFactoryBuilder,
+  driveOwnershipFactoryBuilder,
 ];

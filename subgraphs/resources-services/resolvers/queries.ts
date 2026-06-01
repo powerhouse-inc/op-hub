@@ -1,11 +1,7 @@
-import type { IReactorClient } from "@powerhousedao/reactor";
+import type { IReactorClient, IRelationalDb } from "@powerhousedao/reactor";
 import type { ResourceTemplateDocument } from "document-models/resource-template";
 import type { ServiceOfferingDocument } from "document-models/service-offering";
-import type {
-  DocumentDriveDocument,
-  Node,
-} from "@powerhousedao/shared/document-drive";
-import type { BuilderProfileDocument } from "document-models/builder-profile/v1";
+import type { DocumentDriveDocument } from "@powerhousedao/shared/document-drive";
 import type {
   ResourceTemplatesFilter,
   ServiceOfferingsFilter,
@@ -15,7 +11,11 @@ import {
   mapResourceTemplateState,
   mapServiceOfferingState,
 } from "./mappers.js";
-import { getDeletedDriveDocIds, getDriveOwner } from "./drive-utils.js";
+import { getDeletedDriveDocIds } from "./drive-utils.js";
+import {
+  DriveOwnershipProcessor,
+  DRIVE_OWNERSHIP_NAMESPACE,
+} from "processors/drive-ownership";
 import {
   getVisibleResourceTemplateIdSet,
   isResourceTemplateVisibleForQuery,
@@ -24,7 +24,10 @@ import {
 } from "./resource-template-utils.js";
 import { getDriveLink } from "./drive-links.js";
 
-export function createQueryResolvers(reactorClient: IReactorClient) {
+export function createQueryResolvers(
+  reactorClient: IReactorClient,
+  relationalDb: IRelationalDb,
+) {
   return {
     resourceTemplates: async (
       _: unknown,
@@ -215,27 +218,31 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
       if (!ethereumAddress) return [];
       const target = ethereumAddress.toLowerCase();
 
-      const deletedDriveDocIds = await getDeletedDriveDocIds(reactorClient);
-
-      const { results: profileDocs } = await reactorClient.find({
-        type: "powerhouse/builder-profile",
-      });
-
-      const matchingProfileIds = new Set<string>();
-      for (const doc of profileDocs) {
-        if (doc.state.document.isDeleted) continue;
-        if (deletedDriveDocIds.has(doc.header.id)) continue;
-        const profile = doc as BuilderProfileDocument;
-        const addr = profile.state.global.walletAddress;
-        if (typeof addr === "string" && addr.toLowerCase() === target) {
-          matchingProfileIds.add(doc.header.id);
-        }
+      // Indexed lookup. The DriveOwnershipProcessor maintains rs_drive(owner_address,
+      // deleted) across ALL drives, so "drives created by X" is one indexed query
+      // instead of scanning every drive's full operation log.
+      let rows: {
+        drive_id: string;
+        name: string | null;
+        builder_profile_id: string | null;
+      }[] = [];
+      try {
+        rows = await DriveOwnershipProcessor.query(
+          DRIVE_OWNERSHIP_NAMESPACE,
+          relationalDb,
+        )
+          .selectFrom("rs_drive")
+          .select(["drive_id", "name", "builder_profile_id"])
+          .where("owner_address", "=", target)
+          .where("deleted", "=", false)
+          .execute();
+      } catch (error) {
+        console.warn("[getBuilderDrives] index query failed:", error);
+        return [];
       }
 
-      const { results: drives } = await reactorClient.find({
-        type: "powerhouse/document-drive",
-      });
-
+      // Enrich the (few) matches with the live drive for its slug, and
+      // re-verify it isn't soft-deleted so the result stays truthful.
       const out: {
         driveId: string;
         driveSlug: string;
@@ -244,28 +251,24 @@ export function createQueryResolvers(reactorClient: IReactorClient) {
         builderProfileId: string | null;
       }[] = [];
 
-      for (const drive of drives) {
-        if (drive.state.document.isDeleted) continue;
-        const driveDoc = drive as DocumentDriveDocument;
-        const profileNode = driveDoc.state.global.nodes.find(
-          (node: Node) =>
-            node.kind === "file" && matchingProfileIds.has(node.id),
-        );
-
-        let owned = Boolean(profileNode);
-        if (!owned) {
-          const owner = await getDriveOwner(reactorClient, driveDoc.header.id);
-          owned = owner === target;
+      for (const row of rows) {
+        let driveDoc: DocumentDriveDocument;
+        try {
+          driveDoc = await reactorClient.get<DocumentDriveDocument>(
+            row.drive_id,
+          );
+        } catch {
+          continue; // drive no longer resolvable — skip
         }
-        if (!owned) continue;
+        if (driveDoc.state.document.isDeleted) continue;
 
-        const slug = driveDoc.header.slug || driveDoc.header.id;
+        const slug = driveDoc.header.slug || row.drive_id;
         out.push({
-          driveId: driveDoc.header.id,
+          driveId: row.drive_id,
           driveSlug: slug,
-          driveName: driveDoc.state.global.name || slug,
+          driveName: driveDoc.state.global.name || row.name || slug,
           driveLink: getDriveLink(slug),
-          builderProfileId: profileNode?.id ?? null,
+          builderProfileId: row.builder_profile_id,
         });
       }
 

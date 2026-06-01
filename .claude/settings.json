@@ -352,7 +352,18 @@
       "Bash(python3 -c \"import json,sys;ds=json.load\\(sys.stdin\\);print\\([d.get\\('slug'\\) for d in ds]\\)\")",
       "Bash(RENOWN_ADDRESS=0xadbA7C2F82139031D7564D18aC22D09B12A0BcA4 SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh --target local)",
       "Bash(python3 -c \"import json,sys;ds=json.load\\(sys.stdin\\);print\\(len\\(ds\\),[d.get\\('slug'\\) for d in ds]\\)\")",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(echo \"=== installed @powerhousedao/* + key ph deps ===\")",
+      "Bash(echo \"=== actually installed versions \\(node_modules\\) ===\")",
+      "Bash(node -p 'try{require\\('\\\\''__TRACKED_VAR__/package.json'\\\\''\\).version}catch\\(e\\){'\\\\''-'\\\\''}')",
+      "Bash(echo '  __TRACKED_VAR__: __TRACKED_VAR__')",
+      "Bash(gh --version)",
+      "Bash(gh api *)",
+      "Bash(awk '$2>50 && $1<10 {print \"  RESET? -\"$2\"/+\"$1\"  \"$3}')",
+      "Bash(node -p \"require\\('./package.json'\\).devDependencies['typescript-eslint']\")",
+      "Bash(echo \"  typescript-eslint pinned: $\\(node -p \"require\\('./package.json'\\).devDependencies['typescript-eslint']\"\\)\")",
+      "Bash(RENOWN_ADDRESS=0xadbA7C2F82139031D7564D18aC22D09B12A0BcA4 RENOWN_APP_NAME=drive-sync-import SB_PROFILE=local bash scripts/drive-sync/upload-all-split.sh)",
+      "Bash(git diff *)"
     ],
     "additionalDirectories": [
       "/home/p",

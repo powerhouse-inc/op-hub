@@ -67,8 +67,15 @@
      --color-slate-700: hsl(204 9% 11%);
      --color-slate-800: hsl(195 9%  9%);
      --color-slate-900: hsl(195 6%  6%);   ← main app background
-   ────────────────────────────────────────────────────────────────────────── */
-.dark {
+
+   ⚠️ Selector is `:root.dark`, NOT `.dark`. The design-system ships the
+   defaults above as `:root { … }` (specificity 0,1,0). A plain `.dark { … }`
+   override is ALSO 0,1,0, so which one wins comes down to stylesheet load
+   ORDER — fine in local studio (our file loads last) but NOT on a deployed
+   Connect, where the hosted app injects its own design-system `:root` defaults
+   that can load after our package CSS and clobber these. `:root.dark` is 0,2,0
+   (`.dark` lives on <html>, which is `:root`), so it wins regardless of order. */
+:root.dark {
   --color-slate-900: hsl(201, 20%, 17%); /* main app background */
   --color-slate-800: hsl(200, 4%, 26%); /* raised surfaces / panels */
   --color-slate-700: hsl(200, 5%, 22%);

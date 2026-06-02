@@ -374,7 +374,13 @@
       "Bash(echo \"exit: $?\")",
       "Bash(bunx @tailwindcss/cli -i style.css -o /tmp/ophub-out2.css)",
       "Bash(grep -n -oE \".{0,10}border-b border-gray-300[^']*\" sidebar-header.js)",
-      "Bash(bunx @tailwindcss/cli -i style.css -o /tmp/ophub-out3.css)"
+      "Bash(bunx @tailwindcss/cli -i style.css -o /tmp/ophub-out3.css)",
+      "Bash(sed -n '6845,6855p' dist/style.css)",
+      "Bash(awk 'NR>=6828 && NR<=6852 && \\(/@layer/ || /:root/ || /\\\\.dark *\\\\{/\\)' dist/style.css)",
+      "Bash(awk -F: '$1>6970 && $1<13652')",
+      "Bash(bunx @tailwindcss/cli -i style.css -o /tmp/ophub-out4.css)",
+      "Bash(grep -c 'dark .\\\\${OH_HEADER_CLASS}' editors/builder-team-admin/components/FolderTree.tsx)",
+      "Bash(echo \"builder FolderTree .dark .oh-header -> $\\(grep -c 'dark .\\\\${OH_HEADER_CLASS}' editors/builder-team-admin/components/FolderTree.tsx\\)\")"
     ],
     "additionalDirectories": [
       "/home/p",

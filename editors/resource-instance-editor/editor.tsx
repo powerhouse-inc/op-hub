@@ -41,7 +41,13 @@ export default function ResourceInstanceEditor() {
   const [selectedDrive] = useSelectedDrive();
 
   useEffect(() => {
-    if (selectedDrive.header.meta?.preferredEditor === "service-offering-app") {
+    // Operator mode when this instance is opened from the Service Offering app
+    // drive. Connect resolves a drive's app by matching `meta.preferredEditor`
+    // against the editor module's `config.id` — which is "service-offering"
+    // (see service-offering-app/module.ts). Accept the legacy "service-offering-app"
+    // string too in case a drive was tagged with the directory name.
+    const preferred = selectedDrive?.header.meta?.preferredEditor;
+    if (preferred === "service-offering" || preferred === "service-offering-app") {
       setMode("operator");
     }
   }, [selectedDrive]);

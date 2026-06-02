@@ -814,6 +814,19 @@ export function FolderTree({ onCustomViewChange }: FolderTreeProps) {
         .${OH_HEADER_CLASS}:hover {
           color: #5b21b6;
         }
+        /* Dark mode. The header colors above are hardcoded hex that Tailwind
+           can't theme, so override them under Connect's \`.dark\` class (set on
+           <html>). The \`.dark X\` selector outranks the base \`.X\` rule, so
+           order/specificity is safe. Violet lightens for contrast on the dark
+           sidebar; the divider becomes a faint light line instead of the
+           near-white #e7e5e4 (which would glare on dark). */
+        .dark .${OH_HEADER_CLASS} {
+          color: #a78bfa;
+          border-top-color: rgba(255, 255, 255, 0.1);
+        }
+        .dark .${OH_HEADER_CLASS}:hover {
+          color: #c4b5fd;
+        }
       `}</style>
       <SidebarProvider nodes={navigationSections}>
         <Sidebar

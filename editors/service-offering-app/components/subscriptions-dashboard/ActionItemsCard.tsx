@@ -10,26 +10,26 @@ const SEVERITY_CONFIG = {
     icon: AlertTriangle,
     border: "border-l-red-500",
     iconColor: "text-red-500",
-    bg: "bg-red-50/50",
+    bg: "bg-red-50/50 dark:bg-red-900/20",
   },
   warning: {
     icon: AlertCircle,
     border: "border-l-amber-400",
     iconColor: "text-amber-500",
-    bg: "bg-amber-50/50",
+    bg: "bg-amber-50/50 dark:bg-amber-900/20",
   },
   info: {
     icon: Info,
     border: "border-l-blue-400",
     iconColor: "text-blue-400",
-    bg: "bg-blue-50/30",
+    bg: "bg-blue-50/30 dark:bg-blue-900/20",
   },
 };
 
 export function ActionItemsCard({ items }: ActionItemsCardProps) {
   if (items.length === 0) {
     return (
-      <div className="flex items-center justify-center py-8 text-sm text-stone-400">
+      <div className="flex items-center justify-center py-8 text-sm text-stone-400 dark:text-gray-400">
         No action items — all systems normal
       </div>
     );
@@ -89,16 +89,16 @@ export function ActionItemsCard({ items }: ActionItemsCardProps) {
               />
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-medium text-stone-700">
+                  <span className="text-sm font-medium text-stone-700 dark:text-gray-200">
                     {item.title}
                   </span>
                   {item.customerName ? (
-                    <span className="text-xs text-stone-400">
+                    <span className="text-xs text-stone-400 dark:text-gray-400">
                       — {item.customerName}
                     </span>
                   ) : null}
                 </div>
-                <p className="mt-0.5 text-xs text-stone-500">
+                <p className="mt-0.5 text-xs text-stone-500 dark:text-gray-400">
                   {item.description}
                 </p>
               </div>

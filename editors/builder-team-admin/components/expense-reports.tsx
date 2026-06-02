@@ -111,11 +111,11 @@ function ExpenseReportsBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
   };
 
   return (
-    <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3">
+    <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3 dark:text-gray-400 dark:border-slate-700">
       {visiblePath.map((node) => (
         <Fragment key={node.id}>
           <div
-            className="transition-colors last-of-type:text-gray-800 hover:text-gray-800 cursor-pointer"
+            className="transition-colors last-of-type:text-gray-400 hover:text-gray-400 cursor-pointer dark:last-of-type:text-gray-100 dark:hover:text-gray-100"
             onClick={() => setSelectedNode(node.id)}
             role="button"
           >
@@ -130,7 +130,7 @@ function ExpenseReportsBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
         ) : (
           <button
             type="button"
-            className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-800"
+            className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-400 dark:bg-slate-700 dark:hover:bg-slate-600 dark:hover:text-gray-100"
             onClick={handleAddNew}
           >
             <Plus size={14} />

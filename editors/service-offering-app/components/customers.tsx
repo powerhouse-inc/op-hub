@@ -60,7 +60,7 @@ function FolderNameInput({
           onCancel();
         }
       }}
-      className="text-gray-800 bg-transparent border-b border-gray-400 outline-none px-1 py-0.5 text-sm min-w-[100px]"
+      className="text-gray-800 bg-transparent border-b border-gray-400 outline-none px-1 py-0.5 text-sm min-w-[100px] dark:text-gray-100 dark:border-slate-500"
       placeholder="New Folder"
     />
   );
@@ -104,11 +104,11 @@ function CustomersBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
   };
 
   return (
-    <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3">
+    <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3 dark:text-gray-400 dark:border-slate-700">
       {visiblePath.map((node) => (
         <Fragment key={node.id}>
           <div
-            className="transition-colors last-of-type:text-gray-800 hover:text-gray-800 cursor-pointer"
+            className="transition-colors last-of-type:text-gray-400 hover:text-gray-400 cursor-pointer dark:last-of-type:text-gray-100 dark:hover:text-gray-100"
             onClick={() => setSelectedNode(node.id)}
             role="button"
           >
@@ -123,7 +123,7 @@ function CustomersBreadcrumbs({ rootFolderId }: { rootFolderId: string }) {
         ) : (
           <button
             type="button"
-            className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-800"
+            className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-400 dark:bg-slate-700 dark:hover:bg-slate-600 dark:hover:text-gray-100"
             onClick={handleAddNew}
           >
             <Plus size={14} />
@@ -172,7 +172,7 @@ function CustomersFolderBrowser({
   const isEmpty = !hasFolders && !hasFiles;
 
   return (
-    <div>
+    <div className="dark:text-gray-100">
       <DashboardHeader
         title="Customers"
         subtitle="Browse and manage subscription documents"
@@ -180,13 +180,13 @@ function CustomersFolderBrowser({
         showBack
       />
       <div className="space-y-6 px-2">
-        <div className="flex gap-2 justify-center pb-4 border-b border-gray-200">
+        <div className="flex gap-2 justify-center pb-4 border-b border-gray-200 dark:border-slate-700">
           <button
             type="button"
             onClick={() =>
               showCreateDocumentModal("powerhouse/resource-instance")
             }
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors text-xs border border-gray-300"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-gray-600 rounded-md hover:bg-gray-200 transition-colors text-xs border border-gray-300 dark:bg-slate-700 dark:text-gray-200 dark:hover:bg-slate-600 dark:border-slate-400"
           >
             <Plus size={14} />
             New Resource Instance
@@ -196,7 +196,7 @@ function CustomersFolderBrowser({
             onClick={() =>
               showCreateDocumentModal("powerhouse/subscription-instance")
             }
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors text-xs border border-gray-300"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 text-gray-600 rounded-md hover:bg-gray-200 transition-colors text-xs border border-gray-300 dark:bg-slate-700 dark:text-gray-200 dark:hover:bg-slate-600 dark:border-slate-400"
           >
             <Plus size={14} />
             New Subscription Instance
@@ -207,7 +207,9 @@ function CustomersFolderBrowser({
 
         {hasFolders ? (
           <div>
-            <h3 className="mb-2 text-sm font-bold text-gray-600">Folders</h3>
+            <h3 className="mb-2 text-sm font-bold text-gray-600 dark:text-gray-300">
+              Folders
+            </h3>
             <div className="flex flex-wrap gap-4">
               {folderNodes.map((folderNode) => (
                 <FolderItem key={folderNode.id} folderNode={folderNode} />
@@ -218,7 +220,7 @@ function CustomersFolderBrowser({
 
         {hasFiles ? (
           <div>
-            <h3 className="mb-2 text-sm font-semibold text-gray-600">
+            <h3 className="mb-2 text-sm font-semibold text-gray-600 dark:text-gray-300">
               Documents
             </h3>
             <div className="flex flex-wrap gap-4">
@@ -231,7 +233,7 @@ function CustomersFolderBrowser({
 
         {isEmpty ? (
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <div className="text-gray-400 mb-2">
+            <div className="text-gray-400 mb-2 dark:text-gray-500">
               <svg
                 className="w-16 h-16 mx-auto"
                 fill="none"
@@ -246,7 +248,7 @@ function CustomersFolderBrowser({
                 />
               </svg>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm dark:text-gray-400">
               No customers yet. Add documents to this folder to get started.
             </p>
           </div>
@@ -265,7 +267,9 @@ export function Customers() {
   if (!customersFolder) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-gray-500">Setting up Customers folder...</div>
+        <div className="text-gray-500 dark:text-gray-400">
+          Setting up Customers folder...
+        </div>
       </div>
     );
   }

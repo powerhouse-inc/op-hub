@@ -165,7 +165,7 @@ export function ResourcesServices() {
   ) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-gray-500">
+        <div className="text-gray-500 dark:text-gray-400">
           Setting up {SERVICES_AND_OFFERINGS_FOLDER_NAME} folders...
         </div>
       </div>
@@ -188,12 +188,12 @@ export function ResourcesServices() {
   // Render the root view with both folder cards
   if (isInRootView) {
     return (
-      <div>
+      <div className="dark:text-gray-100">
         <div className="text-2xl font-bold text-center mb-6">
           {SERVICES_AND_OFFERINGS_FOLDER_NAME}
         </div>
         <div className="space-y-6 px-6">
-          <p className="text-gray-600 text-center mb-8">
+          <p className="text-gray-600 dark:text-gray-300 text-center mb-8">
             Manage your products and service offerings. Click on a folder to
             view or create documents.
           </p>
@@ -201,22 +201,22 @@ export function ResourcesServices() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Resource Templates Card */}
             <div
-              className="border border-gray-200 rounded-lg p-6 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer"
+              className="border border-gray-200 rounded-lg p-6 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer dark:border-slate-700 dark:hover:border-blue-500"
               onClick={() => setSelectedNode(resourceTemplatesFolder.id)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-50 rounded-lg">
-                  <FileText className="w-6 h-6 text-blue-600" />
+                <div className="p-2 bg-blue-50 rounded-lg dark:bg-blue-900/40">
+                  <FileText className="w-6 h-6 text-blue-600 dark:text-blue-300" />
                 </div>
                 <h3 className="text-lg font-semibold">
                   {RESOURCE_TEMPLATES_FOLDER_NAME}
                 </h3>
               </div>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                 Define products that can be used across service offerings.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {resourceTemplateDocuments.length} product
                   {resourceTemplateDocuments.length !== 1 ? "s" : ""}
                 </span>
@@ -240,23 +240,23 @@ export function ResourcesServices() {
 
             {/* Service Offerings Card */}
             <div
-              className="border border-gray-200 rounded-lg p-6 hover:border-indigo-400 hover:shadow-md transition-all cursor-pointer"
+              className="border border-gray-200 rounded-lg p-6 hover:border-indigo-400 hover:shadow-md transition-all cursor-pointer dark:border-slate-700 dark:hover:border-indigo-500"
               onClick={() => setSelectedNode(serviceOfferingsFolder.id)}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-indigo-50 rounded-lg">
-                  <Package className="w-6 h-6 text-indigo-600" />
+                <div className="p-2 bg-indigo-50 rounded-lg dark:bg-indigo-900/40">
+                  <Package className="w-6 h-6 text-indigo-600 dark:text-indigo-300" />
                 </div>
                 <h3 className="text-lg font-semibold">
                   {SERVICE_OFFERINGS_FOLDER_NAME}
                 </h3>
               </div>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                 Create and manage service offerings with pricing tiers and
                 options.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   {serviceOfferingDocuments.length} offering
                   {serviceOfferingDocuments.length !== 1 ? "s" : ""}
                 </span>
@@ -297,27 +297,29 @@ export function ResourcesServices() {
   const isEmpty = !hasFolders && !hasFiles;
 
   return (
-    <div>
+    <div className="dark:text-gray-100">
       <div className="text-2xl font-bold text-center mb-4">
         {currentFolderName}
       </div>
       <div className="space-y-6 px-6">
         {/* Breadcrumbs */}
-        <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3">
+        <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3 dark:text-gray-400 dark:border-slate-700">
           <div
-            className="transition-colors hover:text-gray-800 cursor-pointer"
+            className="transition-colors hover:text-gray-800 cursor-pointer dark:hover:text-gray-100"
             onClick={() => setSelectedNode("")}
             role="button"
           >
             {SERVICES_AND_OFFERINGS_FOLDER_NAME}
           </div>
           <span>/</span>
-          <div className="text-gray-800">{currentFolderName}</div>
+          <div className="text-gray-800 dark:text-gray-100">
+            {currentFolderName}
+          </div>
           <span>/</span>
           {isAllowedToCreateDocuments && (
             <button
               type="button"
-              className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-800"
+              className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-800 dark:bg-slate-700 dark:hover:bg-slate-600 dark:hover:text-gray-100"
               onClick={() => {
                 if (isInResourceTemplates) {
                   void handleCreateResourceTemplate(resourceTemplatesFolder.id);
@@ -334,7 +336,9 @@ export function ResourcesServices() {
 
         {hasFolders && (
           <div>
-            <h3 className="mb-2 text-sm font-bold text-gray-600">Folders</h3>
+            <h3 className="mb-2 text-sm font-bold text-gray-600 dark:text-gray-300">
+              Folders
+            </h3>
             <div className="flex flex-wrap gap-4">
               {folderNodes.map((folderNode) => (
                 <FolderItem key={folderNode.id} folderNode={folderNode} />
@@ -345,7 +349,7 @@ export function ResourcesServices() {
 
         {hasFiles && (
           <div>
-            <h3 className="mb-2 text-sm font-semibold text-gray-600">
+            <h3 className="mb-2 text-sm font-semibold text-gray-600 dark:text-gray-300">
               Documents
             </h3>
             <div className="flex flex-wrap gap-4">
@@ -358,14 +362,14 @@ export function ResourcesServices() {
 
         {isEmpty && (
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <div className="text-gray-400 mb-2">
+            <div className="text-gray-400 mb-2 dark:text-gray-500">
               {isInResourceTemplates ? (
                 <FileText className="w-16 h-16 mx-auto" />
               ) : (
                 <Package className="w-16 h-16 mx-auto" />
               )}
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm dark:text-gray-400">
               No {currentFolderName.toLowerCase()} yet.
               {isAllowedToCreateDocuments && (
                 <>

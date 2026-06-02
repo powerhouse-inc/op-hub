@@ -54,8 +54,12 @@ class DocumentEditorBoundary extends Component<
       return (
         <div className="flex h-64 items-center justify-center">
           <div className="text-center">
-            <div className="mb-2 text-sm text-gray-500">Loading document…</div>
-            <code className="text-[10px] text-gray-300">{docId}</code>
+            <div className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              Loading document…
+            </div>
+            <code className="text-[10px] text-gray-300 dark:text-gray-600">
+              {docId}
+            </code>
           </div>
         </div>
       );
@@ -64,26 +68,26 @@ class DocumentEditorBoundary extends Component<
     return (
       <div className="flex h-64 items-center justify-center">
         <div className="max-w-sm text-center">
-          <div className="mb-2 text-sm text-gray-600">
+          <div className="mb-2 text-sm text-gray-600 dark:text-gray-300">
             This document could not be loaded
           </div>
-          <div className="mb-3 text-xs text-gray-400">
+          <div className="mb-3 text-xs text-gray-400 dark:text-gray-500">
             There may be an issue with this document&apos;s data. Use the
             document ID below to investigate further.
           </div>
           {docId ? (
-            <code className="mb-4 block rounded bg-gray-50 px-3 py-2 text-xs text-gray-500 select-all border border-gray-200">
+            <code className="mb-4 block rounded bg-gray-50 px-3 py-2 text-xs text-gray-500 select-all border border-gray-200 dark:bg-slate-700 dark:text-gray-300 dark:border-slate-600">
               {docId}
             </code>
           ) : (
-            <div className="mb-4 text-xs text-gray-400">
+            <div className="mb-4 text-xs text-gray-400 dark:text-gray-500">
               {this.state.error.message}
             </div>
           )}
           <button
             type="button"
             onClick={() => this.setState({ error: null, retryCount: 0 })}
-            className="rounded-md bg-gray-100 px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-200"
+            className="rounded-md bg-gray-100 px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-200 dark:bg-slate-700 dark:text-gray-200 dark:hover:bg-slate-600"
           >
             Retry
           </button>
@@ -131,7 +135,7 @@ export function DriveExplorer({ children }: EditorProps) {
               aria-label="Close drive"
               title="Close drive"
               onClick={() => setSelectedDrive(undefined)}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-100 hover:text-gray-800"
+              className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-100 hover:text-gray-800 dark:border-slate-600 dark:bg-slate-800 dark:text-gray-400 dark:hover:bg-slate-700 dark:hover:text-gray-100"
             >
               <X size={18} />
             </button>

@@ -24,7 +24,7 @@ export function RevenueByResourceChart({
 
   if (total === 0) {
     return (
-      <div className="flex items-center justify-center h-full text-stone-400 text-sm">
+      <div className="flex items-center justify-center h-full text-stone-400 text-sm dark:text-gray-400">
         No revenue data
       </div>
     );
@@ -58,7 +58,9 @@ export function RevenueByResourceChart({
               className="inline-block h-2.5 w-2.5 rounded-full"
               style={{ backgroundColor: item.color }}
             />
-            <span className="text-xs text-stone-500">{item.templateName}</span>
+            <span className="text-xs text-stone-500 dark:text-gray-400">
+              {item.templateName}
+            </span>
           </div>
         ))}
       </div>
@@ -72,10 +74,18 @@ export function RevenueByResourceChart({
         role="img"
       >
         {/* Y-axis labels */}
-        <text x="0" y="16" className="text-xs" fill="#636e72">
+        <text
+          x="0"
+          y="16"
+          className="text-xs fill-stone-500 dark:fill-gray-400"
+        >
           {formatCurrency(total)}
         </text>
-        <text x="0" y={maxBarHeight + 4} className="text-xs" fill="#636e72">
+        <text
+          x="0"
+          y={maxBarHeight + 4}
+          className="text-xs fill-stone-500 dark:fill-gray-400"
+        >
           $0
         </text>
 
@@ -99,8 +109,7 @@ export function RevenueByResourceChart({
           x={chartWidth / 2}
           y={maxBarHeight + 28}
           textAnchor="middle"
-          className="text-xs"
-          fill="#636e72"
+          className="text-xs fill-stone-500 dark:fill-gray-400"
         >
           Current MRR
         </text>

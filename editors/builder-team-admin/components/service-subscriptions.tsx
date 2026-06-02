@@ -108,11 +108,11 @@ function ServiceSubscriptionsBreadcrumbs({
   };
 
   return (
-    <div className="flex h-9 flex-row items-center gap-2 text-gray-500 border-b border-gray-200 pb-3">
+    <div className="flex h-9 flex-row items-center gap-2 text-gray-200 border-b border-gray-200 pb-3">
       {visiblePath.map((node) => (
         <Fragment key={node.id}>
           <div
-            className="transition-colors last-of-type:text-gray-800 hover:text-gray-800 cursor-pointer"
+            className="transition-colors last-of-type:text-gray-400 hover:text-gray-400 cursor-pointer"
             onClick={() => setSelectedNode(node.id)}
             role="button"
           >
@@ -127,7 +127,7 @@ function ServiceSubscriptionsBreadcrumbs({
         ) : (
           <button
             type="button"
-            className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-800"
+            className="ml-1 flex items-center justify-center gap-2 rounded-md bg-gray-50 px-2 py-1.5 transition-colors hover:bg-gray-200 hover:text-gray-400"
             onClick={handleAddNew}
           >
             <Plus size={14} />

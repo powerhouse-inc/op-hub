@@ -19,7 +19,7 @@ export function SubscriptionsByPlanChart({
   const total = data.reduce((sum, d) => sum + d.count, 0);
   if (total === 0) {
     return (
-      <div className="flex items-center justify-center h-full text-stone-400 text-sm">
+      <div className="flex items-center justify-center h-full text-stone-400 text-sm dark:text-gray-400">
         No subscriptions
       </div>
     );
@@ -77,8 +77,7 @@ export function SubscriptionsByPlanChart({
           x={cx}
           y={cy - 6}
           textAnchor="middle"
-          className="text-2xl font-bold"
-          fill="#2d3436"
+          className="text-2xl font-bold fill-stone-800 dark:fill-gray-50"
         >
           {total}
         </text>
@@ -86,8 +85,7 @@ export function SubscriptionsByPlanChart({
           x={cx}
           y={cy + 12}
           textAnchor="middle"
-          className="text-xs"
-          fill="#636e72"
+          className="text-xs fill-stone-500 dark:fill-gray-400"
         >
           total
         </text>
@@ -101,9 +99,11 @@ export function SubscriptionsByPlanChart({
                 className="inline-block h-3 w-3 rounded-sm"
                 style={{ backgroundColor: seg.color }}
               />
-              <span className="text-sm text-stone-600">{seg.tierName}</span>
+              <span className="text-sm text-stone-600 dark:text-gray-300">
+                {seg.tierName}
+              </span>
             </div>
-            <span className="text-sm font-semibold text-stone-700">
+            <span className="text-sm font-semibold text-stone-700 dark:text-gray-200">
               {seg.count}
             </span>
           </div>

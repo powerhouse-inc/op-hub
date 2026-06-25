@@ -15,7 +15,9 @@ import { describe, expect, it } from "vitest";
 describe("ServicesOperations", () => {
   it("should handle addService operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddServiceInputSchema());
+    const input = generateMock(AddServiceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addService(input));
 
@@ -32,7 +34,9 @@ describe("ServicesOperations", () => {
 
   it("should handle updateService operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateServiceInputSchema());
+    const input = generateMock(UpdateServiceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateService(input));
 
@@ -49,7 +53,9 @@ describe("ServicesOperations", () => {
 
   it("should handle deleteService operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(DeleteServiceInputSchema());
+    const input = generateMock(DeleteServiceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, deleteService(input));
 

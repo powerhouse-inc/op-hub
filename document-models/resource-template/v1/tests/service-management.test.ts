@@ -19,7 +19,9 @@ import { describe, expect, it } from "vitest";
 describe("ServiceManagementOperations", () => {
   it("should handle addService operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddServiceInputSchema());
+    const input = generateMock(AddServiceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addService(input));
 
@@ -36,7 +38,9 @@ describe("ServiceManagementOperations", () => {
 
   it("should handle updateService operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateServiceInputSchema());
+    const input = generateMock(UpdateServiceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateService(input));
 
@@ -53,7 +57,9 @@ describe("ServiceManagementOperations", () => {
 
   it("should handle deleteService operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(DeleteServiceInputSchema());
+    const input = generateMock(DeleteServiceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, deleteService(input));
 
@@ -70,7 +76,9 @@ describe("ServiceManagementOperations", () => {
 
   it("should handle addFacetBinding operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddFacetBindingInputSchema());
+    const input = generateMock(AddFacetBindingInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addFacetBinding(input));
 
@@ -87,7 +95,9 @@ describe("ServiceManagementOperations", () => {
 
   it("should handle removeFacetBinding operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveFacetBindingInputSchema());
+    const input = generateMock(RemoveFacetBindingInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeFacetBinding(input));
 

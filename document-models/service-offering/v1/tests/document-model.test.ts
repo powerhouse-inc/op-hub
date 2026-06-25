@@ -7,17 +7,17 @@
  * - change it by adding new tests or modifying the existing ones
  */
 
-import { describe, it, expect } from "vitest";
 import {
-  utils,
+  assertIsServiceOfferingDocument,
+  assertIsServiceOfferingState,
   initialGlobalState,
   initialLocalState,
-  serviceOfferingDocumentType,
   isServiceOfferingDocument,
-  assertIsServiceOfferingDocument,
   isServiceOfferingState,
-  assertIsServiceOfferingState,
+  serviceOfferingDocumentType,
+  utils,
 } from "document-models/service-offering/v1";
+import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
 describe("ServiceOffering Document Model", () => {

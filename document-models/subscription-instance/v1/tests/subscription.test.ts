@@ -88,7 +88,9 @@ describe("SubscriptionOperations", () => {
 
   it("should handle pauseSubscription operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(PauseSubscriptionInputSchema());
+    const input = generateMock(PauseSubscriptionInputSchema(), {
+      pausedSince: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, pauseSubscription(input));
 
@@ -105,7 +107,9 @@ describe("SubscriptionOperations", () => {
 
   it("should handle setExpiring operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetExpiringInputSchema());
+    const input = generateMock(SetExpiringInputSchema(), {
+      expiringSince: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setExpiring(input));
 
@@ -239,23 +243,6 @@ describe("SubscriptionOperations", () => {
     expect(updatedDocument.operations.global[0].index).toEqual(0);
   });
 
-  it("should handle generateInvoice operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(GenerateInvoiceInputSchema());
-
-    const updatedDocument = reducer(document, generateInvoice(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "GENERATE_INVOICE",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
   it("should handle changePlan operation", () => {
     const document = utils.createDocument();
     const input = generateMock(ChangePlanInputSchema());
@@ -266,6 +253,23 @@ describe("SubscriptionOperations", () => {
     expect(updatedDocument.operations.global).toHaveLength(1);
     expect(updatedDocument.operations.global[0].action.type).toBe(
       "CHANGE_PLAN",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle generateInvoice operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(GenerateInvoiceInputSchema());
+
+    const updatedDocument = reducer(document, generateInvoice(input));
+
+    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "GENERATE_INVOICE",
     );
     expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
       input,

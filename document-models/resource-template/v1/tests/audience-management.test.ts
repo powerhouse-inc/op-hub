@@ -13,7 +13,9 @@ import { describe, expect, it } from "vitest";
 describe("AudienceManagementOperations", () => {
   it("should handle addTargetAudience operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddTargetAudienceInputSchema());
+    const input = generateMock(AddTargetAudienceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addTargetAudience(input));
 
@@ -30,7 +32,9 @@ describe("AudienceManagementOperations", () => {
 
   it("should handle removeTargetAudience operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveTargetAudienceInputSchema());
+    const input = generateMock(RemoveTargetAudienceInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeTargetAudience(input));
 

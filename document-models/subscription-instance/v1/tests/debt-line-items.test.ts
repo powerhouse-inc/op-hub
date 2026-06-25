@@ -17,7 +17,9 @@ import { describe, expect, it } from "vitest";
 describe("DebtLineItemsOperations", () => {
   it("should handle markLineItemInvoiced operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(MarkLineItemInvoicedInputSchema());
+    const input = generateMock(MarkLineItemInvoicedInputSchema(), {
+      invoicedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, markLineItemInvoiced(input));
 
@@ -34,7 +36,9 @@ describe("DebtLineItemsOperations", () => {
 
   it("should handle confirmLineItemPayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ConfirmLineItemPaymentInputSchema());
+    const input = generateMock(ConfirmLineItemPaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, confirmLineItemPayment(input));
 
@@ -51,7 +55,9 @@ describe("DebtLineItemsOperations", () => {
 
   it("should handle reportPayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ReportPaymentInputSchema());
+    const input = generateMock(ReportPaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, reportPayment(input));
 

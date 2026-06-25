@@ -25,7 +25,9 @@ import { describe, expect, it } from "vitest";
 describe("OptionGroupsOperations", () => {
   it("should handle addOptionGroup operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddOptionGroupInputSchema());
+    const input = generateMock(AddOptionGroupInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addOptionGroup(input));
 
@@ -42,7 +44,9 @@ describe("OptionGroupsOperations", () => {
 
   it("should handle updateOptionGroup operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateOptionGroupInputSchema());
+    const input = generateMock(UpdateOptionGroupInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateOptionGroup(input));
 
@@ -59,7 +63,9 @@ describe("OptionGroupsOperations", () => {
 
   it("should handle deleteOptionGroup operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(DeleteOptionGroupInputSchema());
+    const input = generateMock(DeleteOptionGroupInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, deleteOptionGroup(input));
 
@@ -96,7 +102,9 @@ describe("OptionGroupsOperations", () => {
 
   it("should handle addOptionGroupTierPricing operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddOptionGroupTierPricingInputSchema());
+    const input = generateMock(AddOptionGroupTierPricingInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addOptionGroupTierPricing(input));
 
@@ -113,7 +121,9 @@ describe("OptionGroupsOperations", () => {
 
   it("should handle updateOptionGroupTierPricing operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateOptionGroupTierPricingInputSchema());
+    const input = generateMock(UpdateOptionGroupTierPricingInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,
@@ -133,7 +143,9 @@ describe("OptionGroupsOperations", () => {
 
   it("should handle removeOptionGroupTierPricing operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveOptionGroupTierPricingInputSchema());
+    const input = generateMock(RemoveOptionGroupTierPricingInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,
@@ -153,7 +165,9 @@ describe("OptionGroupsOperations", () => {
 
   it("should handle setOptionGroupDiscountMode operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetOptionGroupDiscountModeInputSchema());
+    const input = generateMock(SetOptionGroupDiscountModeInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,

@@ -37,7 +37,9 @@ import { describe, expect, it } from "vitest";
 describe("TiersOperations", () => {
   it("should handle addTier operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddTierInputSchema());
+    const input = generateMock(AddTierInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addTier(input));
 
@@ -52,7 +54,9 @@ describe("TiersOperations", () => {
 
   it("should handle updateTier operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateTierInputSchema());
+    const input = generateMock(UpdateTierInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateTier(input));
 
@@ -69,7 +73,9 @@ describe("TiersOperations", () => {
 
   it("should handle updateTierPricing operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateTierPricingInputSchema());
+    const input = generateMock(UpdateTierPricingInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateTierPricing(input));
 
@@ -86,7 +92,9 @@ describe("TiersOperations", () => {
 
   it("should handle deleteTier operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(DeleteTierInputSchema());
+    const input = generateMock(DeleteTierInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, deleteTier(input));
 
@@ -103,7 +111,9 @@ describe("TiersOperations", () => {
 
   it("should handle addServiceLevel operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddServiceLevelInputSchema());
+    const input = generateMock(AddServiceLevelInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addServiceLevel(input));
 
@@ -120,7 +130,9 @@ describe("TiersOperations", () => {
 
   it("should handle updateServiceLevel operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateServiceLevelInputSchema());
+    const input = generateMock(UpdateServiceLevelInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateServiceLevel(input));
 
@@ -137,7 +149,9 @@ describe("TiersOperations", () => {
 
   it("should handle removeServiceLevel operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveServiceLevelInputSchema());
+    const input = generateMock(RemoveServiceLevelInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeServiceLevel(input));
 
@@ -154,7 +168,9 @@ describe("TiersOperations", () => {
 
   it("should handle addUsageLimit operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddUsageLimitInputSchema());
+    const input = generateMock(AddUsageLimitInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addUsageLimit(input));
 
@@ -171,7 +187,9 @@ describe("TiersOperations", () => {
 
   it("should handle updateUsageLimit operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateUsageLimitInputSchema());
+    const input = generateMock(UpdateUsageLimitInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateUsageLimit(input));
 
@@ -188,7 +206,9 @@ describe("TiersOperations", () => {
 
   it("should handle removeUsageLimit operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveUsageLimitInputSchema());
+    const input = generateMock(RemoveUsageLimitInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeUsageLimit(input));
 
@@ -205,7 +225,9 @@ describe("TiersOperations", () => {
 
   it("should handle setTierDefaultBillingCycle operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetTierDefaultBillingCycleInputSchema());
+    const input = generateMock(SetTierDefaultBillingCycleInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,
@@ -245,7 +267,9 @@ describe("TiersOperations", () => {
 
   it("should handle setTierPricingMode operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetTierPricingModeInputSchema());
+    const input = generateMock(SetTierPricingModeInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setTierPricingMode(input));
 
@@ -262,7 +286,9 @@ describe("TiersOperations", () => {
 
   it("should handle reorderTiers operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ReorderTiersInputSchema());
+    const input = generateMock(ReorderTiersInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, reorderTiers(input));
 

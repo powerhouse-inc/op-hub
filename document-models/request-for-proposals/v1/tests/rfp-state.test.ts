@@ -11,7 +11,9 @@ import { describe, expect, it } from "vitest";
 describe("RfpStateOperations", () => {
   it("should handle editRfp operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(EditRfpInputSchema());
+    const input = generateMock(EditRfpInputSchema(), {
+      deadline: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, editRfp(input));
 

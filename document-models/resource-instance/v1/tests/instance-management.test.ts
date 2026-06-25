@@ -107,7 +107,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle confirmInstance operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ConfirmInstanceInputSchema());
+    const input = generateMock(ConfirmInstanceInputSchema(), {
+      confirmedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, confirmInstance(input));
 
@@ -178,7 +180,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle activateInstance operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ActivateInstanceInputSchema());
+    const input = generateMock(ActivateInstanceInputSchema(), {
+      activatedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, activateInstance(input));
 
@@ -195,7 +199,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle suspendForNonPayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SuspendForNonPaymentInputSchema());
+    const input = generateMock(SuspendForNonPaymentInputSchema(), {
+      suspendedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, suspendForNonPayment(input));
 
@@ -212,7 +218,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle suspendForMaintenance operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SuspendForMaintenanceInputSchema());
+    const input = generateMock(SuspendForMaintenanceInputSchema(), {
+      suspendedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, suspendForMaintenance(input));
 
@@ -229,7 +237,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle resumeAfterPayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ResumeAfterPaymentInputSchema());
+    const input = generateMock(ResumeAfterPaymentInputSchema(), {
+      resumedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, resumeAfterPayment(input));
 
@@ -246,7 +256,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle resumeAfterMaintenance operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ResumeAfterMaintenanceInputSchema());
+    const input = generateMock(ResumeAfterMaintenanceInputSchema(), {
+      resumedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, resumeAfterMaintenance(input));
 
@@ -263,7 +275,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle suspendInstance operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SuspendInstanceInputSchema());
+    const input = generateMock(SuspendInstanceInputSchema(), {
+      suspendedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, suspendInstance(input));
 
@@ -280,7 +294,9 @@ describe("InstanceManagementOperations", () => {
 
   it("should handle terminateInstance operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(TerminateInstanceInputSchema());
+    const input = generateMock(TerminateInstanceInputSchema(), {
+      terminatedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, terminateInstance(input));
 

@@ -13,7 +13,9 @@ import { describe, expect, it } from "vitest";
 describe("FacetManagementOperations", () => {
   it("should handle setFacetName operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetFacetNameInputSchema());
+    const input = generateMock(SetFacetNameInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setFacetName(input));
 
@@ -30,7 +32,9 @@ describe("FacetManagementOperations", () => {
 
   it("should handle setFacetDescription operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetFacetDescriptionInputSchema());
+    const input = generateMock(SetFacetDescriptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setFacetDescription(input));
 

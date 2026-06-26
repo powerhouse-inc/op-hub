@@ -106,7 +106,10 @@ describe("TermsOperations", () => {
 
   it("should handle setRetainerDetails operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetRetainerDetailsInputSchema());
+    const input = generateMock(SetRetainerDetailsInputSchema(), {
+      startDate: "2024-01-01T00:00:00.000Z",
+      endDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setRetainerDetails(input));
 

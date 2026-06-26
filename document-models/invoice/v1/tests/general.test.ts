@@ -19,7 +19,11 @@ import { describe, expect, it } from "vitest";
 describe("GeneralOperations", () => {
   it("should handle editInvoice operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(EditInvoiceInputSchema());
+    const input = generateMock(EditInvoiceInputSchema(), {
+      dateIssued: "2024-01-01T00:00:00.000Z",
+      dateDelivered: "2024-01-01T00:00:00.000Z",
+      dateDue: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, editInvoice(input));
 
@@ -36,7 +40,9 @@ describe("GeneralOperations", () => {
 
   it("should handle addPayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddPaymentInputSchema());
+    const input = generateMock(AddPaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addPayment(input));
 
@@ -53,7 +59,9 @@ describe("GeneralOperations", () => {
 
   it("should handle editPaymentData operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(EditPaymentDataInputSchema());
+    const input = generateMock(EditPaymentDataInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, editPaymentData(input));
 
@@ -87,7 +95,9 @@ describe("GeneralOperations", () => {
 
   it("should handle setExportedData operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetExportedDataInputSchema());
+    const input = generateMock(SetExportedDataInputSchema(), {
+      timestamp: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setExportedData(input));
 

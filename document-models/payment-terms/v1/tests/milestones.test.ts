@@ -19,7 +19,9 @@ import { describe, expect, it } from "vitest";
 describe("MilestonesOperations", () => {
   it("should handle addMilestone operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddMilestoneInputSchema());
+    const input = generateMock(AddMilestoneInputSchema(), {
+      expectedCompletionDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addMilestone(input));
 
@@ -36,7 +38,9 @@ describe("MilestonesOperations", () => {
 
   it("should handle updateMilestone operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateMilestoneInputSchema());
+    const input = generateMock(UpdateMilestoneInputSchema(), {
+      expectedCompletionDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateMilestone(input));
 

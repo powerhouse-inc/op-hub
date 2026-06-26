@@ -247,7 +247,9 @@ describe("WalletOperations", () => {
 
   it("should handle setPeriodStart operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetPeriodStartInputSchema());
+    const input = generateMock(SetPeriodStartInputSchema(), {
+      periodStart: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setPeriodStart(input));
 
@@ -264,7 +266,9 @@ describe("WalletOperations", () => {
 
   it("should handle setPeriodEnd operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetPeriodEndInputSchema());
+    const input = generateMock(SetPeriodEndInputSchema(), {
+      periodEnd: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setPeriodEnd(input));
 
@@ -330,7 +334,10 @@ describe("WalletOperations", () => {
 
   it("should handle setPeriod operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetPeriodInputSchema());
+    const input = generateMock(SetPeriodInputSchema(), {
+      startDate: "2024-01-01T00:00:00.000Z",
+      endDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setPeriod(input));
 

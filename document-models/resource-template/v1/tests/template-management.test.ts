@@ -19,7 +19,9 @@ import { describe, expect, it } from "vitest";
 describe("TemplateManagementOperations", () => {
   it("should handle updateTemplateInfo operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateTemplateInfoInputSchema());
+    const input = generateMock(UpdateTemplateInfoInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateTemplateInfo(input));
 
@@ -36,7 +38,9 @@ describe("TemplateManagementOperations", () => {
 
   it("should handle updateTemplateStatus operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateTemplateStatusInputSchema());
+    const input = generateMock(UpdateTemplateStatusInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateTemplateStatus(input));
 
@@ -53,7 +57,9 @@ describe("TemplateManagementOperations", () => {
 
   it("should handle setOperator operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetOperatorInputSchema());
+    const input = generateMock(SetOperatorInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setOperator(input));
 
@@ -70,7 +76,9 @@ describe("TemplateManagementOperations", () => {
 
   it("should handle setTemplateId operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetTemplateIdInputSchema());
+    const input = generateMock(SetTemplateIdInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setTemplateId(input));
 
@@ -87,7 +95,9 @@ describe("TemplateManagementOperations", () => {
 
   it("should handle setWeight operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetWeightInputSchema());
+    const input = generateMock(SetWeightInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setWeight(input));
 

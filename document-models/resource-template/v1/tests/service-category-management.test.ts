@@ -13,7 +13,9 @@ import { describe, expect, it } from "vitest";
 describe("ServiceCategoryManagementOperations", () => {
   it("should handle setSetupServices operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetSetupServicesInputSchema());
+    const input = generateMock(SetSetupServicesInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setSetupServices(input));
 
@@ -30,7 +32,9 @@ describe("ServiceCategoryManagementOperations", () => {
 
   it("should handle setRecurringServices operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetRecurringServicesInputSchema());
+    const input = generateMock(SetRecurringServicesInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setRecurringServices(input));
 

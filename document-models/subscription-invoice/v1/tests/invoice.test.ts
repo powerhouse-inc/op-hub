@@ -21,7 +21,11 @@ import { describe, expect, it } from "vitest";
 describe("InvoiceOperations", () => {
   it("should handle initializeSubscriptionInvoice operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(InitializeSubscriptionInvoiceInputSchema());
+    const input = generateMock(InitializeSubscriptionInvoiceInputSchema(), {
+      dueDate: "2024-01-01T00:00:00.000Z",
+      cycleStart: "2024-01-01T00:00:00.000Z",
+      cycleEnd: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,
@@ -41,7 +45,9 @@ describe("InvoiceOperations", () => {
 
   it("should handle markSubscriptionInvoiceIssued operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(MarkSubscriptionInvoiceIssuedInputSchema());
+    const input = generateMock(MarkSubscriptionInvoiceIssuedInputSchema(), {
+      issuedAt: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,

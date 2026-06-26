@@ -23,7 +23,10 @@ import { describe, expect, it } from "vitest";
 describe("ConfigurationOperations", () => {
   it("should handle setReportConfig operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetReportConfigInputSchema());
+    const input = generateMock(SetReportConfigInputSchema(), {
+      startDate: "2024-01-01T00:00:00.000Z",
+      endDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setReportConfig(input));
 
@@ -57,7 +60,10 @@ describe("ConfigurationOperations", () => {
 
   it("should handle setPeriod operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetPeriodInputSchema());
+    const input = generateMock(SetPeriodInputSchema(), {
+      startDate: "2024-01-01T00:00:00.000Z",
+      endDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setPeriod(input));
 

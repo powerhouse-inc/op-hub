@@ -17,7 +17,9 @@ import { describe, expect, it } from "vitest";
 describe("FacetTargetingOperations", () => {
   it("should handle setFacetTarget operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetFacetTargetInputSchema());
+    const input = generateMock(SetFacetTargetInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setFacetTarget(input));
 
@@ -34,7 +36,9 @@ describe("FacetTargetingOperations", () => {
 
   it("should handle removeFacetTarget operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveFacetTargetInputSchema());
+    const input = generateMock(RemoveFacetTargetInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeFacetTarget(input));
 
@@ -51,7 +55,9 @@ describe("FacetTargetingOperations", () => {
 
   it("should handle addFacetOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddFacetOptionInputSchema());
+    const input = generateMock(AddFacetOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addFacetOption(input));
 
@@ -68,7 +74,9 @@ describe("FacetTargetingOperations", () => {
 
   it("should handle removeFacetOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveFacetOptionInputSchema());
+    const input = generateMock(RemoveFacetOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeFacetOption(input));
 

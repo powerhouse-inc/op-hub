@@ -17,7 +17,9 @@ import { describe, expect, it } from "vitest";
 describe("ContentSectionManagementOperations", () => {
   it("should handle addContentSection operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddContentSectionInputSchema());
+    const input = generateMock(AddContentSectionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addContentSection(input));
 
@@ -34,7 +36,9 @@ describe("ContentSectionManagementOperations", () => {
 
   it("should handle updateContentSection operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateContentSectionInputSchema());
+    const input = generateMock(UpdateContentSectionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateContentSection(input));
 
@@ -51,7 +55,9 @@ describe("ContentSectionManagementOperations", () => {
 
   it("should handle deleteContentSection operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(DeleteContentSectionInputSchema());
+    const input = generateMock(DeleteContentSectionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, deleteContentSection(input));
 
@@ -68,7 +74,9 @@ describe("ContentSectionManagementOperations", () => {
 
   it("should handle reorderContentSections operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ReorderContentSectionsInputSchema());
+    const input = generateMock(ReorderContentSectionsInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, reorderContentSections(input));
 

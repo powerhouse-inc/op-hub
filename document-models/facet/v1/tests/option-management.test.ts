@@ -17,7 +17,9 @@ import { describe, expect, it } from "vitest";
 describe("OptionManagementOperations", () => {
   it("should handle addOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddOptionInputSchema());
+    const input = generateMock(AddOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addOption(input));
 
@@ -32,7 +34,9 @@ describe("OptionManagementOperations", () => {
 
   it("should handle updateOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateOptionInputSchema());
+    const input = generateMock(UpdateOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateOption(input));
 
@@ -49,7 +53,9 @@ describe("OptionManagementOperations", () => {
 
   it("should handle removeOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveOptionInputSchema());
+    const input = generateMock(RemoveOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeOption(input));
 
@@ -66,7 +72,9 @@ describe("OptionManagementOperations", () => {
 
   it("should handle reorderOptions operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ReorderOptionsInputSchema());
+    const input = generateMock(ReorderOptionsInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, reorderOptions(input));
 

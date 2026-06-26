@@ -63,7 +63,9 @@ describe("ServiceOperations", () => {
 
   it("should handle updateServiceSetupCost operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateServiceSetupCostInputSchema());
+    const input = generateMock(UpdateServiceSetupCostInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateServiceSetupCost(input));
 
@@ -80,7 +82,10 @@ describe("ServiceOperations", () => {
 
   it("should handle updateServiceRecurringCost operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateServiceRecurringCostInputSchema());
+    const input = generateMock(UpdateServiceRecurringCostInputSchema(), {
+      nextBillingDate: "2024-01-01T00:00:00.000Z",
+      lastPaymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(
       document,
@@ -91,6 +96,44 @@ describe("ServiceOperations", () => {
     expect(updatedDocument.operations.global).toHaveLength(1);
     expect(updatedDocument.operations.global[0].action.type).toBe(
       "UPDATE_SERVICE_RECURRING_COST",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle reportSetupPayment operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(ReportSetupPaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
+
+    const updatedDocument = reducer(document, reportSetupPayment(input));
+
+    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "REPORT_SETUP_PAYMENT",
+    );
+    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
+      input,
+    );
+    expect(updatedDocument.operations.global[0].index).toEqual(0);
+  });
+
+  it("should handle reportRecurringPayment operation", () => {
+    const document = utils.createDocument();
+    const input = generateMock(ReportRecurringPaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
+
+    const updatedDocument = reducer(document, reportRecurringPayment(input));
+
+    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
+    expect(updatedDocument.operations.global).toHaveLength(1);
+    expect(updatedDocument.operations.global[0].action.type).toBe(
+      "REPORT_RECURRING_PAYMENT",
     );
     expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
       input,
@@ -152,43 +195,11 @@ describe("ServiceOperations", () => {
     expect(updatedDocument.operations.global[0].index).toEqual(0);
   });
 
-  it("should handle reportSetupPayment operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(ReportSetupPaymentInputSchema());
-
-    const updatedDocument = reducer(document, reportSetupPayment(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "REPORT_SETUP_PAYMENT",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
-  it("should handle reportRecurringPayment operation", () => {
-    const document = utils.createDocument();
-    const input = generateMock(ReportRecurringPaymentInputSchema());
-
-    const updatedDocument = reducer(document, reportRecurringPayment(input));
-
-    expect(isSubscriptionInstanceDocument(updatedDocument)).toBe(true);
-    expect(updatedDocument.operations.global).toHaveLength(1);
-    expect(updatedDocument.operations.global[0].action.type).toBe(
-      "REPORT_RECURRING_PAYMENT",
-    );
-    expect(updatedDocument.operations.global[0].action.input).toStrictEqual(
-      input,
-    );
-    expect(updatedDocument.operations.global[0].index).toEqual(0);
-  });
-
   it("should handle reportOveragePayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ReportOveragePaymentInputSchema());
+    const input = generateMock(ReportOveragePaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, reportOveragePayment(input));
 

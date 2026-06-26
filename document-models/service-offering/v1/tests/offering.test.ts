@@ -31,7 +31,9 @@ import { describe, expect, it } from "vitest";
 describe("OfferingOperations", () => {
   it("should handle updateOfferingInfo operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateOfferingInfoInputSchema());
+    const input = generateMock(UpdateOfferingInfoInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateOfferingInfo(input));
 
@@ -48,7 +50,9 @@ describe("OfferingOperations", () => {
 
   it("should handle updateOfferingStatus operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateOfferingStatusInputSchema());
+    const input = generateMock(UpdateOfferingStatusInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateOfferingStatus(input));
 
@@ -65,7 +69,9 @@ describe("OfferingOperations", () => {
 
   it("should handle setOperator operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetOperatorInputSchema());
+    const input = generateMock(SetOperatorInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setOperator(input));
 
@@ -82,7 +88,9 @@ describe("OfferingOperations", () => {
 
   it("should handle setOfferingId operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetOfferingIdInputSchema());
+    const input = generateMock(SetOfferingIdInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setOfferingId(input));
 
@@ -99,7 +107,9 @@ describe("OfferingOperations", () => {
 
   it("should handle setFacetTarget operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetFacetTargetInputSchema());
+    const input = generateMock(SetFacetTargetInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setFacetTarget(input));
 
@@ -116,7 +126,9 @@ describe("OfferingOperations", () => {
 
   it("should handle removeFacetTarget operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveFacetTargetInputSchema());
+    const input = generateMock(RemoveFacetTargetInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeFacetTarget(input));
 
@@ -133,7 +145,9 @@ describe("OfferingOperations", () => {
 
   it("should handle addFacetOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddFacetOptionInputSchema());
+    const input = generateMock(AddFacetOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addFacetOption(input));
 
@@ -150,7 +164,9 @@ describe("OfferingOperations", () => {
 
   it("should handle removeFacetOption operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RemoveFacetOptionInputSchema());
+    const input = generateMock(RemoveFacetOptionInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, removeFacetOption(input));
 
@@ -167,7 +183,9 @@ describe("OfferingOperations", () => {
 
   it("should handle selectResourceTemplate operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SelectResourceTemplateInputSchema());
+    const input = generateMock(SelectResourceTemplateInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, selectResourceTemplate(input));
 
@@ -184,7 +202,9 @@ describe("OfferingOperations", () => {
 
   it("should handle changeResourceTemplate operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(ChangeResourceTemplateInputSchema());
+    const input = generateMock(ChangeResourceTemplateInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, changeResourceTemplate(input));
 
@@ -201,7 +221,9 @@ describe("OfferingOperations", () => {
 
   it("should handle setAvailableBillingCycles operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SetAvailableBillingCyclesInputSchema());
+    const input = generateMock(SetAvailableBillingCyclesInputSchema(), {
+      lastModified: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, setAvailableBillingCycles(input));
 

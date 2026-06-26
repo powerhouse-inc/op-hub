@@ -33,7 +33,9 @@ import { describe, expect, it } from "vitest";
 describe("TransitionsOperations", () => {
   it("should handle accept operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AcceptInputSchema());
+    const input = generateMock(AcceptInputSchema(), {
+      payAfter: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, accept(input));
 
@@ -97,7 +99,9 @@ describe("TransitionsOperations", () => {
 
   it("should handle issue operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(IssueInputSchema());
+    const input = generateMock(IssueInputSchema(), {
+      dateIssued: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, issue(input));
 
@@ -129,7 +133,9 @@ describe("TransitionsOperations", () => {
 
   it("should handle registerPaymentTx operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(RegisterPaymentTxInputSchema());
+    const input = generateMock(RegisterPaymentTxInputSchema(), {
+      timestamp: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, registerPaymentTx(input));
 
@@ -208,7 +214,9 @@ describe("TransitionsOperations", () => {
 
   it("should handle schedulePayment operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(SchedulePaymentInputSchema());
+    const input = generateMock(SchedulePaymentInputSchema(), {
+      paymentDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, schedulePayment(input));
 

@@ -23,7 +23,9 @@ import { describe, expect, it } from "vitest";
 describe("MetricsOperations", () => {
   it("should handle addServiceMetric operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(AddServiceMetricInputSchema());
+    const input = generateMock(AddServiceMetricInputSchema(), {
+      lastAccrualDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, addServiceMetric(input));
 
@@ -40,7 +42,9 @@ describe("MetricsOperations", () => {
 
   it("should handle updateMetric operation", () => {
     const document = utils.createDocument();
-    const input = generateMock(UpdateMetricInputSchema());
+    const input = generateMock(UpdateMetricInputSchema(), {
+      lastAccrualDate: "2024-01-01T00:00:00.000Z",
+    });
 
     const updatedDocument = reducer(document, updateMetric(input));
 
